@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Comparing Simulations</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Comparing Simulations</h1>
+</div>
+<center>
+<p><strong><font size="+2">Comparing Simulations</font></strong></p>
+<hr />
+</center>
+<p>
+<p><strong><font size="+1">Setup Description</font></strong><br />The ‘Compare Simluations’ functionality allows the user to compare up to 8 simulations.  The simulations must be previously saved ADVISOR runs.  To save a simulation, choose ‘Save Simulation’ from the File menu on the main ADVISOR results screen.  Simulations for different cycles or with different drivetrains may be compared.  If the simulations are for different drivetrains, the list of available time plots is determined by the time variables of the first selected simulation.  The Compare Simulations screen may be invoked for a single simulation.</p>
+<center>
+<p>
+<div class="figure">
+<img src="compare_sims_setup.jpg" />
+</div>
+</center>
+<p><strong><font size="+1">Results Comparison Screen (when Dynamic checkbox is picked)</font></strong></p>
+<div class="figure">
+<img src="compare_sims_dynamic.jpg" />
+</div>
+<p>
+<p><br /><strong><font size="+1">Results Comparison Screen</font></strong><br />The Compare Simulations results screen is shown below.  The time variables are plotted for each simulation.</p>
+<center>
+<p>
+<div class="figure">
+<img src="c_sims_results.jpg" />
+</div>
+</center>
+<p><strong>Bar Chart</strong><br />The metrics for the individual simulations are plotted on the bar chart.</p>
+<p>
+<p><strong>Spider Plot</strong><br />A spider plot is a way of comparing simulated results to desired targets.  If the simulated result lies inside the band of value 1, the target was not met.  If the result lies outside of the band, the target performance was exceeded.  The value is calculated as follows:</p>
+<center>
+<p>
+<p><em>Normalized value=(Original value-Inner value)/(Outer(at 1)-Inner)</em></p>
+</center>
+<p>The inner value is less than the outer if the goal is to maximize the variable (e.g. fuel economy).  The inner value is greater than the outer value if the goal is to mnimize the variable (e.g. NOx emissions).  The inner value is restriced such that there are no negative normalized variables.  The 12 metrics shown, and their default targets are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Fuel economy/consumption, target: 80 mpg (2.94 lp100km)</li>
+<li>Gasoline equivalent fuel economy/consumption, target: 80 mpg (2.94 lp100km)</li>
+<li>HC emissions, target: 0.125 gpm (0.078 gpkm)</li>
+<li>CO emissions, target: 1.7 gpm (1.056 gpkm)</li>
+<li>NOx emissions, target: 0.07 gpm (0.043 gpkm)</li>
+<li>PM emissions, target:  0.08 gpm (0.05 gpkm)</li>
+<li>Acceleration time 0-60 mph (0-97 kph), target: 12 sec</li>
+<li>Acceleration time 0-85 mph (0-137 kph), target: 23.4 sec</li>
+<li>Acceleration time 40-60 mph (64-97 kph), target: 5.3 sec</li>
+<li>Maximum acceleration, target: 16 ft/s<sup>2</sup> (4.9 m/s<sup>2</sup>)</li>
+<li>Distance in 5 seconds, target: 135 ft (41 m)</li>
+<li>Grade, target: 6%</li>
+</ol>
+<p>These targets, or outer and inner values, can be changed by the user through the edit boxes.  The spider plot’s outermost value displayed is adjusted with the Max Disp (maximum displayed) edit box.  This can be adjusted in increments of 0.5.<br /> </p>
+<hr />
+<center>
+<p><a href="advisor_ch3.html#3.3">Return to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

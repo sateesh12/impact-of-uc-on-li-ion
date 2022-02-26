@@ -1,0 +1,1401 @@
+Model {
+  Name			  "BD_INTERACTIVE_REPLAY"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue Dec 12 16:27:50 2000"
+  UpdateHistory		  "UpdateHistoryWhenSave"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr 18 07:59:04 2002"
+  ModifiedComment	  "mokeefe -- Thu Apr 18 07:59:04 2002 -- Version 1.86"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no and with \"fit to view\" enabled"
+  ModifiedHistory	  "mokeefe -- Thu Apr 18 07:59:04 2002 -- Version 1.86"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no and with \"fit to view\" enabled\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:86>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "inf"
+  SolverMode		  "Auto"
+  Solver		  "FixedStepDiscrete"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  off
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "BD_INTERACTIVE_REPLAY"
+    Location		    [2, 70, 965, 748]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "118"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Altia_SubSystem"
+      Ports		      [4, 5]
+      Position		      [550, 18, 635, 262]
+      SourceBlock	      "lib_interactive/Altia_SubSystem"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      Port {
+	PortNumber		3
+	Name			"time_gain"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		4
+	Name			"time_position"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		5
+	Name			"altiaCloseEvent"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [470, 220, 490, 240]
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      InitialCondition
+      Name		      "IC"
+      Position		      [33, 150, 67, 180]
+      Orientation	      "up"
+      Value		      "1"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [415, 31, 420, 69]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector"
+      Ports		      [1, 1]
+      Position		      [190, 20, 235, 60]
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "[2:47 60 49:59]"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "60"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector1"
+      Ports		      [1, 1]
+      Position		      [465, 94, 520, 126]
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "[1]"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "60"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector2"
+      Ports		      [1, 1]
+      Position		      [265, 45, 315, 75]
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "[22 23 56 57 58]"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "58"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector3"
+      Ports		      [1, 1]
+      Position		      [455, 30, 510, 70]
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "[1:28 59 60 31:52 61 62 63 56:58]"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "63"
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      Position		      [730, 222, 765, 258]
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SubSystem"
+      Ports		      [1, 1]
+      Position		      [350, 44, 390, 76]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"SubSystem"
+	Location		[435, 604, 841, 819]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [25, 78, 55, 92]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 5]
+	  Position		  [85, 40, 90, 130]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "5"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [5, 1]
+	  Position		  [325, 47, 330, 133]
+	  ShowName		  off
+	  Inputs		  "5"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "SubSystem"
+	  Ports			  [2, 2]
+	  Position		  [125, 83, 225, 112]
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "mc_spd_plot"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "mc_trq_plot"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  System {
+	    Name		    "SubSystem"
+	    Location		    [443, 583, 1178, 934]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [205, 28, 235, 42]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [215, 298, 245, 312]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [35, 148, 170, 172]
+	      Value		      "mc_plot_axis"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 4]
+	      Position		      [240, 80, 250, 240]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "4"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [440, 170, 470, 200]
+	      Gain		      "100"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [445, 115, 475, 145]
+	      Gain		      "100"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [395, 69, 410, 131]
+	      Inputs		      "*/"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"fc_spd_out_a_plot"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [395, 188, 410, 257]
+	      Inputs		      "/*"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"fc_trq_out_a_plot"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [355, 84, 365, 151]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [325, 15, 335, 95]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [330, 245, 340, 325]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [355, 175, 365, 235]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "rad=>rev"
+	      Position		      [255, 19, 305, 51]
+	      Gain		      "9.549"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [595, 123, 625, 137]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [595, 178, 625, 192]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "fc_spd_out_a_plot"
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, 30]
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "fc_trq_out_a_plot"
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, -40]
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, 85]
+		DstBlock		"Sum2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[50, 0]
+		DstBlock		"Sum3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [85, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "rad=>rev"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "rad=>rev"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "SubSystem1"
+	  Ports			  [2, 2]
+	  Position		  [125, 48, 225, 77]
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "fc_spd_plot"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "fc_trq_plot"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  System {
+	    Name		    "SubSystem1"
+	    Location		    [442, 144, 1177, 495]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [190, 28, 220, 42]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [200, 298, 230, 312]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [55, 148, 190, 172]
+	      Value		      "fc_plot_axis"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 4]
+	      Position		      [240, 80, 250, 240]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "4"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [440, 170, 470, 200]
+	      Gain		      "100"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [445, 115, 475, 145]
+	      Gain		      "100"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [395, 69, 410, 131]
+	      Inputs		      "*/"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"fc_spd_out_a_plot"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [395, 188, 410, 257]
+	      Inputs		      "/*"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"fc_trq_out_a_plot"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [355, 84, 365, 151]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [325, 15, 335, 95]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [330, 245, 340, 325]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [355, 175, 365, 235]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "rad=>rev"
+	      Position		      [240, 20, 295, 50]
+	      Gain		      "9.549"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [595, 123, 625, 137]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [595, 178, 625, 192]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [85, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      Points		      [35, 0]
+	      Branch {
+		Points			[50, 0]
+		DstBlock		"Sum3"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 85]
+		DstBlock		"Sum2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "fc_trq_out_a_plot"
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, -40]
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "fc_spd_out_a_plot"
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, 30]
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "rad=>rev"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "rad=>rev"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "SubSystem2"
+	  Ports			  [1, 1]
+	  Position		  [125, 117, 225, 133]
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "fuel cell pwr plot"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  System {
+	    Name		    "SubSystem2"
+	    Location		    [302, 205, 806, 472]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "fc_pwr_out_a"
+	      Position		      [150, 48, 180, 62]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [15, 153, 150, 177]
+	      Value		      "fc_plot_axis"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 4]
+	      Position		      [210, 112, 215, 213]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "4"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [315, 34, 330, 176]
+	      Inputs		      "*/"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [270, 112, 280, 163]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [270, 42, 280, 93]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      Position		      [230, 165, 250, 185]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator1"
+	      Position		      [230, 190, 250, 210]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "W=>kW"
+	      Position		      [400, 90, 440, 120]
+	      Gain		      ".001"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "dec=>%"
+	      Position		      [350, 90, 380, 120]
+	      Gain		      "100"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [460, 98, 490, 112]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Terminator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -45]
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "dec=>%"
+	      SrcPort		      1
+	      DstBlock		      "W=>kW"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "W=>kW"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "dec=>%"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "fc_pwr_out_a"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [355, 83, 385, 97]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "SubSystem1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "SubSystem1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [0, 5]
+	  DstBlock		  "SubSystem"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "SubSystem"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "mc_spd_plot"
+	  Labels		  [0, 0]
+	  SrcBlock		  "SubSystem"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "mc_trq_plot"
+	  Labels		  [0, 0]
+	  SrcBlock		  "SubSystem"
+	  SrcPort		  2
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "fc_spd_plot"
+	  Labels		  [0, 0]
+	  SrcBlock		  "SubSystem1"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "fc_trq_plot"
+	  Labels		  [0, 0]
+	  SrcBlock		  "SubSystem1"
+	  SrcPort		  2
+	  Points		  [80, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "fuel cell pwr plot"
+	  Labels		  [0, 0]
+	  SrcBlock		  "SubSystem2"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "SubSystem2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [695, 30, 715, 50]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [695, 80, 715, 100]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [695, 130, 715, 150]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      MATLABFcn
+      Name		      "interactive_replay"
+      Position		      [75, 25, 135, 55]
+      MATLABFcn		      "interactive_replay"
+      OutputDimensions	      "60"
+      OutputSignalType	      "auto"
+      Output1D		      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "replay"
+      Position		      [470, 155, 500, 185]
+      Value		      "1"
+      VectorParams1D	      on
+    }
+    Line {
+      SrcBlock		      "interactive_replay"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Selector"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 70]
+	DstBlock		"Selector1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Altia_SubSystem"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Altia_SubSystem"
+      SrcPort		      2
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "replay"
+      SrcPort		      1
+      DstBlock		      "Altia_SubSystem"
+      DstPort		      3
+    }
+    Line {
+      Name		      "time_gain"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_SubSystem"
+      SrcPort		      3
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Altia_SubSystem"
+      DstPort		      4
+    }
+    Line {
+      Name		      "altiaCloseEvent"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_SubSystem"
+      SrcPort		      5
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector1"
+      SrcPort		      1
+      DstBlock		      "Altia_SubSystem"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Selector3"
+      SrcPort		      1
+      DstBlock		      "Altia_SubSystem"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector"
+      SrcPort		      1
+      Points		      [10, 0; 0, 0]
+      Branch {
+	DstBlock		"Selector2"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Selector3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector2"
+      SrcPort		      1
+      DstBlock		      "SubSystem"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SubSystem"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "IC"
+      SrcPort		      1
+      Points		      [0, -105]
+      DstBlock		      "interactive_replay"
+      DstPort		      1
+    }
+    Line {
+      Name		      "time_position"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_SubSystem"
+      SrcPort		      4
+      Points		      [165, 0; 0, 135; -755, 0]
+      DstBlock		      "IC"
+      DstPort		      1
+    }
+  }
+}

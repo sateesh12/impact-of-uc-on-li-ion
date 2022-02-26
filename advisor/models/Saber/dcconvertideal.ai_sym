@@ -1,0 +1,46 @@
+[symbol6]
+desc {}
+uniq 72
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 5.0 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ffffc0c0cbcb}
+{} {#ffff00}
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+dcmacideal_0
+-798 -224 30 320
+0 0 
+<properties>
+primitive dcconvertideal { } string {} -752 -624 0 0 0 5 3 {} 0 1 {} {} {} 6 l
+ref dcconvertideal { } string {} -752 -752 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+out 0 160 1 0 -64 -64 128 7 1 2 0 0 2 {} 6
+com -320 -160 1 0 -624 -624 -112 7 1 2 0 0 2 {} 6
+in -768 160 1 0 -800 -800 112 7 1 2 0 0 2 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_0_ 0 1 1 0 1 10 1 0 {-768 160 -656 160 } {8 10 3} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {-112 160 0 160 } {8 10 3} 6 
+l gr_2_ 0 1 1 0 1 10 1 0 {-320 -224 -320 -96 } {8 10 3} 6 
+r gr_4_ -656 -96 -112 320 0 1 10 1 0 0 6 
+l gr_46_ 0 1 1 0 1 10 1 0 {-656 -96 -112 320 } {8 10 3} 6 
+t gr_28_ -592 304 4 1 0 0 0 0 7 0 {DC
+     DC} 6 

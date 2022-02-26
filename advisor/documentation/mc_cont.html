@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Motor controller logic</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Motor controller logic</h1>
+</div>
+<h3 id="motor-controller-logic">Motor controller logic</h3>
+<p><em><a href="mc_cntBD.gif">Motor Controller logic block diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />This block implements some of the logical control functions of the motor’s controller (a.k.a. inverter).  It prevents the controller from requesting more current than it can handle, and shuts the motor off if the vehicle is not moving or if the gearbox is in the process of changing gears.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />To enforce the motor/controller’s current limit, the maximum requested power is computed as the product of the maximum current, mc_max_crrnt, and the bus voltage at the previous time step.  This product is the limiting absolute value that the power request will take on: the motor/controller will ask to take no more power from nor give more power to the bus.</p>
+<p>Boolean logic enforces the required off conditions.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong><br />mc_max_crrnt</p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Motor/Controller">See Appendix A.2: Input Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

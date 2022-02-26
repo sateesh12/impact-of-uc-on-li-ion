@@ -1,0 +1,33 @@
+################################################################################
+#                                                                              #
+#  Saber netlist for design NiMH_Model                                         #
+#  Created by the Saber Integration Toolkit 5.2.2-3.4 of Analogy, Inc.         #
+#  Created on Fri Jan 04 17:11:43 2002.                                        #
+#                                                                              #
+################################################################################
+
+
+################################################################################
+#                                                                              #
+#  Instances found in the top level of design NiMH_Model                       #
+#                                                                              #
+################################################################################
+
+i2var.i2var1 p:_n106 m:p out:_n118 = k=-1
+integ.integ1 out:soc in:_n204 = k=5.78091488759e-06, init=0.5
+c.c1 p:_n1 m:m = ic=7.886, c=1p
+v2var.v2var1 p:p m:m out:voltage 
+mult.mult1 out:_n202 in1:_n118 in2:voltage 
+diff.diff1 out:_n204 in1:_n202 in2:_n221 
+poweradjustment.poweradjustment_215_ Rc_power:_n198 Rt_power:_n200 \
+        Re_power:_n199 Current:_n118 power_adj:_n221 thermal_power_out:_n226 
+var2th_pwr.var2th_pwr1 in:_n226 tp:0 tm:_n222 
+tempsrc.tempsrc1 tl:0 th:_n224 = dc=25
+rtherm.rtherm2 tl:_n224 th:_n222 = rth=0.1
+ctherm.ctherm1 tl:0 th:_n222 = cth=974.0, t_init=25
+tempc2var.tempc2var1 th:_n222 tl:0 out:_n107 
+nimh_Cb.nimh_cb1 in:_n107 outp:_n1 outm:m 
+nimh_Cc.nimh_cc1 in:_n107 outp:_n105 outm:m 
+nimh_rc.nimh_rc1 in1:soc in2:_n107 outp:_n2 outm:_n105 Rc_value:_n198 
+nimh_re.nimh_re1 in1:soc in2:_n107 outp:_n2 outm:_n1 Re_value:_n199 
+nimh_rt.nimh_rt1 in1:soc in2:_n107 outp:_n106 outm:_n2 Rt_value:_n200 

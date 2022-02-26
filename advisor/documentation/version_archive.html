@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Version 3</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Version 3</h1>
+</div>
+<h1 id="change-log">Change Log</h1>
+<h2 id="advisor-2003-00-r0110-posted-2013-04-24">ADVISOR-2003-00-r0110 (posted 2013-04-24)</h2>
+<p>This release of ADVISOR contains the following fixes and enhancements:</p>
+<ul>
+<li>Updated README.txt file for current release and help information</li>
+<li>Changed documentation base format from HTML to Markdown</li>
+<li>Multiple documentation fixes for errors</li>
+<li>Fixed loading of driving cycles AQMD RTC2 cycle, NYGTC</li>
+<li>Added missing files from NREL: jpeg files and simulink new-style block diagrams</li>
+<li>Switch documentation to markdown format</li>
+<li>Added “get_adv_path” function to simplify m-file code working with cross-platform relative path</li>
+</ul>
+<h2 id="advisor-2003-00-r0080-posted-2012-06-29">ADVISOR-2003-00-r0080 (posted 2012-06-29)</h2>
+<p>This is a bug-fix release of the ADVISOR software 2003. With this release, the ADVISOR software is now able to run on the Mac OS X platform. It should also run on Linux (if you have Matlab/Simulink installed) but this has not been tested. Any ability to test on Linux will be appreciated. This release also begins to fix some of the warnings and errors due to changes in the MATLAB and Simulink API.</p>
+<h2 id="advisor-2003-00-r0000-posted-2012-01-03">ADVISOR-2003-00-r0000 (posted 2012-01-03)</h2>
+<p>This is the original release provided to Big Ladder by NREL for distribution as open-source software. This distribution of ADVISOR will form the base case for any regression testing.</p>
+<h2 id="version-2002-april-30-2002-release">Version 2002 [April 30, 2002 Release]</h2>
+<ul>
+<li>Configurable subsystems now used in Simulink models [<a href="configurable_subsystems.html">click for documentation</a>]</li>
+<li>Delta-SOC correction based on ratio of change in stored battery energy to total fuel energy used[<a href="glossary.html#SOC_energy_correction">click for documentation</a>] </li>
+<li>Ultracapacitor model with Maxwell data [<a href="ess_uc.html">click for documentation</a>]</li>
+<li>Rolling resistance model provided by Michelin [<a href="J2452_RR.html">click for documentation</a>]</li>
+<li>Fuzzy logic from Ohio State University (updated to include simultaneous emissions and fuel use control) [<a href="fuzzyemis.html">click for documentation</a>]</li>
+<li>Co-simulation link with Saber for a more detailed electrical analysis option [<a href="Saber_cosim_help.html">click for documentation</a>]</li>
+<li>Direct link with Ansoft SIMPLORER<sup>®</sup> for electrical system co-simulation [<a href="Simplorer_cosim_help.html">click for documentation</a>]</li>
+<li>Files added to allow Sinda/Fluint co-simulation with ADVISOR for transient air conditioning system analysis [<a href="sinda_cosim.html">click for documentation</a>]</li>
+<li>Executable for running ADVISOR analyses from outside of MATLAB [<a href="advisor_ch2.html#2.3.1">click for documentation</a>]</li>
+<li>New command line tool for doing engine map modifications, plotting, and studies [<a href="eng_map.html">click for documentation</a>]</li>
+<li>Speed-dependent auxiliary loads and other configurable auxiliary load models implemented using configurable subsystems [<a href="accessory_models2002.html">click for documentation</a>]</li>
+<li>New functionality added to adv_no_gui.m to allow autosizing [<a href="advisor_ch2.html#2.3">click for documentation</a>]</li>
+<li>A batch auto-update function to assist users in transitioning from previous versions of ADVISOR to ADVISOR 2002 [<a href="update_notes.html">click for documentation</a>]</li>
+<li>Engine scaling by bore and stroke is now available [<a href="bore_stroke_scaling.html">click for documentation</a>]</li>
+<li>Heavy vehicle tire information added to the wheel/axle model in ADVISOR [<a href="hvy_veh_tires.html">click for documentation</a>]</li>
+<li>Heavy vehicle engine emission models using Neural Networks are available [<a href="nn_eng_emis_model.html">click for documentation</a>]</li>
+<li>New heavy duty components have been added (see table below for a complete listing)</li>
+<li>Ability to customize the ADVISOR menus for multiple users or projects [<a href="custom_menus.html">click for documentation</a>]</li>
+<li>GUI files have been converted to *.fig format to allow easier customization</li>
+</ul>
+<p> </p>
+<table border="1" cellpadding="0" width="100%" style="width:100.0%;mso-cellspacing:
+ 1.5pt;mso-padding-alt:0in 0in 0in 0in" cols="3">
+<tr>
+<td colspan="3" style="border:none;padding:.75pt .75pt .75pt .75pt">
+<p>New Component, Drive Cycle, and Vehicle Files Added to ADVISOR Version 2002</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p><strong>File Name<o:p></o:p></strong></p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p><strong>Location<o:p></o:p></strong></p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p><strong>Description<o:p></o:p></strong></p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>ACC_SAEJ1343_line</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Accessory duty cycle for a tractor trailer under typical line haul/long haul conditions (based on SAE J1343 specification). Line haul/Long haul is taken to represent trucks that travel &gt;500 miles from home base per trip. (definition taken from VIUS–Vehicle Inventroy and Use Survey 1997)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>ACC_SAEJ1343_local</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Accessory duty cycle for a tractor trailer under typical local haul (based on SAE J1343 specification). Local is assumed to mean trips within 50 miles of home base (VIUS).</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>ACC_SAEJ1343_short</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Accessory duty cycle for a tractor trailer under typical short haul conditions (based on SAE J1343 specification). Short haul is taken to mean trucks that travel from 50 to 100 miles from their home base per trip. (VIUS)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>ACC_Sinda_default</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Default accessory load file to call up the configurable subsystem to use with Sinda/Fluint transient air-conditioning model. Requires Sinda/Fluint to run.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_abc</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>air brake compressor file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_ac</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>air condition file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_alt</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>alternator file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_ef</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>engine fan file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_op</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>oil pump file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block. Note: it is assumed that oil pump operation is boiled into the original engine map. Therefore, if the oil pump is “turned off” this file subtracts the estimated effect the oil pump had on the engine.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_ps</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>power steering file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>c8truck_wp</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>water/coolant pump file for speed dependent auxiliary loads for a Class 8 Truck. This file initializes a simulink block. Note: it is assumed that the water/coolant pump operation is boiled into the original engine map. Therefore, if the water/coolant pump is “turned off” this file subtracts the estimated effect the water/coolant pump had on the engine.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_abc</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null air brake compressor file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_ac</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null air condition file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_alt</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null alternator file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_ef</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null engine fan file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_op</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null oil pump file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_ps</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null power steering file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>null_wp</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/accessory/etc</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Null water/cooling pump file (i.e., no load). This file initializes a simulink block</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>CYC_NYGTC</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/drive_cycle</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>New York Garbage Truck Cycle</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>CYC_const_65</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/drive_cycle</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>A constant 65 mph drive cycle. Vehicle will automatically be put in gear to start at 65 mph.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI324</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>324 kW compression ignition engine (15 Liter)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI321</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>321 kW compression ignition engine (12 Liter)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI250</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>250 kW compression ignition engine (10 Liter)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI205cat3126_emis</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>205 kW CI engine map based on testing of the Caterpillar 3126 engine. Includes emissions</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI162_emis_ft_poly</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>162 kW CI engine map based on testing done on the Navistar T444 engine by Battelle for the DECSE program. Fuel is Fischer Tropsch.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI163_emis_d2_poly</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>163 kW CI engine map based on testing done on the Navistar T444 engine by Battelle for the DECSE program. Fuel is no. 2 diesel.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_CI92_emis</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>92 kW 2.2L CIDI Mercedes engine data collected by SwRI</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>FC_ANL50H2_p</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/fuel_converter</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>50 kW(net) pressurized hydrogen fuel cell system based on GCTool modeling results for use with polarization curve based fuel cell model</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>ESS_UC2_Maxwell</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/energy_storage</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Maxwell ultracapacitor data</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>VEH_ralphs_grocery</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/vehicle</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Chassis based on a Sterling AT9513 (1999) from Ralphs Grocery EC-Diesel Truck Fleet (see a related report <a href="http://www.ctts.nrel.gov/heavy_vehicle/diesel_pub.html#ecdiesel">here</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>grocery_delivery_truck_in</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/saved_vehicles</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Based on Ralphs Grocery Trucks from EC-Diesel testing. A Sterling AT9513 with DDC s60 engine hauling a trailer with cargo.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>WH_TractorTrailer_lowRR_SS</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/wheel</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Tractor Trailer with low rolling resistance tires plus super singles (i.e., a wide wheel that replaces two conventional wheels)</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>WH_TractorTrailer_lowRR</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/wheel</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Tractor Trailer with lower rolling resistance conventional wheels</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>WH_TractorTrailer_midRR</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/wheel</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Tractor Trailer with mid-range rolling resistance conventional wheels</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>WH_TractorTrailer_highRR</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/data/wheel</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Tractor Trailer with higher rolling resistance conventional wheels</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>AnnexVII_CONV_in</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/saved_vehicles</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>Conventional distribution truck from Annex VII (Hybrid Vehicles) Topic 13 on the assessment of the energy consumption of hybrid trucks using ADVISOR. Includes files veh_AnnexVII_HD_conv and TX_AnnexVII_conv. Files contributed by <a href="http://www.automotive.tno.nl">TNO Automotive</a>.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>AnnexVII_PHEV_in</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/saved_vehicles</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>A Parallel hybrid distribution truck from the TNO IEA Annex VII study mentioned above. Files include: veh_AnnexVII_HD_conv, TX_AnnexVII_conv, PTC_PHEV_mv, ESS_AnnexVII_SHEV_NIMH28, and MC_AnnexVII_SerHyb.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>AnnexVII_PHEV_SA_in</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/saved_vehicles</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>A Parallel starter-alternator distribution truck from the TNO IEA Annex VII study mentioned above. Files include: veh_AnnexVII_HD_conv, TX_AnnexVII_conv, PTC_PHEV_mv, ESS_AnnexVII_SHEV_NIMH28, and MC_AnnexVII_SerHyb.</p>
+</td>
+</tr>
+<tr>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>AnnexVII_SHEV_in</p>
+</td>
+<td width="25%" style="width:25.0%;padding:.75pt .75pt .75pt .75pt">
+<p>&lt;ADV&gt;/saved_vehicles</p>
+</td>
+<td width="50%" style="width:50.0%;padding:.75pt .75pt .75pt .75pt">
+<p>A Series hybrid distribution truck from the TNO IEA Annex VII study mentioned above. Files include: veh_AnnexVII_HD_conv, TX_AnnexVII_SerHyb, PTC_shev_mv, ESS_AnnexVII_SHEV_NIMH28, ACC_AnnexVII_serHyb, MC_AnnexVII_SerHyb, and gc_AnnexVII_serHyb.</p>
+</td>
+</tr>
+</table>
+<p> </p>
+<center>
+<h2 id="version-3.2-release-20-august-2001">Version 3.2 [release 20 August 2001]</h2>
+</center>
+<ul>
+<li>New functionality to specify vehicle cargo mass versus distance [<a href="cargo_mass_vs_distance.html">click for documentation</a>]</li>
+<li>New transmission gearbox model (manual and automatic) using lookup table for efficiency [<a href="gearbox_loss_model_3_2.html">click for documentation</a>]</li>
+<li>Trace miss analysis calculation from the “Results” screen when vehicle fails to meet drive trace [<a href="advisor_ch2.html#trace_miss_analysis">click for documentation</a>]</li>
+<li>Templates for linking optimization tools to MATLAB and ADVISOR [<a href="optimization_scripts.html">click for documentation</a>]</li>
+<li>User definable mass and battery resistance scaling relationships [<a href="scaling_relationships.html">click for documentation</a>]</li>
+<li>Vehicle-speed dependant shift control [<a href="spd_dep_shifting.html">click for documentation</a>]</li>
+<li>New time dependent auxiliary load specification [<a href="aux_loads_help.html">click for documentation</a>]</li>
+<li>Auto-update feature improved–more documentation now available [<a href="update_notes.html">see here for details</a>]</li>
+<li>A fuzzy logic strategy for parallel hybrid electric vehicles is now available to the user.[<a href="fuzzy_logic.html">click for documentation</a>]</li>
+<li>PNGV Pulse Power Plot for energy storage systems. [<a href="pulse_pwr_plot_help.html">click for documentation</a>]</li>
+<li>New RC battery model and datafiles based on testing at NREL. [<a href="ess_rc.html">click for documentation</a>]</li>
+<li>New emissions control device models based on testing at ORNL. [<a href="emis_ornl.html">click for documentation</a>]</li>
+<li>A new Honda Insight parallel hybrid electric vehicle control strategy is modeled using test data and data from published sources.[<a href="honda_insight.html">click for documentation</a>]</li>
+<li>Vehicle Solar Load Estimator (VSOLE) subprogram provided to calculate solar load in vehicle based on glazings selected.  This is no longer available through ADVISOR.  Please visit <a href="http://www.nrel.gov/programs.html">www.ctts.nrel.gov/programs.html</a> and the vehicle auxiliary loads reduction team.</li>
+<li>Image to Map functionality added to be able to take an image, click on curves and save them to a *.m file.  This is accessible through the component edit lists by pushing the buttons labeled with the component name.</li>
+</ul>
+<center>
+<table border cols="2" width="100%">
+<caption>
+<p>New Component, Drive Cycle, and Vehicle Files Added to ADVISOR Version 3.2</p>
+</caption>
+<tr align="CENTER" valign="CENTER">
+<td>
+<p><strong>File Name</strong></p>
+</td>
+<td>
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TX_ZF5HP590AT</p>
+</td>
+<td>
+<p>A preliminary heavy-duty 5-speed automatic transmission. Gear ratios based upon ZF 5HP590</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MC_AC187</p>
+</td>
+<td>
+<p>A 187 kW AC motor representative of motors used in series hybrid transit buses</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TX_1SPD_BUS</p>
+</td>
+<td>
+<p>A single-speed gearbox especially for series hybrid transit bus applications</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TX_AUTO4_IDEAL</p>
+</td>
+<td>
+<p>A 4-speed automatic with 100% efficient gearbox–only losses are due to hydraulic torque converter</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PTC_CONVAT5spd</p>
+</td>
+<td>
+<p>Powertrain Control for 5-speed (intended for use with TX_ZF5HP590AT)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CYC_UKBUS_MASS_VAR1</p>
+</td>
+<td>
+<p>A drive cycle typical of a London bus journey. This file contains variable cargo mass (passenger mass changes as patrons enter and exit the bus). Special thanks to Newbus Technology Limited, UK for providing this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TransitBus_conv_auto_in</p>
+</td>
+<td>
+<p>A vehicle file for a recent (~year 2000) model transit bus with automatic transmission. This transit bus is operating under severe auxiliary loading–i.e., A/C on full. Simulated mass corresponds to 1/2 Seated Load Weight (i.e., weight of half the possible seated passengers is added to vehicle model assuming 68 kg a head). A value of 14 kW (mechanical) is assumed for A/C loading. Compare this file with the hybrid bus file both with and without A/C loading.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TransitBus_conv_CNG_auto_in</p>
+</td>
+<td>
+<p>Similar to <em>TransitBus_conv_auto_in</em> but corresponding to a CNG powered bus.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TransitBus_ser_highAux_in</p>
+</td>
+<td>
+<p>This transit bus model is similar to <em>TransitBus_conv_auto_in</em> but incorporates those changes necessary for hybridization. This model is similarly setup by default to be under heavy auxiliary loading (A/C on) and 1/2 Seated Load Weight. A value of 14 kW of mechanical auxiliary loading is assumed for the A/C’s contribution. This model incorporates new components and a more informed setup than TransitBus_hybrid_in (from ADVISOR v. 3.1–kept for legacy purposes). The user may be interested to compare this vehicle setup with <em>TransitBus_conv_auto_in</em>–both with and without A/C auxiliary loading.</p>
+<p>For comparison, actual bus fuel economy information can be obtained from:</p>
+<ul>
+<li>“Hybrid-Electric Drive Heavy-Duty Vehicle Testing Project: Final Emissions Report”, NAVC, 15 Feb 2000 available <a href="http://www.navc.org">here</a></li>
+<li>NREL Bus Emissions Database Queries available <a href="http://www.ctts.nrel.gov/heavy_vehicle/emissions.html">here</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p>TransitBus_ser_cng_in</p>
+</td>
+<td>
+<p>Similar to <em>TransitBus_ser_highAux_in</em> but using a CNG powered engine.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CYC_INDIA_URBAN_SAMPLE</p>
+</td>
+<td>
+<p>A sample (unofficial) Indian Urban driving cycle, taken on 12-March-2000 for 2689 seconds. This cycle is characterised by frequent starts and stops, with lower top speeds.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CYC_INDIA_HWY_SAMPLE</p>
+</td>
+<td>
+<p>A sample (unofficial) Indian highway driving cycle, taken on 12-March-2000 for 881 seconds. This cycle is characterised by moderate transients, with lower top speeds.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ACC_CONV_BUS</p>
+</td>
+<td>
+<p>Defines what is thought to be a typical load for a transit bus (note: a breakdown of loads as well as values for A/C on are given in the file)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ACC_SER_HYBRID_BUS</p>
+</td>
+<td>
+<p>Defines what is thought to be a typical load for a series hybrid transit bus (note: a breakdown of loads as well as values for A/C on are given in the file)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CYC_CLEVELAND</p>
+</td>
+<td>
+<p>First four laps of formula electric race at Cleveland Burke Lakefront Airport in 1997.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CYC_COAST</p>
+</td>
+<td>
+<p>Coastdown from 35 mph (effectively the transmission is forced into “neutral” by setting gb_shift_delay to a large time)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CYC_1015_6PRIUS</p>
+</td>
+<td>
+<p>ANL dyno test data on Prius for Japanese 10-15 driving cycle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>VEH_CYCLE</p>
+</td>
+<td>
+<p>Defines a motorcycle</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>VEH_FOCUS</p>
+</td>
+<td>
+<p>Based on the Ford Focus EV</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>VEH_SUBURBAN_RWD</p>
+</td>
+<td>
+<p>2000 Chevy Suburban for Future Truck 2000</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ESS_PB65_FocusEV</p>
+</td>
+<td>
+<p>Draft energy storage based on the Optima Spiralwound VRLA prototype battery D750S</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MC_AC150_Focus_draft</p>
+</td>
+<td>
+<p>Based on spec sheet for AC-150 motor/controller</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MC_PM15_LYNX</p>
+</td>
+<td>
+<p>Lynx Motion 15-kW cont/45-kw peak permanent magnet motor/controller</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TX_1SPD_FOCUS</p>
+</td>
+<td>
+<p>1-speed gearbox for use with Ford Focus EV model</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>GC_PM63</p>
+</td>
+<td>
+<p>Mannesmann Sachs 63 kW permanent magnet generator/controller</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WH_CYCLE</p>
+</td>
+<td>
+<p>Wheel definition for motorcycle</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WH_FOCUS_REGEN</p>
+</td>
+<td>
+<p>Wheel/axle assembly for Ford Focus</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ACC_EV_FOCUS</p>
+</td>
+<td>
+<p>Assumed accessory load on EV Ford Focus</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TX_AUTO4_4L60E</p>
+</td>
+<td>
+<p>Model of GM 4L60E Automatic Transmission + Final Drive</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>conv_27mpg_in</p>
+</td>
+<td>
+<p>Baseline conventional vehicle that achieves ~27 mpg on the city/highway test</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>para_80mpg_in</p>
+</td>
+<td>
+<p>Baseline parallel hybrid vehicle that achieves ~80 mpg on the city/highway test</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Focus_in</p>
+</td>
+<td>
+<p>Electric Ford Focus vehicle model submitted by Brian Andonian (bandoman@umich.edu)</p>
+</td>
+</tr>
+</table>
+</center>
+
+<hr />
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a></p>
+<hr />
+<p>Created: [23-April-2002] kh<br /> Modified: [16-January-2003] ss</p>
+</body>
+</html>

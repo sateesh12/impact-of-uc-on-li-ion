@@ -1,0 +1,43 @@
+[symbol6]
+desc {}
+uniq 29
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 5.0 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+radiator_fan_0
+-320 -350 480 510
+0 0 
+<properties>
+primitive radiator_fan { } string {} -432 -528 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref radiator_fan { } string {} -432 -656 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+p -160 480 1 0 -112 -112 448 7 1 2 0 0 4 {} 6
+m -160 -320 1 0 -128 -128 -160 7 1 2 0 0 4 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+r gr_2_ -320 -160 480 320 0 1 10 1 0 0 6 
+t gr_3_ -304 304 2 1 0 0 0 0 7 0 {Radiator
+Fan} 6 
+l gr_7_ 0 1 1 0 1 10 1 0 {-160 -160 -160 -320 } {8 10 3} 6 
+l gr_8_ 0 1 1 0 1 10 1 0 {-160 320 -160 480 } {8 10 3} 6 

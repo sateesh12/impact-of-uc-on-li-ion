@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Clutch</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Clutch</h1>
+</div>
+<h3 id="clutch">Clutch</h3>
+<p><em><a href="clutch.gif">Clutch block diagram</a> – visible by right-clicking the ‘Clutch’ and selecting ‘Look Under Mask’</em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The ‘clutch’ block generally transmits torque and speed requests from the ‘gearbox’ or, in the case of the pre-transmission parallel hybrid, the torque coupler, to the ‘ICE fuel converter.’ It also generally transmits actual torque and speed from the ‘ICE fuel converter’ back to the ‘gearbox’ or ‘torque coupler.’ This block is useful wherever the vehicle control needs to interrupt torque transmission from one component to another.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The clutch has three states: disengaged, slipping, and fully engaged.</p>
+<p>When disengaged, the clutch requests and transmits no torque. It requests the input speed be the same as the requested output speed (‘request’ data path), and passes the requested output speed as the output speed limit (‘actual’ data path).</p>
+<p>When slipping, it requests that the output torque be the same as the input torque, and passes the actual input torque as the actual output torque. It requests that the input speed be the predefined, constant slip speed, and passes the requested output speed as the speed limit.</p>
+<p>When engaged, it passes torque and speed unchanged on both the ‘request’ and ‘actual’ data paths.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Output%20Clutch">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+[symbol8]
+desc {}
+uniq 5
+[resources]
+<font>
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive regulator_42v_usa { } string {} -1056 32 2 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref regulator_42v_usa { } string {} -1216 -256 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+vset 160 960 1 0 176 176 944 0 7 1 2 0 0 2 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-1296 256 448 990
+r gr_0_ -1296 256 448 800 0 1 10 1 0 0 6 
+t gr_1_ -1248 752 1 1 0 0 0 0 7 0 {Voltage Regulator
+Curve} 6 
+l gr_3_ 0 1 1 0 1 10 1 0 {160 800 160 960 } {8 10 3} 6 

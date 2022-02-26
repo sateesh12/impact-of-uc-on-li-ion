@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Rint Model</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Rint Model</h1>
+</div>
+<h3 id="rint-battery-model"><strong>Rint Battery Model</strong></h3>
+<p><a href="ess_update.html">Battery Model Update Impacts</a></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The Energy Storage System (ESS) block represents the battery pack that stores energy on board the modeled vehicle.  This block accepts a power request, usually from the power bus, and returns available/actual power output from the battery, the battery voltage and current, and the battery <a href="glossary.html#SOC">State of Charge (SOC)</a>.  By convention, positive power is discharge.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The ESS block models the battery pack as a charge reservoir and an equivalent circuit whose parameters are a function of the remaining charge in the reservoir.  The equivalent circuit accounts for the circuit parameters of the battery pack as if it were a perfect <a href="glossary.html#O">open circuit voltage</a> source in series with an <a href="glossary.html#I">internal resistance</a>.   The amount of charge that the ESS can hold is taken as constant, and the battery is subject to a minimum voltage limit.  The amount of charge that is required to replenish the battery after discharge is affected by <a href="glossary.html#Coulombic%20efficiency">coulombic efficiency</a>.  The charging of the battery is limited by a maximum battery voltage.  While the battery is treated as a perfect electrical voltage source with a known resistance, the components to which the battery would be connected, such as a motor or a generator, are treated as power sources or sinks.  Power delivered by the battery is limited to the maximum that the equivalent circuit can deliver or the maximum that the motor controller can accept, given its minimum voltage requirement.</p>
+<p>Other relevant glossary terms include: <a href="glossary.html#C">Capacity</a>, <a href="glossary.html#R">Rated Capacity</a>, <a href="glossary.html#CNrate">C/N rate,</a> <a href="glossary.html#N">N hour rate</a>, and [Peukert’s equation](glossary.html#Peukert’s%20Equation).</p>
+<p>A simple single-node thermal model of the battery is implemented with parallel flow air cooling.  More detail can be found in the <a href="ess_therm.html">battery thermal model explanation</a>.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Energy%20Storage%20System">See Appendix A.2: Input Variables</a><br /><a href="advisor_appendices.html#Output%20Energy%20Storage%20System">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<p><strong><u>Implementation</u></strong></p>
+<p><strong>Energy Storage System (Top level)</strong></p>
+<p>
+<p>As described above, the energy storage model computes the battery SOC in response to the requirements of the power bus and outputs the available power.  Power loss is computed as I<sup>2</sup>R losses plus losses due to Coulombic (in)efficiency.  A step-by-step explanation follows.</p>
+<center>
+<p>
+<div class="figure">
+<img src="energy_storage.gif" />
+</div>
+</center>
+<ol style="list-style-type: decimal">
+<li>The battery is modeled as an equivalent circuit comprising a perfect open circuit voltage source (<a href="glossary.html#O">Voc</a>) in series with an effective internal resistance (<a href="glossary.html#I">Rint</a>).  Voc and Rint are computed as piecewise linear functions of SOC. There are two such functions for computing Rint, one for discharge power and another for charge power.</li>
+<li>The total <u>power that the battery can deliver</u> is limited to be in an allowable range.</li>
+<li>The set of parameters–Voc, Rint, and actual Power–are the variables of a quadratic equation to solve for equivalent circuit’s <u>current</u>.</li>
+<li>The battery current is then used to update the effective <u>SOC</u> of the battery.</li>
+<li>The thermal model of the battery calculates the module temperature, which is fed back to be used in determining the performance parameters.</li>
+</ol>
+<p>Each of these sub-blocks is explained below.</p>
+<p>
+<p><strong>1. Pack Open Circuit Voltage and Internal Resistance:</strong> This block calculates Voc and Rint given the current SOC and required battery power.</p>
+<center>
+<p>
+<div class="figure">
+<img src="VOC.jpg" />
+</div>
+</center>
+<ol style="list-style-type: decimal">
+<li>Interpolated lookup tables for open circuit voltage (Voc) and the charging and discharging resistance are used to determine these parameters as functions of SOC and the module temperature.</li>
+<li>The appropriate resistance is chosen, based on whether the power requirement is to charge (negative power) or discharge (positive power) the battery.</li>
+<li>The two parameters are scaled by the number of battery modules in series.</li>
+</ol>
+<p>
+<p><br /><strong>2. Limit Power:</strong>This block prevents the power that is used to compute the battery current from exceeding limits imposed by three limits: SOC, equivalent circuit parameters, and the motor controller’s minimum allowable voltage.</p>
+<center>
+<p>
+<div class="figure">
+<img src="limit_power.jpg" />
+</div>
+</center>
+<ol style="list-style-type: decimal">
+<li>If an attempt is made to draw power from a depleted battery, the power request is limited to zero.</li>
+<li>The maximum power available from the battery is limited by three parameters, all related to the available voltage.  The operating voltage cannot drop below either the motor’s minimum voltage or the battery’s minimum voltage.  If neither of these limits are exceeded, the maximum power available will be observed when the voltage is equal to Voc/2.</li>
+<li>The maximum power limit is calculated, according to the formula:<img src="maxpower.gif" />  where Vbus is either Voc/2, the minimum motor controller voltage, or the minimum battery voltage, whichever is larger.</li>
+</ol>
+<p>
+<p><br /><strong>3. Compute Current:</strong>This block solves the quadratic equation for current that is derived by starting with the definition of electrical power and Kirchoff’s voltage law (KVL) for the equivalent circuit shown below.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><em>Block Diagram</em></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><u>Current</u> is determined.  Power is defined as: <em>P=V x I</em>, or <em>V=P/I</em>.  Combining the power equation with KVL yields: <em>P/I=Voc-(R x I)</em>.  Multiplying both sides of the equation by I yields <em>P = (Voc x I) - RI<sup>2</sup></em> .  This is the equation that is solved in the block diagram: <em>RI<sup>2</sup> - (Voc x I) + P = 0</em>.  There are actually two solutions for this equation, but the larger solution is not considered because it would require larger current, and thus a lower terminal voltage, to produce the same power. All solutions that require a terminal (or bus) voltage less than half the battery’s open circuit voltage are thus not considered.  During charge, the maximum voltage must not be exceeded.  This maximum charge current (or minimum raw value of current since charging is a negative current) is found from <em>I=(Voc-Vmax)/R</em>.</li>
+<li><u>Bus voltage</u> is determined.  Kirchoff’s voltage law, applied along the equivalent circuit loop, requires that: <em>V=Voc-(RxI).</em></li>
+</ol>
+</blockquote>
+<p>
+<p><br /><strong>4. SOC algorithm:</strong>The state of charge (SOC) algorithm in ADVISOR is responsible for determining the residual capacity, in units of Amp-hours (charge), that remains available for discharge from the battery. It approximates this value in a series of steps.  Note that the coulombic efficiency and maximum capacity are functions of temperature.</p>
+<center>
+<p>
+<div class="figure">
+<img src="SOC.jpg" />
+</div>
+</center>
+<ol style="list-style-type: decimal">
+<li>The sum of all discharging current and all charging current (scaled by an estimate of average coulombic efficiency) determines an <u>effective total Ah change</u> in the battery since the beginning of the simulation.</li>
+<li>The initial SOC is accounted for by taking having a non-zero initial A-h used.</li>
+<li>The SOC is calculated by using the equation: <em>SOC=(Max Capacity-Ah used)/Max Capacity</em>.</li>
+</ol>
+<p><strong>5. Thermal model:</strong> A simple, single-node lumped-parameter thermal model was added to the ESS (energy storage system) sub-block of the ADVISOR. This thermal model predicts the average internal battery temperature and surface (case) temperature as a function of time while the vehicle is driven and during soak periods. Currently there is only one cooling option: parallel-flow air cooling (each module has the same air flow and inlet air temperature, which are specified by the user).  See the <a href="ess_therm.html">battery thermal model explanation</a> for more details.</p>
+<center>
+<div class="figure">
+<img src="ess_therm.jpg" />
+</div>
+</center>
+
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>
+<p>Last Revised: 5/29/01: vhj</p>
+</body>
+</html>

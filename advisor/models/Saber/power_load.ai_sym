@@ -1,0 +1,43 @@
+[symbol8]
+desc {}
+uniq 24
+[resources]
+<font>
+{-family Arial -size 2.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 4 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive power_load { } string {} -240 -512 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+power_load 370 SABER string {} -1280 -80 1 0 0 5 3 {} 0 3 {} {} {} 6 l
+loadcontrol 0 SABER string {} -1104 -352 1 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref power_load { } string {} -1232 -208 1 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+m 0 -320 1 0 64 64 -400 0 5 1 2 0 0 1 {} 6
+p 0 320 1 0 96 96 400 0 7 1 2 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-320 -350 440 350
+t gr_0_ -160 144 2 1 0 0 0 0 7 0 {Power
+Load} 6 
+c gr_4_ -320 -320 320 320 0 1 10 1 0 0 6 
+l gr_6_ 0 1 1 2 1 10 1 0 {416 208 416 -208 } {8 10 3} 6 

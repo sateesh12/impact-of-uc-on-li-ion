@@ -1,0 +1,7195 @@
+Library {
+  Name			  "lib_vehicle"
+  Version		  4.1.1
+  LibraryLinkDisplay	  "none"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue May 30 16:44:51 2000"
+  UpdateHistory		  "UpdateHistoryWhenSave"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "ssprik"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Sep 05 12:04:31 2003"
+  ModifiedComment	  "ssprik -- Fri Sep 05 12:04:31 2003 -- Version 1.64"
+"\nadded climbing grade calculation in .../vehicle speed (m/s)/ j2452/c"
+  ModifiedHistory	  "ssprik -- Fri Sep 05 12:04:31 2003 -- Version 1.64"
+"\nadded climbing grade calculation in .../vehicle speed (m/s)/ j2452/c\n\nabr"
+"ooker -- Fri Feb 07 11:31:15 2003 -- Version 1.63\n\n\nabrooker -- Fri Feb 07"
+" 11:30:31 2003 -- Version 1.62\n\n\nabrooker -- Fri Feb 07 07:46:30 2003 -- V"
+"ersion 1.61\n\n\nabrooker -- Thu Feb 06 15:38:07 2003 -- Version 1.60\n\n\nab"
+"rooker -- Thu Feb 06 14:26:47 2003 -- Version 1.59\nchanged from outputting f"
+"orce to power\n\nabrooker -- Thu Feb 06 13:48:22 2003 -- Version 1.58\n\n\nab"
+"rooker -- Thu Feb 06 13:42:04 2003 -- Version 1.57\n\n\nabrooker -- Wed Feb 0"
+"5 11:42:46 2003 -- Version 1.56\n\n\nabrooker -- Wed Feb 05 11:29:37 2003 -- "
+"Version 1.55\n\n\nabrooker -- Wed Feb 05 11:27:23 2003 -- Version 1.54\n\n\na"
+"brooker -- Wed Feb 05 11:19:28 2003 -- Version 1.53\nChanged Fr_out to Fr in "
+"new rolling resistance block\n\nabrooker -- Wed Feb 05 10:01:32 2003 -- Versi"
+"on 1.52\nadded outputs for Altia\n\nmokeefe -- Thu Apr 18 08:39:48 2002 -- Ve"
+"rsion 1.51\nsaving the model:\no \"without the model browser open\"\no with o"
+"nly top-level screen visible \no with \"fit to view\" enabled\no with \"statu"
+"s bar\" off and \"toolbar\" off\no with \"prompt to update model history with"
+" each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:64>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_vehicle"
+    Location		    [194, 156, 821, 709]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "250"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Submodels"
+      Ports		      []
+      Position		      [76, 167, 115, 198]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Submodels"
+	Location		[307, 254, 774, 618]
+	Open			on
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "current veh mass"
+	  Ports			  [0, 1]
+	  Position		  [60, 26, 100, 44]
+	  BackgroundColor	  "darkGreen"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "current veh mass"
+	    Location		    [26, 292, 246, 416]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      Position		      [45, 25, 100, 55]
+	      Value		      "veh_mass"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [25, 73, 130, 97]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_cargo_mass"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [120, 35, 140, 55]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [165, 38, 195, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      Points		      [0, -15]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to overcome\nrolling resistance"
+" (N)"
+	  Ports			  [1, 1]
+	  Position		  [70, 99, 100, 151]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to overcome\nrolling resistan"
+"ce (N)"
+	    Location		    [214, 107, 1014, 615]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [70, 85, 90, 105]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [210, 29, 295, 51]
+	      FontName		      "Arial"
+	      Value		      "wh_1st_rrc"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [485, 190, 505, 210]
+	      Orientation	      "up"
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [400, 23, 510, 47]
+	      Orientation	      "left"
+	      BackgroundColor	      "darkGreen"
+	      FontName		      "Arial"
+	      Value		      "veh_gravity"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <cyc>"
+	      Position		      [205, 135, 250, 165]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [220, 67, 300, 123]
+	      FontName		      "Arial"
+	      Gain		      "wh_2nd_rrc"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [420, 64, 450, 96]
+	      BackgroundColor	      "darkGreen"
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [340, 65, 360, 85]
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [520, 74, 550, 106]
+	      FontName		      "Arial"
+	      Threshold		      "eps"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn2"
+	      Ports		      [1, 1]
+	      Position		      [275, 135, 305, 165]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn3"
+	      Ports		      [1, 1]
+	      Position		      [330, 135, 360, 165]
+	      Operator		      "cos"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass"
+	      Ports		      [0, 1]
+	      Position		      [325, 201, 365, 219]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fr (N)"
+	      Position		      [585, 80, 605, 100]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn2"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From <cyc>"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn3"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, -65]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      Points		      [-5, 0; 0, 30]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [0, -85]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      Branch {
+		Points			[0, 90; 325, 0; 0, -95]
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Gain1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Fr (N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -15]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 30]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to overcome\nrolling resistance"
+" (N) j2452"
+	  Ports			  [1, 1]
+	  Position		  [225, 98, 255, 152]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to overcome\nrolling resistan"
+"ce (N) j2452"
+	    Location		    [216, 95, 989, 673]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [65, 40, 85, 60]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [585, 85, 605, 105]
+	      Orientation	      "up"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [50, 255, 160, 275]
+	      BackgroundColor	      "darkGreen"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "veh_gravity"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      Position		      [240, 194, 330, 216]
+	      ShowName		      off
+	      Value		      "veh_rr_beta"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant4"
+	      Position		      [225, 444, 330, 466]
+	      ShowName		      off
+	      Value		      "wh_pressure"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant5"
+	      Position		      [225, 480, 330, 500]
+	      ShowName		      off
+	      Value		      "veh_rr_alpha"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant6"
+	      Position		      [250, 39, 330, 61]
+	      ShowName		      off
+	      Value		      "veh_rr_a"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant7"
+	      Position		      [45, 334, 145, 356]
+	      ShowName		      off
+	      Value		      "veh_front_wt_frac"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant8"
+	      Position		      [175, 354, 215, 376]
+	      ShowName		      off
+	      Value		      "0.5"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant9"
+	      Position		      [70, 404, 110, 426]
+	      ShowName		      off
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Convert (m/s) to (km/h)"
+	      Description	      "Conversion of m/s to km/h"
+	      Position		      [120, 34, 160, 66]
+	      NamePlacement	      "alternate"
+	      Gain		      "3.6"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Curvature Correction Factor"
+	      Position		      [35, 519, 335, 551]
+	      Value		      "(veh_roadwheel_radius/(veh_roadwheel_ra"
+"dius+wh_radius))"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <cyc>"
+	      Position		      [45, 190, 90, 220]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [255, 68, 330, 112]
+	      ShowName		      off
+	      Gain		      "veh_rr_b"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [420, 260, 455, 300]
+	      ShowName		      off
+	      Gain		      "2"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain2"
+	      Position		      [255, 123, 330, 167]
+	      ShowName		      off
+	      Gain		      "veh_rr_c"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain3"
+	      Position		      [420, 390, 455, 430]
+	      ShowName		      off
+	      Gain		      "2"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction"
+	      Ports		      [2, 1]
+	      Position		      [360, 262, 390, 293]
+	      ShowName		      off
+	      Operator		      "pow"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction1"
+	      Ports		      [2, 1]
+	      Position		      [360, 447, 390, 478]
+	      ShowName		      off
+	      Operator		      "pow"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction2"
+	      Ports		      [2, 1]
+	      Position		      [360, 392, 390, 423]
+	      ShowName		      off
+	      Operator		      "pow"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction3"
+	      Ports		      [1, 1]
+	      Position		      [360, 520, 390, 550]
+	      ShowName		      off
+	      Operator		      "sqrt"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "NOTES"
+	      Description	      "Notes"
+	      Ports		      []
+	      Position		      [640, 422, 690, 466]
+	      Orientation	      "left"
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      AncestorBlock	      "lib_help/NOTES"
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"NOTES"
+		Location		[63, 149, 664, 384]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Annotation {
+		  Position		  [262, 63]
+		  Text			  "Rolling resistance model updated to"
+" SAE J2452 model.\nFr = (P^alpha)*(a + bV + cV^2)*[2((mg*veh_front_wt_frac/2)"
+"^beta) + 2((mg(1-veh_front_wt_frac)/2)^beta)]\nIncorporates pressure, load, a"
+"nd velocity into rolling resistance.\n\nAlpha, beta, a, b, and c were for cur"
+"ved surface rolling resistance.\nCurvature correction factor from SAE J2452 ["
+"Eq. 22] added to relate to flat surface rolling resistance.\nThis is an appro"
+"ximation for convenience, but the error is fairly small.\n"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [210, 249, 240, 281]
+	      ShowName		      off
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product2"
+	      Ports		      [4, 1]
+	      Position		      [530, 93, 575, 127]
+	      ShowName		      off
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product3"
+	      Ports		      [3, 1]
+	      Position		      [275, 313, 305, 347]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product4"
+	      Ports		      [3, 1]
+	      Position		      [275, 383, 305, 417]
+	      ShowName		      off
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Squaring\nFunction"
+	      Ports		      [1, 1]
+	      Position		      [190, 130, 220, 160]
+	      ShowName		      off
+	      Operator		      "square"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [475, 272, 500, 308]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [3, 1]
+	      Position		      [390, 73, 435, 117]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "+++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [180, 390, 215, 425]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [615, 14, 645, 46]
+	      FontName		      "Arial"
+	      Threshold		      "eps"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn2"
+	      Ports		      [1, 1]
+	      Position		      [110, 190, 140, 220]
+	      ShowName		      off
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn3"
+	      Ports		      [1, 1]
+	      Position		      [160, 190, 190, 220]
+	      ShowName		      off
+	      Operator		      "cos"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass"
+	      Ports		      [0, 1]
+	      Position		      [85, 286, 125, 304]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fr\n(N)"
+	      Position		      [700, 20, 720, 40]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Curvature Correction Factor"
+	      SrcPort		      1
+	      DstBlock		      "Math\nFunction3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction3"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      DstBlock		      "Product2"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 80]
+	      Branch {
+		Points			[0, 130]
+		DstBlock		"Math\nFunction2"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Math\nFunction"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Convert (m/s) to (km/h)"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[30, 0]
+		Branch {
+		  Points		  [0, -20]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 40]
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 95]
+		DstBlock		"Squaring\nFunction"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Convert (m/s) to (km/h)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant5"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -20]
+	      DstBlock		      "Math\nFunction1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Product2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [0, -185]
+	      DstBlock		      "Product2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction1"
+	      SrcPort		      1
+	      Points		      [115, 0; 0, -350]
+	      DstBlock		      "Product2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Gain3"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction2"
+	      SrcPort		      1
+	      DstBlock		      "Gain3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product4"
+	      SrcPort		      1
+	      DstBlock		      "Math\nFunction2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "Product4"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant9"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product3"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -60]
+	      DstBlock		      "Math\nFunction"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant8"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, 35]
+		DstBlock		"Product4"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[20, 0]
+		DstBlock		"Product3"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant7"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[0, 55]
+		DstBlock		"Sum3"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 0; 70, 0; 0, -15]
+		DstBlock		"Product3"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[0, 125]
+		DstBlock		"Product4"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[10, 0]
+		DstBlock		"Product3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Fr\n(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product2"
+	      SrcPort		      1
+	      Points		      [0, -90]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain2"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -35]
+	      DstBlock		      "Sum2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant6"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 30]
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Squaring\nFunction"
+	      SrcPort		      1
+	      DstBlock		      "Gain2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant4"
+	      SrcPort		      1
+	      DstBlock		      "Math\nFunction1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -20]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn3"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From <cyc>"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [0, -40]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn2"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "rolling resistance force"
+	  Ports			  [1, 1]
+	  Position		  [360, 98, 390, 152]
+	  ShowPortLabels	  off
+	  BlockChoice		  "force req'd to overcome rolling resistance "
+"(N)"
+	  TemplateBlock		  "self"
+	  MemberBlocks		  "force req'd to overcome rolling resistance "
+"(N),force req'd to overcome rolling resistance (N) j2452"
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "rolling resistance force"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "force req'd to overcome\nrolling resist"
+"ance (N)"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      FontName		      "Arial"
+	      SourceBlock	      "lib_vehicle/Submodels/force req'd to ov"
+"ercome\nrolling resistance (N)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fr\n(N)"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 10]
+	      DstBlock		      "force req'd to overcome\nrolling resist"
+"ance (N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "force req'd to overcome\nrolling resist"
+"ance (N)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 30]
+	      DstBlock		      "Fr\n(N)"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "vehicle speed"
+	  Ports			  [2, 1]
+	  Position		  [355, 207, 385, 258]
+	  ShowPortLabels	  off
+	  BlockChoice		  "vehicle speed (m/s)"
+	  TemplateBlock		  "self"
+	  MemberBlocks		  "vehicle speed (m/s),vehicle speed (m/s) j24"
+"52"
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "vehicle speed"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      Position		      [20, 80, 40, 100]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "vehicle speed (m/s)"
+	      Ports		      [2, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "lib_vehicle/Submodels/vehicle speed (m/"
+"/s)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      Position		      [200, 40, 220, 60]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      SrcPort		      1
+	      DstBlock		      "vehicle speed (m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -20]
+	      DstBlock		      "vehicle speed (m/s)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed (m/s)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -10]
+	      DstBlock		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "vehicle speed (m/s)"
+	  Ports			  [2, 1]
+	  Position		  [65, 202, 95, 258]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "vehicle speed (m/s)"
+	    Location		    [38, 74, 987, 468]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      Position		      [45, 210, 65, 230]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      Position		      [45, 280, 65, 300]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      []
+	      Position		      [835, 280, 891, 320]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[237, 212, 872, 720]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Annotation {
+		  Position		  [214, 101]
+		  Text			  "The actual vehicle speed at the end"
+" of the time step is taken as\nthe LESSER of the speed computed from the actu"
+"al force and the speed\ncomputed from the actual drivetrain speed if the requ"
+"ired acceleration\n is greater than -1 m/s^2.  Otherwise, the GREATER of the "
+"two values is used.\nThus the worse acceleration rate is allowed if the vehic"
+"le is accelerating, \nand the worse deceleration rate is allowed if the vehic"
+"le is decelerating.\n\nIn no case will the computed speed fall below zero."
+		}
+		Annotation {
+		  Position		  [212, 12]
+		  VerticalAlignment	  "top"
+		  Text			  "Given the tractive force available,"
+" this block uses straightforward vehicle\ndynamics equations to determine the"
+" achievable speed."
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [50, 15, 70, 35]
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [820, 160, 840, 180]
+	      Orientation	      "left"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2]
+	      Position		      [140, 272, 175, 308]
+	      Outputs		      "2"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<cyc>1"
+	      Position		      [60, 104, 120, 126]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [545, 320, 575, 350]
+	      BackgroundColor	      "darkGreen"
+	      Gain		      "-1"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [705, 120, 735, 150]
+	      Gain		      "2"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [95, 51, 115, 79]
+	      X0		      "-.1"
+	      InheritSampleTime	      off
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      Ports		      [2, 1]
+	      Position		      [590, 107, 620, 138]
+	      Function		      "min"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax1"
+	      Ports		      [2, 1]
+	      Position		      [590, 172, 620, 203]
+	      Function		      "max"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [3, 1]
+	      Position		      [425, 97, 460, 133]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      Position		      [595, 272, 625, 303]
+	      BackgroundColor	      "darkGreen"
+	      Operator		      ">="
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum5"
+	      Ports		      [2, 1]
+	      Position		      [755, 112, 785, 143]
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [650, 120, 680, 150]
+	      BackgroundColor	      "darkGreen"
+	      Threshold		      "0.5"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      Position		      [815, 115, 845, 145]
+	      Threshold		      "1e-9"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn4"
+	      Ports		      [1, 1]
+	      Position		      [140, 100, 170, 130]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "a"
+	      Position		      [195, 22, 395, 48]
+	      FontName		      "Arial"
+	      Value		      "0.5*veh_air_density*veh_CD*veh_FA"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "b"
+	      Ports		      [3, 1]
+	      Position		      [295, 86, 395, 144]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"b"
+		Location		[237, 212, 872, 720]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "dt"
+		  Position		  [15, 38, 45, 52]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle of\nelevation"
+		  Position		  [15, 123, 45, 137]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vehicle\nmoving?"
+		  Position		  [15, 188, 45, 202]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant9"
+		  Position		  [110, 73, 290, 97]
+		  BackgroundColor	  "darkGreen"
+		  FontName		  "Arial"
+		  Value			  "veh_gravity*wh_2nd_rrc"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [185, 15, 215, 45]
+		  BackgroundColor	  "darkGreen"
+		  Gain			  "2"
+		  Multiplication	  "Element-wise(K.*u)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product10"
+		  Ports			  [4, 1]
+		  Position		  [310, 112, 330, 148]
+		  FontName		  "Arial"
+		  Inputs		  "4"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product6"
+		  Ports			  [2, 1]
+		  Position		  [290, 17, 310, 53]
+		  FontName		  "Arial"
+		  Inputs		  "*/"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [2, 1]
+		  Position		  [350, 12, 370, 108]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn7"
+		  Ports			  [1, 1]
+		  Position		  [240, 115, 270, 145]
+		  Operator		  "cos"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass"
+		  Ports			  [0, 1]
+		  Position		  [95, 16, 135, 34]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass1"
+		  Ports			  [0, 1]
+		  Position		  [180, 216, 220, 234]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "b"
+		  Position		  [405, 53, 435, 67]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "current veh mass1"
+		  SrcPort		  1
+		  Points		  [70, 0]
+		  DstBlock		  "Product10"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "current veh mass"
+		  SrcPort		  1
+		  Points		  [0, 5]
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "vehicle\nmoving?"
+		  SrcPort		  1
+		  Points		  [230, 0; 0, -60]
+		  DstBlock		  "Product10"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "angle of\nelevation"
+		  SrcPort		  1
+		  DstBlock		  "Trig\nFn7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "dt"
+		  SrcPort		  1
+		  DstBlock		  "Product6"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "b"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product10"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant9"
+		  SrcPort		  1
+		  DstBlock		  "Product10"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn7"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  DstBlock		  "Product10"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product6"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Product6"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "c"
+	      Ports		      [5, 1]
+	      Position		      [300, 197, 395, 273]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"c"
+		Location		[25, 212, 660, 720]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "dt"
+		  Position		  [30, 28, 60, 42]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "v_prev"
+		  Position		  [30, 63, 60, 77]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Ftract"
+		  Position		  [30, 103, 60, 117]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle of\nelevation"
+		  Position		  [35, 203, 65, 217]
+		  Port			  "4"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vehicle\nmoving?"
+		  Position		  [35, 258, 65, 272]
+		  Port			  "5"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant12"
+		  Position		  [75, 155, 145, 175]
+		  Value			  "wh_1st_rrc"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant13"
+		  Position		  [110, 317, 220, 343]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_gravity"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [185, 35, 215, 65]
+		  BackgroundColor	  "darkGreen"
+		  Gain			  "2"
+		  Multiplication	  "Element-wise(K.*u)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product7"
+		  Ports			  [3, 1]
+		  Position		  [275, 17, 295, 53]
+		  FontName		  "Arial"
+		  Inputs		  "*/*"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product8"
+		  Ports			  [3, 1]
+		  Position		  [290, 177, 310, 213]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product9"
+		  Ports			  [3, 1]
+		  Position		  [180, 157, 200, 193]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [3, 1]
+		  Position		  [340, 13, 360, 207]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "--+"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum6"
+		  Ports			  [2, 1]
+		  Position		  [235, 163, 255, 207]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn"
+		  Ports			  [1, 1]
+		  Position		  [100, 195, 130, 225]
+		  Operator		  "cos"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn2"
+		  Ports			  [1, 1]
+		  Position		  [175, 260, 205, 290]
+		  Operator		  "sin"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass"
+		  Ports			  [0, 1]
+		  Position		  [135, 356, 175, 374]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass1"
+		  Ports			  [0, 1]
+		  Position		  [110, 41, 150, 59]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "prevent imaginary #s"
+		  Position		  [110, 95, 140, 125]
+		  UpperLimit		  "inf"
+		  LowerLimit		  "-70*veh_mass"
+		  LinearizeAsGain	  on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "c"
+		  Position		  [410, 103, 440, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "current veh mass"
+		  SrcPort		  1
+		  Points		  [95, 0]
+		  DstBlock		  "Product8"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "current veh mass1"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  Points		  [25, 0; 0, -25]
+		  DstBlock		  "Product7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "dt"
+		  SrcPort		  1
+		  DstBlock		  "Product7"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "c"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product8"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Constant13"
+		  SrcPort		  1
+		  Points		  [40, 0; 0, -135]
+		  DstBlock		  "Product8"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum6"
+		  SrcPort		  1
+		  DstBlock		  "Product8"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "vehicle\nmoving?"
+		  SrcPort		  1
+		  Points		  [95, 0]
+		  DstBlock		  "Product9"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn2"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Sum6"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "angle of\nelevation"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Trig\nFn2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Trig\nFn"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Product9"
+		  SrcPort		  1
+		  DstBlock		  "Sum6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -35]
+		  DstBlock		  "Product9"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant12"
+		  SrcPort		  1
+		  DstBlock		  "Product9"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Ftract"
+		  SrcPort		  1
+		  DstBlock		  "prevent imaginary #s"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "prevent imaginary #s"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product7"
+		  SrcPort		  1
+		  Points		  [25, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "v_prev"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "Product7"
+		  DstPort		  3
+		}
+		Annotation {
+		  Position		  [217, 111]
+		  Text			  "note: the constant \nveh_mass used "
+"in this block"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass"
+	      Ports		      [0, 1]
+	      Position		      [470, 326, 510, 344]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "dt"
+	      Ports		      [2, 1]
+	      Position		      [140, 17, 170, 48]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "only have rolling\nresistance if moving"
+	      Position		      [130, 170, 180, 190]
+	      Expr		      "u>0"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      Position		      [485, 100, 545, 130]
+	      Expr		      "(-u[2]+(u[2]^2-4*u[1]*u[3])^.5)/(2*u[1]"
+")"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      Position		      [890, 120, 910, 140]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"MinMax"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"MinMax1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "MinMax1"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "a"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 70]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      DstBlock		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "b"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		DstBlock		"dt"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "dt"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From<cyc>1"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "dt"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 60; 85, 0]
+	      Branch {
+		DstBlock		"b"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 110]
+		DstBlock		"c"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn4"
+	      SrcPort		      1
+	      Points		      [80, 0]
+	      Branch {
+		DstBlock		"b"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 135]
+		DstBlock		"c"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "only have rolling\nresistance if moving"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45; 50, 0]
+	      Branch {
+		DstBlock		"b"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 130]
+		DstBlock		"c"
+		DstPort			5
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum5"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [-15, 0]
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "c"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      Branch {
+		Points			[0, -95; -65, 0]
+		DstBlock		"only have rolling\nresistance if movi"
+"ng"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[395, 0; 0, -105]
+		Branch {
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "MinMax1"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [105, 0]
+	      Branch {
+		DstBlock		"Relational\nOperator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"c"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      SrcPort		      1
+	      Points		      [155, 0]
+	      Branch {
+		DstBlock		"c"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -145; 515, 0]
+		DstBlock		"Sum5"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "vehicle speed (m/s) j2452"
+	  Ports			  [2, 1]
+	  Position		  [220, 202, 250, 258]
+	  AncestorBlock		  "lib_vehicle/Submodels/vehicle speed\n (m//s"
+") j2452"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "vehicle speed (m/s) j2452"
+	    Location		    [31, 69, 1002, 672]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      Position		      [50, 435, 70, 455]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      Position		      [50, 505, 70, 525]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      []
+	      Position		      [840, 505, 896, 545]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[340, 143, 975, 651]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Annotation {
+		  Position		  [207, 172]
+		  VerticalAlignment	  "top"
+		  Text			  "Rolling resistance force was brough"
+"t into model to solve the quadratic.\nVeh_rr_b and veh_rr_c were converted to"
+" the proper units."
+		}
+		Annotation {
+		  Position		  [212, 12]
+		  VerticalAlignment	  "top"
+		  Text			  "Given the tractive force available,"
+" this block uses straightforward vehicle\ndynamics equations to determine the"
+" achievable speed."
+		}
+		Annotation {
+		  Position		  [214, 101]
+		  Text			  "The actual vehicle speed at the end"
+" of the time step is taken as\nthe LESSER of the speed computed from the actu"
+"al force and the speed\ncomputed from the actual drivetrain speed if the requ"
+"ired acceleration\n is greater than -1 m/s^2.  Otherwise, the GREATER of the "
+"two values is used.\nThus the worse acceleration rate is allowed if the vehic"
+"le is accelerating, \nand the worse deceleration rate is allowed if the vehic"
+"le is decelerating.\n\nIn no case will the computed speed fall below zero."
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [20, 240, 40, 260]
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [825, 385, 845, 405]
+	      Orientation	      "left"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant13"
+	      Position		      [100, 107, 210, 123]
+	      BackgroundColor	      "darkGreen"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "veh_gravity"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Curvature Correction Factor"
+	      Position		      [480, 34, 780, 66]
+	      Orientation	      "left"
+	      Value		      "(veh_roadwheel_radius/(veh_roadwheel_ra"
+"dius+wh_radius))"
+	      VectorParams1D	      off
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2]
+	      Position		      [145, 497, 180, 533]
+	      Outputs		      "2"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<cyc>1"
+	      Position		      [65, 329, 125, 351]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<cyc>2"
+	      Position		      [60, 139, 120, 161]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [550, 545, 580, 575]
+	      BackgroundColor	      "darkGreen"
+	      Gain		      "-1"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [710, 345, 740, 375]
+	      Gain		      "2"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction"
+	      Ports		      [2, 1]
+	      Position		      [330, 167, 360, 198]
+	      Operator		      "pow"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction3"
+	      Ports		      [1, 1]
+	      Position		      [425, 35, 455, 65]
+	      Orientation	      "left"
+	      ShowName		      off
+	      Operator		      "sqrt"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [65, 276, 85, 304]
+	      X0		      "-.1"
+	      InheritSampleTime	      off
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      Ports		      [2, 1]
+	      Position		      [595, 332, 625, 363]
+	      Function		      "min"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax1"
+	      Ports		      [2, 1]
+	      Position		      [595, 397, 625, 428]
+	      Function		      "max"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [3, 1]
+	      Position		      [430, 322, 465, 358]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [3, 1]
+	      Position		      [405, 137, 425, 173]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product10"
+	      Ports		      [3, 1]
+	      Position		      [260, 152, 280, 188]
+	      FontName		      "Arial"
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product2"
+	      Ports		      [2, 1]
+	      Position		      [371, 75, 404, 95]
+	      Orientation	      "down"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      Position		      [600, 497, 630, 528]
+	      BackgroundColor	      "darkGreen"
+	      Operator		      ">="
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum5"
+	      Ports		      [2, 1]
+	      Position		      [760, 337, 790, 368]
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [655, 345, 685, 375]
+	      BackgroundColor	      "darkGreen"
+	      Threshold		      "0.5"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      Position		      [820, 340, 850, 370]
+	      Threshold		      "1e-9"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn1"
+	      Ports		      [1, 1]
+	      Position		      [140, 135, 170, 165]
+	      ShowName		      off
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn2"
+	      Ports		      [1, 1]
+	      Position		      [195, 135, 225, 165]
+	      ShowName		      off
+	      Operator		      "cos"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn4"
+	      Ports		      [1, 1]
+	      Position		      [145, 325, 175, 355]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "a"
+	      Position		      [185, 247, 385, 273]
+	      FontName		      "Arial"
+	      Value		      "0.5*veh_air_density*veh_CD*veh_FA"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "alpha"
+	      Position		      [195, 74, 345, 96]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "wh_pressure^veh_rr_alpha"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "b"
+	      Ports		      [3, 1]
+	      Position		      [300, 311, 400, 369]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"b"
+		Location		[122, 191, 838, 646]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "dt"
+		  Position		  [15, 48, 45, 62]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle of\nelevation"
+		  Position		  [15, 173, 45, 187]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vehicle\nmoving?"
+		  Position		  [15, 358, 45, 372]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [95, 313, 275, 337]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "wh_pressure^veh_rr_alpha"
+		  VectorParams1D	  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant13"
+		  Position		  [55, 247, 165, 263]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_gravity"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant9"
+		  Position		  [20, 84, 105, 106]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_rr_b"
+		  VectorParams1D	  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Curvature Correction Factor"
+		  Position		  [35, 124, 110, 146]
+		  Value			  "(veh_roadwheel_radius/(veh_roadwhee"
+"l_radius+wh_radius))"
+		  VectorParams1D	  off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [185, 20, 215, 50]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  Gain			  "2"
+		  Multiplication	  "Element-wise(K.*u)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [2, 1]
+		  Position		  [240, 182, 270, 213]
+		  Operator		  "pow"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction3"
+		  Ports			  [1, 1]
+		  Position		  [155, 120, 185, 150]
+		  ShowName		  off
+		  Operator		  "sqrt"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product1"
+		  Ports			  [4, 1]
+		  Position		  [325, 187, 345, 223]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Inputs		  "4"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product10"
+		  Ports			  [3, 1]
+		  Position		  [185, 172, 205, 208]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product2"
+		  Ports			  [2, 1]
+		  Position		  [270, 112, 290, 148]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Inputs		  "2"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product6"
+		  Ports			  [2, 1]
+		  Position		  [290, 27, 310, 63]
+		  FontName		  "Arial"
+		  Inputs		  "*/"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [2, 1]
+		  Position		  [395, 22, 415, 118]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn7"
+		  Ports			  [1, 1]
+		  Position		  [105, 165, 135, 195]
+		  ShowName		  off
+		  Operator		  "cos"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "beta"
+		  Position		  [100, 284, 185, 306]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_rr_beta"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass"
+		  Ports			  [0, 1]
+		  Position		  [95, 26, 135, 44]
+		  BackgroundColor	  "darkGreen"
+		  NamePlacement		  "alternate"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass1"
+		  Ports			  [0, 1]
+		  Position		  [100, 211, 140, 229]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "unit conversion\nN/km/h to N/m/s"
+		  Position		  [190, 89, 235, 121]
+		  BackgroundColor	  "darkGreen"
+		  NamePlacement		  "alternate"
+		  Gain			  "3.6"
+		  Multiplication	  "Element-wise(K.*u)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "b"
+		  Position		  [450, 68, 480, 82]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "Product2"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 60]
+		  DstBlock		  "Product1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction3"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, 5]
+		  DstBlock		  "Product2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "unit conversion\nN/km/h to N/m/s"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 15]
+		  DstBlock		  "Product2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Curvature Correction Factor"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant13"
+		  SrcPort		  1
+		  DstBlock		  "Product10"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Product1"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -110]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "vehicle\nmoving?"
+		  SrcPort		  1
+		  Points		  [260, 0]
+		  DstBlock		  "Product1"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -115]
+		  DstBlock		  "Product1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Product1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant9"
+		  SrcPort		  1
+		  Points		  [65, 0]
+		  DstBlock		  "unit conversion\nN/km/h to N/m/s"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "beta"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product10"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "current veh mass1"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -30]
+		  DstBlock		  "Product10"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn7"
+		  SrcPort		  1
+		  DstBlock		  "Product10"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Product6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product6"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  Points		  [0, 5]
+		  DstBlock		  "b"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "dt"
+		  SrcPort		  1
+		  DstBlock		  "Product6"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "angle of\nelevation"
+		  SrcPort		  1
+		  DstBlock		  "Trig\nFn7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "current veh mass"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "beta"
+	      Position		      [195, 209, 280, 231]
+	      FontName		      "Arial"
+	      Value		      "veh_rr_beta"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "c"
+	      Ports		      [5, 1]
+	      Position		      [300, 390, 395, 480]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"c"
+		Location		[38, 101, 574, 753]
+		Open			on
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "dt"
+		  Position		  [50, 43, 80, 57]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "v_prev"
+		  Position		  [50, 78, 80, 92]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Ftract"
+		  Position		  [50, 118, 80, 132]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle of\nelevation"
+		  Position		  [40, 373, 70, 387]
+		  Port			  "4"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vehicle\nmoving?"
+		  Position		  [55, 603, 85, 617]
+		  Port			  "5"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant13"
+		  Position		  [60, 277, 170, 303]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_gravity"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Curvature Correction Factor"
+		  Position		  [90, 525, 180, 555]
+		  Value			  "(veh_roadwheel_radius/(veh_roadwhee"
+"l_radius+wh_radius))"
+		  VectorParams1D	  off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [205, 50, 235, 80]
+		  BackgroundColor	  "darkGreen"
+		  Gain			  "2"
+		  Multiplication	  "Element-wise(K.*u)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [2, 1]
+		  Position		  [250, 367, 280, 398]
+		  ShowName		  off
+		  Operator		  "pow"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction3"
+		  Ports			  [1, 1]
+		  Position		  [205, 525, 235, 555]
+		  ShowName		  off
+		  Operator		  "sqrt"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product1"
+		  Ports			  [3, 1]
+		  Position		  [230, 172, 250, 208]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		  Port {
+		    PortNumber		    1
+		    Name		    "climbing grade"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product7"
+		  Ports			  [3, 1]
+		  Position		  [295, 32, 315, 68]
+		  FontName		  "Arial"
+		  Inputs		  "*/*"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product8"
+		  Ports			  [5, 1]
+		  Position		  [320, 376, 340, 424]
+		  FontName		  "Arial"
+		  Inputs		  "5"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product9"
+		  Ports			  [3, 1]
+		  Position		  [200, 357, 220, 393]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [4, 1]
+		  Position		  [360, 22, 380, 293]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "--++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn"
+		  Ports			  [1, 1]
+		  Position		  [120, 365, 150, 395]
+		  Operator		  "cos"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn1"
+		  Ports			  [1, 1]
+		  Position		  [95, 185, 125, 215]
+		  ShowName		  off
+		  Operator		  "sin"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "a"
+		  Position		  [95, 494, 180, 516]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_rr_a"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "alpha"
+		  Position		  [100, 464, 250, 486]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "wh_pressure^veh_rr_alpha"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "beta"
+		  Position		  [115, 429, 200, 451]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_rr_beta"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass"
+		  Ports			  [0, 1]
+		  Position		  [110, 321, 150, 339]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "current veh mass1"
+		  Ports			  [0, 1]
+		  Position		  [130, 56, 170, 74]
+		  BackgroundColor	  "darkGreen"
+		  SourceBlock		  "lib_vehicle/Submodels/current veh m"
+"ass"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "prevent imaginary #s"
+		  Position		  [130, 110, 160, 140]
+		  UpperLimit		  "inf"
+		  LowerLimit		  "-70*veh_mass"
+		  LinearizeAsGain	  on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "c"
+		  Position		  [430, 118, 460, 132]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "vehicle\nmoving?"
+		  SrcPort		  1
+		  Points		  [215, 0]
+		  DstBlock		  "Product8"
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction3"
+		  SrcPort		  1
+		  Points		  [60, 0; 0, -130]
+		  DstBlock		  "Product8"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Curvature Correction Factor"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "a"
+		  SrcPort		  1
+		  Points		  [110, 0; 0, -105]
+		  DstBlock		  "Product8"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "alpha"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -85]
+		  DstBlock		  "Product8"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  DstBlock		  "Product8"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "beta"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product9"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 5]
+		  DstBlock		  "Product9"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "current veh mass"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Product9"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [45, 0]
+		    DstBlock		    "Product1"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant13"
+		  SrcPort		  1
+		  Points		  [5, 0]
+		  Branch {
+		    Points		    [0, 75]
+		    DstBlock		    "Product9"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -100]
+		    DstBlock		    "Product1"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "v_prev"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "Product7"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Product7"
+		  SrcPort		  1
+		  Points		  [25, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "prevent imaginary #s"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Ftract"
+		  SrcPort		  1
+		  DstBlock		  "prevent imaginary #s"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "angle of\nelevation"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    DstBlock		    "Trig\nFn"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -30; -40, 0; 0, -150]
+		    DstBlock		    "Trig\nFn1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  Points		  [0, -35]
+		  DstBlock		  "c"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "dt"
+		  SrcPort		  1
+		  DstBlock		  "Product7"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  Points		  [25, 0; 0, -25]
+		  DstBlock		  "Product7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "current veh mass1"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product8"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  4
+		}
+		Line {
+		  Name			  "climbing grade"
+		  Labels		  [1, 1]
+		  SrcBlock		  "Product1"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn1"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -20]
+		  DstBlock		  "Product1"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [237, 126]
+		  Text			  "note: the constant \nveh_mass used "
+"in this block"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "c "
+	      Position		      [25, 44, 175, 66]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "veh_rr_c"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass"
+	      Ports		      [0, 1]
+	      Position		      [460, 551, 500, 569]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass1"
+	      Ports		      [0, 1]
+	      Position		      [135, 171, 175, 189]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "dt"
+	      Ports		      [2, 1]
+	      Position		      [110, 242, 140, 273]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "only have rolling\nresistance if moving"
+	      Position		      [135, 395, 185, 415]
+	      Expr		      "u>0"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      Position		      [490, 325, 550, 355]
+	      Expr		      "(-u[2]+(u[2]^2-4*u[1]*u[3])^.5)/(2*u[1]"
+")"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "sum"
+	      Ports		      [2, 1]
+	      Position		      [415, 237, 445, 268]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "unit conversion\nN/(km/h)^2 to N/(m/s)^"
+"2"
+	      Position		      [240, 38, 335, 72]
+	      BackgroundColor	      "darkGreen"
+	      NamePlacement	      "alternate"
+	      Gain		      "3.6*3.6"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      Position		      [895, 345, 915, 365]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Product2"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction3"
+	      SrcPort		      1
+	      Points		      [-25, 0]
+	      DstBlock		      "Product2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "unit conversion\nN/(km/h)^2 to N/(m/s)^"
+"2"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      DstBlock		      "Product2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Curvature Correction Factor"
+	      SrcPort		      1
+	      DstBlock		      "Math\nFunction3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass1"
+	      SrcPort		      1
+	      DstBlock		      "Product10"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn2"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 20]
+	      DstBlock		      "Product10"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant13"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Product10"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 70; -35, 0]
+	      DstBlock		      "sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -20]
+	      DstBlock		      "Product1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "alpha"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 70]
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "c "
+	      SrcPort		      1
+	      DstBlock		      "unit conversion\nN/(km/h)^2 to N/(m/s)^"
+"2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "sum"
+	      SrcPort		      1
+	      Points		      [0, 55; -35, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "a"
+	      SrcPort		      1
+	      DstBlock		      "sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "beta"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -30]
+	      DstBlock		      "Math\nFunction"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product10"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 5]
+	      DstBlock		      "Math\nFunction"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn1"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From<cyc>2"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      SrcPort		      1
+	      Points		      [155, 0; 0, -30]
+	      Branch {
+		DstBlock		"c"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -115; 515, 0]
+		DstBlock		"Sum5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [0, 0; 70, 0]
+	      Branch {
+		Points			[0, -70]
+		DstBlock		"c"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Relational\nOperator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      Branch {
+		Points			[395, 0; 0, -105]
+		Branch {
+		  DstBlock		  "MinMax1"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		Points			[0, -95; -65, 0]
+		DstBlock		"only have rolling\nresistance if movi"
+"ng"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "c"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [-15, 0]
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum5"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "only have rolling\nresistance if moving"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45; 45, 0]
+	      Branch {
+		Points			[0, 115]
+		DstBlock		"c"
+		DstPort			5
+	      }
+	      Branch {
+		DstBlock		"b"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn4"
+	      SrcPort		      1
+	      Points		      [0, 0; 80, 0]
+	      Branch {
+		Points			[0, 115]
+		DstBlock		"c"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"b"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "dt"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 60; 95, 0]
+	      Branch {
+		Points			[0, 75]
+		DstBlock		"c"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"b"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From<cyc>1"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "dt"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"dt"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "b"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      DstBlock		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinMax1"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"MinMax1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"MinMax"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fwd vehicle <veh>"
+      Ports		      [1]
+      Position		      [135, 58, 190, 102]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_veh.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"fwd vehicle <veh>"
+	Location		[192, 82, 1001, 590]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	177
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "tractive force at wheel/road\ninterface"
+	  Position		  [70, 390, 90, 410]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "(m/s) -> (mph)1"
+	  Position		  [375, 414, 420, 456]
+	  FontName		  "Arial"
+	  Gain			  "2.23713646532438"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [190, 24, 220, 56]
+	  FontName		  "Arial"
+	  Gain			  "0.5"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <sdo><cyc>"
+	  Position		  [460, 420, 490, 450]
+	  GotoTag		  "mpha"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <vc> and\n<wh>/tire slip model"
+	  Position		  [535, 339, 595, 361]
+	  GotoTag		  "v_prev"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [375, 375, 415, 395]
+	  FontName		  "Arial"
+	  X0			  "cyc_mph(1,2)*.447"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [440, 106, 460, 139]
+	  FontName		  "Arial"
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [145, 30, 165, 50]
+	  FontName		  "Arial"
+	  IconShape		  "rectangular"
+	  Inputs		  "++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [4, 1]
+	  Position		  [365, 13, 385, 217]
+	  FontName		  "Arial"
+	  IconShape		  "rectangular"
+	  Inputs		  "++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to accelerate\n(N)"
+	  Ports			  [2, 1]
+	  Position		  [285, 262, 315, 318]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to accelerate\n(N)"
+	    Location		    [245, 92, 748, 372]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "v(m/s)"
+	      Position		      [60, 80, 80, 100]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "v prev"
+	      Position		      [60, 130, 80, 150]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [40, 175, 60, 195]
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [120, 19, 180, 41]
+	      FontName		      "Arial"
+	      Value		      "veh_mass"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [95, 210, 130, 230]
+	      FontName		      "Arial"
+	      X0		      "-0.1"
+	      InheritSampleTime	      off
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [3, 1]
+	      Position		      [285, 77, 315, 113]
+	      Inputs		      "**/"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [115, 85, 135, 105]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [160, 180, 180, 200]
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "(N)"
+	      Position		      [385, 85, 405, 105]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 55]
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Sum1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 35]
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -25]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "v prev"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -40]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "v(m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -85]
+	      DstBlock		      "Product1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to ascend\n(N)"
+	  Ports			  [1, 1]
+	  Position		  [285, 94, 315, 146]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to ascend\n(N)"
+	    Location		    [286, 95, 798, 278]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [70, 105, 90, 125]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [50, 14, 190, 36]
+	      FontName		      "Arial"
+	      Value		      "veh_mass*veh_gravity"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [315, 135, 335, 155]
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<cyc>"
+	      Position		      [55, 64, 115, 86]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [310, 32, 340, 63]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [380, 72, 410, 158]
+	      FontName		      "Arial"
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trigonometric\nFunction"
+	      Ports		      [1, 1]
+	      Position		      [155, 60, 185, 90]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trigonometric\nFunction1"
+	      Ports		      [1, 1]
+	      Position		      [235, 60, 265, 90]
+	      Operator		      "sin"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "(N)"
+	      Position		      [450, 105, 470, 125]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From<cyc>"
+	      SrcPort		      1
+	      DstBlock		      "Trigonometric\nFunction"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Trigonometric\nFunction1"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Trigonometric\nFunction"
+	      SrcPort		      1
+	      DstBlock		      "Trigonometric\nFunction1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to overcome\naerodynamic drag ("
+"N)"
+	  Ports			  [1, 1]
+	  Position		  [285, 175, 315, 235]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to overcome\naerodynamic drag"
+" (N)"
+	    Location		    [264, 215, 693, 366]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [75, 20, 95, 40]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [50, 78, 260, 102]
+	      FontName		      "Arial"
+	      Value		      "veh_air_density*veh_CD*veh_FA*0.5"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [315, 22, 335, 58]
+	      FontName		      "Arial"
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "D aero(N)"
+	      Position		      [385, 30, 405, 50]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "D aero(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      Points		      [170, 0]
+	      Branch {
+		Points			[0, 10]
+		DstBlock		"Product"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Product"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to overcome\nrolling resistance"
+" (N)"
+	  Ports			  [1, 1]
+	  Position		  [285, 14, 315, 66]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to overcome\nrolling resistan"
+"ce (N)"
+	    Location		    [85, 489, 717, 734]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [70, 85, 90, 105]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [210, 29, 295, 51]
+	      FontName		      "Arial"
+	      Value		      "wh_1st_rrc"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [485, 190, 505, 210]
+	      Orientation	      "up"
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [400, 23, 510, 47]
+	      Orientation	      "left"
+	      FontName		      "Arial"
+	      Value		      "veh_mass*veh_gravity"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <cyc>"
+	      Position		      [240, 135, 285, 165]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [220, 67, 300, 123]
+	      FontName		      "Arial"
+	      Gain		      "wh_2nd_rrc"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [420, 64, 450, 96]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [340, 70, 360, 90]
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [520, 74, 550, 106]
+	      FontName		      "Arial"
+	      Threshold		      "eps"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn2"
+	      Ports		      [1, 1]
+	      Position		      [310, 135, 340, 165]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn3"
+	      Ports		      [1, 1]
+	      Position		      [365, 135, 395, 165]
+	      Operator		      "cos"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "(N)"
+	      Position		      [585, 80, 605, 100]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn3"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn2"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From <cyc>"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      Points		      [-5, 0; 0, 35]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [0, -85]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      Branch {
+		Points			[0, 90; 325, 0; 0, -95]
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Gain1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -10]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 35]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "vehicle speed\n (m/s)"
+	  Ports			  [2, 1]
+	  Position		  [210, 357, 240, 413]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "vehicle speed\n (m/s)"
+	    Location		    [25, 53, 974, 408]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      Position		      [45, 210, 65, 230]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "available tractive force\n(N)"
+	      Position		      [45, 280, 65, 300]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [50, 15, 70, 35]
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [820, 160, 840, 180]
+	      Orientation	      "left"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2]
+	      Position		      [140, 272, 175, 308]
+	      Outputs		      "2"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<cyc>1"
+	      Position		      [60, 104, 120, 126]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [705, 120, 735, 150]
+	      Gain		      "2"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [95, 51, 115, 79]
+	      X0		      "-.1"
+	      InheritSampleTime	      off
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      Ports		      [2, 1]
+	      Position		      [590, 107, 620, 138]
+	      Function		      "min"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax1"
+	      Ports		      [2, 1]
+	      Position		      [590, 172, 620, 203]
+	      Function		      "max"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [3, 1]
+	      Position		      [425, 97, 460, 133]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum5"
+	      Ports		      [2, 1]
+	      Position		      [755, 112, 785, 143]
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [650, 120, 680, 150]
+	      Threshold		      "-veh_mass"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      Position		      [815, 115, 845, 145]
+	      Threshold		      "1e-9"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trig\nFn4"
+	      Ports		      [1, 1]
+	      Position		      [140, 100, 170, 130]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "a"
+	      Position		      [195, 22, 395, 48]
+	      FontName		      "Arial"
+	      Value		      "0.5*veh_air_density*veh_CD*veh_FA"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "b"
+	      Ports		      [3, 1]
+	      Position		      [295, 86, 395, 144]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"b"
+		Location		[235, 230, 687, 475]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "dt"
+		  Position		  [15, 38, 45, 52]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle of\nelevation"
+		  Position		  [15, 123, 45, 137]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vehicle\nmoving?"
+		  Position		  [15, 188, 45, 202]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant8"
+		  Position		  [130, 14, 215, 36]
+		  FontName		  "Arial"
+		  Value			  "2*veh_mass"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant9"
+		  Position		  [110, 73, 290, 97]
+		  FontName		  "Arial"
+		  Value			  "veh_mass*veh_gravity*wh_2nd_rrc"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product10"
+		  Ports			  [3, 1]
+		  Position		  [310, 112, 330, 148]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product6"
+		  Ports			  [2, 1]
+		  Position		  [290, 17, 310, 53]
+		  FontName		  "Arial"
+		  Inputs		  "*/"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [2, 1]
+		  Position		  [350, 12, 370, 108]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn7"
+		  Ports			  [1, 1]
+		  Position		  [240, 115, 270, 145]
+		  Operator		  "cos"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "b"
+		  Position		  [405, 53, 435, 67]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "vehicle\nmoving?"
+		  SrcPort		  1
+		  Points		  [245, 0]
+		  DstBlock		  "Product10"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "angle of\nelevation"
+		  SrcPort		  1
+		  DstBlock		  "Trig\nFn7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "dt"
+		  SrcPort		  1
+		  DstBlock		  "Product6"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "b"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product10"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant9"
+		  SrcPort		  1
+		  DstBlock		  "Product10"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn7"
+		  SrcPort		  1
+		  DstBlock		  "Product10"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product6"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant8"
+		  SrcPort		  1
+		  DstBlock		  "Product6"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "c"
+	      Ports		      [5, 1]
+	      Position		      [300, 197, 395, 273]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"c"
+		Location		[547, 292, 1010, 689]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "dt"
+		  Position		  [30, 28, 60, 42]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "v_prev"
+		  Position		  [30, 63, 60, 77]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Ftract"
+		  Position		  [30, 103, 60, 117]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle of\nelevation"
+		  Position		  [35, 203, 65, 217]
+		  Port			  "4"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vehicle\nmoving?"
+		  Position		  [35, 258, 65, 272]
+		  Port			  "5"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant10"
+		  Position		  [155, 14, 240, 36]
+		  FontName		  "Arial"
+		  Value			  "2*veh_mass"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant12"
+		  Position		  [75, 155, 145, 175]
+		  Value			  "wh_1st_rrc"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant13"
+		  Position		  [150, 322, 260, 348]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "veh_mass*veh_gravity"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product7"
+		  Ports			  [3, 1]
+		  Position		  [275, 17, 295, 53]
+		  FontName		  "Arial"
+		  Inputs		  "*/*"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product8"
+		  Ports			  [2, 1]
+		  Position		  [290, 177, 310, 213]
+		  FontName		  "Arial"
+		  Inputs		  "2"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product9"
+		  Ports			  [3, 1]
+		  Position		  [180, 157, 200, 193]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  Multiplication	  "Element-wise(.*)"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [3, 1]
+		  Position		  [340, 13, 360, 207]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "--+"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum6"
+		  Ports			  [2, 1]
+		  Position		  [235, 163, 255, 207]
+		  FontName		  "Arial"
+		  IconShape		  "rectangular"
+		  Inputs		  "++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn"
+		  Ports			  [1, 1]
+		  Position		  [100, 195, 130, 225]
+		  Operator		  "cos"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trig\nFn2"
+		  Ports			  [1, 1]
+		  Position		  [175, 260, 205, 290]
+		  Operator		  "sin"
+		  OutputSignalType	  "auto"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "prevent imaginary #s"
+		  Position		  [110, 95, 140, 125]
+		  UpperLimit		  "inf"
+		  LowerLimit		  "-70*veh_mass"
+		  LinearizeAsGain	  on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "c"
+		  Position		  [410, 103, 440, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "c"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product8"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Constant13"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Product8"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum6"
+		  SrcPort		  1
+		  DstBlock		  "Product8"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "vehicle\nmoving?"
+		  SrcPort		  1
+		  Points		  [95, 0]
+		  DstBlock		  "Product9"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn2"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Sum6"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "angle of\nelevation"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Trig\nFn2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Trig\nFn"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Product9"
+		  SrcPort		  1
+		  DstBlock		  "Sum6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trig\nFn"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -35]
+		  DstBlock		  "Product9"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant12"
+		  SrcPort		  1
+		  DstBlock		  "Product9"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Ftract"
+		  SrcPort		  1
+		  DstBlock		  "prevent imaginary #s"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "prevent imaginary #s"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product7"
+		  SrcPort		  1
+		  Points		  [25, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "v_prev"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "Product7"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "dt"
+		  SrcPort		  1
+		  DstBlock		  "Product7"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant10"
+		  SrcPort		  1
+		  DstBlock		  "Product7"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "dt"
+	      Ports		      [2, 1]
+	      Position		      [140, 17, 170, 48]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "only have rolling\nresistance if moving"
+	      Position		      [130, 170, 180, 190]
+	      Expr		      "u>0"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      Position		      [485, 100, 545, 130]
+	      Expr		      "(-u[2]+(u[2]^2-4*u[1]*u[3])^.5)/(2*u[1]"
+")"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "vehicle speed\nachieved at\nend of time"
+" step\n(m/s)"
+	      Position		      [890, 120, 910, 140]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"MinMax"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"MinMax1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "MinMax1"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "a"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 70]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "solve the quadratic\nfor avg. linear sp"
+"d"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      DstBlock		      "vehicle speed\nachieved at\nend of time"
+" step\n(m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "b"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		DstBlock		"dt"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "dt"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From<cyc>1"
+	      SrcPort		      1
+	      DstBlock		      "Trig\nFn4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "dt"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 60; 85, 0]
+	      Branch {
+		DstBlock		"b"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 110]
+		DstBlock		"c"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Trig\nFn4"
+	      SrcPort		      1
+	      Points		      [80, 0]
+	      Branch {
+		DstBlock		"b"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 135]
+		DstBlock		"c"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "only have rolling\nresistance if moving"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45; 50, 0]
+	      Branch {
+		DstBlock		"b"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 130]
+		DstBlock		"c"
+		DstPort			5
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum5"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [-15, 0]
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "available tractive force\n(N)"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "c"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      Branch {
+		Points			[0, -95; -65, 0]
+		DstBlock		"only have rolling\nresistance if movi"
+"ng"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[395, 0; 0, -105]
+		Branch {
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "MinMax1"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [105, 0]
+	      Branch {
+		DstBlock		"c"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[350, 0]
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      SrcPort		      1
+	      Points		      [155, 0]
+	      Branch {
+		DstBlock		"c"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -145; 515, 0]
+		DstBlock		"Sum5"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "vehicle speed\n (m/s)"
+	  SrcPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "(m/s) -> (mph)1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 0]
+	    DstBlock		    "force req'd to overcome\nrolling resistan"
+"ce (N)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 80]
+	    Branch {
+	      Points		      [0, 85]
+	      Branch {
+		Points			[0, 0]
+		DstBlock		"force req'd to overcome\naerodynamic "
+"drag (N)"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 35; 175, 0; 0, -110]
+		DstBlock		"Mux"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "force req'd to ascend\n(N)"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "force req'd to overcome\naerodynamic drag ("
+"N)"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -65]
+	  DstBlock		  "Sum1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "force req'd to accelerate\n(N)"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -100]
+	  DstBlock		  "Sum1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -35]
+	  Branch {
+	    Points		    [-340, 0]
+	    Branch {
+	      Points		      [0, -45]
+	      Branch {
+		DstBlock		"force req'd to accelerate\n(N)"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -260]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 20]
+	      DstBlock		      "vehicle speed\n (m/s)"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Goto <vc> and\n<wh>/tire slip model"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "(m/s) -> (mph)1"
+	  SrcPort		  1
+	  DstBlock		  "Goto <sdo><cyc>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "force req'd to ascend\n(N)"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -30]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "force req'd to overcome\nrolling resistance"
+" (N)"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "tractive force at wheel/road\ninterface"
+	  SrcPort		  1
+	  DstBlock		  "vehicle speed\n (m/s)"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "vehicle <veh>"
+      Ports		      [2, 1]
+      Position		      [25, 58, 80, 102]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_veh.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"vehicle <veh>"
+	Location		[265, 87, 986, 717]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	212
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "vehicle speed\nreq'd at end of\ntime step ("
+"m/s)"
+	  Position		  [50, 25, 70, 45]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "tractive force and\nlinear speed\nachievabl"
+"e\n(N)"
+	  Position		  [65, 390, 85, 410]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "(m/s) -> (mph)1"
+	  Position		  [375, 414, 420, 456]
+	  FontName		  "Arial"
+	  Gain			  "2.23713646532438"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Block NOTES"
+	  Ports			  []
+	  Position		  [560, 490, 616, 530]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "disp('Block\\nNOTES')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Block NOTES"
+	    Location		    [237, 212, 856, 704]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Annotation {
+	      Position		      [297, 92]
+	      VerticalAlignment	      "top"
+	      Text		      "Given the tractive force available, thi"
+"s block uses the same equations to determine the achievable speed."
+	    }
+	    Annotation {
+	      Position		      [292, 177]
+	      VerticalAlignment	      "top"
+	      Text		      "If no drivetrain component ran up again"
+"st its performance limit during the time step, the achieved speed\nis taken t"
+"o be the requested speed."
+	    }
+	    Annotation {
+	      Position		      [297, 47]
+	      VerticalAlignment	      "top"
+	      Text		      "This block uses the required vehicle sp"
+"eed with vehicle parameters and the previous speed\nand classic, straightforw"
+"ard equations to determine the tractive force required at the tire/road inter"
+"face."
+	    }
+	    Annotation {
+	      Position		      [292, 122]
+	      VerticalAlignment	      "top"
+	      Text		      "A slight simplification, the assumption"
+" that (speed_at_end_of_time_step)^2 is roughly equal to\n(speed_at_end_of_tim"
+"e_step)*(speed_at_beginning_of_time_step), is used to avoid solving\na quadra"
+"tic equation in the solution of v=v(Ftract)."
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux1"
+	  Ports			  [1, 2]
+	  Position		  [130, 412, 165, 448]
+	  Outputs		  "2"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [190, 24, 220, 56]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  Gain			  "0.5"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <sdo><cyc>"
+	  Position		  [440, 420, 470, 450]
+	  GotoTag		  "mpha"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <vc> and\n<wh>/tire slip model"
+	  Position		  [530, 319, 590, 341]
+	  GotoTag		  "v_prev"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [375, 375, 415, 395]
+	  FontName		  "Arial"
+	  X0			  "cyc_mph(1,2)*.447"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [440, 106, 460, 139]
+	  FontName		  "Arial"
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Rolling Resistance Force (N)"
+	  Position		  [425, 15, 505, 35]
+	  VariableName		  "Fr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [145, 30, 165, 50]
+	  FontName		  "Arial"
+	  IconShape		  "rectangular"
+	  Inputs		  "++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [4, 1]
+	  Position		  [365, 13, 385, 217]
+	  FontName		  "Arial"
+	  IconShape		  "rectangular"
+	  Inputs		  "++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [520, 180, 600, 200]
+	  VariableName		  "veh_force_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [520, 220, 600, 240]
+	  VariableName		  "veh_spd_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [185, 409, 255, 431]
+	  VariableName		  "veh_force_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [185, 450, 255, 470]
+	  VariableName		  "veh_spd_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to accelerate\n(N)"
+	  Ports			  [2, 1]
+	  Position		  [285, 262, 315, 318]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to accelerate\n(N)"
+	    Location		    [237, 212, 872, 720]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "v(m/s)"
+	      Position		      [60, 80, 80, 100]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "v prev"
+	      Position		      [60, 130, 80, 150]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [40, 175, 60, 195]
+	      DisplayTime	      off
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [95, 210, 130, 230]
+	      FontName		      "Arial"
+	      X0		      "-0.1"
+	      InheritSampleTime	      off
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [3, 1]
+	      Position		      [285, 77, 315, 113]
+	      Inputs		      "**/"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [115, 85, 135, 105]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [160, 180, 180, 200]
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass"
+	      Ports		      [0, 1]
+	      Position		      [100, 21, 140, 39]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "(N)"
+	      Position		      [385, 85, 405, 105]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -85]
+	      DstBlock		      "Product1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "v(m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "v prev"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -40]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -25]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, 35]
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Sum1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, 55]
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to ascend\n(N)"
+	  Ports			  [1, 1]
+	  Position		  [285, 94, 315, 146]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to ascend\n(N)"
+	    Location		    [237, 212, 872, 720]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [70, 105, 90, 125]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [50, 14, 190, 36]
+	      FontName		      "Arial"
+	      Value		      "veh_gravity"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [315, 135, 335, 155]
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<cyc>"
+	      Position		      [55, 64, 115, 86]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [310, 34, 340, 66]
+	      BackgroundColor	      "darkGreen"
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [380, 72, 410, 158]
+	      FontName		      "Arial"
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trigonometric\nFunction"
+	      Ports		      [1, 1]
+	      Position		      [155, 60, 185, 90]
+	      Operator		      "atan"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Trigonometry
+	      Name		      "Trigonometric\nFunction1"
+	      Ports		      [1, 1]
+	      Position		      [235, 60, 265, 90]
+	      Operator		      "sin"
+	      OutputSignalType	      "auto"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "current veh mass"
+	      Ports		      [0, 1]
+	      Position		      [195, 136, 235, 154]
+	      BackgroundColor	      "darkGreen"
+	      SourceBlock	      "lib_vehicle/Submodels/current veh mass"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "(N)"
+	      Position		      [450, 105, 470, 125]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Trigonometric\nFunction"
+	      SrcPort		      1
+	      DstBlock		      "Trigonometric\nFunction1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Trigonometric\nFunction1"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -25]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From<cyc>"
+	      SrcPort		      1
+	      DstBlock		      "Trigonometric\nFunction"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "(N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "current veh mass"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "force req'd to overcome\naerodynamic drag ("
+"N)"
+	  Ports			  [1, 1]
+	  Position		  [285, 175, 315, 235]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "force req'd to overcome\naerodynamic drag"
+" (N)"
+	    Location		    [237, 212, 872, 720]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [75, 20, 95, 40]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [50, 78, 260, 102]
+	      FontName		      "Arial"
+	      Value		      "veh_air_density*veh_CD*veh_FA*0.5"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [315, 22, 335, 58]
+	      FontName		      "Arial"
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "D aero(N)"
+	      Position		      [385, 30, 405, 50]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      Points		      [170, 0]
+	      Branch {
+		DstBlock		"Product"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 10]
+		DstBlock		"Product"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "D aero(N)"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "help"
+	  Ports			  []
+	  Position		  [521, 489, 552, 532]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  ShowName		  off
+	  OpenFcn		  "web(['file:\\\\\\' which('vehicle.htm')]);"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "image(imread('doc_man.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "help"
+	    Location		    [203, 331, 569, 538]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "record achieved\nforce outputs"
+	  Ports			  [2]
+	  Position		  [535, 385, 600, 420]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "record achieved\nforce outputs"
+	    Location		    [44, 192, 816, 673]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "spd_prev"
+	      Position		      [35, 78, 65, 92]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "spd"
+	      Position		      [35, 48, 65, 62]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [390, 75, 450, 95]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "vel_ave"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [390, 195, 450, 215]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "vel_ave"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [390, 285, 450, 305]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "vel_ave"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [395, 370, 455, 390]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "vel_ave"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [160, 174, 190, 206]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Gain		      "0.5"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto4"
+	      Position		      [560, 69, 695, 91]
+	      ShowName		      off
+	      GotoTag		      "veh_pwr_accel_a"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto5"
+	      Position		      [570, 189, 705, 211]
+	      ShowName		      off
+	      GotoTag		      "veh_pwr_drag_a"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto6"
+	      Position		      [230, 136, 290, 154]
+	      ShowName		      off
+	      GotoTag		      "vel_ave"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto7"
+	      Position		      [565, 279, 700, 301]
+	      ShowName		      off
+	      GotoTag		      "veh_pwr_ascent_a"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto9"
+	      Position		      [570, 364, 705, 386]
+	      ShowName		      off
+	      GotoTag		      "veh_pwr_rr_a"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [475, 61, 520, 94]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [475, 181, 520, 214]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product2"
+	      Ports		      [2, 1]
+	      Position		      [475, 271, 520, 304]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product3"
+	      Ports		      [2, 1]
+	      Position		      [480, 356, 525, 389]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [115, 180, 135, 200]
+	      FontName		      "Arial"
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      ToWorkspace
+	      Name		      "To Workspace1"
+	      Position		      [580, 410, 695, 430]
+	      ShowName		      off
+	      VariableName	      "veh_pwr_rr_a"
+	      MaxDataPoints	      "inf"
+	      Decimation	      "1"
+	      SampleTime	      "-1"
+	      SaveFormat	      "Array"
+	    }
+	    Block {
+	      BlockType		      ToWorkspace
+	      Name		      "To Workspace4"
+	      Position		      [580, 110, 695, 130]
+	      ShowName		      off
+	      VariableName	      "veh_pwr_accel_a"
+	      MaxDataPoints	      "inf"
+	      Decimation	      "1"
+	      SampleTime	      "-1"
+	      SaveFormat	      "Array"
+	    }
+	    Block {
+	      BlockType		      ToWorkspace
+	      Name		      "To Workspace6"
+	      Position		      [585, 230, 700, 250]
+	      ShowName		      off
+	      VariableName	      "veh_pwr_drag_a"
+	      MaxDataPoints	      "inf"
+	      Decimation	      "1"
+	      SampleTime	      "-1"
+	      SaveFormat	      "Array"
+	    }
+	    Block {
+	      BlockType		      ToWorkspace
+	      Name		      "To Workspace7"
+	      Position		      [580, 320, 695, 340]
+	      ShowName		      off
+	      VariableName	      "veh_pwr_ascent_a"
+	      MaxDataPoints	      "inf"
+	      Decimation	      "1"
+	      SampleTime	      "-1"
+	      SaveFormat	      "Array"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "force req'd to accelerate\n(N)1"
+	      Ports		      [2, 1]
+	      Position		      [285, 42, 315, 98]
+	      FontName		      "Arial"
+	      SourceBlock	      "lib_vehicle/vehicle <veh>/force req'd t"
+"o accelerate\n(N)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "force req'd to ascend\n(N)1"
+	      Ports		      [1, 1]
+	      Position		      [285, 254, 315, 306]
+	      FontName		      "Arial"
+	      SourceBlock	      "lib_vehicle/vehicle <veh>/force req'd t"
+"o ascend\n(N)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "force req'd to overcome\naerodynamic dr"
+"ag (N)1"
+	      Ports		      [1, 1]
+	      Position		      [285, 160, 315, 220]
+	      FontName		      "Arial"
+	      SourceBlock	      "lib_vehicle/vehicle <veh>/force req'd t"
+"o overcome\naerodynamic drag (N)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "rolling resistance force"
+	      Ports		      [1, 1]
+	      Position		      [285, 338, 315, 392]
+	      AttributesFormatString  "%<BlockChoice>"
+	      ShowPortLabels	      off
+	      BlockChoice	      "force req'd to overcome rolling resista"
+"nce (N)"
+	      TemplateBlock	      "lib_vehicle/Submodels/rolling resistanc"
+"e force"
+	      MemberBlocks	      "force req'd to overcome rolling resista"
+"nce (N),force req'd to overcome rolling resistance (N) j2452"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"rolling resistance force"
+		Location		[148, 182, 646, 482]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "average vehicle speed\nover time st"
+"ep (m/s)"
+		  Position		  [20, 40, 40, 60]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "force req'd to overcome\nrolling re"
+"sistance (N)"
+		  Ports			  [1, 1]
+		  Position		  [100, 40, 140, 80]
+		  FontName		  "Arial"
+		  SourceBlock		  "lib_vehicle/Submodels/force req'd t"
+"o overcome\nrolling resistance (N)"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  "off"
+		  TreatAsAtomicUnit	  "off"
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Fr\n(N)"
+		  Position		  [200, 80, 220, 100]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "average vehicle speed\nover time st"
+"ep (m/s)"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 10]
+		  DstBlock		  "force req'd to overcome\nrolling re"
+"sistance (N)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "force req'd to overcome\nrolling re"
+"sistance (N)"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 30]
+		  DstBlock		  "Fr\n(N)"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "spd"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"force req'd to accelerate\n(N)1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Sum2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "spd_prev"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		DstBlock		"force req'd to accelerate\n(N)1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 110]
+		DstBlock		"Sum2"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "force req'd to overcome\naerodynamic dr"
+"ag (N)1"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "force req'd to ascend\n(N)1"
+	      SrcPort		      1
+	      DstBlock		      "Product2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "rolling resistance force"
+	      SrcPort		      1
+	      DstBlock		      "Product3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "force req'd to accelerate\n(N)1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"To Workspace4"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Goto4"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"To Workspace6"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Goto5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Product2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"To Workspace7"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Goto7"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Product3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product3"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		DstBlock		"Goto9"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 45]
+		DstBlock		"To Workspace1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"force req'd to overcome\naerodynamic "
+"drag (N)1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 90]
+		Branch {
+		  DstBlock		  "force req'd to ascend\n(N)1"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 85]
+		  DstBlock		  "rolling resistance force"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, -45]
+		DstBlock		"Goto6"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "rolling resistance force"
+	  Ports			  [1, 1]
+	  Position		  [295, 13, 325, 67]
+	  AttributesFormatString  "%<BlockChoice>"
+	  ShowPortLabels	  off
+	  BlockChoice		  "force req'd to overcome rolling resistance "
+"(N)"
+	  TemplateBlock		  "lib_vehicle/Submodels/rolling resistance fo"
+"rce"
+	  MemberBlocks		  "force req'd to overcome rolling resistance "
+"(N),force req'd to overcome rolling resistance (N) j2452"
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "rolling resistance force"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "average vehicle speed\nover time step ("
+"m/s)"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "force req'd to overcome\nrolling resist"
+"ance (N)"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      FontName		      "Arial"
+	      SourceBlock	      "lib_vehicle/Submodels/force req'd to ov"
+"ercome\nrolling resistance (N)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fr\n(N)"
+	      Position		      [200, 80, 220, 100]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "average vehicle speed\nover time step ("
+"m/s)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 10]
+	      DstBlock		      "force req'd to overcome\nrolling resist"
+"ance (N)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "force req'd to overcome\nrolling resist"
+"ance (N)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 30]
+	      DstBlock		      "Fr\n(N)"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "vehicle speed"
+	  Ports			  [2, 1]
+	  Position		  [290, 357, 320, 408]
+	  ShowName		  off
+	  AttributesFormatString  "%<BlockChoice>"
+	  ShowPortLabels	  off
+	  BlockChoice		  "vehicle speed (m/s)"
+	  TemplateBlock		  "lib_vehicle/Submodels/vehicle speed"
+	  MemberBlocks		  "vehicle speed (m/s),vehicle speed (m/s) j24"
+"52"
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "vehicle speed"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      Position		      [20, 80, 40, 100]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "vehicle speed (m/s)"
+	      Ports		      [2, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "lib_vehicle/Submodels/vehicle speed (m/"
+"/s)"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "off"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      Position		      [200, 40, 220, 60]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed at\nbeginning of time ste"
+"p\n(m/s)"
+	      SrcPort		      1
+	      DstBlock		      "vehicle speed (m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "available tractive force\nand linear sp"
+"eed\n(N), (m/s)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -20]
+	      DstBlock		      "vehicle speed (m/s)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "vehicle speed (m/s)"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -10]
+	      DstBlock		      "vehicle speed\nachievable at\nend of ti"
+"me step\n(m/s)"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tractive force and speed\nrequired of tire "
+"and wheel\n(N), (m/s)"
+	  Position		  [550, 115, 570, 135]
+	  FontName		  "Arial"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "rolling resistance force"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Rolling Resistance Force (N)"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "force req'd to ascend\n(N)"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -30]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "(m/s) -> (mph)1"
+	  SrcPort		  1
+	  DstBlock		  "Goto <sdo><cyc>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -35]
+	  Branch {
+	    Points		    [-340, 0]
+	    Branch {
+	      Points		      [0, -45]
+	      Branch {
+		Points			[0, -260]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"force req'd to accelerate\n(N)"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 20]
+	      DstBlock		      "vehicle speed"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [50, 0]
+	    Branch {
+	      Points		      [15, 0]
+	      DstBlock		      "Goto <vc> and\n<wh>/tire slip model"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 45]
+	      DstBlock		      "record achieved\nforce outputs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "force req'd to accelerate\n(N)"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -100]
+	  DstBlock		  "Sum1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "force req'd to overcome\naerodynamic drag ("
+"N)"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -65]
+	  DstBlock		  "Sum1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "To Workspace2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "tractive force and speed\nrequired of tire "
+"and wheel\n(N), (m/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "vehicle speed\nreq'd at end of\ntime step ("
+"m/s)"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 240]
+	    DstBlock		    "force req'd to accelerate\n(N)"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 80]
+	    Branch {
+	      DstBlock		      "force req'd to ascend\n(N)"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 85]
+	      Branch {
+		Points			[0, 35; 175, 0; 0, -10]
+		Branch {
+		  DstBlock		  "To Workspace3"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -100]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		Points			[0, 0]
+		DstBlock		"force req'd to overcome\naerodynamic "
+"drag (N)"
+		DstPort			1
+	      }
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "rolling resistance force"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "tractive force and\nlinear speed\nachievabl"
+"e\n(N)"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "Demux1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [160, 0]
+	    DstBlock		    "vehicle speed"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "vehicle speed"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 25]
+	    Branch {
+	      Points		      [0, 25]
+	      DstBlock		      "(m/s) -> (mph)1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "record achieved\nforce outputs"
+	      DstPort		      2
+	    }
+	  }
+	}
+      }
+    }
+    Annotation {
+      Position		      [46, 31]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      Text		      "Vehicle:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+    }
+    Annotation {
+      Position		      [119, 136]
+      Text		      "-----------------------------------------------"
+"-----------------------"
+    }
+    Annotation {
+      Position		      [36, 162]
+      Text		      "sub-models\nfor vehicle\n<veh>"
+    }
+  }
+}

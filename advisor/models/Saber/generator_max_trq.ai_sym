@@ -1,0 +1,53 @@
+[symbol6]
+desc {}
+uniq 31
+[resources]
+<font>
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{Arial 3.0 bold}
+{Arial 5.0 bold}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+generator_max_trq_0
+-830 -538 830 521
+0 0 
+<properties>
+primitive generator_max_trq { } string {} -768 -656 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref generator_max_trq { } string {} -768 -784 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+spd -800 0 1 1 -896 -896 144 5 1 2 0 0 1 {} 6
+max_trq 800 0 1 2 1008 1008 144 3 1 2 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_0_ 0 1 1 0 1 10 1 0 {-560 -80 -480 0 } {8 10 3} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {480 0 800 0 } {8 10 3} 6 
+t gr_3_ 0 240 1 1 0 0 0 2 8 0 {Look-up Table} 6 
+l gr_5_ 0 1 1 0 1 10 1 0 {-800 0 -480 0 } {8 10 3} 6 
+r gr_6_ -480 -320 480 320 0 1 10 1 0 0 6 
+l gr_8_ 0 1 1 0 1 10 1 0 {-560 80 -480 0 } {8 10 3} 6 
+t gr_10_ -464 -384 2 1 0 0 0 0 7 0 {Max Gen Trq} 6 
+l gr_15_ 0 1 1 0 1 10 1 0 {-208 96 -208 -144 160 -144 } {8 10 3} 6 
+t gr_16_ -64 -160 4 1 0 0 0 0 7 0 {X} 6 
+t gr_17_ -336 16 5 1 0 0 0 0 7 0 {Y } 6 
+a gr_19_ 0 1 -192 -128 192 144 25 157 0 1 10 1 0 0 6 
+t gr_22_ -416 528 6 1 0 0 0 0 7 0 {Generator
+} 6 

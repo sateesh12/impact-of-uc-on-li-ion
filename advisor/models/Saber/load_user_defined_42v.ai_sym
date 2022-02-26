@@ -1,0 +1,47 @@
+[symbol8]
+desc {}
+uniq 14
+[resources]
+<font>
+{Arial 4.0}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+-480 320 
+<properties>
+primitive load_user_defined_42v { } string {} -816 -304 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+ref load_user_defined_42v { } string {} -816 -432 1 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+p -480 960 1 0 -416 -416 976 0 7 1 2 0 0 2 {{primitive load_user_defined_42V { } string {} -400 720 0 0 0 5 3 {} 0 4 {} {} {} 6 l}} 6
+m -480 -160 1 0 -416 -416 -64 0 7 1 2 0 0 2 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-896 -190 -32 990
+t gr_0_ -736 352 1 1 0 0 0 0 7 0 {i} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {-672 400 -672 144 -256 144 } {8 10 3} 6 
+l gr_2_ 0 1 1 0 1 10 1 0 {-480 0 -480 -160 } {8 10 3} 6 
+t gr_4_ -352 160 3 1 0 0 0 0 7 0 {v} 6 
+l gr_5_ 0 1 1 0 1 10 1 0 {-672 144 -320 400 } {8 10 3} 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {-480 800 -480 960 } {8 10 3} 6 
+t gr_8_ -864 720 3 1 0 0 0 0 7 0 {User Defined
+42V Load} 6 
+r gr_9_ -896 0 -32 800 0 1 10 1 0 0 6 

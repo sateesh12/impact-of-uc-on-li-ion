@@ -1,0 +1,56 @@
+[symbol6]
+desc {}
+uniq 43
+[resources]
+<font>
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{Arial 3.0 bold}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{Arial 5.0 bold}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+motor_eff_0
+-670 -826 990 825
+0 0 
+<properties>
+primitive motor_eff { } string {} -784 -768 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+ref motor_eff { } string {} -784 -896 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+eff 960 0 1 2 992 992 128 3 1 2 0 0 1 {} 6
+spd -640 320 1 1 -720 -720 448 5 1 2 0 0 1 {} 6
+trq -640 -320 1 1 -720 -720 -208 5 1 2 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_0_ 0 1 1 0 1 10 1 0 {-400 240 -320 320 } {8 10 3} 6 
+t gr_2_ 368 -32 2 1 0 0 0 0 7 0 {X} 6 
+l gr_3_ 0 1 1 0 1 10 1 0 {-400 400 -320 320 } {8 10 3} 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {48 192 48 -144 416 -144 } {8 10 3} 6 
+r gr_5_ -320 -640 640 640 0 1 10 1 0 0 6 
+l gr_7_ 0 1 1 0 1 10 1 0 {-640 -320 -320 -320 } {8 10 3} 6 
+t gr_8_ -32 256 3 1 0 0 0 0 7 0 {Z } 6 
+l gr_9_ 0 1 1 0 1 10 1 0 {48 -144 -112 -352 } {8 10 3} 6 
+l gr_10_ 0 1 1 0 1 10 1 0 {640 0 960 0 } {8 10 3} 6 
+t gr_12_ -144 -672 5 1 0 0 0 0 7 0 {Efficiency} 6 
+l gr_13_ 0 1 1 0 1 10 1 0 {-400 -240 -320 -320 } {8 10 3} 6 
+l gr_14_ 0 1 1 0 1 10 1 0 {-640 320 -320 320 } {8 10 3} 6 
+t gr_15_ -96 -368 3 1 0 0 0 0 7 0 {Y } 6 
+l gr_16_ 0 1 1 0 1 10 1 0 {-400 -400 -320 -320 } {8 10 3} 6 
+t gr_17_ 176 512 1 1 0 0 0 2 8 0 {Look-up Table} 6 
+t gr_36_ -368 832 5 1 0 0 0 0 7 0 {Traction Motor} 6 

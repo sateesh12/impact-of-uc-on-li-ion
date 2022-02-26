@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>ADVISOR Help on Honda Insight Model</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">ADVISOR Help on Honda Insight Model</h1>
+</div>
+<center>
+
+<h1 id="help-on-the-honda-insight-model">Help On the Honda Insight Model</h1>
+<p></b></p>
+</center>
+<p><a href="#intro">Introduction</a><br /> <a href="#control">The control strategy</a><br /> - <a href="#test">Test data - a basis for development</a> - <a href="#strategy">A scalable control structure</a> - <a href="#engine">Engine on/off characteristics</a></p>
+<p><a href="#data">Insight data files</a><br /> <u><a name="intro">Introduction</a></u> —————————————</p>
+<p>The Honda Insight model is developed based on test data, provided by the National Renewable Energy Laboratory, Golden, Colorado, and Argonne National Laboratory, Illinois. The model aims at describing the control strategy and the characteristics of the Honda Insight drivetrain.</p>
+<p>The following is the <strong><em>base</em></strong> block diagram used in the simulation of the Insight. Here, the control block directly commands the torques required from the 2 power sources namely the IC engine and the electric motor.<br /> <img src="insight_block.jpg" /></p>
+<h2 id="honda-insight-torque-split-control-strategy-scalable"><u><a name="control">Honda Insight Torque Split Control Strategy (scalable)</a></u></h2>
+<p>The Honda Insight Torque Split control strategy is explained below. This is developed as a result of test data analysis and observation of component behaviour. This model is scalable, and can be used by the user, to define his own control strategy.</p>
+<p>The control strategy block &lt;cs&gt; receives the torque required into the clutch. Based on this value and the vehicle speed, the electric motor torque contribution is calculated. The remaining torque is demanded from the IC engine. The electric motor torque is decided based on the following criteria:<br /><br /> - When accelerating, based on the torque and rate of acceleration, the electric motor assists the IC Engine, producing around 10 Nm of torque. - During regeneration,(in reality, when the brake is depressed), the electric motor regens a portion of the negative torque availabe to the driveline. - At low vehicle speeds, typically below 10 mph, the braking is primarily only the friction brakes. - There is no electric assist in the first gear.</p>
+<h3 id="test-data---a-basis"><a name="test">Test data - a basis</a></h3>
+<p>Test data from NREL and ANL were analysed to determine the hybrid powertrain characteristics. Shown below, are some characteristics, based on which the model has been developed.</p>
+<p>The following graph depicts the contribution of the electric motor torque based on the total driveline torque. The motor is seen to produce around 10 Nm of torque during assist.<br /><img src="insight_em_trq.jpg" /><br /> The Insight IMA does not usually assist the IC Engine during 1st gear. The following graph depicts this phenomenon from test data:<br /> <img src="insight_1st_gear.jpg" /><br /> This above plot shows engine rpm, COLOR CODED by gear ratio. (RED-1st gear, GREEN-2nd gear, BLUE-3rd gear, MAGENTA-4th gear, CYAN-5th gear, BLACK-unknown gear ratio / slip). The electric motor torque is shown by BROWN. It is clearly seen that the motor does not assist in first gear.</p>
+<p>The Insight electric motor regeneration torque depends on the application of the brakes. Also, regeneration reduces, if the vehicle slows down (typically belolw 10 mph). The following plot depicts this phenomenon from test data.<br /><img src="insight_brake_signal.jpg" /><br /><br /> The following shows the control strategy block in ADVISOR for the Honda Insight.<br /> <img src="insight_control.jpg" /><br /> The following conditions are incorporated in the above model:<br /> - In the above block, the torque request is analysed for acceleration (positive torques) or deceleration (negative torques). - The 1<sup>st</sup> gear condition is checked. Also, at slow speeds, the motor remains inactive. - Since there is no separate alternator in the Insight, the electric motor has to function as the alternator. Thus, the electric motor generates a small current, based on the power required by the accessories. The battery pack supplies the electrical accessory loads when the motor assists the engine. - The clutch has to be engaged for the electric motor to regenerate some of the energy from braking. - The battery SoC is checked, since it affects the operation of the motor at low and high ranges of SoC.</p>
+<p>The electric motor torque is decided based on the above criteria and the remaining torque is requested from the IC engine. Since the motor and the IC engine are connected to the same shaft, the controlled IC engine speed is requested from the electric motor also.</p>
+<h3 id="scalable-control-strategy"><a name="strategy">Scalable control strategy</a></h3>
+<p>A user can now change the above strategy using input variables, and can define a new strategy. The scheme of the control strategy is shown below:<br /> <img src="insight_strategy.gif" /><br /> The strategy is used to determine the electric motor torque based on the total driveline torque requested from the 2 power sources (IC engine and motor). The electric motor torque is calculated based on a slope-point formulation, as shown above. The following variables are used:</p>
+<table border="1">
+<tr>
+<th>
+<p>Variable</p>
+</th>
+<th>
+<p>Description</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>cs_dl_assist_trq_threshold</p>
+</td>
+<td>
+<p>Driveline torque threshold below which the electric machine does not assist</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_mc_assist_min_frac</p>
+</td>
+<td>
+<p>Minimum Torque normally provided by the electric motor when driveline torque exceeds threshold (as a fraction of max torque)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_mc_assist_slope</p>
+</td>
+<td>
+<p>Fraction (slope of the line) of the driveline torque provided by the electric motor when the driveline torque exceeds threshold</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_mc_assist_max_frac</p>
+</td>
+<td>
+<p>Maximum motor torque requested from the motor during assist (as a fraction of max torque)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_dl_regen_trq_threshold</p>
+</td>
+<td>
+<p>Driveline regenerative torque threshold above which the electric machine does not regen at low speeds</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_mc_regen_min_frac</p>
+</td>
+<td>
+<p>Minimum regen Torque normally provided by the electric motor when driveline torque exceeds regen threshold (as a fraction of max regen torque)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_mc_regen_slope</p>
+</td>
+<td>
+<p>Fraction (slope of the line) of the negative driveline torque regenerated by the electric motor when the driveline torque exceeds threshold</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_mc_regen_max_frac</p>
+</td>
+<td>
+<p>Maximum regen motor torque requested from the motor during regeneration/braking (as a fraction of max regen torque)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cs_decel_regen_threshold</p>
+</td>
+<td>
+<p>Speed during deceleration below which the electric motor does not regenerate (all emphasis on friction braking)</p>
+</tr>
+<td>
+</table>
+<p>The following shows the effect of varying the structure of the strategy.<br /> <img src="insight_strategy1.gif" /></p>
+<h3 id="engine-on-off-characteristics"><a name="engine">Engine on-off characteristics</a></h3>
+<p>For the Honda Insight, the engine remains on in most cases.  The following criteria define when the engine is allowed to shut off.  The engine in the Insight will only shut down if all of the following conditions are satisfied:</p>
+<ol style="list-style-type: decimal">
+<li>engine is warm (as determined from fc_clt_tmp &gt;= vc_fc_warm_frac*fc_tstat)</li>
+<li>battery SOC is greater than the low SOC set point</li>
+<li>vehicle is decelerating or stopped</li>
+<li>vehicle speed is less than cs_electric_decel_spd (set at 4.5 m/s (10 mph))</li>
+<li>vehicle is not shifting gears</li>
+</ol>
+<p>A boolean (cs_decel_fc_off) was added to allow for an override of the engine off condition during low speed decelerations.  When driving the actual vehicle, this can be done by not putting the vehicle in neutral during decelerations.  The boolean is defined in the powertrain control file (PTC_INSIGHT) and has a default value of 1 (1 allows the engine to shut off during decel, 0 keeps the engine on during decel).</p>
+<p>The engine ON/OFF function for the Insight is shown below. This block is inside the vehicle controls &lt;vc&gt; block.<br /> <img src="insight_engine_off.jpg" /></p>
+<h2>
+<p><a name="data">Data Files</a></p>
+</h3>
+<p>The following information describes main parameters defined in the Insight vehicle setup files.</p>
+<h3 id="ptc_insight">PTC_INSIGHT</h3>
+<p>The Insight’s powertrain control model is based on test results and test data from NREL and ANL. The HONDA INSIGHT tests provided enough test data to understand the actual vehicle characteristics and the functions of the Integrated Motor Assist(IMA).</p>
+<p>The following indicate some of the characteristics of the vehicle control strategy.</p>
+<p>
+<p>The Insight engine’s idle speed 94 rad/s (900 rpm) was taken from from NREL testing.  Two parameters were added:</p>
+<blockquote>
+<p>cs_decel_fc_off  allows the engine to be shut off during low speed decelerations, and<br />cs_electric_decel_spd = 4.5 m/s (10 mph) defines the vehicle speed below which the engine can shut off.<br />vc_fc_warm_tmp_frac = 0.85 (–) defines the fraction of the coolant temperature at which the engine is assumed to be warm and is allowed to shut down once started.</p>
+</blockquote>
+<p>The following parameters were removed from the file since they are not used in the Insight controls:</p>
+<blockquote>
+<p>cs_electric_launch_spd  - the Insight has no electric launch capability<br />cs_off_trq_frac - the Insight engine does not shut down based on engine load</p>
+</blockquote>
+<p>The following parameter values have been updated to correspond to actual vehicle operation:</p>
+<blockquote>
+<p>cs_hi_soc = 0.80<br />cs_lo_soc = 0.20</p>
+</blockquote>
+<h3 id="veh_insight">VEH_INSIGHT</h3>
+<p>The Insight vehicle is defined by the following published parameters:</p>
+<blockquote>
+<p>veh_mass = 1000 kg, vehicle mass 2200 lbs with AC, Automotive Engineering, Oct ’99<br />battery_mass = 20 kg, Automotive News, July 12, 99<br />engine_mass = 60 kg, Automotive Engineering, Oct ’99<br />vehicle_height = 1.325 m, Automotive Engineering, Oct ’99<br />vehicle_width = 1.695 m, Automotive Engineering, Oct ’99<br />veh_CD = 0.25, coefficient of aerodynamic drag, Automotive Engineering, Oct ’99<br />veh_FA = 1.9 m<sup>2</sup>, taken from Car &amp; Driver, Jan ‘00<br />veh_wheelbase = 2.4 m, Automotive Engineering, Oct ’99</p>
+</blockquote>
+<p>All other vehicle parameters are from ADVISOR’s small car defaults.</p>
+<h3 id="fc_insight">FC_INSIGHT</h3>
+<p>The current data for the 1.0L Honda Insight VTEC-E Engine comes from actual testing from Argonne National Labs (ANL). Fuel use data is obtained from their testing. Currently, emissions data has not been included in the model.</p>
+<blockquote>
+<p>peak power – 50 kW at 5700 rpm (engine only without IMA)<br />peak torque -  89.5 Nm at 4800 rpm (engine only without IMA)</p>
+</blockquote>
+<h3 id="ex_si_cc">EX_SI_CC</h3>
+<p>ADVISOR’s standard close-coupled catalyst is used in the current model.  The Insight catalyst is a lean-burn, NOx adsorption catalyst that is close coupled to the engine.  An improved catalyst model will be incorporated as data becomes available.</p>
+<h3 id="ess_nimh6">ESS_NiMH6</h3>
+<p>The battery pack of the Honda Insight is a Nickel Metal Hydride (NiMH) pack. Analysis of this battery pack was performed by NREL’s Battery Thermal Management (BTM) group. Data in the model file is from their testing of the pack.<br /> Key published battery parameters used in the model include:<br /> &gt; battery type – Nickel metal hydrid (NiMH)<br />&gt; cell voltage – 1.2 V<br />&gt; total cells – 120 cells (6 cells x 20 modules)<br />&gt; total voltage – 144 V<br />&gt; rated capacity – 6.5 Ah</p>
+<h3 id="mc_insight_draft">MC_INSIGHT_draft</h3>
+<p>The electric motor model is based on ADVISOR’s MC_PM49 (Data Source: Honda R&amp;D Americas).  This is a 49kW motor that has been scaled down to 10kW.  Maximum torque curve has been updated based on published speed vs. torque for the Insight engine and engine with integrated motor assist (Honda presentation at UC Davis Ultra-Clean Vehicle Workshop).   Key operating points that were incorporated into the model include:</p>
+<blockquote>
+<p>power – 10 kW at 3000 rpm<br />peak power of engine plus integrated motor assist – 54.4 kW at 5700 rpm<br />peak torque of engine plus integrated motor assist – 123.4 Nm<br />mass – 60 kg</p>
+</blockquote>
+<h3 id="tx_5spd_si_insight">TX_5SPD_SI_INSIGHT</h3>
+<p>The Insight transmission model is based on ADVISOR’s TX_5SPD_SI and modified to reflect published Honda Insight gear ratios (data source: Car &amp; Driver, Jan ’00).  Published gear ratios are shown below:</p>
+<blockquote>
+<p>Final drive  3.21:1<br />1st gear ratio  3.46<br />2nd gear ratio   1.75<br />3rd gear ratio  1.10<br />4th gear ratio  0.86</p>
+</blockquote>
+<p>Note: The gear shifting pattern is based on vehicle speed, according to test procedures laid out by the EPA. It can be set to ADVISOR’s default engine load and speed-based strategy, by setting the variable “tx_speed_dep” to 0. (default=1)</p>
+<h3 id="wh_insight">WH_INSIGHT</h3>
+<p>The Insight tire model is based on ADVISOR’s WH_SMCAR model.  The only update to this file is the wheel radius (0.275 m) which was calculated from mph/1000rpm data from Car&amp;Driver 1/2000</p>
+<blockquote>
+<p>Gear I   5.8 mph/1000rpm, 3.46 gear ratio<br />Gear II   11.5 mph/1000rpm, 1.75 gear ratio<br />Gear III   18.3 mph/1000rpm, 1.10 gear ratio<br />Gear IV   23.4 mph/1000rpm, 0.86 gear ratio<br />Gear V   28.3 mph/1000rpm, 0.71 gear ratio</p>
+</blockquote>
+<p>This could also be calculated from Honda Insight wheels P165/65R14 78S low rolling resistance</p>
+<blockquote>
+<p>wheel diameter = (2*165*.65)+ 14&quot;(25.4)= 0.5701 m<br />wh_radius = wheel diameter/2 - squish (assumed squish of 10mm)</p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_doc.html">Back to ADVISOR Documentation Contents</a><br /><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p><br />created: 8/18/00 (tm,kk)<br />Modified based on new model: 08/07/01 (ar)<br /> </p>
+</body>
+</html>

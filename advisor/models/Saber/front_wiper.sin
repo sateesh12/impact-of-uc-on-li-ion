@@ -1,0 +1,243 @@
+# front_wiper.sin                                                  DOE
+# symbol = front_wiper.ai_sym
+#
+#	ADVISOR software developed at NREL.  Copyright 1998
+#		Midwest Research Institute.  All rights reserved.
+#	http://www.ctts.nrel.gov/analysis/
+#
+#	Notice: These data were produced under
+#		Subcontract No. ZCL-0-30058-01, under
+#		Prime Contract No. DE-AC36-99GO10337
+#		with the Department of Energy (DOE).
+#
+########################################################################
+#
+#	DESCRIPTION:				
+#	-----------
+# 	This model represents a load as a current source.
+#	There is an input for large car, medium car,
+#	small car, SUV, pickup, or a user defined vehicle.
+#	For each pre_defined vehicle,	load current
+#	is provided at 12.2 volts, 13.5 volts, and 14.5 volts.
+#	Current load is determined by interpolation
+#	against pre-defined data.  For a user defined
+#	vehicle, three voltages & respective loads must
+#	be specified but does not have to be on a 14 volt system.
+# 	
+#	NODE CONNECTIONS:
+#	----------------
+#	[name]		[type]		[description]
+#	p		electrical	+ current enters this node
+#	m		electrical	+ current leaves this node
+#
+#	INPUT ARGUMENTS:
+#	---------------
+#	loadcontrol	          	turns load on and off
+#					also used for multiple loads
+#					(ie for 2 loads, loadcontrol = 2)
+#       vehiclesample
+#		large car	3 samples
+#		medium car	3 samples
+#		small car	4 samples
+#		SUV		4 samples
+#		Pickup Truck	1 sample
+#		user defined	1 sample
+#		average		5 samples (1=small, 2=med, 3=large, 4=PU truck, 5=SUV)
+#
+#	vehicletype	
+#	1	large car		Pre-defined typical voltages & loads
+#	2	medium car		Pre-defined typical voltages & loads
+#	3	small car		Pre-defined typical voltages & loads
+#	4	SUV			Pre-defined typical voltages & loads
+#	5	Pickup Truck		Pre-defined typical voltages & loads
+#	6	user defined		User determines voltages & loads
+#	7	average			Average loads for a given class vehicle
+#
+#	user_v1, user_v2, user_v3,  User defined voltage and current
+#	user_i1, user_i2, user_i3   Only used if vehicletype = 6
+#
+#	Note:  A user defined value should be used to re-define the
+#	voltage->current relationship for this component. Ex: the component
+#	is to be used a on bus other than 14 volts or the user has values
+#	for the component other than those pre-defined.  Delphi has no
+#	idea what the voltage->current relationship should or will be for
+#	any component not attached to the 14 volt bus.
+#
+#	OUTPUT SOLUTIONS:
+#	----------------
+#	[name]		[units]		[description]
+#       i       	Amps		Current draw for this model
+#	p_front_wiper	Watts		Power consumed for this load
+#
+########################################################################
+template front_wiper p m = loadcontrol,
+	vehicletype,vehiclesample,
+	user_v1,user_v2,user_v3,
+	user_i1,user_i2,user_i3
+#!crypt_start
+#pack 002
+electrical p, m
+number  loadcontrol = 0
+number  vehicletype = 1
+number  vehiclesample = 1
+number  user_v1 = 12, user_v2 = 13, user_v3 = 14
+number  user_i1 = 1.0, user_i2 = 1.5, user_i3 = 2.0
+	
+########################################################################
+{
+number v1 = 12.2,   v2 = 13.5,  v3 = 14.5  ; # Standard Voltages
+number l11 =2.3, l21 =2.7, l31 =2.7     ; # Large car #1  Cad DeVille 2000
+number l12 =3.0, l22 =2.2, l32 =1.9     ; # Large car #2  Buick P.A. #1 2001
+number l13 =3.4, l23 =3.7, l33 =3.8     ; # Large car #3  Pontiac Bonvl 2001
+number m11 =2.6, m21 =2.7, m31 =2.8     ; # Medium car #1 Buick Regal 1999
+number m12 =1.9, m22 =2.0, m32 =2.3     ; # Medium Car #2 Honda Accord 2000
+number m13 =2.6, m23 =2.7, m33 =2.9     ; # Medium Car #3 Saturn 4D 2000
+number p11 =3.1, p21 =3.4, p31 =3.4     ; # Pick-Up #1  GM Diesel C/K 2002
+number s11 =2.1, s21 =2.2, s31 =2.5     ; # Small Car #1 Pontiac Sunfire 2000
+number s12 =3.0, s22 =4.0, s32 =4.6     ; # Small Car #2 Mercedes C220D 2000
+number s13 =2.2, s23 =2.3, s33 =2.5     ; # Small Car #3 Daewoo 4D 2000
+number s14 =2.8, s24 =2.8, s34 =2.9     ; # Small Car #4 Chevy Prizm 2001
+number u11 =3.0, u21 =3.2, u31 =3.3     ; # SUV #1 Pontiac Aztek #1 2001
+number u12 =3.1, u22 =3.6, u32 =3.8     ; # SUV #2 Chevy Yukon 2001
+number u13 =2.7, u23 =2.9, u33 =3.1     ; # SUV #3 Rangerover L6 2000
+number u14 =1.1, u24 =1.2, u34 =1.4     ; # SUV #4 Ford Explorer 2000
+number a11 =2.5, a21 =2.8, a31 =3.1     ; # Class Average - Small Car
+number a12 =2.4, a22 =2.5, a32 =2.7     ; # Class Average - Medium Car
+number a13 =2.9, a23 =2.9, a33 =2.8     ; # Class Average - Large Car
+number a14 =3.1, a24 =3.4, a34 =3.4     ; # Class Average - Pickup Truck
+number a15 =2.5, a25 =2.7, a35 =2.9     ; # Class Average - SUV
+val nu x1, x2, x3  ; # used to buffer arguments later
+val i current
+val v v
+foreign  pwl1
+var i i
+val p p_front_wiper
+#######################  LARGE CARS (3) ############################
+# Data structure for vehicletype = 1, vehiclesample = 1 large car
+struc vt1 {
+		number vv1, i11
+          } vt1[*] = [(v1,l11),(v2,l21),(v3,l31)]
+# Data structure for vehicletype = 1, vehiclesample = 2 large car
+struc vt2 {
+		number vv2, i12
+          } vt2[*] = [(v1,l12),(v2,l22),(v3,l32)]
+# Data structure for vehicletype = 1, vehiclesample = 3 large car
+struc vt3 {
+		number vv3, i13
+          } vt3[*] = [(v1,l13),(v2,l23),(v3,l33)]
+#######################  MEDIUM CARS (3) ############################
+# Data structure for vehicletype = 2, vehiclesample = 1 medium car
+struc vt5 {
+		number vv5, i21
+          } vt5[*] = [(v1,m11),(v2,m21),(v3,m31)]
+# Data structure for vehicletype = 2, vehiclesample = 2 medium car
+struc vt6 {
+		number vv6, i22
+          } vt6[*] = [(v1,m12),(v2,m22),(v3,m32)]
+                   	
+# Data structure for vehicletype = 2, vehiclesample = 3 medium car
+struc vt7 {
+		number vv7, i23
+          } vt7[*] = [(v1,m13),(v2,m23),(v3,m33)]
+#######################  SMALL CARS (4) ############################
+# Data structure for vehicletype = 3, vehiclesample = 1 small car
+struc vt11 {
+		number vv11, i31
+          } vt11[*] = [(v1,s11),(v2,s21),(v3,s31)]
+# Data structure for vehicletype = 3, vehiclesample = 2 small car
+struc vt12 {
+		number vv12, i32
+          } vt12[*] = [(v1,s12),(v2,s22),(v3,s32)]
+# Data structure for vehicletype = 3, vehiclesample = 3 small car
+struc vt13 {
+		number vv13, i33
+          } vt13[*] = [(v1,s13),(v2,s23),(v3,s33)]
+# Data structure for vehicletype = 3, vehiclesample = 4 small car
+struc vt14 {
+		number vv14, i34
+          } vt14[*] = [(v1,s14),(v2,s24),(v3,s34)]
+#######################  UTILITY VEHS (4) ######################
+# Data structure for vehicletype = 4, vehiclesample = 1 SUV
+struc vt17 {
+		number vv17, i41
+          } vt17[*] = [(v1,u11),(v2,u21),(v3,u31)]
+# Data structure for vehicletype = 4, vehiclesample = 2 SUV
+struc vt18 {
+		number vv18, i42
+          } vt18[*] = [(v1,u12),(v2,u22),(v3,u32)]
+# Data structure for vehicletype = 4, vehiclesample = 3 SUV
+struc vt19 {
+		number vv19, i43
+          } vt19[*] = [(v1,u13),(v2,u23),(v3,u33)]
+# Data structure for vehicletype = 4, vehiclesample = 4 SUV
+struc vt20 {
+		number vv20, i44
+          } vt20[*] = [(v1,u14),(v2,u24),(v3,u34)]
+#######################  PICKUP TRUCKS (1) ######################
+# Data structure for vehicletype = 5, vehiclesample = 1 Pickup Truck
+struc vt26 {
+		number vv26, i51
+          } vt26[*] = [(v1,p11),(v2,p21),(v3,p31)]
+#######################  USER DEFINED (1) ######################
+# Data structure for vehicletype = 6, user
+struc vt27 {
+		number vv27, i6
+          } vt27[*] = [(user_v1,user_i1),(user_v2,user_i2),(user_v3,user_i3)]
+#######################  CLASS AVERAGE (5) ######################
+# Data structure for vehicletype = 7, vehiclesample = 1 sm.class avg.
+struc vt28 {
+		number vv28, i71
+          } vt28[*] = [(v1,a11),(v2,a21),(v3,a31)]
+# Data structure for vehicletype = 7, vehiclesample = 2 med.class avg.
+struc vt29 {
+		number vv29, i72
+          } vt29[*] = [(v1,a12),(v2,a22),(v3,a32)]
+# Data structure for vehicletype = 7, vehiclesample = 3 lrg.class avg.
+struc vt30 {
+		number vv30, i73
+          } vt30[*] = [(v1,a13),(v2,a23),(v3,a33)]
+# Data structure for vehicletype = 7, vehiclesample = 4 P/U class avg.
+struc vt31 {
+		number vv31, i74
+          } vt31[*] = [(v1,a14),(v2,a24),(v3,a34)]
+# Data structure for vehicletype = 7, vehiclesample = 5 SUV class avg.
+struc vt32 {
+		number vv32, i75
+          } vt32[*] = [(v1,a15),(v2,a25),(v3,a35)]
+########################################################################
+values{
+	 v = v(p) - v(m)
+	 current = 0.0
+	 x1 = vehicletype
+	 x2 = vehiclesample
+	 x3 = loadcontrol
+	 if (x1 == 1 & x2 == 1)   current = pwl1(2,vt1,v)
+	 if (x1 == 1 & x2 == 2)   current = pwl1(2,vt2,v)
+	 if (x1 == 1 & x2 == 3)   current = pwl1(2,vt3,v)
+ 	 if (x1 == 2 & x2 == 1)   current = pwl1(2,vt5,v)
+ 	 if (x1 == 2 & x2 == 2)   current = pwl1(2,vt6,v)
+	 if (x1 == 2 & x2 == 3)   current = pwl1(2,vt7,v)
+	 if (x1 == 3 & x2 == 1)   current = pwl1(2,vt11,v)
+	 if (x1 == 3 & x2 == 2)   current = pwl1(2,vt12,v)
+	 if (x1 == 3 & x2 == 3)   current = pwl1(2,vt13,v)
+	 if (x1 == 3 & x2 == 4)   current = pwl1(2,vt14,v)
+	 if (x1 == 4 & x2 == 1)   current = pwl1(2,vt17,v)
+	 if (x1 == 4 & x2 == 2)   current = pwl1(2,vt18,v)
+	 if (x1 == 4 & x2 == 3)   current = pwl1(2,vt19,v)
+	 if (x1 == 4 & x2 == 4)   current = pwl1(2,vt20,v)
+	 if (x1 == 5 & x2 == 1)   current = pwl1(2,vt26,v)
+	 if (x1 == 6 & x2 == 1)   current = pwl1(2,vt27,v)
+	 if (x1 == 7 & x2 == 1)   current = pwl1(2,vt28,v)
+	 if (x1 == 7 & x2 == 2)   current = pwl1(2,vt29,v)
+	 if (x1 == 7 & x2 == 3)   current = pwl1(2,vt30,v)
+	 if (x1 == 7 & x2 == 4)   current = pwl1(2,vt31,v)
+	 if (x1 == 7 & x2 == 5)   current = pwl1(2,vt32,v)
+	 current = current * x3
+	 p_front_wiper = v * current
+	}		
+equations{
+	    i(p->m)+= i
+	    i:  i = current
+         }
+#!crypt_end
+}

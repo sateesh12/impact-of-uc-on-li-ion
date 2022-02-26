@@ -1,0 +1,4858 @@
+Model {
+  Name			  "BD_DynamicCompareSims2"
+  Version		  4.1.1
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Oct 18 10:51:52 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "abrooker"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb 21 11:57:54 2003"
+  ModelVersionFormat	  "1.%<AutoIncrement:158>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "inf"
+  SolverMode		  "Auto"
+  Solver		  "VariableStepDiscrete"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "BD_DynamicCompareSims2"
+    Location		    [537, 74, 1226, 970]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Altia_Advisor2"
+      Ports		      [44, 5]
+      Position		      [390, 76, 445, 1159]
+      BackgroundColor	      "yellow"
+      OpenFcn		      "AltiaClk"
+      FontName		      "Arial"
+      FontSize		      12
+      FunctionName	      "altiasfn"
+      Parameters	      "NumAltiaSfnInputs,NumAltiaSfnOutputs,ALTIAHOME"
+      PortCounts	      "[]"
+      SFunctionModules	      "libsdde.lib user32.lib"
+      MaskDescription	      "This block allows you to connect your signals t"
+"o an Altia Design file.  Specify the number of Inputs and Outputs you would l"
+"ike the Altia block to have (each line connected to the block can only be ONE"
+" signal wide ... no muxing into the Altia block)."
+      MaskHelp		      "The first box is the number of inputs to the Al"
+"tia S-Function.  The second box is the number of ouputs for the Altia S-Funct"
+"ion."
+      MaskPromptString	      "Inputs to Altia S-Function:|Outputs to Altia S-"
+"Function:"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "NumAltiaSfnInputs=@1;NumAltiaSfnOutputs=@2;"
+      MaskInitialization      "altiahome"
+      MaskDisplay	      "disp('A L T I A')"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "44|5"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"time"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		2
+	Name			"simRun"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		3
+	Name			"altia_grade"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		4
+	Name			"altia_cyc_mph_r"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		5
+	Name			"time_gain"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [610, 175, 650, 205]
+      GotoTag		      "time"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Ground
+      Name		      "Ground1"
+      Position		      [185, 1145, 205, 1165]
+      ShowName		      off
+      Port {
+	PortNumber		1
+	Name			"cyc_grade"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator"
+      Ports		      [1, 1]
+      Position		      [500, 389, 530, 421]
+      Operator		      "NOT"
+      Inputs		      "2"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Required Inputs"
+      Ports		      [0, 4]
+      Position		      [100, 69, 180, 166]
+      ShowName		      off
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "disp('Required Inputs');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      Port {
+	PortNumber		1
+	Name			"time"
+	PropagatedSignals	"time"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		2
+	Name			"MinPosTimeStep"
+	PropagatedSignals	"MinPosTimeStep"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		3
+	Name			"MinNegTimeStep"
+	PropagatedSignals	"MinNegTimeStep"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		4
+	Name			"SimLength"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"Required Inputs"
+	Location		[474, 463, 1071, 732]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [445, 207, 475, 223]
+	  ShowName		  off
+	  Value			  "evalin('base','time1(end)')"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [15, 41, 55, 69]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	  Port {
+	    PortNumber		    1
+	    Name		    "time"
+	    PropagatedSignals	    "time"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [355, 81, 385, 134]
+	  Function		  "min"
+	  Inputs		  "2"
+	  Port {
+	    PortNumber		    1
+	    Name		    "MinPosTimeStep"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax1"
+	  Ports			  [2, 1]
+	  Position		  [360, 160, 390, 195]
+	  Function		  "max"
+	  Inputs		  "2"
+	  Port {
+	    PortNumber		    1
+	    Name		    "MinNegTimeStep"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "time vector 1"
+	  Ports			  [1, 2]
+	  Position		  [140, 82, 240, 133]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskPromptString	  "Time Vector"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskToolTipString	  "on"
+	  MaskVariables		  "time=@1;"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "evalin('base','time1')"
+	  System {
+	    Name		    "time vector 1"
+	    Location		    [109, 426, 1115, 760]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "last time"
+	      Position		      [25, 143, 55, 157]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [490, 235, 520, 265]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [475, 50, 505, 80]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      Position		      [285, 190, 315, 220]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Direct Look-Up\nTable (n-D)"
+	      Ports		      [1, 1]
+	      Position		      [760, 37, 815, 93]
+	      SourceBlock	      "simulink3/Functions\n& Tables/Direct Lo"
+"ok-Up\nTable (n-D)"
+	      SourceType	      "LookupNDDirect"
+	      maskTabDims	      "1"
+	      explicitNumDims	      "1"
+	      outDims		      "Element"
+	      tabIsInput	      off
+	      mxTable		      "time"
+	      clipFlag		      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Direct Look-Up\nTable (n-D)1"
+	      Ports		      [1, 1]
+	      Position		      [760, 192, 815, 248]
+	      SourceBlock	      "simulink3/Functions\n& Tables/Direct Lo"
+"ok-Up\nTable (n-D)"
+	      SourceType	      "LookupNDDirect"
+	      maskTabDims	      "1"
+	      explicitNumDims	      "1"
+	      outDims		      "Element"
+	      tabIsInput	      off
+	      mxTable		      "time"
+	      clipFlag		      "None"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Index Search"
+	      Ports		      [1, 1]
+	      Position		      [125, 134, 215, 166]
+	      FunctionName	      "GetIndex"
+	      Parameters	      "time"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [685, 50, 715, 80]
+	      UpperLimit	      "length(time)"
+	      LowerLimit	      "0"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation1"
+	      Position		      [690, 205, 720, 235]
+	      UpperLimit	      "length(time)"
+	      LowerLimit	      "0"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [585, 210, 605, 230]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"prev index"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [560, 55, 580, 75]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [845, 50, 865, 70]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      Ports		      [2, 1]
+	      Position		      [850, 215, 870, 235]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      Ports		      [2, 1]
+	      Position		      [355, 140, 375, 160]
+	      NamePlacement	      "alternate"
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pos time step"
+	      Position		      [905, 53, 935, 67]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "neg time step"
+	      Position		      [910, 218, 940, 232]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      DstBlock		      "neg time step"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Direct Look-Up\nTable (n-D)1"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Direct Look-Up\nTable (n-D)"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "pos time step"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "last time"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		DstBlock		"Index Search"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -130; 765, 0]
+		DstBlock		"Sum3"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 125; 770, 0]
+		DstBlock		"Sum4"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Saturation1"
+	      SrcPort		      1
+	      DstBlock		      "Direct Look-Up\nTable (n-D)1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Direct Look-Up\nTable (n-D)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "prev index"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Saturation1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Index Search"
+	      SrcPort		      1
+	      DstBlock		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      SrcPort		      1
+	      Points		      [0, 0; 190, 0]
+	      Branch {
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      DstBlock		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Position		      [614, 70]
+	      Text		      "next index"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "time vector 2"
+	  Ports			  [1, 2]
+	  Position		  [140, 147, 240, 198]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskPromptString	  "Time Vector"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskToolTipString	  "on"
+	  MaskVariables		  "time=@1;"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "evalin('base','time2')"
+	  System {
+	    Name		    "time vector 2"
+	    Location		    [109, 426, 1115, 760]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "last time"
+	      Position		      [25, 143, 55, 157]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [490, 235, 520, 265]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [475, 50, 505, 80]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      Position		      [285, 190, 315, 220]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Direct Look-Up\nTable (n-D)"
+	      Ports		      [1, 1]
+	      Position		      [760, 37, 815, 93]
+	      SourceBlock	      "simulink3/Functions\n& Tables/Direct Lo"
+"ok-Up\nTable (n-D)"
+	      SourceType	      "LookupNDDirect"
+	      maskTabDims	      "1"
+	      explicitNumDims	      "1"
+	      outDims		      "Element"
+	      tabIsInput	      off
+	      mxTable		      "time"
+	      clipFlag		      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Direct Look-Up\nTable (n-D)1"
+	      Ports		      [1, 1]
+	      Position		      [760, 192, 815, 248]
+	      SourceBlock	      "simulink3/Functions\n& Tables/Direct Lo"
+"ok-Up\nTable (n-D)"
+	      SourceType	      "LookupNDDirect"
+	      maskTabDims	      "1"
+	      explicitNumDims	      "1"
+	      outDims		      "Element"
+	      tabIsInput	      off
+	      mxTable		      "time"
+	      clipFlag		      "None"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Index Search"
+	      Ports		      [1, 1]
+	      Position		      [125, 134, 215, 166]
+	      FunctionName	      "GetIndex"
+	      Parameters	      "time"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [685, 50, 715, 80]
+	      UpperLimit	      "length(time)"
+	      LowerLimit	      "0"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation1"
+	      Position		      [690, 205, 720, 235]
+	      UpperLimit	      "length(time)"
+	      LowerLimit	      "0"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [585, 210, 605, 230]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"prev index"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [2, 1]
+	      Position		      [560, 55, 580, 75]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [845, 50, 865, 70]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      Ports		      [2, 1]
+	      Position		      [850, 215, 870, 235]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      Ports		      [2, 1]
+	      Position		      [355, 140, 375, 160]
+	      NamePlacement	      "alternate"
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pos time step"
+	      Position		      [905, 53, 935, 67]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "neg time step"
+	      Position		      [910, 218, 940, 232]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      DstBlock		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      SrcPort		      1
+	      Points		      [0, 0; 190, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Index Search"
+	      SrcPort		      1
+	      DstBlock		      "change to\nzero-based index\nfor Direct"
+" Look-Up"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "prev index"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Saturation1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Direct Look-Up\nTable (n-D)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation1"
+	      SrcPort		      1
+	      DstBlock		      "Direct Look-Up\nTable (n-D)1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "last time"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[0, 125; 770, 0]
+		DstBlock		"Sum4"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -130; 765, 0]
+		DstBlock		"Sum3"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Index Search"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "pos time step"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Direct Look-Up\nTable (n-D)"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Direct Look-Up\nTable (n-D)1"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      DstBlock		      "neg time step"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Position		      [614, 70]
+	      Text		      "next index"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [495, 48, 525, 62]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  Position		  [500, 103, 530, 117]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out3"
+	  Position		  [500, 138, 530, 152]
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out4"
+	  Position		  [505, 208, 535, 222]
+	  Port			  "4"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  Name			  "MinPosTimeStep"
+	  Labels		  [-1, 0]
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  DstBlock		  "Out2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "MinNegTimeStep"
+	  Labels		  [-1, 0]
+	  SrcBlock		  "MinMax1"
+	  SrcPort		  1
+	  Points		  [0, -35]
+	  DstBlock		  "Out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "time vector 1"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "time vector 2"
+	  SrcPort		  2
+	  DstBlock		  "MinMax1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "time vector 2"
+	  SrcPort		  1
+	  Points		  [45, 0; 25, -25; 15, -15]
+	  DstBlock		  "MinMax"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "time vector 1"
+	  SrcPort		  2
+	  Points		  [45, 0; 40, 50]
+	  DstBlock		  "MinMax1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "time"
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "Out1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    Branch {
+	      DstBlock		      "time vector 1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "time vector 2"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Out4"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      Position		      [575, 387, 610, 423]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [550, 825, 570, 845]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      Position		      [545, 610, 565, 630]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [545, 1040, 565, 1060]
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ess_soc_hist1"
+      Ports		      [0, 1]
+      Position		      [100, 172, 180, 188]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "ess_soc_hist1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"ess_soc_hist1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"ess_soc_hist1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ess_soc_hist2"
+      Ports		      [0, 1]
+      Position		      [100, 197, 180, 213]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "ess_soc_hist2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"ess_soc_hist2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"ess_soc_hist2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ess_soc_hist3"
+      Ports		      [0, 1]
+      Position		      [100, 222, 180, 238]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "ess_pwr_out_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"ess_pwr_out_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"ess_soc_hist3"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ess_soc_hist4"
+      Ports		      [0, 1]
+      Position		      [100, 247, 180, 263]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "ess_pwr_out_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"ess_pwr_out_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"ess_soc_hist4"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_fuel_rate1"
+      Ports		      [0, 1]
+      Position		      [100, 272, 180, 288]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_fuel_rate1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_fuel_rate1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_fuel_rate1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_fuel_rate2"
+      Ports		      [0, 1]
+      Position		      [100, 297, 180, 313]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_fuel_rate2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_fuel_rate2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_fuel_rate2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_spd_out_a1"
+      Ports		      [0, 1]
+      Position		      [100, 322, 180, 338]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_spd_est1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_spd_est1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_spd_out_a1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_spd_out_a2"
+      Ports		      [0, 1]
+      Position		      [100, 347, 180, 363]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_spd_est2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_spd_est2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_spd_out_a2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_trq_out_a1"
+      Ports		      [0, 1]
+      Position		      [100, 372, 180, 388]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_brake_trq1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_brake_trq1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_trq_out_a1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_trq_out_a2"
+      Ports		      [0, 1]
+      Position		      [100, 397, 180, 413]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_brake_trq2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_brake_trq2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_trq_out_a2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_trq_out_a3"
+      Ports		      [0, 1]
+      Position		      [100, 422, 180, 438]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_pwr_out_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_pwr_out_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_trq_out_a3"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_trq_out_a4"
+      Ports		      [0, 1]
+      Position		      [100, 447, 180, 463]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_pwr_out_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_pwr_out_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_trq_out_a4"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_trq_out_a5"
+      Ports		      [0, 1]
+      Position		      [100, 472, 180, 488]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_eff_out_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_eff_out_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_trq_out_a5"
+	Location		[102, 811, 509, 992]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fc_trq_out_a6"
+      Ports		      [0, 1]
+      Position		      [100, 497, 180, 513]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "fc_eff_out_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"fc_eff_out_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"fc_trq_out_a6"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gal1"
+      Ports		      [0, 1]
+      Position		      [100, 522, 180, 538]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "gal1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"gal1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"gal1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gal2"
+      Ports		      [0, 1]
+      Position		      [100, 547, 180, 563]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "gal2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"gal2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"gal2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gal3"
+      Ports		      [0, 1]
+      Position		      [100, 622, 180, 638]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "gc_pwr_out_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"gc_pwr_out_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"gal3"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gal4"
+      Ports		      [0, 1]
+      Position		      [100, 647, 180, 663]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "gc_pwr_out_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"gc_pwr_out_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"gal4"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gear_number1"
+      Ports		      [0, 1]
+      Position		      [100, 572, 180, 588]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "gear_number1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"gear_number1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"gear_number1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "gear_number2"
+      Ports		      [0, 1]
+      Position		      [100, 597, 180, 613]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "gear_number2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"gear_number2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"gear_number2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "grade1"
+      Ports		      [0, 1]
+      Position		      [100, 672, 180, 688]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "grade1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"grade1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"grade1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "grade2"
+      Ports		      [0, 1]
+      Position		      [100, 697, 180, 713]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "grade2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"grade2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"grade2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mc_spd_out_a1"
+      Ports		      [0, 1]
+      Position		      [100, 722, 180, 738]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "mc_spd_out_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"mc_spd_out_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"mc_spd_out_a1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mc_spd_out_a2"
+      Ports		      [0, 1]
+      Position		      [100, 747, 180, 763]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "mc_spd_out_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"mc_spd_out_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"mc_spd_out_a2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mc_trq_out_a1"
+      Ports		      [0, 1]
+      Position		      [100, 772, 180, 788]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "mc_trq_out_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"mc_trq_out_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"mc_trq_out_a1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mc_trq_out_a2"
+      Ports		      [0, 1]
+      Position		      [100, 797, 180, 813]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "mc_trq_out_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"mc_trq_out_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"mc_trq_out_a2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mpha1"
+      Ports		      [0, 1]
+      Position		      [100, 822, 180, 838]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "mpha1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"mpha1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"mpha1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mpha2"
+      Ports		      [0, 1]
+      Position		      [100, 847, 180, 863]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "mpha2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"mpha2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"mpha2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "round"
+      Ports		      [1, 1]
+      Position		      [535, 165, 565, 215]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Decimal Place (Example:  .001 rounds 1.2222 to "
+"1.2200)"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "DecPlace=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      ".001"
+      Port {
+	PortNumber		1
+	Name			"time"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"round"
+	Location		[433, 403, 931, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [110, 103, 140, 117]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [180, 95, 210, 125]
+	  Gain			  "1/DecPlace"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [300, 95, 330, 125]
+	  Gain			  "DecPlace"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Rounding
+	  Name			  "Rounding\nFunction"
+	  Position		  [240, 95, 270, 125]
+	  Operator		  "round"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [360, 103, 390, 117]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Rounding\nFunction"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Rounding\nFunction"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss1"
+      Ports		      [0, 1]
+      Position		      [100, 872, 180, 888]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "trace_miss1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"trace_miss1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss1"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss10"
+      Ports		      [0, 1]
+      Position		      [100, 1097, 180, 1113]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_rr_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_rr_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss10"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss11"
+      Ports		      [0, 1]
+      Position		      [100, 1122, 180, 1138]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "cyc_mph_r1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"cyc_mphr"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss11"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss2"
+      Ports		      [0, 1]
+      Position		      [100, 897, 180, 913]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "trace_miss2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"trace_miss2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss2"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss3"
+      Ports		      [0, 1]
+      Position		      [100, 922, 180, 938]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_accel_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_accel_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss3"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss4"
+      Ports		      [0, 1]
+      Position		      [100, 947, 180, 963]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_accel_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_accel_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss4"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss5"
+      Ports		      [0, 1]
+      Position		      [100, 972, 180, 988]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_ascent_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_ascent_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss5"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss6"
+      Ports		      [0, 1]
+      Position		      [100, 997, 180, 1013]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_ascent_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_ascent_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss6"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss7"
+      Ports		      [0, 1]
+      Position		      [100, 1022, 180, 1038]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_drag_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_drag_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss7"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss8"
+      Ports		      [0, 1]
+      Position		      [100, 1047, 180, 1063]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_drag_a2|time2"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_drag_a2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss8"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "trace_miss9"
+      Ports		      [0, 1]
+      Position		      [100, 1072, 180, 1088]
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Output|Time Vector"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "outputVector=@1;timeVector=@2;"
+      MaskDisplay	      "disp('');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "veh_pwr_rr_a1|time1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"veh_pwr_rr_a1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      System {
+	Name			"trace_miss9"
+	Location		[121, 596, 528, 777]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [45, 71, 85, 99]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up\nTable1"
+	  Position		  [170, 70, 200, 100]
+	  InputValues		  "timeVector"
+	  OutputValues		  "outputVector"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [305, 78, 335, 92]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Look-Up\nTable1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up\nTable1"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      Name		      "time"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_Advisor2"
+      SrcPort		      1
+      DstBlock		      "round"
+      DstPort		      1
+    }
+    Line {
+      Name		      "MinPosTimeStep"
+      Labels		      [-1, 0]
+      SrcBlock		      "Required Inputs"
+      SrcPort		      2
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      2
+    }
+    Line {
+      Name		      "MinNegTimeStep"
+      Labels		      [-1, 0]
+      SrcBlock		      "Required Inputs"
+      SrcPort		      3
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      3
+    }
+    Line {
+      Name		      "SimLength"
+      Labels		      [-1, 0]
+      SrcBlock		      "Required Inputs"
+      SrcPort		      4
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      4
+    }
+    Line {
+      Name		      "time"
+      Labels		      [1, 0]
+      SrcBlock		      "Required Inputs"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "time"
+      Labels		      [0, 0]
+      SrcBlock		      "round"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      Name		      "simRun"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_Advisor2"
+      SrcPort		      2
+      DstBlock		      "Logical\nOperator"
+      DstPort		      1
+    }
+    Line {
+      Name		      "ess_soc_hist1"
+      Labels		      [0, 0]
+      SrcBlock		      "ess_soc_hist1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      5
+    }
+    Line {
+      Name		      "ess_soc_hist2"
+      Labels		      [0, 0]
+      SrcBlock		      "ess_soc_hist2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      6
+    }
+    Line {
+      Name		      "fc_fuel_rate2"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_fuel_rate2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      10
+    }
+    Line {
+      Name		      "fc_spd_est1"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_spd_out_a1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      11
+    }
+    Line {
+      Name		      "fc_spd_est2"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_spd_out_a2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      12
+    }
+    Line {
+      Name		      "fc_brake_trq1"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_trq_out_a1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      13
+    }
+    Line {
+      Name		      "fc_brake_trq2"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_trq_out_a2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      14
+    }
+    Line {
+      Name		      "altia_grade"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_Advisor2"
+      SrcPort		      3
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "altia_cyc_mph_r"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_Advisor2"
+      SrcPort		      4
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "time_gain"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_Advisor2"
+      SrcPort		      5
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "fc_pwr_out_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_trq_out_a3"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      15
+    }
+    Line {
+      Name		      "gal1"
+      Labels		      [0, 0]
+      SrcBlock		      "gal1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      19
+    }
+    Line {
+      Name		      "gal2"
+      Labels		      [0, 0]
+      SrcBlock		      "gal2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      20
+    }
+    Line {
+      Name		      "gear_number1"
+      Labels		      [0, 0]
+      SrcBlock		      "gear_number1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      21
+    }
+    Line {
+      Name		      "gear_number2"
+      Labels		      [0, 0]
+      SrcBlock		      "gear_number2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      22
+    }
+    Line {
+      Name		      "grade1"
+      Labels		      [0, 0]
+      SrcBlock		      "grade1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      25
+    }
+    Line {
+      Name		      "grade2"
+      Labels		      [0, 0]
+      SrcBlock		      "grade2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      26
+    }
+    Line {
+      Name		      "mc_spd_out_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "mc_spd_out_a1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      27
+    }
+    Line {
+      Name		      "mc_spd_out_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "mc_spd_out_a2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      28
+    }
+    Line {
+      Name		      "mc_trq_out_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "mc_trq_out_a1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      29
+    }
+    Line {
+      Name		      "mc_trq_out_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "mc_trq_out_a2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      30
+    }
+    Line {
+      Name		      "mpha1"
+      Labels		      [0, 0]
+      SrcBlock		      "mpha1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      31
+    }
+    Line {
+      Name		      "mpha2"
+      Labels		      [0, 0]
+      SrcBlock		      "mpha2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      32
+    }
+    Line {
+      Name		      "trace_miss1"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      33
+    }
+    Line {
+      Name		      "trace_miss2"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      34
+    }
+    Line {
+      Name		      "cyc_mphr"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss11"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      43
+    }
+    Line {
+      Name		      "cyc_grade"
+      Labels		      [0, 0]
+      SrcBlock		      "Ground1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      44
+    }
+    Line {
+      Name		      "fc_pwr_out_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_trq_out_a4"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      16
+    }
+    Line {
+      Name		      "fc_eff_out_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_trq_out_a5"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      17
+    }
+    Line {
+      Name		      "fc_eff_out_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_trq_out_a6"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      18
+    }
+    Line {
+      Name		      "fc_fuel_rate1"
+      Labels		      [0, 0]
+      SrcBlock		      "fc_fuel_rate1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      9
+    }
+    Line {
+      Name		      "ess_pwr_out_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "ess_soc_hist3"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      7
+    }
+    Line {
+      Name		      "ess_pwr_out_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "ess_soc_hist4"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      8
+    }
+    Line {
+      Name		      "gc_pwr_out_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "gal3"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      23
+    }
+    Line {
+      Name		      "gc_pwr_out_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "gal4"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      24
+    }
+    Line {
+      Name		      "veh_pwr_accel_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss4"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      36
+    }
+    Line {
+      Name		      "veh_pwr_ascent_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss5"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      37
+    }
+    Line {
+      Name		      "veh_pwr_ascent_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss6"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      38
+    }
+    Line {
+      Name		      "veh_pwr_drag_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss8"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      40
+    }
+    Line {
+      Name		      "veh_pwr_rr_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss9"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      41
+    }
+    Line {
+      Name		      "veh_pwr_rr_a2"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss10"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      42
+    }
+    Line {
+      Name		      "veh_pwr_drag_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss7"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      39
+    }
+    Line {
+      Name		      "veh_pwr_accel_a1"
+      Labels		      [0, 0]
+      SrcBlock		      "trace_miss3"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      35
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator"
+      SrcPort		      1
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
+    }
+    Annotation {
+      Position		      [46, 224]
+      Text		      "Note:  List must\nbe alphabetical"
+    }
+  }
+}

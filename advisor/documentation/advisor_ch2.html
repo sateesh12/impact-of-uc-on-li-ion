@@ -1,0 +1,1052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>advisor_ch2</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">advisor_ch2</h1>
+</div>
+<center>
+<h1 id="using-advisor"><a name="2.0"></a>2.0 Using ADVISOR</h1>
+</center>
+
+<hr />
+<p><br />  </p>
+<p><a href="#2.0">2.1 Using the GUI (demo)</a></p>
+<dir>
+<p><a href="#2.1.1">2.1.1 Defining a vehicle</a><br /> <a href="#2.1.2">2.1.2 Running a simulation</a><br /> <a href="#2.1.3">2.1.3 Looking at outputs</a></p>
+</dir>
+<p><a href="#2.2">2.2 Converting old component files to the current version of ADVISOR</a></p>
+<p><a href="#2.3">2.3 Running ADVISOR without the GUI</a><br /> <a href="#helper">2.4 Helper Classes and Functions</a><br /> * * * * *</p>
+<p>This section should get you started using ADVISOR both by using the GUI and by entering simple commands at the Matlab command line.</p>
+<h2 id="using-the-gui"><a name="2.1"></a> 2.1 Using the GUI</h2>
+<p>The ADVISOR GUI can be started using one of the two following methods.</p>
+<p><u>Method 1</u></p>
+<ul>
+<li>Start MATLAB 5.3 (or higher) and using the ‘path browser’, remove any previous ADVISOR paths.  Then change the current (active) directory to be the top-level ADVISOR directory (the folder containing the extracted files).</li>
+<li>To run ADVISOR, type “advisor” at the command prompt in MATLAB.  This will update the MATLAB path for the current MATLAB session and start running ADVISOR.  If the directories needed for ADVISOR have not been saved to the path for future sessions, a window will popup and ask if you want to save the path for future sessions.  It may be necessary to save the path for other programs to have access to ADVISOR.</li>
+</ul>
+<p>NOTE: MATLAB runs files from the current working directory first, then the directories in the path from top to bottom.  This may cause problems if you have two files named the same thing in different directories.  Therefore, make sure you delete the paths for the older versions of ADVISOR.<br />  </p>
+<p><u>Method 2</u>  Creating ADVISOR shortcut icon to launch ADVISOR and  MATLAB</p>
+<ul>
+<li>In the GUI directory, find the ADVISOR shortcut icon to launch ADVISOR and MATLAB.</li>
+<li>Right click on the file and choose ‘properties’.</li>
+<li>Click on the shortcut tab.</li>
+<li>Do a search for the MATLAB executable file.  Under ‘Target’ modify it to point to your MATLAB.EXE file, followed by -r advisor.</li>
+<li>Under ‘Start in’ enter in the main ADVISOR directory.</li>
+<li>Hit the ‘change icon’ button, then hit browse and find the ADVISOR.bmp file, not the shortcut file, in the GUI directory.</li>
+<li>Enter Ok, and double-click on the icon to launch ADVISOR.</li>
+</ul>
+<p><br /> The first figure is the startup figure. Here you will have the options to select <strong><em>US</em></strong> or <strong><em>metric</em></strong> units, <strong><em>start</em></strong> using ADVISOR, click <strong><em>help</em></strong>to go to a local ADVISOR web page, <strong><em>exit</em></strong> ADVISOR or read the <strong><em>copyright and disclaimer</em></strong>.  </p>
+<p><strong>MENU PROFILES:</strong>  From the startup figure you can also select a menu profile from the pull down menu above the <strong><em>start</em></strong> button.  This profile list contains the names of *.mat files that define what will be listed in the component menus in the input figure and what cycles are listed in the simulation setup figure.  Editing the profile is simply done by having the profile that you want to edit selected and going through each ADVISOR figure and deleting or adding to the component lists using the pushbuttons next to the components.  You may also add, delete or create new profiles by selecting ‘edit list’ from the pull down menu on the startup figure.  See also <a href="custom_menus.html">custom menus</a>.</p>
+<p>NOTE: Throughout the GUI there are <strong><em>help</em></strong> buttons which will either access the Matlab help window or open a web page with appropriate context information.</p>
+<h3 id="defining-a-vehicle"><a name="2.1.1"></a>2.1.1 Defining a vehicle</h3>
+<p><strong><em>Start</em></strong>takes you to the input figure. The input figure opens and you will see the default values for a specific vehicle.</p>
+<p><u>Drivetrain selection</u><br /> From the drivetrain popup menu you will be able to select the drivetrain configuration of the vehicle (<strong>Series, Parallel</strong>, etc.) which will cause the schematic of the vehicle configuration in the left portion of the figure to change accordingly. This will also modify which components are available for the type of drivetrain chosen.</p>
+<p><a name="Select_comp"></a><u>Selecting components</u><br /> After selecting the drivetrain configuration, all the components of the vehicle can be selected using the popup menus, or by clicking on the component in the picture. To the left of the component popup menus is a pushbutton that will allow you to add or delete components by selecting their corresponding listed m-files. The m-file of a specific component can be accessed for viewing or modifying from either the component pushbutton or by clicking on the component of the picture.</p>
+<p><u>Editing Variables</u><br /> After selecting all the desired components for the vehicle, scalar input variables can be modified.  One way this can be done is with the variable list at the bottom of the figure and the Edit Var. button. First select the variable to change and then click the edit button to change its value. The default value is always shown for your reference.  The View All button allows you to see all of the variables you have altered.  You can click on the help button to see a brief description and the units used for the input variables.</p>
+<p>A second way in which you can edit variables is by typing in a desired value in the edit boxes next to the component.  For example, adjusting the maximum power of a fuel converter adjusts the variable fc_trq_scale, or increasing the peak efficiency increases the variable fc_eff_scale accordingly.</p>
+<p>A final way to edit the mass of the vehicle is to use the override mass button.  The calculated mass is ignored and the value input into the box is used instead.</p>
+<p><u>Loading and Saving vehicle configurations</u><br /> To load or save a particular vehicle configuration click on the Load Vehicle button on the top of the figure or click on Save at the bottom of the figure. The file will be saved in the format ’<strong>filename</strong>_in.m’. A saved vehicle can be accessed by pushing the load button.</p>
+<p><u>Viewing component information</u><br /> At the bottom left portion of the figure there is a popup menu and axes with the ability to view information on components such as their efficiency maps, emissions maps, fuel use maps, etc. These are plotted along with their maximum torque envelopes where appropriate.</p>
+<p>Any component m-file can be viewed by clicking the component buttons.</p>
+<p><u>Auto-Size</u><br /> The auto-size button takes the selected vehicle and adjusts vehicle parameters until it meets acceleration and gradeability goals.  The parameters it alters are the fuel converter torque scale (fc_trq_scale), the motor controller torque scale (mc_trq_scale), the number of energy storage system modules, and the vehicle mass.  The minimum torque scale is set so that its peak power output is 45 kW.  The number of battery modules is limited to yield a maximum nominal voltage of 480 V.  The default performance targets are maintaining at least a 6% grade at 55 mph, and obtaining less than a 12 second 0-60 mph time, 23.4 second 0-85 mph time, and 5.3 second 40-60 mph time.</p>
+<p><u>Back and Continue Buttons</u><br /> The <strong><em>Back</em></strong> button will take you to the opening screen, losing all unsaved information, and the <strong><em>Continue</em></strong> button will take you to the simulation setup figure.</p>
+<h3 id="running-a-simulation"><a name="2.1.2"></a>2.1.2 Running a simulation</h3>
+<p>The simulation setup figure gives you several options on how to test the currently defined vehicle.</p>
+<p><u>Drive Cycle selection</u><br /> If the drive cycle radio button is selected you can use the pull down menu to select from a list of available driving cycles. You can then select how many times you want the cycle repeated as well as if you want <a href="#SOC_Corr">SOC correction</a>.  Initial conditions can also be set from here. The filtering allows you to smooth out the selected drive cycle.</p>
+<p><a name="trip_bld"></a><u>Trip Builder</u></p>
+<p>A cycle can be created by combining many different cycles back to back using this functionality.  This new cycle is then saved in the normal cycle  format and can be run as such.</p>
+<p><a name="Auxiliary Loads"></a><u><a href="aux_loads_help.html">Auxiliary Loads</a></u><br /> Selecting this button brings up a graphical interface to select different auiliary loads and their on/off times as related to the drive cycle.</p>
+<p><a name="SOC_Corr"></a><u>SOC Correct</u><br /> There are two SOC correct options: linear and zero delta.  The Linear SOC correction routine runs two simulations—one that gives a positive change in the state of charge and one that gives a negative change in SOC.  The corrected value of the variables of interest (e.g. miles per gallon and emissions) are then interpolated from the zero change in SOC from a linear fit to the two data points.  The Zero-Delta correction routine adjusts the initial SOC until the simulation run yields a zero change in SOC +/- a 0.5% tolerance band.</p>
+<p><u>Constant Road Grade</u><br /> By selecting the checkbox you can run the drive cycle using a constant road grade in place of the drive cycle’s elevation profile.</p>
+<p><u>Interactive Simulation</u><br /> Selecting the <a href="realtime_interface.html#Interactive_sim">Interactive Simulation</a> checkbox causes a real-time interactive simulation interface to activate while the simulation is running.</p>
+<p><a name="mult_cyc"></a><u>Multiple Cycles</u></p>
+<p>You can speed up the process of running many different cycles with the same initial conditions using this functionality.    Multiple Cycles saves the setup information including initial conditions and then runs each of the cycles selected and saves the results.  From the results figure you can access all the different results with the aid of a  results list.</p>
+<p><u>Test Procedure</u><br /> If the test procedure radio button is selected you can use the pull down menu to select what kind of test to run.</p>
+<p><u>Acceleration Test</u><br /> By selecting this checkbox, an acceleration test will be run in addition to the chose cycle.  Acceleration times, maximum accelerations, and distanced traveled in 5 seconds will be displayed in the results figure.  This test will be run in addition to the chosen cycle.  To see the second by second output of an acceleration test, choose the CYC_ACCEL from the cycle menu.</p>
+<p><u>Gradeability Test</u><br /> If the gradeability checkbox is selected, a gradeability test will be run in addition to the chosen cycle.  The grade displayed in the results figure will be the maximum grade maintainable at the input mph.</p>
+<p><u>Parametric Study</u><br /> To see the effect that up to three variables have on the vehicle, select a parametric study.  The low and high values may be set, as well as the number of points desired for that variable.  A parametric study runs a set of simulations to cover the matrix of input points, such that if 3 variables are selected with 3 points each, 27 simulations will run.</p>
+<p><u>Load Sim Setup</u><br /> A previously saved simulation setup can be reloaded using the <strong><em>Load Sim. Setup</em></strong>push button.  See <a href="#Save">Save</a> below.</p>
+<p><u>Optimize cs vars</u><br /> The <strong><em>Optimize cs vars</em></strong> push button opens the control strategy optimization setup window.  Checking the radio boxes selects the design variables used to optimize for the chosen objectives and constraints below.</p>
+<p><a name="Save"></a><u>Save</u><br /> Saves the simulation setup.</p>
+<p><u>Run</u><br /> To run the simulation click Run and wait for the results figure to popup.</p>
+<h3 id="looking-at-outputs"><a name="2.1.3"></a>2.1.3 Looking at outputs</h3>
+<p><u>Results Figure</u><br /> The results figure presents some summary results (fuel economy, emissions, total distance, etc.) and allows the user to plot up to four time series plots by selecting a variable from the popup menu.  If the acceleration and gradeability checkboxes were picked in the simulation setup screen, appropriate results will also be displayed.</p>
+<p>By clicking the Energy Use Figure button, a new figure is opened showing how energy was used and transferred for the vehicle during the simulation.  The Output Check Plots button pulls up plots that show the vehicle’s performance, some of which are not available under the time series plots.  The Replay button replays the dynamic interactive interface.  Replay is not available for Test Procedures or Multiple Cycles.</p>
+<p>Fuel used over the simulation run  and the operation points of the fuel converter can be viewed as a function of speed and torque of the fuel converter by clicking on the ‘tools’ menu and selecting ‘FC operation’.</p>
+<p><u>Parametric Results Figure</u><br /> The parametric results figure plots the summary results as a function of your chosen variable(s).  For two and three variable studies, the Rotate button allows you to view the plot from all sides.  For three variable studies, you can plot any slice of the results.</p>
+<p><a name="trace_miss_analysis"></a><u>Trace Miss Analysis</u><br /> When a simulated vehicle deviates from the requested drive cycle, the trace_miss_analysis class (found in &lt;ADVISOR directory&gt;/gui/@trace_miss_analysis) is automatically called into play. The trace_miss_analysis class displays statistical information on the severity of cycle trace-miss in the “Warnings/Messages” window of the Results screen.</p>
+<p>Information includes:</p>
+<ul>
+<li>The absolute average difference between the speed requested and speed achieved</li>
+<li>The percent of simulated time with trace miss greater than 2 mph (absolute)</li>
+<li>The greatest percent difference based on the maximum cycle speed (i.e., abs(speed_requested[time=i]-speed_achieved[time=i])/max(speed_requested)</li>
+<li>The greatest percent difference based upon local cycle speed (i.e., abs(speed_requested[time=i]-speed_achieved[time=i])/speed_requested[time=i]</li>
+<li>The greatest absolute difference</li>
+</ul>
+<p>The trace_miss_analysis class is accessible for normal use (ADVISOR start-up <strong>not</strong> required). For details type: help trace_miss_analysis on the command line.</p>
+<h2 id="converting-old-component-files-to-the-current-version-of-advisor"><a name="2.2"></a>2.2  Converting old component files to the current version of ADVISOR</h2>
+<p>Updating files from older versions of ADVISOR can now(4/9/99) be done using the user interface.  First, make sure the file you want to update is on the matlab path or in the current working directory.  We suggest you place it in the ADVISOR main directory.  Second, run ADVISOR and go to the Vehicle Input figure by pressing start.  From there click on the button of the component that you would like to convert.  There is a convert button that will ask you for the file name.  Enter the file name and ok and it will update your file(same name).  If your file is not up to date and you try to add it to a component list, ADVISOR will prompt you to convert it. Details and notes on file auto-update can be found <a href="update_notes.html">here</a>.</p>
+<h2 id="using-advisor-without-the-gui"><a name="2.3"></a>2.3  Using ADVISOR without the GUI</h2>
+<p>The purpose of the ADVISOR GUI is to help guide and assist the user to use the fundamental data and models that compose ADVISOR. However, at times it is desirable to automate some of the processes in ADVISOR, especially when linking to external tools such as optimization packages. Functionality to run ADVISOR without the GUI has been provided to the user in an m-function called adv_no_gui. This is a function to be called from the Matlab Command window. It accepts 2 arguments and returns 2 arguments. To use ADVISOR without the gui you must select the save path option when you initially start ADVISOR so that Matlab will always be able to find the ADVISOR files. The function takes the following form,</p>
+<p>[error_code,resp]=adv_no_gui(action,input)</p>
+<p>Action is a string that defines the specific action you want ADVISOR to take. The list of available actions includes the following,<br />  </p>
+<table border="1" cellpadding="7" width="667">
+<tbody>
+<tr>
+<td valign="top" width="23%">
+<center>
+<p><strong>Action</strong></p>
+</center>
+</td>
+<td valign="top" width="77%">
+<center>
+<p><strong>Description</strong></p>
+</center>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>initialize</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to prepare the workspace to run simulations. This action must be initiated prior to executing any other action.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>modify</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to change the value of specific parameters. This is like the Edit Var button functionality. At this time only scalar values can be modified.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>grade_test</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to run a grade test.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>accel_test</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to run an acceleration test.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>drive_cycle</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to run a drive cycle.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>test_procedure</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to run a test procedure.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>other_info</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to probe the workspace for simulation results or current parameter settings</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>save_vehicle</p>
+</td>
+<td valign="top" width="77%">
+<p>Used to save the current vehicle configuration for future use.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="23%">
+<p>autosize</p>
+</td>
+<td valign="top" width="77%">
+<p>Runs the autosize function (same as on the GUI)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />  </p>
+</p>
+<p>Input is a structure that contains the input parameters to be passed to ADVISOR while executing the specific actions. Only the data contained in the field associated with the specified action will be used any other data will be ignored. The fields of input may include,<br />  </p>
+<table border="1" cellpadding="7" width="898">
+<tbody>
+<tr>
+<td valign="top" width="14%">
+<center>
+<p><strong>Action</strong></p>
+</center>
+</td>
+<td valign="top" width="14%">
+<center>
+<p><strong>Field</strong></p>
+</center>
+</td>
+<td valign="top" width="16%">
+<center>
+<p><strong>Sub-Field</strong></p>
+</center>
+</td>
+<td valign="top" width="56%">
+<center>
+<p><strong>Usage</strong></p>
+</center>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>initialize</p>
+</td>
+<td valign="top" width="14%">
+<p>init</p>
+</td>
+<td valign="top" width="16%">
+<p>saved_veh_file</p>
+</td>
+<td valign="top" width="56%">
+<p> This contains a string that specifies a previously saved vehicle. This is the simplest way to get started using the adv_no_gui functionality.</p>
+<p>input.init.saved_veh_file=’Parallel_DEFAULTS_in’</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>comp_files</p>
+</td>
+<td valign="top" width="56%">
+<p>Contains two fields comp and name. Each field contains a cell array with the name of the component and the corresponding data file. For example,</p>
+<p>input.init.comp_files.comp={’fuel_converter’,’energy_storage’,’transmission’}</p>
+<p>input.init.comp_files.name={’FC_SI41_emis’,’ESS_PB25’,’TX_5SPD’}.</p>
+<p>This functionality is especially useful for performing discrete studies in which the vehicle configuration is fixed but it is of interest to evaluate the impact of different component technologies.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>overrides</p>
+</td>
+<td valign="top" width="56%">
+<p>Contains three fields name, value, default. Examples include</p>
+<p>input.init.overrides.name={’mc_trq_scale’,’fc_trq_scale’}</p>
+<p>input.init.overrides.value={0.75,1.2}</p>
+<p>input.init.overrides.default={1,1}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>init_conds_file</p>
+</td>
+<td valign="top" width="56%">
+<p>The name of the initial conditions file to load. For example, </p>
+<p>input.init.init_conds_file=’init_conds_hot’ %hot start initial conditions.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>modify</p>
+</td>
+<td valign="top" width="14%">
+<p>modify</p>
+</td>
+<td valign="top" width="16%">
+<p>param</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the names of parameters to be modified. </p>
+<p>input.modify.param={’mc_trq_scale’,’fc_trq_scale’}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>value</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the new values of parameters specified in the field name.</p>
+<p>input.modify.value={0.75,1.2}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>grade_test</p>
+</td>
+<td valign="top" width="14%">
+<p>grade</p>
+</td>
+<td valign="top" width="16%">
+<p>param</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the names of grade test parameters to be passed to the grade test function. </p>
+<p>input.grade.param={’speed’,’duration’}</p>
+<p>For a list of available parameters see help on the <a href="grade_test_help.html">grade test</a>.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>value</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the values associated with the grade test parameters specified in the field name.</p>
+<p>input.grade.value={45,300}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>accel_test</p>
+</td>
+<td valign="top" width="14%">
+<p>accel</p>
+</td>
+<td valign="top" width="16%">
+<p>param</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the names of acceleration test parameters to be passed to the acceleration test function.</p>
+<p>input.accel.param={’ess_init_soc’,’spds’}</p>
+<p>For a list of available parameters see help on the <a href="accel_test_help.html">accel test</a>.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>value</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the values associated with the acceleration test parameters specified in the field name.</p>
+<p>input.accel.value={0.75,[0 30; 0 60]}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>drive_cycle</p>
+</td>
+<td valign="top" width="14%">
+<p>cycle</p>
+</td>
+<td valign="top" width="16%">
+<p>param</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the names of drive cycle simulation parameters to be passed to the workspace.</p>
+<p>input.cycle.param={’cycle.name’,’cycle.soc’,’cycle.socmenu’,’cycle.SOCiter’}</p>
+<p>Available parameters include,</p>
+<p>cycle.name - name of the drive cycle (e.g. ‘CYC_HWFET’,’CYC_US06’,…)</p>
+<p>cycle.soc - run soc correction? (’on’ or ‘off’)</p>
+<p>cycle.socmenu - type of soc correction (’linear’ or ‘zerodelta’)</p>
+<p>cycle.soc_tol_method - constraint on energy balance (’soctol’ or ‘ess2fuel’)</p>
+<p>cycle.SOCiter - max iterations during zero delta soc correction</p>
+<p>cycle.SOCtol - tolerace during zero delta soc corrections</p>
+<p>cycle.number - number of repeat cycles to run</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>value</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the values associated with the drive cycle parameters specified in the field name.</p>
+<p>input.cycle.value={’CYC_UDDS’,’on’,’zerodelta’,15}</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>aux_load_file_name</p>
+</td>
+<td valign="top" width="56%">
+<p>The name of a *.mat file for use with variable auxiliary loads. Example files are located in [ADVISOR directory]/data/accessory</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>test_procedure</p>
+</td>
+<td valign="top" width="14%">
+<p>procedure</p>
+</td>
+<td valign="top" width="16%">
+<p>param</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the names of test procedure simulation parameters to be passed to the workspace.</p>
+<p>input.procedure.param={’test.name’}</p>
+<p>Currently, name is the only available input parameter.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>value</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the values associated with the test procedure parameters specified in the field name.</p>
+<p>input.procedure.value={’TEST_CITY_HWY’}</p>
+<p>Currently the list of options include, </p>
+<p>TEST_CITY_HWY </p>
+<p>TEST_CITY_HWY_HYBRID</p>
+<p>TEST_FTP</p>
+<p>TEST_FTP_HYBRID</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>aux_load_file_name</p>
+</td>
+<td valign="top" width="56%">
+<p>The name of a *.mat file for use with variable auxiliary loads. Example files are located in [ADVISOR directory]/data/accessory</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>other_info</p>
+</td>
+<td valign="top" width="14%">
+<p>resp</p>
+</td>
+<td valign="top" width="16%">
+<p>param</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the names of parameters of which the values should be passed back to the calling function.</p>
+<p>input.resp.param={’mpg’;’gear_ratio’;’fc_brake_trq’}</p>
+<p>These could include any variable defined in the Matlab workspace, input or output.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>save_vehicle</p>
+</td>
+<td valign="top" width="14%">
+<p>save</p>
+</td>
+<td valign="top" width="16%">
+<p>filename</p>
+</td>
+<td valign="top" width="56%">
+<p>Contains a string identifying the filename in which to save the current vehicle parameter settings.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>autosize</p>
+</td>
+<td valign="top" width="14%">
+<p>autosize</p>
+</td>
+<td valign="top" width="16%">
+<p>autosize</p>
+</td>
+<td valign="top" width="56%">
+<p>INPUT.autosize.autosize is the same as vinf.autosize when autosize is run in the GUI.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>grade_test</p>
+</td>
+<td valign="top" width="56%">
+<p>INPUT.autosize.grade_test is the same as vinf.grade_test when autosize is run in the GUI.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>accel_test</p>
+</td>
+<td valign="top" width="56%">
+<p>INPUT.autosize.accel_test is the same as vinf.accel_test when autosize is run in the GUI.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />  </p>
+</p>
+<p>After execution, the function will return to arguments. The first, error_code will be a boolean value identifying whether the action was completed successfully (error_code=0) or of there was an error during execution (error_code=1). The second, is a structure that contains the default results of the specified action.<br />  </p>
+<table border="1" cellpadding="7" width="898">
+<tbody>
+<tr>
+<td valign="top" width="14%">
+<center>
+<p><strong>Action</strong></p>
+</center>
+</td>
+<td valign="top" width="14%">
+<center>
+<p><strong>Field</strong></p>
+</center>
+</td>
+<td valign="top" width="16%">
+<center>
+<p><strong>Sub-Field</strong></p>
+</center>
+</td>
+<td valign="top" width="56%">
+<center>
+<p><strong>Usage</strong></p>
+</center>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>initialize</p>
+</td>
+<td valign="top" width="14%">
+<p>–</p>
+</td>
+<td valign="top" width="16%">
+<p>–</p>
+</td>
+<td valign="top" width="56%">
+<p> not used</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>modify</p>
+</td>
+<td valign="top" width="14%">
+<p>–</p>
+</td>
+<td valign="top" width="16%">
+<p>–</p>
+</td>
+<td valign="top" width="56%">
+<p> not used</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>grade_test</p>
+</td>
+<td valign="top" width="14%">
+<p>grade</p>
+</td>
+<td valign="top" width="16%">
+<p>grade</p>
+</td>
+<td valign="top" width="56%">
+<p>Max grade sustained during the grade test.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>gear</p>
+</td>
+<td valign="top" width="56%">
+<p>Gear ratio in which the grade test was performed.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>accel_test</p>
+</td>
+<td valign="top" width="14%">
+<p>accel</p>
+</td>
+<td valign="top" width="16%">
+<p>times</p>
+</td>
+<td valign="top" width="56%">
+<p>Matrix of acceleration times associated with specified speed ranges.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>dist_in_time</p>
+</td>
+<td valign="top" width="56%">
+<p>Distance traveled during specified time.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>time</p>
+</td>
+<td valign="top" width="56%">
+<p>Time to travel specified distance.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>max_rate</p>
+</td>
+<td valign="top" width="56%">
+<p>Max acceleration rate.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>max_speed</p>
+</td>
+<td valign="top" width="56%">
+<p>Max speed.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>drive_cycle</p>
+</td>
+<td valign="top" width="14%">
+<p>cycle</p>
+</td>
+<td valign="top" width="16%">
+<p>mpgge</p>
+</td>
+<td valign="top" width="56%">
+<p>Gasoline equivalent fuel economy</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>hc_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of HC emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>co_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of CO emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>nox_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of NOx emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>pm_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of particulate emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>delta_trace</p>
+</td>
+<td valign="top" width="56%">
+<p>Maximum difference between the requested and achieved vehicle speed during the cycle.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>delta_soc</p>
+</td>
+<td valign="top" width="56%">
+<p>Difference between the initial and final SOC during the drive cycle.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>test_procedure</p>
+</td>
+<td valign="top" width="14%">
+<p>procedure</p>
+</td>
+<td valign="top" width="16%">
+<p>mpgge</p>
+</td>
+<td valign="top" width="56%">
+<p>gasoline equivalent fuel economy</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>hc_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of HC emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>co_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of CO emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>nox_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of NOx emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>pm_gpm</p>
+</td>
+<td valign="top" width="56%">
+<p>g/mi of particulate emissions</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>delta_trace</p>
+</td>
+<td valign="top" width="56%">
+<p>Maximum difference between the requested and achieved vehicle speed during the cycle.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="14%">
+<p> </p>
+</td>
+<td valign="top" width="16%">
+<p>delta_soc</p>
+</td>
+<td valign="top" width="56%">
+<p>Difference between the initial and final SOC during the drive cycle.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>other_info</p>
+</td>
+<td valign="top" width="14%">
+<p>other</p>
+</td>
+<td valign="top" width="16%">
+<p>value</p>
+</td>
+<td valign="top" width="56%">
+<p>This is a cell array containing the values of parameters specified in the param field.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>save_vehicle</p>
+</td>
+<td valign="top" width="14%">
+<p>–</p>
+</td>
+<td valign="top" width="16%">
+<p>–</p>
+</td>
+<td valign="top" width="56%">
+<p>Not used.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="14%">
+<p>autosize</p>
+</td>
+<td valign="top" width="14%">
+<p>–</p>
+</td>
+<td valign="top" width="16%">
+<p>–</p>
+</td>
+<td valign="top" width="56%">
+<p>Not used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />  </p>
+</p>
+<p><strong><u>Example 1: Evaluation of a single design point</u></strong></p>
+<ol style="list-style-type: decimal">
+<li>Start Matlab. (Do not start ADVISOR.)</li>
+<li>At the command line type,</li>
+</ol>
+<!-- -->
+
+<pre><code>input.init.saved_veh_file=&#39;Parallel_defaults_in&#39;;[a,b]=adv_no_gui(&#39;initialize&#39;,input)</code></pre>
+<p>This will load the default parallel hybrid configuration and initialize the workspace.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Now to run the grade test type the following,</li>
+</ol>
+<!-- -->
+
+<pre><code>input.grade.param={&#39;speed&#39;};input.grade.value={55};[a,b]=adv_no_gui(&#39;grade_test&#39;,input)</code></pre>
+<p>This will run the grade test using all defaults other than the specified speed of 55 mph. b.grade.grade will contain the maximum grade achieved.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Next change the mass of the mass of the vehicle to 1500 kg and reevaluating the grade performance by typing the following,</li>
+</ol>
+<!-- -->
+
+<pre><code>input.modify.param={&#39;veh_mass&#39;};input.modify.value={1500};[a,b]=adv_no_gui(&#39;modify&#39;,input)
+
+input.grade.param={&#39;speed&#39;};input.grade.value={55};[a,b]=adv_no_gui(&#39;grade_test&#39;,input)</code></pre>
+<p>You should see a decrease in the grade performance.<br />  <br />  </p>
+<p><strong><u>Example 2: Mapping of a design space</u></strong></p>
+<p>To map out the design space of a certain configuration (i.e. similar to a parametric study), do the following;</p>
+<ol style="list-style-type: decimal">
+<li>Start Matlab.</li>
+<li>In a new m-file called my_script.m add the following script,</li>
+</ol>
+<!-- -->
+
+<pre><code>input.init.saved_veh_file=&#39;Parallel_defaults_in&#39;;[a,b]=adv_no_gui(&#39;initialize&#39;,input)
+
+% to load the default parallel hybrid configuration and initialize the workspace.
+
+trq_range=[0.25:0.25:1.25];
+
+for I=1:length(trq_range)
+
+input.modify.param={&#39;fc_trq_scale&#39;};input.modify.value={trq_range(I)};[a,b]=adv_no_gui(&#39;modify&#39;,input)
+
+% to modify the engine torque scale (i.e. change the peak power output of the engine)
+
+input.procedure.param={&#39;test.name&#39;};input.procedure.value={&#39;TEST_CITY_HWY&#39;};[a,b]=adv_no_gui(&#39;test_procedure&#39;,input)
+
+fuel(I)=b.procedure.mpgge
+
+% to run the city hwy test procedure and obtain the default fuel and emissions performance
+
+input.accel.param={&#39;spds&#39;};input.accel.value={[0 30; 50 70]};[a,b]=adv_no_gui(&#39;accel_test&#39;,input)
+
+accel1(I)=b.accel.times(1);
+
+accel2(I)=b.accel.times(2);
+
+% to run the acceleration test and obtain the 0 to 30 mph and 50 to 70 mph accel times
+
+input.resp.param={&#39;veh_mass&#39;;&#39;fc_trq_scale&#39;};[a,b]=adv_no_gui(&#39;other_info&#39;,input)
+
+mass(I)=b.other.value{1};
+
+scale(I)=b.other.value{2};
+
+% to obtain the resulting vehicle mass
+
+end
+
+figure; plot(scale,accel1,&#39;b-&#39;,scale,accel2,&#39;r-&#39;) % to plot accel times vs. power
+
+xlabel(&#39;Torque Scale Factor&#39;)
+
+ylabel(&#39;Acceleration Time (s)&#39;)
+
+legend(&#39;0-30&#39;,&#39;50-70&#39;)
+
+figure; plot(scale,mass) % to plot mass vs power
+
+xlabel(&#39;Torque Scale Factor&#39;)
+
+ylabel(&#39;Vehicle Mass (kg)&#39;)
+
+figure; plot(scale,fuel) % to plot fuel economy vs power
+
+xlabel(&#39;Torque Scale Factor&#39;)
+
+ylabel(&#39;Fuel Economy (mpg)&#39;)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>At the command line type my_script and the function should provide you with 3 plots showing the relationships to engine size. All of the raw data will be accessible in the Matlab workspace.</li>
+</ol>
+<p> </p>
+<p><strong><u>Example 3: Running Autosize</u></strong></p>
+<p>First, run the autosize feature from the GUI. Setup a test case the way you want adv_no_gui to run autosize. Run this case. When finished, switch to the MATLAB command window and type the following:</p>
+<pre><code>autosize.grade_test=vinf.grade_test;autosize.accel_test=vinf.accel_test;autosize.autosize=vinf.autosize;save fname autosize;</code></pre>
+<p>After this is complete, you will have made and saved a structure ready for use with adv_no_gui. Consult autosize.m and adv_no_gui.m for details on how the sub-fields *.autosize.autosize, *.autosize.grade_test, and *.autosize.accel_test are used. Next, clear the matlab workspace and start working with adv_no_gui:</p>
+<pre><code>clear all;input=load(&#39;fname&#39;); % creates input.autosize.autosize, *.*.grade_test, &amp; *.*.accel_test[a,b]=adv_no_gui(&#39;autosize&#39;,input);</code></pre>
+<p>The model will be automatically autosized. Results are accessible from the base workspace or via the [a,b]=adv_no_gui(’other_info’,input) command.</p>
+<h3 id="calling-advisor-from-outside-of-matlab"><a name="2.3.1"></a>2.3.1 Calling ADVISOR from outside of MATLAB</h3>
+<p>An executable file has been include with ADVISOR to allow users to perform automated analysis external to ADVISOR and MATLAB.  The executable file is named advisor_script.exe and can be found in the C:\ADVISOR\gui directory.  The ADVISOR_script executable (advisor_script.exe) can be used in conjunction with adv_no_gui to automate the process of running analyses from the windows command line.<br /><br /> Format:<br /><br /> advisor_script.exe WorkingDirectory ScriptFilename ADVISORRootDirectory SupportDirectory<br /><br /> This command can be executed from a command window and will perform the following functions:<br /><br /> 1) Open the MATLAB Engine<br /> 2) Update the MATLAB path to include directories necessary for ADVISOR to execute<br /> 3) Add the SupportDirectory to the top of the path<br /> 4) Update the current working directory to be WorkingDirectory<br /> 5) Run ScriptFilename at the MATLAB command prompt<br /> 6) Close the MATLAB engine when calculations are complete<br /><br /> ADVISOR_script does not return any results or output so the ScriptFilename must handle input and output data management with ADVISOR. The scriptfile will typically include a series of adv_no_gui calls that build the ADVISOR workspace, run the cycles or tests, and saves the results for review later. A sample script file has been included (see SampleScriptFile.m) to serve as a template for creating your own routines.<br /><br /> CAUTION: At this time directory names with spaces are not supported!!!<br /><br /> The source code for advisor_script.exe is included in advisor_script.c. <br /> ### <a name="helper"></a>2.4 Helper Classess and Functions</p>
+<ul>
+<li><a href="CycleAudit.html">Cycle Audit Class</a></li>
+<li><a href="eng_map.html">Engine Map Class</a><br /></li>
+</ul>
+<hr />
+<center>
+<p><a href="advisor_ch1.html">Back to Chapter 1</a><br /> <a href="advisor_ch3.html">Forward to Chapter 3</a><br /> <a href="advisor_doc.html">ADVISOR Documentation Contents</a></p>
+</center>
+<p>Last Revised: [04-Aug-2003]: mpo</p>
+</body>
+</html>

@@ -1,0 +1,100 @@
+#
+# generator_generic.sin
+# symbol = generator_generic.ai_sym
+#    14V Generator Model
+#
+#     This model runs with the generator_doe2.sin computational module.
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+###############################################################################
+#
+#   DESCRIPTION:
+#   -----------
+#   This template models a generic Lundell claw pole alternator through the
+#   use of a curve fit equation. The equation is fit based on test data taken
+#     at two steady state temperatures.  Output at temperatures other than
+#   those specified are interpolated linearly.
+#
+###############################################################################
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]      [description]
+#   p       electrical .....    positive current enters this node
+#   m       electrical .....    positive current leaves this node (i.e. ground)
+#     speed     ref(nu) ........    Generator Shaft speed in rpm
+#     mech_pwr      ref(p) ........     Power Required at generator shaft (output)
+#     sense     electrical .....    Regulator sense voltage reference
+#     vset      ref(nu) ........  Regulator Set Point Voltage Input
+#
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   [name]  [type]      [desription (units)]
+#   cutin93 number .........    cutin rpm at 93 C  (no output below this rpm)
+#   imax93  number .........    maximum current at 93 C
+#   cutin12 number .........    cutin at rpm 12 C
+#   imax12  number .........    maximum current at 12.8 C
+#   geneff  number .........    generator efficiency
+#                       [currently a fixed percentage for all speeds]
+#     tempalt   number .........    Alternator Inlet Air Temperature Input
+#   vehicletype number .........    1   large car
+#                       2   medium car
+#                       3   small car
+#                       4   SUV
+#   t93     number .........    93 - this is the high end calibration temperature
+#   t12     number .........    12.8 - this is the low end calibration temperature
+#                       For all other temperatures, the model linearly
+#                       interpolates using t12 and t93.
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]  [units]     [description]
+#     imax      Amps     .........  Alternator maximum output current
+#     i         Amps     .........  Alternator Output current
+#     v     Volts    .........  Voltage Across Alternator terminals
+#     pout      Watts  .........  Alternator Electrical Output Power
+#     mech_pwr    Watts  .........  Alternator Required Mechanical Input Power
+#     rpm       RPM    .........  Alternator rotatinal speed
+#     vref      v      .........  Alternator regulation voltage set point
+#
+###############################################################################
+encrypted template generator_generic p m speed mech_pwr torquereq sense vset =
+    cutin93, user_imax93, cutin12, user_imax12, geneff, tempalt, t93, t12, vehicletype
+!crypt_start
+008abac6f7c2526a8a6
+024acf05fa869fe4ef3f89b50712cac5daba3b355472373adf5
+016bbe556e16af90de9f0b34347c4c1b1a5
+016bbea85c46d14e34db9b356e16e41a703
+0164b560b15074c1814aab988c4e96e4247
+016ebc3593c686c383556421c1d7dfe58e2
+024a164536cdd93f3e0ba3a526cd9d3ffb4ef27176c83c1a1b5
+024edf05347db6e5055f6ae5247df2f5c09a3b317473fac1db7
+024a7e646e161fe4fe2baeb56a01301670df627156c2e29257b
+024a7ec95c46613a146bae185857c744732b2b314476626fea6
+02457541b580c1e5a015c1300452336a5e0b7970a3c963c1210
+024f7c3493c636b7a3efc8a513c7b15a24f19135c58544c1844
+016f7c3493c636b7a3ea0970f2f90d8aca5
+024a173536cdd93f3e0fe29147e2e28257bf1b9c0c4963c1210
+024ede55347db6e5055e6ea4e13d984f2e949130b5890d0aca5
+008b427066c90c1b1a5
+064e4fc4313d87d5742bba8bfcad4d3fee0a3f65617966f5f10bec16a24967f5f55bf76513ec28eb1f1ba62433f7941a652a173552969ff0df1e9b30ee12cac0da7
+008aabf46f278b544e9
+0164c521d1504054a3bb1b9d9c47536efa6
+0085a1f1b4a155d510a
+016aeff7d21237fb1d9e1970d3c843c1e10
+008bcbe6b602870a6e0
+008bb2b4338dd8de1e4
+016bfe756a464e044e4b0b990c4d5c1bda5
+016bda9d9ca3852fe1aafb30647414c1844
+008bda1d1ca3953fe12
+016b8d25f437c6d612bedb34247414c1844
+}

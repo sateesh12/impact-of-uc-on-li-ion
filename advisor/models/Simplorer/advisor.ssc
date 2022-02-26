@@ -1,0 +1,50 @@
+; Simplorer Project File - Do not modify !!!
+
+[General]
+ProjectName=ADVISOR
+ProjectPath=c:\advisor3.2\simplorer
+Description=
+CreationBy=Uwe Knorr
+CreationAt=Fri Feb 08 07:34:53 2002
+ModificationBy=Uwe Knorr
+ModificationAt=Thu Apr 11 10:26:01 2002
+LastPrg=Powder50
+LastSim=sim
+LastSort=0
+
+[Comment]
+LinesInComment=0
+
+[FileList]
+NumberOfFiles=31
+File0=.\dc_generator_with_battery_model.ssh
+File1=.\dc_generator_with_battery_model.sml
+File2=c:\ssc50examples\sepic converter\sepic converter dynamic5.sml
+File3=c:\ssc50examples\sepic converter\sepic converter dynamic5.prc
+File4=c:\myfiles\ansoft\papers\load_dump with zener diode.sml
+File5=c:\myfiles\ansoft\papers\load_dump with zener diode.prc
+File6=c:\myfiles\ansoft\papers\load_dump with zener diode.sdb
+File7=c:\ssc50examples\emss delphi\delphi\delphi_slnd_uk.sml
+File8=c:\ssc50examples\emss delphi\delphi\delphi_slnd_uk.prc
+File9=c:\ssc50examples\emss delphi\delphi\delphi_slnd_uk.sdb
+File10=c:\ssc50examples\servo drive system\synchronouos machine servo drive system us5.sml
+File11=c:\ssc50examples\servo drive system\synchronouos machine servo drive system us5.prc
+File12=c:\ssc50examples\servo drive system\synchronouos machine servo drive system us5.sdb
+File13=c:\ssc50examples\gmatv\control.sml
+File14=c:\ssc50examples\gmatv\control.prc
+File15=c:\ssc50examples\gmatv\control.sdb
+File16=c:\ssc50examples\single phase inverter bridge\inverter hysteretic and pwm compare5.sml
+File17=c:\ssc50examples\single phase inverter bridge\inverter hysteretic and pwm compare5.prc
+File18=c:\ssc50examples\single phase inverter bridge\inverter hysteretic and pwm compare5.sdb
+File19=c:\ssc50examples\single phase inverter bridge\inverter hysteretic and pwm5.sml
+File20=c:\ssc50examples\single phase inverter bridge\inverter hysteretic and pwm5.prc
+File21=c:\ssc50examples\single phase inverter bridge\inverter hysteretic and pwm5.sdb
+File22=c:\ssc50examples\simulink\dc-motor_with_speed_and_current_control_in_simulink.sml
+File23=c:\ssc50examples\simulink\dc-motor_with_speed_and_current_control_in_simulink.sdb
+File24=c:\ssc50examples\simulink\dc-motor_with_speed_and_current_control_in_simulink.vtc
+File25=c:\ssc50examples\single phase inverter bridge\inverter with keyboard states5.sml
+File26=c:\ssc50examples\single phase inverter bridge\inverter with keyboard states5.prc
+File27=c:\ssc50examples\single phase inverter bridge\inverter with keyboard states5.sdb
+File28=.\dc_generator_with_battery_model.msm
+File29=.\dc_generator_with_battery_model.prc
+File30=.\dc_generator_with_battery_model.sdb

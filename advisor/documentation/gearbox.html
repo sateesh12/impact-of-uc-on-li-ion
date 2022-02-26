@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>gearbox</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">gearbox</h1>
+</div>
+<p><!DOCTYPE html public "-//w3c//dtd html 4.0 transitional//en"></p>
+<h3 id="gearbox">Gearbox</h3>
+<p><a href="gb.gif"><em>Gearbox block diagram</em></a></p>
+<p><strong><u></strong></p>
+<p>Role of subsystem in vehicle</b></u><br /> The gearbox of a multi-speed transmission houses gears of different gear ratios that are used to transmit torque from the engine or tractive motor to the final drive and on to the wheels. It thereby allows a number of discrete speed reduction and torque multiplication factors. Inclusion of a gearbox is critical to the drivetrain of conventional and parallel hybrid vehicles, and generally less important for series hybrids.</p>
+<p><strong><u></strong></p>
+<p>Description of modeling approach</b></u><br /> The gearbox model in ADVISOR usually communicates physics (torque, speed, and power) information to and from the final drive submodel and engine, torque converter, and/or motor model. Control information as might be sensed or commanded by a CPU in the vehicle, such as gear number, is passed to and from the transmission control submodel.</p>
+<p>Effects on torque and speed in the gearbox include:</p>
+<ul>
+<li>torque multiplication and speed reduction via the gear ratio,</li>
+<li>torque loss due to the acceleration of rotational inertia, and</li>
+<li>torque loss due to the friction of the turning gears.</li>
+</ul>
+<p>These effects are modeled empirically. Data files such as &lt;ADVISOR directory&gt;/data/transmission/TX_5SPD.M are required to supply necessary physical parameters.</p>
+<p>The equations represented by the Simulink block diagram in the picture corresponding to the link above are as follows.</p>
+<p><strong><u></strong></p>
+<p>Equations used in subsystem</b></u><br /> TORQUE AND SPEED REQUIRED</p>
+<p>(torque req’d into gearbox) = (torque req’d out of gearbox) / (current gear ratio) +(torque req’d to accelerate rotational inertia) + (torque loss due to friction),</p>
+<p>where</p>
+<p>(torque req’d out of gearbox) is a Simulink input (#1, in the top left of the above figure)</p>
+<p>(current gear ratio) is computed from (current gear number), which is provided by the “gearbox controller interface” block, using the look-up vector <strong>gb_ratio</strong></p>
+<p>(torque req’d to accelerate rotational inertia) = <strong>gb_inertia</strong> * d(speed req’d into gearbox)/dt</p>
+<p>(torque loss at transmission input due to friction) = function of [torque at output-side of gearbox, angular speed at output side of gearbox, gear (e.g., 1<sup>st</sup>, 2<sup>nd</sup>, etc.)]–this is implemented with a lookup-table</p>
+<p>(speed req’d into gearbox) = (speed req’d out of gearbox) * (current gear ratio)</p>
+<p>TORQUE AND SPEED AVAILABLE</p>
+<p>(torque avail. at output side of gearbox) = { (torque avail. at input side of gearbox) * [(output side power) / (input side power)]required - (torque req’d to accelerate rotational inertia) } * (current gear ratio)</p>
+<p>where</p>
+<p>(torque avail. at input side of gearbox) is a Simulink input (#2, in the bottom left of the above figure)</p>
+<p>[(output side power) / (input side power)]<sub>required</sub> is computed from the input and output torques and speeds of the REQUIRED calculations</p>
+<p>(speed avail. at output side of gearbox) = (speed avail. at input side of gearbox) / (current gear ratio)</p>
+<p>All Matlab variables that must be defined in the workspace for the gearbox submodel are mentioned above in <strong>bold</strong> font.</p>
+<p><strong><u></strong></p>
+<p>Variables used in subsystem</b></u></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Gearbox">See Appendix A.2: Input Variables</a><br /> <a href="advisor_appendices.html#Output%20Gearbox">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<hr />
+</p>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</body>
+</html>

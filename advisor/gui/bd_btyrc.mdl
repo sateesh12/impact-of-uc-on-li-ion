@@ -1,0 +1,1291 @@
+Model {
+  Name			  "bd_btyrc"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "100000"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  CloseFcn		  ";slview('closediagram',bdroot);"
+  Created		  "Mon Jul 24 10:17:23 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "tmarkel"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 24 10:28:37 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "bd_btyrc"
+    Location		    [81, 359, 577, 644]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "energy\nstorage <ess>"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [155, 54, 195, 136]
+      ShowPortLabels	      off
+      System {
+	Name			"energy\nstorage <ess>"
+	Location		[165, 138, 959, 552]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Lookup
+	  Name			  "C rate = one half\n max capacity rate"
+	  Position		  [195, 18, 225, 42]
+	  InputValues		  "ess_tmp"
+	  OutputValues		  "ess_max_ah_cap/2"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Const"
+	  Position		  [355, 45, 425, 65]
+	  Orientation		  "up"
+	  ShowName		  off
+	  FontName		  "Arial"
+	  Value			  "ess_init_soc"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Const2"
+	  Position		  [35, 130, 90, 150]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  Value			  "amb_tmp"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [550, 232, 575, 258]
+	  FontName		  "Arial"
+	  Gain			  "-1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [240, 17, 265, 43]
+	  FontName		  "Arial"
+	  Gain			  "-1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "I*R"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [320, 226, 340, 244]
+	  FontName		  "Arial"
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator\n(J)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [500, 235, 520, 255]
+	  FontName		  "Arial"
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "J -> kJ"
+	  Position		  [510, 169, 575, 191]
+	  FontName		  "Arial"
+	  Value			  "1/1000"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Pbty"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [435, 220, 455, 275]
+	  FontName		  "Arial"
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [600, 82, 620, 278]
+	  FontName		  "Arial"
+	  Inputs		  "3"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [445, 18, 475, 42]
+	  Operator		  ">="
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "SOC\nalgorithm"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [305, 21, 335, 54]
+	  FontName		  "Arial"
+	  ShowPortLabels	  off
+	  System {
+	    Name		    "SOC\nalgorithm"
+	    Location		    [65, 639, 845, 911]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "(A)"
+	      Position		      [15, 35, 35, 55]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "tmp\n(C)"
+	      Position		      [20, 125, 40, 145]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "(sec->hrs)"
+	      Position		      [265, 43, 330, 77]
+	      Gain		      "1/3600"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "0 <= SOC <= 1"
+	      Position		      [650, 121, 680, 139]
+	      UpperLimit	      "1"
+	      LowerLimit	      "0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "A-h\nremaining"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [505, 85, 525, 105]
+	      IconShape		      "rectangular"
+	      Inputs		      "-+"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Ah used"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [425, 50, 445, 70]
+	      ExternalReset	      "none"
+	      InitialConditionSource  "external"
+	      InitialCondition	      "(1-ess_init_soc)*ess_max_ah_cap"
+	      LimitOutput	      off
+	      UpperSaturationLimit    "inf"
+	      LowerSaturationLimit    "-inf"
+	      ShowSaturationPort      off
+	      ShowStatePort	      off
+	      AbsoluteTolerance	      "auto"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Fcn"
+	      Position		      [500, 150, 540, 170]
+	      ShowName		      off
+	      Expr		      "1/u"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Fcn1"
+	      Position		      [285, 94, 405, 116]
+	      ShowName		      off
+	      Expr		      "(1-ess_soc_hist(end))*u"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "SOC"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [580, 118, 610, 142]
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [205, 35, 235, 85]
+	      ShowName		      off
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "adjusted A"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [135, 63, 165, 87]
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Lookup
+	      Name		      "coul eff"
+	      Position		      [75, 88, 105, 112]
+	      InputValues	      "ess_tmp"
+	      OutputValues	      "ess_coulombic_eff"
+	    }
+	    Block {
+	      BlockType		      Lookup
+	      Name		      "max cap"
+	      Position		      [200, 128, 230, 152]
+	      InputValues	      "ess_tmp"
+	      OutputValues	      "ess_max_ah_cap"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "SOC1"
+	      Position		      [720, 120, 740, 140]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "(A)"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[130, 0]
+		Branch {
+		  Points		  [0, 15]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"adjusted A"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "(sec->hrs)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "(sec->hrs)"
+	      SrcPort		      1
+	      Points		      [75, 0]
+	      DstBlock		      "Ah used"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Ah used"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      DstBlock		      "A-h\nremaining"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Fcn"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "SOC"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "SOC"
+	      SrcPort		      1
+	      DstBlock		      "0 <= SOC <= 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "A-h\nremaining"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "SOC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "0 <= SOC <= 1"
+	      SrcPort		      1
+	      DstBlock		      "SOC1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "tmp\n(C)"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[125, 0]
+		DstBlock		"max cap"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"coul eff"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "coul eff"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "adjusted A"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "adjusted A"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "max cap"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		Points			[170, 0; 0, -30; 50, 0]
+		Branch {
+		  Points		  [5, 0]
+		  DstBlock		  "A-h\nremaining"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "Fcn"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, -35]
+		DstBlock		"Fcn1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Fcn1"
+	      SrcPort		      1
+	      DstBlock		      "Ah used"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Position		      [533, 207]
+	      Text		      "SOC=(Max Ah capacity-Ah used)/Max Ah ca"
+"pacity"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Stop
+	  Name			  "Stop Simulation"
+	  Position		  [510, 13, 550, 47]
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Vbty"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [380, 212, 400, 243]
+	  FontName		  "Arial"
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "datalogger"
+	  Position		  [655, 169, 770, 191]
+	  FontName		  "Arial"
+	  VariableName		  "recharge_kWh"
+	  Buffer		  "1"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "datalogger3"
+	  Position		  [535, 304, 650, 326]
+	  FontName		  "Arial"
+	  VariableName		  "Pbty"
+	  Buffer		  "1"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "kJ -> kWh"
+	  Position		  [510, 104, 575, 126]
+	  FontName		  "Arial"
+	  Value			  "1/3600"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "pack\nVoc, Rint1"
+	  Ports			  [3, 2, 0, 0, 0]
+	  Position		  [110, 57, 140, 113]
+	  ShowPortLabels	  off
+	  System {
+	    Name		    "pack\nVoc, Rint1"
+	    Location		    [59, 558, 607, 861]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "SOC (prev)"
+	      Position		      [25, 80, 45, 100]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "req'd battery\npower (W)"
+	      Position		      [230, 160, 250, 180]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "mod tmp \n (C)"
+	      Position		      [80, 140, 100, 160]
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "#bty"
+	      Position		      [255, 64, 350, 86]
+	      Value		      "ess_module_num"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [380, 28, 410, 52]
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [380, 103, 410, 127]
+	      Inputs		      "2"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Rchg\n(ohms)"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [200, 228, 230, 252]
+	      ShowPortLabels	      off
+	      MaskType		      "2-D Table Lookup"
+	      MaskDescription	      "Two Dimensional Table Lookup\nThe first"
+" input corresponds to X Index and the second input corresponds to the Y Index"
+	      MaskHelp		      "This block returns a linearly interpola"
+"ted intersection from the table using the X index (which corresponds to the r"
+"ows of the table) and the Y index (which corresponds to the columns of the ta"
+"ble).  Extrapolation is used."
+	      MaskPromptString	      "X Index|Y Index|Table"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskTunableValueString  "on,on,on"
+	      MaskCallbackString      "||"
+	      MaskEnableString	      "on,on,on"
+	      MaskVisibilityString    "on,on,on"
+	      MaskInitialization      "xindex=@1; yindex=@2; table=@3; sftab2c"
+"hk(xindex,yindex,table);"
+	      MaskDisplay	      "plot(-10,-10,110,110,[90,50,10],[90,40,"
+"30],[90,50,10],[50,26,20],[90,50,10],[22,13,10])"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "ess_tmp|ess_soc|ess_r_chg"
+	      System {
+		Name			"Rchg\n(ohms)"
+		Location		[316, 263, 598, 417]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x0"
+		  Position		  [20, 25, 40, 45]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "y0"
+		  Position		  [20, 80, 40, 100]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [90, 46, 120, 79]
+		  Inputs		  "2"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "S-function"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [140, 52, 190, 78]
+		  FunctionName		  "sftable2"
+		  Parameters		  "xindex, yindex, table"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "table out"
+		  Position		  [215, 55, 235, 75]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "y0"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -20]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "S-function"
+		  SrcPort		  1
+		  DstBlock		  "table out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "x0"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 20]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "S-function"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Rdis\n(ohms)"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [195, 108, 225, 132]
+	      ShowPortLabels	      off
+	      MaskType		      "2-D Table Lookup"
+	      MaskDescription	      "Two Dimensional Table Lookup\nThe first"
+" input corresponds to X Index and the second input corresponds to the Y Index"
+	      MaskHelp		      "This block returns a linearly interpola"
+"ted intersection from the table using the X index (which corresponds to the r"
+"ows of the table) and the Y index (which corresponds to the columns of the ta"
+"ble).  Extrapolation is used."
+	      MaskPromptString	      "X Index|Y Index|Table"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskTunableValueString  "on,on,on"
+	      MaskCallbackString      "||"
+	      MaskEnableString	      "on,on,on"
+	      MaskVisibilityString    "on,on,on"
+	      MaskInitialization      "xindex=@1; yindex=@2; table=@3; sftab2c"
+"hk(xindex,yindex,table);"
+	      MaskDisplay	      "plot(-10,-10,110,110,[90,50,10],[90,40,"
+"30],[90,50,10],[50,26,20],[90,50,10],[22,13,10])"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "ess_tmp|ess_soc|ess_r_dis"
+	      System {
+		Name			"Rdis\n(ohms)"
+		Location		[316, 263, 598, 417]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x0"
+		  Position		  [20, 25, 40, 45]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "y0"
+		  Position		  [20, 80, 40, 100]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [90, 46, 120, 79]
+		  Inputs		  "2"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "S-function"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [140, 52, 190, 78]
+		  FunctionName		  "sftable2"
+		  Parameters		  "xindex, yindex, table"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "table out"
+		  Position		  [215, 55, 235, 75]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "y0"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -20]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "S-function"
+		  SrcPort		  1
+		  DstBlock		  "table out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "x0"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 20]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "S-function"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [305, 154, 335, 186]
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "VOC\n(V)"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [205, 23, 235, 47]
+	      ShowPortLabels	      off
+	      MaskType		      "2-D Table Lookup"
+	      MaskDescription	      "Two Dimensional Table Lookup\nThe first"
+" input corresponds to X Index and the second input corresponds to the Y Index"
+	      MaskHelp		      "This block returns a linearly interpola"
+"ted intersection from the table using the X index (which corresponds to the r"
+"ows of the table) and the Y index (which corresponds to the columns of the ta"
+"ble).  Extrapolation is used."
+	      MaskPromptString	      "X Index|Y Index|Table"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskTunableValueString  "on,on,on"
+	      MaskCallbackString      "||"
+	      MaskEnableString	      "on,on,on"
+	      MaskVisibilityString    "on,on,on"
+	      MaskInitialization      "xindex=@1; yindex=@2; table=@3; sftab2c"
+"hk(xindex,yindex,table);"
+	      MaskDisplay	      "plot(-10,-10,110,110,[90,50,10],[90,40,"
+"30],[90,50,10],[50,26,20],[90,50,10],[22,13,10])"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "ess_tmp|ess_soc|ess_voc"
+	      System {
+		Name			"VOC\n(V)"
+		Location		[316, 263, 598, 417]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "x0"
+		  Position		  [20, 25, 40, 45]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "y0"
+		  Position		  [20, 80, 40, 100]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [90, 46, 120, 79]
+		  Inputs		  "2"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  "S-function"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [140, 52, 190, 78]
+		  FunctionName		  "sftable2"
+		  Parameters		  "xindex, yindex, table"
+		  PortCounts		  "[]"
+		  SFunctionModules	  "''"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "table out"
+		  Position		  [215, 55, 235, 75]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "y0"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -20]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "S-function"
+		  SrcPort		  1
+		  DstBlock		  "table out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "x0"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 20]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "S-function"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pack open-\ncircuit voltage"
+	      Position		      [450, 30, 470, 50]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pack\nresistance"
+	      Position		      [450, 105, 470, 125]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "pack open-\ncircuit voltage"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "pack\nresistance"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "#bty"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 35]
+		DstBlock		"Product1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Product"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "VOC\n(V)"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Rchg\n(ohms)"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, -60]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Rdis\n(ohms)"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 40]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "req'd battery\npower (W)"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "SOC (prev)"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"VOC\n(V)"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 35]
+		Branch {
+		  DstBlock		  "Rdis\n(ohms)"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 120]
+		  DstBlock		  "Rchg\n(ohms)"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "mod tmp \n (C)"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		Points			[0, -35]
+		Branch {
+		  Points		  [0, -85]
+		  DstBlock		  "VOC\n(V)"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Rdis\n(ohms)"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 85]
+		DstBlock		"Rchg\n(ohms)"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "power sign"
+	  Position		  [40, 73, 70, 97]
+	  FontName		  "Arial"
+	  Value			  "-1"
+	}
+	Line {
+	  SrcBlock		  "power sign"
+	  SrcPort		  1
+	  DstBlock		  "pack\nVoc, Rint1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Stop Simulation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Const"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "I*R"
+	  SrcPort		  1
+	  DstBlock		  "Vbty"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Vbty"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Pbty"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "kJ -> kWh"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "datalogger"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator\n(J)"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pbty"
+	  SrcPort		  1
+	  Points		  [0, -5; 10, 0]
+	  Branch {
+	    Points		    [0, 0]
+	    DstBlock		    "Integrator\n(J)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "datalogger3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "J -> kJ"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "pack\nVoc, Rint1"
+	  SrcPort		  1
+	  Points		  [110, 0; 0, 150]
+	  DstBlock		  "Vbty"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "pack\nVoc, Rint1"
+	  SrcPort		  2
+	  Points		  [160, 0]
+	  DstBlock		  "I*R"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SOC\nalgorithm"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -15]
+	  Branch {
+	    Points		    [0, -20; -265, 0; 0, 60]
+	    DstBlock		    "pack\nVoc, Rint1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Relational\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Const2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "pack\nVoc, Rint1"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 10; 75, 0]
+	    Branch {
+	      Points		      [60, 0; 0, -105]
+	      DstBlock		      "SOC\nalgorithm"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, -120]
+	      DstBlock		      "C rate = one half\n max capacity rate"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "C rate = one half\n max capacity rate"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "SOC\nalgorithm"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 210]
+	    Branch {
+	      DstBlock		      "I*R"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 20]
+	      DstBlock		      "Pbty"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Annotation {
+	  Position		  [172, 332]
+	  Text			  "Revision Notes:\n7/24/00:tm revised recharg"
+"e rate to be 50% of max_ah_cap \nrate to assume overnight (8-10hrs) charging."
+" \nImproves recharge efficiency slightly"
+	}
+      }
+    }
+  }
+}

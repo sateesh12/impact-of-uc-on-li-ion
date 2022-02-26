@@ -1,0 +1,488 @@
+##########################################################
+#  Saber Energy Storage Co-simulation with ADVISOR
+#
+
+#################
+# Path definition
+set tmppath d:/val/advisor_revisions/advisor/tmp
+set debugVHJ 0
+if {$debugVHJ == 0} {
+    puts "Saber diagnostics turned off.  To turn them on, change"
+    puts "line 10 in advisor_cosim_ess.aim to: set debugVHJ 1"
+} else {
+    puts "Saber diagnostics turned on.  To turn them off, change"
+    puts "line 10 in advisor_cosim_ess.aim to: set debugVHJ 0"
+}
+
+########################
+# Amount of milliseconds for script to wait before rechecking saber_go_trig file
+# Note: make this >25 milliseconds, as that's the 'magic' clock update time
+set sleeptime 26
+
+######################
+# Initialization File
+# Open the file info_i.txt in read mode (r)
+set info_i [open $tmppath/info_i.txt r]
+if {$info_i == -1} {
+    puts " Can't open the file info_i.txt"
+    return
+}
+gets $info_i e 	   ; # Read step time used within ADVISOR
+                     # Ex. 1 sec. for most drive cycles 
+gets $info_i time	   ; # Read entire simulation time
+                         # Ex. 1372 sec. for the FUDS drive cycle
+gets $info_i design_name  ; # Read netlist name of design
+# Initial conditions passed back to matlab in data out file
+gets $info_i v1 
+gets $info_i v2
+gets $info_i v3
+gets $info_i v4
+gets $info_i v5
+gets $info_i v6
+gets $info_i v7
+gets $info_i v8
+gets $info_i v9
+gets $info_i v10
+gets $info_i soc1 
+gets $info_i soc2
+gets $info_i soc3
+gets $info_i soc4
+gets $info_i soc5
+gets $info_i soc6
+gets $info_i soc7
+gets $info_i soc8
+gets $info_i soc9
+gets $info_i soc10
+gets $info_i t1 
+gets $info_i t2
+gets $info_i t3
+gets $info_i t4
+gets $info_i t5
+gets $info_i t6
+gets $info_i t7
+gets $info_i t8
+gets $info_i t9
+gets $info_i t10
+
+close $info_i
+
+#########################################################
+# Calculate the number of loops to complete in SABER
+set runs [expr $time/$e]
+
+#########################################################
+# Check the initial modified time of the file saber_go_trigger.txt
+# m_time is == to the file's time stamp.
+set m_itime [file mtime $tmppath/saber_go_trigger.txt]
+set m_time $m_itime
+
+#########################################################
+# Set the working directory of saber models
+set path d:/val/advisor_revisions/advisor/models/saber
+
+##########################################################
+# This sets the internal time step which saber will use.
+#set sabertstep 0.000001
+if {$e < 1} {
+    set saberstep $e
+} else {
+    set sabertstep 1    ; # Changed from 1u to 1, 1/7/02
+}
+
+################################################
+# Load saber design
+Guide:LoadDesign -design $path/$design_name.sin
+console show
+
+##########################################################
+# Read alter commands (mostly initialization)
+Saber:Send {<d:/val/advisor_revisions/advisor/tmp/alter_cmds_file.scs}
+
+#################  Run DC Analysis ######################
+Saber:Send {dc}
+if {$debugVHJ} {
+    puts " - DC Analysis Complete - "      ; # Diagnostic statement
+}
+
+##############
+### Write out initial data_out.txt file for ADVISOR to read
+# Outputs are: Current (A), Voltages (V), SOC's, Temps (C)
+set fpout [open $tmppath/data_out.txt w]
+puts $fpout 0  ; # (1) current
+puts $fpout $v1 
+puts $fpout $v2
+puts $fpout $v3
+puts $fpout $v4
+puts $fpout $v5
+puts $fpout $v6
+puts $fpout $v7
+puts $fpout $v8
+puts $fpout $v9
+puts $fpout $v10
+puts $fpout $soc1 
+puts $fpout $soc2
+puts $fpout $soc3
+puts $fpout $soc4
+puts $fpout $soc5
+puts $fpout $soc6
+puts $fpout $soc7
+puts $fpout $soc8
+puts $fpout $soc9
+puts $fpout $soc10
+puts $fpout $t1 
+puts $fpout $t2
+puts $fpout $t3
+puts $fpout $t4
+puts $fpout $t5
+puts $fpout $t6
+puts $fpout $t7
+puts $fpout $t8
+puts $fpout $t9
+puts $fpout $t10
+puts $fpout 0                     ; # thermal power
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+puts $fpout 0
+
+close $fpout
+###
+### Done writing to data_out.txt file
+##########
+
+################################################
+# Open and close advisor_go_trigger.txt to signal matlab that
+# processing of data_out.txt has been completed.
+set AdvGoTrig [open $tmppath/advisor_go_trigger.txt w]
+puts $AdvGoTrig "Delete this file"
+close $AdvGoTrig
+if {$debugVHJ} {
+    puts "ADVISOR trigger file updated - Advisor now calculating"
+}
+
+##########################################################################
+# wait until Matlab/ADVISOR has read in data_out txt and
+# acted on that information.  This WHILE loop waits for Matlab
+# to update saber_go_trigger.txt before looping again
+
+set m_itime $m_time
+set diff [expr $m_time-$m_itime]
+
+while {$diff ==0 } {
+    after $sleeptime
+    set m_time [file mtime $tmppath/saber_go_trigger.txt]
+    set diff [expr $m_time-$m_itime]
+} ; # CLOSE WHILE LOOP
+if {$debugVHJ} {
+    puts "Detected Matlab done processing - Saber continues to transient analysis"
+}
+
+####################################################################################
+###
+###  Transient analysis
+###
+ 
+for {set i 1} {$i <= $runs} {incr i} {
+ 
+    if {$debugVHJ} {
+        puts "##### Start Loop $i / $runs"
+    }
+    
+    ################################
+    # Read alter commands
+    # E.g. alter /c_pwl.ess_pwr_req = pwl = [0,0,0.01,200,1,200]
+    Saber:Send {<d:/val/advisor_revisions/advisor/tmp/alter_cmds_file.scs}
+    
+    # Calculate the end time
+    # Ex. i=20 & e=1 thus Saber will end the simulation at 19 seconds.
+    set xe [expr $e*($i-0)]
+    
+    # Calculate the start time
+    # Ex. i=20 & e=1 thus Saber will start the simulation at 18 seconds.
+    set xs [expr $e*($i-1)]
+
+    ################################
+    # Transient analysis commands
+
+    # Output file ending letters
+    set init_point "tr"
+    set end_point "tr"
+   
+    if {$i == 1 } {
+        # For first run, begin with dc file, end with tr1 file
+        set init_point "dc"
+        append end_point $i
+        if {$debugVHJ} {
+            puts "Init_point = $init_point"
+            puts "End_point = $end_point"
+        }
+    } else {
+       # For other runs, begin with tr(i-1) and end eith tr(i), e.g. for i==3, begin tr2 end tr3
+       append init_point [expr $i - 1]
+       append end_point $i
+       set previous_num $end_point
+    }
+
+    #Send transient command.  Linearly ramp between ESS powers over small time step
+    # MK: tr (density 10,nsdensity 10,siglist /...,tend 100,terror 0.00001,tniter 10,tstep 1u )
+    Saber:Send "tr(aditer 300, density 10,nsdensity 10,terror 0.00001,tniter 10, dfile _,siglist /...,tbegin $xs,tend $xe,trep $end_point,trip $init_point,tstep $sabertstep,xsampling from $xs to $xe lin 2,zditer 1000)"
+    #Saber:Send "tr(density 10,nsdensity 10,siglist /...,tend $xe,terror 0.00001,tniter 10,tstep $sabertstep,trep $end_point,trip $init_point)"
+    #Saber:Send "tr(aditer 300, density 10,nsdensity 10,terror 0.00001,tniter 10, fniter 1000,samestep 3,siglist /...,tend $xe,trep $end_point,trip $init_point,tstep $sabertstep,zditer 10000)"
+    # e.g. tr(aditer 300, density 10, nsdensity 10,terror 0.00001,tniter 10,dfile _,fniter 1000,samestep 3,siglist /...,tend 1.0,trep tr1,trip dc,tripeqtrep yes,tstep 0.000001,xsampling from 0.0 to 1.0 lin 2,zditer 10000)
+
+    # Test with:
+    #Saber:Send "tr(aditer 300, density 10,nsdensity 10,terror 0.00001,tniter 10, dfile _,fniter 1000,samestep 3,siglist /...,tend $xe,trep $end_point,trip $init_point,tripeqtrep yes,tstep $sabertstep,xsampling from $xs to $xe lin 2,zditer 10000)"
+    # e.g. tr(aditer 300, density 10, nsdensity 10,terror 0.00001,tniter 10,dfile _,fniter 1000,samestep 3,siglist /...,tend 1.0,trep tr1,trip dc,tripeqtrep yes,tstep 0.000001,xsampling from 0.0 to 1.0 lin 2,zditer 10000)
+
+    # alter /c_pwl.ess_pwr_req = pwl = [0,0,658,4.5961,659,0.53768]
+    # tr(aditer 300, density 10,nsdensity 10,terror 0.00001,tniter 10, dfile _,fniter 1000,samestep 3,siglist /...,tend 659.0,trep tr659,trip tr658,tripeqtrep yes,tstep 0.000001,xsampling from 658.0 to 659.0 lin 2,zditer 10000)
+    # alter /c_pwl.ess_pwr_req = pwl = [0,0,659,0.53768,660,-2.3476]
+    # tr(aditer 300, density 10,nsdensity 10,terror 0.00001,tniter 10, dfile _,fniter 1000,samestep 3,siglist /...,tend 660.0,trep tr660,trip tr659,tripeqtrep yes,tstep 0.000001,xsampling from 659.0 to 660.0 lin 2,zditer 10000)
+    
+    ########################################################################
+    # Select Signals of interest (read from plotfile, measure at end)
+    # Open plotfile with results
+    set pf [pf:open $path/$design_name.tr]
+
+    #########################################################################
+    ###  Current measurement
+
+    # E.g. Current through battery pack:  lib_model.lib1/out(i2var.i2var1)
+    set current_wf [pf:read $pf CurrentString]
+    set current [Measure:At $current_wf end]
+
+    ##########################################################################
+    ###  Voltage measurements
+
+    # E.g. Voltage for module 1:  v1(ten_module_voltage_soc_error.tmvse1)
+    set v1_wf [pf:read $pf v1String]
+    set v1 [Measure:At $v1_wf end]
+    
+    set v2_wf [pf:read $pf v2String]
+    set v2 [Measure:At $v2_wf end]
+    
+    set v3_wf [pf:read $pf v3String]
+    set v3 [Measure:At $v3_wf end]
+
+    set v4_wf [pf:read $pf v4String]
+    set v4 [Measure:At $v4_wf end]
+
+    set v5_wf [pf:read $pf v5String]
+    set v5 [Measure:At $v5_wf end]
+
+    set v6_wf [pf:read $pf v6String]
+    set v6 [Measure:At $v6_wf end]
+
+    set v7_wf [pf:read $pf v7String]
+    set v7 [Measure:At $v7_wf end]
+
+    set v8_wf [pf:read $pf v8String]
+    set v8 [Measure:At $v8_wf end]
+
+    set v9_wf [pf:read $pf v9String]
+    set v9 [Measure:At $v9_wf end]
+
+    set v10_wf [pf:read $pf vTenString]
+    set v10 [Measure:At $v10_wf end]
+
+    ##########################################################################
+    ###  SOC measurements
+
+    # E.g. #SOC for module 1:    s1(ten_module_voltage_soc_error.tmvse1)
+    set s1_wf [pf:read $pf s1String]
+    set soc1 [Measure:At $s1_wf end]
+    
+    set s2_wf [pf:read $pf s2String]
+    set soc2 [Measure:At $s2_wf end]
+    
+    set s3_wf [pf:read $pf s3String]
+    set soc3 [Measure:At $s3_wf end]
+
+    set s4_wf [pf:read $pf s4String]
+    set soc4 [Measure:At $s4_wf end]
+
+    set s5_wf [pf:read $pf s5String]
+    set soc5 [Measure:At $s5_wf end]
+
+    set s6_wf [pf:read $pf s6String]
+    set soc6 [Measure:At $s6_wf end]
+
+    set s7_wf [pf:read $pf s7String]
+    set soc7 [Measure:At $s7_wf end]
+
+    set s8_wf [pf:read $pf s8String]
+    set soc8 [Measure:At $s8_wf end]
+
+    set s9_wf [pf:read $pf s9String]
+    set soc9 [Measure:At $s9_wf end]
+
+    set s10_wf [pf:read $pf sTenString]
+    set soc10 [Measure:At $s10_wf end]
+
+    ##########################################################################
+    ###  Temperature measurements
+
+    # E.g. Temperature for module 1    lib_model.lib1/out(tempc2var.tempc2var1)
+    set t1_wf [pf:read $pf Temp1String]
+    set t1 [Measure:At $t1_wf end]
+    
+    set t2_wf [pf:read $pf Temp2String]
+    set t2 [Measure:At $t2_wf end]
+    
+    set t3_wf [pf:read $pf Temp3String]
+    set t3 [Measure:At $t3_wf end]
+    
+    set t4_wf [pf:read $pf Temp4String]
+    set t4 [Measure:At $t4_wf end]
+    
+    set t5_wf [pf:read $pf Temp5String]
+    set t5 [Measure:At $t5_wf end]
+    
+    set t6_wf [pf:read $pf Temp6String]
+    set t6 [Measure:At $t6_wf end]
+    
+    set t7_wf [pf:read $pf Temp7String]
+    set t7 [Measure:At $t7_wf end]
+    
+    set t8_wf [pf:read $pf Temp8String]
+    set t8 [Measure:At $t8_wf end]
+    
+    set t9_wf [pf:read $pf Temp9String]
+    set t9 [Measure:At $t9_wf end]
+    
+    set t10_wf [pf:read $pf TempTenString]
+    set t10 [Measure:At $t10_wf end]
+    
+    ##########################################################################
+    ###  Thermal power measurements
+    
+    # E.g. Thermal power for module 1       lib_model.lib1/in(var2th_pwr.var2th_pwr1)
+    set therm1_wf [pf:read $pf ThermString1]
+    set therm1 [Measure:At $therm1_wf end]
+
+    set therm2_wf [pf:read $pf ThermString2]
+    set therm2 [Measure:At $therm2_wf end]
+
+    set therm3_wf [pf:read $pf ThermString3]
+    set therm3 [Measure:At $therm3_wf end]
+
+    set therm4_wf [pf:read $pf ThermString4]
+    set therm4 [Measure:At $therm4_wf end]
+
+    set therm5_wf [pf:read $pf ThermString5]
+    set therm5 [Measure:At $therm5_wf end]
+
+    set therm6_wf [pf:read $pf ThermString6]
+    set therm6 [Measure:At $therm6_wf end]
+
+    set therm7_wf [pf:read $pf ThermString7]
+    set therm7 [Measure:At $therm7_wf end]
+
+    set therm8_wf [pf:read $pf ThermString8]
+    set therm8 [Measure:At $therm8_wf end]
+
+    set therm9_wf [pf:read $pf ThermString9]
+    set therm9 [Measure:At $therm9_wf end]
+
+    set therm10_wf [pf:read $pf ThermStringTen]
+    set therm10 [Measure:At $therm10_wf end]
+
+    ###########################################################################
+    # Close the plotfile
+    pf:close $pf
+    ###########################################################################
+    
+    # Write outputs to data_out.txt
+    set fpout [open $tmppath/data_out.txt w]
+
+    puts $fpout $current             ; # current
+    puts $fpout $v1                  ; # voltages
+    puts $fpout $v2
+    puts $fpout $v3
+    puts $fpout $v4
+    puts $fpout $v5
+    puts $fpout $v6
+    puts $fpout $v7
+    puts $fpout $v8
+    puts $fpout $v9
+    puts $fpout $v10
+    puts $fpout $soc1                   ; # soc's
+    puts $fpout $soc2
+    puts $fpout $soc3
+    puts $fpout $soc4
+    puts $fpout $soc5
+    puts $fpout $soc6
+    puts $fpout $soc7
+    puts $fpout $soc8
+    puts $fpout $soc9
+    puts $fpout $soc10
+    puts $fpout $t1                     ; # temperatures
+    puts $fpout $t2
+    puts $fpout $t3
+    puts $fpout $t4
+    puts $fpout $t5
+    puts $fpout $t6
+    puts $fpout $t7
+    puts $fpout $t8
+    puts $fpout $t9
+    puts $fpout $t10        
+    puts $fpout $therm1                   ; # thermal power
+    puts $fpout $therm2
+    puts $fpout $therm3
+    puts $fpout $therm4
+    puts $fpout $therm5
+    puts $fpout $therm6
+    puts $fpout $therm7
+    puts $fpout $therm8
+    puts $fpout $therm9
+    puts $fpout $therm10        
+    
+    close $fpout
+    ### Done writing to data_out.txt file
+    ##########
+
+    ##########################################################################
+    # Finished Saber simulation for this time step.
+    #
+    # Open and close advisor_go_trigger.txt to signal matlab that
+    # processing of data_out.txt has been completed.
+
+    if {$debugVHJ} {
+            puts "Transient Analysis Results"
+            puts "Start Time $xs"
+            puts "End Time $xe"
+    }
+    set AdvGoTrig [open $tmppath/advisor_go_trigger.txt w]
+    puts $AdvGoTrig "Delete this file"
+    close $AdvGoTrig
+
+    ##########################################################################
+    # wait until Matlab/ADVISOR has read in data_out txt and
+    # acted on that information.  This WHILE loop waits for Matlab
+    # to update saber_go_trigger.txt before looping again
+
+        set m_itime $m_time
+        set diff [expr $m_time-$m_itime]
+        while {$diff ==0 } {
+            after $sleeptime
+            set m_time [file mtime $tmppath/saber_go_trigger.txt]
+    	    set diff [expr $m_time-$m_itime]
+        }
+} ; # Close FOR loop bracket
+
+# Close Saber when finished
+Saber:Send {exit}
+
+#Revision history
+# 12/28/01: vhj file created using advisor_cosim_sv.aim as a base
+# 01/03/02: vhj added initial V's, SOC's, T's, check/alter file writing order
+# 01/04/02: vhj added thermal power as output in data file, exit saber when finished
+# 01/07/02: vhj replace hard-coded output variable names with strings to be replaced when
+#               creating advisor_cosim.aim via the S function saber_cosim_batt.m
+# 01/08/02: vhj added after $sleeptime (e.g. 26 millisec) to speed up cosim
+# 03/19/02: vhj/mak adjusted saber command via Delphi inputs

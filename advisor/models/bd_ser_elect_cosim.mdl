@@ -1,0 +1,4256 @@
+Model {
+  Name			  "bd_ser_elect_cosim"
+  Version		  4.1.1
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  off
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Wed May 31 09:35:42 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "ssprik"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Sep 24 15:20:27 2003"
+  ModifiedComment	  "mokeefe -- Thu Apr 18 08:09:28 2002 -- Version 1.12"
+"1\nsaving the model:\no \"without the model browser open\"\no with only top-l"
+"evel screen visible \no and with \"fit to view\" enabled"
+  ModifiedHistory	  "mokeefe -- Thu Apr 18 08:09:28 2002 -- Version 1.12"
+"1\nsaving the model:\no \"without the model browser open\"\no with only top-l"
+"evel screen visible \no and with \"fit to view\" enabled\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:211>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "max(cyc_mph(:,1))"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "1"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  off
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "none"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_vc.tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "bd_ser_elect_cosim"
+    Location		    [56, 97, 1019, 507]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "111"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "2 axle -->\n1 driveline\nconverter"
+      Ports		      [3, 3]
+      Position		      [240, 170, 265, 230]
+      SourceBlock	      "lib_wheel/2 axle -->\n1 driveline\nconverter"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "<cs>"
+      Position		      [780, 197, 845, 213]
+      GotoTag		      "ex_cat_tmp"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> series"
+      Ports		      []
+      Position		      [155, 89, 212, 132]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> series"
+	Location		[65, 74, 639, 804]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [100, 395, 120, 415]
+	  ShowName		  off
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [320, 335, 390, 365]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [40, 21, 105, 39]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [320, 290, 390, 320]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cs>"
+	  Position		  [25, 325, 120, 345]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "engine_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [315, 581, 415, 599]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [320, 626, 420, 644]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [320, 671, 420, 689]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power"
+	  Position		  [30, 429, 130, 451]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power1"
+	  Position		  [25, 552, 145, 578]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power2"
+	  Position		  [20, 470, 135, 490]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power3"
+	  Position		  [295, 446, 395, 464]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power4"
+	  Position		  [295, 500, 395, 520]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power5"
+	  Position		  [20, 510, 135, 530]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>"
+	  Position		  [30, 248, 125, 272]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>1"
+	  Position		  [30, 288, 125, 312]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [320, 716, 420, 734]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>"
+	  Position		  [25, 711, 125, 729]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/enforce torque limit"
+	  Position		  [25, 659, 120, 681]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic"
+	  Position		  [25, 609, 135, 631]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [315, 25, 410, 55]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control"
+	  Position		  [35, 153, 125, 177]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control2"
+	  Position		  [30, 203, 125, 227]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>2"
+	  Position		  [315, 235, 410, 265]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [315, 130, 410, 160]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>4"
+	  Position		  [315, 185, 410, 215]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>5"
+	  Position		  [20, 369, 115, 391]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [30, 65, 125, 85]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [25, 109, 125, 131]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [135, 322, 165, 348]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [125, 18, 155, 42]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [140, 371, 165, 404]
+	  ShowName		  off
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [485, 715, 510, 735]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [445, 295, 505, 315]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [445, 340, 505, 360]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [170, 64, 265, 86]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [430, 28, 505, 52]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [170, 252, 245, 268]
+	  ShowName		  off
+	  VariableName		  "fc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [170, 111, 250, 129]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [180, 21, 245, 39]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace43"
+	  Position		  [175, 430, 250, 450]
+	  VariableName		  "lim_ess_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [440, 130, 500, 160]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace45"
+	  Position		  [175, 469, 260, 491]
+	  VariableName		  "lim_ess_soc_low"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace46"
+	  Position		  [180, 509, 265, 531]
+	  VariableName		  "lim_ess_soc_hi"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace47"
+	  Position		  [175, 552, 265, 578]
+	  VariableName		  "lim_mc_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace48"
+	  Position		  [165, 610, 255, 630]
+	  VariableName		  "lim_mc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace49"
+	  Position		  [170, 659, 245, 681]
+	  VariableName		  "lim_mc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [175, 291, 250, 309]
+	  ShowName		  off
+	  VariableName		  "fc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace50"
+	  Position		  [170, 709, 255, 731]
+	  VariableName		  "lim_mc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace51"
+	  Position		  [170, 155, 250, 175]
+	  VariableName		  "lim_fc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [440, 185, 500, 215]
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace53"
+	  Position		  [440, 443, 520, 467]
+	  VariableName		  "lim_ess_minV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [430, 238, 505, 262]
+	  VariableName		  "clutch_state"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace55"
+	  Position		  [185, 377, 270, 403]
+	  VariableName		  "lim_clutch_dis"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [180, 322, 265, 348]
+	  VariableName		  "lim_engine_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [175, 205, 245, 225]
+	  VariableName		  "lim_fc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [440, 499, 520, 521]
+	  VariableName		  "lim_ess_maxV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [460, 578, 540, 602]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace60"
+	  Position		  [465, 623, 545, 647]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace61"
+	  Position		  [465, 668, 545, 692]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>5"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace50"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/enforce torque limit"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace49"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace48"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace47"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power5"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace46"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace45"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace43"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cs>"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace55"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace61"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace60"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace53"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace51"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "<vc> series"
+      Ports		      []
+      Position		      [150, 25, 211, 62]
+      BackgroundColor	      "yellow"
+      LinkData {
+	BlockName		"config traction control"
+	DialogParameters {
+	  BlockChoice		  "traction control"
+	}
+      }
+      SourceBlock	      "lib_controls/<vc> series"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [25, 65, 45, 85]
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Cosimulate Elect"
+      Ports		      [2, 2]
+      Position		      [510, 166, 605, 219]
+      AncestorBlock	      "lib_cosimulation/SaberCosim"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('series_cosim.bmp'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Cosimulate Elect"
+	Location		[165, 89, 1108, 638]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "torque and speed req'd\nat input side of ge"
+"arbox\n(Nm),(rad/s)"
+	  Position		  [45, 163, 75, 177]
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "torque and speed\navailable to drive line\n"
+"(Nm),(rad/s)"
+	  Position		  [40, 238, 70, 252]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "14V Load Control"
+	  Ports			  [0, 1]
+	  Position		  [240, 286, 315, 304]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "14V Load Control"
+	    Location		    [-23, 74, 909, 762]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [125, 1450, 155, 1480]
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [260, 1485, 290, 1515]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [205, 1124, 345, 1146]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "engine_on"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [180, 1467, 235, 1493]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "F_req"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [515, 800, 590, 820]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Matrix\nConcatenation2"
+	      Ports		      [13, 1]
+	      Position		      [455, 20, 480, 1530]
+	      FunctionName	      "smatrxcat"
+	      Parameters	      "numInports,catMethod"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	      MaskType		      "Matrix Concatenation"
+	      MaskDescription	      "Perform horizontal or vertical concaten"
+"ation.  1-D vector input signals are treated as column vectors, i.e., [Mx1] m"
+"atrices.  The output is always a matrix."
+	      MaskPromptString	      "Number of inputs:|Concatenation method:"
+	      MaskStyleString	      "edit,popup(Horizontal|Vertical)"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskVariables	      "numInports=@1;catMethod=@2;"
+	      MaskInitialization      "xy = matrxcatmask('icon');"
+	      MaskDisplay	      "plot(xy.x,xy.y);\ntext(0.15,0.86,xy.lab"
+"el);\n"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "normalized"
+	      MaskValueString	      "13|Horizontal"
+	      MaskVariableAliases     ","
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Num"
+	      Position		      [25, 190, 335, 210]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Num"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Num1"
+	      Position		      [25, 305, 335, 325]
+	      Value		      "vinf.AuxLoads.Radio.Num"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On1"
+	      Position		      [30, 54, 340, 76]
+	      Value		      "vinf.AuxLoads.RearDefrost.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On10"
+	      Position		      [40, 1090, 350, 1110]
+	      Value		      "vinf.AuxLoads.Engine.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On11"
+	      Position		      [40, 1206, 350, 1224]
+	      Value		      "vinf.AuxLoads.ExternalLights.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On12"
+	      Position		      [45, 1321, 355, 1339]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On13"
+	      Position		      [50, 1409, 360, 1431]
+	      Value		      "vinf.AuxLoads.BrakeLights.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On14"
+	      Position		      [510, 849, 615, 871]
+	      Value		      "vinf.AuxLoadsOn"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On2"
+	      Position		      [25, 154, 335, 176]
+	      Value		      "vinf.AuxLoads.HeatedSeats.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On3"
+	      Position		      [25, 270, 335, 290]
+	      Value		      "vinf.AuxLoads.Radio.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On4"
+	      Position		      [30, 398, 345, 422]
+	      Value		      "vinf.AuxLoads.RearWipers.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On5"
+	      Position		      [35, 515, 345, 535]
+	      Value		      "vinf.AuxLoads.FrontWipers.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On6"
+	      Position		      [40, 629, 350, 651]
+	      Value		      "vinf.AuxLoads.TurnSignals.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On7"
+	      Position		      [40, 764, 350, 786]
+	      Value		      "vinf.AuxLoads.Misc.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On8"
+	      Position		      [35, 861, 345, 879]
+	      Value		      "vinf.AuxLoads.FrontHVAC.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On9"
+	      Position		      [40, 974, 350, 996]
+	      Value		      "vinf.AuxLoads.RearHVAC.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [370, 47, 390, 118]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product10"
+	      Ports		      [2, 1]
+	      Position		      [375, 1197, 395, 1268]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product11"
+	      Ports		      [2, 1]
+	      Position		      [375, 1312, 395, 1383]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product12"
+	      Ports		      [2, 1]
+	      Position		      [380, 1425, 400, 1500]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product13"
+	      Ports		      [3, 1]
+	      Position		      [640, 799, 660, 871]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product2"
+	      Ports		      [3, 1]
+	      Position		      [370, 144, 390, 256]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product3"
+	      Ports		      [3, 1]
+	      Position		      [370, 259, 390, 371]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product4"
+	      Ports		      [2, 1]
+	      Position		      [370, 392, 390, 463]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product5"
+	      Ports		      [2, 1]
+	      Position		      [370, 507, 390, 578]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product6"
+	      Ports		      [2, 1]
+	      Position		      [375, 622, 395, 693]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product7"
+	      Ports		      [2, 1]
+	      Position		      [375, 852, 395, 923]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product8"
+	      Ports		      [2, 1]
+	      Position		      [375, 967, 395, 1038]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product9"
+	      Ports		      [2, 1]
+	      Position		      [375, 1082, 395, 1153]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [260, 335, 335, 365]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'Radio'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem1"
+	      Ports		      [0, 1]
+	      Position		      [260, 430, 335, 460]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearWipers'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem2"
+	      Ports		      [0, 1]
+	      Position		      [260, 220, 335, 250]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'HeatedSeats'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem3"
+	      Ports		      [0, 1]
+	      Position		      [270, 545, 345, 575]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'FrontWipers'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem4"
+	      Ports		      [0, 1]
+	      Position		      [275, 660, 350, 690]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'TurnSignals'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem5"
+	      Ports		      [0, 1]
+	      Position		      [260, 85, 335, 115]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearDefrost'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem6"
+	      Ports		      [0, 1]
+	      Position		      [270, 890, 345, 920]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'FrontHVAC'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem7"
+	      Ports		      [0, 1]
+	      Position		      [275, 1005, 350, 1035]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearHVAC'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem8"
+	      Ports		      [0, 1]
+	      Position		      [275, 1235, 350, 1265]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'ExternalLights'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem9"
+	      Ports		      [0, 1]
+	      Position		      [280, 1350, 355, 1380]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RadiatorCoolingFan'"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [335, 1465, 365, 1495]
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "smart control"
+	      Ports		      [1, 1]
+	      Position		      [680, 816, 730, 854]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"smart control"
+		Location		[463, 660, 1111, 950]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [15, 198, 45, 212]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From"
+		  Position		  [80, 61, 120, 89]
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "time"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory"
+		  Position		  [100, 235, 130, 265]
+		  X0			  "0"
+		  InheritSampleTime	  off
+		  RTWStateStorageClass	  "Auto"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory1"
+		  Position		  [145, 120, 175, 150]
+		  X0			  "0"
+		  InheritSampleTime	  off
+		  RTWStateStorageClass	  "Auto"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "On1"
+		  Position		  [385, 164, 440, 186]
+		  Value			  "nan"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [155, 197, 185, 228]
+		  Operator		  "~="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  Position		  [265, 67, 295, 98]
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [2, 1]
+		  Position		  [210, 98, 230, 147]
+		  ShowName		  off
+		  IconShape		  "rectangular"
+		  Inputs		  "+-"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch1"
+		  Position		  [475, 80, 505, 110]
+		  NamePlacement		  "alternate"
+		  Threshold		  ".5"
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "first time step Or\ncontrol changes"
+		  Ports			  [2, 1]
+		  Position		  [345, 77, 375, 108]
+		  Operator		  "OR"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [555, 88, 585, 102]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "Memory1"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "On1"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, -70]
+		  DstBlock		  "Switch1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [125, 0; 0, -115]
+		  DstBlock		  "first time step Or\ncontrol changes"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  Points		  [0, -35]
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  DstBlock		  "first time step Or\ncontrol changes"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "first time step Or\ncontrol changes"
+		  SrcPort		  1
+		  DstBlock		  "Switch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "From"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    Points		    [0, 35]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Memory1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Memory"
+		  SrcPort		  1
+		  Points		  [0, -30]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    Points		    [0, -180; 395, 0]
+		    DstBlock		    "Switch1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [770, 828, 800, 842]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "smart control"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On14"
+	      SrcPort		      1
+	      DstBlock		      "Product13"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem5"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On1"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "Product2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Num"
+	      SrcPort		      1
+	      DstBlock		      "Product2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On2"
+	      SrcPort		      1
+	      DstBlock		      "Product2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Num1"
+	      SrcPort		      1
+	      DstBlock		      "Product3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On3"
+	      SrcPort		      1
+	      DstBlock		      "Product3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "Product4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On4"
+	      SrcPort		      1
+	      DstBlock		      "Product4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "Product5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On5"
+	      SrcPort		      1
+	      DstBlock		      "Product5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On6"
+	      SrcPort		      1
+	      DstBlock		      "Product6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem4"
+	      SrcPort		      1
+	      DstBlock		      "Product6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On7"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem6"
+	      SrcPort		      1
+	      DstBlock		      "Product7"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On8"
+	      SrcPort		      1
+	      DstBlock		      "Product7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem7"
+	      SrcPort		      1
+	      DstBlock		      "Product8"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Product9"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On10"
+	      SrcPort		      1
+	      DstBlock		      "Product9"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem8"
+	      SrcPort		      1
+	      DstBlock		      "Product10"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On11"
+	      SrcPort		      1
+	      DstBlock		      "Product10"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem9"
+	      SrcPort		      1
+	      DstBlock		      "Product11"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On12"
+	      SrcPort		      1
+	      DstBlock		      "Product11"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Product12"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [160, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On13"
+	      SrcPort		      1
+	      DstBlock		      "Product12"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product3"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product4"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Product5"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Product6"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Product7"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "Product8"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      9
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Product9"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      10
+	    }
+	    Line {
+	      SrcBlock		      "Product10"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      11
+	    }
+	    Line {
+	      SrcBlock		      "Product11"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      12
+	    }
+	    Line {
+	      SrcBlock		      "Product12"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      13
+	    }
+	    Line {
+	      SrcBlock		      "On9"
+	      SrcPort		      1
+	      DstBlock		      "Product8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product13"
+	      SrcPort		      1
+	      DstBlock		      "smart control"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Product13"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation2"
+	      SrcPort		      1
+	      Points		      [0, 60]
+	      DstBlock		      "Product13"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "<sdo>"
+	  Position		  [185, 459, 265, 481]
+	  GotoTag		  "gc_trq_in_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "<sdo>1"
+	  Position		  [185, 494, 265, 516]
+	  GotoTag		  "gc_spd_in_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [150, 119, 160, 221]
+	  Outputs		  "2"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  Ports			  [1, 2]
+	  Position		  [150, 453, 160, 522]
+	  FontName		  "Arial"
+	  Outputs		  "2"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Engine RPM Ach"
+	  Ports			  [1, 1]
+	  Position		  [240, 236, 315, 254]
+	  AncestorBlock		  "lib_cosimulation/saber dv acc/Engine Info"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Engine RPM Ach"
+	    Location		    [288, 127, 1046, 819]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "w_apu"
+	      Position		      [25, 358, 55, 372]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	      Port {
+		PortNumber		1
+		Name			"w_apu"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [105, 65, 135, 95]
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Enabled\nSubsystem"
+	      Ports		      [1, 1, 1]
+	      Position		      [270, 163, 370, 187]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      on
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"Enabled\nSubsystem"
+		Location		[421, 301, 919, 601]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  Ports			  []
+		  Position		  [235, 20, 255, 40]
+		  StatesWhenEnabling	  "held"
+		  ShowOutputPort	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [360, 103, 390, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [220, 452, 270, 468]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [190, 262, 240, 278]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [95, 137, 145, 153]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      InitialCondition
+	      Name		      "IC"
+	      Position		      [330, 443, 385, 477]
+	      Value		      "time_step"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Matrix\nConcatenation1"
+	      Ports		      [6, 1]
+	      Position		      [565, 29, 590, 606]
+	      FunctionName	      "smatrxcat"
+	      Parameters	      "numInports,catMethod"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	      MaskType		      "Matrix Concatenation"
+	      MaskDescription	      "Perform horizontal or vertical concaten"
+"ation.  1-D vector input signals are treated as column vectors, i.e., [Mx1] m"
+"atrices.  The output is always a matrix."
+	      MaskPromptString	      "Number of inputs:|Concatenation method:"
+	      MaskStyleString	      "edit,popup(Horizontal|Vertical)"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskVariables	      "numInports=@1;catMethod=@2;"
+	      MaskInitialization      "xy = matrxcatmask('icon');"
+	      MaskDisplay	      "plot(xy.x,xy.y);\ntext(0.15,0.86,xy.lab"
+"el);\n"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "normalized"
+	      MaskValueString	      "6|Horizontal"
+	      MaskVariableAliases     ","
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory1"
+	      Position		      [380, 255, 410, 285]
+	      X0		      ".001"
+	      InheritSampleTime	      on
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory2"
+	      Position		      [245, 350, 275, 380]
+	      ShowName		      off
+	      X0		      "80"
+	      InheritSampleTime	      on
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      Position		      [225, 122, 255, 153]
+	      ShowName		      off
+	      Operator		      "=="
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [275, 255, 305, 285]
+	      UpperLimit	      "inf"
+	      LowerLimit	      ".001"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "rad/s -> rpm1"
+	      Position		      [125, 350, 155, 380]
+	      Gain		      "60/(2*pi)"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "RPM"
+	      Position		      [680, 313, 710, 327]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      DstBlock		      "Enabled\nSubsystem"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Enabled\nSubsystem"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Memory2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation1"
+	      SrcPort		      1
+	      DstBlock		      "RPM"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "IC"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Memory1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "IC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Relational\nOperator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Matrix\nConcatenation1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "w_apu"
+	      Labels		      [0, 0]
+	      SrcBlock		      "w_apu"
+	      SrcPort		      1
+	      DstBlock		      "rad/s -> rpm1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "rad/s -> rpm1"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[15, 0]
+		Branch {
+		  DstBlock		  "Memory2"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 190]
+		  DstBlock		  "Matrix\nConcatenation1"
+		  DstPort		  6
+		}
+	      }
+	      Branch {
+		Points			[0, -190]
+		DstBlock		"Enabled\nSubsystem"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Hi Voltage Load Control"
+	  Ports			  [0, 1]
+	  Position		  [240, 336, 315, 354]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Hi Voltage Load Control"
+	    Location		    [-3, 127, 820, 920]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [490, 310, 565, 330]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Matrix\nConcatenation2"
+	      Ports		      [5, 1]
+	      Position		      [445, 35, 465, 655]
+	      FunctionName	      "smatrxcat"
+	      Parameters	      "numInports,catMethod"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	      MaskType		      "Matrix Concatenation"
+	      MaskDescription	      "Perform horizontal or vertical concaten"
+"ation.  1-D vector input signals are treated as column vectors, i.e., [Mx1] m"
+"atrices.  The output is always a matrix."
+	      MaskPromptString	      "Number of inputs:|Concatenation method:"
+	      MaskStyleString	      "edit,popup(Horizontal|Vertical)"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskVariables	      "numInports=@1;catMethod=@2;"
+	      MaskInitialization      "xy = matrxcatmask('icon');"
+	      MaskDisplay	      "plot(xy.x,xy.y);\ntext(0.15,0.86,xy.lab"
+"el);\n"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "normalized"
+	      MaskValueString	      "5|Horizontal"
+	      MaskVariableAliases     ","
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [25, 63, 330, 87]
+	      Value		      "vinf.AuxLoads.CurrentLoad1.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On1"
+	      Position		      [30, 188, 335, 212]
+	      Value		      "vinf.AuxLoads.PowerLoad1.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On14"
+	      Position		      [480, 359, 585, 381]
+	      Value		      "vinf.AuxLoadsOn"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On2"
+	      Position		      [25, 314, 335, 336]
+	      Value		      "vinf.AuxLoads.PowerLoad2.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On3"
+	      Position		      [25, 439, 335, 461]
+	      Value		      "vinf.AuxLoads.PowerLoad3.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On4"
+	      Position		      [25, 565, 335, 585]
+	      Value		      "vinf.AuxLoads.SpeedLoad1.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [375, 57, 395, 128]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [375, 182, 395, 253]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product13"
+	      Ports		      [3, 1]
+	      Position		      [615, 309, 635, 381]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product5"
+	      Ports		      [2, 1]
+	      Position		      [375, 307, 395, 378]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product6"
+	      Ports		      [2, 1]
+	      Position		      [375, 432, 395, 503]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product7"
+	      Ports		      [2, 1]
+	      Position		      [375, 557, 395, 628]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [255, 95, 330, 125]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'CurrentLoad1'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem1"
+	      Ports		      [0, 1]
+	      Position		      [260, 220, 335, 250]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'PowerLoad1'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem2"
+	      Ports		      [0, 1]
+	      Position		      [260, 345, 335, 375]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'PowerLoad2'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem3"
+	      Ports		      [0, 1]
+	      Position		      [260, 470, 335, 500]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'PowerLoad3'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem4"
+	      Ports		      [0, 1]
+	      Position		      [260, 595, 335, 625]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'SpeedLoad1'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "smart control"
+	      Ports		      [1, 1]
+	      Position		      [670, 326, 720, 364]
+	      SourceBlock	      "lib_cosimulation/14V Load Control/smart"
+" control"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "on"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [760, 338, 790, 352]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "smart control"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On14"
+	      SrcPort		      1
+	      DstBlock		      "Product13"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Product13"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product13"
+	      SrcPort		      1
+	      DstBlock		      "smart control"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "Product5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On2"
+	      SrcPort		      1
+	      DstBlock		      "Product5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "Product6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On3"
+	      SrcPort		      1
+	      DstBlock		      "Product6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On4"
+	      SrcPort		      1
+	      DstBlock		      "Product7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem4"
+	      SrcPort		      1
+	      DstBlock		      "Product7"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product5"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product6"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Product7"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On1"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation2"
+	      SrcPort		      1
+	      DstBlock		      "Product13"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [6, 1]
+	  Position		  [345, 121, 355, 419]
+	  SourceBlock		  "simulink3/Signals\n& Systems/Matrix\nConcat"
+"enation"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "6"
+	  catMethod		  "Horizontal"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Motor RPM Req"
+	  Ports			  [1, 1]
+	  Position		  [240, 186, 315, 204]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Motor RPM Req"
+	    Location		    [301, 292, 1059, 984]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "w_apu"
+	      Position		      [25, 358, 55, 372]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [105, 65, 135, 95]
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Enabled\nSubsystem"
+	      Ports		      [1, 1, 1]
+	      Position		      [270, 163, 370, 187]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      on
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"Enabled\nSubsystem"
+		Location		[421, 301, 919, 601]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  Ports			  []
+		  Position		  [235, 20, 255, 40]
+		  StatesWhenEnabling	  "held"
+		  ShowOutputPort	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [360, 103, 390, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [220, 452, 270, 468]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [190, 262, 240, 278]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [95, 137, 145, 153]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      InitialCondition
+	      Name		      "IC"
+	      Position		      [330, 443, 385, 477]
+	      Value		      "time_step"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Matrix\nConcatenation1"
+	      Ports		      [6, 1]
+	      Position		      [565, 29, 590, 606]
+	      FunctionName	      "smatrxcat"
+	      Parameters	      "numInports,catMethod"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	      MaskType		      "Matrix Concatenation"
+	      MaskDescription	      "Perform horizontal or vertical concaten"
+"ation.  1-D vector input signals are treated as column vectors, i.e., [Mx1] m"
+"atrices.  The output is always a matrix."
+	      MaskPromptString	      "Number of inputs:|Concatenation method:"
+	      MaskStyleString	      "edit,popup(Horizontal|Vertical)"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskVariables	      "numInports=@1;catMethod=@2;"
+	      MaskInitialization      "xy = matrxcatmask('icon');"
+	      MaskDisplay	      "plot(xy.x,xy.y);\ntext(0.15,0.86,xy.lab"
+"el);\n"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "normalized"
+	      MaskValueString	      "6|Horizontal"
+	      MaskVariableAliases     ","
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory1"
+	      Position		      [380, 255, 410, 285]
+	      X0		      ".001"
+	      InheritSampleTime	      on
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory2"
+	      Position		      [245, 350, 275, 380]
+	      ShowName		      off
+	      X0		      "0"
+	      InheritSampleTime	      on
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      Position		      [225, 122, 255, 153]
+	      ShowName		      off
+	      Operator		      "=="
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [275, 255, 305, 285]
+	      UpperLimit	      "inf"
+	      LowerLimit	      ".001"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "rad/s -> rpm1"
+	      Position		      [125, 350, 155, 380]
+	      Gain		      "60/(2*pi)"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "RPM"
+	      Position		      [680, 313, 710, 327]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      DstBlock		      "Enabled\nSubsystem"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Enabled\nSubsystem"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Memory2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation1"
+	      SrcPort		      1
+	      DstBlock		      "RPM"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "IC"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Memory1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "IC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Relational\nOperator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Matrix\nConcatenation1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "w_apu"
+	      SrcPort		      1
+	      DstBlock		      "rad/s -> rpm1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "rad/s -> rpm1"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[15, 0]
+		Branch {
+		  DstBlock		  "Memory2"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 190]
+		  DstBlock		  "Matrix\nConcatenation1"
+		  DstPort		  6
+		}
+	      }
+	      Branch {
+		Points			[0, -190]
+		DstBlock		"Enabled\nSubsystem"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Motor Trq Req"
+	  Ports			  [1, 1]
+	  Position		  [240, 136, 315, 154]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Motor Trq Req"
+	    Location		    [404, 114, 1162, 806]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "trq"
+	      Position		      [25, 358, 55, 372]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [105, 65, 135, 95]
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Enabled\nSubsystem"
+	      Ports		      [1, 1, 1]
+	      Position		      [270, 163, 370, 187]
+	      SourceBlock	      "lib_cosimulation/saber dv acc/Engine In"
+"fo/Enabled\nSubsystem"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "on"
+	      TreatAsAtomicUnit	      "on"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [220, 452, 270, 468]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [190, 262, 240, 278]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [95, 137, 145, 153]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      InitialCondition
+	      Name		      "IC"
+	      Position		      [330, 443, 385, 477]
+	      Value		      "time_step"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix\nConcatenation1"
+	      Ports		      [6, 1]
+	      Position		      [565, 29, 590, 606]
+	      SourceBlock	      "lib_cosimulation/saber dv acc/Engine In"
+"fo/Matrix\nConcatenation1"
+	      SourceType	      "Matrix Concatenation"
+	      numInports	      "6"
+	      catMethod		      "Horizontal"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory1"
+	      Position		      [380, 255, 410, 285]
+	      X0		      ".001"
+	      InheritSampleTime	      on
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory2"
+	      Position		      [245, 350, 275, 380]
+	      ShowName		      off
+	      X0		      "0"
+	      InheritSampleTime	      on
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      Position		      [225, 122, 255, 153]
+	      ShowName		      off
+	      Operator		      "=="
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [275, 255, 305, 285]
+	      UpperLimit	      "inf"
+	      LowerLimit	      ".001"
+	      LinearizeAsGain	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "trq array"
+	      Position		      [680, 313, 710, 327]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "trq"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, -190]
+		DstBlock		"Enabled\nSubsystem"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[85, 0]
+		Branch {
+		  DstBlock		  "Memory2"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 190]
+		  DstBlock		  "Matrix\nConcatenation1"
+		  DstPort		  6
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		DstBlock		"Matrix\nConcatenation1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Relational\nOperator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "IC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Memory1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "IC"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation1"
+	      SrcPort		      1
+	      DstBlock		      "trq array"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Enabled\nSubsystem"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      DstBlock		      "Enabled\nSubsystem"
+	      DstPort		      enable
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  Ports			  [2, 1]
+	  Position		  [610, 271, 615, 309]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [630, 228, 645, 272]
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  Ports			  [1, 1]
+	  Position		  [180, 231, 215, 259]
+	  InputType		  "Vector"
+	  ElementSrc		  "Internal"
+	  Elements		  "[2]"
+	  RowSrc		  "Internal"
+	  Rows			  "1"
+	  ColumnSrc		  "Internal"
+	  Columns		  "1"
+	  InputPortWidth	  "2"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Series Cosim"
+	  Ports			  [1, 1]
+	  Position		  [405, 245, 465, 295]
+	  AttributesFormatString  "%<BlockChoice>"
+	  ShowPortLabels	  off
+	  BlockChoice		  "Saber Text File Exchange"
+	  TemplateBlock		  "lib_cosimulation/Series Cosim"
+	  MemberBlocks		  "Saber Text File Exchange,Series Saber Cosim"
+",Series Simplorer Cosim"
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Series Cosim"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Saber Text File Exchange"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      AncestorBlock	      "lib_cosimulation/SaberCosim"
+	      SourceBlock	      "lib_cosimulation/Saber Text File Exchan"
+"ge"
+	      SourceType	      "Unknown"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [200, 40, 220, 60]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 10]
+	      DstBlock		      "Saber Text File Exchange"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saber Text File Exchange"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -10]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Series Model Data In"
+	  Ports			  [0, 1]
+	  Position		  [240, 387, 315, 403]
+	  SourceBlock		  "lib_cosimulation/Series Model Data In"
+	  SourceType		  "Unknown"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Series cosim\noutput gotos"
+	  Ports			  [1, 4]
+	  Position		  [515, 229, 545, 311]
+	  LinkData {
+	    BlockName		    "saber gc output\ngotos/Gain"
+	    DialogParameters {
+	      Gain		      "1"
+	    }
+	    BlockName		    "saber mc output\ngotos/sign convention"
+	    DialogParameters {
+	      Gain		      "1"
+	    }
+	  }
+	  SourceBlock		  "lib_cosimulation/Series cosim\noutput gotos"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "off"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [195, 43, 345, 67]
+	  ShowName		  off
+	  VariableName		  "mc_trq_out_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [230, 93, 380, 117]
+	  ShowName		  off
+	  VariableName		  "mc_spd_out_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "mech pwr\nreq'd for gen"
+	  Position		  [670, 243, 700, 257]
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "drive torque and\nspeed avail. at rotor\n(N"
+"m), (rad/s)"
+	  Position		  [670, 283, 700, 297]
+	  FontName		  "Arial"
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "torque and speed req'd\nat input side of ge"
+"arbox\n(Nm),(rad/s)"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  DstBlock		  "<sdo>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  DstBlock		  "<sdo>1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "Series Cosim"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Series Cosim"
+	  SrcPort		  1
+	  DstBlock		  "Series cosim\noutput gotos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "drive torque and\nspeed avail. at rotor\n(N"
+"m), (rad/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Series cosim\noutput gotos"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "torque and speed\navailable to drive line\n"
+"(Nm),(rad/s)"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    DstBlock		    "Selector"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 245]
+	    DstBlock		    "Demux2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Motor RPM Req"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Motor RPM Req"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Motor Trq Req"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -90]
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Engine RPM Ach"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "Engine RPM Ach"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Motor Trq Req"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Hi Voltage Load Control"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "14V Load Control"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Series Model Data In"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Series cosim\noutput gotos"
+	  SrcPort		  4
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Series cosim\noutput gotos"
+	  SrcPort		  3
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Series cosim\noutput gotos"
+	  SrcPort		  2
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "mech pwr\nreq'd for gen"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto<sdo>"
+      Position		      [70, 68, 140, 82]
+      GotoTag		      "time"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "HC, CO,\nNOx, PM (g/s)"
+      Position		      [780, 142, 830, 158]
+      FontName		      "Arial"
+      VariableName	      "emis"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Interactive Graphics"
+      Ports		      []
+      Position		      [417, 45, 482, 99]
+      AttributesFormatString  "%<BlockChoice>"
+      LinkData {
+	BlockName		"off/Live Inputs/veh/roll res interactive"
+	DialogParameters {
+	  BlockChoice		  "roll res force req (N)"
+	}
+      }
+      ShowPortLabels	      on
+      BlockChoice	      "off"
+      TemplateBlock	      "lib_interactive/Interactive Graphics"
+      MemberBlocks	      "off,on"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Interactive Graphics"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "off"
+	  Tag			  "Altia_off"
+	  Ports			  []
+	  Position		  [100, 40, 140, 80]
+	  Orientation		  "up"
+	  SourceBlock		  "lib_interactive/off"
+	  SourceType		  ""
+	}
+      }
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator1"
+      Ports		      [2, 1]
+      Position		      [740, 104, 765, 131]
+      Orientation	      "left"
+      ShowName		      off
+      Operator		      "AND"
+      Inputs		      "2"
+    }
+    Block {
+      BlockType		      Memory
+      Name		      "Memory1"
+      Position		      [630, 165, 650, 195]
+      ShowName		      off
+      X0		      "0"
+      InheritSampleTime	      off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "NOTES"
+      Ports		      []
+      Position		      [15, 287, 65, 321]
+      BackgroundColor	      "green"
+      ShowName		      off
+      SourceBlock	      "lib_help/NOTES"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "do ex calcs?"
+      Position		      [790, 84, 835, 96]
+      Orientation	      "left"
+      ShowName		      off
+      Value		      "ex_calc"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "do ex calcs?1"
+      Position		      [790, 119, 835, 131]
+      Orientation	      "left"
+      ShowName		      off
+      Value		      "fc_emis"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "drive cycle\n<cyc>"
+      Ports		      [0, 1]
+      Position		      [15, 116, 50, 184]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_drive_cycle/drive cycle\n<cyc>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "exhaust sys\n<ex>"
+      Ports		      [1, 2, 1]
+      Position		      [705, 138, 755, 182]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_exhaust/exhaust sys\n<ex>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "final drive <fd>"
+      Ports		      [2, 2]
+      Position		      [315, 168, 360, 217]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_transmission/final drive <fd>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fuel\nconverter\n <fc> for series"
+      Ports		      [1, 3]
+      Position		      [625, 28, 680, 72]
+      BackgroundColor	      "yellow"
+      LinkData {
+	BlockName		"fuel use and EO emis Configurable Subsystem"
+	DialogParameters {
+	  BlockChoice		  "fuel use and EO emis"
+	}
+      }
+      SourceBlock	      "lib_fuel_converter/fuel\nconverter\n <fc> for s"
+"eries"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gearbox <gb>"
+      Ports		      [2, 2]
+      Position		      [390, 168, 455, 212]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_transmission/gearbox <gb>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "help"
+      Ports		      []
+      Position		      [325, 75, 372, 137]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "lib_help/help"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "series hybrid\ncontrol stategy\n <cs>"
+      Ports		      [1, 1]
+      Position		      [535, 26, 565, 74]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_cs.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"series hybrid\ncontrol stategy\n <cs>"
+	Location		[113, 96, 828, 463]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "mech power req'd\nfrom fc (W)"
+	  Position		  [95, 238, 125, 252]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [190, 73, 250, 97]
+	  Value			  "cs_lo_soc"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant6"
+	  Position		  [200, 169, 220, 191]
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FC pwr command,\nw/ limits enforced"
+	  Ports			  [1, 1]
+	  Position		  [320, 228, 350, 262]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "FC pwr command,\nw/ limits enforced"
+	    Location		    [108, 512, 640, 708]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "FC pwr\ncommand"
+	      Position		      [45, 68, 75, 82]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [27, 125, 213, 145]
+	      Orientation	      "up"
+	      Value		      "cs_min_pwr*fc_spd_scale*fc_trq_scale"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      Position		      [25, 25, 215, 45]
+	      Value		      "cs_max_pwr*fc_spd_scale*fc_trq_scale"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      Ports		      [2, 1]
+	      Position		      [140, 67, 170, 98]
+	      Function		      "max"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax1"
+	      Ports		      [2, 1]
+	      Position		      [255, 62, 285, 93]
+	      Function		      "min"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      RateLimiter
+	      Name		      "Rate Limiter"
+	      Position		      [350, 65, 380, 95]
+	      RisingSlewLimit	      "cs_max_pwr_rise_rate*fc_spd_scale*fc_tr"
+"q_scale"
+	      FallingSlewLimit	      "cs_max_pwr_fall_rate*fc_spd_scale*fc_tr"
+"q_scale"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "limited\nFC pwr\ncommand\n(W)"
+	      Position		      [430, 73, 460, 87]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "FC pwr\ncommand"
+	      SrcPort		      1
+	      DstBlock		      "MinMax"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      DstBlock		      "MinMax1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [0, -30]
+	      DstBlock		      "MinMax"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Rate Limiter"
+	      SrcPort		      1
+	      DstBlock		      "limited\nFC pwr\ncommand\n(W)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinMax1"
+	      SrcPort		      1
+	      DstBlock		      "Rate Limiter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      Points		      [0, 35]
+	      DstBlock		      "MinMax1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FC trq and spd"
+	  Ports			  [2, 1]
+	  Position		  [410, 222, 440, 253]
+	  SourceBlock		  "lib_controls/series hybrid\ncontrol stategy"
+"\n <cs>/FC trq and spd"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [195, 52, 250, 68]
+	  NamePlacement		  "alternate"
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SOC"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [205, 132, 260, 148]
+	  NamePlacement		  "alternate"
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <fc>2"
+	  Position		  [595, 188, 675, 212]
+	  GotoTag		  "spd_command"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <fc>3"
+	  Position		  [420, 156, 495, 174]
+	  GotoTag		  "engine_on"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [2, 1]
+	  Position		  [290, 152, 320, 183]
+	  Operator		  "AND"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [2, 1]
+	  Position		  [355, 147, 385, 178]
+	  Operator		  "OR"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [1, 1]
+	  Position		  [155, 147, 180, 183]
+	  Inputs		  "1"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [240, 157, 270, 188]
+	  Operator		  "~="
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator1"
+	  Position		  [290, 52, 320, 83]
+	  Operator		  "<"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  Ports			  [1, 1]
+	  Position		  [485, 185, 515, 215]
+	  InputType		  "Vector"
+	  ElementSrc		  "Internal"
+	  Elements		  "2"
+	  RowSrc		  "Internal"
+	  Rows			  "1"
+	  ColumnSrc		  "Internal"
+	  Columns		  "1"
+	  InputPortWidth	  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "power follower"
+	  Ports			  []
+	  Position		  [481, 279, 512, 322]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  SourceBlock		  "lib_controls/series hybrid\ncontrol stategy"
+"\n <cs>/power follower"
+	  SourceType		  ""
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "thermostat"
+	  Ports			  []
+	  Position		  [411, 279, 442, 322]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  SourceBlock		  "lib_controls/series hybrid\ncontrol stategy"
+"\n <cs>/thermostat"
+	  SourceType		  ""
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "engine torque\nand speed\n(Nm), (rad/s)"
+	  Position		  [565, 230, 585, 250]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "Goto <fc>2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mech power req'd\nfrom fc (W)"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "FC pwr command,\nw/ limits enforced"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant6"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FC pwr command,\nw/ limits enforced"
+	  SrcPort		  1
+	  DstBlock		  "FC trq and spd"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "FC trq and spd"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "engine torque\nand speed\n(Nm), (rad/s)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Selector"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Goto <fc>3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "FC trq and spd"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -10]
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "total fuel used\n (gal)"
+      Position		      [705, 22, 755, 38]
+      FontName		      "Arial"
+      VariableName	      "gal"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "vehicle <veh>"
+      Ports		      [2, 1]
+      Position		      [80, 158, 135, 202]
+      BackgroundColor	      "yellow"
+      LinkData {
+	BlockName		"config\nforce req'd to\novercome rolling resi"
+"stance"
+	DialogParameters {
+	  BlockChoice		  "force req'd to overcome rolling resistance "
+"(N)"
+	}
+	BlockName		"config\nvehicle speed"
+	DialogParameters {
+	  BlockChoice		  "vehicle speed (m/s)"
+	}
+	BlockName		"rolling resistance force"
+	DialogParameters {
+	  BlockChoice		  "force req'd to overcome rolling resistance "
+"(N)"
+	}
+	BlockName		"vehicle speed"
+	DialogParameters {
+	  BlockChoice		  "vehicle speed (m/s)"
+	}
+      }
+      SourceBlock	      "lib_vehicle/vehicle <veh>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "wheel and axle \nfront/rear <wh>"
+      Ports		      [3, 3]
+      Position		      [160, 172, 210, 228]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_wheel/wheel and axle \nfront//rear <wh>"
+      SourceType	      ""
+    }
+    Line {
+      SrcBlock		      "gearbox <gb>"
+      SrcPort		      1
+      DstBlock		      "Cosimulate Elect"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "gearbox <gb>"
+      SrcPort		      2
+      Points		      [0, 55; -175, 0; 0, -50]
+      DstBlock		      "final drive <fd>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "final drive <fd>"
+      SrcPort		      1
+      DstBlock		      "gearbox <gb>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "drive cycle\n<cyc>"
+      SrcPort		      1
+      Points		      [10, 0]
+      DstBlock		      "vehicle <veh>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Goto<sdo>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fuel\nconverter\n <fc> for series"
+      SrcPort		      2
+      Points		      [5, 0]
+      DstBlock		      "exhaust sys\n<ex>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fuel\nconverter\n <fc> for series"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "total fuel used\n (gal)"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator1"
+      SrcPort		      1
+      Points		      [0, 3]
+      DstBlock		      "exhaust sys\n<ex>"
+      DstPort		      enable
+    }
+    Line {
+      SrcBlock		      "do ex calcs?"
+      SrcPort		      1
+      DstBlock		      "Logical\nOperator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "exhaust sys\n<ex>"
+      SrcPort		      1
+      DstBlock		      "HC, CO,\nNOx, PM (g/s)"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "do ex calcs?1"
+      SrcPort		      1
+      DstBlock		      "Logical\nOperator1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "exhaust sys\n<ex>"
+      SrcPort		      2
+      Points		      [0, 35]
+      DstBlock		      "<cs>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fuel\nconverter\n <fc> for series"
+      SrcPort		      3
+      Points		      [0, 175; -210, 0; 0, -35]
+      DstBlock		      "Cosimulate Elect"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Cosimulate Elect"
+      SrcPort		      2
+      Points		      [55, 0; 0, 40; -290, 0]
+      DstBlock		      "gearbox <gb>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Cosimulate Elect"
+      SrcPort		      1
+      DstBlock		      "Memory1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Memory1"
+      SrcPort		      1
+      Points		      [10, 0; 0, -35; -155, 0; 0, -95]
+      DstBlock		      "series hybrid\ncontrol stategy\n <cs>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "series hybrid\ncontrol stategy\n <cs>"
+      SrcPort		      1
+      DstBlock		      "fuel\nconverter\n <fc> for series"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "vehicle <veh>"
+      SrcPort		      1
+      DstBlock		      "wheel and axle \nfront/rear <wh>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "wheel and axle \nfront/rear <wh>"
+      SrcPort		      1
+      DstBlock		      "2 axle -->\n1 driveline\nconverter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "wheel and axle \nfront/rear <wh>"
+      SrcPort		      2
+      DstBlock		      "2 axle -->\n1 driveline\nconverter"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "2 axle -->\n1 driveline\nconverter"
+      SrcPort		      1
+      DstBlock		      "final drive <fd>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "2 axle -->\n1 driveline\nconverter"
+      SrcPort		      2
+      Points		      [5, 0; 0, 70; -135, 0; 0, -70]
+      DstBlock		      "wheel and axle \nfront/rear <wh>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "2 axle -->\n1 driveline\nconverter"
+      SrcPort		      3
+      Points		      [0, 45; -125, 0]
+      DstBlock		      "wheel and axle \nfront/rear <wh>"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "final drive <fd>"
+      SrcPort		      2
+      Points		      [0, 75; -140, 0]
+      DstBlock		      "2 axle -->\n1 driveline\nconverter"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "wheel and axle \nfront/rear <wh>"
+      SrcPort		      3
+      Points		      [0, 60; -150, 0]
+      DstBlock		      "vehicle <veh>"
+      DstPort		      2
+    }
+  }
+}

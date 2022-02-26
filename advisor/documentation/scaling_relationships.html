@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>What’s New in ADVISOR</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">What’s New in ADVISOR</h1>
+</div>
+<center>
+<h1 id="user-definable-scaling-relationships">User Definable Scaling Relationships</h1>
+</center>
+<p>Prior to version 3.2, the secondary effects of the component scaling where assumed to be completely linear and were embedded within the component block diagrams and in miscellanous script files. In version 3.2, we have introduced user definable scaling relationships within the component datafiles. This allows users to develop and apply their own secondary scaling relationships. The primary impacts are still assumed to be linear. For example, changing fc_trq_scale from 1.0 to 1.1 still means that the torque capability of the engine will increase by 10%. However, you can now define the relationship between fc_trq_scale and engine mass. Since the change in mass due to an increase in torque output is not necessarily directly proportional (i.e. you could change any number of engine parameters to provide more torque with out significantly changing the engine block and accessories) therefore the relationship might be defined as fc_mass=fc_base_mass * 0.25 * fc_trq_scale. You could also include non-linear relationships like fc_mass=fc_base_mass*(0.02*(fc_trq_scale)^2+0.5*fc_trq_scale)+50 which would provide a engine mass that asymptotically approaches 50 kg as the fc_trq_scale approaches zero and increases via a second order relationship with increasing torque capability. Since this functionality has been implemented using inline functions, there really are no limitations as to the form of the function other than that you include all of the terms in the equation definition. If you need more information on using inline functions please refer to the matlab documentation.  There are a set of required input parameters however you are not required to use any of them.</p>
+<p>
+<p>The basic functional relationships are defined in table 1.<br /> </p>
+<center>
+  
+<table>
+<col width="15%" />
+<col width="16%" />
+<col width="34%" />
+<col width="34%" />
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Component</strong></td>
+<td align="right"><strong>Required Input </strong><br /><strong>Parameters</strong></td>
+<td align="center"><strong>Output</strong></td>
+<td align="center"><strong>Default Equation</strong></td>
+</tr>
+<tr class="even">
+<td align="center">fuel converter</td>
+<td align="right">fc_spd_scale<br />fc_trq_scale<br />fc_base_mass<br />fc_acc_mass<br />fc_fuel_mass</td>
+<td align="center">fc_mass</td>
+<td align="center">fc_mass=(fc_base_mass+fc_acc_mass)* <br />(c1*fc_trq_scale+c2)*<br />(c3*fc_spd_scale+c4)+fc_fuel_mass<br />c1=c3=1; c2=c4=0</td>
+</tr>
+<tr class="odd">
+<td align="center">energy storage <br />system (mass)</td>
+<td align="right">ess_module_num<br />ess_cap_scale<br />ess_module_mass</td>
+<td align="center">ess_mass</td>
+<td align="center">ess_mass=(ess_module_mass)* <br />(c1*ess_module_num+c2)*<br />(c3*ess_cap_scale+c4)<br />c1=c3=1; c2=c4=0</td>
+</tr>
+<tr class="even">
+<td align="center">exhaust system</td>
+<td align="right">fc_pwr_scale<br />ex_mass</td>
+<td align="center">ex_mass</td>
+<td align="center">ex_mass=(ex_mass)* (c1*fc_pwr_scale+c2)<br />c1=1; c2=0</td>
+</tr>
+<tr class="odd">
+<td align="center">motor controller</td>
+<td align="right">mc_spd_scale<br />mc_trq_scale<br />mc_mass</td>
+<td align="center">mc_mass</td>
+<td align="center">mc_mass=(mc_mass)* <br />(c1*mc_trq_scale+c2)*<br />(c3*mc_spd_scale+c4)<br />c1=c3=1; c2=c4=0</td>
+</tr>
+<tr class="even">
+<td align="center">generator</td>
+<td align="right">gc_spd_scale<br />gc_trq_scale<br />gc_mass</td>
+<td align="center">gc_mass</td>
+<td align="center">gc_mass=(gc_mass)*<br />(c1*gc_trq_scale+c2)*<br />(c3*gc_spd_scale+c4)<br />c1=c3=1; c2=c4=0</td>
+</tr>
+<tr class="odd">
+<td align="center">transmission</td>
+<td align="right">gb_spd_scale<br />gb_trq_scale<br />fd_mass<br />gb_mass</td>
+<td align="center">tx_mass</td>
+<td align="center">tx_mass=(fd_mass+gb_mass)* <br />(c1*gb_trq_scale+c2)*<br />(c3*gb_spd_scale+c4)<br />c1=c3=1; c2=c4=0</td>
+</tr>
+<tr class="even">
+<td align="center">energy storage <br />system (resistance)</td>
+<td align="right">ess_module_num<br />ess_cap_scale</td>
+<td align="center">resistance scale factor <br />(i.e. scaled resistance = base resistance * <br />f(ess_module_num,ess_cap_scale)</td>
+<td align="center">scale_factor=(c1*ess_module_num+c2)/<br />(c3*ess_cap_scale+c4)<br />c1=c3=1; c2=c4=0</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>How to define your own scaling relationships</p>
+<p>To use this functionality, you must define 1) the equation and 2) the coefficients of the equation.  Within each component file you will find a variable *scale_fun and *scale_coef.  The first defines the equation to be used and the second defines the coefficients of the equation.  For example in the fuel_converter file,</p>
+<p>% user definable mass scaling function<br />fc_mass_scale_fun=inline(’(x(1)*fc_trq_scale+x(2))*(x(3)*fc_spd_scale+x(4))*(fc_base_mass+fc_acc_mass)+fc_fuel_mass’,’x’,’fc_spd_scale’,’fc_trq_scale’,’fc_base_mass’,’fc_acc_mass’,’fc_fuel_mass’);<br />fc_mass_scale_coef=[1 0 1 0]; % coefficients of mass scaling function</p>
+<p>To customize this relationship you may either change the coefficient values or modify the relationship itself.  To change the relationship, redefine the first string in the fc_mass_scale_fun definition.  <strong>DO NOT CHANGE</strong> any other portion of this definition.  Your customized relationship <strong>MUST NOT USE</strong> variables other than those listed in the rest of the inline function definition.</p>
+<p>The easiest way to develop your own relatioship is to create a fit to empirical data.  For example if we plot the module mass vs. ah capacity for the four NiMH battery modules in our library manufactured by Ovonic, Inc. we result in a relationship of the following form:</p>
+<p>ess_mass = ess_mass * (c1 * ess_cap_scale + c2)<br />where c1=&gt;&gt;&gt; and c2=&gt;&gt;&gt;.</p>
+<p>You should use caution in applying user definable scaling relationships.  Be aware that the relationships are only valid within the range of data that was used to develop the fit and should be developed based on similar technology type (e.g. all Li-ion, all SI, all CI,- not a mixture of CI and SI).<br /> </p>
+<hr />
+<center>
+<p>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a></p>
+</center>
+
+<hr />
+<p>
+<p>Last revised: [8/19/01] tm</p>
+</body>
+</html>

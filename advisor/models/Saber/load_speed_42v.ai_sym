@@ -1,0 +1,49 @@
+[symbol8]
+desc {}
+uniq 25
+[resources]
+<font>
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive load_speed_42v { } string {} -720 -592 1 0 0 5 3 {} 0 2 {} {} {} 6 l
+ref load_speed_42v { } string {} -720 -720 1 0 0 5 3 {} 0 2 {} {} {} 6 l
+loadcontrol *opt* SABER string {} -720 -848 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+user_rpm1 *opt* SABER string {} -720 -1232 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+user_rpm2 *opt* SABER string {} -720 -1360 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+user_pwr1 *opt* SABER string {} -720 -976 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+user_pwr2 *opt* SABER string {} -720 -1104 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+<ports>
+m 0 -416 1 0 80 80 -336 0 7 1 2 0 0 1 {} 6
+shaft_rpm 480 0 1 0 448 448 176 0 7 1 2 0 0 1 {} 6
+p 0 384 1 0 64 64 416 0 7 1 2 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-272 -446 510 414
+l gr_0_ 0 1 1 0 1 10 1 0 {0 272 0 384 } {8 10 3} 6 
+a gr_2_ 0 0 -192 -192 208 208 -4 186 0 1 10 1 0 0 6 
+l gr_3_ 0 1 1 0 1 10 1 0 {0 -416 0 -288 } {8 10 3} 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {288 0 480 0 } {8 10 3} 6 
+c gr_5_ -272 -288 288 272 0 1 10 1 0 0 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {-192 0 208 0 } {8 10 3} 6 
+l gr_8_ 0 1 1 2 1 10 1 0 {0 0 -96 160 } {8 10 3} 6 

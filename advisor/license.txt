@@ -1,0 +1,35 @@
+Copyright (C) 2002-2011 Alliance for Sustainable Energy, LLC, Inc.
+All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software and to permit
+persons to whom the Software is furnished to do so subject to the
+following conditions:
+
+* The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+
+* The unmodified Software shall be characterized and/or branded as the
+  "ADVISOR (R) Software," which is a registered trademark of the
+  Alliance for Sustainable Energy, LLC, the manager and operator of the
+  National Renewable Energy Laboratory for the United States Department
+  of Energy.
+
+* Any Software which contains derivative works may be distributed.
+  However, any Software containing derivative works may not be
+  distributed using the ADVISOR trademark or brand, without the express
+  written authorization of the Alliance for Sustainable Energy, LLC.
+
+THIS   SOFTWARE   IS  PROVIDED  "AS  IS"  AND  ANY  EXPRESS  OR  IMPLIED
+WARRANTIES,  INCLUDING  BUT  NOT  LIMITED  TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY  AND  FITNESS  FOR  A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN  NO  EVENT  SHALL  THE  ALLIANCE  FOR  SUSTAINABLE  ENERGY,  LLC, THE
+U.S.   DEPARTMENT   OF   ENERGY,   OR  THE  U.S.  GOVERNMENT  BE  LIABLE
+FOR  ANY  SPECIAL,  INDIRECT  OR  CONSEQUENTIAL  DAMAGES  OR ANY DAMAGES
+WHATSOEVER,  INCLUDING  BUT  NOT  LIMITED  TO CLAIMS ASSOCIATED WITH THE
+LOSS  OF  DATA  OR PROFITS, WHICH MAY RESULT FROM AN ACTION IN CONTRACT,
+NEGLIGENCE  OR  OTHER  TORTIOUS  CLAIM  BASED  UPON  THE  ACCESS, USE OR
+PERFORMANCE OF THIS SOFTWARE.

@@ -1,0 +1,2836 @@
+Library {
+  Name			  "lib_power_bus2"
+  Version		  4.1.1
+  LibraryLinkDisplay	  "all"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  on
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  on
+  Created		  "Tue May 30 16:46:14 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr 17 11:15:22 2003"
+  ModifiedComment	  "mokeefe -- Thu Apr 18 08:38:09 2002 -- Version 1.10"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on"
+  ModifiedHistory	  "mokeefe -- Thu Apr 18 08:38:09 2002 -- Version 1.10"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on\n\nmokeefe -- Thu Apr 18 08:38:09 2002 -- Version 1.10\nsaving the mode"
+"l:\no \"without the model browser open\"\no with only top-level screen visibl"
+"e \no with \"fit to view\" enabled\no with \"status bar\" off and \"toolbar\""
+" off\no with \"prompt to update model history with each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:24>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_power_bus2"
+    Location		    [214, 77, 966, 752]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "power\nbus <pb>"
+      Ports		      [3, 3]
+      Position		      [155, 72, 205, 118]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Stand-Alone Power Bus Mask"
+      MaskPromptString	      "General Name of this Component [char]|Log Varia"
+"bles to Workspace?|Initialization File(s) [cell array of char]|Modification C"
+"ell [2 column cell array of param and val]|Icon image file name [char--evalua"
+"ted]|DEBUG"
+      MaskStyleString	      "edit,popup(Don't Log|Log),edit,edit,edit,popup("
+"ON|OFF)"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVariables	      "generalName=@1;logPick=@2;initFileName=@3;modCe"
+"ll=@4;imgFileName=@5;DEBUG=&6;"
+      MaskInitialization      "% initialization via m-file script\nadvSACompMa"
+"skInit;"
+      MaskDisplay	      "image(imread(imgFileName))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'pb'|Log|{}|{}|'bdi_pb.jpg'|ON"
+      MaskVariableAliases     ",,,,,"
+      System {
+	Name			"power\nbus <pb>"
+	Location		[214, 77, 966, 744]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "req'd power\noutput (W)"
+	  Position		  [110, 128, 140, 142]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "power available\nfrom source one\n(W)"
+	  Position		  [110, 188, 140, 202]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "power available\nfrom source two\n(W)"
+	  Position		  [110, 258, 140, 272]
+	  Port			  "3"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Block NOTES"
+	  Ports			  []
+	  Position		  [35, 90, 91, 130]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "disp('Block\\nNOTES')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Block NOTES"
+	    Location		    [620, 337, 1026, 424]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Annotation {
+	      Position		      [212, 38]
+	      Text		      "This block models the internal combusti"
+"on engine, and includes inertia effects,\nperformance limits, accessory loads"
+", and temperature transient effects on fuel\nuse, engine-out emissions, and c"
+"atalyst efficiency.  There are 'leads' to the\nengine controller here, which "
+"controller determines whether the engine is on."
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "controlTag"
+	  Position		  [45, 326, 155, 364]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "pbControl"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "help"
+	  Ports			  []
+	  Position		  [35, 33, 67, 72]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  ShowName		  off
+	  OpenFcn		  "web(['file:\\\\\\' which('fuel_converter.ht"
+"m')]);"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "image(imread('doc_man.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "help"
+	    Location		    [203, 331, 569, 538]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "power bus"
+	  Ports			  [4, 5]
+	  Position		  [295, 199, 335, 261]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "power bus"
+	    Location		    [214, 73, 966, 748]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "power out req"
+	      Position		      [125, 163, 155, 177]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "power available\nfrom source one"
+	      Position		      [125, 218, 155, 232]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "power available from\nsource two"
+	      Position		      [215, 253, 245, 267]
+	      Port		      "3"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "control"
+	      Position		      [40, 403, 70, 417]
+	      Port		      "4"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 1]
+	      Position		      [90, 391, 95, 429]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "1"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [135, 397, 260, 423]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "enable_source_two"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility"
+	      Position		      [265, 397, 404, 427]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "enable_source_two"
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground"
+	      Position		      [445, 405, 465, 425]
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "model"
+	      Ports		      [3, 3]
+	      Position		      [270, 160, 310, 220]
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"model"
+		Location		[214, 73, 966, 748]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "req'd power\noutput (W)"
+		  Position		  [25, 48, 55, 62]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "power available\nfrom generator\n(W"
+")"
+		  Position		  [135, 128, 165, 142]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "power available\nfrom energy storag"
+"e\n(W)"
+		  Position		  [135, 213, 165, 227]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs"
+		  Position		  [335, 220, 360, 240]
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs1"
+		  Position		  [215, 295, 245, 325]
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  []
+		  Position		  [570, 290, 626, 330]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  ShowPortLabels	  on
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [257, 381, 1212, 813]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Position		    [168, 33]
+		    Text		    "This power bus requires power fro"
+"m (or distributes power to)\nthe generator first, taking the balance from the"
+" energy\nstorage system."
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [325, 257, 360, 273]
+		  ShowName		  off
+		  Value			  "1e-9"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [290, 317, 325, 333]
+		  ShowName		  off
+		  Value			  "1e-11"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  Position		  [475, 262, 495, 278]
+		  ShowName		  off
+		  Value			  "0"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant8"
+		  Position		  [469, 175, 491, 195]
+		  Orientation		  "up"
+		  ShowName		  off
+		  Value			  "0"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From"
+		  Position		  [305, 157, 445, 183]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "enable_source_two"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [380, 222, 410, 253]
+		  ShowName		  off
+		  Operator		  "<="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  Position		  [350, 302, 380, 333]
+		  ShowName		  off
+		  Operator		  "<="
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  Ports			  [2, 1]
+		  Position		  [385, 112, 415, 143]
+		  ShowName		  off
+		  IconShape		  "rectangular"
+		  Inputs		  "+-"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum2"
+		  Ports			  [2, 1]
+		  Position		  [285, 189, 315, 231]
+		  IconShape		  "rectangular"
+		  Inputs		  "++"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [510, 223, 535, 277]
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch1"
+		  Position		  [510, 123, 535, 177]
+		  ShowName		  off
+		  Threshold		  "0.5"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace"
+		  Ports			  [1]
+		  Position		  [180, 27, 275, 43]
+		  ShowName		  off
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  ShowPortLabels	  on
+		  TreatAsAtomicUnit	  on
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|pwr_out_r|logFlag"
+		  MaskVariableAliases	  ",,"
+		  System {
+		    Name		    "enhancedToWorkspace"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "automatic"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    ToWorkspace
+		    Name		    "To Workspace"
+		    Position		    [145, 85, 205, 115]
+		    VariableName	    "pb_pwr_out_r"
+		    MaxDataPoints	    "inf"
+		    Decimation		    "1"
+		    SampleTime		    "-1"
+		    SaveFormat		    "Array"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "To Workspace"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace1"
+		  Ports			  [1]
+		  Position		  [565, 192, 660, 208]
+		  ShowName		  off
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  ShowPortLabels	  on
+		  TreatAsAtomicUnit	  on
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|pwr_out_a|logFlag"
+		  MaskVariableAliases	  ",,"
+		  System {
+		    Name		    "enhancedToWorkspace1"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "automatic"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    ToWorkspace
+		    Name		    "To Workspace"
+		    Position		    [145, 85, 205, 115]
+		    VariableName	    "pb_pwr_out_a"
+		    MaxDataPoints	    "inf"
+		    Decimation		    "1"
+		    SampleTime		    "-1"
+		    SaveFormat		    "Array"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "To Workspace"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "not(and(u1,u2))"
+		  Ports			  [2, 1]
+		  Position		  [435, 232, 465, 263]
+		  NamePlacement		  "alternate"
+		  Operator		  "NAND"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "power req'd from\ngenerator (W)"
+		  Position		  [580, 48, 610, 62]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "power req'd from\nenergy storage\n("
+"W)"
+		  Position		  [580, 143, 610, 157]
+		  NamePlacement		  "alternate"
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "output power\n available at bus"
+		  Position		  [585, 243, 615, 257]
+		  NamePlacement		  "alternate"
+		  Port			  "3"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "req'd power\noutput (W)"
+		  SrcPort		  1
+		  Points		  [0, 0; 25, 0]
+		  Branch {
+		    Points		    [75, 0]
+		    Branch {
+		    Points		    [190, 0]
+		    Branch {
+		    DstBlock		    "power req'd from\ngenerator (W)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, -20]
+		    DstBlock		    "enhancedToWorkspace"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 255]
+		    DstBlock		    "Abs1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "power available\nfrom generator\n(W"
+")"
+		  SrcPort		  1
+		  Points		  [0, 0; 85, 0]
+		  Branch {
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "not(and(u1,u2))"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "not(and(u1,u2))"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "not(and(u1,u2))"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Abs1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    DstBlock		    "output power\n available at bus"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "enhancedToWorkspace1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Sum2"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [175, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Abs"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  DstBlock		  "Switch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Switch1"
+		  SrcPort		  1
+		  DstBlock		  "power req'd from\nenergy storage\n("
+"W)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From"
+		  SrcPort		  1
+		  Points		  [0, -20]
+		  DstBlock		  "Switch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant8"
+		  SrcPort		  1
+		  DstBlock		  "Switch1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "power available\nfrom energy storag"
+"e\n(W)"
+		  SrcPort		  1
+		  DstBlock		  "Sum2"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "signal\nannotator"
+	      Ports		      [1, 1]
+	      Position		      [265, 86, 310, 114]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"signal\nannotator"
+		Location		[214, 73, 966, 748]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		  Port {
+		    PortNumber		    1
+		    Name		    "main power out"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [430, 103, 460, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  Name			  "main power out"
+		  Labels		  [0, 0]
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "required out"
+	      Position		      [440, 93, 470, 107]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "power in req from \nsource one"
+	      Position		      [440, 163, 470, 177]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "power in req from \nsource two"
+	      Position		      [440, 228, 470, 242]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "power out available"
+	      Position		      [440, 293, 470, 307]
+	      Port		      "4"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sensors"
+	      Position		      [555, 408, 585, 422]
+	      Port		      "5"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "model"
+	      SrcPort		      1
+	      DstBlock		      "power in req from \nsource one"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "power out req"
+	      SrcPort		      1
+	      Points		      [0, 0; 80, 0]
+	      Branch {
+		DstBlock		"model"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -70]
+		DstBlock		"signal\nannotator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "model"
+	      SrcPort		      2
+	      Points		      [35, 0; 0, 45]
+	      DstBlock		      "power in req from \nsource two"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "power available\nfrom source one"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, -35]
+	      DstBlock		      "model"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "model"
+	      SrcPort		      3
+	      Points		      [15, 0; 0, 90]
+	      DstBlock		      "power out available"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "power available from\nsource two"
+	      SrcPort		      1
+	      Points		      [0, -50]
+	      DstBlock		      "model"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "signal\nannotator"
+	      SrcPort		      1
+	      DstBlock		      "required out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "control"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Ground"
+	      SrcPort		      1
+	      DstBlock		      "sensors"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Position		      [292, 340]
+	      BackgroundColor	      "yellow"
+	      Text		      "Interface"
+	      DropShadow	      on
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	      FontAngle		      "italic"
+	    }
+	    Annotation {
+	      Position		      [287, 50]
+	      BackgroundColor	      "yellow"
+	      Text		      "Power Bus Model"
+	      DropShadow	      on
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	      FontAngle		      "italic"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "reqOutTag"
+	  Position		  [420, 34, 520, 76]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "pbReqOut"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "sensorsTag"
+	  Position		  [425, 324, 525, 366]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "pbSensors"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power req'd from\nsource one (W)"
+	  Position		  [490, 148, 520, 162]
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power req'd from\nsource two\n(W)"
+	  Position		  [490, 223, 520, 237]
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "output power\n available at bus"
+	  Position		  [490, 273, 520, 287]
+	  NamePlacement		  "alternate"
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "req'd power\noutput (W)"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, 75]
+	  DstBlock		  "power bus"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power available\nfrom source one\n(W)"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, 30]
+	  DstBlock		  "power bus"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "power available\nfrom source two\n(W)"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, -25]
+	  DstBlock		  "power bus"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "controlTag"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, -90]
+	  DstBlock		  "power bus"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "power bus"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -155]
+	  DstBlock		  "reqOutTag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power bus"
+	  SrcPort		  2
+	  Points		  [65, 0; 0, -65]
+	  DstBlock		  "power req'd from\nsource one (W)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power bus"
+	  SrcPort		  3
+	  DstBlock		  "power req'd from\nsource two\n(W)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power bus"
+	  SrcPort		  4
+	  Points		  [65, 0; 0, 40]
+	  DstBlock		  "output power\n available at bus"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power bus"
+	  SrcPort		  5
+	  Points		  [30, 0; 0, 95]
+	  DstBlock		  "sensorsTag"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [202, 75]
+	  BackgroundColor	  "yellow"
+	  Text			  "Power Bus (PB)"
+	  DropShadow		  on
+	  FontName		  "Arial"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "prius power\nbus <pb>"
+      Ports		      [3, 3]
+      Position		      [165, 208, 215, 252]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_pb.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"prius power\nbus <pb>"
+	Location		[12, 332, 824, 874]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"97"
+	Block {
+	  BlockType		  Inport
+	  Name			  "req'd power\noutput for mc (W)"
+	  Position		  [110, 53, 140, 67]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "reqrd power \nfor generator\n(W)"
+	  Position		  [110, 218, 140, 232]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "power available\nfrom energy storage\n(W)"
+	  Position		  [110, 303, 140, 317]
+	  Port			  "3"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "(W)"
+	  Position		  [15, 101, 95, 119]
+	  FontName		  "Arial"
+	  Value			  "acc_elec_pwr"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs"
+	  Position		  [435, 335, 460, 365]
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs1"
+	  Position		  [295, 370, 325, 400]
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Aux Loads\n14V Pwr"
+	  Ports			  [0, 1]
+	  Position		  [55, 135, 95, 155]
+	  SourceBlock		  "sub_lib_models/Aux Loads\n14V Pwr"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Block NOTES"
+	  Ports			  []
+	  Position		  [665, 430, 721, 470]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "disp('Block\\nNOTES')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Block NOTES"
+	    Location		    [132, 175, 465, 250]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Annotation {
+	      Position		      [168, 33]
+	      Text		      "This power bus requires power from (or "
+"distributes power to)\nthe generator first, taking the balance from the energ"
+"y\nstorage system."
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [430, 382, 465, 398]
+	  ShowName		  off
+	  Value			  "1e-9"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [425, 422, 455, 438]
+	  ShowName		  off
+	  Value			  "1e-11"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [625, 396, 645, 414]
+	  Orientation		  "left"
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [440, 292, 470, 308]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  Position		  [450, 182, 480, 198]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant7"
+	  Position		  [630, 80, 670, 100]
+	  ShowName		  off
+	  Value			  "ess_on"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant8"
+	  Position		  [664, 115, 686, 135]
+	  Orientation		  "up"
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [110, 166, 175, 184]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product3"
+	  Ports			  [2, 1]
+	  Position		  [205, 114, 220, 141]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [485, 342, 515, 373]
+	  ShowName		  off
+	  Operator		  "<="
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator1"
+	  Position		  [485, 407, 515, 438]
+	  ShowName		  off
+	  Operator		  "<="
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator2"
+	  Position		  [500, 167, 530, 198]
+	  ShowName		  off
+	  Operator		  "<"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator3"
+	  Position		  [490, 277, 520, 308]
+	  ShowName		  off
+	  Operator		  ">"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "SOC limit"
+	  Ports			  [1, 1]
+	  Position		  [585, 45, 615, 95]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "SOC limit"
+	    Location		    [260, 329, 820, 557]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pwr req to \ness"
+	      Position		      [15, 88, 45, 102]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      Position		      [25, 54, 80, 76]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "cs_lo_soc"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant4"
+	      Position		      [130, 83, 155, 97]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant5"
+	      Position		      [30, 169, 85, 191]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "cs_hi_soc"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant6"
+	      Position		      [345, 38, 370, 52]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant7"
+	      Position		      [130, 133, 155, 147]
+	      ShowName		      off
+	      FontName		      "Arial"
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <ess>"
+	      Position		      [30, 14, 75, 36]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "SOC"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch2"
+	      Position		      [390, 80, 420, 110]
+	      ShowName		      off
+	      Threshold		      "eps"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "and"
+	      Ports		      [2, 1]
+	      Position		      [240, 27, 270, 58]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Operator		      "AND"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "and1"
+	      Ports		      [2, 1]
+	      Position		      [310, 57, 340, 88]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Operator		      "OR"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "and2"
+	      Ports		      [2, 1]
+	      Position		      [255, 152, 285, 183]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Operator		      "AND"
+	      Inputs		      "2"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "comp"
+	      Position		      [185, 67, 215, 98]
+	      ShowName		      off
+	      Operator		      ">"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "comp1"
+	      Position		      [185, 117, 215, 148]
+	      ShowName		      off
+	      Operator		      "<"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "comp2"
+	      Position		      [175, 17, 205, 48]
+	      ShowName		      off
+	      Operator		      "<="
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "comp3"
+	      Position		      [170, 157, 200, 188]
+	      ShowName		      off
+	      Operator		      ">="
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "limited pwr req\nfrom ess (W)"
+	      Position		      [480, 88, 510, 102]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Switch2"
+	      SrcPort		      1
+	      DstBlock		      "limited pwr req\nfrom ess (W)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "comp2"
+	      SrcPort		      1
+	      DstBlock		      "and"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      Points		      [75, 0]
+	      DstBlock		      "comp2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "and"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 20]
+	      DstBlock		      "and1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "and1"
+	      SrcPort		      1
+	      Points		      [0, 20]
+	      DstBlock		      "Switch2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From <ess>"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"comp2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 140]
+		DstBlock		"comp3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "comp"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "and"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "comp1"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "and2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "pwr req to \ness"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -20; 30, 0]
+	      Branch {
+		DstBlock		"comp"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 30]
+		Branch {
+		  Points		  [0, 20]
+		  DstBlock		  "comp1"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Switch2"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant6"
+	      SrcPort		      1
+	      DstBlock		      "Switch2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant5"
+	      SrcPort		      1
+	      DstBlock		      "comp3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "comp3"
+	      SrcPort		      1
+	      DstBlock		      "and2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "and2"
+	      SrcPort		      1
+	      Points		      [0, -90]
+	      DstBlock		      "and1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant4"
+	      SrcPort		      1
+	      DstBlock		      "comp"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant7"
+	      SrcPort		      1
+	      DstBlock		      "comp1"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [3, 1]
+	  Position		  [465, 83, 480, 117]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "+++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [3, 1]
+	  Position		  [400, 271, 410, 319]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "--+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [145, 110, 165, 130]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [625, 321, 650, 369]
+	  ShowName		  off
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  Position		  [635, 231, 660, 279]
+	  ShowName		  off
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch2"
+	  Position		  [625, 126, 650, 174]
+	  ShowName		  off
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch3"
+	  Position		  [310, 256, 335, 304]
+	  ShowName		  off
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch4"
+	  Position		  [700, 63, 725, 117]
+	  ShowName		  off
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [250, 76, 365, 94]
+	  ShowName		  off
+	  VariableName		  "acc_elec_pwr_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [215, 186, 330, 204]
+	  Orientation		  "left"
+	  ShowName		  off
+	  VariableName		  "acc_elec_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace8"
+	  Position		  [690, 300, 770, 320]
+	  ShowName		  off
+	  VariableName		  "pb_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace9"
+	  Position		  [270, 30, 350, 50]
+	  ShowName		  off
+	  VariableName		  "pb_pwr_out_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "and"
+	  Ports			  [2, 1]
+	  Position		  [570, 202, 600, 233]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Operator		  "AND"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "divide by eff"
+	  Position		  [250, 103, 345, 157]
+	  Gain			  "1/acc_elec_eff"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "not(and(u1,u2))"
+	  Ports			  [2, 1]
+	  Position		  [545, 352, 575, 383]
+	  NamePlacement		  "alternate"
+	  Operator		  "NAND"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power req'd from\nenergy storage\n(W)"
+	  Position		  [770, 83, 800, 97]
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "output pwr\nto gen\n(W)1"
+	  Position		  [705, 248, 735, 262]
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "output power\nto motor"
+	  Position		  [705, 143, 735, 157]
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "and"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  DstBlock		  "Switch1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator3"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "and"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator2"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "and"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant8"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant7"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch4"
+	  SrcPort		  1
+	  DstBlock		  "power req'd from\nenergy storage\n(W)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SOC limit"
+	  SrcPort		  1
+	  DstBlock		  "Switch4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, -30]
+	  DstBlock		  "SOC limit"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -35]
+	  Branch {
+	    Points		    [-130, 0; 0, -70]
+	    Branch {
+	      Points		      [0, -105]
+	      DstBlock		      "Switch2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Switch1"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace8"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "reqrd power \nfor generator\n(W)"
+	  SrcPort		  1
+	  Points		  [145, 0]
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "Switch3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [160, 0]
+	    Branch {
+	      Points		      [0, 45; 15, 0]
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 15]
+		DstBlock		"Relational\nOperator3"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [-5, 0; 0, -115]
+	      DstBlock		      "Sum1"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch3"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  DstBlock		  "output pwr\nto gen\n(W)1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch2"
+	  SrcPort		  1
+	  DstBlock		  "output power\nto motor"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator1"
+	  SrcPort		  1
+	  Points		  [0, -50]
+	  DstBlock		  "not(and(u1,u2))"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Abs1"
+	  SrcPort		  1
+	  Points		  [140, 0]
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "not(and(u1,u2))"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "not(and(u1,u2))"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -25]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  Points		  [-10, 0]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Abs"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 30]
+	  Branch {
+	    Points		    [190, 0]
+	    DstBlock		    "Switch"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Abs"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "power available\nfrom energy storage\n(W)"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Product3"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "To Workspace2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "divide by eff"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "divide by eff"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [50, 0; 0, -30]
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 65]
+	    Branch {
+	      DstBlock		      "To Workspace3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 100]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Product3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "req'd power\noutput for mc (W)"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    Points		    [0, 240]
+	    Branch {
+	      Points		      [0, -5; 85, 0]
+	      Branch {
+		Points			[0, -15]
+		DstBlock		"Switch3"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Switch3"
+		DstPort			3
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 85]
+	      DstBlock		      "Abs1"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [70, 0]
+	    Branch {
+	      Points		      [165, 0]
+	      Branch {
+		Points			[0, 115]
+		DstBlock		"Relational\nOperator2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[30, 0]
+		Branch {
+		  Points		  [115, 0; 0, 90]
+		  Branch {
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 15]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		  }
+		}
+		Branch {
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "To Workspace9"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Product3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(W)"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Aux Loads\n14V Pwr"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "series power\nbus  <pb>"
+      Ports		      [3, 3]
+      Position		      [260, 208, 310, 252]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_pb.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"series power\nbus  <pb>"
+	Location		[257, 381, 1127, 923]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"99"
+	Block {
+	  BlockType		  Inport
+	  Name			  "req'd power\noutput (W)"
+	  Position		  [160, 43, 190, 57]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "power available\nfrom generator\n(W)"
+	  Position		  [160, 213, 190, 227]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "power available\nfrom energy storage\n(W)"
+	  Position		  [160, 303, 190, 317]
+	  Port			  "3"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "(W)"
+	  Position		  [70, 87, 150, 103]
+	  FontName		  "Arial"
+	  Value			  "acc_elec_pwr"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs"
+	  Position		  [510, 305, 535, 325]
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs1"
+	  Position		  [390, 380, 420, 410]
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Aux Loads\n14V Pwr"
+	  Ports			  [0, 1]
+	  Position		  [110, 115, 150, 135]
+	  SourceBlock		  "sub_lib_models/Aux Loads\n14V Pwr"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Block NOTES"
+	  Ports			  []
+	  Position		  [745, 375, 801, 415]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "disp('Block\\nNOTES')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Block NOTES"
+	    Location		    [130, 173, 463, 248]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Annotation {
+	      Position		      [168, 33]
+	      Text		      "This power bus requires power from (or "
+"distributes power to)\nthe generator first, taking the balance from the energ"
+"y\nstorage system."
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [500, 342, 535, 358]
+	  ShowName		  off
+	  Value			  "1e-9"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [465, 402, 500, 418]
+	  ShowName		  off
+	  Value			  "1e-11"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [650, 347, 670, 363]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant7"
+	  Position		  [600, 225, 640, 245]
+	  ShowName		  off
+	  Value			  "ess_on"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant8"
+	  Position		  [644, 260, 666, 280]
+	  Orientation		  "up"
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [145, 171, 210, 189]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product3"
+	  Ports			  [2, 1]
+	  Position		  [255, 104, 270, 131]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  Inputs		  "2"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [555, 307, 585, 338]
+	  ShowName		  off
+	  Operator		  "<="
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator1"
+	  Position		  [525, 387, 555, 418]
+	  ShowName		  off
+	  Operator		  "<="
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [460, 42, 490, 73]
+	  IconShape		  "rectangular"
+	  Inputs		  "++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [560, 197, 590, 228]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [3, 1]
+	  Position		  [460, 274, 490, 316]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [195, 100, 215, 120]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [685, 308, 710, 362]
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  Position		  [685, 208, 710, 262]
+	  ShowName		  off
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [300, 66, 415, 84]
+	  ShowName		  off
+	  VariableName		  "acc_elec_pwr_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [290, 181, 405, 199]
+	  Orientation		  "left"
+	  ShowName		  off
+	  VariableName		  "acc_elec_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace8"
+	  Position		  [735, 275, 815, 295]
+	  ShowName		  off
+	  VariableName		  "pb_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace9"
+	  Position		  [315, 20, 395, 40]
+	  ShowName		  off
+	  VariableName		  "pb_pwr_out_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "divide by eff"
+	  Position		  [300, 93, 395, 147]
+	  Gain			  "1/acc_elec_eff"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "not(and(u1,u2))"
+	  Ports			  [2, 1]
+	  Position		  [610, 317, 640, 348]
+	  NamePlacement		  "alternate"
+	  Operator		  "NAND"
+	  Inputs		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power req'd from\ngenerator (W)"
+	  Position		  [755, 53, 785, 67]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power req'd from\nenergy storage\n(W)"
+	  Position		  [755, 228, 785, 242]
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "output power\n available at bus"
+	  Position		  [760, 328, 790, 342]
+	  NamePlacement		  "alternate"
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Constant8"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant7"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  DstBlock		  "power req'd from\nenergy storage\n(W)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Abs"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [175, 0]
+	    DstBlock		    "Switch"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Abs"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "output power\n available at bus"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace8"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Abs1"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator1"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "not(and(u1,u2))"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "not(and(u1,u2))"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "power available\nfrom energy storage\n(W)"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "not(and(u1,u2))"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power available\nfrom generator\n(W)"
+	  SrcPort		  1
+	  Points		  [235, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 60]
+	    DstBlock		    "Sum2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product3"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "To Workspace2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "divide by eff"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Product3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    DstBlock		    "power req'd from\ngenerator (W)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 145]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "req'd power\noutput (W)"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [75, 0]
+	    Branch {
+	      DstBlock		      "To Workspace9"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 345]
+	    DstBlock		    "Abs1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "divide by eff"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    Points		    [0, -55]
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [10, 0; 0, 70]
+	    Branch {
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "To Workspace3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Product3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "(W)"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Aux Loads\n14V Pwr"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+      }
+    }
+    Annotation {
+      Position		      [216, 31]
+      BackgroundColor	      "yellow"
+      Text		      "Power Bus:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      18
+      FontWeight	      "bold"
+      FontAngle		      "italic"
+    }
+    Annotation {
+      Position		      [210, 186]
+      Text		      "Not yet reorganized"
+    }
+  }
+}

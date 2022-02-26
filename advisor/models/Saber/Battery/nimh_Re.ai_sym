@@ -1,0 +1,45 @@
+[symbol7]
+desc {}
+uniq 33
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 1 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 4 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive nimh_re { } string {} -400 -592 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+in1 -320 320 1 1 -400 -400 304 7 0 2 0 0 1 {} 6
+in2 0 320 1 1 -80 -80 288 7 0 2 0 0 1 {} 6
+outp 0 -320 1 2 -128 -128 -144 7 1 2 0 0 1 {} 6
+outm -320 -320 1 2 -464 -464 -144 7 1 2 0 0 1 {} 6
+Re_value 160 0 1 2 160 160 -48 7 1 2 0 0 1 {{primitive nimh_rt { } string {} 240 -240 0 0 0 5 3 {} 0 4 {} {} {} 6 l}} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-480 -350 190 350
+r gr_1_ -480 -320 160 320 0 1 10 1 0 0 6 
+t gr_4_ -320 224 2 1 0 0 0 0 8 0 {SOC} 6 
+t gr_5_ -96 256 3 1 0 0 0 0 7 0 {Temperature} 6 
+t gr_6_ -176 16 5 1 0 0 0 0 8 0 {NiMH_Re} 6 

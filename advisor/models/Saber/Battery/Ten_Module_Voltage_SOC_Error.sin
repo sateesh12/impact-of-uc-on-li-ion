@@ -1,0 +1,170 @@
+template  Ten_Module_Voltage_SOC_Error v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 PowerInput voltage_error soc_error = v_hi_limit,v_low_limit,soc_hi_limit,soc_lo_limit
+
+
+ref nu v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,PowerInput
+output nu voltage_error,soc_error
+number v_hi_limit=3.9,v_low_limit=2.0,soc_hi_limit=1.0,soc_lo_limit=0.02
+
+{
+
+val nu low_voltage
+val nu hi_voltage
+val nu voltage_error_setting
+val nu lo_soc
+val nu hi_soc
+val nu soc_error_setting
+
+values {
+
+	low_voltage = v1
+
+	if (v2 < low_voltage) {
+		low_voltage = v2
+		}
+	if (v3 < low_voltage) {
+		low_voltage = v3
+		}
+	if (v4 < low_voltage) {
+		low_voltage = v4
+		}
+	if (v5 < low_voltage) {
+		low_voltage = v5
+		}
+	if (v6 < low_voltage) {
+		low_voltage = v6
+		}
+	if (v7 < low_voltage) {
+		low_voltage = v7
+		}
+	if (v8 < low_voltage) {
+		low_voltage = v8
+		}
+	if (v9 < low_voltage) {
+		low_voltage = v9
+		}
+	if (v10 < low_voltage) {
+		low_voltage = v10
+		}
+
+	
+	hi_voltage = v1
+
+	if (v2 > hi_voltage) {
+		hi_voltage = v2
+		}
+	if (v3 > hi_voltage) {
+		hi_voltage = v3
+		}
+	if (v4 > hi_voltage) {
+		hi_voltage = v4
+		}
+	if (v5 > hi_voltage) {
+		hi_voltage = v5
+		}
+	if (v6 > hi_voltage) {
+		hi_voltage = v6
+		}
+	if (v7 > hi_voltage) {
+		hi_voltage = v7
+		}
+	if (v8 > hi_voltage) {
+		hi_voltage = v8
+		}
+	if (v9 > hi_voltage) {
+		hi_voltage = v9
+		}
+	if (v10 > hi_voltage) {
+		hi_voltage = v10
+		}
+
+	
+	if (hi_voltage > v_hi_limit & PowerInput < 0.000) {
+		voltage_error_setting = hi_voltage - v_hi_limit
+		}
+	else if (low_voltage < v_low_limit & PowerInput > 0.000) {
+		voltage_error_setting = low_voltage - v_low_limit
+		}
+	else {
+		voltage_error_setting = 0.0000
+		}
+
+
+	lo_soc = s1
+
+	if (s2 < lo_soc ) {
+		lo_soc = s2
+		}
+	if (s3 < lo_soc ) {
+		lo_soc = s3
+		}
+	if (s4 < lo_soc ) {
+		lo_soc = s4
+		}
+	if (s5 < lo_soc ) {
+		lo_soc = s5
+		}
+	if (s6 < lo_soc ) {
+		lo_soc = s6
+		}
+	if (s7 < lo_soc ) {
+		lo_soc = s7
+		}
+	if (s8 < lo_soc ) {
+		lo_soc = s8
+		}
+	if (s9 < lo_soc ) {
+		lo_soc = s9
+		}
+	if (s10 < lo_soc ) {
+		lo_soc = s10
+		}
+
+
+	hi_soc = s1
+
+	if (s2 > hi_soc ) {
+		hi_soc = s2
+		}
+	if (s3 > hi_soc ) {
+		hi_soc = s3
+		}
+	if (s4 > hi_soc ) {
+		hi_soc = s4
+		}
+	if (s5 > hi_soc ) {
+		hi_soc = s5
+		}
+	if (s6 > hi_soc ) {
+		hi_soc = s6
+		}
+	if (s7 > hi_soc ) {
+		hi_soc = s7
+		}
+	if (s8 > hi_soc ) {
+		hi_soc = s8
+		}
+	if (s9 > hi_soc ) {
+		hi_soc = s9
+		}
+	if (s10 > hi_soc ) {
+		hi_soc = s10
+		}
+	
+	if (hi_soc > soc_hi_limit & PowerInput < 0.000) {
+		soc_error_setting = hi_soc - soc_hi_limit
+		}
+	else if (lo_soc < soc_lo_limit & PowerInput > 0.000) {
+		soc_error_setting = lo_soc - soc_lo_limit
+		}
+	else {
+		soc_error_setting = 0.0000
+		}
+
+	}
+
+equations {
+	voltage_error = Voltage_error_setting
+	soc_error = soc_error_setting
+	}
+
+}

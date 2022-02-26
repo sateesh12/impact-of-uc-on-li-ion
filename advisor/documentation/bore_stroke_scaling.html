@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Fuel Converter</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Fuel Converter</h1>
+</div>
+<h3 id="fuel-converter-scaling">Fuel Converter Scaling </h3>
+<h4 id="bore-and-stroke-scaling"><u>Bore and Stroke Scaling</u></h4>
+<p>This functionality is available by clicking on the button named fuel converter in the input screen and selecting the button named “Scale Bore/Stroke”.  The procedure for this scaling is described in the Final Report dated August 31, 2001 and named “An Algorithm for Scaling Engine Performance and Emissions with changes in Bore and Stroke” by TECAT Engineering Inc. under DOE Subcontract 4000003049 for Scott Sluder at Oak Ridge National Laboratories. The fortran code provided with this report was converted over to Matlab code and is now found under the main ADVISOR menu/extras/Scale_Bore_Stroke.   The files named interpolator and interpolator_data contain the main algorithm.  The screen capture below shows the fuel converter button, that when pressed, opens a new figure containing the button for Bore/Stroke scaling.</p>
+<div class="figure">
+<img src="bore_stroke1.jpg" />
+</div>
+<p>This scaling is limited to three types of engines for which WinKIVA and TRANSIS simulations were run to obtain scalar tables.  The user has to make sure he/she is inputing the correct type of data to be able to obtain reasonable results.  Three types of engines are valid for this scaling and they are:  port injected gasoline engine, direct injection diesel engine and direct injection stratified charge SI engine.  The user has to select what type of engine is to be scaled.  For the port injected gasoline engine, brake specific quantities are scaled and for the direct injected engines, the indicated quantities are scaled (Since KIVA does not incorporate a friction model).</p>
+<p>The scaling algorithm first re-normalizes the simulated scalar tables by the user selected baseline engine.  The new baseline engine emissions scalars are now unity while all other simulated emissions scalar tables at the various bore and stroke values are now somewhat less than or greater than unity.  The new scalar tables are multiplied by the user-supplied baseline engine maps to create new scaled engine maps.  Below is the GUI for Bore and Stroke Scaling.</p>
+<div class="figure">
+<img src="bore_stroke2.jpg" />
+</div>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>Created: 04/29/02: SS</p>
+</body>
+</html>

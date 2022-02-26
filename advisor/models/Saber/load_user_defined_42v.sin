@@ -1,0 +1,78 @@
+# load_user_defined_42V.sin
+# symbol = load_user_defined_42V.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+###############################################################################
+#
+#   DESCRIPTION:                
+#   -----------
+#   This model represents a load as a current source.
+#   Three voltages & respective loads must be specified.
+#   These specified loads do not not have to be on a 14 volt system.
+#
+#     i.e.  user_v1 = 36     user_v2 = 40    user_v3 = 42
+#       user_i1 = 1.5    user_i2 = 2.0   user_i3 = 3.6
+#   
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]      [description]
+#   p       electrical      + current enters this node
+#   m       electrical      + current leaves this node
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   loadcontrol             turns load on and off
+#                   also used for multipule loads
+#                   (ie for 2 loads, loadcontrol = 2)
+#
+#     user_v1,user_v2,user_v3,  User defined voltage and current
+#   user_i1,user_i2,user_i3
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]          [units]     [description]
+#       i                   Amps            Current draw for this model
+#   p_user_defined_42V  Watts           Power consumed for this load
+#
+#########################################################################
+encrypted template load_user_defined_42v p m = loadcontrol,
+    user_v1,user_v2,user_v3,
+    user_i1,user_i2,user_i3
+!crypt_start
+008abac6f7c2526a8a6
+016e6f04a0ed36e5144581302152e396877
+024a7f595c46613a146a6eb819005025b0b5613025890d1aca5
+048a172536cdd93f3e0bc3a436c135d6712b9d20f6f8694bda5a9aa516c17510a44ebc1223e96794743bfb9d3d696280f10
+056a7e646e161fe4fe2baae56e17ebd72eeef74173922ac1dabacb341fc53ac44b50856400b3e14ef03eb85633c08510b44e7b9d0c46636e3a6
+00842134e58414c1844
+048bfe181c46714e34db0b006472b5aca2aa3fc5313c3c1f4e119130c0a7b7c7e3da8fd41a4217bb6e3bb7555296662afe7
+016b972472fdcc1b1eceb974e3c6e41ad57
+008b927473adcc1b1f3
+016afb35caf7eeb48eee9b990c47939746a
+008bfb352a87eac0dee
+024efe85d6c6239382bbcff93816e05b17c5065004a2322a7d9
+016eac3486a7c396d38a0971c3ccd3c1210
+016b5e87b6c2b64a1e3adbe376c20b50dee
+080fece064dc0474609ef621b3f4119634cbd62793fc694a0a9a9eb516467352972bc724360c42e6d46a8b26b657ebe72eef3ad7b3a783ea651e5aa958d12335d16e6277b6c2b41e303e9b9c0c42e39387b
+008b9274737dc92e4e0
+016bfba13b131a40df1ef270b652e746e73
+016aab99590790fb146e6be2e6c863c1c00
+01641525d1741000544adff50aed96e5c44
+024b8be7b383478b1e3f4a113e9c0d0e6e9afb3504e7f17fa0f
+024ac275338c28fe3e0f4f7c081d56e4742f7b30647242a3823
+032b9f76c9e79fe5ee2aa334013df785c55fd2d706c2e6f257bef7345223373b1f4
+008b2272f6cb9c1b1a5
+016acfd42ae79e54cf3bab99bc42cac0da7
+016a0b2c8cd7b0cee1d04134e58084c1844
+01650135445414c180dac27533813024a01
+00844134e58414c1844
+016fafb6d133462baf6a7b357e12e39387b
+}

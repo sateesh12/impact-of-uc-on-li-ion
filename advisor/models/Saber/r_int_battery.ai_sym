@@ -1,0 +1,58 @@
+[symbol8]
+desc {}
+uniq 40
+[resources]
+<font>
+{helvetica 4 normal roman}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive r_int_battery { } string {} -928 -624 0 0 0 5 4 {} 0 4 {} {} {} 6 l
+ref r_int_battery { } string {} -928 -752 0 0 0 5 4 {} 0 4 {} {} {} 6 l
+<ports>
+p -320 320 1 0 -240 -240 320 0 7 1 2 0 0 1 {} 6
+m 320 320 1 0 256 256 320 0 1 1 2 0 0 2 {} 6
+soc -480 0 1 2 -688 -688 160 0 7 1 3 0 0 3 {} 6
+max_ess_chg_pwr 480 0 1 2 432 432 -16 0 7 1 3 0 0 3 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-510 -352 510 350
+r gr_0_ -340 200 -290 255 0 1 10 1 0 0 6 
+t gr_1_ 16 -80 5 1 0 0 0 0 8 0 {        NREL's
+Empirical - Internal
+Resistance Battery
+        Model} 6 
+r gr_3_ 270 160 370 200 0 1 10 1 0 0 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {320 320 320 255 } {8 10 3} 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {-320 112 -320 62 } {8 10 3} 6 
+r gr_7_ 300 200 345 255 0 1 10 1 0 0 6 
+l gr_8_ 0 1 1 0 1 10 1 0 {-345 87 -295 87 } {8 10 3} 6 
+r gr_9_ -370 160 -270 200 0 1 10 1 0 0 6 
+l gr_10_ 0 1 1 0 1 10 1 0 {300 110 350 110 } {8 10 3} 6 
+r gr_11_ -416 -352 416 160 0 1 10 1 0 0 6 
+l gr_13_ 0 1 1 0 1 10 1 0 {-320 320 -320 255 } {8 10 3} 6 
+l gr_14_ 0 1 1 0 1 10 1 0 {-416 0 -480 0 } {8 10 3} 6 
+l gr_34_ 0 1 1 0 1 10 1 0 {480 0 416 0 } {8 10 3} 6 

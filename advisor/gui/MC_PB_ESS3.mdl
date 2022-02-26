@@ -1,0 +1,3453 @@
+Model {
+  Name			  "MC_PB_ESS3"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "2"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Mon May 03 11:10:45 1999"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "vjohnson"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Jan 06 15:04:18 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:77>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "MC_PB_ESS3"
+    Location		    [849, 81, 1250, 267]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [55, 35, 110, 55]
+      ShowName		      off
+      Value		      "Tm"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      Position		      [55, 66, 110, 84]
+      ShowName		      off
+      Value		      "wm"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      Position		      [55, 96, 110, 114]
+      ShowName		      off
+      Value		      "Tess"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "MC/PB/ESS"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [140, 49, 220, 101]
+      ShowPortLabels	      on
+      System {
+	Name			"MC/PB/ESS"
+	Location		[698, 359, 1251, 656]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "Tm"
+	  Position		  [40, 75, 60, 95]
+	  FontName		  "Arial"
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "wm"
+	  Position		  [40, 115, 60, 135]
+	  FontName		  "Arial"
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Tess"
+	  Position		  [310, 215, 330, 235]
+	  FontName		  "Arial"
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "<vc>"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [165, 18, 250, 42]
+	  ShowPortLabels	  on
+	  MaskDisplay		  "disp('vehicle controls')\n"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "<vc>"
+	    Location		    [35, 709, 499, 939]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      From
+	      Name		      "From <ess>"
+	      Position		      [145, 35, 240, 55]
+	      NamePlacement	      "alternate"
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "bus_voltage"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <mc>"
+	      Position		      [145, 70, 240, 90]
+	      NamePlacement	      "alternate"
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "P_mc_in_1lim"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <mc>1"
+	      Position		      [150, 99, 240, 121]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "w_mc_out_r"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <mc>"
+	      Position		      [330, 85, 420, 105]
+	      GotoTag		      "P_mc_in_r"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "motor controller\nlogic"
+	      Ports		      [4, 1, 0, 0, 0]
+	      Position		      [275, 35, 305, 155]
+	      ShowPortLabels	      off
+	      System {
+		Name			"motor controller\nlogic"
+		Location		[79, 74, 761, 525]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "bus voltage"
+		  Position		  [40, 30, 60, 50]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "req'd input\npower (W)"
+		  Position		  [40, 160, 60, 180]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "req'd output\nspd (rad/s)"
+		  Position		  [40, 280, 60, 300]
+		  Port			  "3"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "shifting"
+		  Position		  [40, 385, 60, 405]
+		  Port			  "4"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs"
+		  Position		  [205, 123, 235, 147]
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs1"
+		  Position		  [105, 278, 135, 302]
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [590, 385, 646, 425]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  ShowPortLabels	  on
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [263, 139, 778, 219]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Annotation {
+		    Position		    [257, 40]
+		    Text		    "This block models a motor/control"
+"ler's logic, modulating the power input requirement as follows:\n- enforcing "
+"the maximum current limit of the motor/controller\n- shutting the motor off i"
+"f the average speed over the time step ==0\n- shutting the motor off if the t"
+"ransmission is shifting."
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [95, 79, 165, 101]
+		  FontName		  "Arial"
+		  Value			  "mc_max_crrnt"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [140, 348, 175, 372]
+		  FontName		  "Arial"
+		  Value			  "0.001"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  Position		  [500, 232, 520, 258]
+		  Orientation		  "left"
+		  FontName		  "Arial"
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator1"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [434, 240, 466, 275]
+		  Orientation		  "up"
+		  NamePlacement		  "alternate"
+		  Operator		  "NOT"
+		  Inputs		  "1"
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "MinMax"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [270, 37, 300, 68]
+		  Function		  "min"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product1"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [210, 36, 230, 54]
+		  FontName		  "Arial"
+		  Inputs		  "2"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [230, 282, 260, 313]
+		  Operator		  "<="
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Sign"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [270, 157, 300, 183]
+		  ShowPortLabels	  off
+		  MaskType		  "Sign"
+		  MaskDescription	  "y = sign(x)"
+		  MaskHelp		  "Sign Function:\\n\\t\\t\\ty = 1 if "
+"x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		  MaskDisplay		  "plot(-50,-50,50,50,[-50,50],[0,0],["
+"0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    Port		    "1"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1, 0, 0, 0]
+		    Position		    [215, 64, 235, 91]
+		    IconShape		    "rectangular"
+		    Inputs		    "+-"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Subsystem"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [105, 23, 150, 57]
+		  ShowPortLabels	  off
+		  MaskType		  "Running Average"
+		  MaskDescription	  "Running Average"
+		  MaskHelp		  "Output is the average of the last ("
+"Averaging Time) seconds of input."
+		  MaskPromptString	  "Averaging Time (s)"
+		  MaskStyleString	  "edit"
+		  MaskTunableValueString  "on"
+		  MaskEnableString	  "on"
+		  MaskVisibilityString	  "on"
+		  MaskInitialization	  "n=@1;"
+		  MaskDisplay		  "disp('Running\\nAverage')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "2"
+		  System {
+		    Name		    "Subsystem"
+		    Location		    [115, 388, 551, 664]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [30, 55, 50, 75]
+		    Port		    "1"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [255, 154, 295, 176]
+		    FontName		    "Arial"
+		    Value		    "n"
+		    }
+		    Block {
+		    BlockType		    Integrator
+		    Name		    "Integrator"
+		    Ports		    [1, 1, 0, 0, 0]
+		    Position		    [80, 55, 100, 75]
+		    ExternalReset	    "none"
+		    InitialConditionSource  "internal"
+		    InitialCondition	    "0"
+		    LimitOutput		    off
+		    UpperSaturationLimit    "inf"
+		    LowerSaturationLimit    "-inf"
+		    ShowSaturationPort	    off
+		    ShowStatePort	    off
+		    AbsoluteTolerance	    "auto"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1, 0, 0, 0]
+		    Position		    [340, 66, 360, 84]
+		    Inputs		    "*/"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1, 0, 0, 0]
+		    Position		    [225, 60, 245, 80]
+		    IconShape		    "rectangular"
+		    Inputs		    "+-"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    TransportDelay
+		    Name		    "Transport\nDelay"
+		    Position		    [155, 90, 195, 120]
+		    DelayTime		    "n"
+		    InitialInput	    "0"
+		    BufferSize		    "1024"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [390, 65, 410, 85]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Integrator"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Transport\nDelay"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Transport\nDelay"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Integrator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -85]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [495, 180, 525, 210]
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "current-limited\npower"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [365, 51, 385, 69]
+		  FontName		  "Arial"
+		  Inputs		  "2"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "true if motor\nshould be\nshut down"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [385, 292, 415, 323]
+		  Operator		  "OR"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "req'd input\npower (W)1"
+		  Position		  [590, 185, 610, 205]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "shifting"
+		  SrcPort		  1
+		  Points		  [290, 0; 0, -80]
+		  DstBlock		  "true if motor\nshould be\nshut down"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Logical\nOperator1"
+		  SrcPort		  1
+		  Points		  [0, -40]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "true if motor\nshould be\nshut down"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  DstBlock		  "Logical\nOperator1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Subsystem"
+		  SrcPort		  1
+		  DstBlock		  "Product1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "bus voltage"
+		  SrcPort		  1
+		  DstBlock		  "Subsystem"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -40]
+		  DstBlock		  "Product1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "req'd input\npower (W)"
+		  SrcPort		  1
+		  Points		  [105, 0]
+		  Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Abs"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sign"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -105]
+		  DstBlock		  "current-limited\npower"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  Points		  [-15, 0]
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  DstBlock		  "req'd input\npower (W)1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "current-limited\npower"
+		  SrcPort		  1
+		  Points		  [60, 0; 0, 125]
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "true if motor\nshould be\nshut down"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -55]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "req'd output\nspd (rad/s)"
+		  SrcPort		  1
+		  DstBlock		  "Abs1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Abs1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "MinMax"
+		  SrcPort		  1
+		  DstBlock		  "current-limited\npower"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product1"
+		  SrcPort		  1
+		  DstBlock		  "MinMax"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "shifting"
+	      Position		      [175, 170, 195, 190]
+	      Orientation	      "left"
+	      Value		      "0"
+	    }
+	    Line {
+	      SrcBlock		      "motor controller\nlogic"
+	      SrcPort		      1
+	      DstBlock		      "Goto <mc>"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From <mc>1"
+	      SrcPort		      1
+	      DstBlock		      "motor controller\nlogic"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From <mc>"
+	      SrcPort		      1
+	      DstBlock		      "motor controller\nlogic"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From <ess>"
+	      SrcPort		      1
+	      DstBlock		      "motor controller\nlogic"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "shifting"
+	      SrcPort		      1
+	      Points		      [0, -40]
+	      DstBlock		      "motor controller\nlogic"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [125, 90, 140, 125]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "energy\nstorage <ess>"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [365, 84, 405, 166]
+	  ShowPortLabels	  off
+	  System {
+	    Name		    "energy\nstorage <ess>"
+	    Location		    [104, 488, 673, 867]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "power req'd\ninto bus (W)"
+	      Position		      [60, 150, 80, 170]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Tess"
+	      Position		      [55, 215, 75, 235]
+	      FontName		      "Arial"
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [450, 310, 506, 350]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[252, 540, 737, 845]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [242, 146]
+		  Text			  "This block models the energy storag"
+"e system as an SOC-dependent voltage\nin series with an SOC- and current dire"
+"ction-dependent internal resistance.\nSOC is computed assuming that A-h capac"
+"ity is constant, but limited\nsuch that a minimum voltage is never exceeded ("
+"replacing the \nprevious Peukert relationship which underpredicted battery ca"
+"pacity).\n\nDischarge power is limited here so as not to bring the bus (batte"
+"ry pack) voltage below\nthe minimum controller voltage or the minimum battery"
+" voltage and so as to allow \nthe solution of the quadratic eq'n for discharg"
+"e current.\n\nCharge current is limited to ensure the voltage does not exceed"
+" a maximum\nvoltage\n\nPositive current is discharge current in the conventio"
+"n used here.\nPower loss is computed as I*R+losses due to Coulombic (in)effic"
+"iency.\n\nThermal modeling of the battery performance is modeled in the\nOCV,"
+" Rint, and capacity."
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <mc>, <gc>, <sdo>"
+	      Position		      [330, 200, 410, 220]
+	      GotoTag		      "bus_voltage"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "SOC\nalgorithm"
+	      Ports		      [2, 2, 0, 0, 0]
+	      Position		      [330, 96, 360, 129]
+	      FontName		      "Arial"
+	      ShowPortLabels	      off
+	      System {
+		Name			"SOC\nalgorithm"
+		Location		[42, 524, 840, 937]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "(A)"
+		  Position		  [15, 35, 35, 55]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "tmp\n(C)"
+		  Position		  [20, 125, 40, 145]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "(sec->hrs)"
+		  Position		  [265, 43, 330, 77]
+		  Gain			  "1/3600"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "0 <= SOC <= 1"
+		  Position		  [650, 121, 680, 139]
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "A-h\nremaining"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [505, 85, 525, 105]
+		  IconShape		  "rectangular"
+		  Inputs		  "-+"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Ah used"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [425, 50, 445, 70]
+		  ExternalReset		  "none"
+		  InitialConditionSource  "external"
+		  InitialCondition	  "(1-ess_init_soc)*ess_max_ah_cap"
+		  LimitOutput		  off
+		  UpperSaturationLimit	  "inf"
+		  LowerSaturationLimit	  "-inf"
+		  ShowSaturationPort	  off
+		  ShowStatePort		  off
+		  AbsoluteTolerance	  "auto"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Delta\nSOC"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [675, 318, 700, 347]
+		  IconShape		  "rectangular"
+		  Inputs		  "-+"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Fcn"
+		  Position		  [500, 150, 540, 170]
+		  ShowName		  off
+		  Expr			  "1/u"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Fcn1"
+		  Position		  [285, 96, 385, 114]
+		  ShowName		  off
+		  Expr			  "(1-ess_soc_current)*u"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory1"
+		  Position		  [600, 235, 630, 265]
+		  Orientation		  "left"
+		  X0			  "ess_soc_current(end)"
+		  InheritSampleTime	  off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "SOC"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [580, 118, 610, 142]
+		  Inputs		  "2"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [205, 35, 235, 85]
+		  ShowName		  off
+		  Threshold		  "0"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "adjusted A"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [135, 63, 165, 87]
+		  Inputs		  "2"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Lookup
+		  Name			  "coul eff"
+		  Position		  [75, 88, 105, 112]
+		  InputValues		  "ess_tmp"
+		  OutputValues		  "ess_coulombic_eff"
+		}
+		Block {
+		  BlockType		  Lookup
+		  Name			  "max cap"
+		  Position		  [200, 128, 230, 152]
+		  InputValues		  "ess_tmp"
+		  OutputValues		  "ess_max_ah_cap"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "SOC1"
+		  Position		  [720, 120, 740, 140]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "DeltaSOC"
+		  Position		  [720, 325, 740, 345]
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "ess_init_soc"
+		}
+		Line {
+		  SrcBlock		  "(A)"
+		  SrcPort		  1
+		  Points		  [5, 0]
+		  Branch {
+		    Points		    [130, 0]
+		    Branch {
+		    Points		    [0, 15]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "adjusted A"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  DstBlock		  "(sec->hrs)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Ah used"
+		  SrcPort		  1
+		  Points		  [40, 0]
+		  DstBlock		  "A-h\nremaining"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Fcn"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  DstBlock		  "SOC"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "SOC"
+		  SrcPort		  1
+		  DstBlock		  "0 <= SOC <= 1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "A-h\nremaining"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "SOC"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "tmp\n(C)"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [125, 0]
+		    DstBlock		    "max cap"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "coul eff"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "coul eff"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "adjusted A"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "adjusted A"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "max cap"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  Branch {
+		    Points		    [170, 0; 0, -30; 50, 0]
+		    Branch {
+		    Points		    [5, 0]
+		    DstBlock		    "A-h\nremaining"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Fcn"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Fcn1"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  DstBlock		  "Ah used"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Delta\nSOC"
+		  SrcPort		  1
+		  DstBlock		  "DeltaSOC"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Memory1"
+		  SrcPort		  1
+		  Points		  [-15, 75]
+		  DstBlock		  "Delta\nSOC"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "0 <= SOC <= 1"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    DstBlock		    "SOC1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 120; -40, 0]
+		    Branch {
+		    DstBlock		    "Memory1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 5]
+		    DstBlock		    "Delta\nSOC"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "(sec->hrs)"
+		  SrcPort		  1
+		  Points		  [75, 0]
+		  DstBlock		  "Ah used"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [533, 207]
+		  Text			  "SOC=(Max Ah capacity-Ah used)/Max A"
+"h capacity"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "compute\ncurrent"
+	      Ports		      [3, 2, 0, 0, 0]
+	      Position		      [220, 132, 250, 188]
+	      ShowPortLabels	      off
+	      System {
+		Name			"compute\ncurrent"
+		Location		[307, 555, 1219, 949]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "Voc"
+		  Position		  [155, 80, 175, 100]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Rint"
+		  Position		  [155, 130, 175, 150]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "limited output\npower (W)"
+		  Position		  [155, 30, 175, 50]
+		  Port			  "3"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Ibty=(Voc-(Voc^2-4RPbty)^.5)\n     "
+"  -----------------------------\n(2*R)"
+		  Position		  [340, 79, 370, 101]
+		  Expr			  "(u[2]-(u[2]^2-4*u[1]*u[3])^.5)/(2*u"
+"[3])"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux3"
+		  Ports			  [3, 1, 0, 0, 0]
+		  Position		  [570, 313, 590, 347]
+		  Inputs		  "3"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux4"
+		  Ports			  [3, 1, 0, 0, 0]
+		  Position		  [245, 16, 265, 164]
+		  Inputs		  "3"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux5"
+		  Ports			  [3, 1, 0, 0, 0]
+		  Position		  [250, 186, 270, 274]
+		  Inputs		  "3"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Voc-I*R"
+		  Position		  [625, 319, 705, 341]
+		  Expr			  "u[2]-u[1]*u[3]"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "ess max voltage*#batts"
+		  Position		  [25, 220, 190, 240]
+		  FontName		  "Arial"
+		  Value			  "ess_max_volts*ess_module_num"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "iabs min=(Voc-Vmax)/R"
+		  Position		  [340, 164, 370, 186]
+		  Expr			  "(u(1)-u(2))/u(3)"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "limit current based on \nmax voltag"
+"e during charge"
+		  Position		  [575, 125, 605, 155]
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "min charge current\nnot exceeded"
+		  Position		  [455, 122, 485, 153]
+		  Operator		  ">"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "I_"
+		  Position		  [730, 130, 750, 150]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "V_"
+		  Position		  [730, 320, 750, 340]
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "limited output\npower (W)"
+		  SrcPort		  1
+		  DstBlock		  "Mux4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Voc"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  Branch {
+		    DstBlock		    "Mux4"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 110]
+		    Branch {
+		    Points		    [0, 130]
+		    DstBlock		    "Mux3"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Mux5"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Rint"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  Branch {
+		    DstBlock		    "Mux4"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, 120]
+		    Branch {
+		    Points		    [0, 80]
+		    DstBlock		    "Mux3"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Mux5"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Ibty=(Voc-(Voc^2-4RPbty)^.5)\n     "
+"  -----------------------------\n(2*R)"
+		  SrcPort		  1
+		  Points		  [55, 0]
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "min charge current\nnot exceeded"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [90, 0; 0, 40]
+		    DstBlock		    "limit current based on \nmax volt"
+"age during charge"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "iabs min=(Voc-Vmax)/R"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "min charge current\nnot exceeded"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 15; 105, 0; 0, -40]
+		    DstBlock		    "limit current based on \nmax volt"
+"age during charge"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "limit current based on \nmax voltag"
+"e during charge"
+		  SrcPort		  1
+		  Points		  [50, 0]
+		  Branch {
+		    DstBlock		    "I_"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 160; -105, 0]
+		    DstBlock		    "Mux3"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Mux3"
+		  SrcPort		  1
+		  DstBlock		  "Voc-I*R"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux4"
+		  SrcPort		  1
+		  DstBlock		  "Ibty=(Voc-(Voc^2-4RPbty)^.5)\n     "
+"  -----------------------------\n(2*R)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux5"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -55]
+		  DstBlock		  "iabs min=(Voc-Vmax)/R"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ess max voltage*#batts"
+		  SrcPort		  1
+		  DstBlock		  "Mux5"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Voc-I*R"
+		  SrcPort		  1
+		  DstBlock		  "V_"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "min charge current\nnot exceeded"
+		  SrcPort		  1
+		  DstBlock		  "limit current based on \nmax voltag"
+"e during charge"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "limit power"
+	      Ports		      [4, 1, 0, 0, 0]
+	      Position		      [225, 229, 255, 286]
+	      ShowPortLabels	      off
+	      System {
+		Name			"limit power"
+		Location		[56, 549, 969, 945]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "SOC"
+		  Position		  [15, 15, 35, 35]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Pbty"
+		  Position		  [15, 105, 35, 125]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Voc"
+		  Position		  [15, 165, 35, 185]
+		  Port			  "3"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Rint"
+		  Position		  [390, 240, 410, 260]
+		  Orientation		  "left"
+		  Port			  "4"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [245, 30, 280, 50]
+		  Value			  "eps"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  Position		  [290, 69, 315, 91]
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant3"
+		  Position		  [705, 254, 730, 276]
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [135, 192, 165, 218]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Gain			  "0.5"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [465, 27, 495, 58]
+		  Operator		  "OR"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [3, 1, 0, 0, 0]
+		  Position		  [390, 168, 410, 202]
+		  FontName		  "Arial"
+		  Inputs		  "3"
+		  DisplayOption		  "none"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [330, 17, 360, 48]
+		  Operator		  ">"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator3"
+		  Position		  [405, 57, 435, 88]
+		  Operator		  "<"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "discharge\nmax power allowed\n(-0.1"
+" is for safety, to prevent\ntaking the square of a tiny\n-ive # in I=I(P) els"
+"ewhere)"
+		  Position		  [425, 171, 555, 199]
+		  FontName		  "Arial"
+		  Expr			  "(u[1]-u[2])*u[2]/u[3]-0.1"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "ess minimum voltage"
+		  Position		  [25, 305, 115, 325]
+		  FontName		  "Arial"
+		  Value			  "ess_min_volts"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "ess_module_num"
+		  Position		  [135, 300, 200, 330]
+		  FontName		  "Arial"
+		  Gain			  "ess_module_num"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "limit by battery max\nor min mc vol"
+"tage\nor ess min"
+		  Ports			  [3, 1, 0, 0, 0]
+		  Position		  [255, 190, 285, 290]
+		  Function		  "max"
+		  Inputs		  "3"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "mc minimum\nvoltage"
+		  Position		  [15, 227, 85, 253]
+		  FontName		  "Arial"
+		  Value			  "mc_min_volts"
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "min"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [620, 132, 635, 303]
+		  Function		  "min"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "no power req if\nSOC<0 and trying "
+"\nto discharge"
+		  Position		  [770, 215, 800, 245]
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Pbty, limited"
+		  Position		  [860, 220, 880, 240]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "SOC"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "Logical\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Pbty"
+		  SrcPort		  1
+		  Points		  [335, 0]
+		  Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Relational\nOperator3"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [230, 0]
+		    DstBlock		    "min"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator3"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Logical\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant3"
+		  SrcPort		  1
+		  Points		  [0, -25]
+		  DstBlock		  "no power req if\nSOC<0 and trying "
+"\nto discharge"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "no power req if\nSOC<0 and trying "
+"\nto discharge"
+		  SrcPort		  1
+		  DstBlock		  "Pbty, limited"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Voc"
+		  SrcPort		  1
+		  Points		  [80, 0]
+		  Branch {
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "discharge\nmax power allowed\n(-0.1"
+" is for safety, to prevent\ntaking the square of a tiny\n-ive # in I=I(P) els"
+"ewhere)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Rint"
+		  SrcPort		  1
+		  Points		  [-15, 0; 0, -55]
+		  DstBlock		  "Mux"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "ess minimum voltage"
+		  SrcPort		  1
+		  DstBlock		  "ess_module_num"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ess_module_num"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, -40]
+		  DstBlock		  "limit by battery max\nor min mc vol"
+"tage\nor ess min"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "limit by battery max\nor min mc vol"
+"tage\nor ess min"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "mc minimum\nvoltage"
+		  SrcPort		  1
+		  DstBlock		  "limit by battery max\nor min mc vol"
+"tage\nor ess min"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "discharge\nmax power allowed\n(-0.1"
+" is for safety, to prevent\ntaking the square of a tiny\n-ive # in I=I(P) els"
+"ewhere)"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 75]
+		  DstBlock		  "min"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "limit by battery max\nor min mc vol"
+"tage\nor ess min"
+		  SrcPort		  1
+		  Points		  [65, 0; 0, -55]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Logical\nOperator"
+		  SrcPort		  1
+		  Points		  [180, 0; 0, 185]
+		  DstBlock		  "no power req if\nSOC<0 and trying "
+"\nto discharge"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "min"
+		  SrcPort		  1
+		  DstBlock		  "no power req if\nSOC<0 and trying "
+"\nto discharge"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "pack\nVoc, Rint"
+	      Ports		      [3, 2, 0, 0, 0]
+	      Position		      [135, 132, 165, 188]
+	      ShowPortLabels	      off
+	      System {
+		Name			"pack\nVoc, Rint"
+		Location		[11, 196, 725, 499]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "SOC (prev)"
+		  Position		  [25, 80, 45, 100]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "req'd battery\npower (W)"
+		  Position		  [230, 160, 250, 180]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "mod tmp \n (C)"
+		  Position		  [80, 140, 100, 160]
+		  Port			  "3"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "#bty"
+		  Position		  [255, 64, 350, 86]
+		  Value			  "ess_module_num"
+		}
+		Block {
+		  BlockType		  Display
+		  Name			  "Display"
+		  Ports			  [1, 0, 0, 0, 0]
+		  Position		  [560, 65, 650, 95]
+		  Format		  "short"
+		  Decimation		  "1"
+		  Floating		  off
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Display
+		  Name			  "Display1"
+		  Ports			  [1, 0, 0, 0, 0]
+		  Position		  [565, 140, 655, 170]
+		  Format		  "short"
+		  Decimation		  "1"
+		  Floating		  off
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [380, 28, 410, 52]
+		  Inputs		  "2"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product1"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [380, 103, 410, 127]
+		  Inputs		  "2"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Rchg\n(ohms)"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [200, 228, 230, 252]
+		  ShowPortLabels	  off
+		  MaskType		  "2-D Table Lookup"
+		  MaskDescription	  "Two Dimensional Table Lookup\nThe f"
+"irst input corresponds to X Index and the second input corresponds to the Y I"
+"ndex"
+		  MaskHelp		  "This block returns a linearly inter"
+"polated intersection from the table using the X index (which corresponds to t"
+"he rows of the table) and the Y index (which corresponds to the columns of th"
+"e table).  Extrapolation is used."
+		  MaskPromptString	  "X Index|Y Index|Table"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskInitialization	  "xindex=@1; yindex=@2; table=@3; sft"
+"ab2chk(xindex,yindex,table);"
+		  MaskDisplay		  "plot(-10,-10,110,110,[90,50,10],[90"
+",40,30],[90,50,10],[50,26,20],[90,50,10],[22,13,10])"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "ess_tmp|ess_soc|ess_r_chg"
+		  System {
+		    Name		    "Rchg\n(ohms)"
+		    Location		    [316, 263, 598, 417]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x0"
+		    Position		    [20, 25, 40, 45]
+		    Port		    "1"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "y0"
+		    Position		    [20, 80, 40, 100]
+		    Port		    "2"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [2, 1, 0, 0, 0]
+		    Position		    [90, 46, 120, 79]
+		    Inputs		    "2"
+		    DisplayOption	    "none"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    "S-function"
+		    Ports		    [1, 1, 0, 0, 0]
+		    Position		    [140, 52, 190, 78]
+		    FunctionName	    "sftable2"
+		    Parameters		    "xindex, yindex, table"
+		    PortCounts		    "[]"
+		    SFunctionModules	    "''"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "table out"
+		    Position		    [215, 55, 235, 75]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "y0"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, -20]
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S-function"
+		    SrcPort		    1
+		    DstBlock		    "table out"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "x0"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, 20]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "S-function"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Rdis\n(ohms)"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [195, 108, 225, 132]
+		  ShowPortLabels	  off
+		  MaskType		  "2-D Table Lookup"
+		  MaskDescription	  "Two Dimensional Table Lookup\nThe f"
+"irst input corresponds to X Index and the second input corresponds to the Y I"
+"ndex"
+		  MaskHelp		  "This block returns a linearly inter"
+"polated intersection from the table using the X index (which corresponds to t"
+"he rows of the table) and the Y index (which corresponds to the columns of th"
+"e table).  Extrapolation is used."
+		  MaskPromptString	  "X Index|Y Index|Table"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskInitialization	  "xindex=@1; yindex=@2; table=@3; sft"
+"ab2chk(xindex,yindex,table);"
+		  MaskDisplay		  "plot(-10,-10,110,110,[90,50,10],[90"
+",40,30],[90,50,10],[50,26,20],[90,50,10],[22,13,10])"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "ess_tmp|ess_soc|ess_r_dis"
+		  System {
+		    Name		    "Rdis\n(ohms)"
+		    Location		    [316, 263, 598, 417]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x0"
+		    Position		    [20, 25, 40, 45]
+		    Port		    "1"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "y0"
+		    Position		    [20, 80, 40, 100]
+		    Port		    "2"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [2, 1, 0, 0, 0]
+		    Position		    [90, 46, 120, 79]
+		    Inputs		    "2"
+		    DisplayOption	    "none"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    "S-function"
+		    Ports		    [1, 1, 0, 0, 0]
+		    Position		    [140, 52, 190, 78]
+		    FunctionName	    "sftable2"
+		    Parameters		    "xindex, yindex, table"
+		    PortCounts		    "[]"
+		    SFunctionModules	    "''"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "table out"
+		    Position		    [215, 55, 235, 75]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "y0"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, -20]
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S-function"
+		    SrcPort		    1
+		    DstBlock		    "table out"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "x0"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, 20]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "S-function"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [305, 154, 335, 186]
+		  Threshold		  "0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "VOC\n(V)"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [205, 23, 235, 47]
+		  ShowPortLabels	  off
+		  MaskType		  "2-D Table Lookup"
+		  MaskDescription	  "Two Dimensional Table Lookup\nThe f"
+"irst input corresponds to X Index and the second input corresponds to the Y I"
+"ndex"
+		  MaskHelp		  "This block returns a linearly inter"
+"polated intersection from the table using the X index (which corresponds to t"
+"he rows of the table) and the Y index (which corresponds to the columns of th"
+"e table).  Extrapolation is used."
+		  MaskPromptString	  "X Index|Y Index|Table"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskInitialization	  "xindex=@1; yindex=@2; table=@3; sft"
+"ab2chk(xindex,yindex,table);"
+		  MaskDisplay		  "plot(-10,-10,110,110,[90,50,10],[90"
+",40,30],[90,50,10],[50,26,20],[90,50,10],[22,13,10])"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "ess_tmp|ess_soc|ess_voc"
+		  System {
+		    Name		    "VOC\n(V)"
+		    Location		    [316, 263, 598, 417]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x0"
+		    Position		    [20, 25, 40, 45]
+		    Port		    "1"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "y0"
+		    Position		    [20, 80, 40, 100]
+		    Port		    "2"
+		    PortWidth		    "-1"
+		    SampleTime		    "-1"
+		    DataType		    "auto"
+		    SignalType		    "auto"
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [2, 1, 0, 0, 0]
+		    Position		    [90, 46, 120, 79]
+		    Inputs		    "2"
+		    DisplayOption	    "none"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    "S-function"
+		    Ports		    [1, 1, 0, 0, 0]
+		    Position		    [140, 52, 190, 78]
+		    FunctionName	    "sftable2"
+		    Parameters		    "xindex, yindex, table"
+		    PortCounts		    "[]"
+		    SFunctionModules	    "''"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "table out"
+		    Position		    [215, 55, 235, 75]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "y0"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, -20]
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S-function"
+		    SrcPort		    1
+		    DstBlock		    "table out"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "x0"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, 20]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "S-function"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "pack open-\ncircuit voltage"
+		  Position		  [450, 30, 470, 50]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "pack\nresistance"
+		  Position		  [450, 105, 470, 125]
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "#bty"
+		  SrcPort		  1
+		  Points		  [5, 0]
+		  Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "VOC\n(V)"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Rchg\n(ohms)"
+		  SrcPort		  1
+		  Points		  [45, 0; 0, -60]
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Rdis\n(ohms)"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, 40]
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "req'd battery\npower (W)"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  Points		  [25, 0]
+		  DstBlock		  "Product1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "SOC (prev)"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "VOC\n(V)"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 35]
+		    Branch {
+		    DstBlock		    "Rdis\n(ohms)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 120]
+		    DstBlock		    "Rchg\n(ohms)"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "mod tmp \n (C)"
+		  SrcPort		  1
+		  Points		  [55, 0]
+		  Branch {
+		    Points		    [0, -35]
+		    Branch {
+		    Points		    [0, -85]
+		    DstBlock		    "VOC\n(V)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Rdis\n(ohms)"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 85]
+		    DstBlock		    "Rchg\n(ohms)"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    DstBlock		    "pack open-\ncircuit voltage"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Display"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Product1"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    DstBlock		    "pack\nresistance"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Display1"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "delta SOC"
+	      Position		      [440, 110, 460, 130]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "pack\nVoc, Rint"
+	      SrcPort		      2
+	      Points		      [10, -10]
+	      Branch {
+		Points			[25, 0]
+		DstBlock		"compute\ncurrent"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 115]
+		DstBlock		"limit power"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "pack\nVoc, Rint"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[20, 0]
+		DstBlock		"compute\ncurrent"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 120]
+		DstBlock		"limit power"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "SOC\nalgorithm"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -20; -265, 0; 0, 55]
+	      Branch {
+		DstBlock		"pack\nVoc, Rint"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 95]
+		DstBlock		"limit power"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Tess"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		Points			[40, 0]
+		DstBlock		"pack\nVoc, Rint"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 80; 215, 0; 0, -185]
+		DstBlock		"SOC\nalgorithm"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "power req'd\ninto bus (W)"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		DstBlock		"pack\nVoc, Rint"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 90]
+		DstBlock		"limit power"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "SOC\nalgorithm"
+	      SrcPort		      2
+	      DstBlock		      "delta SOC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "compute\ncurrent"
+	      SrcPort		      2
+	      Points		      [25, 0; 0, 35]
+	      DstBlock		      "Goto <mc>, <gc>, <sdo>"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "compute\ncurrent"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -40]
+	      DstBlock		      "SOC\nalgorithm"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "limit power"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -35; -60, 0]
+	      DstBlock		      "compute\ncurrent"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "motor/\ncontroller <mc>"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [195, 84, 235, 166]
+	  ShowPortLabels	  off
+	  System {
+	    Name		    "motor/\ncontroller <mc>"
+	    Location		    [20, 620, 898, 933]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "torque and speed\n req'd at rotor\n(Nm)"
+", (rad/s)"
+	      Position		      [45, 70, 65, 90]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [785, 175, 841, 215]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[497, 485, 1012, 601]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [256, 69]
+		  Text			  "Available torque is computed from a"
+"vailable power by assuming that the ratio of rotor torque to input\n(electric"
+") power is the same for the actual/achievable situation as was computed for t"
+"he request.  This\nis mathematically equivalent to assuming that the motor/co"
+"ntroller efficiency.  Rotor speed for the\nactual/achievable calculations is "
+"as computed in the 'request' branch."
+		}
+		Annotation {
+		  Position		  [247, 17]
+		  VerticalAlignment	  "top"
+		  Text			  "This motor/controller model include"
+"s loss data, rotational inertia, and performance limits."
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [100, 21, 125, 134]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [190, 90, 220, 120]
+	      UpperLimit	      "max(mc_map_spd)*mc_spd_scale"
+	      LowerLimit	      "0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [385, 45, 405, 65]
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "effect of inertia\n(Nm)"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [320, 86, 350, 124]
+	      ShowPortLabels	      off
+	      System {
+		Name			"effect of inertia\n(Nm)"
+		Location		[181, 120, 783, 214]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "mc_spd_out_a"
+		  Position		  [35, 25, 55, 45]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [165, 14, 245, 56]
+		  Gain			  "mc_inertia"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Derivative
+		  Name			  "alpha"
+		  Position		  [100, 25, 130, 45]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_1"
+		  Position		  [555, 35, 575, 55]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "alpha"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "mc_spd_out_a"
+		  SrcPort		  1
+		  DstBlock		  "alpha"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  Points		  [265, 0; 0, 10]
+		  DstBlock		  "out_1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "enforce\ntorque\nlimit"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [435, 44, 470, 91]
+	      ShowPortLabels	      off
+	      System {
+		Name			"enforce\ntorque\nlimit"
+		Location		[48, 434, 651, 654]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "req'd motor\ntorque (Nm)"
+		  Position		  [45, 68, 75, 82]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "limited motor\nspeed (rad/s)"
+		  Position		  [45, 148, 75, 162]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [520, 145, 576, 185]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  ShowPortLabels	  on
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [149, 106, 558, 202]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Annotation {
+		    Position		    [207, 39]
+		    Text		    "This block enforces the maximum t"
+"orque production and absorption\ncapability limits of the motor.  It assumes "
+"that exactly as much torque\ncan be absorbed as can be produced at a given sp"
+"eed."
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [260, 140, 290, 170]
+		  Gain			  "-1"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "MinMax"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [340, 67, 370, 98]
+		  Function		  "min"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "MinMax1"
+		  Ports			  [2, 1, 0, 0, 0]
+		  Position		  [340, 132, 370, 163]
+		  Function		  "max"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [440, 80, 470, 110]
+		  Threshold		  "0"
+		}
+		Block {
+		  BlockType		  Lookup
+		  Name			  "max torque"
+		  Position		  [140, 145, 170, 165]
+		  InputValues		  "mc_map_spd*mc_spd_scale"
+		  OutputValues		  "mc_max_trq*mc_overtrq_factor*mc_trq"
+"_scale"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "limited motor\ntorque (Nm)"
+		  Position		  [520, 88, 550, 102]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "limited motor\nspeed (rad/s)"
+		  SrcPort		  1
+		  DstBlock		  "max torque"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "MinMax1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "MinMax1"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -45]
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "MinMax"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  DstBlock		  "limited motor\ntorque (Nm)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "req'd motor\ntorque (Nm)"
+		  SrcPort		  1
+		  Points		  [235, 0]
+		  Branch {
+		    Points		    [0, 45]
+		    Branch {
+		    Points		    [80, 0; 0, -25]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 20]
+		    DstBlock		    "MinMax1"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "MinMax"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "max torque"
+		  SrcPort		  1
+		  Points		  [40, 0]
+		  Branch {
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -65]
+		    DstBlock		    "MinMax"
+		    DstPort		    2
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "motor controller\nlogic interface"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [620, 14, 695, 76]
+	      ShowPortLabels	      on
+	      System {
+		Name			"motor controller\nlogic interface"
+		Location		[284, 439, 709, 608]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "w_mc_out_r"
+		  Position		  [40, 45, 60, 65]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "P_mc_in_1lim"
+		  Position		  [40, 105, 60, 125]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From <vc>"
+		  Position		  [225, 64, 330, 96]
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "P_mc_in_r"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <vc>"
+		  Position		  [95, 37, 185, 73]
+		  GotoTag		  "w_mc_out_r"
+		  TagVisibility		  "global"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <vc>1"
+		  Position		  [95, 98, 185, 132]
+		  GotoTag		  "P_mc_in_1lim"
+		  TagVisibility		  "global"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "P_mc_in_r"
+		  Position		  [365, 70, 385, 90]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "From <vc>"
+		  SrcPort		  1
+		  DstBlock		  "P_mc_in_r"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "w_mc_out_r"
+		  SrcPort		  1
+		  DstBlock		  "Goto <vc>"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "P_mc_in_1lim"
+		  SrcPort		  1
+		  DstBlock		  "Goto <vc>1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Lookup2D
+	      Name		      "motor/controller\ninput power\nmap (W)"
+	      Position		      [530, 40, 590, 80]
+	      RowIndex		      "mc_map_spd*mc_spd_scale"
+	      ColumnIndex	      "mc_map_trq*mc_trq_scale"
+	      OutputValues	      "mc_inpwr_map*mc_spd_scale*mc_trq_scale"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "req'd motor\ninput power (W)"
+	      Position		      [770, 35, 790, 55]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"effect of inertia\n(Nm)"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -25; 95, 0]
+		Branch {
+		  Points		  [0, -45; 180, 0]
+		  DstBlock		  "motor/controller\ninput power\nmap "
+"(W)"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "enforce\ntorque\nlimit"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "enforce\ntorque\nlimit"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, -75]
+		DstBlock		"motor controller\nlogic interface"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Saturation"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "torque and speed\n req'd at rotor\n(Nm)"
+", (rad/s)"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "motor controller\nlogic interface"
+	      SrcPort		      1
+	      DstBlock		      "req'd motor\ninput power (W)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "effect of inertia\n(Nm)"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -45]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "motor/controller\ninput power\nmap (W)"
+	      SrcPort		      1
+	      DstBlock		      "motor controller\nlogic interface"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "enforce\ntorque\nlimit"
+	      SrcPort		      1
+	      DstBlock		      "motor/controller\ninput power\nmap (W)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "power\nbus <pb>"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [285, 83, 325, 167]
+	  ShowPortLabels	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "15"
+	    TestPoint		    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  System {
+	    Name		    "power\nbus <pb>"
+	    Location		    [13, 132, 743, 566]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "req'd power\noutput (W)"
+	      Position		      [55, 38, 85, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "(W)"
+	      Position		      [30, 97, 110, 113]
+	      FontName		      "Arial"
+	      Value		      "acc_elec_pwr"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [640, 370, 696, 410]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[130, 173, 463, 248]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [168, 33]
+		  Text			  "This power bus requires power from "
+"(or distributes power to)\nthe generator first, taking the balance from the e"
+"nergy\nstorage system."
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant7"
+	      Position		      [495, 220, 535, 240]
+	      ShowName		      off
+	      Value		      "ess_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant8"
+	      Position		      [539, 255, 561, 275]
+	      Orientation	      "up"
+	      ShowName		      off
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [355, 37, 385, 68]
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch1"
+	      Position		      [580, 203, 605, 257]
+	      ShowName		      off
+	      Threshold		      "eps"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "divide by eff"
+	      Position		      [195, 88, 290, 142]
+	      Gain		      "1/acc_elec_eff"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "power req'd from\nenergy storage\n(W)"
+	      Position		      [650, 223, 680, 237]
+	      NamePlacement	      "alternate"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Constant8"
+	      SrcPort		      1
+	      DstBlock		      "Switch1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant7"
+	      SrcPort		      1
+	      DstBlock		      "Switch1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Switch1"
+	      SrcPort		      1
+	      DstBlock		      "power req'd from\nenergy storage\n(W)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "req'd power\noutput (W)"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "divide by eff"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -55]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "(W)"
+	      SrcPort		      1
+	      Points		      [55, 0; 0, 10]
+	      DstBlock		      "divide by eff"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 145; 70, 0; 0, 10]
+	      DstBlock		      "Switch1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DeltaSOC"
+	  Position		  [465, 114, 485, 136]
+	  FontName		  "Arial"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Tm"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "wm"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "motor/\ncontroller <mc>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "energy\nstorage <ess>"
+	  SrcPort		  1
+	  DstBlock		  "DeltaSOC"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Tess"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "energy\nstorage <ess>"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "15"
+	  Labels		  [0, 0]
+	  SrcBlock		  "power\nbus <pb>"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "energy\nstorage <ess>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "motor/\ncontroller <mc>"
+	  SrcPort		  1
+	  DstBlock		  "power\nbus <pb>"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      Position		      [245, 60, 355, 90]
+      ShowName		      off
+      VariableName	      "DeltaSOC_mcpbess"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [10, 0]
+      DstBlock		      "MC/PB/ESS"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      DstBlock		      "MC/PB/ESS"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "MC/PB/ESS"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      Points		      [10, 0]
+      DstBlock		      "MC/PB/ESS"
+      DstPort		      3
+    }
+  }
+}

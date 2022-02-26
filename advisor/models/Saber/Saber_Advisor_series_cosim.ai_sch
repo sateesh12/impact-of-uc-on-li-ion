@@ -1,0 +1,753 @@
+[schematic8]
+desc {}
+uniq 1201
+sheets {sheet1}
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+{-family Arial -size 5.0 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-Adobe-Helvetica-Bold-R-Normal--*-120-*}
+{-family fixed -size 10 -weight normal -slant roman -underline 0 -overstrike 0 -type pixel}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family helvetica -size 3 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 4 normal roman}
+{Arial 5.0 bold}
+{-family Arial -size 2.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 4 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{Arial 4.0}
+{-family Arial -size 4.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 12 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{Arial 3.0 bold}
+{-family Arial -size 10 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+<color>
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{} {#bde6ff}
+{orange} {#ffffa5a50000}
+{} {#ffec8b}
+{} {#90ee90}
+{} {#FF00FF}
+{} {#00FFFF}
+{} {#C0C0C0}
+{} {#FFFF80}
+<linestyle>
+{-}
+{- }
+{.}
+<image>
+<layer>
+{electrical}
+{vis}
+{borderannotation}
+{probe}
+[element resources]
+<elements>
+gd {} 
+n n_10_ {_n1} {{sheet1 w_914_ w_912_ w_208_ w_180_ w_18_ w_17_ w_12_ w_13_ w_15_ w_16_ w_28_ w_29_ w_30_ w_31_ w_494_ w_1135_ w_1170_ w_1173_ w_1174_}} {} 
+n n_50_ {gnd} {{sheet1 w_903_ w_798_ w_614_ w_597_ w_563_ w_492_ w_490_ w_377_ w_202_ w_201_ w_182_ w_98_ w_89_ w_85_ w_34_ w_35_ w_36_ w_38_ w_39_ w_41_ w_42_ w_60_ w_369_ w_812_ w_1131_ w_1132_ w_1133_ w_1148_ w_1169_ w_1175_}} {} 
+n n_123_ {battery_2_voltage} {{sheet1 w_793_}} {} 
+n n_137_ {mc_v} {{sheet1 w_830_}} {} 
+n n_266_ {sensed_voltage_feedback_loop} {{sheet1 w_770_}} {} 
+n n_276_ {_n264} {{sheet1 w_902_ w_653_ w_652_ w_649_ w_573_ w_569_ w_1142_ w_1143_ w_1144_ w_1164_ w_1167_ w_1168_}} {} 
+n n_455_ {APU_rpm} {{sheet1 w_718_ w_717_ w_590_ w_713_ w_1137_ w_1149_ w_1150_ w_1177_ w_1178_}} {} 
+n n_505_ {gen_v} {{sheet1 w_727_}} {} 
+n n_555_ {_n554} {{sheet1 w_554_}} {} 
+n n_558_ {_n556} {{sheet1 w_1053_}} {} 
+n n_583_ {gc_trq_feedback} {{sheet1 w_582_}} {} 
+n n_617_ {mc_spd_rpm} {{sheet1 w_1079_ w_1074_ w_1085_ w_1086_ w_1087_ w_1098_ w_1119_ w_1120_}} {} 
+n n_624_ {mc_eff} {{sheet1 w_623_}} {} 
+n n_629_ {vset} {{sheet1 w_993_ w_994_ w_995_}} {} 
+n n_631_ {mc_trq_feedback} {{sheet1 w_765_}} {} 
+n n_638_ {_n598} {{sheet1 w_637_}} {} 
+n n_674_ {_n608} {{sheet1 w_673_}} {} 
+n n_677_ {_n610} {{sheet1 w_858_}} {} 
+n n_714_ {_n620} {{sheet1 w_715_}} {} 
+n n_719_ {_n621} {{sheet1 w_720_}} {} 
+n n_758_ {_n736} {{sheet1 w_759_}} {} 
+n n_780_ {battery_1_voltage} {{sheet1 w_827_ w_826_ w_824_ w_819_ w_773_ w_730_ w_1183_}} {} 
+n n_806_ {_n747} {{sheet1 w_908_ w_907_ w_904_}} {} 
+n n_815_ {_n750} {{sheet1 w_817_}} {} 
+ss ss_920_ {undef.pm_battery_1} {{sheet1 power_meter_814_}} { 
+{ref pm_battery_1 {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_921_ {undef.loads_trad} {{sheet1 power_meter_799_}} { 
+{ref loads_trad {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_922_ {undef.pm_battery_2} {{sheet1 power_meter_792_}} { 
+{ref pm_battery_2 {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_923_ {undef.loads_hiv} {{sheet1 power_meter_789_}} { 
+{ref loads_hiv {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_924_ {undef.motor} {{sheet1 power_meter_775_}} { 
+{ref motor {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_925_ {undef.14v_sys} {{sheet1 power_meter_769_}} { 
+{ref 14v_sys {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_929_ {undef.gen} {{sheet1 power_meter_726_}} { 
+{ref gen {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } power_meter {} 
+ss ss_930_ {c_pwl.sym16} {{sheet1 c_pwl_675_}} { 
+{ref sym16 {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,.1,1]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_931_ {c_pwl.mc_rpm} {{sheet1 c_pwl_672_}} { 
+{ref mc_rpm {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,0.001,0,1,3000]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_932_ {mult.mult2} {{sheet1 cmult_671_}} { 
+{ref mult2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } cmult {} 
+ss ss_933_ {induction_motor.induction_motor1} {{sheet1 induction_motor_632_}} { 
+{ref induction_motor1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } induction_motor {} 
+ss ss_934_ {motor_max_motor_trq1.motor_max_motor_trq1} {{sheet1 motor_max_motor_trq_626_}} { 
+{ref motor_max_motor_trq1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } motor_max_motor_trq {} 
+ss ss_935_ {sym.gnd_620_} {{sheet1 gnd_620_}} {} { } gnd {} 
+ss ss_936_ {motor_max_regen_trq1.motor_max_regen_trq1} {{sheet1 motor_max_regen_trq_611_}} { 
+{ref motor_max_regen_trq1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } motor_max_regen_trq {} 
+ss ss_937_ {motor_eff.motor_eff1} {{sheet1 motor_eff_607_}} { 
+{model { } SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{ref motor_eff1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } motor_eff {} 
+ss ss_938_ {generator_eff.generator_eff1} {{sheet1 generator_eff_599_}} { 
+{ref generator_eff1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } generator_eff {} 
+ss ss_939_ {generator_max_trq.generator_max_trq1} {{sheet1 generator_max_trq_594_}} { 
+{ref generator_max_trq1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } generator_max_trq {} 
+ss ss_940_ {ind_generator.ind_generator1} {{sheet1 ind_generator_586_}} { 
+{ref ind_generator1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{inertia .01 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } ind_generator {} 
+ss ss_941_ {sym.gnd_577_} {{sheet1 gnd_577_}} {} { } gnd {} 
+ss ss_942_ {c_pwl.c_pwl} {{sheet1 c_pwl_560_}} { 
+{ref c_pwl {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,.1,1]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_943_ {c_pwl.engine_rpm} {{sheet1 c_pwl_556_}} { 
+{ref engine_rpm {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,0.001,0,1,2200]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_944_ {mult.mult1} {{sheet1 cmult_553_}} { 
+{ref mult1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } cmult {} 
+ss ss_945_ {power_load.user_power2_hiv} {{sheet1 power_load_499_}} { 
+{ref user_power2_hiv {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load 100 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } power_load {} 
+ss ss_946_ {sym.gnd_495_} {{sheet1 gnd_495_}} {} { } gnd {} 
+ss ss_947_ {power_load.acc_elec_pwr} {{sheet1 power_load_493_}} { 
+{ref acc_elec_pwr {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 1 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load 0 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } power_load {} 
+ss ss_948_ {sym.gnd_488_} {{sheet1 gnd_488_}} {} { } gnd {} 
+ss ss_949_ {power_load.user_power3_hiv} {{sheet1 power_load_482_}} { 
+{ref user_power3_hiv {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } power_load {} 
+ss ss_951_ {load_user_defined_42v.load_user_defined_hiv} {{sheet1 load_user_defined_42V_437_}} { 
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{ref load_user_defined_hiv {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } load_user_defined_42V {} 
+ss ss_952_ {sym.gnd_411_} {{sheet1 gnd_411_}} {} { } gnd {} 
+ss ss_953_ {sym.gnd_375_} {{sheet1 gnd_375_}} {} { } gnd {} 
+ss ss_954_ {power_load.user_power1_hiv} {{sheet1 power_load_372_}} { 
+{ref user_power1_hiv {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load 50 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } power_load {} 
+ss ss_956_ {sym.gnd_289_} {{sheet1 gnd_289_}} {} { } gnd {} 
+ss ss_957_ {sym.gnd_288_} {{sheet1 gnd_288_}} {} { } gnd {} 
+ss ss_958_ {sym.gnd_246_} {{sheet1 gnd_246_}} {} { } gnd {} 
+ss ss_960_ {regulator_42v_usa.regulator_hiv_usa1} {{sheet1 regulator_42v_USA_234_}} { 
+{ref regulator_hiv_usa1 {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{vehicletype 5 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{volt1 290 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{volt2 290 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{tempreg 25 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } regulator_42v_USA {} 
+ss ss_961_ {sym.gnd_229_} {{sheet1 gnd_229_}} {} { } gnd {} 
+ss ss_962_ {dcconvertideal.dcconvertideal1} {{sheet1 dcconvertideal_213_}} { 
+{ref dcconvertideal1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } dcconvertideal {} 
+ss ss_963_ {batt_pb_1.battery_2} {{sheet1 batt_pb_1_70_}} { 
+{ref battery_2 {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{model (ah_nom=69,inom=3.45,rnom=.020,n_cell=5,sg_full=1.33,sg_disc=1.019,fah_thi=1.1,fc=.45,fah_max=1.2,self_disc=.45) SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{sg0 1.303 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{temp { } SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } batt_pb_1 {} 
+ss ss_964_ {sym.gnd_59_} {{sheet1 gnd_59_}} {} { } gnd {} 
+ss ss_965_ {sym.gnd_54_} {{sheet1 gnd_54_}} {} { } gnd {} 
+ss ss_966_ {sym.gnd_49_} {{sheet1 gnd_49_}} { 
+{connector {} {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{name gnd {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } gnd {} 
+ss ss_967_ {sym.gnd_47_} {{sheet1 gnd_47_}} {} { } gnd {} 
+ss ss_968_ {rear_defrost.rear_defrost1} {{sheet1 rear_defrost_24_}} { 
+{ref rear_defrost1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{user_v1 12 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } rear_defrost {} 
+ss ss_969_ {front_hvac.front_hvac1} {{sheet1 front_hvac_22_}} { 
+{ref front_hvac1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } front_hvac {} 
+ss ss_970_ {radio.radio1} {{sheet1 radio_21_}} { 
+{ref radio1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } radio {} 
+ss ss_971_ {rear_hvac.rear_hvac1} {{sheet1 rear_hvac_20_}} { 
+{ref rear_hvac1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } rear_hvac {} 
+ss ss_972_ {rear_wiper.rear_wiper1} {{sheet1 rear_wiper_19_}} { 
+{ref rear_wiper1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } rear_wiper {} 
+ss ss_973_ {turn_signal.turn_signal1} {{sheet1 turn_signal_9_}} { 
+{ref turn_signal1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } turn_signal {} 
+ss ss_974_ {radiator_fan.radiator_fan1} {{sheet1 radiator_fan_8_}} { 
+{ref radiator_fan1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } radiator_fan {} 
+ss ss_975_ {misc.misc1} {{sheet1 misc_7_}} { 
+{ref misc1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } misc {} 
+ss ss_976_ {heated_seat.heated_seat1} {{sheet1 heated_seat_6_}} { 
+{ref heated_seat1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } heated_seat {} 
+ss ss_977_ {front_wiper.front_wiper1} {{sheet1 front_wiper_5_}} { 
+{ref front_wiper1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } front_wiper {} 
+ss ss_978_ {external_lights.external_lights1} {{sheet1 external_lights_4_}} { 
+{ref external_lights1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } external_lights {} 
+ss ss_979_ {engine.engine1} {{sheet1 engine_2_}} { 
+{ref engine1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 1 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } engine {} 
+ss ss_980_ {combo_loads.combo_loads1} {{sheet1 combo_loads_1_}} { 
+{ref combo_loads1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } combo_loads {} 
+ss ss_981_ {brake_lights.brake_lights1} {{sheet1 brake_lights_0_}} { 
+{ref brake_lights1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 0 0 {} 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } brake_lights {} 
+ss ss_1001_ {c_pwl.c_pwl8} {{sheet1 c_pwl_1000_}} { 
+{ref c_pwl8 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,.1,1]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_1003_ {mult.mult4} {{sheet1 cmult_1002_}} { 
+{ref mult4 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } cmult {} 
+n n_1004_ {_n996} {{sheet1 w_1010_}} {} 
+n n_1006_ {_n997} {{sheet1 w_1007_}} {} 
+ss ss_1012_ {c_pwl.maxtorqueavail} {{sheet1 c_pwl_1011_}} { 
+{ref maxtorqueavail {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,0.001,0,1,2200]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_1058_ {load_speed_42v.load_speed_hiv} {{sheet1 load_speed_42V_1057_}} { 
+{ref load_speed_hiv {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{user_rpm1 {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{user_rpm2 {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{user_pwr1 {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{user_pwr2 {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } load_speed_42V {} 
+ss ss_1130_ {starter1.starter_trad} {{sheet1 starter_1129_}} { 
+{ref starter_trad {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } starter {} 
+ss ss_1141_ {starter1.starter_hiv} {{sheet1 starter_1140_}} { 
+{ref starter_hiv {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } starter {} 
+ss ss_1147_ {gnd_1146_} {{sheet1 gnd_1146_}} {} { } gnd {} 
+ss ss_1159_ {batt_pb_1.battery_1} {{sheet1 batt_pb_1_1158_}} { 
+{ref battery_1 {} {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{model (ah_nom=69,inom=3.45,rnom=.020,n_cell=134,sg_full=1.33,sg_disc=1.019,fah_thi=1.1,fc=.45,fah_max=1.2,self_disc=.45) SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{sg0 1.303 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{temp { } SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } batt_pb_1 {} 
+ss ss_1161_ {r.r1} {{sheet1 r_1160_}} { 
+{ref r1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{rnom 1000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } r {} 
+ss ss_1163_ {r.r2} {{sheet1 r_1162_}} { 
+{ref r2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{rnom 1000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } r {} 
+n n_1193_ {_n1178} {{sheet1 w_1194_}} {} 
+<properties>
+[events]
+[reference]
+[sheet]
+sheet1
+<properties>
+<border>
+{A4} 287.000000 200.000000 m 0 95 5 5.000000 2 2 {on} 0 {n} {left} 57.400000 5 5.000000 2 2 {on} 0 {a} {down} 40.000000 0.000000 0.000000 0 
+<elements>
+w w_1194_ {{cmult.cmult_1002_.out}} {{induction_motor.induction_motor_632_.maxtorqueavail}} {-13120 8320 -9280 8320 -9280 6720 -9120 6720 } 0 1 10 0 0 {8 10 3} 0 {{}} -9200 8040 0 0 5 5 0 0 1 {} 
+w w_1183_ {{power_meter.power_meter_789_.p}} {{_lsplice_._lsplice__818_.junction}} {3520 7360 3680 7360 3680 5440 } 0 1 10 0 0 {8 10 3} 0 {{}} 3280 7240 0 0 5 5 0 0 1 {} 
+w w_1178_ {{_lsplice_._lsplice__1179_.junction}} {{_lsplice_._lsplice__600_.junction}} {-12800 -1440 -11520 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -17520 -2680 0 0 5 5 0 0 1 {} 
+w w_1177_ {{_lsplice_._lsplice__1152_.junction}} {{_lsplice_._lsplice__1179_.junction}} {-5440 -6240 -12800 -6240 -12800 -1440 } 0 3 10 1 0 {8 10 3} 0 {{}} -17520 -2680 0 0 5 5 0 0 1 {} 
+w w_1175_ {{r.r_1162_.m}} {{radio.radio_21_.m}} {2720 -3200 1600 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} 1680 -3320 0 0 5 5 0 0 1 {} 
+w w_1174_ {{_lsplice_._lsplice__1172_.junction}} {{_lsplice_._lsplice__910_.junction}} {2720 -2400 3040 -2400 3040 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} 1680 -2520 0 0 5 5 0 0 1 {} 
+w w_1173_ {{r.r_1162_.p}} {{_lsplice_._lsplice__1172_.junction}} {2720 -2560 2720 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} 1680 -2520 0 0 5 5 0 0 1 {} 
+w w_1170_ {{radio.radio_21_.p}} {{_lsplice_._lsplice__1172_.junction}} {1600 -2400 2720 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} 1680 -2520 0 0 5 5 0 0 1 {} 
+w w_1169_ {{r.r_1160_.m}} {{gnd.gnd_289_.gnd}} {160 6400 800 6400 } 0 1 10 0 0 {8 10 3} 0 {{}} 240 6280 0 0 5 5 0 0 1 {} 
+w w_1168_ {{_lsplice_._lsplice__1166_.junction}} {{_lsplice_._lsplice__567_.junction}} {160 7360 -480 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} 880 7400 0 0 5 5 0 0 1 {} 
+w w_1167_ {{r.r_1160_.p}} {{_lsplice_._lsplice__1166_.junction}} {160 7040 160 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} 880 7400 0 0 5 5 0 0 1 {} 
+w w_1164_ {{_lsplice_._lsplice__572_.junction}} {{_lsplice_._lsplice__1166_.junction}} {800 7360 160 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} 880 7400 0 0 5 5 0 0 1 {} 
+w w_1150_ {{starter.starter_1129_.engspeed}} {{_lsplice_._lsplice__1152_.junction}} {-5440 -1120 -5440 -6240 } 0 3 10 1 0 {8 10 3} 0 {{}} -5360 -1240 0 0 5 5 0 0 1 {} 
+w w_1149_ {{starter.starter_1140_.engspeed}} {{_lsplice_._lsplice__1152_.junction}} {-1920 6720 -1920 4320 -2880 4320 -2880 960 -5440 960 -5440 -6240 } 0 3 10 1 0 {8 10 3} 0 {{}} -1840 6600 0 0 5 5 0 0 1 {} 
+w w_1148_ {{starter.starter_1140_.m}} {{gnd.gnd_1146_.gnd}} {-1440 6240 -1440 6240 } 0 1 10 0 0 {8 10 3} 0 {{}} -1360 6120 0 0 5 5 0 0 1 {} 
+w w_1144_ {{_lsplice_._lsplice__1145_.junction}} {{load_user_defined_42V.load_user_defined_42V_437_.p}} {-1440 7360 -2720 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} -1680 7240 0 0 5 5 0 0 1 {} 
+w w_1143_ {{_lsplice_._lsplice__567_.junction}} {{_lsplice_._lsplice__1145_.junction}} {-480 7360 -1440 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} -1680 7240 0 0 5 5 0 0 1 {} 
+w w_1142_ {{starter.starter_1140_.p}} {{_lsplice_._lsplice__1145_.junction}} {-1440 7200 -1440 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} -1360 7240 0 0 5 5 0 0 1 {} 
+w w_1137_ {{cmult.cmult_553_.out}} {{_lsplice_._lsplice__1179_.junction}} {-14880 -1440 -12800 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -17520 -2680 0 0 5 5 0 0 1 {} 
+w w_1135_ {{starter.starter_1129_.p}} {{engine.engine_2_.p}} {-4960 -640 -4160 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} -4880 -760 0 0 5 5 0 0 1 {} 
+w w_1133_ {{_lsplice_._lsplice__1134_.junction}} {{gnd.gnd_47_.gnd}} {-4480 -1600 -4480 -1760 } 0 1 10 0 0 {8 10 3} 0 {{}} -4400 -1880 0 0 5 5 0 0 1 {} 
+w w_1132_ {{engine.engine_2_.m}} {{_lsplice_._lsplice__1134_.junction}} {-4160 -1440 -4480 -1440 -4480 -1600 } 0 1 10 0 0 {8 10 3} 0 {{}} -4400 -1880 0 0 5 5 0 0 1 {} 
+w w_1131_ {{starter.starter_1129_.m}} {{_lsplice_._lsplice__1134_.junction}} {-4960 -1600 -4480 -1600 } 0 1 10 0 0 {8 10 3} 0 {{}} -4880 -1720 0 0 5 5 0 0 1 {} 
+w w_1120_ {{_lsplice_._lsplice__1121_.junction}} {{motor_max_motor_trq.motor_max_motor_trq_626_.spd}} {-11680 6080 -11520 6080 } 0 1 10 1 0 {8 10 3} 0 {{}} -11440 5960 0 0 5 9 0 0 1 {} 
+w w_1119_ {{_lsplice_._lsplice__1084_.junction}} {{_lsplice_._lsplice__1121_.junction}} {-11680 4800 -11680 6080 } 0 1 10 1 0 {8 10 3} 0 {{}} -11440 5960 0 0 5 9 0 0 1 {} 
+w w_1098_ {{_lsplice_._lsplice__1121_.junction}} {{induction_motor.induction_motor_632_.speed}} {-11680 6080 -11680 7200 -9760 7200 -9760 6400 -8960 6400 } 0 1 10 0 0 {8 10 3} 0 {{}} -9680 7080 0 0 5 5 0 0 1 {} 
+w w_1087_ {{_lsplice_._lsplice__1088_.junction}} {{cmult.cmult_671_.out}} {-13600 4800 -13600 4000 -15680 4000 } 0 1 10 1 0 {8 10 3} 0 {{}} -5200 6760 0 0 5 9 0 0 1 {} 
+w w_1086_ {{load_speed_42V.load_speed_42V_1057_.shaft_rpm}} {{_lsplice_._lsplice__1088_.junction}} {-4160 6880 -5280 6880 -5280 9600 -16960 9600 -16960 5600 -13600 5600 -13600 4800 } 0 2 10 1 0 {8 10 3} 0 {{}} -5200 6760 0 0 5 9 0 0 1 {} 
+w w_1085_ {{_lsplice_._lsplice__1084_.junction}} {{_lsplice_._lsplice__1088_.junction}} {-11680 4800 -13600 4800 } 0 1 10 1 0 {8 10 3} 0 {{}} -13520 4680 0 0 5 9 0 0 1 {} 
+w w_1074_ {{_lsplice_._lsplice__1084_.junction}} {{motor_eff.motor_eff_607_.spd}} {-11680 4800 -11680 3520 -11520 3520 } 0 1 10 1 0 {8 10 3} 0 {{}} -11392 4064 0 0 5 9 0 0 1 {} 
+w w_1007_ {{c_pwl.c_pwl_1000_.out}} {{cmult.cmult_1002_.in2}} {-14240 7680 -13600 7680 -13600 7840 } 0 1 10 0 0 {8 10 3} 0 {{}} -14000 7080 0 0 5 5 0 0 1 {} 
+w w_995_ {{_lsplice_._lsplice__996_.junction}} {{regulator_42v_USA.regulator_42v_USA_234_.vset}} {-8480 1280 -9760 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -8240 -1240 0 0 5 5 0 0 1 {} 
+w w_994_ {{ind_generator.ind_generator_586_.vset}} {{_lsplice_._lsplice__996_.junction}} {-8160 -1120 -8480 -1120 -8480 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -8240 -1240 0 0 5 5 0 0 1 {} 
+w w_993_ {{induction_motor.induction_motor_632_.vset}} {{_lsplice_._lsplice__996_.junction}} {-8480 4960 -8480 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -8400 4840 0 0 5 5 0 0 1 {} 
+w w_830_ {{power_meter.power_meter_775_.m}} {{induction_motor.induction_motor_632_.p}} {-5760 5920 -5760 6720 -7840 6720 } 0 1 10 1 1 {8 10 3} 0 {{}} -6384 6768 0 1 5 5 0 0 1 {} 
+w w_812_ {{gnd.gnd_246_.gnd}} {{batt_pb_1.batt_pb_1_1158_.m}} {6080 4640 6080 5120 5600 5120 5600 4800 } 0 1 10 0 0 {8 10 3} 0 {{}} 6160 5000 0 0 5 5 0 0 1 {} 
+w w_765_ {{induction_motor.induction_motor_632_.torquereq}} {{motor_eff.motor_eff_607_.trq}} {-8800 5120 -8800 2080 -11840 2080 -11840 2880 -11520 2880 } 0 2 10 1 0 {8 10 3} 0 {{}} -10144 2192 0 1 5 5 0 0 1 {} 
+w w_759_ {{induction_motor.induction_motor_632_.maxtorqgen}} {{motor_max_regen_trq.motor_max_regen_trq_611_.max_trq}} {-8960 5760 -9600 5760 -9600 4800 -9920 4800 } 0 1 10 0 0 {8 10 3} 0 {{}} -9520 5640 0 0 5 5 0 0 1 {} 
+w w_720_ {{generator_max_trq.generator_max_trq_594_.max_trq}} {{ind_generator.ind_generator_586_.torq_max_gen}} {-9280 -1920 -8800 -1920 -8800 -1760 -8320 -1760 } 0 1 10 0 0 {8 10 3} 0 {{}} -9200 -2040 0 0 5 5 0 0 1 {} 
+w w_715_ {{generator_eff.generator_eff_599_.eff}} {{ind_generator.ind_generator_586_.eff}} {-9280 -3840 -8320 -3840 -8320 -2080 } 0 1 10 0 0 {8 10 3} 0 {{}} -9200 -3960 0 0 5 5 0 0 1 {} 
+w w_713_ {{ind_generator.ind_generator_586_.speed}} {{_lsplice_._lsplice__600_.junction}} {-8320 -1280 -9440 -1280 -9440 -800 -11520 -800 -11520 -1440 } 0 1 10 1 0 {8 10 3} 0 {{}} -9360 -1560 0 0 5 9 0 0 1 {} 
+w w_494_ {{power_load.power_load_493_.p}} {{combo_loads.combo_loads_1_.p}} {5120 -1760 5120 -640 3680 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} 5200 -800 0 0 5 5 0 0 1 {} 
+w w_369_ {{gnd.gnd_288_.gnd}} {{load_speed_42V.load_speed_42V_1057_.m}} {-3680 6400 -3680 6464 } 0 1 10 0 0 {8 10 3} 0 {{}} -3440 6504 0 0 5 5 0 0 1 {} 
+w w_60_ {{gnd.gnd_59_.gnd}} {{batt_pb_1.batt_pb_1_70_.m}} {2240 2880 2240 3040 1760 3040 1760 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} 1840 2440 0 0 5 5 0 0 1 {} 
+w w_42_ {{rear_hvac.rear_hvac_20_.m}} {{heated_seat.heated_seat_6_.m}} {-320 -3200 640 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 -3320 0 0 5 5 0 0 1 {} 
+w w_41_ {{radio.radio_21_.m}} {{heated_seat.heated_seat_6_.m}} {1600 -3200 640 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} 720 -3320 0 0 5 5 0 0 1 {} 
+w w_39_ {{front_wiper.front_wiper_5_.m}} {{external_lights.external_lights_4_.m}} {1600 -1440 640 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} 720 -1560 0 0 5 5 0 0 1 {} 
+w w_38_ {{external_lights.external_lights_4_.m}} {{turn_signal.turn_signal_9_.m}} {640 -1440 -320 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 -1560 0 0 5 5 0 0 1 {} 
+w w_36_ {{brake_lights.brake_lights_0_.m}} {{misc.misc_7_.m}} {-1280 -1440 -2240 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 -1560 0 0 5 5 0 0 1 {} 
+w w_35_ {{misc.misc_7_.m}} {{radiator_fan.radiator_fan_8_.m}} {-2240 -1440 -3200 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -3120 -1560 0 0 5 5 0 0 1 {} 
+w w_34_ {{engine.engine_2_.m}} {{radiator_fan.radiator_fan_8_.m}} {-4160 -1440 -3200 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -4080 -1560 0 0 5 5 0 0 1 {} 
+w w_31_ {{radio.radio_21_.p}} {{heated_seat.heated_seat_6_.p}} {1600 -2400 640 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} 720 -2520 0 0 5 5 0 0 1 {} 
+w w_30_ {{heated_seat.heated_seat_6_.p}} {{rear_hvac.rear_hvac_20_.p}} {640 -2400 -320 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 -2520 0 0 5 5 0 0 1 {} 
+w w_29_ {{rear_hvac.rear_hvac_20_.p}} {{front_hvac.front_hvac_22_.p}} {-320 -2400 -1280 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} -1200 -2520 0 0 5 5 0 0 1 {} 
+w w_28_ {{front_hvac.front_hvac_22_.p}} {{rear_defrost.rear_defrost_24_.p}} {-1280 -2400 -2240 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 -2520 0 0 5 5 0 0 1 {} 
+w w_16_ {{engine.engine_2_.p}} {{radiator_fan.radiator_fan_8_.p}} {-4160 -640 -3200 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} -4080 -760 0 0 5 5 0 0 1 {} 
+w w_15_ {{radiator_fan.radiator_fan_8_.p}} {{misc.misc_7_.p}} {-3200 -640 -2240 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} -3120 -760 0 0 5 5 0 0 1 {} 
+w w_13_ {{turn_signal.turn_signal_9_.p}} {{external_lights.external_lights_4_.p}} {-320 -640 640 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 -760 0 0 5 5 0 0 1 {} 
+w w_12_ {{external_lights.external_lights_4_.p}} {{front_wiper.front_wiper_5_.p}} {640 -640 1600 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} 720 -760 0 0 5 5 0 0 1 {} 
+use brake_lights_0_ -1120 -1120 0 0 {} brake_lights {} {Default} { 
+{ref brake_lights1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -1488 -1728 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -1408 -544 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use combo_loads_1_ 3840 -960 0 0 {} combo_loads {} {Default} { 
+{ref combo_loads1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 3888 -1584 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 3376 -512 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 3872 -1776 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use engine_2_ -4000 -960 0 0 {} engine {} {Default} { 
+{ref engine1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 1 SABER {} {} -4272 -1744 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{vehicletype 1 SABER string {} -4400 -528 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use external_lights_4_ 800 -1120 0 0 {} external_lights {} {Default} { 
+{ref external_lights1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 432 -1712 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 496 -544 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 432 -1888 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use front_wiper_5_ 1760 -1120 0 0 {} front_wiper {} {Default} { 
+{ref front_wiper1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 1424 -1680 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 1440 -528 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use heated_seat_6_ 800 -2880 0 0 {} heated_seat {} {Default} { 
+{ref heated_seat1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 496 -3616 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 464 -2288 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} 496 -3808 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use misc_7_ -2240 -1120 0 0 {} misc {} {Default} { 
+{ref misc1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -2432 -1728 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -2432 -576 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use radiator_fan_8_ -3040 -1120 0 0 {} radiator_fan {} {Default} { 
+{ref radiator_fan1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -3344 -1744 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -3392 -544 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} -3344 -1952 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use turn_signal_9_ -160 -1120 0 0 {} turn_signal {} {Default} { 
+{ref turn_signal1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -464 -1696 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -448 -528 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+w w_17_ {{misc.misc_7_.p}} {{brake_lights.brake_lights_0_.p}} {-2240 -640 -1280 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 -760 0 0 5 5 0 0 1 {} 
+w w_18_ {{brake_lights.brake_lights_0_.p}} {{turn_signal.turn_signal_9_.p}} {-1280 -640 -320 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} -1200 -760 0 0 5 5 0 0 1 {} 
+use rear_wiper_19_ -3040 -2720 0 0 {} rear_wiper {} {Default} { 
+{ref rear_wiper1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -3424 -3584 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -3408 -2352 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use rear_hvac_20_ -160 -2720 0 0 {} rear_hvac {} {Default} { 
+{ref rear_hvac1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -576 -3568 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -496 -2288 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} -544 -3840 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use radio_21_ 1760 -2720 0 0 {} radio {} {Default} { 
+{ref radio1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} 1472 -3616 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} 1424 -2288 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use front_hvac_22_ -1120 -2880 0 0 {} front_hvac {} {Default} { 
+{ref front_hvac1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -1488 -3600 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -1456 -2288 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{loadchoice 1 SABER string {} -1488 -3840 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use rear_defrost_24_ -2080 -2880 0 0 {} rear_defrost {} {Default} { 
+{ref rear_defrost1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER string {} -2416 -3584 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{vehicletype 1 SABER string {} -2400 -2304 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{user_v1 12 SABER string {} -2512 -4000 0 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use gnd_47_ -4480 -1920 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_49_ 3680 -1600 0 0 {} gnd {} {Default} { 
+{connector {} {} {} {} 3840 -1600 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{name gnd {} {} {} 3840 -1440 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_54_ -4480 -3360 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_59_ 2240 2720 0 0 {} gnd {} {Default} {} { } {} 
+use batt_pb_1_70_ 1440 2560 0 0 {} batt_pb_1 {} {Default} { 
+{ref battery_2 {} {} {} 1168 1760 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{model (ah_nom=69,inom=3.45,rnom=.020,n_cell=5,sg_full=1.33,sg_disc=1.019,fah_thi=1.1,fc=.45,fah_max=1.2,self_disc=.45) SABER {} {} -4464 3152 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{sg0 1.303 SABER {} {} 1184 1584 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{temp { } SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 1520 1408 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_85_ {{front_hvac.front_hvac_22_.m}} {{rear_hvac.rear_hvac_20_.m}} {-1280 -3200 -320 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} -1200 -3320 0 0 5 5 0 0 1 {} 
+w w_89_ {{rear_defrost.rear_defrost_24_.m}} {{front_hvac.front_hvac_22_.m}} {-2240 -3200 -1280 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 -3320 0 0 5 5 0 0 1 {} 
+w w_98_ {{turn_signal.turn_signal_9_.m}} {{brake_lights.brake_lights_0_.m}} {-320 -1440 -1280 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -1200 -1560 0 0 5 5 0 0 1 {} 
+w w_180_ {{rear_defrost.rear_defrost_24_.p}} {{rear_wiper.rear_wiper_19_.p}} {-2240 -2400 -3200 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 -2520 0 0 5 5 0 0 1 {} 
+w w_182_ {{rear_wiper.rear_wiper_19_.m}} {{rear_defrost.rear_defrost_24_.m}} {-3200 -3200 -2240 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} -3120 -3320 0 0 5 5 0 0 1 {} 
+w w_201_ {{rear_wiper.rear_wiper_19_.m}} {{gnd.gnd_54_.gnd}} {-3200 -3200 -4480 -3200 } 0 1 10 0 0 {8 10 3} 0 {{}} -3120 -3320 0 0 5 5 0 0 1 {} 
+w w_202_ {{gnd.gnd_49_.gnd}} {{combo_loads.combo_loads_1_.m}} {3680 -1440 3680 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} 3760 -1400 0 0 5 5 0 0 1 {} 
+w w_208_ {{combo_loads.combo_loads_1_.p}} {{_lsplice_._lsplice__910_.junction}} {3680 -640 3040 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} 3120 -760 0 0 5 5 0 0 1 {} 
+use dcconvertideal_213_ -1760 2720 0 0 {} dcconvertideal {} {Default} { 
+{ref dcconvertideal1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_229_ -2080 1440 0 0 {} gnd {} {Default} {} { } {} 
+use regulator_42v_USA_234_ -9920 320 0 0 {} regulator_42v_USA {} {Default} { 
+{ref regulator_hiv_usa1 {} {} {} -11168 320 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{vehicletype 5 SABER string {} -10960 176 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{volt1 290 SABER string {} -10960 48 0 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{volt2 290 SABER string {} -10960 -80 0 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{tempreg 25 SABER string {} -10960 -208 0 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+use gnd_246_ 6080 4480 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_288_ -3680 6240 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_289_ 800 6240 0 0 {} gnd {} {Default} {} { } {} 
+use power_load_372_ -480 6880 0 0 {} power_load {} {Default} { 
+{ref user_power1_hiv {} {} {} -1152 7728 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load 50 SABER {} {} -912 7424 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 0 SABER {} {} -912 7584 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -896 7904 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_375_ -480 6240 0 0 {} gnd {} {Default} {} { } {} 
+w w_377_ {{power_load.power_load_372_.m}} {{gnd.gnd_375_.gnd}} {-480 6560 -480 6400 } 0 1 10 0 0 {8 10 3} 0 {{}} -400 6280 0 0 5 5 0 0 1 {} 
+use gnd_411_ -2720 6080 0 0 {} gnd {} {Default} {} { } {} 
+use load_user_defined_42V_437_ -2720 6720 0 0 {} load_user_defined_42V {} {Default} { 
+{loadcontrol 0 SABER string {} -3072 7728 1 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{ref load_user_defined_hiv {} {} {} -3360 7904 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use power_load_482_ 1920 6880 0 0 {} power_load {} {Default} { 
+{ref user_power3_hiv {} {} {} 1856 7760 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load {} SABER {} {} 1712 7408 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol {} SABER {} {} 1712 7568 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 1872 7936 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_488_ 1920 6240 0 0 {} gnd {} {Default} {} { } {} 
+w w_490_ {{power_load.power_load_482_.m}} {{gnd.gnd_488_.gnd}} {1920 6560 1920 6400 } 0 1 10 0 0 {8 10 3} 0 {{}} 2000 6280 0 0 5 5 0 0 1 {} 
+w w_492_ {{gnd.gnd_289_.gnd}} {{power_load.power_load_499_.m}} {800 6400 800 6560 } 0 1 10 0 0 {8 10 3} 0 {{}} 880 6440 0 0 5 5 0 0 1 {} 
+use power_load_493_ 5120 -2080 0 0 {} power_load {} {Default} { 
+{ref acc_elec_pwr {} {} {} 3888 -2288 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol 1 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load 0 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_495_ 5120 -2560 0 0 {} gnd {} {Default} {} { } {} 
+use power_load_499_ 800 6880 0 0 {} power_load {} {Default} { 
+{ref user_power2_hiv {} {} {} 192 7888 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{power_load 100 SABER {} {} 320 7440 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{loadcontrol {} SABER {} {} 416 7616 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use cmult_553_ -15360 -1600 0 0 {} cmult {} {Default} { 
+{ref mult1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_554_ {{cmult.cmult_553_.in2}} {{c_pwl.c_pwl_560_.out}} {-15360 -1920 -16000 -1920 } 0 1 10 0 0 {8 10 3} 0 {{}} -15440 -1880 0 0 5 5 0 0 1 {} 
+use c_pwl_556_ -16320 -1440 0 0 {} c_pwl {} {Default} { 
+{ref engine_rpm {} {} {} -16784 -1184 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,0.001,0,1,2200]} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -16688 -1024 2 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use c_pwl_560_ -16320 -1920 0 0 {} c_pwl {} {Default} { 
+{ref c_pwl {} {} {} -16528 -2288 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,.1,1]} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_563_ {{gnd.gnd_495_.gnd}} {{power_load.power_load_493_.m}} {5120 -2400 5120 -2400 } 0 1 10 0 0 {8 10 3} 0 {{}} 5200 -2520 0 0 5 5 0 0 1 {} 
+use _lsplice__567_ -480 7360 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_569_ {{_lsplice_._lsplice__567_.junction}} {{power_load.power_load_372_.p}} {-480 7360 -480 7200 } 0 1 10 0 0 {8 10 3} 0 {{}} -400 7400 0 0 5 5 0 0 1 {} 
+use _lsplice__572_ 800 7360 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_573_ {{power_load.power_load_499_.p}} {{_lsplice_._lsplice__572_.junction}} {800 7200 800 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} 880 7080 0 0 5 5 0 0 1 {} 
+use gnd_577_ -7360 -2400 0 0 {} gnd {} {Default} {} { } {} 
+w w_582_ {{ind_generator.ind_generator_586_.torquereq}} {{generator_eff.generator_eff_599_.trq}} {-7200 -1600 -6720 -1600 -6720 -4800 -11520 -4800 -11520 -4160 -10880 -4160 } 0 2 10 1 0 {8 10 3} 0 {{}} -8288 -4704 0 1 5 5 0 0 1 {} 
+use ind_generator_586_ -7680 -2240 0 0 {} ind_generator {} {Default} { 
+{ref ind_generator1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{inertia .01 SABER string {} -8816 -2656 0 0 0 5 1 {} 0 5 {} {} {} 6 l}
+} { } {} 
+w w_590_ {{generator_max_trq.generator_max_trq_594_.spd}} {{_lsplice_._lsplice__716_.junction}} {-10880 -1920 -11520 -1920 } 0 1 10 1 0 {8 10 3} 0 {{}} -11440 -2040 0 0 5 9 0 0 1 {} 
+t gr_592_ -11088 -192 19 11 0 0 0 0 7 0 {Generator} 6 {}
+r gr_593_ -12176 -5488 -6304 -112 20 1 10 3 0 0 6 {}
+use generator_max_trq_594_ -10080 -1920 0 0 {} generator_max_trq {} {Default} { 
+{ref generator_max_trq1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_597_ {{gnd.gnd_577_.gnd}} {{ind_generator.ind_generator_586_.m}} {-7360 -2240 -7360 -2080 -7520 -2080 } 0 1 10 0 0 {8 10 3} 0 {{}} -7440 -2200 0 0 5 5 0 0 1 {} 
+use generator_eff_599_ -10080 -3840 0 0 {} generator_eff {} {Default} { 
+{ref generator_eff1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use _lsplice__600_ -11520 -1440 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use motor_eff_607_ -10880 3200 0 0 {} motor_eff {} {Default} { 
+{model { } SABER string {} -11664 2304 0 0 0 5 1 {} 0 5 {} {} {} 6 l}
+{ref motor_eff1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+t gr_608_ -8448 8256 19 11 0 0 0 0 7 0 {Traction
+  Motor} 6 {}
+use motor_max_regen_trq_611_ -10720 4800 0 0 {} motor_max_regen_trq {} {Default} { 
+{ref motor_max_regen_trq1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_614_ {{induction_motor.induction_motor_632_.m}} {{gnd.gnd_620_.gnd}} {-7840 4800 -7520 4800 -7520 4640 } 0 1 10 0 0 {8 10 3} 0 {{}} -7440 4680 0 0 5 5 0 0 1 {} 
+use gnd_620_ -7520 4480 0 0 {} gnd {} {Default} {} { } {} 
+w w_623_ {{motor_eff.motor_eff_607_.eff}} {{induction_motor.induction_motor_632_.eff}} {-9920 3200 -9440 3200 -9440 5440 -8960 5440 } 0 1 10 1 0 {8 10 3} 0 {{}} -9840 3080 0 0 5 5 0 0 1 {} 
+use motor_max_motor_trq_626_ -10720 6080 0 0 {} motor_max_motor_trq {} {Default} { 
+{ref motor_max_motor_trq1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+r gr_627_ -12144 1776 -6528 8928 20 1 10 3 0 0 6 {}
+use induction_motor_632_ -8000 5120 0 0 {} induction_motor {} {Default} { 
+{ref induction_motor1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_637_ {{motor_max_motor_trq.motor_max_motor_trq_626_.max_trq}} {{induction_motor.induction_motor_632_.maxtorqmotor}} {-9920 6080 -8960 6080 } 0 1 10 1 0 {8 10 3} 0 {{}} -9840 5960 0 0 5 5 0 0 1 {} 
+w w_649_ {{_lsplice_._lsplice__572_.junction}} {{_lsplice_._lsplice__651_.junction}} {800 7360 1920 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} 880 7240 0 0 5 5 0 0 1 {} 
+use _lsplice__651_ 1920 7360 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_652_ {{power_meter.power_meter_789_.m}} {{_lsplice_._lsplice__651_.junction}} {2720 7360 1920 7360 } 0 1 10 0 0 {8 10 3} 0 {{}} 2480 7240 0 0 5 5 0 0 1 {} 
+w w_653_ {{_lsplice_._lsplice__651_.junction}} {{power_load.power_load_482_.p}} {1920 7360 1920 7200 } 0 1 10 0 0 {8 10 3} 0 {{}} 2000 7240 0 0 5 5 0 0 1 {} 
+use cmult_671_ -16160 3840 0 0 {} cmult {} {Default} { 
+{ref mult2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -16272 4192 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use c_pwl_672_ -16800 4000 0 0 {} c_pwl {} {Default} { 
+{ref mc_rpm {} {} {} -17264 4256 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,0.001,0,1,3000]} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -17168 4416 2 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_673_ {{cmult.cmult_671_.in2}} {{c_pwl.c_pwl_675_.out}} {-16160 3520 -16160 3360 -16480 3360 } 0 1 10 0 0 {8 10 3} 0 {{}} -16240 3400 0 0 5 5 0 0 1 {} 
+use c_pwl_675_ -16800 3360 0 0 {} c_pwl {} {Default} { 
+{ref sym16 {} {} {} -17008 2992 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,.1,1]} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use _lsplice__716_ -11520 -1920 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_717_ {{generator_eff.generator_eff_599_.spd}} {{_lsplice_._lsplice__716_.junction}} {-10880 -3520 -11520 -3520 -11520 -1920 } 0 1 10 1 0 {8 10 3} 0 {{}} -11440 -2040 0 0 5 9 0 0 1 {} 
+w w_718_ {{_lsplice_._lsplice__716_.junction}} {{_lsplice_._lsplice__600_.junction}} {-11520 -1920 -11520 -1440 } 0 1 10 1 0 {8 10 3} 0 {{}} -11440 -1560 0 0 5 9 0 0 1 {} 
+use power_meter_726_ -5440 2880 2 0 {} power_meter {} {Default} { 
+{ref gen {} {} {} -5072 2224 1 {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -4960 2432 2 {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_727_ {{ind_generator.ind_generator_586_.p}} {{power_meter.power_meter_726_.m}} {-7520 -1120 -5920 -1120 -5920 2880 -5760 2880 } 2 1 10 1 0 {8 10 3} 0 {{}} -5808 0 0 1 5 10 0 0 1 {} 
+w w_730_ {{power_meter.power_meter_726_.p}} {{_lsplice_._lsplice__735_.junction}} {-4960 2880 -4480 2880 } 0 1 10 1 0 {8 10 3} 0 {{}} -4720 2760 0 0 5 10 0 0 1 {} 
+use _lsplice__735_ -4480 2880 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use power_meter_769_ -3520 2880 0 0 {} power_meter {} {Default} { 
+{ref 14v_sys {} {} {} -4192 2304 1 {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -4192 2432 2 {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_770_ {{dcconvertideal.dcconvertideal_213_.in}} {{power_meter.power_meter_769_.m}} {-2528 2880 -3200 2880 } 0 1 10 0 0 {8 10 3} 0 {{}} -2480 2760 0 0 5 5 0 0 1 {} 
+w w_773_ {{power_meter.power_meter_769_.p}} {{_lsplice_._lsplice__735_.junction}} {-4000 2880 -4480 2880 } 0 1 10 0 0 {8 10 3} 0 {{}} -3952 2760 0 0 5 5 0 0 1 {} 
+use power_meter_775_ -5440 5920 2 0 {} power_meter {} {Default} { 
+{ref motor {} {} {} -4768 5344 1 {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -4768 5472 2 {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use power_meter_789_ 3040 7360 2 0 {} power_meter {} {Default} { 
+{ref loads_hiv {} {} {} 3712 6784 1 {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 3712 6912 2 {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use power_meter_792_ -160 2880 0 0 {} power_meter {} {Default} { 
+{ref pm_battery_2 {} {} {} -752 2256 1 {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -832 2432 2 {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_793_ {{batt_pb_1.batt_pb_1_70_.p}} {{power_meter.power_meter_792_.m}} {1120 2560 1120 2880 160 2880 } 0 1 10 1 3 {8 10 3} 0 {{}} 480 2960 0 1 5 5 0 0 1 {} 
+w w_798_ {{gnd.gnd_229_.gnd}} {{dcconvertideal.dcconvertideal_213_.com}} {-2080 1600 -2080 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} -2000 2440 0 0 5 5 0 0 1 {} 
+use power_meter_799_ 0 1440 0 0 {} power_meter {} {Default} { 
+{ref loads_trad {} {} {} -592 816 1 {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -672 992 2 {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use power_meter_814_ 4480 5440 0 0 {} power_meter {} {Default} { 
+{ref pm_battery_1 {} {} {} 3808 4864 1 {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} 3808 4992 2 {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_817_ {{batt_pb_1.batt_pb_1_1158_.p}} {{power_meter.power_meter_814_.m}} {4960 4800 4960 5440 4800 5440 } 0 1 10 0 0 {8 10 3} 0 {{}} 4880 5320 0 0 5 5 0 0 1 {} 
+use _lsplice__818_ 3680 5440 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_819_ {{power_meter.power_meter_814_.p}} {{_lsplice_._lsplice__818_.junction}} {4000 5440 3680 5440 } 0 1 10 1 0 {8 10 3} 0 {{}} 4080 5320 0 0 5 5 0 0 1 {} 
+w w_824_ {{_lsplice_._lsplice__825_.junction}} {{_lsplice_._lsplice__818_.junction}} {-4480 5440 3680 5440 } 0 1 10 1 0 {8 10 3} 0 {{}} -4400 5320 0 0 5 5 0 0 1 {} 
+use _lsplice__825_ -4480 5440 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_826_ {{power_meter.power_meter_775_.p}} {{_lsplice_._lsplice__825_.junction}} {-4960 5920 -4480 5920 -4480 5440 } 0 1 10 1 0 {8 10 3} 0 {{}} -4400 5480 0 0 5 5 0 0 1 {} 
+w w_827_ {{_lsplice_._lsplice__825_.junction}} {{_lsplice_._lsplice__735_.junction}} {-4480 5440 -4480 2880 } 0 1 10 1 0 {8 10 3} 0 {{}} -4400 2920 0 0 5 5 0 0 1 {} 
+w w_858_ {{c_pwl.c_pwl_672_.out}} {{cmult.cmult_671_.in1}} {-16480 4000 -16640 4000 } 0 1 10 0 0 {8 10 3} 0 {{}} -16560 3880 0 0 5 5 0 0 1 {} 
+w w_902_ {{load_user_defined_42V.load_user_defined_42V_437_.p}} {{load_speed_42V.load_speed_42V_1057_.p}} {-2720 7360 -3680 7360 -3680 7264 } 0 1 10 0 0 {8 10 3} 0 {{}} -3440 7144 0 0 5 5 0 0 1 {} 
+w w_903_ {{gnd.gnd_411_.gnd}} {{load_user_defined_42V.load_user_defined_42V_437_.m}} {-2720 6240 -2720 6240 } 0 1 10 0 0 {8 10 3} 0 {{}} -2640 6120 0 0 5 5 0 0 1 {} 
+w w_904_ {{power_meter.power_meter_799_.p}} {{_lsplice_._lsplice__906_.junction}} {-480 1440 -1120 1440 -1120 2880 } 0 1 10 0 0 {8 10 3} 0 {{}} -1040 2760 0 0 5 5 0 0 1 {} 
+use _lsplice__906_ -1120 2880 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_907_ {{dcconvertideal.dcconvertideal_213_.out}} {{_lsplice_._lsplice__906_.junction}} {-1760 2880 -1120 2880 } 0 1 10 0 0 {8 10 3} 0 {{}} -1040 2760 0 0 5 5 0 0 1 {} 
+w w_908_ {{_lsplice_._lsplice__906_.junction}} {{power_meter.power_meter_792_.p}} {-1120 2880 -640 2880 } 0 1 10 0 0 {8 10 3} 0 {{}} -560 2760 0 0 5 5 0 0 1 {} 
+use _lsplice__910_ 3040 -640 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_912_ {{_lsplice_._lsplice__910_.junction}} {{front_wiper.front_wiper_5_.p}} {3040 -640 1600 -640 } 0 1 10 0 0 {8 10 3} 0 {{}} 1680 -760 0 0 5 5 0 0 1 {} 
+w w_914_ {{_lsplice_._lsplice__910_.junction}} {{power_meter.power_meter_799_.m}} {3040 -640 3040 1440 320 1440 } 0 1 10 0 0 {8 10 3} 0 {{}} 400 1160 0 0 5 5 0 0 1 {} 
+use _lsplice__996_ -8480 1280 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use c_pwl_1000_ -14560 7680 0 0 {} c_pwl {} {Default} { 
+{ref c_pwl8 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,.1,1]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use cmult_1002_ -13600 8160 0 0 {} cmult {} {Default} { 
+{ref mult4 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_1010_ {{cmult.cmult_1002_.in1}} {{c_pwl.c_pwl_1011_.out}} {-14080 8320 -14240 8320 } 0 1 10 0 0 {8 10 3} 0 {{}} -14000 8200 0 0 5 5 0 0 1 {} 
+use c_pwl_1011_ -14560 8320 0 0 {} c_pwl {} {Default} { 
+{ref maxtorqueavail {} {} {} -15024 8576 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,0,0.001,0,1,2200]} SABER {} {} {} {} 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -14928 8736 2 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+r gr_1045_ -16368 6176 -13280 9280 20 1 10 3 0 0 22 {}
+t gr_1046_ -15168 6944 22 12 0 0 0 0 7 0 {maxtorqueavail 
+from ADVISOR} 6 {}
+r gr_1047_ -18624 2032 -15408 4736 20 1 10 3 0 0 22 {}
+t gr_1048_ -18288 3024 22 12 0 0 0 0 7 0 {mc_spd_req (rpm)
+from ADVISOR} 6 {}
+r gr_1050_ -17376 -2928 -14560 -656 20 1 10 3 0 0 22 {}
+t gr_1051_ -17200 -2112 22 12 0 0 0 0 7 0 {gc_spd_req 
+from ADVISOR fc} 6 {}
+w w_1053_ {{cmult.cmult_553_.in1}} {{c_pwl.c_pwl_556_.out}} {-15840 -1440 -16000 -1440 } 0 1 10 0 0 {8 10 3} 0 {{}} -15760 -1400 0 0 5 5 0 0 1 {} 
+t gr_1055_ -16384 -4176 7 3 0 0 0 0 7 0 {} 22 {}
+use load_speed_42V_1057_ -3680 6880 2 0 {} load_speed_42V {} {Default} { 
+{ref load_speed_hiv {} {} {} -2640 7424 1 {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} {} {} {} -2528 7648 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{loadcontrol {} SABER {} {} -2960 6032 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{user_rpm1 {} SABER {} {} -2960 5648 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{user_rpm2 {} SABER {} {} -2960 5520 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{user_pwr1 {} SABER {} {} -2960 5904 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{user_pwr2 {} SABER {} {} -2960 5776 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_1079_ {{motor_max_regen_trq.motor_max_regen_trq_611_.spd}} {{_lsplice_._lsplice__1084_.junction}} {-11520 4800 -11680 4800 } 0 1 10 0 0 {8 10 3} 0 {{}} -11440 4680 0 0 5 5 0 0 1 {} 
+use _lsplice__1084_ -11680 4800 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use _lsplice__1088_ -13600 4800 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use _lsplice__1121_ -11680 6080 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use starter_1129_ -4960 -1120 0 0 {} starter {} {Default} { 
+{ref starter_trad {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use _lsplice__1134_ -4480 -1600 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use starter_1140_ -1440 6720 0 0 {} starter {} {Default} { 
+{ref starter_hiv {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use _lsplice__1145_ -1440 7360 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use gnd_1146_ -1440 6080 0 0 {} gnd {} {Default} {} { } {} 
+use _lsplice__1152_ -5440 -6240 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use batt_pb_1_1158_ 5280 4800 0 0 {} batt_pb_1 {} {Default} { 
+{ref battery_1 {} {} {} 5008 4000 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{model (ah_nom=69,inom=3.45,rnom=.020,n_cell=134,sg_full=1.33,sg_disc=1.019,fah_thi=1.1,fc=.45,fah_max=1.2,self_disc=.45) SABER {} {} -624 5392 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+{sg0 1.303 SABER {} {} 5024 3824 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{temp { } SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 5360 3648 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use r_1160_ 160 6720 0 0 {} r {} {Default} { 
+{ref r1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{rnom 1000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use r_1162_ 2720 -2880 0 0 {} r {} {Default} { 
+{ref r2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{rnom 1000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use _lsplice__1166_ 160 7360 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use _lsplice__1172_ 2720 -2400 0 0 {} _lsplice_ {} {Default} {} { } {} 
+use _lsplice__1179_ -12800 -1440 0 0 {} _lsplice_ {} {Default} {} { } {} 

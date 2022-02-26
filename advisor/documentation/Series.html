@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Series Control Strategy</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Series Control Strategy</h1>
+</div>
+<h3 id="series-control-strategy"><strong><font size="+1">Series Control Strategy</font></strong></h3>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The control strategy determines at what torque and speed the engine should operate, to generate electric power via the generator, given the conditions of the motor, ESS pack, and/or the engine/fuel converter itself.  Usually such a strategy is designed to minimize fuel use or emissions or maximize ESS pack life.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The built-in series controls strategy offers flexibility in the fuel converter (FC) operation:</p>
+<ul>
+<li><font color="#000000">The FC may be turned off if the ESS pack SOC gets too high.</font></li>
+<li><font color="#000000">The FC may be turned on again if the power required by the bus gets high enough.</font></li>
+<li><font color="#000000">The FC may be turned on again if the SOC gets too low.</font></li>
+</ul>
+<p><font color="#000000">When the FC is on, its power output tends to follow the power required by the bus, accounting for losses in the generator so that the generator power output matches the bus power requirement.  However,</font></p>
+<ul>
+<li><font color="#000000">The FC output power may be adjusted by SOC, tending to bring the SOC back to the center of its operating range.</font></li>
+<li><font color="#000000">The FC output power may be kept above some minimum value.</font></li>
+<li><font color="#000000">The FC output power may be kept below some maximum value (which is enforced unless the SOC gets too low).</font></li>
+<li><font color="#000000">The FC output power may be allowed to change no faster than a prescribed rate.</font></li>
+</ul>
+<p><strong><u>Variables used in subsystem</u></strong><br />There are eleven variables that determine the control strategy.  Their influence on the engine operation are shown in the schematics below, and they are described in the following table.</p>
+<p>
+<p><em>Determining FC State (on/off)</em></p>
+<center>
+<div class="figure">
+<img src="seriesfo.gif" />
+</div>
+</center>
+<p>The above figure indicates the commanded fuel converter (FC) state as a function of ESS pack SOC, SOC-corrected fuel converter power required, and the FC’s previous state.</p>
+<p>SOC-corrected fuel converter power required is computed by:</p>
+<ol style="list-style-type: decimal">
+<li>estimating the FC output power required to make the generator output as much electrical power as is required by the bus for propulsion and accessory loads, and</li>
+<li>adding an SOC-dependent correction factor, cs_charge_pwr*fc_spd_scale*fc_trq_scale*((cs_hi_soc+cs_lo_soc)/2-SOC), that tends to bring the SOC to the middle of the range delimited by cs_hi_soc and cs_lo_soc.</li>
+</ol>
+<p>The asterisked boundary, which refers to the minimum power requirement to cause the FC to turn on when it was previously off,  has more dimensions than could be included in this graphic.</p>
+<p>In fact, if the FC was last on and SOC &lt; cs_hi_soc, the engine will stay on regardless of power command.  It may be useful to imagine that the yellow portion of the figure continues right of its current position, filling the space SOC &gt; cs_lo_soc and (power command) &gt; (1.2*cs_min_pwr*fc_trq_scale*fc_spd_scale).</p>
+<p>However, if the FC was previously off, and (the average of the last 5 s of fuel converter power command) &gt; (1.2*cs_min_pwr*fc_trq_scale*fc_spd_scale), AND (the time since the FC was last on) &gt; cs_min_off_time, the FC will start.  This temporal component of the logic isn’t displayed in the figure above.</p>
+<p>Finally, regardless of all other conditions, if the power required by the bus is greater than the ESS pack capability, the FC will turn/stay on.<br /> </p>
+<p><em>Determining FC Output Power</em><br />FC output power is as required by the generator to fulfill the bus requirement, with the following exceptions:</p>
+<ol style="list-style-type: decimal">
+<li>If the required SOC-corrected FC power is less than cs_min_pwr*fc_trq_scale*fc_spd_scale, the FC power is commanded to this minimum threshold.</li>
+<li>If the required SOC-corrected FC power is greater than cs_max_pwr*fc_trq_scale*fc_spd_scale AND the ESS pack SOC is greater than cs_lo_soc AND the power required by the bus (unadjusted by SOC or other factors) is less than the ESS pack capability , the FC power is commanded to this maximum threshold.</li>
+<li>The FC power command will increase no faster than cs_max_pwr_rise rate and decrease no faster than cs_max_pwr_fall_rate (which is a number &lt; 0).</li>
+</ol>
+<p><em>Determining FC Torque and Speed</em><br />The current version of the control strategy is designed for heat engines characterized by torque and speed.<font size="-2"><sup>1</sup>  </font>In a control script executed before the simulation is run, the locus of highest efficiency torque/speed points is computed over the range of genset (the combination of the engine and mated generator) powers.  The control strategy keeps the FC torque and speed on this locus using a lookup table defined by cs_pwr and cs_spd.</p>
+<p>
+<p><a href="cs_tips.html#Series">Control Strategy Tips</a><br /> </p>
+<center>
+  
+<table>
+<caption><strong>Series Control Strategy Variables</strong></caption>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Variable</strong></td>
+<td align="right"><strong>Units</strong></td>
+<td align="center"><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td align="center">cs_hi_soc</td>
+<td align="right">–</td>
+<td align="center">highest desired battery state of charge</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_lo_soc</td>
+<td align="right">–</td>
+<td align="center">lowest desired battery state of charge</td>
+</tr>
+<tr class="even">
+<td align="center">cs_charge_pwr</td>
+<td align="right">W</td>
+<td align="center">cs_charge_pwr*fc_spd_scale*fc_trq_scale*((cs_soc_hi+ cs_soc_lo)/2-SOC) is the SOC-stabilizing adjustment made to the bus power requirement</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_fc_init_state</td>
+<td align="right">–</td>
+<td align="center"> 1=&gt;fuel converter (FC) is initially on; 0=&gt;FC initially off</td>
+</tr>
+<tr class="even">
+<td align="center">cs_max_pwr</td>
+<td align="right">W</td>
+<td align="center">cs_max_pwr*fc_spd_scale*fc_trq_scale is the maximum power commanded of the fuel converter unless SOC&lt;cs_lo_soc</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_min_pwr</td>
+<td align="right">W</td>
+<td align="center">cs_min_pwr*fc_spd_scale*fc_trq_scale is the minimum power commanded of the fuel converter</td>
+</tr>
+<tr class="even">
+<td align="center">cs_max_pwr_fall_rate</td>
+<td align="right">W/s</td>
+<td align="center">cs_max_pwr_fall_rate*fc_spd_scale*fc_trq_scale is the fastest the fuel converter power command can decrease (this number &lt; 0)</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_max_pwr_rise_rate</td>
+<td align="right">W/s</td>
+<td align="center">cs_max_pw_rise_rate*fc_spd_scale*fc_trq_scale is the fastest the fuel converter power command can increase</td>
+</tr>
+<tr class="even">
+<td align="center">cs_min_off_time</td>
+<td align="right">s</td>
+<td align="center">the shortest allowed duration of a FC-off period; after this time has passed, the FC may restart if high enough powers are required by the bus</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_pwr</td>
+<td align="right">W</td>
+<td align="center">cs_pwr*fc_spd_scale*fc_trq_scale is the vector of FC powers that define the locus of best efficiency points throughout the genset map</td>
+</tr>
+<tr class="even">
+<td align="center">cs_spd</td>
+<td align="right">rad/s</td>
+<td align="center">cs_spd*fc_spd_scale is the vector of FC speeds in locus of best efficiency points, indexed by cs_pwr*fc_spd_scale*fc_trq_scale</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p><u>Example:</u><br /><em>Pure Thermostat as a Special Case of the General Control Strategy</em><br />To implement a pure thermostat control strategy, use something like the following values of the control strategy parameters:<br />cs_hi_soc=0.8;  <font color="#00CC00">% FC shuts off at 80% SOC</font><br />cs_lo_soc=0.4;  <font color="#00CC00">% FC turns on at 40% SOC</font><br />cs_fc_init_state=0;  <font color="#00CC00">% FC initially off</font><br />cs_min_pwr=max(fc_max_trq.*fc_map_spd)*.5;  <font color="#00CC00">% FC operates at no less than 50% max power when on</font><br />cs_max_pwr=max(fc_max_trq.*fc_map_spd)*.5; <font color="#00CC00">% FC operates at no more than 50% max power when on</font><br />cs_charge_pwr=0;  <font color="#00CC00">% FC output power, when on, is independent of SOC</font><br />cs_min_off_time=inf; <font color="#00CC00">% FC never restarts before SOC falls below cs_lo_soc</font><br />cs_max_pwr_rise_rate=0; <font color="#00CC00">% FC output power doesn’t increase while on</font><br />cs_max_pwr_fall_rate=0; <font color="#00CC00">% FC output power doesn’t decrease while on</font><br /> </p>
+<hr />
+<p><br /><sup><font size="-2">1</font></sup><font size="-1">It is possible to use it, however, to control other types of fuel converters such as fuel cells.  The fuel cell vehicle model included with ADVISOR 2.0 gives an example of this workaround.</font><br /> * * * * *</p>
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="2013-03-26" />
+  <title>Accessory Load Models (ADVISOR ver 2002)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Accessory Load Models (ADVISOR ver 2002)</h1>
+<h3 class="date">March 26, 2013</h3>
+</div>
+<h1 id="dedicated-auxiliary-load-models-using-configurable-subsystems">Dedicated Auxiliary Load Models using Configurable Subsystems</h1>
+<h2 id="implementation">Implementation</h2>
+<p>Advanced users of ADVISOR will notice two new blocks in the ADVISOR vehicle powertrain block diagrams: Mechanical and Electrical Accessory Loads. These blocks represent dedicated auxiliary load systems. The difference between the two blocks is the source of energy. The mechanical accessory blocks obtain their energy from a spinning shaft. Electrical loads require an electrical source (e.g., power bus) to power their loads.</p>
+<div align="center">
+<center>
+  
+<table>
+<col width="50%" />
+<col width="50%" />
+<tbody>
+<tr class="odd">
+<td align="right"><img src="../gui_graphics/bdi_acc_pic.bmp" /></td>
+<td align="right"><img src="../gui_graphics/bdi_acc_elec.bmp" /></td>
+</tr>
+<tr class="even">
+<td align="right">Mechanical Accessory Loads<br />(powered by mechanical shaft)</td>
+<td align="right">Electrical Accessory Loads<br />(powered by electrical source)</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>Each block contains a forward model and a backward model. In the backward model, the auxiliary blocks modify torque or power requests going up-stream to include that extra torque or power required to satisfy the accessory loads. In the forward model, torque or power is subtracted from power generated up-stream and sent to auxiliary loads. The remaining power flows downstream to the powertrain.</p>
+<p>These powertrain blocks are contained in a dedicated accessory loads library: lib_accessory (see &lt;ADVISOR main directory&gt;\models\library). The lib_accessory library makes extensive use of configurable sub-systems. Configurable sub-systems allow new models to be switched into a simulink model “on the fly”. One such model allows the simulation of speed-dependant mechanical accessory loads.</p>
+<p>To the casual user, these changes are transparent. The configurable subsystems are switched using an m-file function called adjust_config_bds.m (located in &lt;ADVISOR main directory&gt;\gui). The adjust_config_bds.m file is called by the GUI after the user sets up the vehicle definition. The adjust_config_bds.m file switches in the appropriate configurable subsystem model based upon <a href="version_type_help.html">version and type</a>, and\or variables sent to the workspace.</p>
+<h3 id="adding-your-own-configurable-subsystems"><a name="config_subsystemHOWTO">Adding your own configurable subsystems</a></h3>
+<p>It is now possible to add your own user models as configurable subsystems in the library. The process is relatively straightforward for users versed in Simulink. As an example, let us make a new auxiliary load file in the accessory library (in lib_accessory.mdl). Start by unlocking the library (edit&gt;unlock library). Next, copy and past an existing configurable sub-system block. Break the links between the new block you are working on and the old block (right click and link options&gt;disable link then link options&gt; break link). Enter the block and keep the inputs and outputs the same but change the “guts” of the model to implement your new system. Now, click on the configurable subsystem template in the library. Place a check box next to the new model you have just made. Viola! You now have a configurable subsystem model.</p>
+<p>Next, edit adjust_config_bds.m to add the new configurable subsystem choice to the appropriate portion of the switch-case menu. You may need to create your own custom m-file that will load in the appropriate initialization information for your new model. You can create a flag variable to use for adjust_config_bds if you do not wish to create a new version/type.</p>
+<div class="figure">
+<img src="lib_accessory.jpg" />
+</div>
+<p> </p>
+<hr />
+<center>
+<p>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a></p>
+</center>
+
+<hr />
+<center>
+<p>
+<p>Last revised: [30-April-2002] mpo<br />Created: [17-March-2002] mpo</p>
+</center>
+
+</body>
+</html>

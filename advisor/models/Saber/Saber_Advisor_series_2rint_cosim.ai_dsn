@@ -1,0 +1,15 @@
+[ai_design_8]
+[uniq_id]
+0
+[resources]
+<font>
+<color>
+<linestyle>
+<image>
+<layer>
+{electrical}
+{vis}
+{borderannotation}
+{probe}
+[sch_type]
+[gen_type]

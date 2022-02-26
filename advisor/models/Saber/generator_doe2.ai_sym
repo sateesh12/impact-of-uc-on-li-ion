@@ -1,0 +1,52 @@
+[symbol8]
+desc {}
+uniq 23
+[resources]
+<font>
+{-family Arial -size 2.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family fixed -size 10 -weight normal -slant roman -underline 0 -overstrike 0 -type pixel}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{} {#ffff00}
+{pink} {#ff00c000cb00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+320 480 
+<properties>
+primitive generator_doe2 { } string {} -544 -544 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+p 1120 640 1 0 1168 1168 784 0 7 1 1 0 0 1 {} 6
+vset 0 -320 1 0 -256 -256 -304 0 7 1 1 0 0 1 {} 6
+speed -480 640 1 0 -528 -528 608 0 7 1 1 0 0 1 {} 6
+m 1120 0 1 0 1120 1120 -32 0 7 1 1 0 0 1 {} 6
+sense 640 -320 1 0 704 704 -336 0 7 1 1 0 0 1 {} 6
+mech_pwr -480 320 1 0 -624 -624 240 0 7 1 1 0 0 1 {} 6
+torquereq -480 0 1 0 0 -624 -64 0 7 1 1 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-510 -350 1150 800
+l gr_1_ 0 1 1 0 1 10 2 0 {960 640 1120 640 } {8 10 3} 6 
+l gr_3_ 0 1 1 0 1 10 2 0 {-320 640 -496 640 } {8 10 3} 6 
+l gr_5_ 0 1 1 0 1 10 2 0 {640 -320 640 -160 } {8 10 3} 6 
+r gr_6_ -320 -160 960 800 0 1 10 2 0 0 6 
+l gr_9_ 0 1 1 0 1 10 2 0 {960 0 1120 0 } {8 10 3} 6 
+t gr_10_ -16 592 2 2 0 0 0 0 7 0 {DOE 2} 6 
+l gr_12_ 0 1 1 0 1 10 2 0 {-480 320 -320 320 } {8 10 3} 6 
+t gr_13_ -240 672 3 2 0 0 0 0 7 0 {} 6 
+l gr_14_ 0 1 1 0 1 10 2 0 {0 -320 0 -160 } {8 10 3} 6 
+l gr_22_ 0 1 1 0 1 10 2 0 {-480 0 -320 0 } {8 10 3} 6 

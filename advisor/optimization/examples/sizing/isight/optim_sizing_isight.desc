@@ -1,0 +1,166 @@
+MDOLVersion: 5.5
+CompilerOptions: warn
+
+Task isight
+
+    TaskHeader isight
+        Version: 1.0
+        Evaluation: taskplan
+        ControlMode: user
+        RunCounter: 10
+        Audit: on Milestone Error Info Status Milestone Error Info Status
+        Audit: off Normal Debug Normal Debug
+        BoundsPolicy: adjustvalue
+        CheckPoint: unknown
+         RandGenInit: 20737/18499/40085
+    End TaskHeader isight
+
+    Inputs isight
+        Parameter: essmodulenum Type: real InitialValue: 27.7
+        Parameter: fcpwrscale Type: real InitialValue: 1.2593
+        Parameter: esscapscale Type: real InitialValue: 1.08
+        Parameter: mctrqscale Type: real InitialValue: 1.5241
+    End Inputs isight
+
+    Outputs isight
+        Parameter: accel0to85 Type: real
+        Parameter: accel40to60 Type: real
+        Parameter: accel0to60 Type: real
+        Parameter: deltatrace Type: real
+        Parameter: grade Type: real
+        Parameter: deltasoc Type: real
+        Parameter: fe Type: real
+    End Outputs isight
+
+    SimCode Simcode0
+        InputFiles Simcode0
+            FileDescription indatam
+                FileType: standard
+                TemplateFile: "indata_sizing.m"
+                InputFile: "indata_sizing.m"
+                Parameters
+                    essmodulenum fcpwrscale esscapscale mctrqscale
+                Instructions
+                    find "X(1)=" ignore 
+                    replace word with $fcpwrscale 
+                    find "X(2)=" ignore 
+                    replace word with $mctrqscale 
+                    find "X(3)=" ignore 
+                    replace word with $essmodulenum 
+                    find "X(4)=" ignore 
+                    replace word with $esscapscale 
+                 End Instructions
+            End FileDescription indatam
+        End InputFiles Simcode0
+
+        OutputFiles Simcode0
+            FileDescription outdatatxt
+                FileType: standard
+                OutputFile: "outdata_sizing.txt"
+                Parameters
+                    accel0to85 accel40to60 accel0to60 deltatrace grade deltasoc fe
+                Instructions
+                    find "Fuel Economy: " ignore 
+                    read fe
+                    provide $fe 
+                    find "Delta SOC: " ignore 
+                    read deltasoc
+                    provide $deltasoc 
+                    find "Delta Trace: " ignore 
+                    read deltatrace
+                    provide $deltatrace 
+                    find "Accel 0-60: " ignore 
+                    read accel0to60
+                    provide $accel0to60 
+                    find "Accel 40-60: " ignore 
+                    read accel40to60
+                    provide $accel40to60 
+                    find "Accel 0-85: " ignore 
+                    read accel0to85
+                    provide $accel0to85 
+                    find "Grade: " ignore 
+                    read grade
+                    provide $grade
+                End Instructions
+            End FileDescription outdatatxt
+        End OutputFiles Simcode0
+
+        SimCodeProcess Simcode0
+            Program: "F:/MATLABR11/bin/matlab.exe"
+            ElapseTime: 8m 20s
+            Prologue
+                WriteInputSpecs: indatam
+            Epilogue
+                ReadOutputSpecs: outdatatxt
+            Execution: "$Program /automation -r optim_sizing_isight"
+        End SimCodeProcess Simcode0
+
+    End SimCode Simcode0
+
+    TaskProcess isight
+        Control: [
+            Simcode0
+        ]
+    End TaskProcess isight
+
+    Optimization isight
+        PotentialVariables:
+            essmodulenum fcpwrscale esscapscale mctrqscale
+        Variables:
+            essmodulenum fcpwrscale esscapscale mctrqscale
+        VariableScaling
+            Parameter: essmodulenum ScaleFactor: 1.0
+            Parameter: fcpwrscale ScaleFactor: 1.0
+            Parameter: esscapscale ScaleFactor: 1.0
+            Parameter: mctrqscale ScaleFactor: 1.0
+        InputConstraints
+            Parameter: essmodulenum LowerBound: 11 UpperBound: 35
+            Parameter: fcpwrscale LowerBound: 1 UpperBound: 3
+            Parameter: esscapscale LowerBound: 0.333 UpperBound: 2
+            Parameter: mctrqscale LowerBound: 0.8 UpperBound: 2.5
+        PotentialObjectives:
+            essmodulenum fcpwrscale esscapscale mctrqscale accel0to85 accel40to60
+            accel0to60 deltatrace grade deltasoc fe
+        Objectives
+            Parameter: fe Direction: minimize Weight: 1.0 ScaleFactor: 1.0
+        OutputConstraints
+            Parameter: accel0to85 UpperBound: 20.0 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: accel40to60 UpperBound: 4.4 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: accel0to60 UpperBound: 11.2 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: deltatrace UpperBound: 2 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: grade LowerBound: 6.5 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: deltasoc UpperBound: 0.005 Weight: 1.0 ScaleFactor: 1.0
+
+        OptimizePlan NewPlan
+            DefaultUpperBound: 1E15
+            UseScaling: yes
+            OptimizeStep Step1
+                Technique: "Sequential Quadratic Programming - DONLP"
+                Options
+            Control: [
+                Step1
+            ]
+
+        # PLAN TO BE CONFIGURED BY ADVISOR:
+        OptimizePlan PriorityRankedPlan
+            Control: [
+            ]
+    End Optimization isight
+
+    TaskPlan isight
+        Control: [
+            NewPlan
+        ]
+    End TaskPlan isight
+
+    DataStorage isight
+        Restore: no
+        DataLog: "optim_sizing_isight.db" Mode: overwrite
+        DataLookUp: "isight.db"
+        MatchMode: Exact
+        Levels: all
+        StoreGradRuns: yes
+        StoreApproxRuns: yes
+    End DataStorage isight
+
+End Task isight

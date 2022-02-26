@@ -1,0 +1,71 @@
+# starter.sin
+# symbol = starter.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+########################################################################
+#
+#   DESCRIPTION:
+#   -----------
+#
+#   Starter senses when the vehicle speed is positive.  If x is the length
+#   of a start pulse, it also senses if vehicle speed is zero at time
+#   t - x.  In this case, the requisite power is applied to the starter.
+#   Thus, a rectangular pulse of length startlength (in seconds) and power
+#   startpower ( in watts ) is applied starting when the vehicle starts
+#   moving.  It would be better to anticipate, but this probably has no
+#   consequences.
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]      [type]      [description]
+#   p       electrical  + current enters this node
+#   m       electrical  + current leaves this node
+#       engspeed        nu              connect to engine crank shaft signal (rpm)
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#       startlength     nu              length of starting event in seconds
+#       startcurrent    nu              current required by the starter
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]      [units]     [description]
+#       i           Amps        Current draw for this model
+#   p_starter   Watts       Power consumed for this load
+#
+###############################################################################
+encrypted template starter  p m engspeed = loadcontrol, startlength, start_power
+electrical p, m
+ref nu engspeed
+number loadcontrol = 0
+number startlength = 1.0
+number start_power = 370
+!crypt_start
+008abac6f7c2526a8a6
+008b427066c90c1b1a5
+008f5b34711da3c1246
+008bfb352a860ac0dee
+0164f440f080d4c1814bbb313e1414c1844
+016efcf5d3c626c3835f8b9ccc490c1e9b6
+008ef975d67626a6d3e
+016b92e063c8dc9b1f3b99711352b0cb50b
+048f0c51c7d336d38284d13310a7ce942f0b3d81c7f6705ac4257131a577eac42ebaba350579d2c1c00ff27176c9f3c1210
+024a0a586c42b17eb03e9ae06e12b17ea03ef27136c6636e3a6
+016b1f8d1902b12fe03a9f67a38627e7d35
+01641525d1741000544adff50aed96e5c44
+024abed796c3436e3bbedc05d737c696c04e6b354549099bba5
+048a0a586c42b50eb5be9e402b14f4c084dbbebc085336d38284d13310ac6795d47e3e1c0c4ce360310b0b3064790c1b1a5
+008a6be2e6c6636e3a6
+016e6fd5708c3755344bab348e1963c1210
+016a0b31be87ce100b9e2b9ddc4963c5b10
+008b4b313e12cac0da7
+01618560d2713184114a127426c2b41e303
+}

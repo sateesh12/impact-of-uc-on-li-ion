@@ -1,0 +1,5 @@
+Guide:SetArray Form {
+{tag,.tr,Current} {{tend {1372}} {tstep {1u}} {monitor {100}} {dcchoice {yes}} {plot {replace}} {terror {0.00001}} {density {10}} {siglist {/...}} {tniter {10}} {nsdensity {10}}}
+{tag,.tr,Previous} {{tend {10}} {tstep {.1u}} {monitor {100}} {dcchoice {yes}} {plot {replace}} {terror {0.00001}} {density {10}} {siglist {/...}} {tniter {10}} {nsdensity {10}}}
+}
+

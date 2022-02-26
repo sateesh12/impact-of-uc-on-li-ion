@@ -1,0 +1,55 @@
+[symbol8]
+desc {}
+uniq 138
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family fixed -size 10 -weight normal -slant roman -underline 0 -overstrike 0 -type pixel}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 4.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ffffc0c0cbcb}
+{} {#ffff00}
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive generator_generic { } string {} -752 -784 0 0 0 5 3 {} 0 1 {} {} {} 6 l
+ref generator_generic_14v { } string {} -752 -912 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+p 800 320 1 0 848 848 464 0 7 1 2 0 0 5 {} 6
+m 800 -320 1 0 800 800 -352 0 7 1 2 0 0 5 {} 6
+sense 320 -640 1 0 384 384 -656 0 7 1 2 0 0 5 {} 6
+vset -320 -640 1 0 -576 -576 -624 0 7 1 2 0 0 5 {} 6
+mech_pwr -800 0 1 0 -944 -944 -80 0 7 1 2 0 0 5 {} 6
+speed -800 320 1 0 -848 -848 288 0 7 1 2 0 0 5 {} 6
+torquereq -800 -320 1 0 0 -1072 -400 0 7 1 2 0 0 5 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-830 -670 830 480
+r gr_0_ -640 -480 640 480 0 1 10 1 0 0 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {640 320 800 320 } {8 10 3} 6 
+l gr_2_ 0 1 1 0 1 10 1 0 {640 -320 800 -320 } {8 10 3} 6 
+l gr_3_ 0 1 1 0 1 10 1 0 {-640 320 -816 320 } {8 10 3} 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {-800 0 -640 0 } {8 10 3} 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {-320 -640 -320 -480 } {8 10 3} 6 
+l gr_7_ 0 1 1 0 1 10 1 0 {320 -640 320 -480 } {8 10 3} 6 
+t gr_50_ -560 352 2 1 0 0 0 0 7 0 {} 6 
+t gr_93_ -336 272 3 1 0 0 0 0 7 0 {Generic
+Generator} 6 
+l gr_137_ 0 1 1 0 1 10 1 0 {-800 -320 -640 -320 } {8 10 3} 6 

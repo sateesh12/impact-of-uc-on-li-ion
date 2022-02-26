@@ -1,0 +1,1763 @@
+Library {
+  Name			  "lib_interactive"
+  Version		  4.1.1
+  LibraryLinkDisplay	  "user"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Dec 04 12:28:30 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "abrooker"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Feb 11 09:34:48 2003"
+  ModifiedComment	  "abrooker -- Tue May 14 11:03:09 2002 -- Version 1.2"
+"39\n"
+  ModifiedHistory	  "abrooker -- Tue May 14 11:03:09 2002 -- Version 1.2"
+"39\n\n\nmokeefe -- Thu Apr 18 08:35:49 2002 -- Version 1.238\nsaving the mode"
+"l:\no \"without the model browser open\"\no with only top-level screen visibl"
+"e \no with \"fit to view\" enabled\no with \"status bar\" off and \"toolbar\""
+" off\no with \"prompt to update model history with each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:269>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_interactive"
+    Location		    [63, 128, 387, 430]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Interactive Graphics"
+      Ports		      []
+      Position		      [112, 70, 177, 124]
+      ShowPortLabels	      on
+      BlockChoice	      "off"
+      TemplateBlock	      "self"
+      MemberBlocks	      "off,on"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Interactive Graphics"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "off"
+	  Tag			  "Altia_off"
+	  Ports			  []
+	  Position		  [100, 40, 140, 80]
+	  Orientation		  "up"
+	  SourceBlock		  "lib_interactive/off"
+	  SourceType		  "Unknown"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "off"
+      Tag		      "Altia_off"
+      Ports		      []
+      Position		      [46, 167, 117, 222]
+      Orientation	      "up"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('results.bmp'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"off"
+	Location		[135, 385, 421, 561]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Altia_Run"
+	  Position		  [45, 75, 75, 105]
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  Position		  [120, 78, 215, 102]
+	  GotoTag		  "Altia_Run"
+	  TagVisibility		  "global"
+	}
+	Line {
+	  SrcBlock		  "Altia_Run"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "on"
+      Tag		      "Altia_on"
+      Ports		      []
+      Position		      [185, 165, 257, 224]
+      Orientation	      "up"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('interactive.bmp'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"on"
+	Location		[198, 122, 472, 353]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DynamicGraphics"
+	  Ports			  []
+	  Position		  [85, 75, 185, 125]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskInitialization	  "[fileInfo,resultFile]=getFileInfo;\naxisLim"
+"its=writeAltiaBmps(1,fileInfo);\nwriteAltiaInfoFile(1,fileInfo,resultFile,axi"
+"sLimits);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "DynamicGraphics"
+	    Location		    [126, 44, 955, 982]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Gain
+	      Name		      "(gal => g)"
+	      Position		      [190, 252, 215, 278]
+	      Gain		      "eval('1/(1/fc_fuel_den*61.02/231)','0')"
+	      Multiplication	      "Element-wise(K.*u)"
+	      SaturateOnIntegerOverflow	on
+	      Port {
+		PortNumber		1
+		Name			"fc_fuel_rate1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "Altia_Advisor2"
+	      Ports		      [44, 5]
+	      Position		      [405, 61, 460, 1144]
+	      BackgroundColor	      "yellow"
+	      OpenFcn		      "AltiaClk"
+	      FontName		      "Arial"
+	      FontSize		      12
+	      FunctionName	      "altiasfn"
+	      Parameters	      "NumAltiaSfnInputs,NumAltiaSfnOutputs,AL"
+"TIAHOME"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "libsdde.lib user32.lib"
+	      MaskDescription	      "This block allows you to connect your s"
+"ignals to an Altia Design file.  Specify the number of Inputs and Outputs you"
+" would like the Altia block to have (each line connected to the block can onl"
+"y be ONE signal wide ... no muxing into the Altia block)."
+	      MaskHelp		      "The first box is the number of inputs t"
+"o the Altia S-Function.  The second box is the number of ouputs for the Altia"
+" S-Function."
+	      MaskPromptString	      "Inputs to Altia S-Function:|Outputs to "
+"Altia S-Function:"
+	      MaskStyleString	      "edit,edit"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskVariables	      "NumAltiaSfnInputs=@1;NumAltiaSfnOutputs"
+"=@2;"
+	      MaskInitialization      "altiahome"
+	      MaskDisplay	      "disp('A L T I A')"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "44|5"
+	      MaskVariableAliases     ","
+	      Port {
+		PortNumber		1
+		Name			"time"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"simRun"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"altia_grade"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"altia_cyc_mph_r"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"time_gain"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Derivative
+	      Name		      "Derivative"
+	      Position		      [240, 250, 270, 280]
+	      Port {
+		PortNumber		1
+		Name			"fc_fuel_rate1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [35, 156, 190, 174]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "SOC"
+	      Port {
+		PortNumber		1
+		Name			"ess_soc_hist1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [40, 306, 195, 324]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "fc_spd_est"
+	      Port {
+		PortNumber		1
+		Name			"fc_spd_est1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From10"
+	      Position		      [45, 856, 200, 874]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "trace_miss"
+	      Port {
+		PortNumber		1
+		Name			"trace_miss1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From11"
+	      Position		      [535, 1045, 605, 1065]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "Altia_Run"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From12"
+	      Position		      [45, 1106, 200, 1124]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "cyc_mph_r_orig"
+	      Port {
+		PortNumber		1
+		Name			"cyc_mphr"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From13"
+	      Position		      [45, 1131, 200, 1149]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade_orig"
+	      Port {
+		PortNumber		1
+		Name			"cyc_grade"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      Position		      [45, 406, 200, 424]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "fc_pwr_out_a"
+	      Port {
+		PortNumber		1
+		Name			"fc_pwr_out_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      Position		      [45, 456, 200, 474]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "fc_eff_out_a"
+	      Port {
+		PortNumber		1
+		Name			"fc_eff_out_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From16"
+	      Position		      [40, 206, 195, 224]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "ess_pwr_out_a"
+	      Port {
+		PortNumber		1
+		Name			"ess_pwr_out_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From17"
+	      Position		      [45, 606, 200, 624]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "gc_pwr_out_a"
+	      Port {
+		PortNumber		1
+		Name			"gc_pwr_out_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From18"
+	      Position		      [45, 1056, 200, 1074]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_pwr_rr_a"
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_rr_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From19"
+	      Position		      [45, 906, 200, 924]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_pwr_accel_a"
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_accel_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [40, 356, 195, 374]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "fc_brake_trq"
+	      Port {
+		PortNumber		1
+		Name			"fc_brake_trq1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From20"
+	      Position		      [45, 956, 200, 974]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_pwr_ascent_a"
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_ascent_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From21"
+	      Position		      [45, 1006, 200, 1024]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_pwr_drag_a"
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_drag_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [45, 506, 200, 524]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "fuel"
+	      Port {
+		PortNumber		1
+		Name			"gal1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [45, 556, 200, 574]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "gear_num"
+	      Port {
+		PortNumber		1
+		Name			"gear_number1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [45, 656, 200, 674]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade_orig"
+	      Port {
+		PortNumber		1
+		Name			"grade1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      Position		      [45, 706, 200, 724]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "mc_spd_out_a"
+	      Port {
+		PortNumber		1
+		Name			"mc_spd_out_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From7"
+	      Position		      [20, 256, 175, 274]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "fuel"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From8"
+	      Position		      [45, 756, 200, 774]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "mc_trq_out_a"
+	      Port {
+		PortNumber		1
+		Name			"mc_trq_out_a1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From9"
+	      Position		      [45, 806, 200, 824]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "mpha"
+	      Port {
+		PortNumber		1
+		Name			"mpha1"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<main>"
+	      Position		      [620, 986, 685, 1004]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	      Port {
+		PortNumber		1
+		Name			"time"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From<main>1"
+	      Position		      [60, 56, 125, 74]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	      Port {
+		PortNumber		1
+		Name			"time"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [715, 418, 810, 442]
+	      GotoTag		      "Altia_Run"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [560, 596, 685, 614]
+	      ShowName		      off
+	      GotoTag		      "altia_grade"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [555, 811, 680, 829]
+	      ShowName		      off
+	      GotoTag		      "altia_cyc_mph_r"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground"
+	      Position		      [285, 180, 305, 200]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"ess_soc_hist2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground1"
+	      Position		      [290, 280, 310, 300]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"fc_fuel_rate2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground10"
+	      Position		      [295, 880, 315, 900]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"trace_miss2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground11"
+	      Position		      [285, 80, 305, 100]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"MinPosTimeStep"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground12"
+	      Position		      [285, 105, 305, 125]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"MinNegTimeStep"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground13"
+	      Position		      [285, 130, 305, 150]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"SimLength"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground14"
+	      Position		      [295, 430, 315, 450]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"fc_pwr_out_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground15"
+	      Position		      [295, 480, 315, 500]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"fc_eff_out_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground16"
+	      Position		      [290, 230, 310, 250]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"ess_pwr_out_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground17"
+	      Position		      [295, 630, 315, 650]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"gc_pwr_out_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground18"
+	      Position		      [295, 1080, 315, 1100]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_rr_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground19"
+	      Position		      [295, 930, 315, 950]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_accel_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground2"
+	      Position		      [290, 330, 310, 350]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"fc_spd_est2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground20"
+	      Position		      [295, 980, 315, 1000]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_ascent_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground21"
+	      Position		      [295, 1030, 315, 1050]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"veh_pwr_drag_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground3"
+	      Position		      [290, 380, 310, 400]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"fc_brake_trq2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground4"
+	      Position		      [295, 530, 315, 550]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"gal2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground5"
+	      Position		      [295, 580, 315, 600]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"gear_number2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground6"
+	      Position		      [295, 680, 315, 700]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"grade2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground7"
+	      Position		      [295, 730, 315, 750]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"mc_spd_out_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground8"
+	      Position		      [295, 780, 315, 800]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"mc_trq_out_a2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground9"
+	      Position		      [295, 830, 315, 850]
+	      ShowName		      off
+	      Port {
+		PortNumber		1
+		Name			"mpha2"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      InitialCondition
+	      Name		      "IC1"
+	      Position		      [645, 415, 675, 445]
+	      Value		      "1"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [680, 1030, 710, 1060]
+	      Threshold		      ".5"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      Position		      [550, 165, 570, 185]
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Time Pause"
+	      Ports		      [2]
+	      Position		      [735, 1020, 775, 1055]
+	      NamePlacement	      "alternate"
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"Time Pause"
+		Location		[616, 197, 1106, 470]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "clock"
+		  Position		  [30, 108, 60, 122]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "time_gain"
+		  Position		  [30, 143, 60, 157]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux1"
+		  Ports			  [1, 2]
+		  Position		  [300, 71, 305, 164]
+		  BackgroundColor	  "black"
+		  ShowName		  off
+		  Outputs		  "2"
+		  BusSelectionMode	  off
+		}
+		Block {
+		  BlockType		  InitialCondition
+		  Name			  "IC"
+		  Position		  [105, 120, 135, 150]
+		  Value			  "1"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [4, 1]
+		  Position		  [175, 101, 180, 139]
+		  ShowName		  off
+		  Inputs		  "4"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "last_clock_t"
+		  Position		  [345, 125, 375, 155]
+		  X0			  "0"
+		  InheritSampleTime	  off
+		  RTWStateStorageClass	  "Auto"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "last_real_t"
+		  Position		  [345, 80, 375, 110]
+		  X0			  "0"
+		  InheritSampleTime	  off
+		  RTWStateStorageClass	  "Auto"
+		}
+		Block {
+		  BlockType		  MATLABFcn
+		  Name			  "pause_time"
+		  Position		  [200, 105, 260, 135]
+		  MATLABFcn		  "pause_time(u(1),u(2),u(3),u(4))"
+		  OutputDimensions	  "2"
+		  OutputSignalType	  "auto"
+		  Output1D		  on
+		}
+		Line {
+		  SrcBlock		  "IC"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "time_gain"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "IC"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "last_real_t"
+		  SrcPort		  1
+		  Points		  [25, 0; 0, -35; -245, 0]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "last_clock_t"
+		  SrcPort		  1
+		  Points		  [25, 0; 0, 50; -245, 0]
+		  DstBlock		  "Mux"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  2
+		  DstBlock		  "last_clock_t"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  1
+		  DstBlock		  "last_real_t"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "clock"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "pause_time"
+		  SrcPort		  1
+		  DstBlock		  "Demux1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "pause_time"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Triggered\nSubsystem"
+	      Ports		      [1, 1, 0, 1]
+	      Position		      [545, 412, 600, 448]
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      on
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"Triggered\nSubsystem"
+		Location		[405, 576, 903, 876]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  TriggerPort
+		  Name			  "Trigger"
+		  Ports			  []
+		  Position		  [225, 20, 245, 40]
+		  TriggerType		  "falling"
+		  ShowOutputPort	  off
+		  OutputDataType	  "auto"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [360, 103, 390, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "1"
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Triggered\nSubsystem"
+	      SrcPort		      1
+	      DstBlock		      "IC1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "simRun"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Altia_Advisor2"
+	      SrcPort		      2
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"Triggered\nSubsystem"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[70, 0]
+		DstBlock		"Triggered\nSubsystem"
+		DstPort			trigger
+	      }
+	    }
+	    Line {
+	      Name		      "cyc_grade"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From13"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      44
+	    }
+	    Line {
+	      Name		      "cyc_mphr"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From12"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      43
+	    }
+	    Line {
+	      Name		      "time"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Altia_Advisor2"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "MinPosTimeStep"
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Ground11"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "MinNegTimeStep"
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Ground12"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "SimLength"
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Ground13"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "time"
+	      Labels		      [-1, 0]
+	      SrcBlock		      "From<main>1"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "ess_soc_hist1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "ess_soc_hist2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "From7"
+	      SrcPort		      1
+	      DstBlock		      "(gal => g)"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "fc_fuel_rate2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground1"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      10
+	    }
+	    Line {
+	      Name		      "fc_spd_est1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      11
+	    }
+	    Line {
+	      Name		      "fc_spd_est2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground2"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      12
+	    }
+	    Line {
+	      Name		      "fc_brake_trq1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      13
+	    }
+	    Line {
+	      Name		      "fc_brake_trq2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground3"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      14
+	    }
+	    Line {
+	      Name		      "gal1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      19
+	    }
+	    Line {
+	      Name		      "gal2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground4"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      20
+	    }
+	    Line {
+	      Name		      "gear_number1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      21
+	    }
+	    Line {
+	      Name		      "gear_number2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground5"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      22
+	    }
+	    Line {
+	      Name		      "grade1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      25
+	    }
+	    Line {
+	      Name		      "grade2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground6"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      26
+	    }
+	    Line {
+	      Name		      "mc_spd_out_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      27
+	    }
+	    Line {
+	      Name		      "mc_spd_out_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground7"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      28
+	    }
+	    Line {
+	      Name		      "mc_trq_out_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From8"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      29
+	    }
+	    Line {
+	      Name		      "mc_trq_out_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground8"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      30
+	    }
+	    Line {
+	      Name		      "mpha1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From9"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      31
+	    }
+	    Line {
+	      Name		      "mpha2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground9"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      32
+	    }
+	    Line {
+	      Name		      "trace_miss1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From10"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      33
+	    }
+	    Line {
+	      Name		      "trace_miss2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground10"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      34
+	    }
+	    Line {
+	      Name		      "altia_grade"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Altia_Advisor2"
+	      SrcPort		      3
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "altia_cyc_mph_r"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Altia_Advisor2"
+	      SrcPort		      4
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "time_gain"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Altia_Advisor2"
+	      SrcPort		      5
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "IC1"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "time"
+	      Labels		      [1, 0]
+	      SrcBlock		      "From<main>"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 35]
+	      DstBlock		      "Time Pause"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Time Pause"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From11"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		DstBlock		"Switch"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, -10]
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      Name		      "fc_fuel_rate1"
+	      SrcBlock		      "(gal => g)"
+	      SrcPort		      1
+	      DstBlock		      "Derivative"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "fc_fuel_rate1"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Derivative"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      9
+	    }
+	    Line {
+	      Name		      "fc_pwr_out_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      15
+	    }
+	    Line {
+	      Name		      "fc_pwr_out_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground14"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      16
+	    }
+	    Line {
+	      Name		      "fc_eff_out_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      17
+	    }
+	    Line {
+	      Name		      "fc_eff_out_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground15"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      18
+	    }
+	    Line {
+	      Name		      "ess_pwr_out_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From16"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      7
+	    }
+	    Line {
+	      Name		      "ess_pwr_out_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground16"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      8
+	    }
+	    Line {
+	      Name		      "gc_pwr_out_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From17"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      23
+	    }
+	    Line {
+	      Name		      "gc_pwr_out_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground17"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      24
+	    }
+	    Line {
+	      Name		      "veh_pwr_accel_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From19"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      35
+	    }
+	    Line {
+	      Name		      "veh_pwr_accel_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground19"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      36
+	    }
+	    Line {
+	      Name		      "veh_pwr_ascent_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From20"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      37
+	    }
+	    Line {
+	      Name		      "veh_pwr_ascent_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground20"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      38
+	    }
+	    Line {
+	      Name		      "veh_pwr_drag_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From21"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      39
+	    }
+	    Line {
+	      Name		      "veh_pwr_drag_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground21"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      40
+	    }
+	    Line {
+	      Name		      "veh_pwr_rr_a1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From18"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      41
+	    }
+	    Line {
+	      Name		      "veh_pwr_rr_a2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground18"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Advisor2"
+	      DstPort		      42
+	    }
+	  }
+	}
+      }
+    }
+    Annotation {
+      Position		      [71, 21]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      Text		      "Interactive Library:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+    }
+  }
+}

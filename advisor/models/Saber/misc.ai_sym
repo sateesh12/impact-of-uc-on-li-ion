@@ -1,0 +1,42 @@
+[symbol6]
+desc {}
+uniq 39
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+misc_0
+-160 -350 640 510
+0 0 
+<properties>
+primitive misc { } string {} -272 -496 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref misc { } string {} -272 -624 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+p 0 480 1 0 32 32 448 7 1 2 0 0 4 {} 6
+m 0 -320 1 0 32 32 -160 7 1 2 0 0 4 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+r gr_1_ -160 -160 640 320 0 1 10 1 0 0 6 
+t gr_3_ -144 304 2 1 0 0 0 0 7 0 {Misc.} 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {0 320 0 480 } {8 10 3} 6 
+l gr_8_ 0 1 1 0 1 10 1 0 {0 -160 0 -320 } {8 10 3} 6 

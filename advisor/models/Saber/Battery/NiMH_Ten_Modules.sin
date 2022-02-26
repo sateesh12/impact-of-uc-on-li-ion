@@ -1,0 +1,66 @@
+################################################################################
+#                                                                              #
+#  Saber netlist for design NiMH_Ten_Modules                                   #
+#  Created by the Saber Integration Toolkit 5.2.2-3.4 of Analogy, Inc.         #
+#  Created on Mon Jan 07 14:24:14 2002.                                        #
+#                                                                              #
+################################################################################
+
+################################################################################
+#                                                                              #
+#  Intermediate template NiMH_Model                                            #
+#                                                                              #
+################################################################################
+
+template NiMH_Model m:m p:p soc:soc voltage:voltage gnd:0 
+
+{
+i2var.i2var1 p:_n106 m:p out:_n118 = k=-1
+integ.integ1 out:soc in:_n204 = k=5.78091488759e-06, init=0.5
+c.c1 p:_n1 m:m = ic=7.886, c=1p
+v2var.v2var1 p:p m:m out:voltage 
+mult.mult1 out:_n202 in1:_n118 in2:voltage 
+diff.diff1 out:_n204 in1:_n202 in2:_n221 
+poweradjustment.poweradjustment_215_ Rc_power:_n198 Rt_power:_n200 \
+        Re_power:_n199 Current:_n118 power_adj:_n221 thermal_power_out:_n226 
+var2th_pwr.var2th_pwr1 in:_n226 tp:0 tm:_n222 
+tempsrc.tempsrc1 tl:0 th:_n224 = dc=25
+rtherm.rtherm2 tl:_n224 th:_n222 = rth=0.1
+ctherm.ctherm1 tl:0 th:_n222 = cth=974.0, t_init=25
+tempc2var.tempc2var1 th:_n222 tl:0 out:_n107 
+nimh_Cb.nimh_cb1 in:_n107 outp:_n1 outm:m 
+nimh_Cc.nimh_cc1 in:_n107 outp:_n105 outm:m 
+nimh_rc.nimh_rc1 in1:soc in2:_n107 outp:_n2 outm:_n105 Rc_value:_n198 
+nimh_re.nimh_re1 in1:soc in2:_n107 outp:_n2 outm:_n1 Re_value:_n199 
+nimh_rt.nimh_rt1 in1:soc in2:_n107 outp:_n106 outm:_n2 Rt_value:_n200 
+}
+
+
+################################################################################
+#                                                                              #
+#  Instances found in the top level of design NiMH_Ten_Modules                 #
+#                                                                              #
+################################################################################
+
+load_tv.load_tv_2_ ctrl:_n6 p:_n8 m:0 p_th:_n14 m_th:0 
+c_pwl.ess_pwr_req out:_n7 = pwl=[0,200,5,200,6,500]
+sum.sum1 out:_n5 in1:_n7 in2:_n105 
+sum.sum2 out:_n6 in1:_n5 in2:_n111 
+prop_int.prop_int1 out:_n105 in:_n103 = init=0.0, ki=25, kp=50000
+prop_int.prop_int2 out:_n111 in:_n102 = init=0.0, ki=25, kp=40000000
+rtherm.rtherm1 tl:_n14 th:0 = rth=1.0
+NiMH_Model.nimh1 m:_n75 p:_n8 soc:_n83 voltage:_n82 gnd:0 
+NiMH_Model.nimh2 m:_n76 p:_n75 soc:_n85 voltage:_n84 gnd:0 
+NiMH_Model.nimh3 m:_n77 p:_n76 soc:_n87 voltage:_n86 gnd:0 
+NiMH_Model.nimh4 m:_n78 p:_n77 soc:_n89 voltage:_n88 gnd:0 
+NiMH_Model.nimh5 m:_n79 p:_n78 soc:_n91 voltage:_n90 gnd:0 
+NiMH_Model.nimh6 m:_n80 p:_n79 soc:_n93 voltage:_n92 gnd:0 
+NiMH_Model.nimh7 m:_n81 p:_n80 soc:_n95 voltage:_n94 gnd:0 
+NiMH_Model.nimh8 m:_n74 p:_n81 soc:_n97 voltage:_n96 gnd:0 
+NiMH_Model.nimh9 m:_n109 p:_n74 soc:_n99 voltage:_n98 gnd:0 
+NiMH_Model.nimh10 m:0 p:_n109 soc:_n112 voltage:_n100 gnd:0 
+Ten_Module_Voltage_SOC_Error.TMVSE1 v8:_n96 s8:_n97 s9:_n99 v6:_n92 s6:_n93 \
+        s3:_n87 v3:_n86 s2:_n85 v1:_n82 s1:_n83 v2:_n84 v4:_n88 s4:_n89 \
+        v5:_n90 s5:_n91 s10:_n112 v10:_n100 v9:_n98 s7:_n95 v7:_n94 \
+        PowerInput:_n7 soc_error:_n103 voltage_error:_n102 = v_hi_limit=9.0, \
+        v_low_limit=6.0

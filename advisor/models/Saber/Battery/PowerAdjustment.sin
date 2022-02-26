@@ -1,0 +1,30 @@
+template  PowerAdjustment current Re_power Rc_power Rt_power power_adj thermal_power_out
+
+
+ref nu current,Re_power,Rc_power,Rt_power
+output nu power_adj,thermal_power_out
+
+
+{
+
+val nu power_adj_setting
+
+values {
+
+
+	if (current > 0.000) {
+		power_adj_setting = Re_power+Rt_power+Rc_power
+	}
+	else { 
+		power_adj_setting = 0.000000
+	}
+
+
+	}
+
+equations {
+	power_adj = power_adj_setting
+	thermal_power_out = Re_power+Rt_power+Rc_power
+	}
+
+}

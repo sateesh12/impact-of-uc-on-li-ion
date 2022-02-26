@@ -1,0 +1,90 @@
+# load_speed_42V.sin
+# symbol = load_speed_42V.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+#########################################################################
+#
+#   DESCRIPTION:                
+#   -----------
+#   Load associated with operating the a load whos power power
+#   consumption might be a function of the engine speed.on the vehicle.
+#
+#   This model represents a load as a current source.
+#   Two engine speeds (rpm) & respective power loads (Watts) must be
+#     specified. These points are used to linearly interpolate, based on
+#   engine speed, the power consumed by this load.
+#
+#     i.e.  user_rpm1 = 600, user_rpm2 = 6000
+#       user_pwr1 = 1000.0, user_pwr2 = 1500.0
+#
+#   This defines a speed dependent load that consumes 1000W of electrical
+#   at 600 prm (engine idle) and 1500W of electrical at 6000 rpm
+#   (near engine max speed)
+#   
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]      [description]
+#   p       electrical      + current enters this node
+#   m       electrical      + current leaves this node
+#   shaft_rpm   ref nu      engine speed (crank shaft) [rpm]            
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   loadcontrol             turns load on and off
+#                   also used for multipule loads
+#                   (ie for 2 loads, loadcontrol = 2)
+#
+#     user_rpm1,user_rpm2   User defined speeds and power
+#   user_pwr1,user_pwr2
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]      [units]     [description]
+#     i             Amps            Current draw for this model
+#   p_load_speed_42V    Watts           Power consumed for this load
+#
+##########################################################################
+encrypted template load_speed_42v p m shaft_rpm =
+    loadcontrol,
+    user_rpm1,user_rpm2,
+    user_pwr1,user_pwr2
+!crypt_start
+008abac6f7c2526a8a6
+016e6f04a0ed36e5144581302152e396877
+024bbea85c46d14e34da1fe52b12064b7d9e9b313e16636e3a6
+024575f1b580c1e5a0156410f0c6a777b34f697503c962c0f10
+048edb35347db6e5055f6fe5517d36e406ffe2b067c7b26e3b0ef77533ec3bef4f7a4a301f16620fea6b3b306472e39387b
+048a7b346e161fe4fe2bce140b669fc5fd8b2a306573329386aafe30638141e4b01bea641f082c1b1b8f9b303e12cac0da7
+008e2971c3c2e39387b
+016b972472fdcc1b1eceb974e3c6e41ad57
+008b927473adcc1b1f3
+016bfeb52e160f90de9fd270a6c414c4057
+016afb98f8a7906a64a19131e583136afb7
+008bfb9818d7941e34a
+024adc16f3c2a36e3f655560108001f5c3bacb357e13e3a0c56
+016a8ea7a3a3436b6e5fbbe756c2cac0da7
+016a171536cdd93f3e0b927176c2750e34a
+056a6be2e11303cb7dda4c51c79556a302e84ed7c397ca040b6acba41f053fe5df0afe10e38141e4b01bf754b293c6a342e84be7e117ba55fb5
+008f5b3471cda6f4755
+016bfb0c0943649e355a3b30b4e667bb5ae
+01650130844414c1012f8a8c9c496214410
+016e1d60f732e75257badf5838b63fe43f3
+032fbff1410966c0f10a8c4143084681e46a1fe52b1d693e5dae627066c90c1b1a5
+032b9e06c9e60e842e6f3c54355d5d5f5dae9b9ddce2cac55b5b1b300e1963c1210
+048f0d85a702e46302b58570a1de979414084ae3a6c395d9503aaf706067ce372ebc6834f43c085f4e0b1a370496626fea6
+040fa9749687c776a3ebef706067e76473766071d27c085f4e0b1b370542b19e903b6971c3cc03c3b10
+008b4b33ae105ac0da7
+0165c5d1f1714055910ea97473c414c1844
+016f09c14357e743565e6be2e6c2f36e3a6
+016b2be34716636e3efaab346b53478b1e3
+008a6be2e6c6636e3a6
+016a2f64538c4684b4057130a5890c1b1a5
+}

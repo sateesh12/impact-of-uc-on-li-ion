@@ -1,0 +1,135 @@
+MDOLVersion: 5.5
+CompilerOptions: warn
+
+Task isight
+
+    TaskHeader isight
+        Version: 1.0
+        Evaluation: taskplan
+        ControlMode: user
+        RunCounter: 1
+        Audit: on Milestone Error Info Status Milestone Error Info Status
+        Audit: off Normal Debug Normal Debug
+        BoundsPolicy: adjustvalue
+        CheckPoint: unknown
+        RandGenInit: 20737/18499/40085
+    End TaskHeader isight
+
+    Inputs isight
+        Parameter: Width Type: real InitialValue: 1
+        Parameter: Height Type: real InitialValue: 1
+        Parameter: Length Type: real InitialValue: 1
+    End Inputs isight
+
+    Outputs isight
+        Parameter: SurfaceArea Type: real
+        Parameter: Volume Type: real
+    End Outputs isight
+
+    SimCode Box
+        InputFiles Box
+            FileDescription indatam
+                FileType: standard
+                TemplateFile: "indata_box.m"
+                InputFile: "indata_box.m"
+                Parameters
+                    Width Height Length
+                Instructions
+                    find "X(1)=" ignore 
+                    replace word with $Width 
+                    find "X(2)=" ignore 
+                    replace word with $Height 
+                    find "X(3)=" ignore 
+                    replace word with $Length 
+                    End Instructions
+            End FileDescription indatam
+        End InputFiles Box
+
+        OutputFiles Box
+            FileDescription outdatatxt
+                FileType: standard
+                OutputFile: "outdata_box.txt"
+                Parameters
+                    SurfaceArea Volume
+                Instructions
+                    find "Surface Area: " ignore 
+                    read SurfaceArea
+                    provide $SurfaceArea 
+                    find "Volume: " ignore 
+                    read Volume
+                    provide $Volume 
+                End Instructions
+            End FileDescription outdatatxt
+        End OutputFiles Box
+
+        SimCodeProcess Box
+            Program: "C:/MATLABR11/bin/matlab.exe"
+            ElapseTime: 2m
+            Prologue
+                WriteInputSpecs: indatam
+            Epilogue
+                ReadOutputSpecs: outdatatxt
+            Execution: "$Program /automation -r optim_box_isight"
+        End SimCodeProcess Box
+
+    End SimCode Box
+
+    TaskProcess isight
+        Control: [
+            Box
+        ]
+    End TaskProcess isight
+
+    Optimization isight
+        PotentialVariables:
+            Width Height Length
+        Variables:
+            Width Height Length
+        VariableScaling
+            Parameter: Width ScaleFactor: 1.0
+            Parameter: Height ScaleFactor: 1.0
+            Parameter: Length ScaleFactor: 1.0
+         InputConstraints
+            Parameter: Width LowerBound: 0 UpperBound: 5
+            Parameter: Height LowerBound: 0 UpperBound: 5
+            Parameter: Length LowerBound: 0 UpperBound: 5
+        PotentialObjectives:
+            Width Height Length SurfaceArea Volume
+        Objectives
+            Parameter: SurfaceArea Direction: minimize Weight: 1.0 ScaleFactor: 1.0
+        OutputConstraints
+            Parameter: Volume UpperBound: 2 Weight: 1.0 ScaleFactor: 1.0
+
+        OptimizePlan NewPlan
+            DefaultUpperBound: 1E15
+            UseScaling: yes
+            OptimizeStep Step1
+                Technique: "Sequential Quadratic Programming - DONLP"
+                Options
+            Control: [
+                Step1
+            ]
+
+        # PLAN TO BE CONFIGURED BY ADVISOR:
+        OptimizePlan PriorityRankedPlan
+            Control: [
+            ]
+    End Optimization isight
+ 
+    TaskPlan isight
+        Control: [
+            NewPlan
+        ]
+    End TaskPlan isight
+
+    DataStorage isight
+        Restore: no
+        DataLog: "optim_box_isight.db" Mode: overwrite
+        DataLookUp: "isight.db"
+        MatchMode: Exact
+        Levels: all
+        StoreGradRuns: yes
+        StoreApproxRuns: yes
+    End DataStorage isight
+
+End Task isight

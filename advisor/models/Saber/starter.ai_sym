@@ -1,0 +1,49 @@
+[symbol8]
+desc {}
+uniq 77
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ffffc0c0cbcb}
+{} {#ffff00}
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+-640 0 
+<properties>
+primitive starter { } string {} -967 -996 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+ref starter1 { } string {} -1198 -1014 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+<ports>
+m -640 -480 1 0 -800 -800 -400 0 7 1 2 0 0 1 {} 6
+engspeed -1120 0 1 0 -1552 -1552 -48 0 7 1 2 0 0 1 {} 6
+p -640 480 1 0 -784 -784 560 0 7 1 2 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-1150 -510 221 510
+l gr_0_ 0 1 1 0 1 10 1 0 {-921 0 -1114 0 } {8 10 3} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {-702 266 -702 427 -583 427 -583 265 } {8 10 3} 6 
+l gr_3_ 0 1 1 0 1 10 1 0 {-696 -282 -696 -441 -582 -441 -582 -281 } {8 10 3} 6 
+c gr_7_ -919 -283 -363 273 0 1 10 1 0 0 6 
+a gr_10_ 0 1 -787 -161 -492 157 97 121 0 1 10 1 0 0 6 
+c gr_11_ -730 -89 -556 85 0 1 10 1 1 0 6 
+l gr_12_ 0 1 1 2 1 10 1 0 {-756 -100 -706 -141 } {8 10 3} 6 
+t gr_28_ -320 416 3 1 0 0 0 0 7 0 {Starter
+Motor} 6 
+l gr_47_ 0 1 1 0 1 10 1 0 {-640 -480 -640 -448 } {8 10 3} 6 
+l gr_48_ 0 1 1 0 1 10 1 0 {-640 480 -640 432 } {8 10 3} 6 

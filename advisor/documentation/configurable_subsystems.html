@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Configurable Subsystem Blocks in ADVISOR</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Configurable Subsystem Blocks in ADVISOR</h1>
+</div>
+<h1 id="configurable-subsystem-blocks-in-advisor">Configurable Subsystem Blocks in ADVISOR</h1>
+<hr />
+<h2 id="contents"><a name="TOC">Contents</a></h2>
+<ol style="list-style-type: decimal">
+<li><a href="#Introduction%20to%20Configurable%20Subsystems">Introduction to Configurable Subsystems</a></li>
+<li><a href="#Usage%20of%20Configurable%20Subsystems%20in%20ADVISOR">Usage of Configurable Subsystems in ADVISOR</a></li>
+<li><a href="#Adding%20User%20Models">Adding User Models</a></li>
+<li><a href="#A%20Listing%20of%20Configurable%20Subsystems">A Listing of Configurable Subsystems</a></li>
+<li><a href="#Other%20References">Other References</a></li>
+<li><a href="advisor_doc.html">Return to Main Documentation</a></li>
+</ol>
+<hr />
+<p><a name="Introduction to Configurable Subsystems"></p>
+<h2 id="introduction-to-configurable-subsystems">Introduction to Configurable Subsystems</h2>
+<p></a></p>
+<p>Configurable subsystems add a powerful new dimension to modeling in Simulink. The configurable subsystem allows models with the same “interface” (i.e., the same basic structure in terms of input and output ports) to be switched in and out of the model (i.e., configured) with ease. Whereas previously in ADVISOR, specific powertrain configurations were created each time a new model was added, a configurable subsystem allows the flexibility of keeping the same overall drivetrain structure with the ability to choose specific models to be used.</p>
+<p>For example, in earlier ADVISOR implementations, the inclusion of a new ultracapacitor battery model would facilitate a separate block-diagram file for each drivetrain. Thus, the block-diagram for a parallel hybrid drivetrain using an internal resistance model would need to be modified and resaved with the new ultracapacitor model. Alternately, all models would need to be included at the same time with switches to vary which model is used.</p>
+<p>With configurable subsystems, however, the user merely indicates which model to use and that model is “switched into” the current block diagram. Using our previous example, the user can simply select between the internal resistance energy storage model and the ultracapacitor model using a pull-down menu.</p>
+<p>This functionality is demonstrated <a href="#bd_config_eg">below</a>. In this diagram, the BD_PAR.mdl, the user is selecting between different vehicle control models (which are ultimately contained in lib_controls.mdl). As one can see, the “electric assist control strategy &lt;cs&gt;” block is also configurable, as designated by the icon in the lower left-hand corner of the block icon.</p>
+<p> </p>
+<div align="center">
+<center>
+  
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="center"><strong><a name="bd_config_eg">Configurable Subsystem Example</a></strong><br /><small>This figure shows a configurable subsystem being selected directly from the Simulink block diagram of the parallel hybrid vehicle drivetrain in ADVISOR (BD_PAR.mdl in the &lt;ADVISOR&gt;/models directory).</small></td>
+</tr>
+<tr class="even">
+<td align="center"><img src="configurable01a.gif" /></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>The configurable subsystem is facilitated by the Simulink configurable subsystem library block as shown <a href="#config_sim_lib">below</a>.</p>
+<p> </p>
+<div align="center">
+<center>
+  
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="center"><strong><a name="config_sim_lib">Configurable Subsystem Block</a></strong><br /><small>Configurable subsystems are created by placing the Simulink Configurable Subsystem Block into a library containing the models to be configured.</small></td>
+</tr>
+<tr class="even">
+<td align="center"><img src="configurable02.gif" /></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>Within a model library, the available choices for configurable subsystem models are facilitated using the Simulink configurable subsystem block. Consider the example seen in the <a href="#config_sub_block_setup">figure below</a> (taken from lib_accessory.mdl in &lt;ADV&gt;/models/library). The block with the blue outline (the configurable subsystem template) is the Simulink configurable subsystem block (with an icon added to it). The remaining six blocks all implement the same input/output port combinations and signal widths. These remaining six blocks at the bottom of the picture are configurable subsystem models. They are linked into the Simulink configurable subystem block by right clicking on the block and checking the models that apply.</p>
+<p> </p>
+<div align="center">
+<center>
+  
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="center"><strong><a name="config_sub_block_setup">Configurable Subsystem Block Setup</a></strong><br /><small>The figure below is taken from lib_accessory.mdl. The block outlined in blue is the configurable subsystem template. These template blocks are the ones actually used in the driveline models (such as BD_PAR.mdl). By right clicking on the template block, the six models which we would like to link in as being configurable can be selected. In general, configurable subsystem models should implement the same basic input/output port interface (i.e., consistent with the number, signal width, and units of input ports and output ports). However, signal input and output ports can be dummy values if they are unused by a specific model.</small></td>
+</tr>
+<tr class="even">
+<td align="center"><img src="configurable03.gif" /></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p><a href="#TOC">&gt;&gt;&gt; back to table of contents &lt;&lt;&lt;</a></p>
+<p><a name="Usage of Configurable Subsystems in ADVISOR"></p>
+<h2 id="usage-of-configurable-subsystems-in-advisor">Usage of Configurable Subsystems in ADVISOR</h2>
+<p></a></p>
+<p>So how are these configurable subsystems used within ADVISOR? First of all, the user is not expected to open the block diagrams and select which configurable subsystems they would like to use before a run. This is done automatically through an m-file called adjust_config_bds.m.</p>
+<p>The m-file adjust_config_bds.m uses <a href="version_type_help.html">version and type</a> and other initialization variables as a means of determining which configurable subsystem models should be used. Thus, when the user finishes setting up their vehicle and hits the run button, the drivetrain block diagram is opened (without making the window visible) and all of the appropriate configurable subsystems are chosen just as if the user had opened the block diagram and set the “block_choice” option themselves.</p>
+<p>It is important to note that even if a user opens a simulink block diagram and changes the block choice on a configurable subsystem, this change will be usurped by adjust_config_bds.m because this file is run immediately before the block diagram is executed–thus ensuring that the required changes take place. Therefore, the user should feel free to examine the block diagrams and models in configurable subsystems and rest assured that the seetings within the GUI will be used when the GUI or m-file system (e.g., adv_no_gui.m) is used to execute advisor.</p>
+<p>See the file adjust_config_bds.m for more information.</p>
+<p><a href="#TOC">&gt;&gt;&gt; back to table of contents &lt;&lt;&lt;</a></p>
+<p><a name="Adding User Models"></p>
+<h2 id="adding-user-models">Adding User Models</h2>
+<p></a></p>
+<p>Users may wish to incorporate their own models into ADVISOR’s configurable subsystem interface. This is a relatively straightforward process involving the following:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Creation of the New Model:</strong> Make sure to adhere to the input/output interface of the existing configurable subsystem. Also, it is sometimes easiest to copy an existing model and change the inner workings of that model vs. creating a model from scratch.</li>
+<li><strong>Add the New Model to the Template:</strong> Be sure that the new model is present in the same library file as the other configurable models and the Simulink configurable subsystem template (note: configurable subsystem templates and models must reside in a common library). Right click on the template and a listing of all of the block models on the same level as the template will appear. Activate the checkbox next to your new model.</li>
+<li><strong>Update adjust_config_bds.m:</strong> Once all the above steps have been taken, the user should update adjust_config_bds.m (type ‘edit adjust_config_bds.m’ at the command line). As a precaution, the user may wish to create a backup of the original adjust_config_bds.m. Within, adjust_config_bds.m, you will notice a switch…case routine. Add your model’s name (exactly as it appears in the model library) to the listing of possible models. Next update the logic within the case body if necessary.</li>
+</ol>
+<p>That’s all there is to it! </p>
+<p><a href="#TOC">&gt;&gt;&gt; back to table of contents &lt;&lt;&lt;</a></p>
+<p><a name="A Listing of Configurable Subsystems"></p>
+<h2 id="a-listing-of-configurable-subsystems">A Listing of Configurable Subsystems</h2>
+<p></a></p>
+<p>The table below lists the currently available configurable subsystems:</p>
+<div align="center">
+<center>
+  
+<table>
+<thead>
+<tr class="header">
+<th align="left">nfigurable Subsystem Template Name [library] Av</th>
+<th align="left">ailable Models</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">rolling resistance force [lib_vehicle\submodel]</td>
+<td align="left">force req’d to overcome rolling resistance (N)</td>
+</tr>
+<tr class="even">
+<td align="left">force req’d to overcome rolling resistance (N) j2452</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">vehicle speed [lib_vehicle\submodel]</td>
+<td align="left">vehicle speed (m/s)</td>
+</tr>
+<tr class="even">
+<td align="left">vehicle speed (m/s) j2452</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">roll res interactive [lib_interactive\Sub-model Library]</td>
+<td align="left">roll res force req (N)</td>
+</tr>
+<tr class="even">
+<td align="left">roll res force req (N) j2452</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">config traction control [lib_controls\SubSystem]</td>
+<td align="left">traction control</td>
+</tr>
+<tr class="even">
+<td align="left">traction control J2452</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">electrical accessories (W) [lib_accessory.mdl]</td>
+<td align="left">Electrical Accessories: Constant</td>
+</tr>
+<tr class="even">
+<td align="left">Electrical Accessories: Time Variable</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mechanical accessories (Nm) [lib_accessory.mdl]</td>
+<td align="left">Mechanical Accessories: Const Mech Var Elect</td>
+</tr>
+<tr class="even">
+<td align="left">Mechanical Accessories: Constant Mechanical &amp; Electrical</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Mechanical Accessories: Speed Dependant and Variable Electrical</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Saber Dual Voltage Cosim</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Saber Single Voltage Cosim</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">SindaTransAC</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Series Cosim [lib_cosimulation.mdl]</td>
+<td align="left">Series Saber Cosim</td>
+</tr>
+<tr class="even">
+<td align="left">Series Simplorer Cosim</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Series Saber Cosim Text File Exchange</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">ess config [lib_energy_storage\Ess Choices]</td>
+<td align="left">Ultracapacitor System</td>
+</tr>
+<tr class="odd">
+<td align="left">energy storage &lt;ess&gt;</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">energy storage &lt;ess&gt; RC</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">energy storage &lt;ess&gt; nnet</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">energy storage &lt;ess&gt; Saber</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">energy storage &lt;ess&gt; fundamental model</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">energy storage &lt;ess&gt; optima fundamental model</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">fuel use and EO emis Configurable Subsystem [lib_fuel_converter\configurabele subsystems]</td>
+<td align="left">fuel use and EO emis</td>
+</tr>
+<tr class="even">
+<td align="left">fuel use and EO emis Neural Network Model</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">par &lt;cs&gt; config [lib_controls.mdl]</td>
+<td align="left">Adaptive control strategy &lt;cs&gt;</td>
+</tr>
+<tr class="even">
+<td align="left">Fuzzy Logic control strategy &lt;cs&gt;</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Fuzzy Logic control strategy with Emissions &lt;cs&gt;</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">electric assist control strategy &lt;cs&gt;</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">electric assist control strategy bal &lt;cs&gt;</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">par &lt;vc&gt; config [lib_controls.mdl]</td>
+<td align="left">&lt;vc&gt; par</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;vc&gt; par Adaptive</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">&lt;vc&gt; par balanced</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">fuel cell config [lib_fuel_cell.mdl]</td>
+<td align="left">fuel converter &lt;fc&gt; GCTool linkage</td>
+</tr>
+<tr class="even">
+<td align="left">fuel converter &lt;fc&gt; net model</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">fuel converter &lt;fc&gt; polarization curve model</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p><a href="#TOC">&gt;&gt;&gt; back to table of contents &lt;&lt;&lt;</a></p>
+<p><a name="Other References"></p>
+<h2 id="other-references">Other References</h2>
+<p></a></p>
+<dl>
+<dt>Documentation from The Mathworks</dt>
+<dd>For more information on configurable subsystems, please check your Matlab/Simulink documentation or search the online archive of <a href="http://www.mathworks.com">the Mathworks</a>
+</dd>
+<dt>Documentation specifics on the Accessory Library</dt>
+<dd>See also <a href="accessory_models2002.html">documentation</a> on the lib_accessory.mdl library model for accessories. This contains information pertinent to accessory systems
+</dd>
+</dl>
+<p><a href="#TOC">&gt;&gt;&gt; back to table of contents &lt;&lt;&lt;</a></p>
+<hr />
+<p><a href="advisor_doc.html">Return to Main Documentation</a></p>
+<hr />
+<p>Created: [2002-04-30] mpo<br /> Last Modified: NA</p>
+</body>
+</html>

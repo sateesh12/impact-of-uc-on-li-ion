@@ -1,0 +1,14 @@
+.figureheader {
+	font-size: small;
+	font-weight: bolder;
+	margin-top: 1em; /* the height of one font */
+	margin-bottom: 0.5em; /* the height of 1/2 a font */
+}
+
+.figuredescription {
+	font-size: small;
+	font-weight: normal;
+	margin-top: 0.5em;
+	margin-bottom: 1.5em;
+	font-style: italic;
+}

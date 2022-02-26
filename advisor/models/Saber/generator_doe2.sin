@@ -1,0 +1,192 @@
+#
+# generator_doe2.sin    DOE Version 2
+#
+#   This is the computational engine behind the DOE / ADVISOR released
+#   generator model.
+#
+#   The computational aspects of this model are Delphi Automotive
+#   systems proprietary.   ......  Other language from legal department.
+#
+#   All material below this point will be encrypted.
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+###############################################################################
+#
+#   DESCRIPTION:
+#   -----------
+#   This template models a generic Lundell claw pole alternator through the
+#   use of a curve fit equation. The equation is fit based on test data taken
+#       at two steady state temperatures.  Output at temperatures other than
+#   those specified are interpolated linearly.
+#
+#       REVISIONS:
+#   -----------
+#   12 Dec 2001 - numerical changes were made to generator_doe1.sin to
+#                     make it more computationally stable.  This change
+#                     does not in any way change the basic inner working or
+#                     characterization of the generator curves.
+#                     - jjc jam
+#
+###############################################################################
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]      [description]
+#   p   electrical  positive current enters this node
+#   m       electrical .....    positive current leaves this node (i.e. ground)
+#       speed       ref(nu) ........    Generator Shaft speed in rpm
+#       mech_pwr    ref(p) ........     Power Required at generator shaft (output)
+#       sense       electrical .....    Regulator sense voltage reference
+#       vset        ref(nu) ........        Regulator Set Point Voltage Input
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   [name]  [type]      [desription (units)]
+#   cutin93 number .........    cutin rpm at 93 C  (no output below this rpm)
+#   imax93  number .........    maximum current at 93 C
+#   cutin12 number .........    cutin at rpm 12 C
+#   imax12  number .........    maximum current at 12.8 C
+#   geneff  number .........    generator efficiency
+#                       [currently a fixed percentage for all speeds]
+#       tempalt     number .........    Alternator Inlet Air Temperature Input
+#   vehicletype number .........    1   large car
+#                       2   medium car
+#                       3   small car
+#                       4   SUV
+#   t93     number .........    93 - this is the high end calibration temperature
+#   t12     number .........    12.8 - this is the low end calibration temperature
+#                       For all other temperatures, the model linearly
+#                       interpolates using t12 and t93.
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#     [name]    [units]     [description]
+#     imax      Amps     .........  Alternator maximum output current
+#     i         Amps     .........  Alternator Output current
+#     v     Volts    .........  Voltage Across Alternator terminals
+#     pout      Watts    .........  Alternator Electrical Output Power
+#     mech_pwr  Watts    .........  Alternator Required Mechanical Input Power
+#     rpm       RPM      .........  Alternator rotatinal speed
+#     vref      v        .........  Alternator regulation voltage set point
+#
+###############################################################################
+encrypted template generator_doe2  p m speed mech_pwr torquereq sense vset =
+    cutin93,
+    user_imax93,
+    cutin12,
+    user_imax12,
+    geneff,
+        tempalt,
+    vehicletype,
+        t93,
+        t12
+!crypt_start
+008abac6f7c2526a8a6
+024acf05fa869fe4ef3f89b50712cac5daba3b355472373adf5
+016bbe556e16af90de9f0b34347c4c1b1a5
+016bbea85c46d14e34db9b356e16e41a703
+0164f560f15134c1814e0b34e47ef93e1f2
+016efc35d3c7c6c3835a6e241a4c76e4755
+024a173536cdd93f3e0aa3a4b6c7e6d7937fbbe3c6c7336e3a6
+024ede55347db6e5055e6ea4e13d984f2e949130b5890d0aca5
+032a7b995c46613a146aab995d6155d510ae6ae2e62505c0b54e327066c90c1b1a5
+024bcf893896e08b17cb1bd02f1843c120df9b313e190c1b1a5
+032f797493c636b7a3efa97492f322faae8bea3065790d2b1b4adb316479a3c1210
+024ecd64f716b706a04411357583841e31eebbe206c3cac01a7
+016ed850d2d3c393866e327066c2b41e303
+016afad37757536e3bbe5b9c0c46636e3a6
+016a83a436cde87f4e3e9b303e120392e7b
+008b427066c90c1b1a5
+064f5e74747da69125ebee863137e6b6e3aaa7e4e3865e94eeb49130b5b963c120bec974f73d3685610ad66536c6afe4be2bd73412214095d09bab313b360e94cf3
+0245f130116130b5d0db9c71c3c2b41e303acbe626c7736e3a6
+056bffd52e160ac0da7ba75066c6636e3a6a89b0e2f9cd8b1f7e9bf47f269b55feaa3bf52552327b1eba3b3424b6b78742fbb27576c6aee59eb
+024ade96f6c2a36e3a619414e586636e3a6f3b34b472cac0da7
+024b971476cdcc1b1a5b9c11c3c2b41e303e5f613b278776b3e
+040bff081c46741e303a3fa06472cac0da7a09b0f2e4d5d180db99b552e6650a25be9b989d72b2fa2fe
+032bff081c46741e303a3fa06476636e3a6f8d65071c2751e1055131a582e39387b
+040efc75d3c6239387be9e9c0c4414c184490774b6c233aa0eea6f69588151c1444f0b3554790c1b1a5
+0244f5d0f580d4c1844bce113e12b4db752bf27546c6f397c7b
+032adf06f6c2a36e3a64c564e5896304044b777563450091444fbb313e16636e3a6
+024adf76f6c3436e3a6e9f0c0c42cac0da7afb30647df645f51
+024bc6a523fc2c1e4e6bf734a22e975425fbc27066c3d36e3a6
+016a173536cdd93f3e0aa274b6c74fa01a7
+016feb9063cc56842469227066c963c1210
+008f5b3471cda6f4755
+040afc16b3e2b77b3f0bfed858109005107b662563a2336e3bbebe34f1e6815af46acb313e16636e3a6
+048eae3400a96791a44b96e472479049c55fa975079041c4c1da4da0175963c0319e2a25e473f242a7bfbb306e12e39387b
+048a0e355ac2ce905f3f5fa470f13096712b8be62296b696c22e6f333252cac1faea8a898c43a5cf103fbb9d5c46636e3a6
+048a0e986892b04eb57bffa52a97c7c472dac274a292366b7fff26a1b252b41f00af886443c8721001009135b5890c1b1a5
+0485043081541091010bff0818c34739cf0e0b34a02d591e5fcbefe1b0e414c0c4dae365e6c772bf1a6ac970c3c963c1210
+056b2ee68216673ebf2efde5d7413096712aab98c816b696c22f4f4dd8d2cac18aea8ec98c487210010bc7f432d7c74473208135c5890c1b1a5
+048b2ee68216673ebf2efde5d74c4796d46aab98c8169fc59fef4f4dd8d6636f2afbaaf766c325cf003fbb306e1414c1844
+048a67740219084b9f1adf76f247ee972f15a13021d6e11b75a045e531190c1a3ace2a25e478f210110fbb9d5c42e39387b
+048eae3400a96791a44b96e472479049c55fa975079041c4c1da4da0175963c0119a8a898c47f2bf0a609135b586636e3a6
+048a0e355ac2ce905f3f5fa470f13096712b8be62296b696c22e6f333252cac19aef886443c58510b44ac970c3c90c1b1a5
+0565043081541091010bff0818c7ee972f1e0b34a026e11b75abefe1b0e90c1a4ace2e65e477f2bf0a6bc7f432d1301670df0b300e12e39387b
+016bd77563fddc1b1b8acb985c46f41e303
+0404b131e45134c5900bc275666d5c1f4e1e9aa2e7d4b421857eabe3b6389c1a3b3ffb9d0c42b41e303
+024bfa493c46e04ad50fbfb783f988fe2e0e627066c90c1b1a5
+016bfb0c0943649e355a3b30b4e667bb5ae
+016500e0844414c1012e9e296c47d307d2f
+024a9ee373e7536e3bbeefa06134c191807a1271f6c3841e303
+024bd77173e82c1b1b8a26e06384c191807edb31747534c1844
+032a0b355f22cb505f5bff61b13414c094df1b34b478f2c010d19134e5890c1b1a5
+016eab3405496251a42f127066c50171144
+0325c1e165811510944adb3164d3c39216ee1a641ef89cba2affe271f6c484c1844
+0244d0e0b58135f555de9fcd1c498310210411a1e496e66a6fe
+008b4b9c0c42b41e303
+024b2be687e6627ebf4a5d20168414c094deb87513c3db11fa7
+016b2be687e6627ebf4a7971c3c87671b10
+032acbe4be17cb11fa7e12f166c81cba9a5eb860d2a8432181aab97153c6636e3a6
+024bdae56e17ebe40b6a3f617472034287bb1ba43f3491c5d1c
+008feb30647963c1210
+024505a5750524c185954190f583e3ffab5e9b347f204554a09
+024f0de0d343c393866a4b381c43e3ff2b4e9b347f3045d4a09
+040e7b3435ada3c4651f3f7676c81cca3a5f673156499c1b1aaf635157d9095bca510134e58963c1210
+040a0b35efc6dac41f3abbb4f4750470a44b2e71447683bfba6aa274b653662a2eaa9ba060605185d08
+016a66e476cdcdce5a5b6be6f6c62396c7b
+008b227066c90c1b1a5
+040f0975a222e39302d4f451d586b3f6c7bef271a382e7c6e28e2b313e8982d0200a0be2e6c414c1844
+0244b43570a524c1859b6f72e3821f90de4f797053c853c1210
+024ebc70d6e3c393866f4de1c6821f90de4b5be3f6c3eac0da7
+032a627407f90d8b9f7e7fb33382cac1caea9be636c7f26f0bbe9b313e12e39387b
+016b2be687f662febf4a7971c3c3df704a7
+032acbe4be17cb11ca7f5be3e663941fa16e732546237332b71a897053c25ac0da7
+024bdae56e17ebf40bea3f61747683bf3a6b1ba43f0491c5d1c
+008feb30647963c1210
+0245013084a415d1016f5fcdd902cac1caebba98dc481dca3a5
+0165013084a415d1016f7b9c0c4776deaa6
+032aa2a5e6cc0dca3a5b79f0c3c3f33207bbba8d1d27438e9acfbb9c9c4414c1844
+024bb3a436cc2d3fcb4fbfb3f6c254cf303b72e567e24fc48ff
+008a6be2e6c6636e3a6
+024a0fa0ae93fac0dbaa4b952e119450157ef27527f69b55fea
+024a0f0d1cc3941e31eeeb9474719450956ef27527e69bd5fea
+040bfbe6b712a36b7e7115a07583f342a7ba0c30f3427393874a0850f2d2e6d357be0b313e16636e3a6
+048eab34b5ad73c5e44e72f4f6c773df1a6fe73146c98310a10bebe6365c668535ce52e062d2262a6eae9b9c0c42e39387b
+040eabb4747da214610fe2a083a90c9bca5ef994f342339b7aff9b9d0ce7736eaaff097513c004c5410
+008e4971c3c2e39387b
+024eaae4059963c1a46ef2950673536a6f2f9b9d0c4819ab8a5
+016eaa34747da214610e127166c2cac0da7
+016a0b35efc6dac41f3b3b308473cac0da7
+008b4b313e12cac0da7
+0164945015814514c44b3975d35247fb0ae
+024aba3516c2b7ea6e5e9b990cb0e4c4d10a827436c6507a645
+024a666403e9091b9f7bfbe2e653750fe03f7b357477b36f3a6
+024e6b34a16c5685710e6f62e2f7e7c4736ef63092d6664b1f6
+008b227066c90c1b1a5
+016acfd42ae79e54cf3bab99bc42cac0da7
+016a0b2c8cd7b0cee1d04134e58084c1844
+040a275433bd391f9daf57706130c045d07aceb7c236666fea64d564e169f84b1e2afb986c490c1b1a5
+024b2b6346c662bf3a650474e1427ed0deeaab306472e39387b
+024a66a4b25d1c1e9bf585216152ce510a7a5b347e12b41e303
+032bdf65cb37ee95cf2f2e61c166664b7e9beea7c6c69b15ca748134e586636e3a6
+008b227066c90c1b1a5
+016e8f6509e7ef854f7f797583c963c1210
+}

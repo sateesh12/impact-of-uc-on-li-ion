@@ -1,0 +1,110 @@
+require 'find'
+require 'set'
+require 'pp'
+
+HTML_EXTENSIONS = Set.new(['.htm', '.html'])
+PDF_OPTIONS = " --latex-engine=xelatex " +
+    "--variable=mainfont:\"Palatino Linotype\" " +
+    "--variable=sansfont:Arial " +
+    "--variable=monofont:\"Courier New\" " +
+    "--variable=fontsize:11pt " +
+    "--variable=geometry:margin=1.0in"
+
+def html?(fname)
+  ext = File.extname(fname)
+  HTML_EXTENSIONS.include?(ext)
+end
+
+def list_files(dir)
+  Dir.entries(dir).reduce([]) {|files, entry|
+    path = File.expand_path(File.join(dir, entry))
+    if entry == '.'
+      files
+    elsif entry == '..'
+      files
+    elsif File.file?(path)
+      files << path
+    elsif File.directory?(path)
+      other_files = list_files(path)
+      if other_files.empty? then files else files + other_files end
+    end
+  }
+end
+
+# output must be one of {.html, .pdf, .docx}
+def pandoc(fname, output, more_options=nil, template=nil)
+  puts "\nProcessing: #{File.basename(fname)}"
+  new_fname = fname.gsub(File.extname(fname), output)
+  template_tag = {".html"=>"template", ".pdf"=>"template",
+                  ".docx"=>"reference-docx"}
+  options = "--smart --standalone" + if more_options.nil?
+                                       ""
+                                     else
+                                       more_options
+                                     end
+  options += if template.nil?
+               ""
+             else
+               " --#{template_tag[output]}=#{template}"
+             end
+  sh "pandoc #{options} \"#{fname}\" -o \"#{new_fname}\""
+end
+
+def html_to_markdown(fname)
+  puts "\nProcessing: #{File.basename(fname)}"
+  new_fname = fname.gsub(File.extname(fname), '.md')
+  str = File.read(fname, :encoding =>'iso-8859-1:utf-8')
+  encoding = str.match(/charset=(.*)\"/)
+  encoding_str = if encoding.nil? then "" else "-f #{encoding[1]}" end
+  options = "--smart --standalone --normalize --parse-raw"
+  sh "iconv #{encoding_str} -t utf-8 \"#{fname}\" | pandoc " +
+    "--from html --to markdown #{options} -o \"#{new_fname}\""
+end
+
+desc "Serve this directory using a Python HTTP Server"
+task :serve do
+  sh "python -m SimpleHTTPServer 8000 &"
+end
+
+desc "List all *.htm and *.html files"
+task :list_html do
+  files = list_files(".").select {|f| html?(f)}
+  pp files
+end
+
+desc "HTML to markdown"
+task :md do
+  dir = '.'
+  files = list_files(dir).select {|p| html?(p)}.map {|p|
+    File.expand_path(p, dir)}
+  files.each {|f|
+    html_to_markdown(f)
+  }
+end
+
+desc "Backup HTML files"
+task :backup_html do
+  dir = '.'
+  list_files(dir).select {|p| html?(p)}.map {|p|
+    File.expand_path(p, dir)}.each {|fname|
+    new_fname = fname + '.bak'
+    sh "cp \"#{fname}\" \"#{new_fname}\""
+  }
+end
+
+desc "Generate HTML Files"
+task :gen_html do
+  dir = "."
+  list_files(dir).select {|p| File.extname(p) == ".md"}.map {|p|
+    File.expand_path(p, dir)}.each {|fname|
+    pandoc(fname, ".html")
+  }
+end
+
+desc "(Re-)Generate One HTML File"
+task :gen_one_html, :file_name do |t, args|
+  fname = args[:file_name]
+  abort_msg = "argument to gen_one_html must be a markdown file"
+  abort(abort_msg) unless File.extname(fname) == ".md"
+  pandoc(fname, ".html")
+end

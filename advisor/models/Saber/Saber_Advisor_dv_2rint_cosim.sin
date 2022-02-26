@@ -1,0 +1,60 @@
+################################################################################
+#                                                                              #
+#  Saber netlist for design Saber_Advisor_dv_2rint_cosim                               #
+#  Created by the Saber Integration Toolkit 2001.4-3.4 of Analogy, Inc.         #
+#  Created on Fri Jan 03 15:18:12 2003.                                        #
+#                                                                              #
+################################################################################
+
+
+################################################################################
+#                                                                              #
+#  Instances found in the top level of design Saber_Advisor_dv_2rint_cosim             #
+#                                                                              #
+################################################################################
+
+brake_lights.brake_lights1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+combo_loads.combo_loads1 m:0 p:_n1 = vehicletype=1, loadchoice=1, loadcontrol=0
+engine.engine1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+external_lights.external_lights1 m:0 p:_n1 = vehicletype=1, loadchoice=1, \
+        loadcontrol=0
+front_wiper.front_wiper1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+heated_seat.heated_seat1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+misc.misc1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+radiator_fan.radiator_fan1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+turn_signal.turn_signal1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+rear_wiper.rear_wiper1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+rear_hvac.rear_hvac1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+radio.radio1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+front_hvac.front_hvac1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+rear_defrost.rear_defrost1 p:_n1 m:0 = user_v1=12, vehicletype=1, loadcontrol=0
+generator_generic.generator_generic p:gen_v m:0 \
+        sense:sensed_voltage_feedback_loop vset:_n97 mech_pwr:freeNet1 \
+        speed:gc_rpm torquereq:freeNet2 = user_imax12=40.0, vehicletype=5, \
+        user_imax93=77.3333
+c_pwl.c_pwl out:_n99 = pwl=[0,0,.1,1]
+c_pwl.engine_rpm out:_n98 = pwl=[0,0,0.001,0,1,10000]
+dcconvertideal.dcconvertideal1 out:_n214 com:0 in:sensed_voltage_feedback_loop 
+power_load.user_power1_HiV m:0 p:_n264 = power_load=50, loadcontrol=0
+mult.mult1 out:gc_rpm in1:_n98 in2:_n99 
+power_load.user_power3_HiV m:0 p:_n264 = power_load=370, loadcontrol=0
+power_load.acc_elec_pwr m:0 p:_n1 = power_load=0, loadcontrol=1
+power_load.user_power2_HiV m:0 p:_n264 = power_load=100, loadcontrol=0
+power_load.user_power4_HiV m:0 p:_n264 = power_load=100, loadcontrol=0
+power_meter.generator p:sensed_voltage_feedback_loop m:gen_v 
+power_meter.pm_battery_2 p:_n214 m:battery_2_voltage 
+power_meter.loads_trad p:_n214 m:_n1 
+power_meter.loads_HiV p:sensed_voltage_feedback_loop m:_n264 
+regulator_42v_usa.regulator_hiv_usa1 vset:_n97 
+power_meter.pm_battery_1 p:sensed_voltage_feedback_loop m:battery_1_voltage 
+load_user_defined_42v.load_user_defined_HiV p:_n264 m:0 = user_v1=36, \
+        loadcontrol=0
+load_speed_42v.load_speed_HiV m:0 shaft_rpm:gc_rpm p:_n264 
+starter.starter_trad m:0 engspeed:gc_rpm p:_n1 
+starter.starter_hiv m:0 engspeed:gc_rpm p:_n264 
+r_int_battery.r_int_battery_1 p:battery_1_voltage m:0 soc:soc \
+        max_ess_chg_pwr:freeNet3 = ess_modnum=3
+r.r1 p:_n264 m:0 = rnom=1000000
+r.r2 p:_n1 m:0 = rnom=1000000
+r_int_battery.r_int_battery_2 p:battery_2_voltage m:0 soc:freeNet4 \
+        max_ess_chg_pwr:freeNet5 = ess_modnum=1

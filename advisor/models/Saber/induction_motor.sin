@@ -1,0 +1,212 @@
+#
+#                                        ver5
+#  induction_motor.sin                                           NREL version
+#  symbol = induction_motor.ai_sym
+#
+#############################################################################
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+##############################################################################
+#
+#   Induction Motor Model
+#   Defaults match MC_AC75.m in ADVISOR
+#   File name is mcac75.sin
+#
+#   Last update on Sept. 26, 2002
+#
+#   This model is set up so that in regenerative braking mode, the
+#   generator will satisfy the requested driveline torque subject to the
+#   maximum torque and maximum current limitations.
+#
+##############################################################################
+#
+#   DESCRIPTION:
+#   -----------
+#   TBD
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]          [type]      [description]
+#   p               electrical  + current enters this node
+#   m               electrical  + current leaves this node
+#
+#   speed       nu  (input pin)
+#   - is the rotational speed of the motor in revolutions per minute.
+#   - The speed is positive
+#
+#   torquereq      nu  (output pin)
+#   - is the input torque required by the driveline in Nm
+#   - is positive by traditional ADVISOR convention for traction electric drive
+#   - is negative for regenerative braking
+#
+#   eff             nu  (input pin)
+#   - is the efficiency of the motor/generator at the given operating point
+#   - comes from a lookup table
+#
+#   maxtorqmotor    nu (input pin)
+#   - is the maximum torque that can be produced by the motor
+#   - comes from a lookup table.
+#
+#   maxtorqgen      nu (input pin)
+#   - is the maximum torque that can be applied during regen braking
+#   - comes from a lookup table.
+#
+#   vset            nu  (input pin)
+#   - is the voltage setpoint of the system controlled by a voltage regulator model
+#
+#   maxtorqueavail (default = -1000000)
+#   - maxtorqueavail is the torque desired by the driveline.
+#   - All motoring torques are positive or zero.
+#   - All generation torques are negative
+#   - default is a VERY large number and should be overwritten by a value from ADVISOR
+#   - is fed from outside this module (input as a parameter) from ADVISOR.
+#   - Series hybrid application for which this model is designed, it is
+#     the torque the ICE wants to output to be in its sweet spot. It is a maximum torque
+#     limit.  Actual torque absorbed by the generator may be this or less depending upon the
+#     electrical solution.
+#
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   inertia     (default = 0.01)
+#   - is the inertia of the rotor.
+#   - The ADVISOR parameter is gc_inertia = kg * m * m
+#
+#   rpmmax      (default = 10000)
+#   - is the generator maximum rpm
+#
+#   maxpowerbatt (default = 9000)
+#   - is the maximum charging power of the battery (Watts)
+#
+#   maxcrrnt    (default = 480)
+#   - is the maximum current of the machine
+#
+#   minvolt     (default = 120)
+#   - is the minimum voltage of the machine
+#
+#
+#######################################################################
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]      [units]     [description]
+#       i          Amps      Current draw for this model
+#   torquereq      nu        (output pin)
+#   - is the input torque required by the driveline in Nm
+#   - is positive by traditional ADVISOR convention for traction electric drive
+#   - is negative for regenerative braking
+#   - feed to Workspace #4 as mc_trq_out_r
+#
+########################################################################
+#
+#
+#       PHILOSOPHY OF THE MODEL
+#
+#
+#   Advisor requests max_torque_avail as an input to this model.  That is the request of
+#   the amount of torque ADVISOR wants to be committed to electrical power generation or
+#   mechancial torque produced.  This request does not comprehend the inertia torque of the
+#   motor / generator.  Thus, the inertia torque is added to the torque command when fed back
+#   to ADVISOR as to how much torque the machine really requires.
+#
+#   The driver for this philosophy is the ADVISOR strategy on electrical motors and a desire
+#   for consistency.  When ADVISOR commands a torque command to a motor, it expects that motor
+#   to provide exactly that much torque.  Otherwise, the vehicle will fall off the drive cycle
+#   and the ICE will start having pulse demands on it which harms fuel economy.  Thus, the torque
+#   command to the electrical motor is honored and the inertia torque is absorbed electrically
+#   since electricity is providing the source of all mechanical torque for a motor.  Likewise,
+#   for generating, the inertia torque must be provided mechanically from the ICE so the
+#   generating torque goes to electrical production.  The real issue comes near zero torque command
+#   where the inertia torque can cause unrealistic electrical spikes and the inertia torque
+#   alone can be significant compared to the torque command.  In particular, ADVISOR commands
+#   zero torque when it is not motoring or generating.
+#
+########################################################################
+encrypted template induction_motor  p m speed torquereq eff maxtorqmotor maxtorqgen vset maxtorqueavail = inertia, rpmmax, maxpowerbatt, maxcrrnt, minvolt
+ref nu vset
+ref nu speed
+var nu torquereq
+ref nu eff, maxtorqueavail
+ref nu maxtorqmotor, maxtorqgen
+electrical p, m
+!crypt_start
+008abac6f7c2526a8a6
+024a7fa46e161fe4fe2a7ae56e17c786c32e9b31de1863c0310
+024a7eb95c46613a146b9b98dd9ddc1f0fdf8b9d0c43e39286b
+032f7da493c636b7a3ef8d5446e3673acf158031a417a393866f9b303e16636e3a6
+024f7da493c636b7a3ef8974468680fb151beb3064738ac15b7
+024b5f37b6c2b64a1e3b2a3606c17185708e9b302e182c1a1a5
+008e2971c3c2e39387b
+016b927476cdcc1b1f3ef971c3c90c1b1a5
+016f5b34747c43c1259f0971c3c963c1210
+040ef975d3c626c3835bbf49094dd93bda5b6ff222196714040b1f8989622693829bfbe2e6c963c1210
+032ef975d3c626c3835a4ec8195191e4c0babec2223dd95f0fdb8b98cc461396f7b
+040b927476cdc94b1ebf4c35d7474ef40e2ecfe54477f356d3eae275e60025d4d16b6be6f7ece6e5145
+016ef975d3c7c6c3835adb340e1c6785755
+032f5b34747da69125eb8b27b38c28fe3e0195e0a5808405e0258131658024c1844
+056ef975d3c626c3835acb590d53560efa6fbff7a29d9694041b9730a3e2b04aa4da0fc8191151d5716e3680638db7457534b131f583336a6a6
+0404f130f580d19180aace25fb32379a0f2ba35432a6a70e3e3155c4e08040f5401beb356e17eac0da7
+008f5b3471cda6f4755
+048bd77563fddc1b1b8acb985c4d23c1210b9971c3c414c1844e9b313e16636e3a6f2e513a46564e3ae19134151908ffcec
+0164b411e580c515544bf274b6c2e39387b
+048a0fe55ac2cfc05f5a3fe180a8d91b1f7ae6a5e212211e351b9d601712ce15ff7b1b1c0c42b42f803bd2e4322c0751d5d
+048bbb990d97941a247a9ad7e6c61a640a7f5a83f7e3f58f216e9b9cfc42cac1eb719414e507d36e3a558130a516975b0e3
+016aa375662c3c1b1b8f9b9d0d53b51f313
+016e7bd4f47d021541009135f582b41e303
+024acf486c46d5cf103e2b35e4b24ea48e117135f5825ac0da7
+016bfb0c0943649e355a3b30b4e667bb5ae
+024efcf0d7d2e74257bf3f02e25c0711e10f5b34947da3c4619
+024b6eb6f3d3e64b7e9bf73063433783836f6c54e73c7685f5f
+024a26b473dc893e5eaeceb51062e74257bf7b349097904b244
+016ac275338c28fe3e0f4b9c0c43e39387b
+016f7e54906c4794345ef271b6c6636f3a6
+040f0c3527d6b706a2fecb3545a104c4d01b9975878c384e1e0e56e06382f64ade3ae27066c963c1210
+032f0c35a642e78303656521c0e7a00b646f09750352b51fd0342134e582cac0da7
+032b6ef6b3e2579abf2aee66b2d908caca5bde55ca03473b2f3f897553c6741e303
+056a0f186872b04eb4ebdad5ce13473b2f3f4e113aedb685348f2f6530a7e39317be0f64e123267acf4fbea33342b00e34eb4be7c6c7f396d2b
+040ace25fb369e34ef3ecd4597941010544f1974879df94e3f4f0f72e38df6e5c55f897487963f95ff6
+032ace25fb369e34ef3eccf597d96710f10b1c5597360f848e4b8b346e86e51ef03
+048fcd2506b6b767b2bf1f006028b701255afb4616c13094911191c1c5811084a05fbb5266c045e5e02ef27436cc63c4119
+056a6644029908db9e0abbe6172c13c5742e9fd5eb36dfe55e4f7f6064726a50df1f5c559796d6e6834ef641b342ced0deabbef92c40f464c44
+048aa764a3ed58ef2f1bcfc85882e7c257baab390c4616b6f3eef27436368397e69abb85447c6784051e9b356e1c63c4119
+040bb71492dc284e0f0fbea332f9084f4e9a6b341ec104c4d01a673482dd3754044a6b992c43736b6e3
+032ac275338c28fe3e0f4f6c094040f5401f4e5434fc2c1b1aaf8ba13b227fc0de2
+008e4971c3c2e39387b
+032a0e755b92ced05eaecf25411c180e4e0a0ba5ff190c1adb8fbbe756c2cac0da7
+024a4e256b36fe345f3bcf256ac90c1aca5e1c048730e004a15
+064eafb400496791a5dbb3b496cc284e0f0ef764b3ed7734a44bcba56ad00054e05ef754b2304185b0caaff7b216b393866b76652292963b1f7b927476c084c5444
+056eeb34756ce6e5145e6f62e2f21e90deabdb38fc47ee95cf2ef2d546c7b05b142e9b356ee074c5e56e1e345a43f393870bab31ae12cac0da7
+024f4975d2e766b7b2ef4ebc0872e61753af1b348477f41e303
+032a26a476cc8dcf2a5f0c2527f24f440e6bd6417349a7d125df6b35447843c1b10
+048ace88c966e0ea057aebe6b25963c0f10f1fb2e64174c184bafe986963c393871bbe352a42236e3adbab9c9c4414c1844
+040bdef8f857904b256e9e70ea22b04a64ff6974e31c1c1e4e0a0ed8e8504054a10b4be7c6c7dac58e2
+032a0a486d82b41eb55e9e75ead620ead55e0f613b32b13a05657131a58415c0544
+03250130844414c1012bfef93c4d5c7e5a5fbe830228b75125da6b35fe17a62317b
+016aab99590790fb146e6fd2e349b7d125d
+008b4b9c0c42b41e303
+040eaae4059963c1a46ef27506a7d397d2fbffcc0978c97aca5aff82e2a27e50de3e627066c2b41b803
+040aab346b57ee25fe2a4d41c6421ed0dea191344552b41eb12abba50139b794443acb34247d9c8f7e3
+008a6be2e6c6636e3a6
+024a0ae55ff2cac05f1a3b3504cc3c1f4f15d130703d03c5419
+016aab346b57ee25fe2a4971c3c80c1b1a5
+008b4b313e12cac0da7
+032b2ec683e6663ebe5fc99522c7a393865b3f60f15966e5145a7a347ef962c0f10
+040eae2401596731a44ba37436cd7224410e176163e9f731244ba37436cd7214410e127166c414c1844
+008e4971c3c2e39387b
+008a6be2e6c6636e3a6
+016e6fd5708c3755344bab348e1963c1210
+0324d56010a13094911b8ecda95966e465fe6e7544704514944b4be7c3ac77d4755
+032fd974f267e7d7d3ebfa37d6c7ce848e2fbea6a28efbef3fcabb3544ec085e3e4
+016501846511101155aa4971c3c6739387b
+016f097063c2e24717b5a131b0c7c776a3e
+008e4971c3c2e39387b
+016ee624513c295e8f5a7b984c46636e3a6
+}

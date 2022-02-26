@@ -1,0 +1,45 @@
+[symbol6]
+desc {}
+uniq 22
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 1 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{} {#ffff00}
+{pink} {#ff00c000cb00}
+{} {#00FF00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+load_tv_0
+-510 -350 190 350
+0 0 
+<properties>
+primitive load_tv { } string {} -432 -592 0 0 0 5 4 {} 0 3 {} {} {} 6 l
+<ports>
+ctrl -480 -160 1 1 -448 -448 -144 7 1 1 0 0 1 {} 6
+p -160 320 1 0 -192 -192 320 7 1 1 0 0 1 {} 6
+m -160 -320 1 0 -208 -208 -336 7 1 1 0 0 1 {} 6
+p_th 160 0 1 0 176 176 48 7 1 1 0 0 1 {} 6
+m_th 160 -160 1 0 208 208 -96 7 1 1 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+r gr_3_ -480 -320 160 320 0 1 10 2 0 0 6 
+l gr_5_ 0 1 1 0 1 10 2 0 {-320 160 -320 -176 16 -176 } {8 10 3} 6 
+t gr_13_ -384 0 2 2 0 0 0 0 8 0 {Load} 6 
+t gr_14_ -144 -208 2 2 0 0 0 0 8 0 {Time} 6 
+b gr_16_ 1 1 1 0 1 10 3 0 {-304 -176 -272 -128 -256 -64 -240 -16 -192 0 -144 0 -128 -48 -96 -96 -64 -96 -48 -64 -32 -32 -16 -32 16 0 } {8 10 3} 6 

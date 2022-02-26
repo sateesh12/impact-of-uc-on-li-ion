@@ -1,0 +1,7 @@
+Fuel Economy: -45.6836
+Delta SOC: 0.00314519
+Delta Trace: 2.29505e-012
+Accel 0-60: 7.16368
+Accel 40-60: 3.25001
+Accel 0-85: 14.4799
+Grade: 8.28124

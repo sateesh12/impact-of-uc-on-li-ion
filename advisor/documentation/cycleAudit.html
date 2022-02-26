@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>ADVISOR CycleAnalysis Class</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">ADVISOR CycleAnalysis Class</h1>
+</div>
+<h1 id="cycle-audit-class">Cycle Audit Class</h1>
+<p>For the convenient analysis of drive cycle data and simple vehicle modeling (up to the powertrain), a drive cycle analysis class has been created.  MATLAB Classes are described in detail in the MATLAB help documentation. This help file discusses the major features of the CycleAnalysis class and how to use it.<br /> Major Features ————–</p>
+<ul>
+<li>Speed vs. Time Trace statistical analysis</li>
+<li>Building New Cycles<br /></li>
+<li>Histogram Analysis and Plots of Speed vs. Time Trace statistics</li>
+<li>Simple vehicle energy analysis</li>
+<li>Roadload Loss Analysis for Simple Vehicles</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>Shown below,  are examples to walk a user through usage of  CycleAnalysis objects. As with all objects in MATLAB, one can type:<br /> - methods(CycleAudit) % displays all of the methods for class CycleAudit - help CycleAudit/[method name] % displays text help for a method<br /> ### Speed vs. Time Trace Statistical Analysis</p>
+<p>There are several ways one can create a CycleAudit object:<br /> % method 1: using t and v arrays<br /> t = [0, 1, 2, 3, 4, 5]; % elapsed time, seconds<br /> v = [0, 1, 2, 2, 1, 0]; % speed, m/s<br /> cyc = CycleAudit(t,v,’my cycle’); % creates a CycleAudit object named cyc<br /> %<br /> % method 2: using ADVISOR CYC_*.m files<br /> cyc2 =CycleAudit(’CYC_UDDS’); % creates a CycleAudit object based on the UDDS drive cycle<br /> Once the object has been created, the default statistics can be determined using the display method:<br /> display(cyc)<br /> cyc % alternately, just leave off the semi-colon; calls CycleAudit/disp.m<br /> To explicitly obtain cycle statistics, we can call the cycStats method<br /> [velbar, accbar, decbar, velmax, accmax, decmax, hist] = cycStats(cyc); % mean velocity, mean acceleration, etc.<br /> To plot the cycle, we can use the plot method.<br /> plot(cyc);<br /> ### Buidling New Cycles</p>
+<p>Building new cycles is simple with the CycleAudit class.  Let’s say we want to create a new cycle that is a combination of two UDDS cycles with a HWFET cycle in the middle. Here is what we do:<br /> cyc1 = CycleAudit(’CYC_UDDS’);<br /> cyc2 = CycleAudit(’CYC_HWFET’);<br /> cyc  = cycSplice([cyc1 cyc2 cyc1]);<br /> If we plot the cyc object, we will see that this indeed works:<br /> plot(cyc);<br /> ### Histogram Analysis</p>
+<p>Alternately, we can call up the plotDist method which will display statistics in histogram  format.<br /> plotDist(cyc); % note: the red lines indicate where the average is<br /> ### Simple Vehicle Energy Analysis</p>
+<p>Let’s assume we want to examine a heavy vehicle with the following statistic</p>
+<table>
+<col width="73%" />
+<col width="19%" />
+<tbody>
+<tr class="odd">
+<td align="left">Param<br /></td>
+<td align="left">Value<br /></td>
+</tr>
+<tr class="even">
+<td align="left">Air Density [kg/m/m/m][airDensity]<br /></td>
+<td align="left">1.23<br /></td>
+</tr>
+<tr class="odd">
+<td align="left">Coefficient of Drag [–][CD]<br /></td>
+<td align="left">0.65<br /></td>
+</tr>
+<tr class="even">
+<td align="left">Frontal Area [m*m][FA]<br /></td>
+<td align="left">7.99<br /></td>
+</tr>
+<tr class="odd">
+<td align="left">Vehicle Mass [kg][M]<br /></td>
+<td align="left">7257<br /></td>
+</tr>
+<tr class="even">
+<td align="left">Gravity Acceleration [m/s/s][G]<br /></td>
+<td align="left">9.81<br /></td>
+</tr>
+<tr class="odd">
+<td align="left">Rolling Resistance [RRC0]<br /></td>
+<td align="left">0.00525<br /></td>
+</tr>
+<tr class="even">
+<td align="left">Cycle Averaged Regenerative Efficiency [regenEff]<br /></td>
+<td align="left">0%<br /></td>
+</tr>
+<tr class="odd">
+<td align="left">Cycle Averaged Powertrain Efficiency [cycEff]<br /></td>
+<td align="left">20%<br /></td>
+</tr>
+<tr class="even">
+<td align="left">Fuel Volumetric Heating Value [J/gallon][VHV]<br /></td>
+<td align="left">137217399.6<br /></td>
+</tr>
+<tr class="odd">
+<td align="left">Accessory Loads [Watts][accPwr]<br /></td>
+<td align="left">7500</td>
+</tr>
+</tbody>
+</table>
+<p>We can wrap all of this simple data up and use it in the evalVeh method:<br /> % the following are useful constants: aerodynamic loss constant, kinetic energy constant, potential energy constant, etc.<br /> aeroC=airDensity*CD*FA;<br />   keC=M;<br />   peC=M*G;<br />   rrC=G*M*RRC0;<br /> [mpg, E]=evalVeh(cyc, aeroC, keC, peC, rrC, regenEff, cycEff, fuelVolHV, auxLoads);<br /> After we’ve generated the data, we can look at the details in the energy structure, E, as detailed in <em>help CycleAudit/evalVeh</em>. In addition, we can get an estimate of the fuel economy based on the cycle-averaged powertrain efficiency, regenerative energy round-trip efficiency, and the auxiliary loads we’ve specified.<br /> ### Histogram of Losses<br /> Lastly, we may wish to view the loss histogram on the vehicle which can be done as follows:<br /> plotDist(cyc, E);<br /> <a href="advisor_doc.html">return to advisor documentation<br /></a></p>
+<hr />
+<p>Page Last Updated: August 4, 2003<br /> Page Last Updated by: Michael P. O’Keefe<br /></p>
+</body>
+</html>

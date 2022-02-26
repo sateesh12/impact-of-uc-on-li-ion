@@ -1,0 +1,4395 @@
+Library {
+  Name			  "lib_drive_cycle2"
+  Version		  5.1
+  SaveDefaultBlockParams  on
+  LibraryLinkDisplay	  "all"
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Tue Nov 21 13:53:26 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Feb 23 12:02:46 2004"
+  ModifiedComment	  "mokeefe -- Thu Apr 18 08:26:19 2002 -- Version 1.14"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on"
+  ModifiedHistory	  "mokeefe -- Thu Apr 18 08:26:19 2002 -- Version 1.14"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on\n\nmokeefe -- Thu Apr 18 08:26:19 2002 -- Version 1.14\nsaving the mode"
+"l:\no \"without the model browser open\"\no with only top-level screen visibl"
+"e \no with \"fit to view\" enabled\no with \"status bar\" off and \"toolbar\""
+" off\no with \"prompt to update model history with each save\" on\n\nmokeefe "
+"-- Thu Apr 18 08:26:08 2002 -- Version 1.13\nsaving the model:\no \"without t"
+"he model browser open\"\no with only top-level screen visible \no with \"fit "
+"to view\" enabled\no with \"status bar\" off and \"toolbar\" off\no with \"pr"
+"ompt to update model history with each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  SimulationMode	  "normal"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Backlash
+      BacklashWidth	      "1"
+      InitialOutput	      "0"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Derivative
+    }
+    Block {
+      BlockType		      From
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ShowAdditionalParam     off
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Goto
+    }
+    Block {
+      BlockType		      GotoTagVisibility
+      GotoTag		      "A"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Lookup
+      InputValues	      "[-4:5]"
+      OutputValues	      " rand(1,10)-0.5"
+      ShowAdditionalParam     off
+      LookUpMeth	      "Interpolation-Extrapolation"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Advanced Sim. Parameters)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      TransportDelay
+      DelayTime		      "1"
+      InitialInput	      "0"
+      BufferSize	      "1024"
+      PadeOrder		      "0"
+      TransDelayFeedthrough   off
+    }
+    Block {
+      BlockType		      Trigonometry
+      Operator		      "sin"
+      OutputSignalType	      "auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_drive_cycle2"
+    Location		    [202, 82, 966, 744]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "drive cycle\n<cyc>"
+      Ports		      [0, 1]
+      Position		      [105, 118, 140, 192]
+      BackgroundColor	      "yellow"
+      FontSize		      10
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stand-Alone Drive Cycle Mask"
+      MaskPromptString	      "General Name of this Component [char]|Log Varia"
+"bles to Workspace?|Initialization File(s) [cell array of char]|Modification C"
+"ell [2 column cell array of param and val]|Icon image file name [char--evalua"
+"ted]|DEBUG|Vehicle Mass (kg)"
+      MaskStyleString	      "edit,popup(Don't Log|Log),edit,edit,edit,popup("
+"ON|OFF),edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on"
+      MaskCallbackString      "||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,"
+      MaskVariables	      "generalName=@1;logPick=@2;initFileName=@3;modCe"
+"ll=@4;imgFileName=@5;DEBUG=&6;veh_mass=@7;"
+      MaskInitialization      "% initialization via m-file script\nadvSACompMa"
+"skInitR13;"
+      MaskDisplay	      "image(imread(imgFileName))"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'cyc'|Log|{}|{}|'bdi_cyc.jpg'|OFF|veh_mass"
+      System {
+	Name			"drive cycle\n<cyc>"
+	Location		[202, 77, 966, 744]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "controlTag"
+	  Position		  [45, 136, 225, 174]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "cycControl"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "drive cycle model and interface"
+	  Ports			  [1, 3]
+	  Position		  [255, 124, 295, 186]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "drive cycle model and interface"
+	    Location		    [202, 77, 966, 744]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "control"
+	      Position		      [30, 370, 50, 390]
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [5, 1]
+	      Position		      [645, 259, 655, 541]
+	      ShowName		      off
+	      Inputs		      "5"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [125, 95, 145, 115]
+	      NamePlacement	      "alternate"
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [320, 551, 490, 579]
+	      ShowName		      off
+	      Value		      "veh_mass"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 4]
+	      Position		      [90, 298, 95, 462]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [420, 272, 520, 308]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "distance"
+	      Port {
+		PortNumber		1
+		Name			"distance"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [420, 327, 520, 363]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade_orig"
+	      Port {
+		PortNumber		1
+		Name			"grade_orig"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [420, 382, 520, 418]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	      Port {
+		PortNumber		1
+		Name			"grade"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [420, 437, 520, 473]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "elevation"
+	      Port {
+		PortNumber		1
+		Name			"elevation"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [420, 492, 520, 528]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_cargo_mass"
+	      Port {
+		PortNumber		1
+		Name			"veh_cargo_mass"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [110, 132, 210, 168]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "cyc_mph_r_orig"
+	      Port {
+		PortNumber		1
+		Name			"cyc_mph_r_orig"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      Position		      [110, 177, 210, 213]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "cyc_mph_r"
+	      Port {
+		PortNumber		1
+		Name			"cyc_mph_r"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [140, 303, 255, 337]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "mpha"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility"
+	      Position		      [260, 302, 331, 338]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "mpha"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility1"
+	      Position		      [340, 272, 411, 308]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "distance"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility10"
+	      Position		      [260, 422, 331, 458]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_cyc_mph_r"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility2"
+	      Position		      [340, 327, 411, 363]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "grade_orig"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility3"
+	      Position		      [260, 342, 331, 378]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_grade"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility4"
+	      Position		      [260, 382, 331, 418]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "Altia_Run"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility5"
+	      Position		      [340, 382, 411, 418]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility6"
+	      Position		      [340, 437, 411, 473]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "elevation"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility7"
+	      Position		      [340, 492, 411, 528]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "veh_cargo_mass"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility8"
+	      Position		      [30, 132, 101, 168]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "cyc_mph_r_orig"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility9"
+	      Position		      [30, 177, 101, 213]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "cyc_mph_r"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [140, 343, 255, 377]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_grade"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [140, 383, 255, 417]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "Altia_Run"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [140, 423, 255, 457]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_cyc_mph_r"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [515, 555, 535, 575]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	      Port {
+		PortNumber		1
+		Name			"current_veh_mass"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "drive cycle model"
+	      Ports		      [0, 1]
+	      Position		      [420, 135, 460, 195]
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      System {
+		Name			"drive cycle model"
+		Location		[202, 77, 966, 744]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"96"
+		Block {
+		  BlockType		  From
+		  Name			  "Altia_Run"
+		  Position		  [315, 371, 420, 399]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "Altia_Run"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "Altia_Run1"
+		  Position		  [420, 76, 525, 104]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "Altia_Run"
+		}
+		Block {
+		  BlockType		  Backlash
+		  Name			  "Backlash"
+		  Position		  [130, 40, 160, 60]
+		  BacklashWidth		  "0.5"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  []
+		  Position		  [720, 480, 776, 520]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  TreatAsAtomicUnit	  off
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "This block determines the speed r"
+"equired of the vehicle.  If cyc_filter_bool\nis true, a centered-in-time aver"
+"age of the trace, with backlash, is required of\nthe vehicle.  This may be us"
+"eful to smooth out jumps in the trace.  Otherwise,\nthe trace, exactly as pub"
+"lished, is required of the vehicle.\nThis block also determines the roadway g"
+"rade of the cycle and the \nelevation as a function of the distance travelell"
+"ed"
+		    Position		    [206, 47]
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [55, 114, 95, 136]
+		  FontName		  "Arial"
+		  Value			  "0.001"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [215, 109, 255, 131]
+		  Orientation		  "left"
+		  FontName		  "Arial"
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  Position		  [175, 168, 260, 192]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "cyc_filter_bool"
+		}
+		Block {
+		  BlockType		  Derivative
+		  Name			  "Derivative"
+		  Position		  [130, 285, 160, 315]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From"
+		  Position		  [420, 26, 525, 54]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "altia_cyc_mph_r"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From1"
+		  Position		  [315, 321, 420, 349]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "altia_grade"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto \n<veh><vc><sdo>"
+		  Position		  [545, 424, 595, 446]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "grade"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto \n<veh><vc><sdo>1"
+		  Position		  [300, 543, 415, 567]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  GotoTag		  "veh_cargo_mass"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <altia>"
+		  Position		  [405, 165, 495, 195]
+		  Orientation		  "down"
+		  BackgroundColor	  "lightBlue"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  GotoTag		  "cyc_mph_r_orig"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <altia>1"
+		  Position		  [300, 460, 390, 490]
+		  Orientation		  "down"
+		  BackgroundColor	  "lightBlue"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  GotoTag		  "grade_orig"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <sdo>1"
+		  Position		  [135, 472, 205, 498]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "distance"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <sdo>2"
+		  Position		  [715, 382, 775, 408]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "elevation"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <sdo><vc>"
+		  Position		  [615, 175, 675, 200]
+		  Orientation		  "down"
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "cyc_mph_r"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Integrator"
+		  Ports			  [1, 1]
+		  Position		  [650, 380, 680, 410]
+		  InitialCondition	  "cyc_elevation_init"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [590, 377, 620, 408]
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [130, 108, 160, 132]
+		  FontName		  "Arial"
+		  Operator		  ">"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [220, 44, 250, 76]
+		  FontName		  "Arial"
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch1"
+		  Position		  [330, 109, 360, 141]
+		  FontName		  "Arial"
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch2"
+		  Position		  [585, 100, 615, 130]
+		  Threshold		  "1"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch3"
+		  Position		  [470, 390, 500, 420]
+		  NamePlacement		  "alternate"
+		  Threshold		  "1"
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trigonometric\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [530, 385, 560, 415]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "distance\ntravelled (m)"
+		  Ports			  [0, 1]
+		  Position		  [65, 390, 95, 440]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  System {
+		    Name		    "distance\ntravelled (m)"
+		    Location		    [202, 77, 966, 744]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Block NOTES"
+		    Ports		    []
+		    Position		    [215, 85, 271, 125]
+		    BackgroundColor	    "green"
+		    ShowName		    off
+		    TreatAsAtomicUnit	    off
+		    MaskDisplay		    "disp('Block\\nNOTES')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Block NOTES"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "This block calculates the distanc"
+"e travelled by the\n vehicle based on the achieved speed."
+		    Position		    [206, 37]
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From <veh>"
+		    Position		    [20, 29, 85, 51]
+		    BackgroundColor	    "lightBlue"
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "mpha"
+		    }
+		    Block {
+		    BlockType		    Integrator
+		    Name		    "Integrator"
+		    Ports		    [1, 1]
+		    Position		    [185, 25, 215, 55]
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "mph-->m/s"
+		    Position		    [110, 24, 150, 56]
+		    FontName		    "Arial"
+		    Gain		    "0.447"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    Position		    [245, 33, 275, 47]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Integrator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "From <veh>"
+		    SrcPort		    1
+		    DstBlock		    "mph-->m/s"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "mph-->m/s"
+		    SrcPort		    1
+		    DstBlock		    "Integrator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace"
+		  Ports			  [1]
+		  Position		  [280, 612, 415, 638]
+		  ShowName		  off
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|cargo_mass_vs_time|logF"
+"lag"
+		  System {
+		    Name		    "enhancedToWorkspace"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    ToWorkspace
+		    Name		    "To Workspace"
+		    Position		    [145, 85, 205, 115]
+		    VariableName	    "cyc_cargo_mass_vs_time"
+		    MaxDataPoints	    "inf"
+		    SampleTime		    "-1"
+		    SaveFormat		    "Array"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "To Workspace"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "mph-->m/s"
+		  Position		  [680, 99, 720, 131]
+		  FontName		  "Arial"
+		  Gain			  "0.447"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "repeated cycle\ngrade vs. distance"
+		  Ports			  [1, 1]
+		  Position		  [150, 397, 185, 433]
+		  FontName		  "Arial"
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  MaskType		  "Repeating table"
+		  MaskDescription	  "Repeating table.\nEnter values of i"
+"nput and output for first cycle."
+		  MaskHelp		  "Repeats cycle given in table. Input"
+" values should be monotonically increasing."
+		  MaskPromptString	  "Input values:|Output values:"
+		  MaskStyleString	  "edit,edit"
+		  MaskTunableValueString  "on,on"
+		  MaskCallbackString	  "|"
+		  MaskEnableString	  "on,on"
+		  MaskVisibilityString	  "on,on"
+		  MaskToolTipString	  "on,on"
+		  MaskVarAliasString	  ","
+		  MaskVariables		  "t=@1;y=@2;"
+		  MaskInitialization	  "period = max(@1);"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "cyc_grade(:,1)|cyc_grade(:,2)"
+		  System {
+		    Name		    "repeated cycle\ngrade vs. distanc"
+"e"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "distance\ntravelled (m)"
+		    Position		    [55, 55, 75, 75]
+		    FontName		    "Arial"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Fcn1"
+		    Position		    [125, 55, 165, 75]
+		    Expr		    "rem(u[1],period)"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Look-Up Table"
+		    Position		    [200, 53, 240, 77]
+		    InputValues		    "t"
+		    OutputValues	    "y"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [275, 55, 295, 75]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "distance\ntravelled (m)"
+		    SrcPort		    1
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Fcn1"
+		    SrcPort		    1
+		    DstBlock		    "Look-Up Table"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Look-Up Table"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "repeated cycle\nspeed vs. time"
+		  Ports			  [0, 1]
+		  Position		  [120, 202, 155, 238]
+		  FontName		  "Arial"
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  MaskType		  "Repeating table"
+		  MaskDescription	  "Repeating table.\nEnter values of t"
+"ime and output for first cycle."
+		  MaskHelp		  "Repeats cycle given in table. Time "
+"values should be monotonically increasing."
+		  MaskPromptString	  "Time values:|Output values:"
+		  MaskStyleString	  "edit,edit"
+		  MaskTunableValueString  "on,on"
+		  MaskCallbackString	  "|"
+		  MaskEnableString	  "on,on"
+		  MaskVisibilityString	  "on,on"
+		  MaskToolTipString	  "on,on"
+		  MaskVarAliasString	  ","
+		  MaskInitialization	  "period = max(@1); t = @1; y = @2;"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "cyc_mph(:,1)|cyc_mph(:,2)"
+		  System {
+		    Name		    "repeated cycle\nspeed vs. time"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Clock
+		    Name		    "Clock"
+		    Position		    [45, 60, 65, 80]
+		    Decimation		    "10"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Fcn1"
+		    Position		    [110, 60, 150, 80]
+		    Expr		    "rem(u[1],period)"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Look-Up Table"
+		    Position		    [210, 58, 250, 82]
+		    InputValues		    "t"
+		    OutputValues	    "y"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [285, 60, 305, 80]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Fcn1"
+		    SrcPort		    1
+		    DstBlock		    "Look-Up Table"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Clock"
+		    SrcPort		    1
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Look-Up Table"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "repeated cycle\nvehicle cargo mass "
+"vs. distance"
+		  Ports			  [1, 1]
+		  Position		  [145, 537, 180, 573]
+		  BackgroundColor	  "darkGreen"
+		  FontName		  "Arial"
+		  SourceBlock		  "lib_drive_cycle/drive cycle\n<cyc>/"
+"repeated cycle\ngrade vs. distance"
+		  SourceType		  "Repeating table"
+		  t			  "cyc_cargo_mass(:,1)"
+		  y			  "cyc_cargo_mass(:,2)"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "super-smooth,\nno-lag trace"
+		  Ports			  [0, 1]
+		  Position		  [25, 29, 85, 71]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  MaskType		  "Smooth Cycle"
+		  MaskDescription	  "Smooth Cycle"
+		  MaskPromptString	  "Time vector for trace (s):|Speed ve"
+"ctor for trace (km/hr):|Averaging time (s):"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "t=@1;y=@2;avgtime=@3;"
+		  MaskInitialization	  "period = max(@1);,"
+		  MaskDisplay		  "disp('SMOOTH\\nCYCLE')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "cyc_mph(:,1)|cyc_mph(:,2)|cyc_avg_t"
+"ime"
+		  System {
+		    Name		    "super-smooth,\nno-lag trace"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Subsystem"
+		    Ports		    [1, 1]
+		    Position		    [125, 63, 210, 107]
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    MaskType		    "Running Average"
+		    MaskDescription	    "Running Average"
+		    MaskHelp		    "Output is the average of the last"
+" (Averaging Time) seconds of input."
+		    MaskPromptString	    "Averaging Time (s)"
+		    MaskStyleString	    "edit"
+		    MaskTunableValueString  "on"
+		    MaskEnableString	    "on"
+		    MaskVisibilityString    "on"
+		    MaskToolTipString	    "on"
+		    MaskInitialization	    "n=@1;"
+		    MaskDisplay		    "disp('Running\\nAverage')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    MaskValueString	    "avgtime"
+		    System {
+		    Name		    "Subsystem"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [30, 55, 50, 75]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [255, 154, 295, 176]
+		    FontName		    "Arial"
+		    Value		    "n"
+		    }
+		    Block {
+		    BlockType		    Integrator
+		    Name		    "Integrator"
+		    Ports		    [1, 1]
+		    Position		    [80, 55, 100, 75]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [340, 66, 360, 84]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [225, 60, 245, 80]
+		    Inputs		    "+-"
+		    }
+		    Block {
+		    BlockType		    TransportDelay
+		    Name		    "Transport\nDelay"
+		    Position		    [155, 90, 195, 120]
+		    DelayTime		    "n"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [390, 65, 410, 85]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -85]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Integrator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Transport\nDelay"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Integrator"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Transport\nDelay"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "repeated\ncycle"
+		    Ports		    [0, 1]
+		    Position		    [45, 67, 80, 103]
+		    FontName		    "Arial"
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "repeated\ncycle"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Clock
+		    Name		    "Clock"
+		    Position		    [45, 60, 65, 80]
+		    Decimation		    "10"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Fcn1"
+		    Position		    [110, 60, 150, 80]
+		    Expr		    "rem(u+avgtime*0.75,period)"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Look-Up Table"
+		    Position		    [210, 58, 250, 82]
+		    InputValues		    "t"
+		    OutputValues	    "y"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [285, 60, 305, 80]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Look-Up Table"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Clock"
+		    SrcPort		    1
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Fcn1"
+		    SrcPort		    1
+		    DstBlock		    "Look-Up Table"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [245, 75, 265, 95]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Subsystem"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "repeated\ncycle"
+		    SrcPort		    1
+		    DstBlock		    "Subsystem"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "req'd vehicle\nspeed (m/s)"
+		  Position		  [750, 105, 770, 125]
+		  FontName		  "Arial"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "repeated cycle\ngrade vs. distance"
+		  SrcPort		  1
+		  Points		  [0, 0; 155, 0]
+		  Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "Goto <altia>1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Switch3"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "distance\ntravelled (m)"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    DstBlock		    "repeated cycle\ngrade vs. distanc"
+"e"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    Branch {
+		    DstBlock		    "Goto <sdo>1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "repeated cycle\nvehicle cargo mas"
+"s vs. distance"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Switch3"
+		  SrcPort		  1
+		  Points		  [0, -5; 5, 0]
+		  Branch {
+		    DstBlock		    "Trigonometric\nFunction"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Goto \n<veh><vc><sdo>"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Integrator"
+		  SrcPort		  1
+		  DstBlock		  "Goto <sdo>2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trigonometric\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Derivative"
+		  SrcPort		  1
+		  Points		  [410, 0]
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Switch1"
+		  SrcPort		  1
+		  Points		  [0, 0; 85, 0]
+		  Branch {
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		  }
+		  Branch {
+		    DstBlock		    "Goto <altia>"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "repeated cycle\nspeed vs. time"
+		  SrcPort		  1
+		  Points		  [155, 0]
+		  DstBlock		  "Switch1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  Points		  [60, 0]
+		  DstBlock		  "Switch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "super-smooth,\nno-lag trace"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    DstBlock		    "Backlash"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Backlash"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -60]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [-10, 0; 0, -50]
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -55]
+		  DstBlock		  "Switch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Switch2"
+		  SrcPort		  1
+		  Points		  [0, 0; 25, 0]
+		  Branch {
+		    DstBlock		    "Goto <sdo><vc>"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "mph-->m/s"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "mph-->m/s"
+		  SrcPort		  1
+		  DstBlock		  "req'd vehicle\nspeed (m/s)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From"
+		  SrcPort		  1
+		  Points		  [40, 0]
+		  DstBlock		  "Switch2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Altia_Run1"
+		  SrcPort		  1
+		  Points		  [0, 25]
+		  DstBlock		  "Switch2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "From1"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  DstBlock		  "Switch3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Altia_Run"
+		  SrcPort		  1
+		  Points		  [0, 20]
+		  DstBlock		  "Switch3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "repeated cycle\nvehicle cargo mass "
+"vs. distance"
+		  SrcPort		  1
+		  Points		  [0, 0; 65, 0]
+		  Branch {
+		    DstBlock		    "Goto \n<veh><vc><sdo>1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "enhancedToWorkspace"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "signal\nannotator"
+	      Ports		      [3, 1]
+	      Position		      [305, 85, 350, 215]
+	      TreatAsAtomicUnit	      off
+	      System {
+		Name			"signal\nannotator"
+		Location		[202, 77, 966, 744]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 93, 140, 107]
+		  Port {
+		    PortNumber		    1
+		    Name		    "simulation_time"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "In2"
+		  Position		  [115, 178, 145, 192]
+		  Port			  "2"
+		  Port {
+		    PortNumber		    1
+		    Name		    "cycle_mph_r_orig"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "In3"
+		  Position		  [115, 263, 145, 277]
+		  Port			  "3"
+		  Port {
+		    PortNumber		    1
+		    Name		    "cycle_mph_r"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus\nCreator"
+		  Ports			  [4, 1]
+		  Position		  [435, 59, 445, 396]
+		  ShowName		  off
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [115, 341, 245, 369]
+		  ShowName		  off
+		  Value			  "cyc_mph(1,2)*.447"
+		  Port {
+		    PortNumber		    1
+		    Name		    "v_init"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [560, 223, 590, 237]
+		}
+		Line {
+		  Name			  "simulation_time"
+		  Labels		  [0, 0]
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bus\nCreator"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "cycle_mph_r_orig"
+		  Labels		  [0, 0]
+		  SrcBlock		  "In2"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "cycle_mph_r"
+		  Labels		  [0, 0]
+		  SrcBlock		  "In3"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator"
+		  DstPort		  3
+		}
+		Line {
+		  Name			  "v_init"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator"
+		  DstPort		  4
+		}
+		Annotation {
+		  Name			  "initial speed in m/s"
+		  Position		  [185, 386]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "req'd lookups"
+	      Position		      [415, 85, 435, 105]
+	      FontName		      "Arial"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "req'd vehicle\nspeed (m/s)"
+	      Position		      [580, 155, 600, 175]
+	      FontName		      "Arial"
+	      Port		      "2"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sensors"
+	      Position		      [680, 390, 700, 410]
+	      FontName		      "Arial"
+	      Port		      "3"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "drive cycle model"
+	      SrcPort		      1
+	      DstBlock		      "req'd vehicle\nspeed (m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      DstBlock		      "signal\nannotator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "signal\nannotator"
+	      SrcPort		      1
+	      Points		      [0, -55]
+	      DstBlock		      "req'd lookups"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "control"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "sensors"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "distance"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "grade_orig"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "grade"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "elevation"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "veh_cargo_mass"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "cyc_mph_r_orig"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "signal\nannotator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "cyc_mph_r"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "signal\nannotator"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "current_veh_mass"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [90, 0]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      5
+	    }
+	    Annotation {
+	      Name		      "DRIVE CYCLE\nmodel"
+	      Position		      [312, 45]
+	      BackgroundColor	      "yellow"
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	    }
+	    Annotation {
+	      Name		      "DRIVE CYCLE\ninterface"
+	      Position		      [212, 255]
+	      BackgroundColor	      "yellow"
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "reqOutTag"
+	  Position		  [440, 63, 615, 107]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "cycReqOut"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "sensorsTag"
+	  Position		  [440, 204, 610, 246]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "cycSensors"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "req'd vehicle\nspeed (m/s)"
+	  Position		  [460, 145, 480, 165]
+	  FontName		  "Arial"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "drive cycle model and interface"
+	  SrcPort		  2
+	  DstBlock		  "req'd vehicle\nspeed (m/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "controlTag"
+	  SrcPort		  1
+	  DstBlock		  "drive cycle model and interface"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "drive cycle model and interface"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, -50]
+	  DstBlock		  "reqOutTag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "drive cycle model and interface"
+	  SrcPort		  3
+	  Points		  [60, 0; 0, 50]
+	  DstBlock		  "sensorsTag"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "DRIVE CYCLE"
+	  Position		  [237, 75]
+	  BackgroundColor	  "yellow"
+	  FontName		  "Arial"
+	  FontSize		  22
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "drive cycle\n<cyc>\ndistance based"
+      Ports		      [0, 1]
+      Position		      [105, 248, 140, 322]
+      BackgroundColor	      "yellow"
+      FontSize		      10
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stand-Alone Distance-Based Drive Cycle Mask"
+      MaskPromptString	      "General Name of this Component [char]|Log Varia"
+"bles to Workspace?|Initialization File(s) [cell array of char]|Modification C"
+"ell [2 column cell array of param and val]|Icon image file name [char--evalua"
+"ted]|DEBUG|Vehicle Mass (kg)"
+      MaskStyleString	      "edit,popup(Don't Log|Log),edit,edit,edit,popup("
+"ON|OFF),edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on"
+      MaskCallbackString      "||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,"
+      MaskVariables	      "generalName=@1;logPick=@2;initFileName=@3;modCe"
+"ll=@4;imgFileName=@5;DEBUG=&6;veh_mass=@7;"
+      MaskInitialization      "set_param(gcs,'StopTime','inf'); % set stop tim"
+"e to inf\n% this block will stop sim when max. distance reached or max. time "
+"elapsed\n% initialization via m-file script\nadvSACompMaskInit;"
+      MaskDisplay	      "image(imread(imgFileName))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'cycd'|Log|{}|{}|'bdi_cyc.jpg'|OFF|veh_mass"
+      System {
+	Name			"drive cycle\n<cyc>\ndistance based"
+	Location		[202, 77, 966, 744]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "controlTag"
+	  Position		  [45, 131, 225, 169]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "cycdControl"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "drive cycle model and interface"
+	  Ports			  [1, 3]
+	  Position		  [255, 120, 295, 180]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "drive cycle model and interface"
+	    Location		    [202, 73, 966, 748]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "control"
+	      Position		      [80, 415, 100, 435]
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [7, 1]
+	      Position		      [660, 259, 670, 601]
+	      ShowName		      off
+	      Inputs		      "7"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [125, 85, 145, 105]
+	      Decimation	      "10"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 4]
+	      Position		      [140, 343, 145, 507]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [470, 262, 570, 298]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "distance"
+	      Port {
+		PortNumber		1
+		Name			"distance"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [470, 312, 570, 348]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade_orig"
+	      Port {
+		PortNumber		1
+		Name			"grade_orig"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [470, 362, 570, 398]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "grade"
+	      Port {
+		PortNumber		1
+		Name			"grade"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [470, 412, 570, 448]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "elevation"
+	      Port {
+		PortNumber		1
+		Name			"elevation"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [470, 462, 570, 498]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "veh_cargo_mass"
+	      Port {
+		PortNumber		1
+		Name			"veh_cargo_mass"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [470, 512, 570, 548]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "cyc_mph_r_orig"
+	      Port {
+		PortNumber		1
+		Name			"cyc_mph_r_orig"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      Position		      [470, 562, 570, 598]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "cyc_mph_r"
+	      Port {
+		PortNumber		1
+		Name			"cyc_mph_r"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [190, 348, 305, 382]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "mpha"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility"
+	      Position		      [310, 347, 381, 383]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "mpha"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility1"
+	      Position		      [390, 262, 461, 298]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "distance"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility10"
+	      Position		      [310, 467, 381, 503]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_cyc_mph_r"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility2"
+	      Position		      [390, 312, 461, 348]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "grade_orig"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility3"
+	      Position		      [310, 387, 381, 423]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_grade"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility4"
+	      Position		      [310, 427, 381, 463]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "Altia_Run"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility5"
+	      Position		      [390, 362, 461, 398]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "grade"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility6"
+	      Position		      [390, 412, 461, 448]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "elevation"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility7"
+	      Position		      [390, 462, 461, 498]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "veh_cargo_mass"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility8"
+	      Position		      [390, 512, 461, 548]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "cyc_mph_r_orig"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility9"
+	      Position		      [390, 562, 461, 598]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "cyc_mph_r"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [190, 388, 305, 422]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_grade"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [190, 428, 305, 462]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "Altia_Run"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [190, 468, 305, 502]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_cyc_mph_r"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "drive cycle model"
+	      Ports		      [0, 1]
+	      Position		      [230, 125, 270, 185]
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      System {
+		Name			"drive cycle model"
+		Location		[202, 77, 966, 744]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  From
+		  Name			  "Altia_Run"
+		  Position		  [315, 371, 420, 399]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "Altia_Run"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "Altia_Run1"
+		  Position		  [420, 76, 525, 104]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "Altia_Run"
+		}
+		Block {
+		  BlockType		  Backlash
+		  Name			  "Backlash"
+		  Position		  [130, 40, 160, 60]
+		  BacklashWidth		  "0.5"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  []
+		  Position		  [720, 480, 776, 520]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  TreatAsAtomicUnit	  off
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "This block determines the speed r"
+"equired of the vehicle.  If cyc_filter_bool\nis true, a centered-in-time aver"
+"age of the trace, with backlash, is required of\nthe vehicle.  This may be us"
+"eful to smooth out jumps in the trace.  Otherwise,\nthe trace, exactly as pub"
+"lished, is required of the vehicle.\nThis block also determines the roadway g"
+"rade of the cycle and the \nelevation as a function of the distance travelell"
+"ed"
+		    Position		    [206, 47]
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [55, 114, 95, 136]
+		  FontName		  "Arial"
+		  Value			  "0.001"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [215, 109, 255, 131]
+		  Orientation		  "left"
+		  FontName		  "Arial"
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  Position		  [175, 168, 260, 192]
+		  ShowName		  off
+		  FontName		  "Arial"
+		  Value			  "cyc_filter_bool"
+		}
+		Block {
+		  BlockType		  Derivative
+		  Name			  "Derivative"
+		  Position		  [130, 285, 160, 315]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From"
+		  Position		  [420, 26, 525, 54]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "altia_cyc_mph_r"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From1"
+		  Position		  [315, 321, 420, 349]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "altia_grade"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto \n<veh><vc><sdo>"
+		  Position		  [545, 424, 595, 446]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "grade"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto \n<veh><vc><sdo>1"
+		  Position		  [300, 543, 415, 567]
+		  BackgroundColor	  "darkGreen"
+		  ShowName		  off
+		  GotoTag		  "veh_cargo_mass"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <altia>"
+		  Position		  [405, 165, 495, 195]
+		  Orientation		  "down"
+		  BackgroundColor	  "lightBlue"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  GotoTag		  "cyc_mph_r_orig"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <altia>1"
+		  Position		  [300, 460, 390, 490]
+		  Orientation		  "down"
+		  BackgroundColor	  "lightBlue"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  GotoTag		  "grade_orig"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <sdo>1"
+		  Position		  [135, 472, 205, 498]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "distance"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <sdo>2"
+		  Position		  [715, 382, 775, 408]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "elevation"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <sdo><vc>"
+		  Position		  [615, 175, 675, 200]
+		  Orientation		  "down"
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "cyc_mph_r"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Integrator"
+		  Ports			  [1, 1]
+		  Position		  [650, 380, 680, 410]
+		  InitialCondition	  "cyc_elevation_init"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [590, 377, 620, 408]
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [130, 108, 160, 132]
+		  FontName		  "Arial"
+		  Operator		  ">"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [220, 44, 250, 76]
+		  FontName		  "Arial"
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch1"
+		  Position		  [330, 109, 360, 141]
+		  FontName		  "Arial"
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch2"
+		  Position		  [585, 100, 615, 130]
+		  Threshold		  "1"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch3"
+		  Position		  [470, 390, 500, 420]
+		  NamePlacement		  "alternate"
+		  Threshold		  "1"
+		}
+		Block {
+		  BlockType		  Trigonometry
+		  Name			  "Trigonometric\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [530, 385, 560, 415]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "distance\ntravelled (m)"
+		  Ports			  [0, 1]
+		  Position		  [65, 390, 95, 440]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  System {
+		    Name		    "distance\ntravelled (m)"
+		    Location		    [202, 77, 966, 744]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Block NOTES"
+		    Ports		    []
+		    Position		    [215, 85, 271, 125]
+		    BackgroundColor	    "green"
+		    ShowName		    off
+		    TreatAsAtomicUnit	    off
+		    MaskDisplay		    "disp('Block\\nNOTES')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Block NOTES"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "This block calculates the distanc"
+"e travelled by the\n vehicle based on the achieved speed."
+		    Position		    [206, 37]
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From <veh>"
+		    Position		    [20, 29, 85, 51]
+		    BackgroundColor	    "lightBlue"
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "mpha"
+		    }
+		    Block {
+		    BlockType		    Integrator
+		    Name		    "Integrator"
+		    Ports		    [1, 1]
+		    Position		    [185, 25, 215, 55]
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "mph-->m/s"
+		    Position		    [110, 24, 150, 56]
+		    FontName		    "Arial"
+		    Gain		    "0.447"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    Position		    [245, 33, 275, 47]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Integrator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "From <veh>"
+		    SrcPort		    1
+		    DstBlock		    "mph-->m/s"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "mph-->m/s"
+		    SrcPort		    1
+		    DstBlock		    "Integrator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace"
+		  Ports			  [1]
+		  Position		  [280, 612, 415, 638]
+		  ShowName		  off
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|cargo_mass_vs_time|logF"
+"lag"
+		  System {
+		    Name		    "enhancedToWorkspace"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    ToWorkspace
+		    Name		    "To Workspace"
+		    Position		    [145, 85, 205, 115]
+		    VariableName	    "cyc_cargo_mass_vs_time"
+		    MaxDataPoints	    "inf"
+		    SampleTime		    "-1"
+		    SaveFormat		    "Array"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "To Workspace"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "mph-->m/s"
+		  Position		  [680, 99, 720, 131]
+		  FontName		  "Arial"
+		  Gain			  "0.447"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "repeated cycle\ngrade vs. distance"
+		  Ports			  [1, 1]
+		  Position		  [150, 397, 185, 433]
+		  FontName		  "Arial"
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  MaskType		  "Repeating table"
+		  MaskDescription	  "Repeating table.\nEnter values of i"
+"nput and output for first cycle."
+		  MaskHelp		  "Repeats cycle given in table. Input"
+" values should be monotonically increasing."
+		  MaskPromptString	  "Input values:|Output values:"
+		  MaskStyleString	  "edit,edit"
+		  MaskTunableValueString  "on,on"
+		  MaskCallbackString	  "|"
+		  MaskEnableString	  "on,on"
+		  MaskVisibilityString	  "on,on"
+		  MaskToolTipString	  "on,on"
+		  MaskVarAliasString	  ","
+		  MaskVariables		  "t=@1;y=@2;"
+		  MaskInitialization	  "period = max(@1);"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "cyc_grade(:,1)|cyc_grade(:,2)"
+		  System {
+		    Name		    "repeated cycle\ngrade vs. distanc"
+"e"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "distance\ntravelled (m)"
+		    Position		    [55, 55, 75, 75]
+		    FontName		    "Arial"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Fcn1"
+		    Position		    [125, 55, 165, 75]
+		    Expr		    "rem(u[1],period)"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Look-Up Table"
+		    Position		    [200, 53, 240, 77]
+		    InputValues		    "t"
+		    OutputValues	    "y"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [275, 55, 295, 75]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "distance\ntravelled (m)"
+		    SrcPort		    1
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Fcn1"
+		    SrcPort		    1
+		    DstBlock		    "Look-Up Table"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Look-Up Table"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "repeated cycle\nspeed vs. time"
+		  Ports			  [0, 1]
+		  Position		  [120, 202, 155, 238]
+		  FontName		  "Arial"
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  MaskType		  "Repeating table"
+		  MaskDescription	  "Repeating table.\nEnter values of t"
+"ime and output for first cycle."
+		  MaskHelp		  "Repeats cycle given in table. Time "
+"values should be monotonically increasing."
+		  MaskPromptString	  "Time values:|Output values:"
+		  MaskStyleString	  "edit,edit"
+		  MaskTunableValueString  "on,on"
+		  MaskCallbackString	  "|"
+		  MaskEnableString	  "on,on"
+		  MaskVisibilityString	  "on,on"
+		  MaskToolTipString	  "on,on"
+		  MaskVarAliasString	  ","
+		  MaskInitialization	  "period = max(@1); t = @1; y = @2;"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "cyc_mph(:,1)|cyc_mph(:,2)"
+		  System {
+		    Name		    "repeated cycle\nspeed vs. time"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Clock
+		    Name		    "Clock"
+		    Position		    [45, 60, 65, 80]
+		    Decimation		    "10"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Fcn1"
+		    Position		    [110, 60, 150, 80]
+		    Expr		    "rem(u[1],period)"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Look-Up Table"
+		    Position		    [210, 58, 250, 82]
+		    InputValues		    "t"
+		    OutputValues	    "y"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [285, 60, 305, 80]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Fcn1"
+		    SrcPort		    1
+		    DstBlock		    "Look-Up Table"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Clock"
+		    SrcPort		    1
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Look-Up Table"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "repeated cycle\nvehicle cargo mass "
+"vs. distance"
+		  Ports			  [1, 1]
+		  Position		  [145, 537, 180, 573]
+		  BackgroundColor	  "darkGreen"
+		  FontName		  "Arial"
+		  SourceBlock		  "lib_drive_cycle/drive cycle\n<cyc>/"
+"repeated cycle\ngrade vs. distance"
+		  SourceType		  "Repeating table"
+		  t			  "cyc_cargo_mass(:,1)"
+		  y			  "cyc_cargo_mass(:,2)"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "super-smooth,\nno-lag trace"
+		  Ports			  [0, 1]
+		  Position		  [25, 29, 85, 71]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  MaskType		  "Smooth Cycle"
+		  MaskDescription	  "Smooth Cycle"
+		  MaskPromptString	  "Time vector for trace (s):|Speed ve"
+"ctor for trace (km/hr):|Averaging time (s):"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "t=@1;y=@2;avgtime=@3;"
+		  MaskInitialization	  "period = max(@1);,"
+		  MaskDisplay		  "disp('SMOOTH\\nCYCLE')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "cyc_mph(:,1)|cyc_mph(:,2)|cyc_avg_t"
+"ime"
+		  System {
+		    Name		    "super-smooth,\nno-lag trace"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Subsystem"
+		    Ports		    [1, 1]
+		    Position		    [125, 63, 210, 107]
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    MaskType		    "Running Average"
+		    MaskDescription	    "Running Average"
+		    MaskHelp		    "Output is the average of the last"
+" (Averaging Time) seconds of input."
+		    MaskPromptString	    "Averaging Time (s)"
+		    MaskStyleString	    "edit"
+		    MaskTunableValueString  "on"
+		    MaskEnableString	    "on"
+		    MaskVisibilityString    "on"
+		    MaskToolTipString	    "on"
+		    MaskInitialization	    "n=@1;"
+		    MaskDisplay		    "disp('Running\\nAverage')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    MaskValueString	    "avgtime"
+		    System {
+		    Name		    "Subsystem"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [30, 55, 50, 75]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [255, 154, 295, 176]
+		    FontName		    "Arial"
+		    Value		    "n"
+		    }
+		    Block {
+		    BlockType		    Integrator
+		    Name		    "Integrator"
+		    Ports		    [1, 1]
+		    Position		    [80, 55, 100, 75]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [340, 66, 360, 84]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [225, 60, 245, 80]
+		    Inputs		    "+-"
+		    }
+		    Block {
+		    BlockType		    TransportDelay
+		    Name		    "Transport\nDelay"
+		    Position		    [155, 90, 195, 120]
+		    DelayTime		    "n"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [390, 65, 410, 85]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -85]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Integrator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Transport\nDelay"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Integrator"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Transport\nDelay"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "repeated\ncycle"
+		    Ports		    [0, 1]
+		    Position		    [45, 67, 80, 103]
+		    FontName		    "Arial"
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "repeated\ncycle"
+		    Location		    [202, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Clock
+		    Name		    "Clock"
+		    Position		    [45, 60, 65, 80]
+		    Decimation		    "10"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Fcn1"
+		    Position		    [110, 60, 150, 80]
+		    Expr		    "rem(u+avgtime*0.75,period)"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Look-Up Table"
+		    Position		    [210, 58, 250, 82]
+		    InputValues		    "t"
+		    OutputValues	    "y"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [285, 60, 305, 80]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Look-Up Table"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Clock"
+		    SrcPort		    1
+		    DstBlock		    "Fcn1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Fcn1"
+		    SrcPort		    1
+		    DstBlock		    "Look-Up Table"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [245, 75, 265, 95]
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Subsystem"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "repeated\ncycle"
+		    SrcPort		    1
+		    DstBlock		    "Subsystem"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "req'd vehicle\nspeed (m/s)"
+		  Position		  [750, 105, 770, 125]
+		  FontName		  "Arial"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "repeated cycle\ngrade vs. distance"
+		  SrcPort		  1
+		  Points		  [0, 0; 155, 0]
+		  Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "Goto <altia>1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Switch3"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "distance\ntravelled (m)"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    DstBlock		    "repeated cycle\ngrade vs. distanc"
+"e"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    Branch {
+		    DstBlock		    "Goto <sdo>1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "repeated cycle\nvehicle cargo mas"
+"s vs. distance"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Switch3"
+		  SrcPort		  1
+		  Points		  [0, -5; 5, 0]
+		  Branch {
+		    DstBlock		    "Trigonometric\nFunction"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Goto \n<veh><vc><sdo>"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Integrator"
+		  SrcPort		  1
+		  DstBlock		  "Goto <sdo>2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Trigonometric\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Derivative"
+		  SrcPort		  1
+		  Points		  [410, 0]
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Switch1"
+		  SrcPort		  1
+		  Points		  [0, 0; 85, 0]
+		  Branch {
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		  }
+		  Branch {
+		    DstBlock		    "Goto <altia>"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "repeated cycle\nspeed vs. time"
+		  SrcPort		  1
+		  Points		  [155, 0]
+		  DstBlock		  "Switch1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  Points		  [60, 0]
+		  DstBlock		  "Switch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "super-smooth,\nno-lag trace"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    DstBlock		    "Backlash"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Backlash"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -60]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [-10, 0; 0, -50]
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -55]
+		  DstBlock		  "Switch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Switch2"
+		  SrcPort		  1
+		  Points		  [0, 0; 25, 0]
+		  Branch {
+		    DstBlock		    "Goto <sdo><vc>"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "mph-->m/s"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "mph-->m/s"
+		  SrcPort		  1
+		  DstBlock		  "req'd vehicle\nspeed (m/s)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From"
+		  SrcPort		  1
+		  Points		  [40, 0]
+		  DstBlock		  "Switch2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Altia_Run1"
+		  SrcPort		  1
+		  Points		  [0, 25]
+		  DstBlock		  "Switch2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "From1"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  DstBlock		  "Switch3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Altia_Run"
+		  SrcPort		  1
+		  Points		  [0, 20]
+		  DstBlock		  "Switch3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "repeated cycle\nvehicle cargo mass "
+"vs. distance"
+		  SrcPort		  1
+		  Points		  [0, 0; 65, 0]
+		  Branch {
+		    DstBlock		    "Goto \n<veh><vc><sdo>1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "enhancedToWorkspace"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "signal\nannotator"
+	      Ports		      [1, 1]
+	      Position		      [305, 81, 350, 109]
+	      TreatAsAtomicUnit	      off
+	      System {
+		Name			"signal\nannotator"
+		Location		[202, 77, 966, 744]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port {
+		    PortNumber		    1
+		    Name		    "simulation_time"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [430, 103, 460, 117]
+		}
+		Line {
+		  Name			  "simulation_time"
+		  Labels		  [1, 1]
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "req'd vehicle\nspeed (m/s)2"
+	      Position		      [415, 85, 435, 105]
+	      FontName		      "Arial"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "req'd vehicle\nspeed (m/s)"
+	      Position		      [390, 145, 410, 165]
+	      FontName		      "Arial"
+	      Port		      "2"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sensors"
+	      Position		      [695, 420, 715, 440]
+	      FontName		      "Arial"
+	      Port		      "3"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "drive cycle model"
+	      SrcPort		      1
+	      DstBlock		      "req'd vehicle\nspeed (m/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      DstBlock		      "signal\nannotator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "signal\nannotator"
+	      SrcPort		      1
+	      DstBlock		      "req'd vehicle\nspeed (m/s)2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "control"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "sensors"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "distance"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "grade_orig"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "grade"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "elevation"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "veh_cargo_mass"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "cyc_mph_r_orig"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "cyc_mph_r"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      7
+	    }
+	    Annotation {
+	      Name		      "DRIVE CYCLE\nmodel"
+	      Position		      [312, 45]
+	      BackgroundColor	      "yellow"
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	    }
+	    Annotation {
+	      Name		      "DRIVE CYCLE\ninterface"
+	      Position		      [212, 255]
+	      BackgroundColor	      "yellow"
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "reqOutTag"
+	  Position		  [440, 63, 615, 107]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "cycdReqOut"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "sensorsTag"
+	  Position		  [440, 204, 610, 246]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "cycdSensors"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "req'd vehicle\nspeed (m/s)"
+	  Position		  [460, 140, 480, 160]
+	  FontName		  "Arial"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "drive cycle model and interface"
+	  SrcPort		  2
+	  DstBlock		  "req'd vehicle\nspeed (m/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "controlTag"
+	  SrcPort		  1
+	  DstBlock		  "drive cycle model and interface"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "drive cycle model and interface"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, -45]
+	  DstBlock		  "reqOutTag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "drive cycle model and interface"
+	  SrcPort		  3
+	  Points		  [60, 0; 0, 55]
+	  DstBlock		  "sensorsTag"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "DRIVE CYCLE"
+	  Position		  [237, 75]
+	  BackgroundColor	  "yellow"
+	  FontName		  "Arial"
+	  FontSize		  22
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "drive cycle\ncontrols"
+      Ports		      []
+      Position		      [200, 117, 265, 193]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      FontSize		      10
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"drive cycle\ncontrols"
+	Location		[202, 77, 966, 744]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "drive cycle\ndummy controller"
+	  Ports			  [4, 4]
+	  Position		  [175, 40, 420, 345]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  TreatAsAtomicUnit	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "mpha"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "altia_grade"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "Altia_Run"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "altia_cyc_mph_r"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  System {
+	    Name		    "drive cycle\ndummy controller"
+	    Location		    [214, 73, 966, 766]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "mpha"
+	      Position		      [25, 32, 50, 58]
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "altia_grade"
+	      Position		      [25, 127, 50, 153]
+	      Port		      "2"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Altia_Run"
+	      Position		      [25, 232, 50, 258]
+	      Port		      "3"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "altia_cyc_mph_r"
+	      Position		      [25, 367, 50, 393]
+	      Port		      "4"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [285, 82, 385, 118]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "mpha"
+	      Port {
+		PortNumber		1
+		Name			"mpha"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [285, 167, 385, 203]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "altia_grade"
+	      Port {
+		PortNumber		1
+		Name			"altia_grade"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [285, 252, 385, 288]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "Altia_Run"
+	      Port {
+		PortNumber		1
+		Name			"Altia_Run"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [285, 337, 385, 373]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "altia_cyc_mph_r"
+	      Port {
+		PortNumber		1
+		Name			"altia_cyc_mph_r"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [140, 28, 255, 62]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "mpha"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [140, 123, 255, 157]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_grade"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [140, 228, 255, 262]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "Altia_Run"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [140, 363, 255, 397]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "altia_cyc_mph_r"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "mpha out"
+	      Position		      [520, 90, 540, 110]
+	      FontName		      "Arial"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "altia_grade out"
+	      Position		      [520, 175, 540, 195]
+	      FontName		      "Arial"
+	      Port		      "2"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Altia_Run out"
+	      Position		      [520, 260, 540, 280]
+	      FontName		      "Arial"
+	      Port		      "3"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "altia_cyc_mph_r out"
+	      Position		      [520, 345, 540, 365]
+	      FontName		      "Arial"
+	      Port		      "4"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      Name		      "altia_cyc_mph_r"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "altia_cyc_mph_r out"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Altia_Run"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Altia_Run out"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "altia_grade"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "altia_grade out"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "mpha"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "mpha out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "altia_cyc_mph_r"
+	      SrcPort		      1
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altia_Run"
+	      SrcPort		      1
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "altia_grade"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "mpha"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Annotation {
+      Name		      "DRIVE CYCLE LIBRARY"
+      Position		      [287, 55]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      20
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Not yet working\nwant to implement\nlater..."
+      Position		      [189, 291]
+      HorizontalAlignment     "left"
+    }
+  }
+}

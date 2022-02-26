@@ -1,0 +1,372 @@
+Model {
+  Name			  "customsaberdemo"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu May 02 09:22:00 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "abrooker"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu May 02 16:04:54 2002"
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "5"
+  SolverMode		  "Auto"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  ".2"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "customsaberdemo"
+    Location		    [174, 217, 810, 597]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "110"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 3]
+      Position		      [400, 16, 410, 304]
+      BackgroundColor	      "black"
+      ShowName		      off
+      FontName		      "Arial"
+      FontSize		      18
+      Outputs		      "3"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Matrix\nConcatenation"
+      Ports		      [2, 1]
+      Position		      [200, 61, 220, 254]
+      FontName		      "Arial"
+      FontSize		      18
+      SourceBlock	      "simulink3/Signals\n& Systems/Matrix\nConcatenat"
+"ion"
+      SourceType	      "Matrix Concatenation"
+      numInports	      "2"
+      catMethod		      "Horizontal"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "S-Function that calls \nSaber co-simulation"
+      Ports		      [1, 1]
+      Position		      [240, 146, 380, 174]
+      ForegroundColor	      "magenta"
+      FontName		      "Arial"
+      FontSize		      18
+      FunctionName	      "SaberCosimSfun"
+      Parameters	      "strrep(which('advisor'),'advisor.m','tmp\\'),.2"
+",'SaberCosimIO_Example'"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "generator power"
+      Ports		      [1]
+      Position		      [475, 49, 505, 81]
+      FontName		      "Arial"
+      FontSize		      18
+      Floating		      off
+      Location		      [169, 677, 493, 916]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "5"
+      YMin		      "0"
+      YMax		      "400"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "radio current"
+      Ports		      [1]
+      Position		      [475, 239, 505, 271]
+      FontName		      "Arial"
+      FontSize		      18
+      Floating		      off
+      Location		      [842, 677, 1166, 916]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "5"
+      YMin		      "0"
+      YMax		      "1.4"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData3"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "radio loadcontrol\non at t = 2"
+      Position		      [35, 97, 120, 123]
+      FontName		      "Arial"
+      FontSize		      18
+      VariableName	      "[0 0;2 1]"
+      SampleTime	      "0"
+      Interpolate	      off
+      OutputAfterFinalValue   "HoldingFinalValue"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "radio power"
+      Ports		      [1]
+      Position		      [475, 144, 505, 176]
+      FontName		      "Arial"
+      FontSize		      18
+      Floating		      off
+      Location		      [506, 677, 830, 916]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "5"
+      YMin		      "0"
+      YMax		      "20"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "radio vehicletype\n1 => Large Car 1"
+      Position		      [40, 192, 115, 218]
+      FontName		      "Arial"
+      FontSize		      18
+      Value		      "1"
+      VectorParams1D	      on
+    }
+    Line {
+      SrcBlock		      "radio loadcontrol\non at t = 2"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Matrix\nConcatenation"
+      SrcPort		      1
+      DstBlock		      "S-Function that calls \nSaber co-simulation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "radio vehicletype\n1 => Large Car 1"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "S-Function that calls \nSaber co-simulation"
+      SrcPort		      1
+      DstBlock		      "Demux"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      DstBlock		      "generator power"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      DstBlock		      "radio power"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      3
+      DstBlock		      "radio current"
+      DstPort		      1
+    }
+  }
+}

@@ -1,0 +1,35 @@
+template load_tv p m p_th m_th ctrl = k
+
+electrical      p,		# Positive electrode
+		m		# Negative electrode
+thermal_c	p_th,		# Positive thermal pin
+		m_th		# Negative thermal pin
+input nu	ctrl		# Time varying control signal (sets power value)
+
+number k = 1.0			# Scaler for ctrl pin 
+
+
+{
+val v v_in
+val p power
+val tc temp_in
+
+var i i
+
+
+values {
+	v_in = v(p,m)
+	temp_in =tc(p_th,m_th) 
+	power = v_in * i
+}
+
+equations {
+	i(p->m) += i
+
+    ### Electrical Power Equation determines i
+	i: i * v_in = ctrl*k
+    ### Thermal Power Equation
+	p(p_th->m_th) -= power
+}
+
+}

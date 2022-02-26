@@ -1,0 +1,4786 @@
+Library {
+  Name			  "sub_lib_models"
+  Version		  4.00
+  LibraryLinkDisplay	  "none"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Jul 26 10:29:00 2001"
+  UpdateHistory		  "UpdateHistoryWhenSave"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "abrooker"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu May 02 17:18:54 2002"
+  ModifiedComment	  "abrooker -- Thu May 02 17:18:54 2002 -- Version 1.2"
+"6\nfixed starter load level for non-cosim runs"
+  ModifiedHistory	  "abrooker -- Thu May 02 17:18:54 2002 -- Version 1.2"
+"6\nfixed starter load level for non-cosim runs\n\nabrooker -- Wed Apr 24 09:1"
+"4:19 2002 -- Version 1.25\n\n\nabrooker -- Fri Apr 19 08:51:04 2002 -- Versio"
+"n 1.24\n\n\nabrooker -- Fri Apr 19 08:49:53 2002 -- Version 1.23\n\n\nmokeefe"
+" -- Thu Apr 18 08:41:06 2002 -- Version 1.22\nsaving the model:\no \"without "
+"the model browser open\"\no with only top-level screen visible \no with \"fit"
+" to view\" enabled\no with \"status bar\" off and \"toolbar\" off\no with \"p"
+"rompt to update model history with each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:26>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "sub_lib_models"
+    Location		    [219, 418, 532, 597]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Aux Loads\n14V"
+      Ports		      [0, 1]
+      Position		      [50, 60, 90, 80]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Aux Loads\n14V"
+	Location		[53, 171, 462, 875]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "BrakeLights"
+	  Ports			  [0, 1]
+	  Position		  [50, 605, 90, 625]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "BrakeLights"
+	    Location		    [45, 79, 673, 786]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [250, 75, 280, 105]
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [255, 180, 285, 210]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [245, 127, 300, 153]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "F_req"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [355, 225, 430, 245]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [505, 214, 520, 641]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [115, 19, 425, 51]
+	      Value		      "vinf.AuxLoads.BrakeLights.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [455, 168, 485, 202]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [400, 170, 430, 200]
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [45, 274, 355, 306]
+	      Value		      "vinf.AuxLoads.BrakeLights.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [45, 494, 355, 526]
+	      Value		      "vinf.AuxLoads.BrakeLights.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [45, 549, 355, 581]
+	      Value		      "vinf.AuxLoads.BrakeLights.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [45, 604, 355, 636]
+	      Value		      "vinf.AuxLoads.BrakeLights.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [45, 329, 355, 361]
+	      Value		      "vinf.AuxLoads.BrakeLights.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [45, 384, 355, 416]
+	      Value		      "vinf.AuxLoads.BrakeLights.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [50, 439, 360, 471]
+	      Value		      "vinf.AuxLoads.BrakeLights.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [540, 423, 570, 437]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      Points		      [70, 0; 0, 45]
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Engine"
+	  Ports			  [0, 1]
+	  Position		  [50, 470, 90, 490]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Engine"
+	    Location		    [459, 97, 1081, 671]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [215, 94, 355, 116]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "engine_on"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 135, 355, 155]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [465, 119, 480, 546]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [40, 34, 350, 66]
+	      Value		      "vinf.AuxLoads.Engine.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [410, 83, 440, 127]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [40, 179, 350, 211]
+	      Value		      "vinf.AuxLoads.Engine.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [40, 399, 350, 431]
+	      Value		      "vinf.AuxLoads.Engine.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [40, 454, 350, 486]
+	      Value		      "vinf.AuxLoads.Engine.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [40, 509, 350, 541]
+	      Value		      "vinf.AuxLoads.Engine.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [40, 234, 350, 266]
+	      Value		      "vinf.AuxLoads.Engine.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [40, 289, 350, 321]
+	      Value		      "vinf.AuxLoads.Engine.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [45, 344, 355, 376]
+	      Value		      "vinf.AuxLoads.Engine.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [510, 328, 540, 342]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ExternalLights"
+	  Ports			  [0, 1]
+	  Position		  [50, 515, 90, 535]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "ExternalLights"
+	    Location		    [75, 80, 684, 798]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [300, 195, 375, 215]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "LoadChoice"
+	      Position		      [65, 604, 375, 636]
+	      Value		      "vinf.AuxLoads.ExternalLights.SaberLoadC"
+"hoice"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [9, 1]
+	      Position		      [505, 159, 520, 641]
+	      ShowName		      off
+	      Inputs		      "9"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [60, 79, 370, 111]
+	      Value		      "vinf.AuxLoads.ExternalLights.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [445, 127, 475, 173]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [295, 135, 370, 165]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'ExternalLights'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [65, 219, 375, 251]
+	      Value		      "vinf.AuxLoads.ExternalLights.SaberVehTy"
+"pe"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [65, 439, 375, 471]
+	      Value		      "vinf.AuxLoads.ExternalLights.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [65, 494, 375, 526]
+	      Value		      "vinf.AuxLoads.ExternalLights.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [65, 549, 375, 581]
+	      Value		      "vinf.AuxLoads.ExternalLights.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [65, 274, 375, 306]
+	      Value		      "vinf.AuxLoads.ExternalLights.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [65, 329, 375, 361]
+	      Value		      "vinf.AuxLoads.ExternalLights.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [70, 384, 380, 416]
+	      Value		      "vinf.AuxLoads.ExternalLights.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [550, 393, 580, 407]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "LoadChoice"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FrontHVAC"
+	  Ports			  [0, 1]
+	  Position		  [50, 380, 90, 400]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "FrontHVAC"
+	    Location		    [96, 186, 638, 844]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 135, 355, 155]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "LoadChoice"
+	      Position		      [45, 544, 355, 576]
+	      Value		      "vinf.AuxLoads.FrontHVAC.SaberLoadChoice"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [9, 1]
+	      Position		      [445, 97, 455, 583]
+	      ShowName		      off
+	      Inputs		      "9"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 24, 355, 56]
+	      Value		      "vinf.AuxLoads.FrontHVAC.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [390, 72, 420, 118]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 80, 355, 110]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'FrontHVAC'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [45, 159, 355, 191]
+	      Value		      "vinf.AuxLoads.FrontHVAC.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [45, 379, 355, 411]
+	      Value		      "vinf.AuxLoads.FrontHVAC.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [45, 434, 355, 466]
+	      Value		      "vinf.AuxLoads.FrontHVAC.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [45, 489, 355, 521]
+	      Value		      "vinf.AuxLoads.FrontHVAC.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [45, 214, 355, 246]
+	      Value		      "vinf.AuxLoads.FrontHVAC.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [45, 269, 355, 301]
+	      Value		      "vinf.AuxLoads.FrontHVAC.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [50, 324, 360, 356]
+	      Value		      "vinf.AuxLoads.FrontHVAC.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [485, 333, 515, 347]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "LoadChoice"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FrontWipers"
+	  Ports			  [0, 1]
+	  Position		  [50, 245, 90, 265]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "FrontWipers"
+	    Location		    [109, 159, 683, 802]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 165, 355, 185]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [465, 137, 480, 578]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 34, 355, 66]
+	      Value		      "vinf.AuxLoads.FrontWipers.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [405, 88, 435, 132]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 95, 355, 125]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'FrontWipers'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [50, 204, 360, 236]
+	      Value		      "vinf.AuxLoads.FrontWipers.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [50, 424, 360, 456]
+	      Value		      "vinf.AuxLoads.FrontWipers.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [50, 479, 360, 511]
+	      Value		      "vinf.AuxLoads.FrontWipers.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [50, 534, 360, 566]
+	      Value		      "vinf.AuxLoads.FrontWipers.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [50, 259, 360, 291]
+	      Value		      "vinf.AuxLoads.FrontWipers.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [50, 314, 360, 346]
+	      Value		      "vinf.AuxLoads.FrontWipers.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [50, 369, 360, 401]
+	      Value		      "vinf.AuxLoads.FrontWipers.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [510, 353, 540, 367]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "HeatedSeats"
+	  Ports			  [0, 1]
+	  Position		  [50, 110, 90, 130]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "HeatedSeats"
+	    Location		    [36, 115, 645, 875]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [340, 180, 415, 200]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "LoadChoice"
+	      Position		      [115, 634, 425, 666]
+	      Value		      "vinf.AuxLoads.HeatedSeats.SaberLoadChoi"
+"ce"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [9, 1]
+	      Position		      [510, 179, 530, 681]
+	      ShowName		      off
+	      Inputs		      "9"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Num"
+	      Position		      [110, 74, 420, 106]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Num"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [110, 14, 420, 46]
+	      Value		      "vinf.AuxLoads.HeatedSeats.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [460, 115, 490, 155]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [340, 125, 415, 155]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'HeatedSeats'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [115, 249, 425, 281]
+	      Value		      "vinf.AuxLoads.HeatedSeats.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [115, 469, 425, 501]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [115, 524, 425, 556]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [115, 579, 425, 611]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [115, 304, 425, 336]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [115, 359, 425, 391]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [115, 414, 425, 446]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [565, 423, 595, 437]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "LoadChoice"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Num"
+	      SrcPort		      1
+	      Points		      [0, 40]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Misc"
+	  Ports			  [0, 1]
+	  Position		  [50, 335, 90, 355]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Misc"
+	    Location		    [136, 280, 702, 830]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [240, 100, 315, 120]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [465, 73, 475, 522]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [70, 39, 380, 71]
+	      Value		      "vinf.AuxLoads.Misc.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [410, 86, 440, 119]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [70, 144, 380, 176]
+	      Value		      "vinf.AuxLoads.Misc.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [70, 364, 380, 396]
+	      Value		      "vinf.AuxLoads.Misc.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [70, 419, 380, 451]
+	      Value		      "vinf.AuxLoads.Misc.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [70, 474, 380, 506]
+	      Value		      "vinf.AuxLoads.Misc.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [70, 199, 380, 231]
+	      Value		      "vinf.AuxLoads.Misc.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [70, 254, 380, 286]
+	      Value		      "vinf.AuxLoads.Misc.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [75, 309, 385, 341]
+	      Value		      "vinf.AuxLoads.Misc.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [505, 293, 535, 307]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [14, 1]
+	  Position		  [285, 40, 315, 695]
+	  ShowName		  off
+	  Inputs		  "[8 9 8 8 8 8 8 9 9 8 9 9 8 2]"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RadiatorCoolingFan"
+	  Ports			  [0, 1]
+	  Position		  [50, 560, 90, 580]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RadiatorCoolingFan"
+	    Location		    [100, 96, 709, 728]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [320, 120, 395, 140]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "LoadChoice"
+	      Position		      [60, 544, 370, 576]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.SaberL"
+"oadChoice"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [9, 1]
+	      Position		      [495, 101, 505, 579]
+	      ShowName		      off
+	      Inputs		      "9"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [60, 24, 370, 56]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [425, 78, 455, 122]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [220, 85, 295, 115]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RadiatorCoolingFan'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [60, 159, 370, 191]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.SaberV"
+"ehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [60, 379, 370, 411]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Data(1"
+",2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [60, 434, 370, 466]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Data(2"
+",2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [60, 489, 370, 521]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Data(3"
+",2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [60, 214, 370, 246]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Data(1"
+",1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [60, 269, 370, 301]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Data(2"
+",1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [65, 324, 375, 356]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Data(3"
+",1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [545, 333, 575, 347]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "LoadChoice"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Radio"
+	  Ports			  [0, 1]
+	  Position		  [50, 155, 90, 175]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Radio"
+	    Location		    [176, 151, 728, 826]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [285, 220, 360, 240]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [475, 187, 485, 628]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Num"
+	      Position		      [45, 94, 355, 126]
+	      Value		      "vinf.AuxLoads.Radio.Num"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 34, 355, 66]
+	      Value		      "vinf.AuxLoads.Radio.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [400, 136, 430, 189]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 155, 355, 185]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'Radio'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [45, 254, 355, 286]
+	      Value		      "vinf.AuxLoads.Radio.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [45, 474, 355, 506]
+	      Value		      "vinf.AuxLoads.Radio.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [45, 529, 355, 561]
+	      Value		      "vinf.AuxLoads.Radio.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [45, 584, 355, 616]
+	      Value		      "vinf.AuxLoads.Radio.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [45, 309, 355, 341]
+	      Value		      "vinf.AuxLoads.Radio.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [45, 364, 355, 396]
+	      Value		      "vinf.AuxLoads.Radio.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [50, 419, 360, 451]
+	      Value		      "vinf.AuxLoads.Radio.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [505, 403, 535, 417]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -45]
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Num"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 45]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RearDefrost"
+	  Ports			  [0, 1]
+	  Position		  [50, 65, 90, 85]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RearDefrost"
+	    Location		    [-59, 357, 490, 977]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [285, 160, 360, 180]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [440, 139, 450, 566]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [50, 34, 360, 66]
+	      Value		      "vinf.AuxLoads.RearDefrost.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [390, 144, 420, 176]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [270, 85, 345, 115]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearDefrost'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [55, 199, 365, 231]
+	      Value		      "vinf.AuxLoads.RearDefrost.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [55, 419, 365, 451]
+	      Value		      "vinf.AuxLoads.RearDefrost.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [55, 474, 365, 506]
+	      Value		      "vinf.AuxLoads.RearDefrost.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [55, 529, 365, 561]
+	      Value		      "vinf.AuxLoads.RearDefrost.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [55, 254, 365, 286]
+	      Value		      "vinf.AuxLoads.RearDefrost.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [55, 309, 365, 341]
+	      Value		      "vinf.AuxLoads.RearDefrost.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [55, 364, 365, 396]
+	      Value		      "vinf.AuxLoads.RearDefrost.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [480, 348, 510, 362]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 60]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RearHVAC"
+	  Ports			  [0, 1]
+	  Position		  [50, 425, 90, 445]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RearHVAC"
+	    Location		    [52, 138, 611, 766]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [300, 125, 375, 145]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "LoadChoice"
+	      Position		      [50, 539, 360, 571]
+	      Value		      "vinf.AuxLoads.RearHVAC.SaberLoadChoice"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [9, 1]
+	      Position		      [455, 93, 470, 577]
+	      ShowName		      off
+	      Inputs		      "9"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [50, 19, 360, 51]
+	      Value		      "vinf.AuxLoads.RearHVAC.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [400, 74, 430, 116]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [285, 80, 360, 110]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearHVAC'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [50, 154, 360, 186]
+	      Value		      "vinf.AuxLoads.RearHVAC.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [50, 374, 360, 406]
+	      Value		      "vinf.AuxLoads.RearHVAC.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [50, 429, 360, 461]
+	      Value		      "vinf.AuxLoads.RearHVAC.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [50, 484, 360, 516]
+	      Value		      "vinf.AuxLoads.RearHVAC.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [50, 209, 360, 241]
+	      Value		      "vinf.AuxLoads.RearHVAC.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [50, 264, 360, 296]
+	      Value		      "vinf.AuxLoads.RearHVAC.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [55, 319, 365, 351]
+	      Value		      "vinf.AuxLoads.RearHVAC.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [495, 328, 525, 342]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "LoadChoice"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      9
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RearWipers"
+	  Ports			  [0, 1]
+	  Position		  [50, 200, 90, 220]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RearWipers"
+	    Location		    [132, 209, 697, 814]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [270, 145, 345, 165]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [465, 114, 480, 541]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 34, 355, 66]
+	      Value		      "vinf.AuxLoads.RearWipers.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [380, 79, 415, 121]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [275, 85, 350, 115]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearWipers'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [75, 174, 385, 206]
+	      Value		      "vinf.AuxLoads.RearWipers.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [75, 394, 385, 426]
+	      Value		      "vinf.AuxLoads.RearWipers.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [75, 449, 385, 481]
+	      Value		      "vinf.AuxLoads.RearWipers.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [75, 504, 385, 536]
+	      Value		      "vinf.AuxLoads.RearWipers.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [75, 229, 385, 261]
+	      Value		      "vinf.AuxLoads.RearWipers.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [75, 284, 385, 316]
+	      Value		      "vinf.AuxLoads.RearWipers.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [80, 339, 390, 371]
+	      Value		      "vinf.AuxLoads.RearWipers.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [505, 323, 535, 337]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Starter"
+	  Ports			  [0, 1]
+	  Position		  [50, 650, 90, 670]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Starter"
+	    Location		    [227, 418, 898, 880]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "14 V"
+	      Position		      [75, 104, 385, 126]
+	      Value		      "vinf.AuxLoads.Starter.V14"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [80, 150, 175, 170]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "engine_on"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [75, 225, 150, 245]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [80, 175, 155, 195]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "time"
+	    }
+	    Block {
+	      BlockType		      HitCross
+	      Name		      "Hit \nCrossing"
+	      Ports		      [1, 1]
+	      Position		      [275, 153, 305, 167]
+	      HitCrossingOffset	      "0"
+	      HitCrossingDirection    "rising"
+	      ShowOutputPort	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1]
+	      Position		      [590, 63, 595, 392]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [75, 44, 385, 66]
+	      Value		      "vinf.AuxLoads.Starter.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [4, 1]
+	      Position		      [510, 25, 520, 265]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [2, 1]
+	      Position		      [340, 146, 440, 199]
+	      SourceBlock	      "lib_cosimulation/14V Load Control/Start"
+"er/Subsystem"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "on"
+	      TreatAsAtomicUnit	      "off"
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "starter_load (power)"
+	      Position		      [110, 294, 420, 326]
+	      Value		      "vinf.AuxLoads.Starter.Data"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [620, 223, 650, 237]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "starter_load (power)"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "14 V"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Hit \nCrossing"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Hit \nCrossing"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "TurnSignals"
+	  Ports			  [0, 1]
+	  Position		  [50, 290, 90, 310]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "TurnSignals"
+	    Location		    [103, 229, 625, 888]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 160, 355, 180]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [435, 114, 445, 561]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [40, 34, 350, 66]
+	      Value		      "vinf.AuxLoads.TurnSignals.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [380, 94, 410, 136]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [270, 100, 345, 130]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'TurnSignals'"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "VehType"
+	      Position		      [50, 184, 360, 216]
+	      Value		      "vinf.AuxLoads.TurnSignals.SaberVehType"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i1"
+	      Position		      [50, 404, 360, 436]
+	      Value		      "vinf.AuxLoads.TurnSignals.Data(1,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i2"
+	      Position		      [50, 459, 360, 491]
+	      Value		      "vinf.AuxLoads.TurnSignals.Data(2,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "i3"
+	      Position		      [50, 514, 360, 546]
+	      Value		      "vinf.AuxLoads.TurnSignals.Data(3,2)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v1"
+	      Position		      [50, 239, 360, 271]
+	      Value		      "vinf.AuxLoads.TurnSignals.Data(1,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v2"
+	      Position		      [50, 294, 360, 326]
+	      Value		      "vinf.AuxLoads.TurnSignals.Data(2,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "v3"
+	      Position		      [55, 349, 365, 381]
+	      Value		      "vinf.AuxLoads.TurnSignals.Data(3,1)"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [465, 333, 495, 347]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "i3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "i2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "i1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "v3"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "v2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "v1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VehType"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [345, 363, 375, 377]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Starter"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  14
+	}
+	Line {
+	  SrcBlock		  "BrakeLights"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "RadiatorCoolingFan"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "ExternalLights"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "Engine"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "RearHVAC"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "FrontHVAC"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Misc"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "TurnSignals"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "FrontWipers"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "RearWipers"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Radio"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "HeatedSeats"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "RearDefrost"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Aux Loads\n14V Pwr"
+      Ports		      [0, 1]
+      Position		      [155, 60, 195, 80]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Aux Loads\n14V Pwr"
+	Location		[615, 133, 1071, 899]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "BrakeLights"
+	  Ports			  [0, 1]
+	  Position		  [50, 615, 90, 635]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "BrakeLights"
+	    Location		    [637, 109, 1272, 421]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [80, 229, 390, 261]
+	      Value		      "vinf.AuxLoads.BrakeLights.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [170, 75, 200, 105]
+	      Value		      "0"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      Position		      [175, 180, 205, 210]
+	      Value		      "1"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [165, 127, 220, 153]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "F_req"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [360, 175, 435, 195]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [115, 19, 425, 51]
+	      Value		      "vinf.AuxLoads.BrakeLights.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [465, 34, 495, 276]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [350, 110, 380, 140]
+	      Threshold		      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [530, 148, 560, 162]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [125, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      Points		      [70, 0; 0, -15]
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [285, 425, 315, 455]
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [180, 384, 315, 406]
+	  Value			  "vinf.AuxLoadsOn"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Engine"
+	  Ports			  [0, 1]
+	  Position		  [50, 480, 90, 500]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Engine"
+	    Location		    [463, 101, 1011, 408]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [40, 199, 350, 231]
+	      Value		      "vinf.AuxLoads.Engine.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [145, 104, 285, 126]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "engine_on"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 155, 355, 175]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [310, 100, 340, 130]
+	      X0		      "0"
+	      InheritSampleTime	      off
+	      RTWStateStorageClass    "Auto"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [35, 49, 345, 81]
+	      Value		      "vinf.AuxLoads.Engine.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [420, 40, 450, 240]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [485, 133, 515, 147]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Memory"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "ExternalLights"
+	  Ports			  [0, 1]
+	  Position		  [50, 525, 90, 545]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "ExternalLights"
+	    Location		    [38, 233, 586, 537]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [65, 219, 375, 251]
+	      Value		      "vinf.AuxLoads.ExternalLights.AverageWat"
+"ts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [300, 180, 375, 200]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [60, 84, 370, 116]
+	      Value		      "vinf.AuxLoads.ExternalLights.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [445, 75, 475, 260]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [295, 130, 370, 160]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'ExternalLights'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [505, 163, 535, 177]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FrontHVAC"
+	  Ports			  [0, 1]
+	  Position		  [50, 390, 90, 410]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "FrontHVAC"
+	    Location		    [51, 190, 568, 463]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [45, 189, 355, 221]
+	      Value		      "vinf.AuxLoads.FrontHVAC.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 140, 355, 160]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 24, 355, 56]
+	      Value		      "vinf.AuxLoads.FrontHVAC.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [390, 16, 420, 229]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 80, 355, 110]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'FrontHVAC'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [445, 118, 475, 132]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FrontWipers"
+	  Ports			  [0, 1]
+	  Position		  [50, 255, 90, 275]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "FrontWipers"
+	    Location		    [693, 200, 1221, 520]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [50, 229, 360, 261]
+	      Value		      "vinf.AuxLoads.FrontWipers.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 170, 355, 190]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 34, 355, 66]
+	      Value		      "vinf.AuxLoads.FrontWipers.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [405, 17, 440, 278]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 100, 355, 130]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'FrontWipers'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [470, 143, 500, 157]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "HeatedSeats"
+	  Ports			  [0, 1]
+	  Position		  [50, 120, 90, 140]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "HeatedSeats"
+	    Location		    [661, 110, 1270, 411]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [105, 224, 415, 256]
+	      Value		      "vinf.AuxLoads.HeatedSeats.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [340, 180, 415, 200]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Num"
+	      Position		      [110, 74, 420, 106]
+	      Value		      "vinf.AuxLoads.HeatedSeats.Num"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [110, 25, 420, 55]
+	      Value		      "vinf.AuxLoads.HeatedSeats.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [5, 1]
+	      Position		      [460, 12, 490, 268]
+	      Inputs		      "5"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [345, 125, 420, 155]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'HeatedSeats'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [545, 133, 575, 147]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Num"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Misc"
+	  Ports			  [0, 1]
+	  Position		  [50, 345, 90, 365]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Misc"
+	    Location		    [113, 273, 648, 494]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [70, 139, 380, 171]
+	      Value		      "vinf.AuxLoads.Misc.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [305, 95, 380, 115]
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [70, 39, 380, 71]
+	      Value		      "vinf.AuxLoads.Misc.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [3, 1]
+	      Position		      [420, 31, 450, 179]
+	      Inputs		      "3"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [475, 98, 505, 112]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RadiatorCoolingFan"
+	  Ports			  [0, 1]
+	  Position		  [50, 570, 90, 590]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RadiatorCoolingFan"
+	    Location		    [10, 240, 584, 462]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [60, 144, 370, 176]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.Averag"
+"eWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [300, 110, 375, 130]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [60, 24, 370, 56]
+	      Value		      "vinf.AuxLoads.RadiatorCoolingFan.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [430, 18, 465, 182]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [295, 65, 370, 95]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RadiatorCoolingFan'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [490, 93, 520, 107]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Radio"
+	  Ports			  [0, 1]
+	  Position		  [50, 165, 90, 185]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Radio"
+	    Location		    [13, 134, 565, 504]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [50, 274, 360, 306]
+	      Value		      "vinf.AuxLoads.Radio.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [285, 220, 360, 240]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Num"
+	      Position		      [45, 94, 355, 126]
+	      Value		      "vinf.AuxLoads.Radio.Num"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 34, 355, 66]
+	      Value		      "vinf.AuxLoads.Radio.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [5, 1]
+	      Position		      [400, 19, 430, 321]
+	      Inputs		      "5"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [275, 155, 350, 185]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'Radio'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [470, 163, 500, 177]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Num"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RearDefrost"
+	  Ports			  [0, 1]
+	  Position		  [50, 75, 90, 95]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RearDefrost"
+	    Location		    [94, 137, 639, 446]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [55, 179, 365, 211]
+	      Value		      "vinf.AuxLoads.RearDefrost.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [215, 145, 290, 165]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [50, 63, 360, 87]
+	      Value		      "vinf.AuxLoads.RearDefrost.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [415, 50, 450, 220]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [285, 100, 360, 130]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearDefrost'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [480, 128, 510, 142]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RearHVAC"
+	  Ports			  [0, 1]
+	  Position		  [50, 435, 90, 455]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RearHVAC"
+	    Location		    [3, 186, 545, 441]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [50, 174, 360, 206]
+	      Value		      "vinf.AuxLoads.RearHVAC.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 130, 355, 150]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [50, 24, 360, 56]
+	      Value		      "vinf.AuxLoads.RearHVAC.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [400, 17, 430, 213]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [285, 75, 360, 105]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearHVAC'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [470, 108, 500, 122]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RearWipers"
+	  Ports			  [0, 1]
+	  Position		  [50, 210, 90, 230]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "RearWipers"
+	    Location		    [702, 216, 1231, 570]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [60, 259, 370, 291]
+	      Value		      "vinf.AuxLoads.RearWipers.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [275, 190, 350, 210]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [45, 34, 355, 66]
+	      Value		      "vinf.AuxLoads.RearWipers.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [405, 16, 440, 309]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 110, 355, 140]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'RearWipers'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [475, 158, 505, 172]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Starter"
+	  Ports			  [0, 1]
+	  Position		  [50, 660, 90, 680]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Starter"
+	    Location		    [518, 99, 1189, 561]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [585, 156, 595, 289]
+	      Inputs		      "2"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Starter"
+	      Ports		      [0, 1]
+	      Position		      [220, 177, 355, 203]
+	      ShowName		      off
+	      SourceBlock	      "lib_cosimulation/14V Load Control/Start"
+"er"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "starter_load (power)"
+	      Position		      [220, 239, 530, 271]
+	      Value		      "vinf.AuxLoads.Starter.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [610, 218, 640, 232]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "starter_load (power)"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Starter"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [14, 1]
+	  Position		  [130, 57, 165, 698]
+	  ShowName		  off
+	  IconShape		  "rectangular"
+	  Inputs		  "++++++++++++++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [360, 371, 390, 419]
+	  Threshold		  ".5"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "TurnSignals"
+	  Ports			  [0, 1]
+	  Position		  [50, 300, 90, 320]
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "TurnSignals"
+	    Location		    [643, 226, 1140, 503]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Average Watts"
+	      Position		      [50, 184, 360, 216]
+	      Value		      "vinf.AuxLoads.TurnSignals.AverageWatts"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [280, 140, 355, 160]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "On"
+	      Position		      [40, 34, 350, 66]
+	      Value		      "vinf.AuxLoads.TurnSignals.On"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [4, 1]
+	      Position		      [380, 25, 410, 225]
+	      Inputs		      "4"
+	      Multiplication	      "Element-wise(.*)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Subsystem"
+	      Ports		      [0, 1]
+	      Position		      [280, 85, 355, 115]
+	      SourceBlock	      "lib_cosimulation/Subsystem"
+	      SourceType	      "Unknown"
+	      ModelName		      "'TurnSignals'"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [435, 118, 465, 132]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "On"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Average Watts"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [420, 388, 450, 402]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "RearDefrost"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "HeatedSeats"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Radio"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "RearWipers"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "FrontWipers"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "TurnSignals"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Misc"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "FrontHVAC"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "RearHVAC"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "Engine"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "ExternalLights"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "RadiatorCoolingFan"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "BrakeLights"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "Starter"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  14
+	}
+      }
+    }
+    Annotation {
+      Position		      [125, 31]
+      Text		      "Electric Accessory Loads"
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [70, 49]
+      Text		      "Voltage/Current"
+    }
+    Annotation {
+      Position		      [176, 52]
+      Text		      "Average Power"
+    }
+  }
+}

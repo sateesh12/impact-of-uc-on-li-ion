@@ -1,0 +1,66 @@
+#  power_meter.sin
+#  symbol = power_meter.ai_sym
+#   
+#	ADVISOR software developed at NREL.  Copyright 1998
+#		Midwest Research Institute.  All rights reserved.
+#
+#	Notice: These data were produced under
+#		Subcontract No. ZCL-0-30058-01, under
+#		Prime Contract No. DE-AC36-99GO10337
+#		with the Department of Energy (DOE).
+#
+##########################################################################
+#
+#	DESCRIPTION:				
+#	-----------
+# 	This model represents a "lossless measuring device" used to monitor 
+#     the power ( power = V*i) moving through a branch of an electrical 
+#     circuit.  
+#	
+#	NODE CONNECTIONS:
+#	----------------
+#	[name]	[type]		[description]
+#	p	electrical	positive current enters this node
+#	m	electrical	positive current leaves this node
+#
+#  Note:  power flow p->m convention was adopted such that the sum of 
+#  (batterymonitor.power + generatormonitor.power + loadmonitor.power) = 0
+#
+#	OUTPUT SOLUTIONS:
+#	----------------
+#	[name]	[units]		[description]
+#     current     	Amps			Current draw for this model
+#
+##########################################################################
+
+
+template power_meter p m  
+
+
+#!crypt_start
+#pack 002
+
+electrical p, m 
+
+{ 
+	val v v
+	var i current
+	val p power
+
+
+ 
+ values{ 
+
+	v = v(p) - v(m)
+	power =  v(p) * current 
+	
+	}		
+
+ equations{
+
+	i(p) += current
+	i(m) -= current
+	current:  v = 0
+          }
+#!crypt_end
+}

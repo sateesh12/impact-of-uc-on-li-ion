@@ -1,0 +1,106 @@
+########################################################################
+# Altia/MATLAB connections file.
+#
+# This is a standard header describing available customizations.
+# Actual connection entries are listed after this header.
+#
+# Uncomment and customize the following options if so desired.
+#
+# Use debug to turn debug on/off (levels 0 thru 3):
+#
+# debug 1
+#
+# Use start or edit to start your Altia interface automatically (start
+# fires up run-time, edit the editor).  Note that if a port is to be
+# specified, it must be included with the start/edit option itself and
+# NOT with a separate port option:
+#
+# start yourdesign.dsn [port yourhost:#]
+# edit yourdesign.dsn [port yourhost:#]
+#
+# Use port to connect to an Altia interface that is already running.
+# Note that both the port and start/edit options cannot be specified:
+#
+# port yourhost:5100
+#
+# Use out# to map a model output # (s-function input #) to an Altia output
+# event name.  Options include:
+#   continuous (state is sent to Altia each time client update
+#               function is executed whether state has changed or not)
+#   discrete (state is sent to Altia only when it has changed)
+#   float (Altia event has floating point, not integer, value).
+#
+# Use in# to map a model input # (s-function output # ) to an Altia input
+# event name.  Options include:
+#   continuous (Altia only sends the last state change,
+#               as for a slider bar)
+#   discrete (Altia sends all state changes,
+#             as for a button)
+#   float (Altia event has floating point, not integer, value).
+########################################################################
+
+start Altia_Advisor2.dsn
+in2(altiaCloseEvent)=altiaCloseViewPending
+out1(time) float
+out2(MinPosTimeStep) float
+out3(MinNegTimeStep) float
+out4(SimLength) float
+out5(ess_soc_hist1) float
+out6(ess_soc_hist2) float
+out7(ess_pwr_out_a1) float
+out8(ess_pwr_out_a2) float
+out9(fc_fuel_rate1) float
+out10(fc_fuel_rate2) float
+out11(fc_spd_est1) float
+out11(fc_spd_est1) float
+out11(fc_spd_est1) float
+out12(fc_spd_est2) float
+out12(fc_spd_est2) float
+out12(fc_spd_est2) float
+out13(fc_brake_trq1) float
+out13(fc_brake_trq1) float
+out14(fc_brake_trq2) float
+out14(fc_brake_trq2) float
+out15(fc_pwr_out_a1) float
+out15(fc_pwr_out_a1) float
+out16(fc_pwr_out_a2) float
+out16(fc_pwr_out_a2) float
+out16(fc_pwr_out_a2) float
+out17(fc_eff_out_a1) float
+out18(fc_eff_out_a2) float
+out18(fc_eff_out_a2) float
+out19(gal1) float
+out20(gal2) float
+out21(gear_number1) int
+out22(gear_number2) int
+out23(gc_pwr_out_a1) float
+out24(gc_pwr_out_a2) float
+out25(grade1) float
+out27(mc_spd_out_a1) float
+out27(mc_spd_out_a1) float
+out28(mc_spd_out_a2) float
+out28(mc_spd_out_a2) float
+out29(mc_trq_out_a1) float
+out29(mc_trq_out_a1) float
+out30(mc_trq_out_a2) float
+out30(mc_trq_out_a2) float
+out31(mpha1) float
+out31(mpha1) float
+out32(mpha2) float
+out33(trace_miss1) float
+out34(trace_miss2) float
+out35(veh_pwr_accel_a1) float
+out36(veh_pwr_accel_a2) float
+out37(veh_pwr_ascent_a1) float
+out38(veh_pwr_ascent_a2) float
+out39(veh_pwr_drag_a1) float
+out40(veh_pwr_drag_a2) float
+out41(veh_pwr_rr_a1) float
+out42(veh_pwr_rr_a2) float
+out43(cyc_mphr) float
+out44(cyc_grade) float
+in1(time) float initial=0.000000
+in2(simRun) int
+in3(altia_grade) float initial=0.000000
+in4(altia_cyc_mph_r) float initial=0.000000
+in5(time_gain) int

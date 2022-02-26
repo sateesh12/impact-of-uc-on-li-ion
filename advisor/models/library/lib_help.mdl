@@ -1,0 +1,280 @@
+Library {
+  Name			  "lib_help"
+  Version		  4.00
+  LibraryLinkDisplay	  "none"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue May 30 16:50:37 2000"
+  UpdateHistory		  "UpdateHistoryWhenSave"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr 18 08:34:54 2002"
+  ModifiedComment	  "mokeefe -- Thu Apr 18 08:34:54 2002 -- Version 1.6"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on"
+  ModifiedHistory	  "mokeefe -- Thu Apr 18 08:34:54 2002 -- Version 1.6"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_help"
+    Location		    [2, 40, 965, 766]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "250"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "NOTES"
+      Ports		      []
+      Position		      [70, 72, 120, 106]
+      BackgroundColor	      "green"
+      ShowName		      off
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "disp('Version &\\nCopyright')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"NOTES"
+	Location		[218, 257, 825, 528]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "NOTES"
+	  Ports			  []
+	  Position		  [176, 22, 427, 51]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  OpenFcn		  "advisor_ver"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "disp('Double-click here or enter ''advisor_"
+"ver'' at the Matlab\\ncommand line for ADVISOR version')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "NOTES"
+	    Location		    [199, 240, 576, 525]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Annotation {
+	      Position		      [187, 133]
+	      Text		      "ADVISOR 2.0.2 10/7/98\nCopyright 1998-2"
+"003  MRI, NREL.\nAll rights reserved\n\n Notice:  This computer software was "
+"\n prepared by NREL/MRI, and hereinafter the Contractor, \nunder Contract No."
+" DE-AC36-83CH10093 with \nthe Department of Energy (DOE).  All rights \nin th"
+"e computer software are reserved by DOE \non behalf of the United States Gove"
+"rnment and \nthe Contractor as provided in the contract.   \nYou are authoriz"
+"ed to use this computer software \nfor Governmental purposes but it is not to"
+" be \nreleased or distributed to the public.  NEITHER \nTHE GOVERNMENT NOR TH"
+"E CONTRACTOR MAKES ANY \nWARRANTY, EXPRESS OR IMPLIED, OR ASSUMES ANY \nLIABI"
+"LITY FOR THE USE OF THIS SOFTWARE.\nThis notice including this sentence must "
+"\nappear on any copies of this computer software."
+	    }
+	  }
+	}
+	Annotation {
+	  Position		  [306, 201]
+	  Text			  "license in this data to reproduce, prepare "
+"derivative works, distribute copies to the public, perform publicly and displ"
+"ay\npublicly, and to permit others to do so.  The specific term of the licens"
+"e can be identified by inquiry made to the MRI\nor DOE. Neither the United St"
+"ates nor the DOE, nor any of their employees, make any warranty, express or i"
+"mplied, or\nassumes any legal liability or responsibility for the accuracy, c"
+"ompleteness, or usefulness of any data, apparatus,\nproduct, or process discl"
+"osed, or represents that its use would not infringe privately owned rights."
+	}
+	Annotation {
+	  Position		  [302, 123]
+	  Text			  "ADVISOR software developed at NREL.  Copyri"
+"ght 1998 Midwest Research Institute.  All rights reserved.\nNotice: These dat"
+"a were produced by the Midwest Research Institute (MRI) under Contract No. DE"
+"-AC98GO10337\n     with the Department of Energy (DOE).  For a five-year peri"
+"od from November 6, 1998, the Government is granted for\nitself and others ac"
+"ting on its behalf a nonexclusive, paid-up, irrevocable worldwide license in "
+"this data to reproduce,\n prepare derivative works, and perform publicly and "
+"display publicly, by or on behalf of the Government.  There is\nprovision for"
+" the possible extension of the term of this license.  Subsequent to that peri"
+"od or any extension granted,\n the Government is granted for itself and other"
+"s acting on its behalf a nonexclusive, paid-up, irrevocable worldwide"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "help"
+      Ports		      []
+      Position		      [65, 200, 112, 262]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "web(['file:\\\\\\' which('advisor_doc.htm')]);"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('doc_man.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"help"
+	Location		[205, 333, 571, 540]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+      }
+    }
+    Annotation {
+      Position		      [91, 166]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      Text		      "Help Block:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+    }
+    Annotation {
+      Position		      [101, 26]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      Text		      "Version and Copyright:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+    }
+  }
+}

@@ -1,0 +1,57 @@
+[symbol6]
+desc {}
+uniq 28
+[resources]
+<font>
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+<color>
+{green} {#0000ff000000}
+{} {#ffff00}
+{pink} {#ff00c000cb00}
+{lightgoldenrod1} {#ff00ec008b00}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+Ten_Module_Voltage_SOC_Error_0
+-5904 -30 1936 510
+0 0 
+<properties>
+primitive Ten_Module_Voltage_SOC_Error { } string {} -5824 -144 0 0 0 5 4 {} 0 4 {} {} {} 6 l
+<ports>
+v8 -160 480 1 1 0 -192 416 7 1 0 0 0 3 {} 6
+s8 160 480 1 1 0 96 416 7 1 0 0 0 3 {} 6
+s9 960 480 1 1 0 928 432 7 1 0 0 0 3 {} 6
+v6 -1760 480 1 1 0 -1808 416 7 1 0 0 0 3 {} 6
+s6 -1440 480 1 1 0 -1472 416 7 1 0 0 0 3 {} 6
+s3 -3840 480 1 1 0 -3888 416 7 1 0 0 0 3 {} 6
+v3 -4160 480 1 1 0 -4208 416 7 1 0 0 0 3 {} 6
+s2 -4640 480 1 1 0 -4704 400 7 1 0 0 0 3 {} 6
+v1 -5760 480 1 1 0 -5808 400 7 1 0 0 0 3 {} 6
+s1 -5440 480 1 1 0 -5504 384 7 1 0 0 0 3 {} 6
+v2 -4960 480 1 1 0 -5008 400 7 1 0 0 0 3 {} 6
+v4 -3360 480 1 1 0 -3392 416 7 1 0 0 0 3 {} 6
+s4 -3040 480 1 1 0 -3104 400 7 1 0 0 0 3 {} 6
+v5 -2560 480 1 1 0 -2608 416 7 1 0 0 0 3 {} 6
+s5 -2240 480 1 1 0 -2288 416 7 1 0 0 0 3 {} 6
+s10 1760 480 1 1 0 1664 416 7 1 0 0 0 3 {} 6
+v10 1440 480 1 1 0 1344 416 7 1 0 0 0 3 {} 6
+v9 640 480 1 1 0 608 416 7 1 0 0 0 3 {} 6
+s7 -640 480 1 1 0 -688 416 7 1 0 0 0 3 {} 6
+v7 -960 480 1 1 0 -1008 416 7 1 0 0 0 3 {} 6
+PowerInput -4000 0 1 1 0 -4256 224 7 1 0 0 0 3 {} 6
+soc_error -2400 0 1 2 0 -2672 240 7 1 0 0 0 3 {} 6
+voltage_error -800 0 1 2 0 -1200 224 7 1 0 0 0 3 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+r gr_24_ -5904 0 1936 464 0 1 10 3 0 0 6 

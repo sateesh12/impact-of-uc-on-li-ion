@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Engine Map Class Documentation</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Engine Map Class Documentation</h1>
+</div>
+<h1 id="eng_map-an-engine-map-class.">ENG_MAP An Engine Map class.</h1>
+<h2 id="overview">Overview</h2>
+<p>The eng_map class is a class for doing convenient pre- and post-processing of ADVISOR style engine maps (i.e., lookup tables). The eng_map class is used from the MATLAB command line. Detailed help can be obtained by typing:</p>
+<p>help eng_map % for help on eng_map</p>
+<p>help eng_map\method_name % for help on a specific method name. e.g., help eng_map\plot</p>
+<p>methods eng_map % lists all of the available methods for the eng_map class</p>
+<p>All of the eng_map class is available to the user (open source) in the @eng_map directory in &lt;ADVISOR root directory&gt;\gui\@eng_map. For more information on matlab classes, please consult the MATLAB documentation. Listed below are various constructors for the eng_map class demonstrating how you might instantiate an eng_map object.</p>
+<h3 id="constructor-1">Constructor 1:</h3>
+<dl>
+<dd>
+<p>em = ENG_MAP(shaft_speed,… % [rad/s]</p>
+</dd>
+<dd>
+<dl>
+<dd>
+<p>shaft_brake_trq,… % [Nm]</p>
+</dd>
+<dd>
+<p>Brake_Specific_Fuel_Consumption_matrix ,… % [g/kWh] indexed vertically by speed, and horizontally by trq</p>
+</dd>
+<dd>
+<p>fuel_LHV,… % [J/g], lower heating value of the fuel</p>
+</dd>
+<dd>
+<p>max_trq); %[Nm], the maximum torque corresponding to the shaft_speed vector</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>creates an eng_map object</p>
+<h3 id="constructor-2">Constructor 2:</h3>
+<dl>
+<dd>
+<p>em = ENG_MAP(’fuel_consumption’,…% dummy flag to indicate fuel consumption will be given instead of BSFC</p>
+</dd>
+<dd>
+<dl>
+<dd>
+<p>shaft_speed,… % [rad/s]</p>
+</dd>
+<dd>
+<p>shaft_brake_trq,… % [Nm]</p>
+</dd>
+<dd>
+<p>Fuel_Consumption_matrix ,… % [g/s] indexed vertically by speed, and horizontally by trq</p>
+</dd>
+<dd>
+<p>fuel_LHV,… % [J/g], lower heating value of the fuel</p>
+</dd>
+<dd>
+<p>max_trq); %[Nm], the maximum torque corresponding to the shaft_speed vector</p>
+</dl>
+</dd>
+</dl>
+<h3 id="constructor-3">Constructor 3:</h3>
+<dl>
+<dd>
+<p>em = ENG_MAP(’fc_file_name’) % the fc_file_name is the name of an ADVISOR fc file</p>
+</dd>
+</dl>
+<h3 id="constructor-4">Constructor 4:</h3>
+<dl>
+<dd>
+<p>em = ENG_MAP(em_object) % creates a new eng_map object from an existing one</p>
+</dd>
+</dl>
+<p>creates an eng_map object</p>
+<h3 id="constructor-5">Constructor 5:</h3>
+<dl>
+<dd>
+<p>em = ENG_MAP(’dummyFlagOne’,…% dummy flag to indicate fuel consumption will be given instead of BSFC</p>
+</dd>
+<dd>
+<dl>
+<dd>
+<p>‘dummyFlagTwo’,…</p>
+</dd>
+<dd>
+<p>shaft_speed,… % [rad/s]</p>
+</dd>
+<dd>
+<p>shaft_brake_trq,… % [Nm]</p>
+</dd>
+<dd>
+<p>eff_matrix ,… % [–,decimal between 0 and 1] indexed vertically by speed, and horizontally by trq</p>
+</dd>
+<dd>
+<p>fuel_LHV,… % [J/g], lower heating value of the fuel</p>
+</dd>
+<dd>
+<p>max_trq); %[Nm], the maximum torque corresponding to the shaft_speed vector</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<h4 id="methods-available-for-this-class">METHODS AVAILABLE FOR THIS CLASS: </h4>
+<p>(type methods eng_map for the most up-to-date listing)</p>
+<ul>
+<li>buildNewMap</li>
+<li>set</li>
+<li>get</li>
+<li>display</li>
+<li>plot</li>
+<li>interp</li>
+<li>saveToFile</li>
+<li>diffMap</li>
+<li>bsfc2eff</li>
+<li>eff2bsfc</li>
+<li>bsfc2fc</li>
+<li>fc2bsfc</li>
+<li>scaleTrq</li>
+<li>scaleSpd</li>
+<li>webHelp (brings you to this page)</li>
+</ul>
+<h2 id="example-creating-a-new-engine-from-bsfc-information-at-max.-torque">Example: Creating a New Engine from BSFC Information at Max. Torque</h2>
+<p>Engine OEM’s will often make available performance data that contains such information as maximum torque curves for their engine model by shaft speed. If one is lucky, the brake-specific fuel consumption (or fuel rate) will also be given along this maximum curve. However, rarely is the entire efficiency map provided.</p>
+<p>One quick and dirty way to make an engine efficiency map using only this limited information is to use the eng_map class. The eng_map class has a method called buildNewMap that is a scaling function. eng_map.buildNewMap uses an existing engine map and scales efficiency at constant shaft speeds to match that of the efficiency at max torque provided by the user. Let’s take an example.</p>
+<p>Let’s say a user has the following information available along the max torque curve for an engine and let us assume the fuel lower heating value is 43 MJ/kg:</p>
+<div align="center">
+<center>
+  
+<table>
+<caption>Engine Data</caption>
+<thead>
+<tr class="header">
+<th align="left">gine Speed (rad/s [rpm]) En</th>
+<th align="left">gine Max. Torque (Nm) BS</th>
+<th align="left">FC (g/kWh)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">125.7 [1200]</td>
+<td align="left">1690</td>
+<td align="left">196</td>
+</tr>
+<tr class="even">
+<td align="left">146.6 [1400]</td>
+<td align="left">1650</td>
+<td align="left">195</td>
+</tr>
+<tr class="odd">
+<td align="left">167.6 [1600]</td>
+<td align="left">1540</td>
+<td align="left">196</td>
+</tr>
+<tr class="even">
+<td align="left">188.5 [1800]</td>
+<td align="left">1380</td>
+<td align="left">197</td>
+</tr>
+<tr class="odd">
+<td align="left">209.4 [2000]</td>
+<td align="left">1220</td>
+<td align="left">199</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>Let’s use the FC_CI330.m file in ADVISOR as the base engine to work off of with the above data. To make an eng_map class based off of the FC_CI330.m file, we need only call constructor 3:</p>
+<p>&gt; em205=eng_map(’FC_CI205’)</p>
+<p>Now that we have this map, let’s plot it to look at it:</p>
+<p>&gt; plot(em205)</p>
+<p>You should now see a custom drawn efficiency map figure. Now let’s scale the 205 kW map to fit our information at max. torque. We’ll specify our new map to have torque evaluated every 50 Nm from 50 up to 1700 Nm. Fuel lower heating value will be taken as 43000 J/g:</p>
+<p>&gt; emNew=buildNewMap(em205, [125.7, 146.6, 167.6, 188.5, 209.4], [50:50:1700], [196, 195, 196, 197, 199], …<br />    [1690, 1650, 1540, 1380, 1220], 43000);</p>
+<p>We can now plot our new map:</p>
+<p>&gt; plot(emNew)</p>
+<p>If we like our results, we can save them to an m-file and begin creating an ADVISOR engine m-file:</p>
+<p>&gt; saveToFile(emNew, ‘fc_testEngine.m’)</p>
+<p>Remember, if you ever need help, just type</p>
+<p>‘help eng_map\{method name}’ or ‘methods eng_map’</p>
+<p>Let’s compare how our scaling algorithm did versus just scaling the 205 kW engine by Torque:</p>
+<p>&gt; em205a=scaleTrq(em205,1700/1200) % scale the torque values of the engine</p>
+<p>&gt; em205a=set(em205a, ‘maxTorque’,get(em205a, ‘maxTorque’).*1700/1200) % scale the max torque curve of the 205 kW engine</p>
+<p>&gt; plot(diffMap(emNew, em205a)) % plot the difference between the two engines</p>
+<hr />
+<center>
+<p>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a></p>
+</center>
+
+<hr />
+<center>
+<p>
+<p>Last revised: [01-April-2002] mpo<br />Created: [01-April-2002] mpo</p>
+</center>
+
+</body>
+</html>

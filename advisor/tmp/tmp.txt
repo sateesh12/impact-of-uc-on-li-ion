@@ -1,0 +1,2 @@
+\advisor\tmp is a temporary directory used to store file generated
+in various ADVISOR runs.

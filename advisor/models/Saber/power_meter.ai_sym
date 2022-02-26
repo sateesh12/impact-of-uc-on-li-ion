@@ -1,0 +1,45 @@
+[symbol6]
+desc {}
+uniq 15
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+power_meter_0
+-670 -192 190 240
+-160 0 
+<properties>
+primitive power_meter { } string {} -832 -448 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref undef { } string {} -832 -576 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+p -640 0 1 0 -680 -608 128 3 1 2 0 0 1 {} 6
+m 160 0 1 0 208 208 128 3 1 2 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_0_ 0 1 1 0 1 10 1 0 {-640 0 -528 0 } {8 10 3} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {-256 0 -356 184 -356 124 } {8 10 3} 6 
+r gr_2_ -528 -192 32 240 0 1 10 1 0 0 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {-356 184 -296 144 } {8 10 3} 6 
+a gr_5_ 0 0 -480 -208 -64 208 0 180 0 1 10 1 0 0 6 
+l gr_7_ 0 1 1 0 1 10 1 0 {32 0 160 0 } {8 10 3} 6 
+t gr_9_ -496 0 2 1 0 0 0 0 7 0 {Power} 6 
+l gr_12_ 0 1 1 0 1 10 1 0 {-480 0 -64 0 } {8 10 3} 6 

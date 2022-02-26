@@ -1,0 +1,65 @@
+################################################################################
+#                                                                              #
+#  Saber netlist for design Lithium_Ion_Pack_10_Module                               #
+#  Created by the Saber Integration Toolkit 5.2.2-3.4 of Analogy, Inc.         #
+#  Created on Mon Jan 28 11:15:36 2002.                                        #
+#                                                                              #
+################################################################################
+
+################################################################################
+#                                                                              #
+#  Intermediate template LIB_Model                                             #
+#                                                                              #
+################################################################################
+
+template LIB_Model m:m p:p soc:soc voltage:voltage gnd:0 
+
+{
+i2var.i2var1 p:_n106 m:p out:_n118 = k=-1
+integ.integ1 out:soc in:_n204 = k=1.2744210942e-05, init=0.5
+c.c1 p:_n1 m:m = ic=3.569, c=1p
+LIB_Cb.lib_cb1 in:_n107 outp:_n1 outm:m 
+LIB_Cc.lib_cc1 in:_n107 outp:_n105 outm:m 
+LIB_Rc.lib_rc1 in1:soc in2:_n107 outp:_n2 outm:_n105 Rc_value:_n198 
+LIB_Re.lib_re1 in1:soc in2:_n107 outp:_n2 outm:_n1 re_value:_n199 
+LIB_Rt.lib_rt1 in1:soc in2:_n107 outp:_n106 outm:_n2 rt_value:_n200 
+v2var.v2var1 p:p m:m out:voltage 
+mult.mult1 out:_n202 in1:_n118 in2:voltage 
+diff.diff1 out:_n204 in1:_n202 in2:_n221 
+poweradjustment.poweradjustment_215_ Rc_power:_n198 Rt_power:_n200 \
+        Re_power:_n199 Current:_n118 power_adj:_n221 thermal_power_out:_n226 
+var2th_pwr.var2th_pwr1 in:_n226 tp:0 tm:_n222 
+tempsrc.tempsrc1 tl:0 th:_n224 = dc=25
+rtherm.rtherm2 tl:_n224 th:_n222 = rth=0.1
+ctherm.ctherm1 tl:0 th:_n222 = cth=300.7, t_init=25
+tempc2var.tempc2var1 th:_n222 tl:0 out:_n107 
+}
+
+
+################################################################################
+#                                                                              #
+#  Instances found in the top level of design Lithium_Ion_Pack_10_Module             #
+#                                                                              #
+################################################################################
+
+Ten_Module_Voltage_SOC_Error.TMVSE1 v8:_n239 s8:_n240 s9:_n242 v6:_n235 \
+        s6:_n236 s3:_n46 v3:_n45 s2:_n44 v1:_n41 s1:_n42 v2:_n43 v4:_n47 \
+        s4:_n48 v5:_n49 s5:_n208 s10:_n244 v10:_n243 v9:_n241 s7:_n238 \
+        v7:_n237 PowerInput:_n67 soc_error:_n80 voltage_error:_n163 
+load_tv.load_tv_93_ ctrl:_n65 p:_n68 m:0 p_th:0 m_th:_n63 
+sum.sum1 out:_n65 in1:_n66 in2:_n315 
+sum.sum2 out:_n66 in1:_n67 in2:_n83 
+rtherm.rtherm1 tl:_n63 th:0 = rth=1.0
+prop_int.prop_int1 out:_n315 in:_n163 = init=0.0, ki=25, kp=40000000
+prop_int.prop_int2 out:_n83 in:_n80 = init=0.0, ki=0.25, kp=50000
+LIB_Model.lib1 m:_n69 p:_n68 soc:_n42 voltage:_n41 gnd:0 
+LIB_Model.lib2 m:_n70 p:_n69 soc:_n44 voltage:_n43 gnd:0 
+LIB_Model.lib3 m:_n71 p:_n70 soc:_n46 voltage:_n45 gnd:0 
+LIB_Model.lib4 m:_n72 p:_n71 soc:_n48 voltage:_n47 gnd:0 
+LIB_Model.lib5 m:_n229 p:_n72 soc:_n208 voltage:_n49 gnd:0 
+LIB_Model.lib7 m:_n231 p:_n230 soc:_n238 voltage:_n237 gnd:0 
+LIB_Model.lib8 m:_n232 p:_n231 soc:_n240 voltage:_n239 gnd:0 
+LIB_Model.lib9 m:_n233 p:_n232 soc:_n242 voltage:_n241 gnd:0 
+c_pwl.ess_pwr_req out:_n67 = pwl=[0,200,5,200,6,500]
+LIB_Model.lib10 m:0 p:_n233 soc:_n244 voltage:_n243 gnd:0 
+LIB_Model.lib6 m:_n230 p:_n229 soc:_n236 voltage:_n235 gnd:0 

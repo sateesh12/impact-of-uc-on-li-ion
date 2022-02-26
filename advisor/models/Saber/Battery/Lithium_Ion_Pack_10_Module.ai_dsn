@@ -1,0 +1,14 @@
+[ai_design_7]
+[uniq_id]
+0
+[resources]
+<font>
+<color>
+<linestyle>
+<image>
+<layer>
+{electrical}
+{vis}
+{borderannotation}
+[sch_type]
+[bdl_type]

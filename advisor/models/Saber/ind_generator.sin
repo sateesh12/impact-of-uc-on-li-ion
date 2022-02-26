@@ -1,0 +1,183 @@
+#
+#  ind_generator.sin                                              NREL version
+#                                 Ver 5 - 10-10-2002
+#  symbol = ind_generator.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+###############################################################################
+#   Induction Generator Model
+#   Default vaules for inertia, rpmmax, maxcrrnt, minvolt
+#             matches GC_ETA95.m in ADVISOR
+#
+#   Last update on Sept. 26, 2002
+#
+#   This model is configured for the series hybrid co-simulation template only.
+#   Generation torque is positive as per ADVISOR convention for series hybrid vehicles.
+#
+########################################################################
+#
+#   DESCRIPTION:
+#   -----------
+#   TBD
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]          [type]      [description]
+#   p               electrical  + current enters this node
+#   m               electrical  + current leaves this node
+#
+#   speed       nu  (input pin)
+#   - is the rotational speed of the generator in revolutions per minute.
+#   - The speed is positive
+#
+#   torquereq      nu  (output pin)
+#   - is the input torque required by the generator in Nm for the final solution achieved.
+#   - is positive by traditional ADVISOR convention for generation in the series hybrid.
+#   - will try to equal max_torque_avail if the electrical solution will permit
+#
+#   eff             nu  (input pin)
+#   - is the efficiency of the generator at the given operating point and comes
+#     from a lookup table
+#
+#   torq_max_gen    nu  (input pin)
+#   - is the maximum allowed mechanical torque applied to the generator and comes
+#     from a lookup table.
+#   - This is positive torque.
+#
+#   vset            nu  (input pin)
+#   - is the voltage setpoint of the system controlled by a voltage regulator model
+#
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   inertia     (default = 0.01)
+#   - is the inertia of the rotor.  The ADVISOR parameter is gc_inertia = kg * m * m
+#
+#   rpmmax      (default = 10000)
+#   - is the generator maximum rpm
+#
+#   maxcrrnt    (default = 480)
+#   - is the maximum current of the machine
+#
+#   minvolt     (default = 120)
+#   - is the minimum voltage of the machine
+#
+#   max_torque_avail    (default = 10000000)
+#   - maximum torque available for generation
+#   - default is a VERY large number and should be overwritten by a value from ADVISOR
+#   - is fed from outside this module and comes from ADVISOR.
+#   - in the series hybrid application for which this model is designed, it is
+#     the torque the ICE wants to output to be in its sweet spot. It is a maximum torque
+#     limit.  Actual torque absorbed by the generator may be this or less depending upon the
+#     electrical solution.
+#
+########################################################################
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]      [units]     [description]
+#       i        Amps        Current draw for this model
+#   torquereq    nu         (output pin)
+#   - is the torque required by the generator in Nm to support the acutual solution.
+#   - is positive by traditional ADVISOR convention for generation in the series hybrid.
+#
+########################################################################
+#
+#
+#       PHILOSOPHY OF THE MODEL
+#
+#
+#   Advisor requests max_torque_avail as an input to this model.  That is the request of
+#   the amount of torque ADVISOR wants to be committed to electrical power generation.
+#   This request does not comprehend the inertia torque of the generator.  Thus, the
+#   inertia torque is added to the torque command when fed back to ADVISOR as to how much
+#   torque the machine really requires.
+#
+#   The driver for this philosophy is the ADVISOR strategy on electrical motors and a desire
+#   for consistency.  When ADVISOR commands a torque command to a motor, it expects that motor
+#   to provide exactly that much torque.  Otherwise, the vehicle will fall off the drive cycle
+#   and the ICE will start having pulse demands on it which harms fuel economy.  Thus, the torque
+#   command to the electrical motor is honored and the inertia torque is absorbed electrically
+#   since electricity is providing the source of all mechanical torque for a motor.  Likewise,
+#   for generating, the inertia torque must be provided mechanically from the ICE so the
+#   generating torque goes to electrical production.  The real issue comes near zero torque command
+#   where the inertia torque can cause unrealistic electrical spikes and the inertia torque
+#   alone can be significant compared to the torque command.  In particular, ADVISOR commands
+#   zero torque when it is not motoring or generating.
+#
+########################################################################
+encrypted template ind_generator  p m speed torquereq eff torq_max_gen vset = inertia, rpmmax, maxcrrnt, minvolt, max_torque_avail
+var nu torquereq
+ref nu speed
+ref nu eff
+ref nu torq_max_gen
+electrical p, m
+ref nu vset
+!crypt_start
+008abac6f7c2526a8a6
+024a7fa46e161fe4fe2a7ae56e17c786c32e9b31de1863c0310
+024a7eb95c46613a146b9b98dd9ddc1f0fdf8b9d0c43e39286b
+024575e1b580c1e5a015813160c6fe25ff5f227066c823c0a00
+024f7da493c636b7a3ef08a523c7d15ac4fa3b317477436f3a6
+040edfe5347db6e5055e2e65e16516b6c34acb36cad277fb5e7e6ae2e7c505c0854f9b303e1414c1844
+008e2971c3c2e39387b
+016a9274922c286f4ecf3b351476741f203
+016f5b34747da3c1246adbe2e6c963c1210
+016bfb352e17eac0deeb2be2e6c2cac0da7
+0244f130f580d19180abbfe43b1dd93bda5f4d3107d966e4040
+040b927476cdc94b1ebedc253647eed5ceaabeb222f2e61753abbfad19c20ed0deaf6b35447534c1844
+016ef975d3c7c6c3835adb340e1c6785755
+040bfb352e160f90de9ab364f3a074c5e48b5d21c3cd5cde1f65f4b0819390cef03b8be7b387ee25fe2
+040bfb981c46714e34deee243156d76702fbcf185879c84b1e8bdf88f8913094911b1b313e12cac0da7
+032bfb981c46714e34de0fd53137eef5fe1f7f72e382f64ade3ae2752290e194a15
+024bfb981c46714e34de6e24a152379a0f2aebe6b6c6636e3a6
+008bfb352ba60ff58e2
+056bbe343b261ac0dbafc97593c2236e3a6ef27066c2cac0da719134e58414c184419134e5b414c185f195a46157c367d2da7b31ae16636e3a6
+016fd99553c68247e7bb3b3174790c1b1a5
+024aa6a406cd6dca3a5f89744306e70a6e0adb317476f36e3a6
+016aa375662c3c1b1b8f9b9d0d53b51f313
+016f1e15647db215f10491303582cac0da7
+056a66a40219091b9f7fbf330218b6c1242f8da4471481c1816e9f8dd892b0cb153fbb30644414c185ff3f07c256b746e74e0b313e1963c1210
+056f1b3565ac43c53544b001e58664bae0317055f4a55550951a3b309472b4ff013e9b313e290c1b1bee1fa9281001f5c4be0b313e1414c1844
+0164f1a4e085c441812e9b31ee8908ce7ad
+024ade63f2d667bfea6e771502220e50deaa6b35fe17f41ea03
+040a0e75da069e55ff3f6974e21c73c4755e9b357a512094801135a4e0c6213ad4658134e582e39387b
+024f7e6491fc47d435dbf76063e8d8eb1f190694b296deb55d8
+032a4e88596680eab57bcb985d90c4c591cbb7249347900b24eb9b313e12e39387b
+072a0fb55a22ce905eaf7f2490a13094911fbcc061f7877e3ebbdf88fbb7ee95cf2f5f6470a2f36afafaafc88917f10ac51f4d65d71ce3c120db1fcbf91151d571696b981c4c68df0ec
+056eeb34756ce6e5145e6f12e3861e448e4bbb9919cc580f4e8b3971c78c280e1f7e528066c045e5e02b9d2143c7d4af203b9b340e1484c1844
+024f4975d2e766b7b2ef4ebc0872e61753af1b348477f41e303
+040eef64715ce6e5145b5f07a25908caca5b186516ed194e9e6e5ebc091dd82f0fdfbb9c9c4414c1844
+048ace88c966e0ea057aebe6b2596310f10f1fb2e64c6c1b1aaafe986963c393871bbe352a42236e3adbab9c9c4414c1844
+040a4e88596680eab57bcfc85889084aca5b8be7a29616c6a2ae2fa13b56213ad46babe7a296414b152
+016eafe400a966c1a42ef7c1a6c96350300
+016a4e256b36fe345f3bcb356e1415c0544
+016a4fc81967313a056edb3524790d1aca5
+008b4b9c0c42b41e303
+032a63a407090c1b9f3fbea6320d98efff3f2f82e3e9093f2f0e0b3525760393866
+032eab3405b963c1a46b971556c044a4c44e9efde8a33703836b4be626c78f704a7
+024e0fd5313c47f40561946531b96645f514b131c58044c5610
+008b227066c90c1b1a5
+040f08a5a222e39302d1913185e7fac48f3b962063f5d1a0544bdffc0826d7fe3e210134e5890c1eaa5
+048ac695338c282e3e3e9ecdd872cf440e6bbb992ce6b39762fb1c10d3122fa00afead159753272eaa9afb31ae190c1b1a5
+008b4b9c0c42b41e303
+024b2a368726636ebf0b9974a37124c5d10e7b34f1c68397e72
+016b8f07b383475b1e0e9b30ee12b41f303
+008a6be2e6c6636e3a6
+008b227066c90c1b1a5
+016acfd42ae79e54cf3bab9c0c477ac0da7
+032fd974f267e7d7d3ebfa37d6c7ce848e2fbea6a28efbef3fcabb3544ec085e3e4
+016501846511101155aa4971c3c6739387b
+024b2be34716636aaa6b9d1116e2cfe4ef25a131a586541e303
+040bdf65cb37ee95cf2f2e61c162cfe59e8bef37c6c6b24697b5c460d0964fe59e8acb313e12b41e303
+008a6be2e6c6636e3a6
+016a2f64538c4684b4057130a5890c1b1a5
+}

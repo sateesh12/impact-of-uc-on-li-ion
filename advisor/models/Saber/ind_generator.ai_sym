@@ -1,0 +1,58 @@
+[symbol8]
+desc {}
+uniq 111
+[resources]
+<font>
+{-family Arial -size 4.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+0 0 
+<properties>
+primitive ind_generator { } string {} -1136 -160 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+ref ind_generator { } string {} -1136 -288 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+torquereq 480 640 1 0 320 320 528 0 7 1 2 0 0 1 {} 6
+p 160 1120 1 0 176 176 1104 0 7 1 2 0 0 2 {} 6
+torq_max_gen -640 480 1 0 -1088 -1088 688 0 7 1 2 0 0 2 {} 6
+m 160 160 1 0 160 160 96 0 7 1 2 0 0 1 {} 6
+eff -640 160 1 0 -704 -704 288 0 7 1 2 0 0 1 {} 6
+speed -640 960 1 0 -912 -912 912 0 7 1 2 0 0 2 {} 6
+vset -480 1120 1 0 -528 -528 1312 0 7 1 2 0 0 2 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+-670 130 772 1529
+l gr_0_ 0 1 1 0 1 10 1 0 {160 1120 0 1120 0 1066 } {8 10 3} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {-62 906 -62 1067 57 1067 57 905 } {8 10 3} 6 
+l gr_2_ 0 1 1 2 1 10 1 0 {-640 960 -576 960 -272 688 } {8 10 3} 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {-56 358 -56 199 58 199 58 359 } {8 10 3} 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {161 159 -1 159 -1 201 } {8 10 3} 6 
+c gr_8_ -279 357 277 913 0 1 10 1 0 0 6 
+a gr_9_ 0 1 -147 479 148 797 97 121 0 1 10 1 0 0 6 
+l gr_11_ 0 1 1 2 1 10 1 0 {-480 1120 -304 1120 -144 880 } {8 10 3} 6 
+c gr_13_ -90 551 84 725 0 1 10 1 1 0 6 
+t gr_15_ 0 1536 3 1 0 0 0 0 7 0 {Induction
+Generator} 6 
+l gr_16_ 0 1 1 2 1 10 1 0 {-116 540 -66 499 } {8 10 3} 6 
+l gr_17_ 0 1 1 1 1 10 1 0 {-272 576 -416 480 -640 480 } {8 10 3} 6 
+l gr_10_ 0 1 1 2 1 10 1 0 {-640 160 -368 160 -192 416 } {8 10 3} 6 
+l gr_54_ 2 1 1 2 1 10 1 0 {272 640 480 640 } {8 10 3} 6 

@@ -1,0 +1,105 @@
+# dcconverterideal.sin
+# symbol = dcconverterideal.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+########################################################################
+#
+#   DESCRIPTION:         Rev 0.0  Encrypted 16-September-2002
+#   -----------
+#   Authored by John MacBain in CY 2000 with significant restructuring
+#   in April, 2001.  This present structure permits balancing of batteries
+#   for a DC solution by balancing current rather than trying to directly
+#   balance voltage.
+#
+#   Model gives zero output current when vout < voutmin, curroutmax output
+#   current when vout > voutmax, and linearly ramps the output current
+#   for vout between those limits.  The output power will be the input
+#   power times efficiency (eff).  Output and input currents will always
+#   be of opposite sign due to assigment convention ( positive current
+#   flows from a terminal of the converter to the common terminal of the
+#   converter).
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]      [description]
+#   in      electrical      high voltage input
+#   out     electrical      low voltage output
+#   com     electrical      ground
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   eff     Power conversion efficiency of the dc/dc converter
+#           [default = 0.8 or 80% efficient]
+#   vminout Min     output voltage [default = 12v]
+#   vmaxout Max     output votage  [default = 15v]
+#   curroutmax      Max output currern [default = 60 Amps]
+#   vminin      Min allowable input voltage [default = 1.0v]
+#   key_on      This accomidates the zero current situation during key_off
+#           conditions when the vehicle is shut of for a period of time.
+#               Thus, the high voltage bus is seperated fron the low voltage
+#           bus and further battery balancing is prevented.
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]      [units]     [description]
+#       i               Amps            Current draw for this model
+#   iout            Amps
+#   iin         Amps
+#
+########################################################################
+encrypted template dcconvertideal in out com = eff,
+            vminout, vmaxout, curroutmax, vminin, key_on
+!crypt_start
+008abac6f7c2526a8a6
+0405c500211041e5b10ae274a602b0fe34aec71066c6671713ca06e4a6c7f04a244a7b343e17e41b703
+03256131b58154c1444ec68063ada3c5d47a5ec948b2736a4e3f7b356473336b7a6
+016aaeb8f836641e30056131b58d83c5610
+048edb35347db6e5055e6bf405fd0320f00e9b9c0c42e39387beab9c096c084fef25c5d081d07055107fa97453c963c1210
+048bfb35eb565f943e8f4b9c0c43da01fa9b9de1c71414c1847574607170c4c4d09bdff43ae7b6f6c7bf7b34747d13c5710
+048bfb98d906a14bb4ce6be2e60505c0d4ae9f213ac414c1847e1c25573db3c475daff27e23141a4c44bdb352e16bac48a7
+0485a5e1b0c13194a0bae295e7c2e20257bebff22216636e3a5a3eb672361ac58eabb7556397b7a6c7bbbb985c46541b703
+056ada3636c2f78adefef27176c2541f30ffbf72e216636e3a5edfd4f0e0c4c4d09abea7b2078e30df1f8d85b70d3701251beb985c46f41e303
+032520e0b581802670ba3b317479ec1a1a519564e132b41e300a2be516c0e4c5644
+008b2b313e12cac0da7
+048f5eb4747da69125eeaeb2e6c963f0910ead5593c6f0ee357aeec682d074c5d16aeea95902378aee319130258d193e5e0
+016efde5d6a6239382da7b9cc9041194e0b
+024b972472fdcc1b1ecebd44e3c293ab6f2f6b35447c43c5b5e
+016b9684725c2c1b1ec4c131a586636e3a6
+016f5fa470ec43c1259f7971c3c414c1844
+024baec948a6a41b746fbea6a39d570415fb2be616c6039256a
+0244e50061c04445644661307036030712ffbbe2e6c2cac0da7
+040bc624520d894f4e184ea6b64c695f4eba0fc5eb2040f1400a5a346edc2725b5fb0971c3c6636e3a6
+00844134e58414c1844
+024b86e4e38d5c9ffa5a22e43385170713542134e58963c1210
+040bafc83886314a64796e756e97d15a64df0d8516fd582bde1f58649301502510baab306476636e3a6
+008b227066c90c1b1a5
+008f5e84747da6f4755
+0244f1b070e0f4c1859f09f526a6f36e3abfa97533c6339317b
+024efc1533c7b246c7bb19753313336b7af4f134658d5355d5d
+016e1ce0d792e72257bdcb349470f4c1844
+032eab3400996751a46f3271b656626f2a8b9294f7d60393866f9b313e16636e3a6
+040a0ed86912b0eeb55e9eb0da08d8cb1f3ece15312c27f1b10bba98fc47e5cb703f5be2e6c963c1210
+048f0c35a692e76302d195d52113374382dece15312150f1144ebd4533cc3214610f6f2540ac295fef0a3be2e6c2e39387b
+112a6734039908eb9f3fbf130222b08b54eaeeb7a239097b7a5bdeb13a08a711246a6e146b43275eaa6bd64496c332bb7a6bcf892897c6d772efbb306492150e30be4b313b549194e0b14464e17c0725f59bdf4c992663eeca6f897443161396d2f4f1a030c2f63ade9aab30647414c1844
+040b8a37b6c3478b1efe9e613ae6d6b6d29afea2e394b03181219134116667febf0e3b9c0c4233fa5e0
+024fa9749687c6c6a34bef0064719460944f6b354473462acf3
+024b8a37b6c3478b1efe9e64ba27736e3acf1b35447d9c1ffa5
+032eab3400996751a46f36e1b22667fb5ebb5f7273e6664a0f3a7b9c0c48b3c1200
+032a0b355af2ce505f1bffa1b099088e7e8a1680f3e9093f2f04c131a582e29257b
+008b227066c90c1b1a5
+016acfd42ae79e54cf3bab9c0c477ac0da7
+024505c461b08525649a26e0f252e393366f7971c3c414c1844
+024f0d4142261346d2fa06e4b6c9f21121b56131b58c23c1210
+040eafa4947c33c460aa6b346ec154c1859b8be7b387ef95fe813464e142279a0f5f7b34f47dfc1ffa5
+032eafd4f0ed8750810a3fa1b159093f2f0edfc06149a82b1e1a327536cc2725b5f
+008a6be2e6c6636e3a6
+016a2f64538c4684b4057130a5890c1b1a5
+}

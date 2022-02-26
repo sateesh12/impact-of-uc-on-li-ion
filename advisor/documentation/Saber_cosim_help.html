@@ -1,0 +1,1166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>aux_loads_help</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">aux_loads_help</h1>
+</div>
+<div class="Section1">
+<h1 id="saber-co-simulation-help"><!DOCTYPE html> Saber Co-simulation Help<span style="font-size:12.0pt"><o:p></o:p></span></h1>
+<p><img src="Saber_cosim_help_files/link.gif" /><!--[if !vml]--><!--[endif]--></p>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<p><a href="#_Overview">Overview</a></p>
+<p><a href="#_ADVISOR/Saber_Co-simulation_Requirement">ADVISOR/Saber Co-simulation Requirements</a></p>
+<p><a href="#_Using_Existing_ADVISOR/Saber">Using Existing ADVISOR/Saber Co-Simulation Configurations</a></p>
+<p><a href="#_Creating_A_Custom">Creating A Custom Co-simulation</a></p>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<h2 id="overview"><a name="_Overview"></a>Overview</h2>
+<p>The ADVISOR/Saber co-simulation improves and expands ADVISOR’s electric modeling capability.<span style="mso-spacerun: yes">  </span>It improves ADVISOR by providing the option for a more detailed voltage and current based analysis to capture fluctuations in the electrical power bus.<span style="mso-spacerun: yes">  </span>It expands ADVISOR by providing the capability to use industry-contributed models and Saber library models in ADVISOR.<span style="mso-spacerun: yes">  </span>These models include:</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Industry-contributed:</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Generator</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->DC/DC Converter</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Regulator</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Many Electrical Loads</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Saber library</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Lead Acid / Lithium Ion Batteries</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Integrated Starter Generator, Alternator, Crankshaft Mounted Generators</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Electrical Load Models And Characterization Tools</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Behavioral To Detailed Electronic, Digital, Electrical, Mechanical, Hydraulic, and Pneumatic System Models</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Top Down DC/DC Converters (Behavioral To Physical Models)</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Bus Systems (CAN, FlexRay, TTP Etc.)</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Power Management System</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->PEM And SOFC Fuel Cells (Models And Building Blocks)</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">       </span></span><!--[endif]-->Over 150 Complete Automotive Systems (From ABS To X-By-Wire)</p>
+<p>Using models from both industry and the Saber library, additional vehicle configurations have been created:</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Conventional, single voltage vehicle including a battery, generator, and electrical loads:</p>
+<p><img src="Saber_cosim_help_files/sv_config.gif" /><!--[if !vml]--><!--[endif]--></p>
+<p>Figure <span style="mso-field-code:&quot;SEQ Figure \\* ARABIC&quot;">1</span>.<span style="mso-spacerun: yes">  </span>Electrical Portion of Single Voltage Vehicle Configuration.</p>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Conventional (14V/42V) dual voltage vehicle configuration:</p>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<p><img src="Saber_cosim_help_files/dv_config.gif" /><!--[if !vml]--><!--[endif]--></p>
+<p>Figure <span style="mso-field-code:&quot;SEQ Figure \\* ARABIC&quot;">2</span>.<span style="mso-spacerun: yes">  </span>Electrical Portion of Dual Voltage Vehicle Configuration</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Parallel electric hybrid vehicle configuration:</p>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<p><img src="Saber_cosim_help_files/par_config.jpg" /><!--[if !vml]--><!--[endif]--></p>
+<p>Figure <span style="mso-field-code:&quot;SEQ Figure \\* ARABIC&quot;">3</span>.<span style="mso-spacerun: yes">  </span>Electrical Portion of Parallel Hybrid Electric Vehicle Configuration</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Series electric hybrid vehicle configuration:</p>
+<!--[if !vml]--><!--[endif]-->
+<div class="figure">
+<img src="Saber_cosim_help_files/ser_config.jpg" />
+</div>
+<p>Figure <span style="mso-field-code:&quot;SEQ Figure \\* ARABIC&quot;">4</span>.<span style="mso-spacerun: yes">  </span>Electrical Portion of Series Hybrid Electric Vehicle Configuration</p>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<h2 id="advisorsaber-co-simulation-requirements"><a name="_ADVISOR/Saber_Co-simulation_Requirement"></a>ADVISOR/Saber Co-simulation Requirements</h2>
+<h3 id="co-simulation-requirements">Co-simulation Requirements:</h3>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Standard Saber License</p>
+<!--[if !supportLists]-->
+<p><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">        </span></span><!--[endif]-->Optional Template Library License or Vehicle Electric Library License</p>
+<h3 id="how-to-get-saber">How To Get Saber</h3>
+<p>If you want Saber please contact:</p>
+<p><a href="http://www.avanticorp.com/sales"><span style="font-family:Times">http://www.avanticorp.com/sales</span></a></p>
+<p>or mailto:</p>
+<p><a href="saber-info@avanticorp.com"><span style="font-family:Times">saber-info@avanticorp.com</span></a></p>
+<h2 id="using-existing-advisorsaber-co-simulation-configurations"><a name="_Using_Existing_ADVISOR/Saber"></a>Using Existing ADVISOR/Saber Co-Simulation Configurations</h2>
+<!--[if !vml]--><!--[endif]-->
+<div class="figure">
+<img src="Saber_cosim_help_files/inputfig.gif" />
+</div>
+<p>Figure <span style="mso-field-code:&quot;SEQ Figure \\* ARABIC&quot;">5</span>.<span style="mso-spacerun: yes">  </span>Selecting ADVISOR/Saber co-simulation.<span style="font-weight:normal"><o:p></o:p></span></p>
+<h3 id="choose-saved-vehicle-configuration">Choose Saved Vehicle Configuration</h3>
+<p>An ADVISOR/Saber co-simulation is run by selecting a “saber_*” saved vehicle on the load file menu from the “Vehicle Input” screen, such as CONV_cosim_dv_in (dual voltage) seen in Figure 3.<span style="mso-spacerun: yes">  </span>Choosing a saved vehicle configuration automatically makes the correct combination of component selections.<span style="mso-spacerun: yes">  </span>These menu selections define parameters that correspond to the models created in Saber.<span style="mso-spacerun: yes">  </span>The parallel Saber model includes a 14-volt and a high voltage battery, a motor, and Saber auxiliary load models.</p>
+<p>When choosing one of the “saber” drivetrain configurations, ADVISOR will only allow appropriate component selections.<span style="mso-spacerun: yes">  </span>The mapping for these selections are outlined in Table 1.</p>
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+<tr style="height:31.35pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:31.35pt">
+<p><strong>Load File (Saved Vehicle Name)<o:p></o:p></strong></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:31.35pt">
+<p><strong>Components<o:p></o:p></strong></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:31.35pt">
+<p><strong>Valid Versions<o:p></o:p></strong></p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:31.35pt">
+<p><strong>Valid Types<o:p></o:p></strong></p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:31.35pt">
+<p><strong>Valid File Names<o:p></o:p></strong></p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Conv_cosim_dv_in</p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage (HiV)</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber2</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>pb</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage 2 (12v)</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>pb</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Generator (HiV)</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Accessory</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabDV</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Powertrain Control</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabDV</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>man</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>PTC_CONV_Saber_dv</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Torque Coupling</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>-</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>-</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>TC_GC_TO_FC</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<p>Conv_cosim_sv_in</p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage 2</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>pb</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Generator</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Accessory</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabSV</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Conv</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Powertrain Control</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabSV</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>man</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>PTC_CONV_Saber_sv</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Torque Coupling</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>-</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>-</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>TC_GC_TO_FC</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>SER_Saber_Cosim_in</p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber2</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage 2</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>pb</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all, scale voltage to 12v</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Generator</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>reg</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>reg</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Accessory</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Var</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Const</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;background:#E0E0E0;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Powertrain Control</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabSer</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>man</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#E0E0E0;padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<p>PAR_Saber_Cosim_in</p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber2</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Energy Storage 2</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>saber</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>pb</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>rint</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all, scale voltage to 12v</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Accessory</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabPar</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Var</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Const</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Powertrain Control</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>sabPar</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>man</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>PTC_PAR_Saber</p>
+</td>
+</tr>
+<tr style="height:15.6pt">
+<td width="196" valign="top" style="width:146.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:15.6pt">
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+</td>
+<td width="173" valign="top" style="width:129.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>Torque Coupling</p>
+</td>
+<td width="172" valign="top" style="width:128.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>-</p>
+</td>
+<td width="170" valign="top" style="width:127.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>-</p>
+</td>
+<td width="177" valign="top" style="width:132.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.6pt">
+<p>all but TC_GC_TO_FC</p>
+</td>
+</tr>
+</table>
+</div>
+<p>Table <span style="mso-field-code:&quot;SEQ Table \\* ARABIC&quot;">1</span>.<span style="mso-spacerun: yes">  </span>Valid selections for each Saber co-simulation configuration (saved vehicle file).</p>
+<h3 id="define-the-simulation">Define The Simulation</h3>
+<p>After defining the vehicle inputs, “continue” to the Simulation Setup Figure.<span style="mso-spacerun: yes">  </span>On that screen, the <a href="aux_loads_help.html">auxiliary loads</a>, drive cycle, and other simulation parameters can be modified.<span style="mso-spacerun: yes">  </span>For running test procedures, we recommend first selecting the drive cycle radio button.<span style="mso-spacerun: yes">  </span>This allows the SOC balancing iterations to be changed to 1.<span style="mso-spacerun: yes">  </span>Then select the test procedure.<span style="mso-spacerun: yes">  </span>This prevents SOC balancing iterations, which may not be needed or desired for co-simulation runs.<span style="mso-spacerun: yes">  </span></p>
+<h3 id="run-the-simulation">Run The Simulation</h3>
+<p>Finally, make sure Saber is not open, and click “Run.”<span style="mso-spacerun: yes">  </span>ADVISOR opens and runs Saber exchanging information between Saber and ADIVSOR at every ADVISOR time step.<span style="mso-spacerun: yes">  </span>At the end of the simulations, Saber is closed and ADVISOR displays the co-simulation results from both Saber and ADVISOR.</p>
+<h2 id="creating-a-custom-co-simulation"><a name="_Creating_A_Custom"></a>Creating A Custom Co-Simulation</h2>
+<h3 id="overview-1">Overview</h3>
+<p><img src="Saber_cosim_help_files/custom_cosim.gif" /><!--[if !vml]--><!--[endif]--></p>
+<p>Figure <span style="mso-field-code:&quot;SEQ Figure \\* ARABIC&quot;">6</span>.<span style="mso-spacerun: yes">  </span>Custom co-simulation structure overview.</p>
+<p>The general structure of the co-simulation can be seen in Figure 4.<span style="mso-spacerun: yes">  </span>The three numbered requirements in the figure include:</p>
+<!--[if !supportLists]-->
+<p>1.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]-->Input parameter lists that correspond to Simulink inputs to Saber.<span style="mso-spacerun: yes">  </span></p>
+<!--[if !supportLists]-->
+<p>2.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]-->An output parameter list that corresponds to Saber outputs to Simulink.</p>
+<!--[if !supportLists]-->
+<p>3.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]-->The name of the input/output list file as the third S-function parameter (for ADVISOR co-simulations, the first parameter is “vinf.tmppath” and the second is “time_step.”<span style="mso-spacerun: yes">  </span>The S-function name is always “SaberCosimSfun.”)</p>
+<h3 id="steps-to-create-a-custom-co-simulation">Steps To Create A Custom Co-Simulation</h3>
+<!--[if !supportLists]-->
+<p>1.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]--><strong>Copy SaberCosimIO_Template</strong>.<span style="mso-spacerun:
+yes">  </span>Open and save a copy of the file “…advisor\gui\SaberCosim\SaberCosimIO_Template” with a unique name.<span style="mso-spacerun: yes">  </span>For the example, save it as “SaberCosimIO_Example.”</p>
+<!--[if !supportLists]-->
+<p>2.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]--><strong>Assign Input Parameter List, InputSaberParams</strong>.<span style="mso-spacerun: yes">  </span>Fill in the empty “InputSaberParams” list with Saber parameter names.<span style="mso-spacerun: yes">  </span>Follow the format as specified in the copied file (example:<span style="mso-spacerun:
+yes">  </span>‘primitive.ref = ParameterName =’).<span style="mso-spacerun:
+yes">  </span>For the example change “InputSaberParams={’ ’};” to “InputSaberParams={’radio.radio1 = loadcontrol = ‘,’radio.radio1 = vehicletype =’};”</p>
+<!--[if !supportLists]-->
+<p>3.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]--><strong>Assign Output Parameter List, OutputSaberValues</strong>.<span style="mso-spacerun: yes">  </span>Fill in the empty “OutputSaberValues” list with Saber parameter names that need to be output from Saber to ADVISOR.<span style="mso-spacerun: yes">  </span>Follow the format as specified in the copied file (example:<span style="mso-spacerun: yes">  </span>‘mech_pwr(generator_generic.generator_generic_42v)’). For the example change “OutputSaberValues={’’};” to “OutputSaberValues={’power(power_meter.generator)’,’p_radio(radio.radio1)’,’i(radio.radio1)’};”</p>
+<!--[if !supportLists]-->
+<p>4.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]--><strong>Create the Simulink Model</strong>.<span style="mso-spacerun:
+yes">  </span>Add a S-function block to a SIMULINK model where communication between Simulink and Saber should occur.<span style="mso-spacerun: yes">  </span>Similar to Figure 4, the inputs and outputs to the S-function should be in the same order as the parameters in the input and output lists.<span style="mso-spacerun: yes">  </span>For the example, create a SIMULINK model as seen in Figure 4.<span style="mso-spacerun: yes">  </span>The “radio loadcontrol” block is a “to workspace” block.<span style="mso-spacerun: yes">  </span>The “radio vehicletype” block is a constant block.<span style="mso-spacerun: yes">  </span>These input blocks go to a “Horizontal Matrix Concatenation” block, then a “S-function” block, then a “demux” block, and finally three “scopes.”<span style="mso-spacerun: yes">  </span>Double click the “Horizontal Matrix Concatenation” block to change the number of inputs to two.<span style="mso-spacerun: yes">  </span>Double click the “demux” block to change the number of outputs to three.</p>
+<!--[if !supportLists]-->
+<p>5.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]--><strong>Assign the Parameters for the S-Function</strong>.<span style="mso-spacerun: yes">  </span>Double click the S-function block that will control the co-simulation.<span style="mso-spacerun: yes">  </span>A “Block Parameters” dialog opens.<span style="mso-spacerun: yes">  </span>Change the “S-function name:” to “SaberCosimSfun.”<span style="mso-spacerun: yes">  </span>Three comma separated inputs go in the “S-function Parameters” edit box.<span style="mso-spacerun: yes">  </span>The first input is the location for temporary files to be written.<span style="mso-spacerun: yes">  </span>The second input is the fixed time step to be used.<span style="mso-spacerun:
+yes">  </span>The third input is the name of the file that contains the input and output lists.<span style="mso-spacerun: yes">  </span>For general ADVISOR co-simulations, the first input is “vinf.tmppath” and the second input is “time_step.”<span style="mso-spacerun: yes">  </span>For the example, enter:</p>
+<p><strong>strrep(which(’advisor’),’advisor.m’,’tmp\’),.2,’SaberCosimIO_Example’<o:p></o:p></strong></p>
+<p>This sets the temporary file path to the folder “tmp,” the fixed time step to 0.2 seconds, and the list file name to “SaberCosimIO_Example.”<span style="mso-spacerun: yes">  </span>Click <strong>OK</strong>.</p>
+<h3 id="running-the-example-custom-co-simulation">Running The Example Custom Co-Simulation</h3>
+<!--[if !supportLists]-->
+<p>1.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]-->Open <a href="..\models\customsaberdemo.mdl">“CustomSaberDemo.mdl”</a> from “…advisor\models\.”</p>
+<!--[if !supportLists]-->
+<p>2.<span style="font:7.0pt &quot;Times New Roman&quot;">      </span><!--[endif]-->Click play. <img src="Saber_cosim_help_files/play_button.jpg" /><!--[if !vml]--><!--[endif]--></p>
+<h3 id="known-co-simulation-limitations">Known Co-Simulation Limitations</h3>
+<p>Currently the co-simulation is only developed for a fixed time step in Simulink.<span style="mso-spacerun: yes">  </span>Saber can run at a variable time step in the co-simulation.</p>
+<div class="MsoNormal" align="center" style="text-align:center">
+
+<hr />
+</div>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a><br /> <a href="advisor_doc.html">ADVISOR Documentation Contents</a></p>
+<p>Last Revised: [26-August-2002]: ab</p>
+</div>
+
+</body>
+</html>

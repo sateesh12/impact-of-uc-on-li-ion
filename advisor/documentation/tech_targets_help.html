@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Technical Target Based Components</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Technical Target Based Components</h1>
+</div>
+<center>
+<h2 id="help-on-technical-target-based-components">Help on Technical Target Based Components</h2>
+</center>
+<center>
+<p>(3/10/99:tm)</p>
+</center>
+<h3 id="overview">Overview</h3>
+<p>The technical target based components in the ADVISOR database provide the user with the ability to create and use components in simulations that are based on specifications related to that component. In general a baseline data file is selected and the parameters defining that component are scaled and adjusted to match the user-defined specifications. The new parameters are not saved to the baseline file but are available in the Matlab workspace for subsequent simulations.</p>
+<h3 id="fuel-converter">Fuel converter</h3>
+<p>The user can define the following specifications.<br /> </p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Parameter</em></td>
+<td align="left"><em>Units</em></td>
+<td align="left"><em>Typical values</em></td>
+</tr>
+<tr class="even">
+<td align="left">Peak efficiency (IC engines only)</td>
+<td align="left">(%)</td>
+<td align="left">SI ~ 35, CI ~ 42</td>
+</tr>
+<tr class="odd">
+<td align="left">Efficiency at 25% power (fuel cells only)</td>
+<td align="left">(%)</td>
+<td align="left">hydrogen ~ 50, reformed ~ 40</td>
+</tr>
+<tr class="even">
+<td align="left">Specific power</td>
+<td align="left">(W/kg)</td>
+<td align="left">SI ~ 315, CI ~ 240</td>
+</tr>
+</tbody>
+</table>
+<p> <br />The peak efficiency value will be used to scale the fuel usage map to produce the desired peak efficiency while the specific power value will be used to define the mass of the fuel converter based on its current maximum power value.</p>
+<h3 id="motorcontroller">Motor/controller</h3>
+<p>The user can define the following specifications.<br /> </p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Parameter</em></td>
+<td align="left"><em>Units</em></td>
+<td align="left"><em>Typical values</em></td>
+</tr>
+<tr class="even">
+<td align="left">Efficiency over 2-20% power range</td>
+<td align="left">(%)</td>
+<td align="left">85-90</td>
+</tr>
+<tr class="odd">
+<td align="left">Specific power</td>
+<td align="left">(W/kg)</td>
+<td align="left">750</td>
+</tr>
+</tbody>
+</table>
+<p> <br />All points in the 2-20% power range of the motor efficiency map will be assigned this efficiency value. This power range has been chosen because it is the typical operating range of a properly sized (for PNGV grade and acceleration performance specifications) motor/controller in a vehicle operating over the UDDS and the Federal Highway Drive Schedule. The specific power value will be used to define the mass of the motor controller based on its current maximum power value.</p>
+<h3 id="energy-storage-system">Energy storage system</h3>
+<p>The user can define the following specifications.<br /> </p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Parameter</em></td>
+<td align="left"><em>Units</em></td>
+<td align="left"><em>Typical values</em></td>
+</tr>
+<tr class="even">
+<td align="left">Nominal module voltage</td>
+<td align="left">(V)</td>
+<td align="left">6-15</td>
+</tr>
+<tr class="odd">
+<td align="left">Minimum module operating voltage</td>
+<td align="left">(V)</td>
+<td align="left">~ 75% of nominal voltage</td>
+</tr>
+<tr class="even">
+<td align="left">Low state of charge</td>
+<td align="left">(–)</td>
+<td align="left">0.3-0.5</td>
+</tr>
+<tr class="odd">
+<td align="left">High state of charge</td>
+<td align="left">(–)</td>
+<td align="left">0.6-0.9</td>
+</tr>
+<tr class="even">
+<td align="left">Specific energy</td>
+<td align="left">(Wh/kg)</td>
+<td align="left">9(power assist), 60(dual mode)</td>
+</tr>
+<tr class="odd">
+<td align="left">Power to energy ratio</td>
+<td align="left">(W/Wh) </td>
+<td align="left">20(dual mode),100(power assist)</td>
+</tr>
+<tr class="even">
+<td align="left">Discharge duration for power calculation</td>
+<td align="left">(s)</td>
+<td align="left">10-18</td>
+</tr>
+<tr class="odd">
+<td align="left">C/10 energy capacity</td>
+<td align="left">(Ah)</td>
+<td align="left">150(power assist), 26(dual mode)</td>
+</tr>
+<tr class="even">
+<td align="left">12C energy capacity</td>
+<td align="left">(Ah)</td>
+<td align="left">50(power assist), 12(dual mode)</td>
+</tr>
+</tbody>
+</table>
+<p> <br />The ess_voc vector will be scaled such that the mean voltage is equal to the user defined nominal voltage. The C/10 energy capacity and the 12C energy capacity parameter values are then used to generate the coefficient and the exponent for the peukert equation used in ADVISOR. The routine then determines the appropriate discharge resistance values that will satisfy the rest of the specifications. The power in the power to energy ratio is calculated as Power = V*I where V and I are the terminal voltage and current respectively of the battery module at the end of the specified discharge duration time period. The constant power value required to discharge the module from high SOC to low SOC (or the minimum operating voltage whichever occurs first) within the specified discharge duration is requested of the battery to find V and I. The energy in the power to energy ratio is the total energy out of the battery module during a C/1 constant power discharge from high SOC to low SOC (or the minimum operating voltage whichever occurs first). Finally, the mass of the module is determined based on the C/1 energy capacity calculated above and the specified specific energy.</p>
+<h3 id="vehicle">Vehicle</h3>
+<p>The user can define the following specifications.<br /> </p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Parameter</em></td>
+<td align="left"><em>Units</em></td>
+<td align="left"><em>Typical values</em></td>
+</tr>
+<tr class="even">
+<td align="left">Vehicle glider mass</td>
+<td align="left">(kg)</td>
+<td align="left">car ~ 900</td>
+</tr>
+<tr class="odd">
+<td align="left">Coefficient of drag</td>
+<td align="left">(–)</td>
+<td align="left">car ~ 0.3</td>
+</tr>
+<tr class="even">
+<td align="left">Frontal area</td>
+<td align="left">(m^2)</td>
+<td align="left">car ~ 2.5</td>
+</tr>
+</tbody>
+</table>
+<p>All of the specifications for the vehicle are assigned in the workspace by overriding the current values. No scaling takes place.<br /> * * * * *</p>
+<center>
+<p><a href="advisor_ch3.html#3.3">Back to Chapter 3</a></p>
+</center>
+<p> </p>
+</body>
+</html>

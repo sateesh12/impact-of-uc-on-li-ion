@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Traction Control</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Traction Control</h1>
+</div>
+<h3 id="traction-control">Traction control</h3>
+<p><em><a href="tract.gif">Traction Control block diagram</a></em></p>
+<p><em><a href="tract_input_fig.gif">Traction Control Setup on Input Figure</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The traction control block ensures that the tractive force and linear speed required at the tire patch are consistent with the traction limit of the tires. That is, no more force, either positive (accelerating) or negative, will be requested than can be provided by the tire without its ‘peeling out’ or skidding. Also, no greater change in speed, either positive or negative, will be requested than can be caused by the limited force requirement.</p>
+<p><strong><u>Relationship to other component/subsystem models</u></strong><br />The traction control block interacts only with the ‘wheel and axle’ block and other control blocks that operate on the ‘wheel and axle.’</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The maximum attainable speed is computed by solving <font face="Symbol">S</font>F=ma for max. speed, by discretizing a in terms of speeds at the beginning and end of the time step, and accounting for the fact that the maximum force at the tire patch is a function of weight on the axle, which is turn a function of acceleration. The minimum speed is likewise computed, with a sign reversal or two. The maximum force is then computed by using the limited requested speed to compute the requested acceleration, going on to compute the weight on the front (drive) axle</p>
+<p><strong><u>Equations used in model</u></strong></p>
+<p>(max. speed at end of time step) = [ max(<strong>wh_slip_force_coeff) * veh_mass * veh_gravity * veh_front_wt_frac - veh_mass * veh_gravity * (wh_1st_rrc</strong> + sin(atan(<strong>cyc_grade</strong>))) - 1/2 *<strong>veh_mass * veh_gravity *wh_2nd_rrc</strong> * (speed at beginning of time step) - 1/8 * <strong>veh_air_density * veh_CD * veh_FA</strong> * (speed at beginning of time step)^2 + max(<strong>wh_slip_force_coeff) * veh_mass * veh_cg_height / veh_wheelbase</strong> * (speed at beginning of time step) / (time step duration) + <strong>veh_mass</strong> * (speed at beginning of time step) / (time step duration) ]  / [ 3/8 * <strong>veh_air_density * veh_CD * veh_FA</strong> * (speed at beginning of time step) + ½ * <strong>veh_mass * veh_gravity * wh_2nd_rrc + veh_mass</strong> / (time step duration) + max(<strong>wh_slip_force_coeff) * veh_mass * veh_cg_height / veh_wheelbase</strong> ]</p>
+<p>(speed at beginning of time step) = (speed at end of previous time step)</p>
+<p>The (min. speed at end of time step) is computed using an equation similar to the above, with some sign changes, and is applicable in braking situations.</p>
+<p>(maximum force) = max(**wh_slip_force_coeff) * [ veh_mass * veh_gravity * veh_front_wt_frac - veh_mass * veh_cg_height / veh_wheelbase** * 2 * ( (requested average vehicle speed) – (speed at beginning of time step) ) / (time step duration) ]</p>
+<p>In braking situations, the maximum force computed above is negative and is the most negative value that the tractive force can take.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Appendix%20A.2%20Input">See Appendix A.2: Input Variables</a></p>
+<p>Beginning with the ADVISOR 2003 model there is now the availability to run front, rear or both axles for traction.  The new variables in the wheel data files are in the code as follows:</p>
+<p>% front or rear or both axles driving?<br /> wh_front_active_bool=1; % 0==&gt; inactive; 1==&gt; active<br /> wh_rear_active_bool=0; % 0==&gt; inactive; 1==&gt; active<br />  </p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

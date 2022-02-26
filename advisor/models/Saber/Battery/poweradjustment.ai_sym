@@ -1,0 +1,40 @@
+[symbol6]
+desc {}
+uniq 27
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+HeatEnergyLoss_0
+-350 -496 510 320
+0 0 
+<properties>
+primitive poweradjustment { } string {} -272 -624 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+<ports>
+Rc_power -320 160 1 1 -272 -272 224 7 1 2 0 0 1 {} 6
+Rt_power -320 -160 1 1 -272 -272 -96 7 1 2 0 0 1 {} 6
+Re_power -320 0 1 1 -288 -288 48 7 1 2 0 0 1 {} 6
+Current -320 -320 1 1 -288 -288 -256 7 1 2 0 0 1 {} 6
+power_adj 480 -320 1 2 512 496 -112 7 1 2 0 0 1 {{primitive poweradjustment { } string {} 240 -240 0 0 0 5 3 {} 0 2 {} {} {} 6 l}} 6
+thermal_power_out 480 160 1 2 0 496 128 7 1 0 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+r gr_20_ -320 -496 480 320 0 1 10 1 0 0 6 

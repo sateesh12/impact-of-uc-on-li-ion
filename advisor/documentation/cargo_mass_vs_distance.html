@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>cargo_mass_vs_distance</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">cargo_mass_vs_distance</h1>
+</div>
+<h1 id="variable-cargo-mass-specification-for-drive-cycle">Variable Cargo Mass Specification for Drive Cycle</h1>
+<p>A new functionality has been added to the ADVISOR drive cycle–variable cargo mass versus distance traveled. A new variable called cyc_cargo_mass is defined in the cyc_*.m files. The variable is a two-column matrix specifying distance traveled since the start of the simulation (units of meters) in the first column and cargo mass corresponding to that distance in the second column (units of kg).</p>
+<p>In the Simulink block diagrams, variable cargo mass is implemented with a repeating table (see lib_drive_cycle for details). The variable cargo mass has been implemented primarily for heavy vehicle applications (e.g., loading/unloading of vehicle cargo/freight vs. distance, the loading/unloading of passengers on a transit bus, etc.).</p>
+<p>Upon completion of the drive-cycle, the variable veh_cargo_mass_vs_time will be available (selectable from the GUI pull-down menu on the ‘Results’ screen). The variable ‘veh_cargo_mass_vs_time’ is an array of the cargo mass for each time step throughout the simulation (units of kg). The energy usage figure takes the variable cargo mass into account when determining values such as rolling resistance.</p>
+<p>A drive cycle which takes advantage of the variable cargo mass functionality has been added to ADVISOR version 3.2: CYC_UKBUS_MASS_VAR1. This cycle uses actual data for a typical London bus trip. Variable passenger mass has been calculated with a head count assuming 75 kg per person. This cycle has been graciously provided by Newbus Technologies, UK.</p>
+<p>Note: the original intention of the cyc_cargo_mass variable was to specify cargo vs. distance. Negative values of cargo mass can be specified, though the user must take care not to cancel out total vehicle weight.</p>
+<hr />
+<center>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a><br /> * * * * *</p>
+</center>
+<p>Last revision: [12-July-2001] mpo<br /> <br /> </p>
+</body>
+</html>

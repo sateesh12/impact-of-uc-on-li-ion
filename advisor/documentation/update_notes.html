@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Notes on Updating User Files to New Versions of ADVISOR</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Notes on Updating User Files to New Versions of ADVISOR</h1>
+</div>
+<h1 id="notes-on-updating-user-files-to-a-new-version-of-advisor">Notes on Updating User Files to a New Version of ADVISOR</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The m-file “update_file.m” (located in &lt;ADVISOR main directory&gt;\gui\) does the work of updating previous user files to the current version of ADVISOR. Updating is performed by comparing the user’s file (data file) to an existing file (prototype file) of the current version. The variables from both files are loaded onto function workspaces and variables that are in the prototype file but <strong>not</strong> in the user’s data file are appended to the user’s data file.</p>
+<p>In certain cases, specialized pieces of code may be added to the front or appended to the tail of a user’s file as well. It is important to note that update_file.m and batch_update.m (discussed below) will never delete items from a user’s file–only add new items. The only exceptions to this rule are the *_version variables which are used to flag ADVISOR if an m-file is from a previous version. The *_version variables will always be set to the current version of ADVISOR upon completion of a successful update.</p>
+<p>Updated files should always be inspected manually to ensure that proper variable values are being used. Also, although it is relatively easy to define “dummy” parameters for missing variables, it is difficult to track the size dependencies of variables (e.g., the number of rows and columns of a given matrix may depend on other variables). Thus, user’s will want to inspect the appropriateness of newly added data.</p>
+<p>In checking their files, users will be able to see what update_file has added to their m-files as all updates are conveniently placed between two comment lines. Where possible, user’s should make new file names when changing an existing ADVISOR component file. If a user changes an existing ADVISOR file but does not change the name of that file, update_file.m may not be able to update if the file in question is a prototype file.</p>
+<p>Some notes follow below regarding updating of files:</p>
+<h2 id="batch-updating">Batch Updating</h2>
+<p>As of version 2002, a batch update function has been made available to the user for updating large numbers of files at one time. This function is called batch_update.m and is located in the &lt;ADVISOR main directory&gt;\gui directory.</p>
+<p>The function batch_update takes the following form:</p>
+<p><em>function</em> <strong>batch_update(</strong>optionlist, startDir, destDir<strong>)</strong><br /> This function takes in an optionlist, and two directories where startDir is the directory containing the m-files to update</p>
+<ul>
+<li>optionlist – string with name of optionlist *.mat file containing structure called “options” (e.g., optionlist_all.mat)</li>
+<li>startDir – string with the name of the directory holding the files to be updated</li>
+<li>destDir – string with the name of the directory where files should be copied and updated to</li>
+</ul>
+<p>Note: if startDir and destDir are the same, the files will be updated by appending to the original files vs. copying and modifying the copies </p>
+<p>An optionlist is a *.mat file containing all of the GUI pulldown menu contents. The optionlist is required for proper updating. The reason why is as follows: </p>
+<p>In update_file.m as it is used from the GUI, when a user adds a file to a menu, update_file.m knows exactly what type of file it is by virtue of where it is being added in the menu structure. If a user has a fuel_cell input file and adds it to fuel_converter&gt;fc&gt;fc (see <a href="version_type_help.html">version and type help</a>), then update_file knows the file should be updated using a fuel cell initialization file prototype.</p>
+<p>However, in a batch update, multiple files are being updated at once and there is no way of determining the exact type of file. Thus, the optionlist is used to confirm where a user’s file resided in the previous version of ADVISOR. With this information, the file can then be updated using update_file.m.</p>
+<h2 id="updating-to-version-2002">Updating to Version 2002</h2>
+<h3 id="vehicle-and-wheel-files">Vehicle and Wheel Files</h3>
+<p>The variables veh_1st_rrc and veh_2nd_rrc have been moved over to the wheel file. These variables are now called wh_1st_rrc and wh_2nd_rrc. Update file will append a “clear veh_1st_rrc veh_2nd_rrc” statement to any vehicle files encountered to ensure that the veh_1st_rrc variables are not put out on the workspace to cause confusion.</p>
+<h2 id="updating-to-version-3.2">Updating to Version 3.2</h2>
+<h3 id="general-notes">General Notes</h3>
+<p>When updating a user data file, the matlab command window should be consulted for warnings and notifications. The warning ‘File cannot be run independently’ tells the user that the script file cannot be run independently and other component files must be loaded to provide proper variable definitions. This circumstance may require the user to manually compare and update their files.</p>
+<p>Files that cannot run independently require variables defined in other component m-files. The autoupdater loads any known needed files for a given prototype file and guesses what files may be needed for the data file based upon what type of file it is. The problem with this method is that the additional files that are loaded (and in-fact, even the prototype file) may not best correspond with the user’s data. The user should be aware that autoupdate attempts to insert the minimum needed variable definitions into a file such that the file can run in the current version of ADVISOR. However, the values for the inserted variables should be checked for accuracy and correctness by the user. This can be done by comparing the user’s updated data file to an existing ADVISOR 3.2 file.</p>
+<p>Cell arrays are copied over into new user files when encountered. This functionality has been tested and found to work. However, due to the tricky nature of copying cell arrays (cell arrays can hold any data type), a note is given on the command window when cell array variables are copied. Furthermore, a note or warning is given if errors are encountered while trying to copy cell arrays. Users should always check their updated files to determine what information was appended by auto-update and check this information for correctness. The prototype files (files of the existing version of ADVSIOR) that are consulted during an update can be determined by examining the command window after an update.</p>
+<p>All inline function definitions are placed at the end of the updated user data file. Text strings should be updated automatically from the prototype files where needed though an error may occur if the ‘\’ character is contained in the original string.</p>
+<p>Note that logic statements such as “if” statements are not copied into the target user datafile. The user should always visually inspect the two files for logic errors or leftout statements that may be required.</p>
+<h3 id="drive-cycle-files-cyc_.m-files">Drive Cycle Files (CYC_*.m files)</h3>
+<p>All drive cycle traces should begin at time equal to zero seconds. This is not automatically done in the autoupdate function. The user can simply prepend a zero value (e.g., cyc_mph=[0 cyc_mph(1,2); cyc_mph];) or shift sample times down to start at zero. Failure to do this may result in an error.</p>
+<h3 id="the-transmission-tx_.m-files">The Transmission (TX_*.m files)</h3>
+<p>As of ADVISOR 3.2, a new transmission efficiency model has been added to ADVISOR. As such, new variables must be added to the user’s file. These variables are tx_eff_map, tx_map_spd, and tx_map_trq. These variables define a lookup table to replace the previously used equation coefficients (note: user’s who wish to continue using the old equation form can do so with block diagram changes–see <a href="gearbox_loss_model_3_2.html">this page</a> for details). A special function, &lt;ADVISOR main directory&gt;/gui/tx_eff_mapper.m, is provided to create a lookup-table from the previous efficiency model. However, the values that are placed in the converted TX_*.m file are dummy variables for a 100% efficient transmission. The user is then requested to open the converted m-file and determine how they would like to handle the tranmission efficiency. Here are some common options:</p>
+<ul>
+<li><strong><em>constant efficiency over all gears–</em></strong>this can be achieved by specifying tx_map_trq and tx_map_spd and tx_eff_map for one gear (e.g. tx_map_trq = [-1 1]; tx_map_spd = [0 1]; tx_eff_map(:,:,1) = [0.92 0.92; 0.92 0.92]).</li>
+<li><strong><em>constant efficiency by gear–</em></strong> this can be achieved by specifying dummy values of tx_map_spd and tx_map_trq (e.g., [0 1] and [-1 1] respectively–since you will be specifying constant efficiency by gear, the values of tx_map_spd and tx_map_trq are irrelevant). tx_eff_map should then be a constant for each gear (e.g., tx_eff_map(:,:,1) = [0.85 0.85; 0.85 0.85]; % gear 1, tx_eff_map(:,:,2) = [0.92 0.92; 0.92 0.92] % gear 2– the tx_eff_map size must correspond to the size of tx_map_spd and tx_map_trq (2 x 2)).</li>
+<li><strong><em>calculate a lookup table for your transmision using your custom gear ratios–</em></strong>see <a href="gearbox_loss_model_3_2.html">this page</a> and current v 3.2 TX_*.m files for details and examples. You will want to use the tx_eff_mapper.m function. It is recommended that this process be done once and tx_map_trq, tx_map_spd, and tx_eff_map then be loaded via *.mat file as opposed to running tx_eff_mapper.m each time the TX_*.m file is loaded (running tx_eff_mapper takes processing time and can slow down file loading via the GUI).</li>
+<li><strong><em>add your own data–</em></strong>for users who have gearbox efficiency maps by output torque and speed, this data can be input directly. Reference <a href="gearbox_loss_model_3_2.html">this page</a> for details.</li>
+</ul>
+<hr />
+<center>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a><br /> * * * * *</p>
+</center>
+<p>Last revision: [16-Aug-2001] mpo<br /> <br /> </p>
+</body>
+</html>

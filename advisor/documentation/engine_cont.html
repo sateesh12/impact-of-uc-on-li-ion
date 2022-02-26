@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Engine control</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Engine control</h1>
+</div>
+<h3 id="engine-control-conventional-vehicle">Engine control (conventional vehicle)</h3>
+<p><em><a href="engcntBD.gif">Engine Control Block Diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The engine control determines whether the engine should be on or off and at what speed the engine crankshaft should be turning.  The command signals it generates are used by the engine to determine fuel use, torque delivered, and actual crankshaft speed.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />There are two largely separate issues handled by the engine control:  engine state (on/off) and speed command.</p>
+<p>The engine is on if the key is on (<strong>vc_key_on</strong>) and the clutch is not disengaged (meaning that torque is required) or if it is disengaged and the engine idles rather than shutting down, as determined by <strong>vc_idle_bool</strong>.  It is shut off if the ignition key is off, as determined by <strong>vc_key_on</strong>.  And it will not shut down, even if the engine is commanded not to idle, when transmission is shifting.</p>
+<p>The speed command is identical to the speed required at the clutch input <em>unless</em> the vehicle is about to launch:  if the clutch is disengaged and the vehicle is not moving and it must be moving one second in the future, the engine will spin up to <strong>vc_launch_spd</strong>.  Also, the engine will spin at no less than <strong>vc_idle_spd</strong> if it is on.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong><br />vc_idle_bool    vc_idle_spd    vc_key_on    vc_launch_spd</p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Vehicle%20Control">See Appendix A.2: Input Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+[schematic7]
+desc {}
+uniq 329
+sheets {sheet1}
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 1 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+<color>
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+{} {#ffff00}
+{pink} {#ff00c000cb00}
+{} {#bde6ff}
+{} {#00FF00}
+{orange} {#ffffa5a50000}
+{} {#ffec8b}
+{} {#90ee90}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+{borderannotation}
+[element resources]
+<elements>
+gd {} 
+n n_52_ {_n41} {{sheet1 w_53_}} {} 
+n n_54_ {_n42} {{sheet1 w_55_}} {} 
+n n_56_ {_n43} {{sheet1 w_57_}} {} 
+n n_58_ {_n44} {{sheet1 w_59_}} {} 
+n n_60_ {_n45} {{sheet1 w_61_}} {} 
+n n_62_ {_n46} {{sheet1 w_63_}} {} 
+n n_64_ {_n47} {{sheet1 w_65_}} {} 
+n n_66_ {_n48} {{sheet1 w_67_}} {} 
+n n_68_ {_n49} {{sheet1 w_184_}} {} 
+n n_107_ {gnd} {{sheet1 w_154_ w_113_ w_111_ w_246_}} {} 
+n n_109_ {_n63} {{sheet1 w_110_}} {} 
+n n_114_ {_n65} {{sheet1 w_115_}} {} 
+n n_116_ {_n66} {{sheet1 w_117_}} {} 
+n n_118_ {_n67} {{sheet1 w_144_ w_145_ w_146_}} {} 
+n n_121_ {_n68} {{sheet1 w_122_}} {} 
+n n_123_ {_n69} {{sheet1 w_124_}} {} 
+n n_125_ {_n70} {{sheet1 w_126_}} {} 
+n n_127_ {_n71} {{sheet1 w_309_}} {} 
+n n_129_ {_n72} {{sheet1 w_130_}} {} 
+n n_148_ {_n80} {{sheet1 w_149_}} {} 
+n n_155_ {_n83} {{sheet1 w_156_}} {} 
+n n_164_ {_n163} {{sheet1 w_165_}} {} 
+n n_210_ {_n208} {{sheet1 w_71_}} {} 
+n n_236_ {_n229} {{sheet1 w_237_}} {} 
+n n_238_ {_n230} {{sheet1 w_239_}} {} 
+n n_240_ {_n231} {{sheet1 w_241_}} {} 
+n n_242_ {_n232} {{sheet1 w_243_}} {} 
+n n_244_ {_n233} {{sheet1 w_245_}} {} 
+n n_247_ {_n235} {{sheet1 w_248_}} {} 
+n n_249_ {_n236} {{sheet1 w_250_}} {} 
+n n_251_ {_n237} {{sheet1 w_252_}} {} 
+n n_253_ {_n238} {{sheet1 w_254_}} {} 
+n n_255_ {_n239} {{sheet1 w_256_}} {} 
+n n_257_ {_n240} {{sheet1 w_258_}} {} 
+n n_259_ {_n241} {{sheet1 w_260_}} {} 
+n n_261_ {_n242} {{sheet1 w_262_}} {} 
+n n_263_ {_n243} {{sheet1 w_264_}} {} 
+n n_265_ {_n244} {{sheet1 w_266_}} {} 
+ss ss_272_ {prop_int.prop_int2} {{sheet1 prop_int_143_}} { 
+{ref prop_int2 {} {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} 0 4 {} {} {} {} {} {} {} 6 l}
+{kp 50000 SABER {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{ki 0.25 SABER {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} 0 0 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } prop_int {} 
+ss ss_273_ {prop_int.prop_int1} {{sheet1 prop_int_142_}} { 
+{ref prop_int1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{ki 25 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{kp 40000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } prop_int {} 
+ss ss_274_ {rtherm.rtherm1} {{sheet1 rtherm_106_}} { 
+{ref rtherm1 {} {} {} 0 0 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+{rth 1.0 SABER {} {} 0 0 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+} { } rtherm {} 
+ss ss_275_ {sum.sum2} {{sheet1 csum_100_}} { 
+{ref sum2 {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } csum {} 
+ss ss_276_ {sum.sum1} {{sheet1 csum_99_}} { 
+{ref sum1 {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } csum {} 
+ss ss_277_ {sym.gnd_98_} {{sheet1 gnd_98_}} {} { } gnd {} 
+ss ss_278_ {sym.gnd_97_} {{sheet1 gnd_97_}} {} { } gnd {} 
+ss ss_279_ {sym.gnd_96_} {{sheet1 gnd_96_}} {} { } gnd {} 
+ss ss_280_ {sym.gnd_94_} {{sheet1 gnd_94_}} {} { } gnd {} 
+ss ss_281_ {load_tv.load_tv_93_} {{sheet1 load_tv_93_}} { 
+{primitive {} {} {} {} 0 0 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } load_tv {} 
+ss ss_287_ {Ten_Module_Voltage_SOC_Error.TMVSE1} {{sheet1 Ten_Module_Voltage_SOC_Error_0_}} { 
+{ref TMVSE1 { } string {} 0 0 {} 0 0 5 1 {} 0 1 {} {} {} 6 l}
+} { } Ten_Module_Voltage_SOC_Error {} 
+ss ss_289_ {LIB_Model_288_} {{sheet1 LIB_Model_288_}} {} { } LIB_Model {} 
+ss ss_291_ {lib1.lib2} {{sheet1 LIB_Model_290_}} { 
+{ref lib2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_293_ {lib1.lib3} {{sheet1 LIB_Model_292_}} { 
+{ref lib3 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_295_ {lib1.lib4} {{sheet1 LIB_Model_294_}} { 
+{ref lib4 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_297_ {lib1.lib5} {{sheet1 LIB_Model_296_}} { 
+{ref lib5 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_301_ {lib1.lib7} {{sheet1 LIB_Model_300_}} { 
+{ref lib7 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_303_ {lib1.lib8} {{sheet1 LIB_Model_302_}} { 
+{ref lib8 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_305_ {lib1.lib9} {{sheet1 LIB_Model_304_}} { 
+{ref lib9 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+ss ss_313_ {c_pwl.ess_pwr_req} {{sheet1 c_pwl_311_}} { 
+{ref ess_pwr_req {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,200,5,200,6,500]} SABER {} {} 0 0 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_315_ {lib1.lib10} {{sheet1 LIB_Model_314_}} { 
+{ref lib10 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+n n_318_ {_n315} {{sheet1 w_323_}} {} 
+ss ss_328_ {lib1_1.lib6} {{sheet1 LIB_Model_327_}} { 
+{ref lib6 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } LIB_Model {} 
+<properties>
+[events]
+[reference]
+[sheet]
+sheet1
+<properties>
+<border>
+{A4} 287.000000 200.000000 m 0 95 5 5.000000 2 2 {on} 0 {n} {left} 57.400000 5 5.000000 2 2 {on} 0 {a} {down} 40.000000 0.000000 0.000000 0 
+<elements>
+w w_323_ {prop_int.prop_int_142_.out} {csum.csum_99_.in2} {1280 -960 2720 -960 2720 1440 -1760 1440 -1760 2080 } 0 1 10 0 0 {8 10 3} 0 {{}} 1360 -1080 0 0 5 5 0 0 1 {} 
+w w_309_ {LIB_Model.LIB_Model_292_.m} {LIB_Model.LIB_Model_294_.p} {-3840 1280 -3360 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -3760 1160 0 0 5 5 0 0 1 {} 
+w w_266_ {LIB_Model.LIB_Model_314_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s10} {1760 800 1760 480 } 0 1 10 0 0 {8 10 3} 0 {{}} 1840 680 0 0 5 5 0 0 1 {} 
+w w_264_ {LIB_Model.LIB_Model_314_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v10} {1440 800 1440 480 } 0 1 10 0 0 {8 10 3} 0 {{}} 1520 680 0 0 5 5 0 0 1 {} 
+w w_262_ {LIB_Model.LIB_Model_304_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s9} {960 800 960 480 } 0 1 10 0 0 {8 10 3} 0 {{}} 1040 680 0 0 5 5 0 0 1 {} 
+w w_260_ {LIB_Model.LIB_Model_304_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v9} {640 800 640 480 } 0 1 10 0 0 {8 10 3} 0 {{}} 720 680 0 0 5 5 0 0 1 {} 
+w w_258_ {LIB_Model.LIB_Model_302_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s8} {160 800 160 480 } 0 1 10 0 0 {8 10 3} 0 {{}} 240 680 0 0 5 5 0 0 1 {} 
+w w_256_ {LIB_Model.LIB_Model_302_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v8} {-160 800 -160 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -80 680 0 0 5 5 0 0 1 {} 
+w w_254_ {LIB_Model.LIB_Model_300_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s7} {-640 800 -640 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -560 680 0 0 5 5 0 0 1 {} 
+w w_252_ {LIB_Model.LIB_Model_300_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v7} {-960 800 -960 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -880 680 0 0 5 5 0 0 1 {} 
+w w_250_ {LIB_Model.LIB_Model_327_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s6} {-1440 800 -1440 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -1360 680 0 0 5 5 0 0 1 {} 
+w w_248_ {LIB_Model.LIB_Model_327_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v6} {-1760 800 -1760 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -1680 680 0 0 5 5 0 0 1 {} 
+w w_246_ {LIB_Model.LIB_Model_314_.m} {gnd.gnd_96_.gnd} {1760 1280 2400 1280 2400 640 } 0 1 10 0 0 {8 10 3} 0 {{}} 1840 1160 0 0 5 5 0 0 1 {} 
+w w_245_ {LIB_Model.LIB_Model_304_.m} {LIB_Model.LIB_Model_314_.p} {960 1280 1440 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} 1040 1160 0 0 5 5 0 0 1 {} 
+w w_243_ {LIB_Model.LIB_Model_302_.m} {LIB_Model.LIB_Model_304_.p} {160 1280 640 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} 240 1160 0 0 5 5 0 0 1 {} 
+w w_241_ {LIB_Model.LIB_Model_300_.m} {LIB_Model.LIB_Model_302_.p} {-640 1280 -160 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -560 1160 0 0 5 5 0 0 1 {} 
+w w_239_ {LIB_Model.LIB_Model_327_.m} {LIB_Model.LIB_Model_300_.p} {-1440 1280 -960 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -1360 1160 0 0 5 5 0 0 1 {} 
+w w_237_ {LIB_Model.LIB_Model_296_.m} {LIB_Model.LIB_Model_327_.p} {-2240 1280 -1760 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 1160 0 0 5 5 0 0 1 {} 
+w w_184_ {LIB_Model.LIB_Model_296_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v5} {-2560 800 -2560 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -2480 520 0 0 5 5 0 0 1 {} 
+w w_165_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.voltage_error} {prop_int.prop_int_142_.in} {-800 0 -800 -960 -640 -960 } 0 1 10 0 0 {8 10 3} 0 {{}} -720 -120 0 0 5 5 0 0 1 {} 
+w w_156_ {csum.csum_100_.in2} {prop_int.prop_int_143_.out} {-3360 2080 -3360 1600 -6720 1600 -6720 -800 -4640 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} -3280 1960 0 0 5 5 0 0 1 {} 
+w w_149_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.soc_error} {prop_int.prop_int_143_.in} {-2400 0 -2400 -800 -2720 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} -2320 -120 0 0 5 5 0 0 1 {} 
+w w_146_ {_lsplice_._lsplice__147_.junction} {c_pwl.c_pwl_311_.out} {-4320 2560 -4640 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} -5040 2440 0 0 5 5 0 0 1 {} 
+w w_145_ {csum.csum_100_.in1} {_lsplice_._lsplice__147_.junction} {-3840 2560 -4320 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} -4240 2440 0 0 5 5 0 0 1 {} 
+w w_144_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.PowerInput} {_lsplice_._lsplice__147_.junction} {-4000 0 -4000 -320 -6240 -320 -6240 1920 -4320 1920 -4320 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} -3920 -120 0 0 5 5 0 0 1 {} 
+w w_130_ {LIB_Model.LIB_Model_294_.m} {LIB_Model.LIB_Model_296_.p} {-3040 1280 -2560 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -2960 1160 0 0 5 5 0 0 1 {} 
+w w_126_ {LIB_Model.LIB_Model_290_.m} {LIB_Model.LIB_Model_292_.p} {-4640 1280 -4160 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -4560 1160 0 0 5 5 0 0 1 {} 
+w w_124_ {LIB_Model.LIB_Model_288_.m} {LIB_Model.LIB_Model_290_.p} {-5440 1280 -4960 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} -5360 1160 0 0 5 5 0 0 1 {} 
+w w_122_ {LIB_Model.LIB_Model_288_.p} {load_tv.load_tv_93_.p} {-5760 1280 -5760 3200 1440 3200 1440 3040 } 0 1 10 0 0 {8 10 3} 0 {{}} -5680 3080 0 0 5 5 0 0 1 {} 
+w w_117_ {csum.csum_100_.out} {csum.csum_99_.in1} {-2880 2560 -2240 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} -2800 2440 0 0 5 5 0 0 1 {} 
+w w_115_ {csum.csum_99_.out} {load_tv.load_tv_93_.ctrl} {-1280 2560 1120 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} -1200 2440 0 0 5 5 0 0 1 {} 
+w w_111_ {load_tv.load_tv_93_.p_th} {gnd.gnd_98_.gnd} {1760 2720 2720 2720 2720 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} 1840 2600 0 0 5 5 0 0 1 {} 
+w w_110_ {load_tv.load_tv_93_.m_th} {rtherm.rtherm_106_.tl} {1760 2560 2240 2560 } 0 1 10 0 0 {8 10 3} 0 {{}} 1840 2440 0 0 5 5 0 0 1 {} 
+w w_71_ {LIB_Model.LIB_Model_296_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s5} {-2240 800 -2240 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -2160 680 0 0 5 5 0 0 1 {} 
+w w_67_ {LIB_Model.LIB_Model_294_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s4} {-3040 800 -3040 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -2960 680 0 0 5 5 0 0 1 {} 
+w w_65_ {LIB_Model.LIB_Model_294_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v4} {-3360 800 -3360 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -3280 680 0 0 5 5 0 0 1 {} 
+w w_63_ {LIB_Model.LIB_Model_292_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s3} {-3840 800 -3840 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -3760 680 0 0 5 5 0 0 1 {} 
+w w_61_ {LIB_Model.LIB_Model_292_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v3} {-4160 800 -4160 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -4080 680 0 0 5 5 0 0 1 {} 
+w w_59_ {LIB_Model.LIB_Model_290_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s2} {-4640 800 -4640 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -4560 680 0 0 5 5 0 0 1 {} 
+w w_57_ {LIB_Model.LIB_Model_290_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v2} {-4960 800 -4960 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -4880 680 0 0 5 5 0 0 1 {} 
+w w_55_ {LIB_Model.LIB_Model_288_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.s1} {-5440 800 -5440 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -5360 680 0 0 5 5 0 0 1 {} 
+w w_53_ {LIB_Model.LIB_Model_288_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_0_.v1} {-5760 800 -5760 480 } 0 1 10 0 0 {8 10 3} 0 {{}} -5680 680 0 0 5 5 0 0 1 {} 
+use Ten_Module_Voltage_SOC_Error_0_ 0 0 0 0 {} Ten_Module_Voltage_SOC_Error {} {Default} { 
+{ref TMVSE1 { } string {} -5824 -272 0 0 0 5 1 {} 0 4 {} {} {} 6 l}
+} { } {} 
+use load_tv_93_ 1600 2720 0 0 {} load_tv {} {Default} { 
+{primitive {} {} {} {} 1168 2128 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_94_ 2240 1760 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_96_ 2400 480 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_97_ 1440 2080 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_98_ 2720 2400 0 0 {} gnd {} {Default} {} { } {} 
+use csum_99_ -1760 2400 0 0 {} csum {} {Default} { 
+{ref sum1 {} {} {} -1600 2240 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -1856 2720 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use csum_100_ -3360 2400 0 0 {} csum {} {Default} { 
+{ref sum2 {} {} {} -3200 2240 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -3456 2720 {} {} 0 5 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use rtherm_106_ 2080 2240 0 1 {} rtherm {} {Default} { 
+{ref rtherm1 {} {} {} 2000 2240 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 1840 2240 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+{rth 1.0 SABER {} {} 2528 2256 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+w w_113_ {load_tv.load_tv_93_.m} {gnd.gnd_97_.gnd} {1440 2400 1440 2240 } 0 1 10 0 0 {8 10 3} 0 {{}} 1520 2120 0 0 5 5 0 0 1 {} 
+use prop_int_142_ 320 -960 0 0 {} prop_int {} {Default} { 
+{ref prop_int1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{ki 25 SABER {} {} -288 -1280 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} 528 -1232 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{kp 40000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use prop_int_143_ -3680 -800 2 0 {} prop_int {} {Default} { 
+{ref prop_int2 {} {} {} -3040 -1280 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} -3680 -464 {} {} 0 4 {} {} {} {} {} {} {} 6 l}
+{kp 50000 SABER {} {} -3184 -944 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{ki 0.25 SABER {} {} -3120 -1120 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} -3744 -1024 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use _lsplice__147_ -4320 2560 0 0 {} _lsplice_ {} {Default} {} { } {} 
+w w_154_ {gnd.gnd_94_.gnd} {rtherm.rtherm_106_.th} {2240 1920 2240 1920 } 0 1 10 0 0 {8 10 3} 0 {{}} 2320 1800 0 0 5 5 0 0 1 {} 
+use LIB_Model_288_ -5760 960 0 0 {} LIB_Model {} {Default} {} { } {} 
+use LIB_Model_290_ -4960 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_292_ -4160 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib3 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_294_ -3360 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib4 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_296_ -2560 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib5 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_300_ -960 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib7 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_302_ -160 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib8 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_304_ 640 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib9 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use c_pwl_311_ -4960 2560 0 0 {} c_pwl {} {Default} { 
+{ref ess_pwr_req {} {} {} -5504 2160 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,200,5,200,6,500]} SABER {} {} -5680 2176 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_314_ 1440 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib10 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use LIB_Model_327_ -1760 960 0 0 {} LIB_Model {} {Default} { 
+{ref lib6 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 

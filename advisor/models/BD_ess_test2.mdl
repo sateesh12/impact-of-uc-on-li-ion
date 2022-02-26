@@ -1,0 +1,777 @@
+Model {
+  Name			  "BD_ess_test2"
+  Version		  4.1.1
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Tue Jul 24 14:33:50 2001"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Mar 24 13:36:50 2003"
+  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "inf"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  off
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "BD_ess_test2"
+    Location		    [214, 77, 966, 744]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Block NOTES"
+      Ports		      []
+      Position		      [205, 130, 261, 170]
+      BackgroundColor	      "green"
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "disp('Block\\nNOTES')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Block NOTES"
+	Location		[213, 185, 692, 280]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Annotation {
+	  Position		  [231, 48]
+	  Text			  "This model is used with the btry_specs.m sc"
+"ript file to determine the discharge power, \ncharge power and energy capacit"
+"y for a single battery module. \n The model is linked to the internal resista"
+"nce model in the \nlib_energy_storage.mdl library. (tm:07/24/01)"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Dummy Controls"
+      Ports		      []
+      Position		      [315, 30, 345, 80]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Dummy Controls"
+	Location		[214, 77, 966, 744]
+	Open			on
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	212
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  Ports			  [1, 2]
+	  Position		  [230, 56, 235, 94]
+	  ShowName		  off
+	  OutputSignals		  "bus_voltage,SOC"
+	  MuxedOutput		  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "<bus_voltage>"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<SOC>"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [60, 55, 180, 95]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "essSensors"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [70, 251, 180, 289]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "essReqOut"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [170, 164, 270, 206]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "essControl"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Ground
+	  Name			  "Ground"
+	  Position		  [80, 175, 100, 195]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  Position		  [220, 260, 240, 280]
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace40"
+	  Position		  [330, 87, 415, 113]
+	  ShowName		  off
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [330, 37, 400, 63]
+	  ShowName		  off
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "Ground"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<bus_voltage>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<SOC>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  Points		  [75, 0]
+	  DstBlock		  "To Workspace40"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [215, 50, 235, 70]
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ess config"
+      Ports		      [1, 1]
+      Position		      [90, 34, 170, 86]
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      AttributesFormatString  "%<BlockChoice>"
+      LinkData {
+	BlockName		"energy\nstorage <ess>/From1"
+	DialogParameters {
+	  GotoTag		  "essControl"
+	}
+	BlockName		"energy\nstorage <ess>/Goto1"
+	DialogParameters {
+	  GotoTag		  "essSensors"
+	  TagVisibility		  "global"
+	}
+	BlockName		"energy\nstorage <ess>/Goto2"
+	DialogParameters {
+	  GotoTag		  "essReqOut"
+	  TagVisibility		  "global"
+	}
+      }
+      ShowPortLabels	      off
+      BlockChoice	      "energy storage <ess>"
+      TemplateBlock	      "lib_energy_storage2/ess config"
+      MemberBlocks	      "Ultracapacitor  System,energy storage <ess>,ene"
+"rgy storage <ess> RC,energy storage <ess> nnet,energy storage <ess> Saber,ene"
+"rgy storage <ess> fundamental model,energy storage <ess> optima fundamental m"
+"odel"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"ess config"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "power req'd\ninto bus (W)"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "energy\nstorage <ess>"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  BackgroundColor	  "lightBlue"
+	  AncestorBlock		  "lib_energy_storage2/energy\nstorage <ess>"
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskType		  "Stand-Alone IC Energy Storage System Mask"
+	  MaskPromptString	  "General Name of this Component [char]|Log V"
+"ariables to Workspace?|Initialization File(s) [cell array of char]|Modificati"
+"on Cell [2 column cell array of param and val]|Icon image file name [char--ev"
+"aluated]"
+	  MaskStyleString	  "edit,popup(Don't Log|Log Variable),edit,edi"
+"t,edit"
+	  MaskTunableValueString  "on,on,on,on,on"
+	  MaskCallbackString	  "||||"
+	  MaskEnableString	  "on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on"
+	  MaskVariables		  "generalName=@1;logPick=@2;initFileName=@3;m"
+"odCell=@4;imgFileName=@5;"
+	  MaskInitialization	  "% initialization via m-file function\nDB=0;"
+" % debug off\nlogFlag=advSACompMaskInit(generalName,logPick,initFileName,modC"
+"ell,DB);"
+	  MaskDisplay		  "image(imread(imgFileName))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "'ess'|Log Variable|{}|{}|'bdi_ess.jpg'"
+	  MaskVariableAliases	  ",,,,"
+	  System {
+	    Name		    "energy\nstorage <ess>"
+	    Location		    [202, 77, 966, 744]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "power req'd\ninto bus (W)"
+	      Position		      [140, 200, 160, 220]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      []
+	      Position		      [75, 90, 131, 130]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[256, 329, 741, 634]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Annotation {
+		  Position		  [242, 146]
+		  Text			  "This is a stand-alone version of an"
+" energy storage system\n\nSeveral different models are available"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [80, 276, 190, 314]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "essControl"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [365, 274, 465, 316]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "essSensors"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [365, 124, 465, 166]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "essReqOut"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "documentation9"
+	      Ports		      []
+	      Position		      [145, 91, 174, 130]
+	      BackgroundColor	      "orange"
+	      DropShadow	      on
+	      ShowName		      off
+	      OpenFcn		      "web(['file:\\\\\\' which('energy_storag"
+"e.htm')]);"
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      MaskDisplay	      "image(imread('doc_man.jpg'))"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"documentation9"
+		Location		[129, 62, 308, 146]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "energy\nstorage <ess>"
+	      Ports		      [2, 3]
+	      Position		      [245, 198, 310, 242]
+	      BackgroundColor	      "yellow"
+	      SourceBlock	      "lib_energy_storage2/Ess Choices/energy"
+"\nstorage <ess>"
+	      SourceType	      "Unknown"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "power available\nto bus (W)"
+	      Position		      [425, 210, 445, 230]
+	      FontName		      "Arial"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "energy\nstorage <ess>"
+	      SrcPort		      3
+	      Points		      [20, 0; 0, 60]
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "energy\nstorage <ess>"
+	      SrcPort		      2
+	      DstBlock		      "power available\nto bus (W)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "energy\nstorage <ess>"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -65]
+	      DstBlock		      "energy\nstorage <ess>"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "power req'd\ninto bus (W)"
+	      SrcPort		      1
+	      DstBlock		      "energy\nstorage <ess>"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Position		      [297, 40]
+	      BackgroundColor	      "yellow"
+	      Text		      "Energy Storage System"
+	      FontName		      "Arial"
+	      FontSize		      18
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power available\nto bus (W)"
+	  Position		  [200, 40, 220, 60]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "power req'd\ninto bus (W)"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "energy\nstorage <ess>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "energy\nstorage <ess>"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "power available\nto bus (W)"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "pwr request"
+      Ports		      [0, 1]
+      Position		      [30, 42, 65, 78]
+      FontName		      "Arial"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Repeating table"
+      MaskDescription	      "Repeating table.\nEnter values of time and outp"
+"ut for first cycle."
+      MaskHelp		      "Repeats cycle given in table. Time values shoul"
+"d be monotonically increasing."
+      MaskPromptString	      "Time values:|Output values:"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskInitialization      "period = max(@1); t = @1; y = @2;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "ess_pwr_req(:,1)|ess_pwr_req(:,2)"
+      MaskVariableAliases     ","
+      System {
+	Name			"pwr request"
+	Location		[5, 40, 315, 196]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock"
+	  Position		  [45, 60, 65, 80]
+	  DisplayTime		  off
+	  Decimation		  "10"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn1"
+	  Position		  [110, 60, 150, 80]
+	  Expr			  "rem(u[1],period)"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up Table"
+	  Position		  [210, 58, 250, 82]
+	  InputValues		  "t"
+	  OutputValues		  "y"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [285, 60, 305, 80]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Look-Up Table"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clock"
+	  SrcPort		  1
+	  DstBlock		  "Fcn1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Fcn1"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up Table"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "pwr request"
+      SrcPort		      1
+      DstBlock		      "ess config"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "ess config"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+  }
+}

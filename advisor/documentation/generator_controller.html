@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Generator Controller</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Generator Controller</h1>
+</div>
+<h3 id="generatorcontroller">Generator/controller</h3>
+<p><em><a href="gc.gif">Generator/controller block diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The ‘generator/controller’ block translates torque and speed supplied, usually by a heat engine, into electric power supplied usually to the power bus.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The generator/controller model includes the effects of losses in the generator and controller, generator inertia, the generator’s torque speed-dependent torque capability, and the controller’s current limit. Power losses are handled as a 2-D lookup table indexed by rotor speed and input torque. The generator’s maximum torque is enforced using a lookup table indexed by rotor speed; this limits electric power production but does not feedback to the torque provider.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Generator/Controller">See Appendix A.2: Input Variables</a><br /><a href="advisor_appendices.html#Output%20Generator/Controller">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+[symbol6]
+desc {}
+uniq 46
+[resources]
+<font>
+{Arial 5.0 bold}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+generator_eff_0
+-1470 320 190 1120
+-640 640 
+<properties>
+primitive controller { } string {} -1456 -272 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref controller { } string {} -1456 -400 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+trq -1440 960 1 1 -1488 -1488 1072 5 1 2 0 0 2 {} 6
+rpm -1440 480 1 1 -1552 -1552 592 5 1 2 0 0 2 {} 6
+rpmm 160 640 1 2 208 208 768 3 1 2 0 0 2 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_1_ 0 1 1 0 1 10 1 0 {-1200 880 -1120 960 } {8 10 3} 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {-1200 1040 -1120 960 } {8 10 3} 6 
+r gr_7_ -1120 320 -160 1120 0 1 10 1 0 0 6 
+l gr_9_ 0 1 1 0 1 10 1 0 {-1440 480 -1120 480 } {8 10 3} 6 
+l gr_12_ 0 1 1 0 1 10 1 0 {-160 640 160 640 } {8 10 3} 6 
+l gr_14_ 0 1 1 0 1 10 1 0 {-1200 560 -1120 480 } {8 10 3} 6 
+l gr_15_ 0 1 1 0 1 10 1 0 {-1440 960 -1120 960 } {8 10 3} 6 
+l gr_17_ 0 1 1 0 1 10 1 0 {-1200 400 -1120 480 } {8 10 3} 6 
+l gr_38_ 0 1 1 0 1 10 1 0 {-736 560 -944 560 } {8 10 3} 6 
+t gr_39_ -1024 1120 1 1 0 0 0 0 7 0 {MacBain's} 6 
+a gr_40_ 0 1 -736 208 -384 880 -180 -89 0 1 10 1 0 0 6 
+t gr_41_ -512 896 6 1 0 0 0 0 7 0 {on} 6 
+t gr_42_ -976 672 6 1 0 0 0 0 7 0 {off} 6 
+l gr_44_ 0 1 1 0 1 10 1 0 {-560 880 -320 880 } {8 10 3} 6 
+t gr_45_ -992 512 1 1 0 0 0 0 7 0 {Controller} 6 

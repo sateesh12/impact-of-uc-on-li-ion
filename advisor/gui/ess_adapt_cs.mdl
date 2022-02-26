@@ -1,0 +1,530 @@
+Model {
+  Name			  "ess_adapt_cs"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue Dec 10 10:02:53 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "bjeanner"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Dec 11 16:01:40 2002"
+  ModelVersionFormat	  "1.%<AutoIncrement:12>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Diagnostics"
+  StartTime		  "0.0"
+  StopTime		  "29"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "none"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "ess_adapt_cs"
+    Location		    [30, 351, 657, 740]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Block NOTES"
+      Ports		      []
+      Position		      [50, 145, 106, 185]
+      BackgroundColor	      "green"
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "disp('Block\\nNOTES')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Block NOTES"
+	Location		[243, 430, 669, 572]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Annotation {
+	  Position		  [212, 73]
+	  Text			  "This block diagram runs with the fuel cell "
+"adaptive control strategy.\nIt is called by the sfun_fuelcell_adapt.m script."
+"\n\nInput: \nPower required from the energy storage (assign in the sfunction)"
+"\nTemperature the energy storage (assign in the sfunction)\nSOC the energy st"
+"orage (assign in the sfunction)\nOutput: \nDelta Soc over one time step (1 se"
+"c.)"
+	}
+      }
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [35, 50, 55, 70]
+      DisplayTime	      on
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Delta\nSOC"
+      Ports		      [2, 1]
+      Position		      [330, 153, 355, 182]
+      IconShape		      "rectangular"
+      Inputs		      "-+"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      From
+      Name		      "From"
+      Position		      [160, 161, 200, 189]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "SOC"
+    }
+    Block {
+      BlockType		      Lookup
+      Name		      "Look-Up\nTable"
+      Position		      [85, 34, 135, 86]
+      InputValues	      "EssAdaptTime"
+      OutputValues	      "EssReqAdaptPwr"
+    }
+    Block {
+      BlockType		      Memory
+      Name		      "Memory1"
+      Position		      [245, 115, 275, 145]
+      X0		      "ess_soc_current"
+      InheritSampleTime	      off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [340, 50, 360, 70]
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Terminator1"
+      Ports		      []
+      Position		      [65, 220, 105, 280]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Terminator1"
+	Location		[40, 555, 661, 816]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [10, 30, 115, 50]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From10"
+	  Position		  [200, 129, 320, 151]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [10, 69, 115, 91]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  Position		  [390, 29, 510, 51]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [200, 69, 320, 91]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [205, 29, 325, 51]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [400, 124, 520, 146]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_max_pwr"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [395, 174, 515, 196]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_max_chg_pwr"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [15, 149, 125, 171]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [15, 204, 125, 226]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_tmp"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  Position		  [145, 30, 165, 50]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator10"
+	  Position		  [350, 130, 370, 150]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  Position		  [145, 65, 165, 85]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator3"
+	  Position		  [350, 30, 370, 50]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator4"
+	  Position		  [350, 70, 370, 90]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator5"
+	  Position		  [530, 30, 550, 50]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  Position		  [560, 125, 580, 145]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator7"
+	  Position		  [555, 175, 575, 195]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator8"
+	  Position		  [155, 150, 175, 170]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator9"
+	  Position		  [160, 205, 180, 225]
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "Terminator3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "Terminator4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Terminator5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "Terminator7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "Terminator8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "Terminator9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From10"
+	  SrcPort		  1
+	  DstBlock		  "Terminator10"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace15"
+      Position		      [395, 162, 475, 178]
+      ShowName		      off
+      VariableName	      "DeltaSocAdapt"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "energy\nstorage <ess>"
+      Ports		      [1, 1]
+      Position		      [200, 38, 265, 82]
+      BackgroundColor	      "yellow"
+      AncestorBlock	      "lib_energy_storage/Subsystem/energy\nstorage <e"
+"ss>"
+      LinkData {
+	BlockName		"ess config"
+	DialogParameters {
+	  BlockChoice		  "energy storage <ess>"
+	}
+      }
+      SourceBlock	      "lib_energy_storage/energy\nstorage <ess>"
+      SourceType	      ""
+    }
+    Line {
+      SrcBlock		      "Look-Up\nTable"
+      SrcPort		      1
+      DstBlock		      "energy\nstorage <ess>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "energy\nstorage <ess>"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Delta\nSOC"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -45]
+	DstBlock		"Memory1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Memory1"
+      SrcPort		      1
+      Points		      [15, 0; 0, 30]
+      DstBlock		      "Delta\nSOC"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delta\nSOC"
+      SrcPort		      1
+      DstBlock		      "To Workspace15"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Look-Up\nTable"
+      DstPort		      1
+    }
+  }
+}

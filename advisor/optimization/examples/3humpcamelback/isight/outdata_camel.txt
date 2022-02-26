@@ -1,0 +1,4 @@
+This is the output data file produced by Matlab and read by iSIGHT
+
+Function: 1
+

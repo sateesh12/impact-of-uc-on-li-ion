@@ -1,0 +1,46 @@
+element template motor_eff spd trq eff  = model
+
+ref nu spd,trq
+var nu eff
+
+struc {
+    string  file="mc_eff.ai_dat"
+    number  interp=0,
+        extrap[4]=[0,0,0,0],
+        fill[2]=[2,0],
+        density[2]=[100,100]
+    } model=()
+{
+foreign tlu
+
+number  dim=2,
+    datap[*],
+    sp1[*],
+    sp2[*]
+
+val nu x1,x2,y
+
+parameters {
+    datap=tlu(0,dim,model->file,datap,model->interp,
+    model->extrap,model->fill)
+    sp1=tlu(1,addr(datap),1,model->density[1])
+    sp2=tlu(1,addr(datap),2,model->density[2])
+    }
+
+values {
+    x1=spd
+    x2=trq
+    y=tlu(2,addr(datap),x1,x2)
+    }
+
+control_section {
+    pl_set(y,(x1,x2))
+    sample_points(x1,sp1)
+    sample_points(x2,sp2)
+    }
+
+equations {
+    eff:eff=y
+    }
+}
+

@@ -1,0 +1,33 @@
+#	Controller -  Energenix Center
+#	Matches MC_AC75.m in ADVISOR
+#	File name is mcac75.sin
+#
+###############################################################################
+
+template controller2 rpm trq rpmm
+ref nu rpm, trq
+var nu rpmm
+
+{ 
+val 	nu	rpmmm
+val	nu	trqlim
+ 
+################################################################### 
+
+ values{ 
+ 
+         rpmmm = rpm
+
+	if (trq >= 0.0) {
+		rpmmm = 0.0
+		}	
+		
+        }
+
+equations{
+	rpmm: rpmm = rpmmm
+          }
+}
+
+
+

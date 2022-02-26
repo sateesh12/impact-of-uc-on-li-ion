@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>RC Model</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">RC Model</h1>
+</div>
+<h3 id="rc-battery-model"><strong>RC Battery Model</strong></h3>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The Energy Storage System (ESS) block represents the battery pack that stores energy on board the modeled vehicle.  This block accepts a power request and returns available/actual power output from the battery, the battery voltage and current, and the battery State of Charge (SOC).  By convention, positive power is discharge.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />ADVISOR’s RC model is shown in circuit form in Figure 1. The RC model uses power as an input and limits the battery operation to the high and low voltage limits.  Power delivered by the battery is limited to the maximum that the equivalent circuit can deliver or the maximum that the motor controller can accept, given its minimum voltage requirement.  A simple single-node thermal model of the battery is implemented with parallel flow air cooling.  More detail can be found in the <a href="ess_therm.html">battery thermal model explanation</a>.  The governing state equations of the model are shown in Equation 2, and implemented in the S-function RC.m.</p>
+<p>
+<p>The capacitor Cb is very large and represents the ample capability of the battery to store charge chemically. The capacitor Cc is small and mostly represents the surface effects of a spiral-wound cell, e.g. the limiting behavior of a battery to deliver current based on time constants associated with the diffusion of materials and chemical reactions.</p>
+<center>
+<div class="figure">
+<img src="Image108.gif" />
+</div>
+<div class="figure">
+<img src="Image109.gif" />
+</div>
+<p><strong>Figure 1: ADVISOR RC Battery Model</strong></p>
+<p>
+<p><img src="Image110.gif" /><strong>Equation 1</strong></p>
+</center>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Energy%20Storage%20System%20RC">See Appendix A.2: Input Variables</a></p>
+</blockquote>
+<p><strong><u>Implementation</u></strong><br />The model was implemented in Matlab via an S-function that was called through a Simulink block. In this way, the parameters of the state space system (Equation 1) could vary with SOC and temperature and then be passed to the S-function. The S-function limited power to keep the battery within operating limits, and calculated SOC and heat generated from the battery. The block diagram implmentation of the model is shown in Figure 2.</p>
+<p>
+<div class="figure">
+<img src="Image115.gif" />
+</div>
+<center>
+<p>
+<p><strong>Figure 2: Block Diagram implementation of RC battery model</strong></p>
+</center>
+<p><strong><u>Parameter Generation</u></strong><br />Basic physics and select experimental values were used to determine initial values used in the data processing and optimization (e.g. over the HPPC profile) to determine the five unknown parameters (cb, cc, re, rc, rt) for a given temperature or SOC.  See <a href="../extras/batmodel/documentation/batmodel_doc.html">Batmodel</a> for more detail.</p>
+<p>
+<p><u>Bulk Capacitor Cb</u><br />The experimentally determined open circuit voltages at 0% SOC and 100% SOC were used along with the rated Amp-hour capacity to determine the energy that could be stored in the bulk capacitor Cb, by using the following equation:</p>
+<center>
+<p>
+<p><img src="Image111.gif" /><strong>Equation 2</strong></p>
+</center>
+<p>
+<p><u>Resistances</u><br />To determine initial values for the three resistances, a relationship between the terminal resistance (Rt), the end resistance (Re), and the capacitor resistance (Rc) was assumed. This relationship was that Re and Rc were the same value (R*), and Rt was ½ the value of R*. R* was taken to be Rbulk/1.24 as determined by the step-response impedance of the circuit. The relative relationships were taken from initial values that Saft had applied to their 2-cap model. The bulk resistance was taken from experimental values and determined separately for each SOC (see also Figure 3):</p>
+<center>
+<p>Rbulk=<font face="Symbol">D</font>V/current <strong>Equation 3</strong><br /> </p>
+<div class="figure">
+<img src="Image112.gif" />
+</div>
+<p>
+<p><strong>Figure 3: HPPC values to determine initial R’s and C’s</strong></p>
+</center>
+<p>
+<p><u>Surface Capacitor Cc</u><br />The initial value for the surface capacitor Cc was derived from the observed time constant for the ‘no-load’ voltage response between voltage V<sub>3</sub> and V<sub>4</sub> (see Figure 3). The time constant was approximated by the following equation:</p>
+<center>
+<p>
+<p><img src="Image113.gif" /><strong>Equation 4</strong></p>
+</center>
+<p>
+<p>The time constant associated with Cc (see Equation 1) was then used to determine an initial guess for Cc:</p>
+<center>
+<p>
+<p><img src="Image114.gif" /><strong>Equation 5</strong></p>
+</center>
+
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>
+<p>Last Revised: 5/29/01: vhj</p>
+</body>
+</html>

@@ -1,0 +1,446 @@
+Model {
+  Name			  "sim_validate_rint"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "starttime"
+  StopTime		  "endtime"
+  SolverMode		  "Auto"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  ".5"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Fri Feb 09 08:40:28 2001"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "vjohnson"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 23 11:05:05 2001"
+  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "sim_validate_rint"
+    Location		    [21, 428, 545, 911]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [15, 95, 35, 115]
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [100, 170, 190, 200]
+      Format		      "short"
+      Decimation	      "1"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>1"
+      Position		      [260, 180, 355, 210]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "SOC"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>10"
+      Position		      [230, 584, 340, 616]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "mc_voltage_limited"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>11"
+      Position		      [230, 644, 340, 676]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_pwr_limited"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>12"
+      Position		      [230, 704, 340, 736]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_minV_limited"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>13"
+      Position		      [225, 774, 335, 806]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_maxV_limited"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>4"
+      Position		      [265, 230, 360, 260]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "bus_voltage"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>5"
+      Position		      [275, 285, 370, 315]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_tmp"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>6"
+      Position		      [260, 340, 355, 370]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_max_pwr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>7"
+      Position		      [245, 394, 355, 426]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_max_chg_pwr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>8"
+      Position		      [230, 479, 340, 511]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_soc_hi_limited"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>9"
+      Position		      [230, 534, 340, 566]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_soc_low_limited"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [300, 100, 320, 120]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [455, 485, 475, 505]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      Position		      [450, 540, 470, 560]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [455, 590, 475, 610]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      Position		      [455, 650, 475, 670]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator5"
+      Position		      [455, 710, 475, 730]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator6"
+      Position		      [465, 780, 485, 800]
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace40"
+      Position		      [385, 183, 460, 207]
+      VariableName	      "ess_soc_hist"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace41"
+      Position		      [115, 33, 190, 57]
+      VariableName	      "t"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace52"
+      Position		      [390, 230, 450, 260]
+      VariableName	      "pb_voltage"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace53"
+      Position		      [400, 284, 495, 316]
+      VariableName	      "ess_temperature"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace54"
+      Position		      [405, 334, 500, 366]
+      VariableName	      "ess_max_pwr"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace55"
+      Position		      [385, 394, 480, 426]
+      VariableName	      "ess_max_chg_pwr"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "energy\nstorage <ess>"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [195, 88, 260, 132]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_energy_storage/energy\nstorage <ess>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Lookup
+      Name		      "pwr_data"
+      Position		      [95, 95, 125, 125]
+      InputValues	      "t_data"
+      OutputValues	      "pwr_data"
+    }
+    Line {
+      SrcBlock		      "pwr_data"
+      SrcPort		      1
+      DstBlock		      "energy\nstorage <ess>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "energy\nstorage <ess>"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>4"
+      SrcPort		      1
+      DstBlock		      "To Workspace52"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>1"
+      SrcPort		      1
+      DstBlock		      "To Workspace40"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>5"
+      SrcPort		      1
+      DstBlock		      "To Workspace53"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>6"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "To Workspace54"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>7"
+      SrcPort		      1
+      DstBlock		      "To Workspace55"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"To Workspace41"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 5; 15, 0]
+	Branch {
+	  DstBlock		  "pwr_data"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 75]
+	  DstBlock		  "Display"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "From<vc>8"
+      SrcPort		      1
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>9"
+      SrcPort		      1
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>10"
+      SrcPort		      1
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>11"
+      SrcPort		      1
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>12"
+      SrcPort		      1
+      DstBlock		      "Terminator5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>13"
+      SrcPort		      1
+      DstBlock		      "Terminator6"
+      DstPort		      1
+    }
+  }
+}

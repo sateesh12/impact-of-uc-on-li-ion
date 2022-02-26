@@ -1,0 +1,11 @@
+
+
+[SPL_OUT]
+Battery.V
+SMLK_IN
+[SPL_IN]
+Torque
+SMLK_OUT
+[LINK]
+ModelName=SIM2SIM1
+

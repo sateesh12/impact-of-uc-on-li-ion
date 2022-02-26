@@ -1,0 +1,6402 @@
+Library {
+  Name			  "lib_exhaust2"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  LibraryLinkDisplay	  "all"
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Tue May 30 16:42:52 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jun 25 15:37:10 2003"
+  ModifiedComment	  "mokeefe -- Thu Apr 18 08:32:39 2002 -- Version 1.56"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on"
+  ModifiedHistory	  "mokeefe -- Thu Apr 18 08:32:39 2002 -- Version 1.56"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on\n\nmokeefe -- Thu Apr 18 08:32:39 2002 -- Version 1.56\nsaving the mode"
+"l:\no \"without the model browser open\"\no with only top-level screen visibl"
+"e \no with \"fit to view\" enabled\no with \"status bar\" off and \"toolbar\""
+" off\no with \"prompt to update model history with each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:65>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  SimulationMode	  "normal"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      ShowOutputPort	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      From
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ShowAdditionalParam     off
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Goto
+    }
+    Block {
+      BlockType		      GotoTagVisibility
+      GotoTag		      "A"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      ShowAdditionalParam     off
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Advanced Sim. Parameters)"
+      LogicDataType	      "uint(8)"
+    }
+    Block {
+      BlockType		      Lookup
+      InputValues	      "[-4:5]"
+      OutputValues	      " rand(1,10)-0.5"
+      ShowAdditionalParam     off
+      LookUpMeth	      "Interpolation-Extrapolation"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      MATLABFcn
+      MATLABFcn		      "sin"
+      OutputDimensions	      "-1"
+      OutputSignalType	      "auto"
+      Output1D		      on
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_exhaust2"
+    Location		    [214, 73, 1142, 799]
+    Open		    off
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "361"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "exhaust sys\n<ex>"
+      Ports		      [1, 2]
+      Position		      [65, 63, 115, 107]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      on
+      MaskPromptString	      "General Name of this Component [char--evaluated"
+"]|Log Variables to Workspace?|Initialization File(s) [cell array of char]|Mod"
+"ification Cell [2 column cell array of param and val]|Icon image file name [c"
+"har--evaluated]|DEBUG"
+      MaskStyleString	      "edit,popup(Don't Log|Log),edit,edit,edit,popup("
+"ON|OFF)"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,"
+      MaskVariables	      "generalName=@1;logPick=@2;initFileName=@3;modCe"
+"ll=@4;imgFileName=@5;DEBUG=&6;"
+      MaskInitialization      "% initialization via m-file script\nadvSACompMa"
+"skInitR13;"
+      MaskDisplay	      "image(imread(imgFileName))"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'ex'|Don't Log|{}|{}|'bdi_ex.jpg'|ON"
+      System {
+	Name			"exhaust sys\n<ex>"
+	Location		[219, 77, 1147, 685]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	212
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "EO emis\ninfo"
+	  Position		  [70, 105, 90, 125]
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Exhaust System Model\nand Interface"
+	  Ports			  [2, 3]
+	  Position		  [205, 100, 245, 160]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "Exhaust System Model\nand Interface"
+	    Location		    [293, 58, 1041, 514]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "EO emis\ninfo"
+	      Position		      [200, 130, 220, 150]
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "controls"
+	      Position		      [35, 295, 55, 315]
+	      Port		      "2"
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [2, 1]
+	      Position		      [460, 286, 465, 324]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2]
+	      Position		      [115, 286, 120, 324]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [305, 266, 400, 294]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "A"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [150, 265, 215, 295]
+	      ShowName		      off
+	      GotoTag		      "fc_on"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility"
+	      Position		      [220, 262, 274, 294]
+	      ShowName		      off
+	      GotoTag		      "fc_on"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Model"
+	      Ports		      [1, 2, 1]
+	      Position		      [280, 110, 320, 170]
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      System {
+		Name			"Model"
+		Location		[717, 352, 1261, 685]
+		Open			on
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	212
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"93"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 168, 55, 182]
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  Ports			  []
+		  Position		  [434, 620, 466, 645]
+		  StatesWhenEnabling	  "reset"
+		}
+		Block {
+		  BlockType		  MATLABFcn
+		  Name			  "1-u"
+		  Position		  [825, 222, 835, 258]
+		  MATLABFcn		  "1.0-u"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "1/Ccm"
+		  Position		  [475, 345, 505, 375]
+		  Gain			  "1/(ex_cat_mon_mass*fc_pwr_scale*ex_"
+"cat_mon_cp)"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "1/Ccp"
+		  Position		  [355, 460, 385, 490]
+		  Gain			  "1/(ex_cat_pipe_mass*fc_pwr_scale*ex"
+"_cat_pipe_cp)"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "1/Ccx"
+		  Position		  [445, 496, 480, 524]
+		  Gain			  "1/(ex_cat_ext_mass*fc_pwr_scale*ex_"
+"cat_ext_cp)"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "1/Cm"
+		  Position		  [345, 527, 370, 553]
+		  Gain			  "1/(ex_manif_mass*fc_pwr_scale*ex_ma"
+"nif_cp)"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  []
+		  Position		  [915, 540, 971, 580]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  TreatAsAtomicUnit	  off
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [315, 488, 949, 578]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "This block models the exhaust sys"
+"tem of an internal combustion engine (ICE).  Emphasis is on the catalytic con"
+"verter \naftertreatment of emissions.  Since converter performance is tied to"
+" operating temperature, the temperature and heat\nflows of the exhaust gas, c"
+"onverter, and engine manifold/downpipe are predicted."
+		    Position		    [317, 48]
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  MATLABFcn
+		  Name			  "Break-\nthru"
+		  Position		  [855, 174, 875, 196]
+		  NamePlacement		  "alternate"
+		  MATLABFcn		  "u-ex_cat_lim"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux1"
+		  Ports			  [1, 7]
+		  Position		  [80, 55, 85, 295]
+		  ForegroundColor	  "magenta"
+		  ShowName		  off
+		  Outputs		  "[1 4 1 1 1 1 4]"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux2"
+		  Ports			  [1, 4]
+		  Position		  [290, 207, 295, 253]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From"
+		  Position		  [155, 61, 195, 89]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "fc_on"
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "MinMax"
+		  Ports			  [2, 1]
+		  Position		  [900, 208, 925, 237]
+		  ShowName		  off
+		  Function		  "max"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux1"
+		  Ports			  [2, 1]
+		  Position		  [460, 414, 465, 441]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux3"
+		  Ports			  [5, 1]
+		  Position		  [615, 388, 620, 562]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Inputs		  "5"
+		}
+		Block {
+		  BlockType		  Lookup
+		  Name			  "PCM"
+		  Position		  [475, 396, 505, 414]
+		  Orientation		  "left"
+		  InputValues		  "ex_cat_pcm_tmp"
+		  OutputValues		  "ex_cat_pcm_ecp"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Q/Cci"
+		  Position		  [515, 419, 545, 441]
+		  FontName		  "Arial"
+		  Expr			  "u(2)/(ex_cat_int_mass*fc_pwr_scale*"
+"ex_cat_int_cp+ex_cat_pcm_mass*u(1))"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Qci"
+		  Ports			  [2, 1]
+		  Position		  [420, 416, 430, 449]
+		  NamePlacement		  "alternate"
+		  Inputs		  "-+"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Qcm"
+		  Ports			  [3, 1]
+		  Position		  [445, 340, 455, 380]
+		  Inputs		  "+-+"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Qcp"
+		  Ports			  [2, 1]
+		  Position		  [325, 459, 335, 486]
+		  Inputs		  "-+"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Qcp3"
+		  Ports			  [2, 1]
+		  Position		  [800, 46, 810, 84]
+		  Orientation		  "left"
+		  ShowName		  off
+		  Inputs		  "+-"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Qm"
+		  Ports			  [2, 1]
+		  Position		  [315, 522, 325, 553]
+		  Inputs		  "-+"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation3"
+		  Position		  [775, 54, 785, 76]
+		  Orientation		  "left"
+		  ShowName		  off
+		  UpperLimit		  "Inf"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation4"
+		  Position		  [610, 31, 620, 49]
+		  ShowName		  off
+		  UpperLimit		  "Inf"
+		  LowerLimit		  "eps"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Tci"
+		  Ports			  [1, 1]
+		  Position		  [560, 420, 580, 440]
+		  ShowName		  off
+		  InitialCondition	  "ex_cat_int_init_tmp"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Tcm"
+		  Ports			  [1, 1]
+		  Position		  [520, 350, 540, 370]
+		  InitialCondition	  "ex_cat_mon_init_tmp"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Tcp"
+		  Ports			  [1, 1]
+		  Position		  [405, 465, 425, 485]
+		  ShowName		  off
+		  InitialCondition	  "ex_cat_pipe_init_tmp"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Tcx"
+		  Ports			  [1, 1]
+		  Position		  [495, 500, 515, 520]
+		  ShowName		  off
+		  InitialCondition	  "ex_cat_ext_init_tmp"
+		}
+		Block {
+		  BlockType		  Integrator
+		  Name			  "Tm"
+		  Ports			  [1, 1]
+		  Position		  [385, 530, 405, 550]
+		  ShowName		  off
+		  InitialCondition	  "ex_manif_init_tmp"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace"
+		  Ports			  [1]
+		  Position		  [670, 467, 765, 483]
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|tmp|logFlag"
+		  System {
+		    Name		    "enhancedToWorkspace"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "Terminator"
+		    Position		    [145, 85, 205, 115]
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Terminator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace1"
+		  Ports			  [1]
+		  Position		  [515, 297, 610, 313]
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|cat_tmp|logFlag"
+		  System {
+		    Name		    "enhancedToWorkspace1"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "Terminator"
+		    Position		    [145, 85, 205, 115]
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Terminator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace2"
+		  Ports			  [1]
+		  Position		  [325, 137, 420, 153]
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|cat_th_pwr|logFlag"
+		  System {
+		    Name		    "enhancedToWorkspace2"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "Terminator"
+		    Position		    [145, 85, 205, 115]
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Terminator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace3"
+		  Ports			  [1]
+		  Position		  [330, 82, 425, 98]
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|gas_tmp|logFlag"
+		  System {
+		    Name		    "enhancedToWorkspace3"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "Terminator"
+		    Position		    [145, 85, 205, 115]
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Terminator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "enhancedToWorkspace4"
+		  Ports			  [1]
+		  Position		  [680, 37, 775, 53]
+		  ShowName		  off
+		  CopyFcn		  "breakLinkCopyFcn"
+		  ParentCloseFcn	  "breakLinkParCloseFcn"
+		  FontSize		  8
+		  TreatAsAtomicUnit	  on
+		  MaskType		  "enhancedToWorkspace"
+		  MaskDescription	  "A wrapper for the Simulink \"To Wor"
+"kspace\" block that allows you to evaluate the name of the variable to log to"
+" workspace. This is useful to avoid the double logging errors that occur when"
+" you pull in two library models that attempt to log to the same variable."
+		  MaskHelp		  "<h2>Enhanced To Workspace Block</h2"
+">\n<h3>Parameters</h3>\n<UL>\n<li><b>General Name:</b> This is the more gener"
+"al name of the variable. Variables are saved to the workspace as <i>generalNa"
+"me_specificName</i>. Note that this is an evaluated variable. If you would li"
+"ke to type in the value directly, it must be surrounded with single quotes. O"
+"therwise you can input the name of a variable containing a char string.</li>"
+"\n<li><b>Specific Name:</b> This is the specific name of the variable. Note t"
+"hat this is input as a char literal (i.e., you don't need quotes).</li>\n<li>"
+"<b>Enable Flag:</b> This flag should have the value of 0 or 1. If 0, the vari"
+"able will not be logged to the workspace. If 1, the variable will be logged. "
+"This is done so that variable logging can be turned off to improve speed.</li"
+">\n</ul>\n<h3>Overview</h3>\n<p>The enhanced to workspace block was put toget"
+"her to allow one to dynamically resolve variable names at run time in simulin"
+"k. This is most powerful when used in conjunction with a masked subsystem to "
+"allow multiple instances of that masked subsytem to be used in the same model"
+". The strategy is to set the generalName in the block mask which will allow t"
+"he block to change the general name for all variable logging on the fly. \n<h"
+"3>Helper Files</h3>\n<p>Three m-files are required by the enhancedToWorkspace"
+" block. These files are located in the &lt; ADVISOR root &gt;/GUI directory :"
+"\n<ul>\n<li><i>enhancedToWsMaker.m</i> This file runs the mask initialization"
+" for the block</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the b"
+"lock callback when the simulink block is copied. It is necessary to break the"
+" link to the enhancedToWorkspace similar to the To Workspace block in order f"
+"or it to be able to configure itself. (Try copying simulink's To Workspace bl"
+"ock--it is impossible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i>"
+" This file is similar to the breakLinkCopyFcn and is used when a parent syste"
+"m is closed</li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Ke"
+"efe, NREL</p>\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B"
+"> data type here</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type<"
+"/B> vehicle type here</LI>\n<LI><B>description</B> description here</LI>\n</U"
+"L>\n</VARDEF>\n-->\n"
+		  MaskPromptString	  "General Name [char-evaluated]|Speci"
+"fic Name [char-literal]|Enable flag (1=on,0=off)"
+		  MaskStyleString	  "edit,edit,edit"
+		  MaskTunableValueString  "on,on,on"
+		  MaskCallbackString	  "||"
+		  MaskEnableString	  "on,on,on"
+		  MaskVisibilityString	  "on,on,on"
+		  MaskToolTipString	  "on,on,on"
+		  MaskVarAliasString	  ",,"
+		  MaskVariables		  "generalName=@1;specificName=&2;logF"
+"lag=@3;"
+		  MaskInitialization	  "enhancedToWsMaker"
+		  MaskDisplay		  "disp([generalName,'_',specificName]"
+")"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "generalName|cat_eff|logFlag"
+		  System {
+		    Name		    "enhancedToWorkspace4"
+		    Location		    [453, 361, 913, 631]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [65, 93, 95, 107]
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "Terminator"
+		    Position		    [145, 85, 205, 115]
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Terminator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "ex gas heat flow"
+		  Ports			  [4, 3, 1]
+		  Position		  [170, 93, 270, 257]
+		  TreatAsAtomicUnit	  on
+		  System {
+		    Name		    "ex gas heat flow"
+		    Location		    [372, 542, 1130, 923]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "emis\ncat'd"
+		    Position		    [30, 58, 60, 72]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ex gas\nflow"
+		    Position		    [30, 143, 60, 157]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Tex,eo"
+		    Position		    [30, 263, 60, 277]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ex_temp"
+		    Position		    [30, 323, 60, 337]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    Ports		    []
+		    Position		    [29, 205, 61, 230]
+		    StatesWhenEnabling	    "reset"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "%"
+		    Position		    [290, 76, 325, 104]
+		    Gain		    "100"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "%1"
+		    Position		    [470, 36, 505, 64]
+		    ShowName		    off
+		    Gain		    "669"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "%2"
+		    Position		    [515, 86, 550, 114]
+		    ShowName		    off
+		    Gain		    "121"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "%3"
+		    Position		    [430, 64, 510, 96]
+		    ShowName		    off
+		    Gain		    "93+79/3"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "%5"
+		    Position		    [465, 114, 500, 136]
+		    ShowName		    off
+		    Gain		    "0"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "(eo-tp)/exg"
+		    Ports		    [2, 1]
+		    Position		    [190, 45, 205, 120]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Block NOTES"
+		    Ports		    []
+		    Position		    [690, 330, 746, 370]
+		    BackgroundColor	    "green"
+		    ShowName		    off
+		    TreatAsAtomicUnit	    off
+		    MaskDisplay		    "disp('Block\\nNOTES')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Block NOTES"
+		    Location		    [505, 510, 1019, 591]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "EXHAUST GAS HEAT TRANSFER\nThis b"
+"lock models the heat loss from the exhaust gas as it flows from the engine th"
+"rough the manifold, \ndownpipe, and catalytic converter.  Also included is th"
+"e increase in gas temperature within the converter \ndue to the catalysis of "
+"HC, CO, and NOx. The block is conditionally executed only if engine_on=1."
+		    Position		    [262, 38]
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux3"
+		    Ports		    [1, 4]
+		    Position		    [355, 35, 360, 140]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From in pipe"
+		    Position		    [570, 307, 630, 323]
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "Qp2g"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From in pipe2"
+		    Position		    [570, 227, 630, 243]
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "Tgmo"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From in pipe3"
+		    Position		    [570, 202, 630, 218]
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "Tgpo"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From manif"
+		    Position		    [570, 326, 625, 344]
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "Qma2g"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [85, 56, 100, 74]
+		    X0			    "[0 0 0 0]"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux17"
+		    Ports		    [4, 1]
+		    Position		    [650, 261, 655, 349]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux19"
+		    Ports		    [3, 1]
+		    Position		    [650, 170, 655, 250]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qcp5"
+		    Ports		    [2, 1]
+		    Position		    [395, 61, 405, 94]
+		    ShowName		    off
+		    Inputs		    "+-"
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    "Saturation1"
+		    Position		    [255, 79, 265, 101]
+		    ShowName		    off
+		    UpperLimit		    "1"
+		    LowerLimit		    "0"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "converter"
+		    Ports		    [4, 3]
+		    Position		    [485, 208, 545, 307]
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "converter"
+		    Location		    [319, 129, 786, 328]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "h,exg"
+		    Position		    [35, 68, 65, 82]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Cexg"
+		    Position		    [35, 28, 65, 42]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Texgi"
+		    Position		    [40, 153, 70, 167]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Tex"
+		    Position		    [35, 113, 65, 127]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    " Q/C"
+		    Ports		    [2, 1]
+		    Position		    [325, 53, 340, 117]
+		    NamePlacement	    "alternate"
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "1/A"
+		    Position		    [100, 22, 130, 48]
+		    Gain		    "1/(ex_cat_moni_sarea+ex_cat_int_s"
+"area-ex_cat_mon_sarea)"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux3"
+		    Ports		    [1, 2]
+		    Position		    [120, 84, 125, 126]
+		    ShowName		    off
+		    Outputs		    "2"
+		    }
+		    Block {
+		    BlockType		    MinMax
+		    Name		    "MinMax"
+		    Ports		    [2, 1]
+		    Position		    [155, 26, 175, 79]
+		    ShowName		    off
+		    Function		    "min"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux16"
+		    Ports		    [4, 1]
+		    Position		    [195, 41, 200, 159]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qci2g_"
+		    Position		    [225, 102, 250, 128]
+		    ShowName		    off
+		    FontName		    "Arial"
+		    Expr		    "u(1)*(ex_cat_int_sarea - ex_cat_m"
+"on_sarea)*(u(3)-u(4))"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qcm2g_"
+		    Position		    [225, 67, 250, 93]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    FontName		    "Arial"
+		    Expr		    "u(1)*ex_cat_moni_sarea*(u(2)-u(4)"
+")"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector3"
+		    Ports		    [1, 1]
+		    Position		    [90, 83, 100, 127]
+		    ShowName		    off
+		    Elements		    "[ 1 2 ]"
+		    InputPortWidth	    "5"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "T"
+		    Ports		    [2, 1]
+		    Position		    [370, 70, 380, 125]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "T1"
+		    Ports		    [2, 1]
+		    Position		    [290, 64, 300, 131]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Texgo"
+		    Position		    [415, 95, 445, 105]
+		    NamePlacement	    "alternate"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "amb_tmp"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qcm2g"
+		    Position		    [255, 45, 285, 55]
+		    Orientation		    "up"
+		    NamePlacement	    "alternate"
+		    Port		    "2"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qci2g"
+		    Position		    [255, 140, 285, 150]
+		    Orientation		    "down"
+		    NamePlacement	    "alternate"
+		    Port		    "3"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "T"
+		    SrcPort		    1
+		    DstBlock		    "Texgo"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "T1"
+		    SrcPort		    1
+		    DstBlock		    " Q/C"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    " Q/C"
+		    SrcPort		    1
+		    DstBlock		    "T"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qcm2g_"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Qcm2g"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "T1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Qci2g_"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Qci2g"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "T1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux16"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Qci2g_"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Qcm2g_"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Texgi"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    Points		    [0, -15]
+		    DstBlock		    "Mux16"
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [0, 5; 275, 0]
+		    DstBlock		    "T"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Demux3"
+		    SrcPort		    2
+		    DstBlock		    "Mux16"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Demux3"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    DstBlock		    "Mux16"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Selector3"
+		    SrcPort		    1
+		    DstBlock		    "Demux3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Tex"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Selector3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "MinMax"
+		    SrcPort		    1
+		    DstBlock		    "Mux16"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "1/A"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "MinMax"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "h,exg"
+		    SrcPort		    1
+		    Points		    [70, 0]
+		    DstBlock		    "MinMax"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Cexg"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "1/A"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -20; 230, 0]
+		    DstBlock		    " Q/C"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "cp,exg"
+		    Position		    [175, 136, 210, 164]
+		    Gain		    "ex_gas_cp/1000"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "dTcat"
+		    Ports		    [4, 1]
+		    Position		    [580, 35, 590, 140]
+		    ShowName		    off
+		    Inputs		    "++++"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "h,exg"
+		    Position		    [125, 169, 155, 191]
+		    FontName		    "Arial"
+		    Expr		    "23*((u/10)^0.8)"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "inlet pipe"
+		    Ports		    [4, 1]
+		    Position		    [360, 207, 420, 308]
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "inlet pipe"
+		    Location		    [495, 427, 978, 730]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "h,exg"
+		    Position		    [30, 73, 60, 87]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Cexg"
+		    Position		    [35, 38, 65, 52]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Texgi"
+		    Position		    [30, 153, 60, 167]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Tex"
+		    Position		    [30, 218, 60, 232]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    " Q/C"
+		    Ports		    [2, 1]
+		    Position		    [280, 45, 295, 100]
+		    NamePlacement	    "alternate"
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "A"
+		    Position		    [100, 67, 130, 93]
+		    Gain		    "ex_cat_pipe_sarea"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto"
+		    Position		    [280, 110, 330, 130]
+		    GotoTag		    "Qp2g"
+		    TagVisibility	    "global"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto1"
+		    Position		    [435, 67, 475, 83]
+		    ShowName		    off
+		    GotoTag		    "Tgpo"
+		    TagVisibility	    "global"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [345, 260, 380, 280]
+		    Orientation		    "left"
+		    FontName		    "Arial"
+		    X0			    "cyc_mph(1,2)*.447"
+		    }
+		    Block {
+		    BlockType		    MinMax
+		    Name		    "MinMax"
+		    Ports		    [2, 1]
+		    Position		    [165, 43, 190, 92]
+		    ShowName		    off
+		    Function		    "min"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux19"
+		    Ports		    [3, 1]
+		    Position		    [125, 185, 130, 265]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector2"
+		    Ports		    [1, 1]
+		    Position		    [75, 204, 85, 246]
+		    ShowName		    off
+		    Elements		    "3"
+		    InputPortWidth	    "5"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "T"
+		    Ports		    [2, 1]
+		    Position		    [365, 95, 375, 150]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Ts-Tex,ave"
+		    Position		    [170, 212, 205, 238]
+		    Expr		    "u(2) - (u(3)+u(1))/2 "
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "tailpipe \nemis"
+		    Ports		    [2, 1]
+		    Position		    [240, 90, 255, 150]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Texgo"
+		    Position		    [445, 120, 475, 130]
+		    NamePlacement	    "alternate"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "amb_tmp"
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-230, 0]
+		    DstBlock		    "Mux19"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Selector2"
+		    SrcPort		    1
+		    DstBlock		    "Mux19"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Ts-Tex,ave"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -90]
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Mux19"
+		    SrcPort		    1
+		    DstBlock		    "Ts-Tex,ave"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Tex"
+		    SrcPort		    1
+		    DstBlock		    "Selector2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "T"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "Goto1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Texgo"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Texgi"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    Branch {
+		    DstBlock		    "Mux19"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [240, 0]
+		    DstBlock		    "T"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    " Q/C"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    DstBlock		    "T"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "tailpipe \nemis"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    " Q/C"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Cexg"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    Branch {
+		    Points		    [0, -15; 150, 0]
+		    DstBlock		    " Q/C"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [35, 0]
+		    DstBlock		    "MinMax"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "A"
+		    SrcPort		    1
+		    DstBlock		    "MinMax"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "MinMax"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 35]
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "h,exg"
+		    SrcPort		    1
+		    DstBlock		    "A"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "manifold "
+		    Ports		    [4, 1]
+		    Position		    [245, 207, 305, 308]
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "manifold "
+		    Location		    [91, 206, 617, 520]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "h,exg"
+		    Position		    [55, 78, 85, 92]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Cexg"
+		    Position		    [60, 43, 90, 57]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Texgi"
+		    Position		    [60, 143, 90, 157]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Tex"
+		    Position		    [55, 223, 85, 237]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    " Q/C"
+		    Ports		    [2, 1]
+		    Position		    [310, 20, 325, 75]
+		    NamePlacement	    "alternate"
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "A"
+		    Position		    [145, 72, 175, 98]
+		    Gain		    "ex_manif_sarea"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto"
+		    Position		    [310, 102, 350, 118]
+		    ShowName		    off
+		    GotoTag		    "Qma2g"
+		    TagVisibility	    "global"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto2"
+		    Position		    [465, 67, 505, 83]
+		    ShowName		    off
+		    GotoTag		    "Tgmo"
+		    TagVisibility	    "global"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [375, 265, 410, 285]
+		    Orientation		    "left"
+		    FontName		    "Arial"
+		    X0			    "cyc_mph(1,2)*.447"
+		    }
+		    Block {
+		    BlockType		    MinMax
+		    Name		    "MinMax"
+		    Ports		    [2, 1]
+		    Position		    [210, 48, 235, 97]
+		    ShowName		    off
+		    Function		    "min"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux19"
+		    Ports		    [3, 1]
+		    Position		    [145, 190, 150, 270]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector1"
+		    Ports		    [1, 1]
+		    Position		    [105, 209, 115, 251]
+		    ShowName		    off
+		    Elements		    "5"
+		    InputPortWidth	    "5"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "T"
+		    Ports		    [2, 1]
+		    Position		    [390, 97, 400, 168]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Ts-Tex,ave"
+		    Position		    [185, 218, 220, 242]
+		    Expr		    "u(2) - (u(3)+u(1))/2 "
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "tailpipe \nemis"
+		    Ports		    [2, 1]
+		    Position		    [270, 80, 285, 140]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Texgo"
+		    Position		    [475, 130, 505, 140]
+		    NamePlacement	    "alternate"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "amb_tmp"
+		    }
+		    Line {
+		    SrcBlock		    "Texgi"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    Branch {
+		    DstBlock		    "T"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Mux19"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Ts-Tex,ave"
+		    SrcPort		    1
+		    Points		    [25, 0; 0, -105]
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-240, 0]
+		    DstBlock		    "Mux19"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Mux19"
+		    SrcPort		    1
+		    DstBlock		    "Ts-Tex,ave"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Selector1"
+		    SrcPort		    1
+		    DstBlock		    "Mux19"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Tex"
+		    SrcPort		    1
+		    DstBlock		    "Selector1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "tailpipe \nemis"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    " Q/C"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "T"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [-15, 0]
+		    Branch {
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Texgo"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Goto2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    " Q/C"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    DstBlock		    "T"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Cexg"
+		    SrcPort		    1
+		    Points		    [65, 0]
+		    Branch {
+		    Points		    [0, -15]
+		    DstBlock		    " Q/C"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [35, 0]
+		    DstBlock		    "MinMax"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "A"
+		    SrcPort		    1
+		    DstBlock		    "MinMax"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "MinMax"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "h,exg"
+		    SrcPort		    1
+		    DstBlock		    "A"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "mol_EO/s"
+		    Position		    [140, 56, 155, 74]
+		    NamePlacement	    "alternate"
+		    Gain		    "[1/44.1 1/28 1/46 1/44]"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "mol_ex/s"
+		    Position		    [130, 87, 165, 113]
+		    Gain		    "1/29"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "tailpipe \nemis"
+		    Ports		    [2, 1]
+		    Position		    [620, 95, 635, 155]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Tex,gas"
+		    Position		    [705, 205, 735, 215]
+		    NamePlacement	    "alternate"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "amb_tmp"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qcat"
+		    Position		    [710, 120, 740, 130]
+		    NamePlacement	    "alternate"
+		    Port		    "2"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qex"
+		    Position		    [710, 300, 740, 310]
+		    NamePlacement	    "alternate"
+		    Port		    "3"
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "%"
+		    SrcPort		    1
+		    DstBlock		    "Demux3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "h,exg"
+		    SrcPort		    1
+		    Points		    [70, 0]
+		    Branch {
+		    DstBlock		    "manifold "
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [115, 0]
+		    Branch {
+		    Points		    [125, 0]
+		    DstBlock		    "converter"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "inlet pipe"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "cp,exg"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "manifold "
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [115, 0]
+		    Branch {
+		    Points		    [110, 0]
+		    Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "converter"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [165, 0]
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "inlet pipe"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "ex_temp"
+		    SrcPort		    1
+		    Points		    [155, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "manifold "
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [115, 0]
+		    Branch {
+		    Points		    [110, 0; 0, -35]
+		    DstBlock		    "converter"
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "inlet pipe"
+		    DstPort		    4
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Tex,eo"
+		    SrcPort		    1
+		    DstBlock		    "manifold "
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "(eo-tp)/exg"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    DstBlock		    "Saturation1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Labels		    [1, 0]
+		    SrcBlock		    "mol_EO/s"
+		    SrcPort		    1
+		    DstBlock		    "(eo-tp)/exg"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "mol_ex/s"
+		    SrcPort		    1
+		    DstBlock		    "(eo-tp)/exg"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Saturation1"
+		    SrcPort		    1
+		    DstBlock		    "%"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux3"
+		    SrcPort		    4
+		    DstBlock		    "%5"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qcp5"
+		    SrcPort		    1
+		    DstBlock		    "%3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux3"
+		    SrcPort		    1
+		    DstBlock		    "%1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux3"
+		    SrcPort		    3
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "%2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Qcp5"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Demux3"
+		    SrcPort		    2
+		    Points		    [15, 0]
+		    DstBlock		    "Qcp5"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "inlet pipe"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    DstBlock		    "converter"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "%5"
+		    SrcPort		    1
+		    DstBlock		    "dTcat"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "From manif"
+		    SrcPort		    1
+		    DstBlock		    "Mux17"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "From in pipe"
+		    SrcPort		    1
+		    DstBlock		    "Mux17"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "converter"
+		    SrcPort		    3
+		    DstBlock		    "Mux17"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "converter"
+		    SrcPort		    2
+		    Points		    [5, 0; 0, 15]
+		    DstBlock		    "Mux17"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "converter"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Mux19"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "From in pipe3"
+		    SrcPort		    1
+		    DstBlock		    "Mux19"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "From in pipe2"
+		    SrcPort		    1
+		    DstBlock		    "Mux19"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Mux17"
+		    SrcPort		    1
+		    DstBlock		    "Qex"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux19"
+		    SrcPort		    1
+		    DstBlock		    "Tex,gas"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "tailpipe \nemis"
+		    SrcPort		    1
+		    DstBlock		    "Qcat"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "dTcat"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "%1"
+		    SrcPort		    1
+		    DstBlock		    "dTcat"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "%3"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    DstBlock		    "dTcat"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "%2"
+		    SrcPort		    1
+		    DstBlock		    "dTcat"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "manifold "
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    DstBlock		    "inlet pipe"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "ex gas\nflow"
+		    SrcPort		    1
+		    Points		    [40, 0]
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "mol_ex/s"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 0]
+		    Branch {
+		    Points		    [0, 30]
+		    DstBlock		    "h,exg"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "cp,exg"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "emis\ncat'd"
+		    SrcPort		    1
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    DstBlock		    "mol_EO/s"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "ex sys heat flow"
+		  Ports			  [3, 5]
+		  Position		  [185, 392, 275, 558]
+		  TreatAsAtomicUnit	  off
+		  System {
+		    Name		    "ex sys heat flow"
+		    Location		    [182, 65, 942, 757]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "veh spd"
+		    Position		    [30, 358, 60, 372]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Tfc,x"
+		    Position		    [40, 608, 70, 622]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ex_temp"
+		    Position		    [40, 38, 70, 52]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Block NOTES"
+		    Ports		    []
+		    Position		    [685, 640, 741, 680]
+		    BackgroundColor	    "green"
+		    ShowName		    off
+		    TreatAsAtomicUnit	    off
+		    MaskDisplay		    "disp('Block\\nNOTES')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Block NOTES"
+		    Location		    [481, 510, 978, 592]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Name		    "CATALYTIC CONVERTER HEAT LOSS\nTh"
+"is block models the heat loss from a catalytic converter (conventional or vac"
+"uum-insulated).  \nConvection (as a function of vehicle speed), radiation, an"
+"d conduction effects are included.\nConverter monolith (m), interior (i), pip"
+"e (p), and exterior (x) and engine manifold \nheat flows are estimated based "
+"on the temperatures from the previous iteration."
+		    Position		    [252, 38]
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "Cm2i"
+		    Position		    [340, 58, 370, 82]
+		    InputValues		    "ex_cat_m2i_tmp"
+		    OutputValues	    "ex_cat_m2i_th_cond"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux1"
+		    Ports		    [2, 1]
+		    Position		    [300, 334, 305, 376]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux2"
+		    Ports		    [2, 1]
+		    Position		    [405, 320, 410, 355]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux3"
+		    Ports		    [2, 1]
+		    Position		    [295, 460, 300, 500]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux4"
+		    Ports		    [2, 1]
+		    Position		    [395, 455, 400, 490]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux5"
+		    Ports		    [2, 1]
+		    Position		    [325, 620, 330, 660]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux6"
+		    Ports		    [2, 1]
+		    Position		    [420, 597, 425, 648]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux8"
+		    Ports		    [2, 1]
+		    Position		    [190, 575, 195, 630]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qe2a,r"
+		    Position		    [160, 513, 270, 537]
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_ext_emisv*(5.67e-8)*ex_cat"
+"_ext_sarea*fc_pwr_scale^0.67*((amb_tmp+273)^4 - (u(4)+273)^4)"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qi"
+		    Ports		    [3, 1]
+		    Position		    [625, 117, 640, 233]
+		    Inputs		    "-++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qi1"
+		    Ports		    [2, 1]
+		    Position		    [675, 14, 685, 101]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Qi2m"
+		    Ports		    [2, 1]
+		    Position		    [465, 59, 480, 106]
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qi2m,c"
+		    Position		    [240, 84, 295, 106]
+		    ShowName		    off
+		    FontName		    "Arial"
+		    Expr		    "u(2) - u(1)"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qm"
+		    Ports		    [2, 1]
+		    Position		    [620, 555, 630, 650]
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qm2a,r"
+		    Position		    [250, 571, 315, 589]
+		    NamePlacement	    "alternate"
+		    FontName		    "Arial"
+		    Expr		    "ex_manif_emisv*(5.67e-8)*ex_manif"
+"_sarea*fc_pwr_scale^0.67*((u(2)+273)^4 - (u(1)+273)^4)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qm2a,v"
+		    Position		    [455, 614, 585, 636]
+		    FontName		    "Arial"
+		    Expr		    "u(2)*ex_manif_sarea*fc_pwr_scale^"
+"0.67*u(1)"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qp"
+		    Ports		    [5, 1]
+		    Position		    [680, 231, 695, 379]
+		    Inputs		    "--+++"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2a,r"
+		    Position		    [215, 291, 325, 309]
+		    NamePlacement	    "alternate"
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_pipe_emisv*(5.67e-8)*ex_ca"
+"t_pipe_sarea*fc_pwr_scale^0.67*((amb_tmp+273)^4 - (u(3)+273)^4)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2a,v"
+		    Position		    [435, 329, 500, 351]
+		    FontName		    "Arial"
+		    Expr		    "u(2)*ex_cat_pipe_sarea*fc_pwr_sca"
+"le^0.67*u(1)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2a,v2"
+		    Position		    [165, 335, 245, 355]
+		    ShowName		    off
+		    FontName		    "Arial"
+		    Expr		    "amb_tmp-u(3)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2a,v3"
+		    Position		    [425, 465, 505, 485]
+		    NamePlacement	    "alternate"
+		    FontName		    "Arial"
+		    Expr		    "u(2)*ex_cat_ext_sarea*fc_pwr_scal"
+"e^0.67*u(1)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2a,v5"
+		    Position		    [180, 461, 255, 479]
+		    ShowName		    off
+		    FontName		    "Arial"
+		    Expr		    "amb_tmp-u(4)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2a,v6"
+		    Position		    [235, 622, 285, 638]
+		    ShowName		    off
+		    FontName		    "Arial"
+		    Expr		    "u(2)-u(1)"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2i,c"
+		    Position		    [220, 230, 380, 250]
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_i2p_th_cond*(u(3) - u(2))"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qp2m,r"
+		    Position		    [245, 26, 355, 44]
+		    NamePlacement	    "alternate"
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_m2p_emisv*(5.67e-8)*ex_cat"
+"_monf_sarea*fc_pwr_scale^0.67*((u(3)+273)^4 - (u(1)+273)^4)"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qx"
+		    Ports		    [4, 1]
+		    Position		    [620, 377, 635, 533]
+		    Inputs		    "--++"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qx2i,c"
+		    Position		    [305, 181, 475, 199]
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_i2x_th_cond*(u(4) - u(2))"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qx2i,r"
+		    Position		    [230, 146, 340, 164]
+		    NamePlacement	    "alternate"
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_i2x_emisv*(5.67e-8)*ex_cat"
+"_int_sarea*fc_pwr_scale^0.67*((u(4)+273)^4 - (u(2)+273)^4)"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Qx2i,t"
+		    Ports		    [2, 1]
+		    Position		    [585, 138, 595, 207]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "Qx2p,c"
+		    Position		    [285, 399, 450, 421]
+		    FontName		    "Arial"
+		    Expr		    "ex_cat_p2x_th_cond*(u(4) - u(3))"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector"
+		    Ports		    [1, 1]
+		    Position		    [165, 572, 175, 608]
+		    ShowName		    off
+		    Elements		    "5"
+		    InputPortWidth	    "5"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector1"
+		    Ports		    [1, 1]
+		    Position		    [165, 50, 175, 90]
+		    ShowName		    off
+		    Elements		    "[2]"
+		    InputPortWidth	    "5"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector2"
+		    Ports		    [1, 1]
+		    Position		    [95, 599, 105, 631]
+		    ShowName		    off
+		    Elements		    "3"
+		    InputPortWidth	    "4"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Va/Vv"
+		    Position		    [85, 352, 115, 378]
+		    Gain		    "0.75"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "h_m2a"
+		    Position		    [355, 625, 390, 645]
+		    FontName		    "Arial"
+		    Expr		    "6 + 6*(abs(u(1))/1000)^0.3 + 60*("
+"abs(u(2))/21)^0.6"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "h_p2a"
+		    Position		    [325, 345, 360, 365]
+		    FontName		    "Arial"
+		    Expr		    "6 + 6*(abs(u(1))/1000)^0.3 + 60*("
+"abs(u(2))/21)^0.6"
+		    }
+		    Block {
+		    BlockType		    Fcn
+		    Name		    "h_x2a"
+		    Position		    [320, 470, 355, 490]
+		    FontName		    "Arial"
+		    Expr		    "6 + 6*((abs(u(1))/1000))^0.3 + 60"
+"*(abs(u(2))/21)^0.6"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qcat_m"
+		    Position		    [705, 53, 735, 67]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qcat_i"
+		    Position		    [710, 168, 740, 182]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qcat_p"
+		    Position		    [710, 298, 740, 312]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qcat_x"
+		    Position		    [710, 448, 740, 462]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Qmanif"
+		    Position		    [715, 598, 745, 612]
+		    Port		    "5"
+		    }
+		    Line {
+		    SrcBlock		    "Va/Vv"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Mux1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 125]
+		    Branch {
+		    Points		    [0, 160]
+		    DstBlock		    "Mux5"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Mux3"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "veh spd"
+		    SrcPort		    1
+		    DstBlock		    "Va/Vv"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Selector2"
+		    SrcPort		    1
+		    DstBlock		    "Mux8"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Tfc,x"
+		    SrcPort		    1
+		    DstBlock		    "Selector2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "h_m2a"
+		    SrcPort		    1
+		    DstBlock		    "Mux6"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Mux8"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Qp2a,v6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "Qm2a,r"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Selector"
+		    SrcPort		    1
+		    DstBlock		    "Mux8"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qp2a,v6"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    Points		    [0, -20]
+		    DstBlock		    "Mux6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Mux5"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux5"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "h_m2a"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux6"
+		    SrcPort		    1
+		    DstBlock		    "Qm2a,v"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qm2a,r"
+		    SrcPort		    1
+		    DstBlock		    "Qm"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qm"
+		    SrcPort		    1
+		    DstBlock		    "Qmanif"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qm2a,v"
+		    SrcPort		    1
+		    DstBlock		    "Qm"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Qx2p,c"
+		    SrcPort		    1
+		    Points		    [105, 0]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Qx"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -45]
+		    DstBlock		    "Qp"
+		    DstPort		    5
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "h_p2a"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -10]
+		    DstBlock		    "Mux2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Mux2"
+		    SrcPort		    1
+		    DstBlock		    "Qp2a,v"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qe2a,r"
+		    SrcPort		    1
+		    Points		    [330, 0]
+		    DstBlock		    "Qx"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "h_x2a"
+		    SrcPort		    1
+		    DstBlock		    "Mux4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Qp2a,v5"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 0]
+		    Branch {
+		    Points		    [0, -15; 110, 0]
+		    DstBlock		    "Mux4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Mux3"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux3"
+		    SrcPort		    1
+		    DstBlock		    "h_x2a"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qp2a,v3"
+		    SrcPort		    1
+		    DstBlock		    "Qx"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Qx2i,t"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Qx"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Qi"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Qx2i,r"
+		    SrcPort		    1
+		    DstBlock		    "Qx2i,t"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qp2a,v"
+		    SrcPort		    1
+		    Points		    [0, -5]
+		    DstBlock		    "Qp"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Qp2a,r"
+		    SrcPort		    1
+		    Points		    [335, 0]
+		    DstBlock		    "Qp"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Qp2m,r"
+		    SrcPort		    1
+		    Points		    [295, 0]
+		    Branch {
+		    Points		    [0, 210]
+		    DstBlock		    "Qp"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Qi1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Qp2i,c"
+		    SrcPort		    1
+		    Points		    [125, 0]
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Qp"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "Qi"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Cm2i"
+		    SrcPort		    1
+		    DstBlock		    "Qi2m"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Selector1"
+		    SrcPort		    1
+		    DstBlock		    "Cm2i"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qi2m"
+		    SrcPort		    1
+		    Points		    [0, -5; 90, 0]
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Qi"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Qi1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Qi2m,c"
+		    SrcPort		    1
+		    DstBlock		    "Qi2m"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Qx2i,c"
+		    SrcPort		    1
+		    DstBlock		    "Qx2i,t"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Qi1"
+		    SrcPort		    1
+		    DstBlock		    "Qcat_m"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qx"
+		    SrcPort		    1
+		    DstBlock		    "Qcat_x"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux4"
+		    SrcPort		    1
+		    DstBlock		    "Qp2a,v3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qp2a,v2"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    Points		    [0, -15]
+		    DstBlock		    "Mux2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 0]
+		    DstBlock		    "Mux1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux1"
+		    SrcPort		    1
+		    DstBlock		    "h_p2a"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qp"
+		    SrcPort		    1
+		    DstBlock		    "Qcat_p"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Qi"
+		    SrcPort		    1
+		    DstBlock		    "Qcat_i"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ex_temp"
+		    SrcPort		    1
+		    Points		    [65, 0]
+		    Branch {
+		    Points		    [0, 300]
+		    Branch {
+		    Points		    [0, 65]
+		    Branch {
+		    Points		    [0, 60]
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Selector"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Qe2a,r"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Qp2a,v5"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Qx2p,c"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Qp2a,v2"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 255]
+		    Branch {
+		    DstBlock		    "Qp2a,r"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    Branch {
+		    DstBlock		    "Qp2i,c"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -50]
+		    Branch {
+		    Points		    [0, -35]
+		    Branch {
+		    Points		    [0, -60]
+		    Branch {
+		    DstBlock		    "Qi2m,c"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -25]
+		    Branch {
+		    DstBlock		    "Selector1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Qp2m,r"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Qx2i,r"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Qx2i,c"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "help"
+		  Ports			  []
+		  Position		  [875, 541, 909, 582]
+		  BackgroundColor	  "yellow"
+		  DropShadow		  on
+		  ShowName		  off
+		  OpenFcn		  "web(['file:\\\\\\' which('exhaust.h"
+"tm')]);"
+		  TreatAsAtomicUnit	  off
+		  MaskDisplay		  "image(imread('doc_man.jpg'))"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "help"
+		    Location		    [203, 331, 569, 538]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "removal efficiencies"
+		  Ports			  [5, 1]
+		  Position		  [640, 197, 800, 283]
+		  ForegroundColor	  "magenta"
+		  TreatAsAtomicUnit	  off
+		  System {
+		    Name		    "removal efficiencies"
+		    Location		    [141, 313, 802, 662]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "gas_flow (g/s)"
+		    Position		    [30, 173, 60, 187]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ex Gas T (C)"
+		    Position		    [95, 198, 125, 212]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "O2_exh (g/s)"
+		    Position		    [30, 223, 60, 237]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "emis Engine Out\n(g/s)"
+		    Position		    [90, 248, 120, 262]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ex Cat T (C)"
+		    Position		    [60, 108, 90, 122]
+		    Port		    "5"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "=1: use ORNL data\n=0: use base A"
+"DVISOR"
+		    Position		    [100, 14, 180, 46]
+		    ForegroundColor	    "magenta"
+		    Value		    "ex_ornl_bool"
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [525, 135, 555, 165]
+		    ForegroundColor	    "magenta"
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "cat in \ngas tmp"
+		    Ports		    [1, 1]
+		    Position		    [145, 188, 175, 222]
+		    Elements		    "2"
+		    InputPortWidth	    "3"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "ex_ornl_bool=0"
+		    Ports		    [1, 1]
+		    Position		    [260, 14, 290, 46]
+		    ForegroundColor	    "magenta"
+		    Operator		    "NOT"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "removal efficiencies\n(base ADVIS"
+"OR)"
+		    Ports		    [1, 1, 1]
+		    Position		    [330, 52, 470, 108]
+		    ForegroundColor	    "magenta"
+		    TreatAsAtomicUnit	    on
+		    System {
+		    Name		    "removal efficiencies\n(base ADVIS"
+"OR)"
+		    Location		    [53, 484, 426, 717]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ex Cat T (C)"
+		    Position		    [40, 115, 60, 135]
+		    }
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    Ports		    []
+		    Position		    [314, 20, 346, 45]
+		    StatesWhenEnabling	    "reset"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "CO temp eff"
+		    Position		    [155, 73, 185, 97]
+		    InputValues		    "ex_cat_tmp_range"
+		    OutputValues	    "ex_cat_co_frac"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "HC temp eff"
+		    Position		    [155, 33, 185, 57]
+		    InputValues		    "ex_cat_tmp_range"
+		    OutputValues	    "ex_cat_hc_frac"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [4, 1]
+		    Position		    [215, 23, 220, 187]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "NOx temp eff"
+		    Position		    [155, 113, 185, 137]
+		    InputValues		    "ex_cat_tmp_range"
+		    OutputValues	    "ex_cat_nox_frac"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "PM temp eff"
+		    Position		    [155, 158, 185, 182]
+		    InputValues		    "ex_cat_tmp_range"
+		    OutputValues	    "ex_cat_pm_frac"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "removal effs"
+		    Position		    [315, 95, 335, 115]
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "CO temp eff"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "HC temp eff"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "NOx temp eff"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "PM temp eff"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Mux"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "removal effs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Ex Cat T (C)"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    Points		    [10, 0]
+		    Branch {
+		    Points		    [0, -40]
+		    Branch {
+		    Points		    [0, -40]
+		    DstBlock		    "HC temp eff"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "CO temp eff"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "NOx temp eff"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "PM temp eff"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "removal efficiencies\nORNL"
+		    Ports		    [5, 1, 1]
+		    Position		    [315, 167, 475, 293]
+		    ForegroundColor	    "magenta"
+		    TreatAsAtomicUnit	    on
+		    System {
+		    Name		    "removal efficiencies\nORNL"
+		    Location		    [494, 273, 1206, 952]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "gas_flow\n(g/s)"
+		    Position		    [30, 103, 60, 117]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ex Gas T (C)"
+		    Position		    [30, 168, 60, 182]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "O2_exh\n(g/s)"
+		    Position		    [30, 218, 60, 232]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "emis Engine Out\n(g/s)"
+		    Position		    [40, 438, 70, 452]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ex Cat T (C)"
+		    Position		    [40, 543, 70, 557]
+		    Port		    "5"
+		    }
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    Ports		    []
+		    Position		    [599, 15, 631, 40]
+		    StatesWhenEnabling	    "reset"
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "CO"
+		    Position		    [190, 460, 210, 480]
+		    ForegroundColor	    "magenta"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "CO-Conversion"
+		    Ports		    [4, 1]
+		    Position		    [355, 186, 430, 289]
+		    ForegroundColor	    "magenta"
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "CO-Conversion"
+		    Location		    [415, 314, 1243, 934]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "vol_flow"
+		    Position		    [25, 83, 55, 97]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "T_exh"
+		    Position		    [25, 238, 55, 252]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "O2_exh"
+		    Position		    [35, 388, 65, 402]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ex_gas_flow"
+		    Position		    [40, 438, 70, 452]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "1/vol-hr"
+		    Position		    [75, 130, 105, 160]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "C_Kelvin"
+		    Position		    [100, 290, 130, 320]
+		    Value		    "273"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [180, 289, 220, 321]
+		    Value		    "-16222"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant v"
+		    Position		    [135, 170, 165, 200]
+		    Value		    ".6213"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [425, 85, 455, 115]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    Position		    [570, 205, 600, 235]
+		    Value		    "-.5"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    Position		    [500, 325, 530, 355]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant4"
+		    Position		    [270, 500, 300, 530]
+		    Value		    "2"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant5"
+		    Position		    [230, 540, 260, 570]
+		    Value		    "4"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "Display"
+		    Ports		    [1]
+		    Position		    [260, 455, 350, 485]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "Display1"
+		    Ports		    [1]
+		    Position		    [460, 515, 550, 545]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    Position		    [250, 95, 280, 125]
+		    Gain		    ".3702"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain1"
+		    Position		    [430, 380, 460, 410]
+		    Gain		    "-3600"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain2"
+		    Position		    [370, 240, 400, 270]
+		    Gain		    "7.989E16"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "KT"
+		    Ports		    [1]
+		    Position		    [700, 120, 790, 150]
+		    Format		    "short_e"
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "Kmt"
+		    Ports		    [1]
+		    Position		    [315, 95, 405, 125]
+		    Format		    "short_e"
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "Kr"
+		    Ports		    [1]
+		    Position		    [440, 240, 530, 270]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction"
+		    Ports		    [2, 1]
+		    Position		    [200, 92, 230, 123]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction1"
+		    Ports		    [1, 1]
+		    Position		    [310, 240, 340, 270]
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction2"
+		    Ports		    [1, 1]
+		    Position		    [330, 144, 360, 176]
+		    Operator		    "magnitude^2"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction3"
+		    Ports		    [1, 1]
+		    Position		    [450, 175, 480, 205]
+		    Operator		    "magnitude^2"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction4"
+		    Ports		    [2, 1]
+		    Position		    [645, 117, 675, 148]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction5"
+		    Ports		    [1, 1]
+		    Position		    [485, 380, 515, 410]
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction6"
+		    Ports		    [2, 1]
+		    Position		    [405, 512, 435, 543]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "MtWt_o2/air"
+		    Position		    [180, 390, 210, 420]
+		    Gain		    "0.90475"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [135, 82, 165, 113]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product1"
+		    Ports		    [2, 1]
+		    Position		    [250, 237, 280, 268]
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product2"
+		    Ports		    [2, 1]
+		    Position		    [520, 107, 550, 138]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product3"
+		    Ports		    [2, 1]
+		    Position		    [525, 167, 555, 198]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "RCO"
+		    Ports		    [2, 1]
+		    Position		    [265, 382, 295, 413]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "RCO/SV"
+		    Ports		    [2, 1]
+		    Position		    [370, 377, 400, 408]
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "RCO_value"
+		    Ports		    [1]
+		    Position		    [360, 430, 450, 460]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [150, 235, 170, 255]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [2, 1]
+		    Position		    [585, 115, 605, 135]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    Ports		    [2, 1]
+		    Position		    [570, 330, 590, 350]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|+-"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "YO2"
+		    Ports		    [2, 1]
+		    Position		    [120, 387, 150, 418]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "space vel 1/hr"
+		    Ports		    [1]
+		    Position		    [365, 25, 455, 55]
+		    Format		    "short_e"
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "CO_eff"
+		    Position		    [615, 333, 645, 347]
+		    }
+		    Line {
+		    SrcBlock		    "1/vol-hr"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -40]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant v"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -70]
+		    DstBlock		    "Math\nFunction"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Math\nFunction"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -60; 110, 0]
+		    Branch {
+		    DstBlock		    "space vel 1/hr"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 315; 55, 0; 0, 30]
+		    DstBlock		    "RCO/SV"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "C_Kelvin"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -45]
+		    DstBlock		    "Product1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction1"
+		    SrcPort		    1
+		    DstBlock		    "Gain2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Kmt"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 50]
+		    DstBlock		    "Math\nFunction2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Gain2"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Kr"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -65]
+		    DstBlock		    "Math\nFunction3"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, 15; 5, 0]
+		    Branch {
+		    Points		    [-5, 0; 0, 60]
+		    DstBlock		    "Product3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Product2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction2"
+		    SrcPort		    1
+		    Points		    [50, 0; 0, -30]
+		    DstBlock		    "Product2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction3"
+		    SrcPort		    1
+		    DstBlock		    "Product3"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product2"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product3"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -80]
+		    DstBlock		    "Math\nFunction4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product1"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "vol_flow"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "T_exh"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "O2_exh"
+		    SrcPort		    1
+		    DstBlock		    "YO2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ex_gas_flow"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -35]
+		    DstBlock		    "YO2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction4"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "KT"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 180; -455, 0; 0, 75]
+		    DstBlock		    "RCO"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "RCO/SV"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain1"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction5"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction5"
+		    SrcPort		    1
+		    Points		    [60, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    DstBlock		    "CO_eff"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "RCO"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "RCO/SV"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "RCO_value"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "YO2"
+		    SrcPort		    1
+		    DstBlock		    "MtWt_o2/air"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "MtWt_o2/air"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "RCO"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Display"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant4"
+		    SrcPort		    1
+		    Points		    [85, 0]
+		    DstBlock		    "Math\nFunction6"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant5"
+		    SrcPort		    1
+		    Points		    [125, 0]
+		    DstBlock		    "Math\nFunction6"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction6"
+		    SrcPort		    1
+		    DstBlock		    "Display1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [85, 25, 115, 55]
+		    ForegroundColor	    "magenta"
+		    Value		    "1200"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    Ports		    [1, 4]
+		    Position		    [125, 426, 130, 464]
+		    ForegroundColor	    "magenta"
+		    BackgroundColor	    "black"
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "HC-Conversion"
+		    Ports		    [4, 1]
+		    Position		    [355, 60, 430, 140]
+		    ForegroundColor	    "magenta"
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "HC-Conversion"
+		    Location		    [42, 433, 865, 934]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "vol_flow"
+		    Position		    [25, 83, 55, 97]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "T_exh"
+		    Position		    [25, 238, 55, 252]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "O2_exh"
+		    Position		    [35, 388, 65, 402]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ex_gas_flow"
+		    Position		    [40, 438, 70, 452]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "1/vol-hr"
+		    Position		    [75, 130, 105, 160]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "C_Kelvin"
+		    Position		    [65, 290, 95, 320]
+		    Value		    "273"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [180, 289, 220, 321]
+		    Value		    "-10956"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant v"
+		    Position		    [130, 140, 160, 170]
+		    Value		    ".6436"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    Position		    [570, 205, 600, 235]
+		    Value		    "-.1"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    Position		    [500, 325, 530, 355]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant4"
+		    Position		    [55, 180, 85, 210]
+		    Value		    "-2171"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant5"
+		    Position		    [200, 35, 230, 65]
+		    Value		    "5.818"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant6"
+		    Position		    [300, 155, 330, 185]
+		    Value		    "-10"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain1"
+		    Position		    [430, 380, 460, 410]
+		    Gain		    "-3600"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain2"
+		    Position		    [370, 240, 400, 270]
+		    Gain		    "3.731E11"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "KT"
+		    Ports		    [1]
+		    Position		    [700, 120, 790, 150]
+		    Format		    "short_e"
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "Kmt"
+		    Ports		    [1]
+		    Position		    [315, 95, 405, 125]
+		    Format		    "short_e"
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "Kr"
+		    Ports		    [1]
+		    Position		    [440, 240, 530, 270]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction"
+		    Ports		    [2, 1]
+		    Position		    [195, 92, 225, 123]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction1"
+		    Ports		    [1, 1]
+		    Position		    [310, 240, 340, 270]
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction2"
+		    Ports		    [2, 1]
+		    Position		    [395, 137, 425, 168]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction3"
+		    Ports		    [2, 1]
+		    Position		    [500, 167, 530, 198]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction4"
+		    Ports		    [2, 1]
+		    Position		    [645, 117, 675, 148]
+		    Operator		    "pow"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction5"
+		    Ports		    [1, 1]
+		    Position		    [485, 380, 515, 410]
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction6"
+		    Ports		    [1, 1]
+		    Position		    [220, 150, 250, 180]
+		    Orientation		    "up"
+		    NamePlacement	    "alternate"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "MtWt_o2/air"
+		    Position		    [180, 390, 210, 420]
+		    Gain		    "0.90475"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [135, 82, 165, 113]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product1"
+		    Ports		    [2, 1]
+		    Position		    [250, 237, 280, 268]
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product4"
+		    Ports		    [2, 1]
+		    Position		    [175, 187, 205, 218]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product5"
+		    Ports		    [3, 1]
+		    Position		    [250, 94, 280, 126]
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "RHC"
+		    Ports		    [2, 1]
+		    Position		    [265, 382, 295, 413]
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "RHC/SV"
+		    Ports		    [2, 1]
+		    Position		    [370, 377, 400, 408]
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "RHC_value"
+		    Ports		    [1]
+		    Position		    [360, 430, 450, 460]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [100, 235, 120, 255]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [2, 1]
+		    Position		    [585, 115, 605, 135]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    Ports		    [2, 1]
+		    Position		    [570, 330, 590, 350]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|+-"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "YO2"
+		    Ports		    [2, 1]
+		    Position		    [120, 387, 150, 418]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "space vel 1/hr"
+		    Ports		    [1]
+		    Position		    [365, 15, 455, 45]
+		    Format		    "short_e"
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "HC_eff"
+		    Position		    [615, 333, 645, 347]
+		    }
+		    Line {
+		    SrcBlock		    "1/vol-hr"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -40]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant v"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -40]
+		    DstBlock		    "Math\nFunction"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction"
+		    SrcPort		    1
+		    DstBlock		    "Product5"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "Math\nFunction"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -70; 110, 0]
+		    Branch {
+		    DstBlock		    "space vel 1/hr"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 325; 55, 0; 0, 30]
+		    DstBlock		    "RHC/SV"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "C_Kelvin"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -45]
+		    DstBlock		    "Product1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction1"
+		    SrcPort		    1
+		    DstBlock		    "Gain2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product5"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Kmt"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Math\nFunction2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Gain2"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Kr"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -80]
+		    DstBlock		    "Math\nFunction3"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -80]
+		    DstBlock		    "Math\nFunction4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product1"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "vol_flow"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "O2_exh"
+		    SrcPort		    1
+		    DstBlock		    "YO2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ex_gas_flow"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -35]
+		    DstBlock		    "YO2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction4"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "KT"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 180; -455, 0; 0, 75]
+		    DstBlock		    "RHC"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "RHC/SV"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain1"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction5"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction5"
+		    SrcPort		    1
+		    Points		    [60, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    DstBlock		    "HC_eff"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "YO2"
+		    SrcPort		    1
+		    DstBlock		    "MtWt_o2/air"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "MtWt_o2/air"
+		    SrcPort		    1
+		    DstBlock		    "RHC"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "RHC"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "RHC/SV"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "RHC_value"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant4"
+		    SrcPort		    1
+		    DstBlock		    "Product4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product4"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    DstBlock		    "Math\nFunction6"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant5"
+		    SrcPort		    1
+		    DstBlock		    "Product5"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction6"
+		    SrcPort		    1
+		    DstBlock		    "Product5"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Constant6"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [25, 0]
+		    DstBlock		    "Math\nFunction2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 20]
+		    DstBlock		    "Math\nFunction3"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction2"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -30]
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction3"
+		    SrcPort		    1
+		    Points		    [60, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "T_exh"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Product4"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [4, 1]
+		    Position		    [535, 73, 540, 622]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "NOx_Eff"
+		    Ports		    [4, 1]
+		    Position		    [355, 364, 440, 461]
+		    ForegroundColor	    "magenta"
+		    TreatAsAtomicUnit	    off
+		    System {
+		    Name		    "NOx_Eff"
+		    Location		    [247, 192, 1190, 904]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "vol_flow"
+		    Position		    [25, 133, 55, 147]
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ex_temp"
+		    Position		    [155, 323, 185, 337]
+		    Port		    "2"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "HC_Inlet"
+		    Position		    [25, 492, 70, 508]
+		    Port		    "3"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "NOx_Inlet"
+		    Position		    [25, 562, 70, 578]
+		    Port		    "4"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "1"
+		    Position		    [130, 265, 160, 295]
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    ">eps"
+		    Position		    [90, 555, 120, 585]
+		    UpperLimit		    "inf"
+		    LowerLimit		    "eps"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    Position		    [195, 530, 225, 560]
+		    Gain		    "2.875"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain1"
+		    Position		    [645, 460, 675, 490]
+		    Gain		    ".01"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "HNR"
+		    Ports		    [2, 1]
+		    Position		    [145, 527, 175, 558]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "HNR^.5"
+		    Ports		    [1, 1]
+		    Position		    [310, 530, 340, 560]
+		    Operator		    "sqrt"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "HNR^2"
+		    Ports		    [1, 1]
+		    Position		    [310, 595, 340, 625]
+		    Operator		    "square"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "HNR^3"
+		    Ports		    [2, 1]
+		    Position		    [380, 647, 410, 678]
+		    }
+		    Block {
+		    BlockType		    Display
+		    Name		    "NOx_conv2"
+		    Ports		    [1]
+		    Position		    [785, 460, 875, 490]
+		    Decimation		    "1"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "SV^.5"
+		    Ports		    [1, 1]
+		    Position		    [235, 70, 265, 100]
+		    Operator		    "sqrt"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "SV^2"
+		    Ports		    [1, 1]
+		    Position		    [235, 165, 265, 195]
+		    Operator		    "square"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "SV^3"
+		    Ports		    [2, 1]
+		    Position		    [305, 157, 335, 188]
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    "Saturation"
+		    Position		    [720, 460, 750, 490]
+		    UpperLimit		    "1.0"
+		    LowerLimit		    "0.0"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [5, 1]
+		    Position		    [450, 80, 490, 160]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|+++++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [4, 1]
+		    Position		    [490, 270, 530, 340]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    Ports		    [4, 1]
+		    Position		    [500, 525, 530, 595]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++++"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum3"
+		    Ports		    [3, 1]
+		    Position		    [585, 450, 615, 490]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|+++"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "TR"
+		    Ports		    [2, 1]
+		    Position		    [210, 307, 240, 338]
+		    Inputs		    "*/"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "T^-.5"
+		    Ports		    [1, 1]
+		    Position		    [300, 310, 330, 340]
+		    Operator		    "sqrt"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "T^-2"
+		    Ports		    [1, 1]
+		    Position		    [300, 365, 330, 395]
+		    Operator		    "square"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "T^-3"
+		    Ports		    [2, 1]
+		    Position		    [360, 402, 390, 433]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "b0"
+		    Position		    [340, 25, 370, 55]
+		    Value		    "-1.2477959e2"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b1"
+		    Position		    [350, 110, 380, 140]
+		    Gain		    "-6.671239E-4"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b10"
+		    Position		    [405, 530, 435, 560]
+		    Gain		    "-1.7874225E1"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b11"
+		    Position		    [420, 595, 450, 625]
+		    Gain		    "-2.0607707"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b12"
+		    Position		    [435, 650, 465, 680]
+		    Gain		    "1.3883777E-1"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b13"
+		    Position		    [130, 125, 160, 155]
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b2"
+		    Position		    [300, 70, 330, 100]
+		    Gain		    "8.308073E-2"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b3"
+		    Position		    [360, 220, 390, 250]
+		    Gain		    "7.9852675E-9"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b4"
+		    Position		    [365, 160, 395, 190]
+		    Gain		    "-3.7023358E-14"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b5"
+		    Position		    [390, 265, 420, 295]
+		    Gain		    "-5.4929168E4"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b6"
+		    Position		    [385, 310, 415, 340]
+		    Gain		    "4.9229015e3"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b7"
+		    Position		    [415, 355, 445, 385]
+		    Gain		    "2.959987e6"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b8"
+		    Position		    [430, 405, 460, 435]
+		    Gain		    "-1.022441e8"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "b9"
+		    Position		    [405, 470, 435, 500]
+		    Gain		    "1.3710201E1"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "NOx_eff"
+		    Position		    [745, 440, 775, 455]
+		    Orientation		    "up"
+		    }
+		    Line {
+		    SrcBlock		    "vol_flow"
+		    SrcPort		    1
+		    DstBlock		    "b13"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "SV^3"
+		    SrcPort		    1
+		    DstBlock		    "b4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "SV^2"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "SV^3"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "b3"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "SV^.5"
+		    SrcPort		    1
+		    DstBlock		    "b2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b0"
+		    SrcPort		    1
+		    Points		    [30, 0; 0, 45; 35, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b2"
+		    SrcPort		    1
+		    Points		    [55, 0; 0, 28]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "b1"
+		    SrcPort		    1
+		    Points		    [51, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "b4"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -35; 25, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "b3"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    5
+		    }
+		    Line {
+		    SrcBlock		    "1"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, 35]
+		    DstBlock		    "TR"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "TR"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "T^-.5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "T^-2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "T^-3"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    Points		    [0, -45]
+		    DstBlock		    "b5"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "T^-3"
+		    SrcPort		    1
+		    DstBlock		    "b8"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "T^-2"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    Points		    [0, 30]
+		    DstBlock		    "T^-3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -10]
+		    DstBlock		    "b7"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "T^-.5"
+		    SrcPort		    1
+		    DstBlock		    "b6"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b5"
+		    SrcPort		    1
+		    Points		    [53, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b6"
+		    SrcPort		    1
+		    Points		    [55, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "b7"
+		    SrcPort		    1
+		    Points		    [28, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "b8"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "HNR^3"
+		    SrcPort		    1
+		    DstBlock		    "b12"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "HNR^2"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "HNR^3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "b11"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HNR^.5"
+		    SrcPort		    1
+		    DstBlock		    "b10"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b9"
+		    SrcPort		    1
+		    Points		    [47, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b10"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "b11"
+		    SrcPort		    1
+		    Points		    [32, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "b12"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    Points		    [65, 0]
+		    DstBlock		    "Sum3"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    Points		    [14, 0; 0, 177]
+		    DstBlock		    "Sum3"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [77, 0]
+		    DstBlock		    "Sum3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "HNR"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "HNR^.5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "b9"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "HNR^3"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "HNR^2"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sum3"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain1"
+		    SrcPort		    1
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "b13"
+		    SrcPort		    1
+		    Points		    [0, -55; 20, 0]
+		    Branch {
+		    DstBlock		    "SV^.5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 40]
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "SV^2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [85, 0]
+		    Branch {
+		    DstBlock		    "b1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "SV^3"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HC_Inlet"
+		    SrcPort		    1
+		    Points		    [55, 0]
+		    DstBlock		    "HNR"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Ex_temp"
+		    SrcPort		    1
+		    DstBlock		    "TR"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Saturation"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "NOx_conv2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "NOx_eff"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "NOx_Inlet"
+		    SrcPort		    1
+		    DstBlock		    ">eps"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    ">eps"
+		    SrcPort		    1
+		    Points		    [0, -20]
+		    DstBlock		    "HNR"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "PM"
+		    Position		    [235, 490, 255, 510]
+		    ForegroundColor	    "magenta"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "PM temp eff"
+		    Position		    [370, 538, 400, 562]
+		    ForegroundColor	    "magenta"
+		    InputValues		    "ex_cat_tmp_range"
+		    OutputValues	    "ex_cat_pm_frac"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [170, 32, 200, 63]
+		    ForegroundColor	    "magenta"
+		    Inputs		    "/*"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Volume \nFlow\n(m^3/sec)"
+		    Position		    [220, 35, 250, 65]
+		    ForegroundColor	    "magenta"
+		    Gain		    "2.96E6"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "removal effs"
+		    Position		    [650, 340, 670, 360]
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "Volume \nFlow\n(m^3/sec)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "emis Engine Out\n(g/s)"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    4
+		    Points		    [0, 40]
+		    DstBlock		    "PM"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    Points		    [40, 0]
+		    DstBlock		    "CO"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    3
+		    DstBlock		    "NOx_Eff"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    Points		    [205, 0]
+		    DstBlock		    "NOx_Eff"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Volume \nFlow\n(m^3/sec)"
+		    SrcPort		    1
+		    Points		    [75, 0; 0, 20]
+		    Branch {
+		    DstBlock		    "HC-Conversion"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 130]
+		    Branch {
+		    DstBlock		    "CO-Conversion"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 175]
+		    DstBlock		    "NOx_Eff"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Ex Gas T (C)"
+		    SrcPort		    1
+		    Points		    [255, 0]
+		    Branch {
+		    Points		    [0, -85]
+		    DstBlock		    "HC-Conversion"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 50]
+		    Branch {
+		    DstBlock		    "CO-Conversion"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 175]
+		    DstBlock		    "NOx_Eff"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "PM temp eff"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "NOx_Eff"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "HC-Conversion"
+		    SrcPort		    1
+		    Points		    [85, 0]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "CO-Conversion"
+		    SrcPort		    1
+		    Points		    [85, 0]
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "O2_exh\n(g/s)"
+		    SrcPort		    1
+		    Points		    [235, 0]
+		    Branch {
+		    Points		    [0, -115]
+		    DstBlock		    "HC-Conversion"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "CO-Conversion"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Ex Cat T (C)"
+		    SrcPort		    1
+		    DstBlock		    "PM temp eff"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "gas_flow\n(g/s)"
+		    SrcPort		    1
+		    Points		    [90, 0]
+		    Branch {
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 20]
+		    Branch {
+		    DstBlock		    "HC-Conversion"
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [0, 145]
+		    DstBlock		    "CO-Conversion"
+		    DstPort		    4
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "removal effs"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "removal effs"
+		    Position		    [605, 140, 625, 160]
+		    OutputWhenDisabled	    "reset"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "ex_ornl_bool=0"
+		    SrcPort		    1
+		    Points		    [105, 0]
+		    Branch {
+		    DstBlock		    "removal efficiencies\n(base ADVIS"
+"OR)"
+		    DstPort		    enable
+		    }
+		    Branch {
+		    Points		    [100, 0; 0, 120]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Ex Cat T (C)"
+		    SrcPort		    1
+		    Points		    [105, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "removal efficiencies\n(base ADVIS"
+"OR)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 165]
+		    DstBlock		    "removal efficiencies\nORNL"
+		    DstPort		    5
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    DstBlock		    "removal effs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Ex Gas T (C)"
+		    SrcPort		    1
+		    DstBlock		    "cat in \ngas tmp"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "cat in \ngas tmp"
+		    SrcPort		    1
+		    DstBlock		    "removal efficiencies\nORNL"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "emis Engine Out\n(g/s)"
+		    SrcPort		    1
+		    DstBlock		    "removal efficiencies\nORNL"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "gas_flow (g/s)"
+		    SrcPort		    1
+		    DstBlock		    "removal efficiencies\nORNL"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "O2_exh (g/s)"
+		    SrcPort		    1
+		    DstBlock		    "removal efficiencies\nORNL"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "=1: use ORNL data\n=0: use base A"
+"DVISOR"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "ex_ornl_bool=0"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 122; 50, 0]
+		    DstBlock		    "removal efficiencies\nORNL"
+		    DstPort		    enable
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "removal efficiencies\nORNL"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "removal efficiencies\n(base ADVIS"
+"OR)"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "tailpipe \nemis"
+		  Ports			  [2, 1]
+		  Position		  [850, 204, 865, 251]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "tot cat eff1"
+		  Ports			  [2, 1]
+		  Position		  [650, 33, 665, 57]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Inputs		  "/*"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "tailpipe\nemis (g/s)"
+		  Position		  [965, 215, 985, 235]
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "cat tmp (C)"
+		  Position		  [950, 440, 970, 460]
+		  Port			  "2"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "ex gas heat flow"
+		  SrcPort		  3
+		  DstBlock		  "Demux2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  4
+		  Points		  [0, 20]
+		  DstBlock		  "ex gas heat flow"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "1/Ccm"
+		  SrcPort		  1
+		  DstBlock		  "Tcm"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Qcm"
+		  SrcPort		  1
+		  DstBlock		  "1/Ccm"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ex sys heat flow"
+		  SrcPort		  1
+		  Points		  [0, -30]
+		  DstBlock		  "Qcm"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Demux2"
+		  SrcPort		  1
+		  Points		  [120, 0; 0, 145]
+		  DstBlock		  "Qcm"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "ex sys heat flow"
+		  SrcPort		  4
+		  DstBlock		  "1/Ccx"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ex sys heat flow"
+		  SrcPort		  5
+		  DstBlock		  "Qm"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "ex sys heat flow"
+		  SrcPort		  2
+		  DstBlock		  "Qci"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "1/Ccx"
+		  SrcPort		  1
+		  DstBlock		  "Tcx"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "1/Cm"
+		  SrcPort		  1
+		  DstBlock		  "Tm"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Qm"
+		  SrcPort		  1
+		  DstBlock		  "1/Cm"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Q/Cci"
+		  SrcPort		  1
+		  DstBlock		  "Tci"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux1"
+		  SrcPort		  1
+		  DstBlock		  "Q/Cci"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "PCM"
+		  SrcPort		  1
+		  Points		  [-25, 0]
+		  DstBlock		  "Mux1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Qci"
+		  SrcPort		  1
+		  DstBlock		  "Mux1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Tci"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "PCM"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [15, 0]
+		    DstBlock		    "Mux3"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "ex sys heat flow"
+		  SrcPort		  3
+		  Points		  [30, 0]
+		  DstBlock		  "Qcp"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Demux2"
+		  SrcPort		  2
+		  Points		  [25, 0; 0, 200]
+		  DstBlock		  "Qci"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux2"
+		  SrcPort		  4
+		  DstBlock		  "Qm"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux2"
+		  SrcPort		  3
+		  Points		  [10, 0]
+		  DstBlock		  "Qcp"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Tcx"
+		  SrcPort		  1
+		  DstBlock		  "Mux3"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Tcp"
+		  SrcPort		  1
+		  DstBlock		  "Mux3"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Tm"
+		  SrcPort		  1
+		  Points		  [0, 5]
+		  DstBlock		  "Mux3"
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "Mux3"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    Points		    [0, 105; -490, 0; 0, -50]
+		    Branch {
+		    Points		    [0, -295]
+		    DstBlock		    "ex gas heat flow"
+		    DstPort		    4
+		    }
+		    Branch {
+		    DstBlock		    "ex sys heat flow"
+		    DstPort		    3
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "enhancedToWorkspace"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Tcm"
+		  SrcPort		  1
+		  Points		  [0, 0; 10, 0]
+		  Branch {
+		    Points		    [45, 0]
+		    Branch {
+		    DstBlock		    "Mux3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [55, 0; 0, 90]
+		    DstBlock		    "cat tmp (C)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -90]
+		    DstBlock		    "removal efficiencies"
+		    DstPort		    5
+		    }
+		    }
+		  }
+		  Branch {
+		    Points		    [-5, 0; 0, -30; -50, 0]
+		    DstBlock		    "enhancedToWorkspace1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Qcp"
+		  SrcPort		  1
+		  DstBlock		  "1/Ccp"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "1/Ccp"
+		  SrcPort		  1
+		  DstBlock		  "Tcp"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ex gas heat flow"
+		  SrcPort		  2
+		  Points		  [0, 0]
+		  Branch {
+		    Points		    [155, 0]
+		    DstBlock		    "Qcm"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "enhancedToWorkspace2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Break-\nthru"
+		  SrcPort		  1
+		  Points		  [5, 0]
+		  DstBlock		  "MinMax"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "tailpipe \nemis"
+		  SrcPort		  1
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "1-u"
+		  SrcPort		  1
+		  DstBlock		  "tailpipe \nemis"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "MinMax"
+		  SrcPort		  1
+		  Points		  [0, 0; 10, 0]
+		  Branch {
+		    DstBlock		    "tailpipe\nemis (g/s)"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -150]
+		    DstBlock		    "Qcp3"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "removal efficiencies"
+		  SrcPort		  1
+		  DstBlock		  "1-u"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Qcp3"
+		  SrcPort		  1
+		  DstBlock		  "Saturation3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation3"
+		  SrcPort		  1
+		  Points		  [0, 0; -140, 0]
+		  Branch {
+		    Points		    [-485, 0; 0, 50]
+		    DstBlock		    "ex gas heat flow"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -15]
+		    DstBlock		    "tot cat eff1"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "Saturation4"
+		  SrcPort		  1
+		  DstBlock		  "tot cat eff1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "tot cat eff1"
+		  SrcPort		  1
+		  DstBlock		  "enhancedToWorkspace4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ex gas heat flow"
+		  SrcPort		  1
+		  Points		  [0, 0; 40, 0]
+		  Branch {
+		    Points		    [130, 0; 0, 105]
+		    DstBlock		    "removal efficiencies"
+		    DstPort		    2
+		  }
+		  Branch {
+		    DstBlock		    "enhancedToWorkspace3"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  3
+		  Points		  [45, 15]
+		  Branch {
+		    DstBlock		    "ex gas heat flow"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -115; 320, 0; 0, 170]
+		    DstBlock		    "removal efficiencies"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  2
+		  Points		  [40, 0; 0, -80; 355, 0]
+		  Branch {
+		    Points		    [110, 0]
+		    Branch {
+		    DstBlock		    "Saturation4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [240, 0; 0, 30]
+		    Branch {
+		    Points		    [0, 130]
+		    Branch {
+		    DstBlock		    "tailpipe \nemis"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Break-\nthru"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Qcp3"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 230]
+		    DstBlock		    "removal efficiencies"
+		    DstPort		    4
+		  }
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  6
+		  Points		  [15, 0; 0, 175]
+		  DstBlock		  "ex sys heat flow"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  7
+		  Points		  [0, 195]
+		  DstBlock		  "ex sys heat flow"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  5
+		  Points		  [45, 0; 0, 85; 230, 0; 0, -55]
+		  DstBlock		  "removal efficiencies"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Demux1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  DstBlock		  "ex gas heat flow"
+		  DstPort		  enable
+		}
+		Annotation {
+		  Name			  "fc on?"
+		  Position		  [110, 83]
+		}
+		Annotation {
+		  Name			  "EO emis"
+		  Position		  [111, 125]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "tailpipe\nemis (g/s)"
+	      Position		      [375, 115, 395, 135]
+	      NamePlacement	      "alternate"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cat tmp (C)"
+	      Position		      [375, 145, 395, 165]
+	      Port		      "2"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sensors"
+	      Position		      [510, 295, 530, 315]
+	      Port		      "3"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "EO emis\ninfo"
+	      SrcPort		      1
+	      DstBlock		      "Model"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Model"
+	      SrcPort		      1
+	      DstBlock		      "tailpipe\nemis (g/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Model"
+	      SrcPort		      2
+	      DstBlock		      "cat tmp (C)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "sensors"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Interface"
+	      Position		      [308, 230]
+	      BackgroundColor	      "[0.643137, 0.925490, 0.682353]"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "controlTag"
+	  Position		  [30, 261, 140, 299]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "exControl"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "reqOutTag"
+	  Position		  [170, 24, 270, 66]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "exReqOut"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "sensorsTag"
+	  Position		  [300, 259, 400, 301]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "exSensors"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tailpipe\nemis (g/s)"
+	  Position		  [375, 100, 395, 120]
+	  NamePlacement		  "alternate"
+	  OutputWhenDisabled	  "reset"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "cat tmp (C)"
+	  Position		  [375, 120, 395, 140]
+	  Port			  "2"
+	  OutputWhenDisabled	  "reset"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "EO emis\ninfo"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    DstBlock		    "Exhaust System Model\nand Interface"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "reqOutTag"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Exhaust System Model\nand Interface"
+	  SrcPort		  1
+	  DstBlock		  "tailpipe\nemis (g/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Exhaust System Model\nand Interface"
+	  SrcPort		  2
+	  DstBlock		  "cat tmp (C)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "controlTag"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -135]
+	  DstBlock		  "Exhaust System Model\nand Interface"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Exhaust System Model\nand Interface"
+	  SrcPort		  3
+	  Points		  [35, 0]
+	  DstBlock		  "sensorsTag"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      Name		      "Exhaust System:"
+      Position		      [86, 36]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+    }
+  }
+}

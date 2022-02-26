@@ -1,0 +1,43 @@
+element template nimh_Cb in outp outm  = model,k
+
+ref nu in
+electrical outp,outm
+number k = 1.000
+
+struc {
+	string	file="ess_nimh7_Cb.ai_dat"
+	number	interp=0,
+		extrap[2]=[1,1],
+		density=100
+	} model=()
+{
+foreign tlu
+
+number	dim=1,
+	datap[*],
+	sp1[*]
+
+val nu Temperature
+val c Cb
+
+parameters {
+	datap=tlu(0,dim,model->file,datap,model->interp,
+	model->extrap)
+	sp1=tlu(1,addr(datap),1,model->density)
+	}
+
+values {
+	Temperature=in
+	Cb=tlu(2,addr(datap),Temperature)
+	}
+
+control_section {
+	pl_set(Cb,Temperature)
+	sample_points(Temperature,sp1)
+	}
+
+equations {
+	i(outp->outm)+=d_by_dt((Cb*k)*(v(outp)-v(outm)))
+	}
+}
+

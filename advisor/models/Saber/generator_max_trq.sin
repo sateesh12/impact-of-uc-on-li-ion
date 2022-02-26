@@ -1,0 +1,41 @@
+element template generator_max_trq spd max_trq  = model
+
+ref nu spd
+var nu max_trq
+
+struc {
+    string  file="gc_max_trq.ai_dat"
+    number  interp=0,
+        extrap[2]=[0,0],
+        density=100
+    } model=()
+{
+foreign tlu
+
+number  dim=1,
+    datap[*],
+    sp1[*]
+
+val nu x,y
+
+parameters {
+    datap=tlu(0,dim,model->file,datap,model->interp,
+    model->extrap)
+    sp1=tlu(1,addr(datap),1,model->density)
+    }
+
+values {
+    x=spd
+    y=(tlu(2,addr(datap),x))
+    }
+
+control_section {
+    pl_set(y,x)
+    sample_points(x,sp1)
+    }
+
+equations {
+    max_trq:max_trq=y
+    }
+}
+

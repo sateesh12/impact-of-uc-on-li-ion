@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Brake control: achievable</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Brake control: achievable</h1>
+</div>
+<h3 id="brake-control-achievable">Brake control: achievable</h3>
+<p><em><a href="brake.gif">Brake Control (achievable) block diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The ‘front and rear brake controller (achievable)’ block determines how much braking force will be supplied by the front and rear brakes taking into account what total braking force is required and how much braking the drivetrain is able to do.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The fraction of braking done by the front friction brakes are chosen so as to keep their fraction of total braking (from all friction brakes and driveline) the same as specified, and are subject to their maximum braking force limits. The rear brakes do whatever required braking remains, up to their limits. Consider this hypothetical example: the braking strategy says that at 60 mph, 40% of braking should be done by the drivetrain, 30% by the front friction brakes, and 30% by the rear brakes. In one instance, the drivetrain is able to provide only 20% of the total braking requirement, leaving 80% for the friction brakes. The front brakes try to do half of the remaining braking, 40%, since they are supposed to do as much braking as the rear friction brakes, but are only capable of, say, 25% because they are hot. That leaves 100 – 20 – 25 = 55% for the rear brakes, which they provide if they can.</p>
+<p><strong><u>Equations used in subsystem</u></strong></p>
+<p>(braking force required at tire patch from front friction brakes) = (braking force required from all friction brakes) * (fraction of braking supposed to be done by front friction brakes) / [ 1 – (fraction of braking supposed to be done by driveline) ]</p>
+<p>unless (fraction of braking supposed to be done by driveline)=1, in which case</p>
+<p>(braking force required at tire patch from front friction brakes) = 0.6.</p>
+<p>(braking force supplied at tire patch by front friction brakes) = max( (braking force required at tire patch from front friction brakes), (most negative braking force front brakes can supply) )</p>
+<p>(braking force required at tire patch required from rear friction brakes) = (braking force required from all friction brakes) – (braking force supplied at tire patch by front friction brakes)</p>
+<p>(braking force supplied at tire patch by rear friction brakes) = max( (braking force required at tire patch from rear friction brakes), (most negative braking force rear brakes can supply) )</p>
+<p>All braking forces are negative by convention.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Appendix%20A.2%20Input">See Appendix A.2: Input Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

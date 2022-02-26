@@ -1,0 +1,273 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Valerie Johnson">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (WinNT; I) [Netscape]">
+   <title>Engmodel Documentation</title>
+</head>
+<body>
+
+<center><b><font size=+2>Engmodel Documentation</font></b>
+<hr WIDTH="50%">
+<br>A program to automatically generate engine files for ADVISOR from test
+data.</center>
+
+<p><img SRC="new.jpg" height=53 width=75><b><font size=+1><a href="engmodel_tutorial.htm">Tutorial</a>
+with Sample Files</font></b>
+<br>See plotting and processing of sample files to help you get your engine
+data in the correct format.
+<p><b><font size=+1>Processing Engine Test Data</font></b>
+<br>Engmodel takes columns of engine test data (unevenly spaced) and generates
+square matrices for the fuel use and emissions.&nbsp; The maximum torque
+envelope is taken from the maximum observed torque at each given test speed.
+<p>To convert test data into an ADVISOR file, Engmodel follows three steps:
+<ol>
+<li>
+Read in text file: Converts text file with headers into a Matlab mat file</li>
+
+<li>
+Set Parameters/Process: Allows the user to specify output limits/increments
+and processes the data</li>
+
+<li>
+Create ADVISOR File: Takes data from the workspace and writes out an m
+file for use in ADVISOR</li>
+</ol>
+
+<center><img SRC="engmodel_setup.jpg" height=216 width=456></center>
+
+<p>'Load' loads a mat file containing the test data in column form.
+<p><a NAME="text file"></a><b><font size=+1>Read in text file</font></b>
+<br>Engine data should be put in a text file in column form with the first
+line containing headers.&nbsp; The headers should have no spaces.&nbsp;
+Ultimately, the variable names should be the following:
+<br>&nbsp;
+<center><table BORDER COLS=3 WIDTH="60%" >
+<tr BGCOLOR="#FFFFCC">
+<td>
+<center><b>Variable</b></center>
+</td>
+
+<td>
+<center><b>Required Name</b></center>
+</td>
+
+<td>
+<center><b>Units</b></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>Engine Speed</center>
+</td>
+
+<td>
+<center>fc_spd</center>
+</td>
+
+<td>
+<center>rpm</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>Engine Torque</center>
+</td>
+
+<td>
+<center>fc_trq</center>
+</td>
+
+<td>
+<center>Nm</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>Engine Fuel Use</center>
+</td>
+
+<td>
+<center>fc_fuel</center>
+</td>
+
+<td>
+<center>g/s</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>HC emissions</center>
+</td>
+
+<td>
+<center>fc_hc</center>
+</td>
+
+<td>
+<center>g/s</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>CO emissions</center>
+</td>
+
+<td>
+<center>fc_co</center>
+</td>
+
+<td>
+<center>g/s</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>NOx emissions</center>
+</td>
+
+<td>
+<center>fc_nox</center>
+</td>
+
+<td>
+<center>g/s</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>PM emissions</center>
+</td>
+
+<td>
+<center>fc_pm</center>
+</td>
+
+<td>
+<center>g/s</center>
+</td>
+</tr>
+</table></center>
+
+<p>The headers may be set as the required name either in the text file,
+or via the 'Read in text file' gui.
+<p><i><font color="#FF0000">Toubleshooting</font></i>
+<ul>
+<li>
+Increasing speed (>= previous point) is assumed for the speed column.</li>
+
+<li>
+Emissions are optional inputs; if emissions do not exist, they will be
+set to zero.</li>
+
+<li>
+Jagged behavior is sometimes observed in the output plots.&nbsp; This may
+be due to small differences in input speed over the test points.&nbsp;
+To eliminate this jagged behavior, round the input speeds.&nbsp; For example,
+if fc_spd has values of [800.15 800.17 800.2] round them to [800 800 800].</li>
+</ul>
+
+<center>
+<p><br><img SRC="em_readin.jpg" height=328 width=462></center>
+
+<p>To convert the text file to a mat file, the user should follow the following
+steps:
+<ol>
+<li>
+Select file to convert (pushbutton allows gui selection)</li>
+
+<li>
+Set header/variable names to required names (see table above)</li>
+
+<li>
+Select mat file to save to (pushbutton allows user to specify filename)</li>
+</ol>
+<b><font size=+1>Set Parameters/Process</font></b>
+<br>To process the test data, the user follows these steps:
+<ol>
+<li>
+Specify mat file with test data</li>
+
+<li>
+Choose algorithm to extrapolate map points which are outside the envelope
+of tested data</li>
+
+<li>
+Specify the minimum, maximum, and increments for speed and torque of the
+desired square matrix.</li>
+
+<li>
+Specify the lower heating value of the fuel</li>
+
+<li>
+Choose to plot results</li>
+
+<li>
+Process</li>
+</ol>
+
+<center><img SRC="em_process.jpg" height=406 width=660></center>
+
+<p><a NAME="algorithms"></a><u>Algorithm for extrapolation</u>
+<br>When test data exists surrounding a region of the speed-torque map
+space, the Matlab function griddata is used for interpolation (linear).&nbsp;
+This ensures that the surface will pass through available data points.&nbsp;
+When an evenly spaced grid point lies outside the envelope of test data,
+extrapolation is required.&nbsp; The user can specify one of two algorithms
+to perform this: polynomial fit and nearest neighbor.
+<br><i>Polynomial Fit</i>&nbsp; A least squares fit is obtained over the
+data for the following equation:
+<center><img SRC="em_eqn.jpg" height=54 width=333></center>
+where <i>y</i> is the output (e.g. fuel use, hc emissions), <i><font face="Symbol">w</font></i>
+is speed and <i>T</i> is torque.&nbsp; Printed to the workspace is the
+point with maximum error, as well as an average error.
+<br><i>Nearest Neighbor</i> This approach lets the data take on the tested
+value at it's nearest neighbor.
+<p>The maximum torque curve is taken from the maximum tested torque levels
+at a given speed.&nbsp; The average error for each map is recorded.
+<p>Plotting the results will pull up 3-7 graphs (up to seven if data for
+all four emissions is present):
+<ol>
+<li>
+Maps (g/s):&nbsp; The contours plotted are the generated map points.&nbsp;
+The test points are plotted with their values for comparison.</li>
+
+<li>
+Fuel use (g/kWh)</li>
+
+<li>
+Efficiency Map:&nbsp; The contours plotted are the generated map points.&nbsp;
+Again, the test points are plotted with their values for comparison.</li>
+</ol>
+<b><font size=+1>Create ADVISOR File</font></b>
+<br>Finally, the user specifies additional information used to create the
+ADVISOR file.
+<ol>
+<li>
+Specify name of file to create (format FC_SIxx.m or FC_CIxx.m where xx
+is maximum power in kW)</li>
+
+<li>
+Fill in the top information (required)</li>
+
+<li>
+Choose to use default mass and thermal characteristics, or edit them as
+desired.</li>
+
+<li>
+Select Make ADVISOR file</li>
+</ol>
+For a description of the fuel converter variable names see ADVISOR documentation.
+<center>
+<p><img SRC="em_create_file.jpg" height=757 width=660></center>
+<font size=-1>Last revised: 1/24/01, vhj</font>
+</body>
+</html>

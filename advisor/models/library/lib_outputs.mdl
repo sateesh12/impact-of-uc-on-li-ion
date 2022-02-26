@@ -1,0 +1,7856 @@
+Library {
+  Name			  "lib_outputs"
+  Version		  4.1.1
+  LibraryLinkDisplay	  "none"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue May 30 16:50:05 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "abrooker"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Feb 18 11:55:51 2003"
+  ModifiedComment	  "abrooker -- Thu Apr 25 12:43:46 2002 -- Version 1.7"
+"5\n"
+  ModifiedHistory	  "abrooker -- Thu Apr 25 12:43:46 2002 -- Version 1.7"
+"5\n\n\nabrooker -- Thu Apr 25 12:43:39 2002 -- Version 1.74\n\n\nabrooker -- "
+"Thu Apr 25 12:37:48 2002 -- Version 1.73\n\n\nabrooker -- Thu Apr 25 11:19:32"
+" 2002 -- Version 1.72\n\n\nabrooker -- Thu Apr 25 11:09:29 2002 -- Version 1."
+"71\n\n\nabrooker -- Thu Apr 25 11:09:22 2002 -- Version 1.70\n\n\nmokeefe -- "
+"Thu Apr 18 08:37:41 2002 -- Version 1.69\nsaving the model:\no \"without the "
+"model browser open\"\no with only top-level screen visible \no with \"fit to "
+"view\" enabled\no with \"status bar\" off and \"toolbar\" off\no with \"promp"
+"t to update model history with each save\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:140>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_outputs"
+    Location		    [104, 231, 997, 829]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "109"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> conv"
+      Ports		      []
+      Position		      [40, 72, 100, 116]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> conv"
+	Location		[231, 135, 874, 736]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [30, 495, 50, 515]
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [350, 340, 420, 370]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [45, 41, 110, 59]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [350, 295, 420, 325]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cs>"
+	  Position		  [15, 395, 110, 425]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "engine_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [340, 396, 440, 414]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [345, 441, 445, 459]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [345, 486, 445, 504]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>"
+	  Position		  [30, 293, 125, 317]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>1"
+	  Position		  [30, 333, 125, 357]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<gb>1"
+	  Position		  [345, 75, 440, 105]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_number"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [345, 536, 445, 554]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [345, 30, 440, 60]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control"
+	  Position		  [25, 190, 120, 220]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control2"
+	  Position		  [25, 240, 120, 270]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>2"
+	  Position		  [345, 240, 440, 270]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [345, 135, 440, 165]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>5"
+	  Position		  [20, 445, 115, 475]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [25, 85, 120, 115]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [25, 135, 120, 165]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [130, 394, 160, 426]
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [130, 38, 160, 62]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [135, 452, 165, 483]
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [510, 535, 535, 555]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [475, 300, 535, 320]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [475, 345, 535, 365]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [460, 78, 535, 102]
+	  VariableName		  "gear_number"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [165, 85, 285, 115]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [460, 33, 535, 57]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [170, 297, 245, 313]
+	  ShowName		  off
+	  VariableName		  "fc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [165, 135, 285, 165]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [185, 41, 250, 59]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [470, 135, 530, 165]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [175, 336, 250, 354]
+	  ShowName		  off
+	  VariableName		  "fc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace51"
+	  Position		  [165, 190, 285, 220]
+	  VariableName		  "lim_fc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [460, 243, 535, 267]
+	  VariableName		  "clutch_state"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace55"
+	  Position		  [190, 452, 280, 488]
+	  VariableName		  "lim_clutch_dis"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [175, 392, 280, 428]
+	  VariableName		  "lim_engine_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [165, 240, 285, 270]
+	  VariableName		  "lim_fc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [485, 393, 565, 417]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [490, 438, 570, 462]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace60"
+	  Position		  [490, 483, 570, 507]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace51"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace60"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>5"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace55"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From<cs>"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "From<fc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<gb>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> ev"
+      Ports		      []
+      Position		      [129, 72, 193, 116]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> ev"
+	Location		[58, 72, 698, 802]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [40, 310, 60, 330]
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [345, 350, 415, 380]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [45, 56, 110, 74]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [345, 305, 415, 335]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [315, 591, 415, 609]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [320, 636, 420, 654]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [320, 681, 420, 699]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power"
+	  Position		  [30, 345, 125, 375]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power1"
+	  Position		  [30, 490, 125, 520]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power2"
+	  Position		  [30, 400, 145, 420]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power3"
+	  Position		  [320, 481, 420, 499]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power4"
+	  Position		  [320, 535, 420, 555]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power5"
+	  Position		  [30, 445, 145, 465]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [325, 726, 425, 744]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>"
+	  Position		  [30, 645, 125, 675]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/enforce torque limit"
+	  Position		  [30, 595, 125, 625]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic"
+	  Position		  [30, 545, 125, 575]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>1"
+	  Position		  [35, 695, 130, 725]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>2"
+	  Position		  [35, 740, 130, 770]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [340, 40, 435, 70]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>1"
+	  Position		  [340, 90, 435, 120]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SOC"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>2"
+	  Position		  [340, 250, 435, 280]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [340, 145, 435, 175]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>4"
+	  Position		  [340, 200, 435, 230]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>5"
+	  Position		  [30, 260, 125, 290]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [30, 120, 125, 150]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [30, 170, 125, 200]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [130, 53, 160, 77]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [145, 267, 175, 298]
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [490, 725, 515, 745]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [470, 310, 530, 330]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [470, 355, 530, 375]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [170, 122, 270, 148]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [455, 43, 530, 67]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace40"
+	  Position		  [455, 93, 530, 117]
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [170, 171, 270, 199]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [185, 56, 250, 74]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace43"
+	  Position		  [170, 345, 290, 375]
+	  VariableName		  "lim_ess_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [465, 145, 525, 175]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace45"
+	  Position		  [190, 399, 275, 421]
+	  VariableName		  "lim_ess_soc_low"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace46"
+	  Position		  [190, 444, 275, 466]
+	  VariableName		  "lim_ess_soc_hi"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace47"
+	  Position		  [170, 490, 290, 520]
+	  VariableName		  "lim_mc_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace48"
+	  Position		  [170, 545, 290, 575]
+	  VariableName		  "lim_mc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace49"
+	  Position		  [170, 595, 290, 625]
+	  VariableName		  "lim_mc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace50"
+	  Position		  [170, 645, 290, 675]
+	  VariableName		  "lim_mc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [465, 200, 525, 230]
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace53"
+	  Position		  [465, 478, 545, 502]
+	  VariableName		  "lim_ess_minV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [455, 253, 530, 277]
+	  VariableName		  "clutch_state"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace55"
+	  Position		  [200, 267, 290, 303]
+	  VariableName		  "lim_clutch_dis"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [465, 534, 545, 556]
+	  VariableName		  "lim_ess_maxV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [460, 588, 540, 612]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [465, 633, 545, 657]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [465, 678, 545, 702]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [175, 700, 255, 720]
+	  VariableName		  "mc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [175, 745, 255, 765]
+	  VariableName		  "mc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace47"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace48"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/enforce torque limit"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace49"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace50"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace40"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace53"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace43"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>5"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace55"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, -30]
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace45"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power5"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace46"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> fuel cell"
+      Ports		      []
+      Position		      [222, 73, 288, 115]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> fuel cell"
+	Location		[627, 61, 1175, 791]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  " "
+	  Position		  [170, 254, 255, 276]
+	  VariableName		  "fc_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [105, 365, 125, 385]
+	  ShowName		  off
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [320, 335, 390, 365]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [40, 21, 105, 39]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [320, 290, 390, 320]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cs>"
+	  Position		  [30, 295, 125, 315]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "engine_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [295, 546, 395, 564]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [300, 591, 400, 609]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [300, 636, 400, 654]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power"
+	  Position		  [35, 399, 135, 421]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power1"
+	  Position		  [25, 537, 145, 563]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power2"
+	  Position		  [25, 445, 140, 465]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power3"
+	  Position		  [295, 446, 395, 464]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power4"
+	  Position		  [295, 500, 395, 520]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power5"
+	  Position		  [25, 490, 140, 510]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>"
+	  Position		  [30, 253, 125, 277]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_pwr_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [310, 681, 410, 699]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>"
+	  Position		  [25, 696, 125, 714]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/enforce torque limit"
+	  Position		  [25, 644, 120, 666]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic"
+	  Position		  [25, 594, 135, 616]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>1"
+	  Position		  [30, 740, 125, 770]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>2"
+	  Position		  [30, 785, 125, 815]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [315, 25, 410, 55]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control"
+	  Position		  [35, 153, 125, 177]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control2"
+	  Position		  [30, 203, 125, 227]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>1"
+	  Position		  [315, 75, 410, 105]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SOC"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>2"
+	  Position		  [315, 235, 410, 265]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [315, 130, 410, 160]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>4"
+	  Position		  [315, 185, 410, 215]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>5"
+	  Position		  [25, 339, 120, 361]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [30, 65, 125, 85]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [25, 109, 125, 131]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [140, 292, 170, 318]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [125, 18, 155, 42]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [145, 341, 170, 374]
+	  ShowName		  off
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [475, 680, 500, 700]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [445, 295, 505, 315]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [445, 340, 505, 360]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [170, 64, 265, 86]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [430, 28, 505, 52]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace40"
+	  Position		  [430, 78, 505, 102]
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [170, 111, 250, 129]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [180, 21, 245, 39]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace43"
+	  Position		  [180, 400, 255, 420]
+	  VariableName		  "lim_ess_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [440, 130, 500, 160]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace45"
+	  Position		  [185, 444, 270, 466]
+	  VariableName		  "lim_ess_soc_low"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace46"
+	  Position		  [185, 489, 270, 511]
+	  VariableName		  "lim_ess_soc_hi"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace47"
+	  Position		  [175, 537, 265, 563]
+	  VariableName		  "lim_mc_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace48"
+	  Position		  [165, 595, 255, 615]
+	  VariableName		  "lim_mc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace49"
+	  Position		  [170, 644, 245, 666]
+	  VariableName		  "lim_mc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace50"
+	  Position		  [170, 694, 255, 716]
+	  VariableName		  "lim_mc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace51"
+	  Position		  [170, 155, 250, 175]
+	  VariableName		  "lim_fc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [440, 185, 500, 215]
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace53"
+	  Position		  [440, 443, 520, 467]
+	  VariableName		  "lim_ess_minV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [430, 238, 505, 262]
+	  VariableName		  "clutch_state"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace55"
+	  Position		  [190, 347, 275, 373]
+	  VariableName		  "lim_clutch_dis"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [185, 292, 270, 318]
+	  VariableName		  "lim_engine_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [175, 205, 245, 225]
+	  VariableName		  "lim_fc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [440, 499, 520, 521]
+	  VariableName		  "lim_ess_maxV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [440, 543, 520, 567]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [170, 745, 250, 765]
+	  VariableName		  "mc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace60"
+	  Position		  [445, 588, 525, 612]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace61"
+	  Position		  [445, 633, 525, 657]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [170, 790, 250, 810]
+	  VariableName		  "mc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace51"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace40"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace53"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace60"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace61"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>5"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace55"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From<cs>"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace43"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace47"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace48"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/enforce torque limit"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace49"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace50"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace45"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power5"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace46"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>"
+	  SrcPort		  1
+	  DstBlock		  " "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> par"
+      Ports		      []
+      Position		      [309, 72, 372, 116]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> par"
+	Location		[678, 48, 1266, 778]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [110, 475, 130, 495]
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [380, 377, 435, 403]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [45, 21, 110, 39]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [375, 330, 435, 350]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cs>"
+	  Position		  [55, 379, 135, 401]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "engine_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [335, 601, 435, 619]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [340, 646, 440, 664]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [340, 691, 440, 709]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power"
+	  Position		  [35, 526, 135, 544]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power1"
+	  Position		  [15, 653, 135, 677]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power2"
+	  Position		  [30, 565, 145, 585]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power3"
+	  Position		  [330, 491, 430, 509]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power4"
+	  Position		  [330, 545, 430, 565]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power5"
+	  Position		  [30, 610, 145, 630]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>"
+	  Position		  [40, 283, 135, 307]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>1"
+	  Position		  [40, 323, 135, 347]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [345, 741, 445, 759]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>"
+	  Position		  [35, 810, 135, 830]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/enforce torque limit"
+	  Position		  [35, 760, 135, 780]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic"
+	  Position		  [30, 709, 135, 731]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>1"
+	  Position		  [30, 845, 125, 875]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>2"
+	  Position		  [30, 890, 125, 920]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [370, 64, 455, 86]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control"
+	  Position		  [50, 171, 140, 189]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control2"
+	  Position		  [45, 221, 140, 239]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>1"
+	  Position		  [385, 117, 455, 133]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SOC"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>2"
+	  Position		  [365, 273, 455, 297]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [375, 168, 455, 192]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>4"
+	  Position		  [365, 223, 455, 247]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>5"
+	  Position		  [50, 433, 135, 457]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>6"
+	  Position		  [365, 15, 460, 45]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_number"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [55, 74, 135, 96]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [50, 125, 135, 145]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [150, 378, 180, 402]
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [130, 18, 160, 42]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [155, 437, 185, 468]
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [510, 740, 535, 760]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [485, 332, 535, 348]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [490, 381, 540, 399]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [480, 18, 555, 42]
+	  VariableName		  "gear_number"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [180, 74, 270, 96]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [475, 67, 550, 83]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [180, 287, 255, 303]
+	  ShowName		  off
+	  VariableName		  "fc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace40"
+	  Position		  [475, 116, 550, 134]
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [180, 126, 265, 144]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [185, 21, 250, 39]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace43"
+	  Position		  [180, 523, 260, 547]
+	  VariableName		  "lim_ess_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [485, 169, 545, 191]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace45"
+	  Position		  [190, 564, 275, 586]
+	  VariableName		  "lim_ess_soc_low"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace46"
+	  Position		  [190, 609, 275, 631]
+	  VariableName		  "lim_ess_soc_hi"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace47"
+	  Position		  [180, 655, 280, 675]
+	  VariableName		  "lim_mc_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace48"
+	  Position		  [180, 709, 275, 731]
+	  VariableName		  "lim_mc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace49"
+	  Position		  [180, 759, 265, 781]
+	  VariableName		  "lim_mc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [185, 326, 260, 344]
+	  ShowName		  off
+	  VariableName		  "fc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace50"
+	  Position		  [180, 812, 270, 828]
+	  VariableName		  "lim_mc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace51"
+	  Position		  [185, 170, 255, 190]
+	  VariableName		  "lim_fc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [485, 225, 545, 245]
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace53"
+	  Position		  [475, 488, 555, 512]
+	  VariableName		  "lim_ess_minV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [475, 275, 545, 295]
+	  VariableName		  "clutch_state"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace55"
+	  Position		  [210, 442, 290, 468]
+	  VariableName		  "lim_clutch_dis"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [195, 378, 280, 402]
+	  VariableName		  "lim_engine_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [185, 220, 255, 240]
+	  VariableName		  "lim_fc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [475, 544, 555, 566]
+	  VariableName		  "lim_ess_maxV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [480, 598, 560, 622]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [170, 850, 250, 870]
+	  VariableName		  "mc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace60"
+	  Position		  [485, 643, 565, 667]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace61"
+	  Position		  [485, 688, 565, 712]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [170, 895, 250, 915]
+	  VariableName		  "mc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace51"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace40"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace53"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace60"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace61"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace43"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>5"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From<cs>"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace45"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power5"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace46"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace47"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace48"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/enforce torque limit"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace49"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace50"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace55"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>6"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> prius"
+      Ports		      []
+      Position		      [390, 73, 451, 117]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> prius"
+	Location		[73, 49, 657, 779]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [380, 352, 435, 378]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [45, 21, 110, 39]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [375, 305, 435, 325]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cs>"
+	  Position		  [55, 364, 135, 386]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "engine_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [325, 721, 425, 739]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [330, 766, 430, 784]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [330, 811, 430, 829]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power"
+	  Position		  [35, 461, 135, 479]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power1"
+	  Position		  [15, 618, 135, 642]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power2"
+	  Position		  [15, 520, 130, 540]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power3"
+	  Position		  [325, 461, 425, 479]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power4"
+	  Position		  [325, 515, 425, 535]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power5"
+	  Position		  [15, 565, 130, 585]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>"
+	  Position		  [45, 268, 140, 292]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>1"
+	  Position		  [45, 308, 140, 332]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<gc>/enforce torque limit1"
+	  Position		  [330, 620, 430, 640]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<gc>1"
+	  Position		  [330, 670, 430, 690]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [325, 856, 425, 874]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>"
+	  Position		  [35, 775, 135, 795]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/enforce torque limit"
+	  Position		  [35, 725, 135, 745]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic"
+	  Position		  [30, 674, 135, 696]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic1"
+	  Position		  [325, 569, 430, 591]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>1"
+	  Position		  [30, 820, 125, 850]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>2"
+	  Position		  [30, 865, 125, 895]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>3"
+	  Position		  [30, 900, 125, 930]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_trq_in_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>4"
+	  Position		  [30, 935, 125, 965]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_spd_in_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [370, 39, 455, 61]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control"
+	  Position		  [50, 171, 140, 189]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control2"
+	  Position		  [45, 221, 140, 239]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>1"
+	  Position		  [385, 92, 455, 108]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SOC"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [375, 143, 455, 167]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>4"
+	  Position		  [365, 198, 455, 222]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [55, 74, 135, 96]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [50, 125, 135, 145]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [140, 900, 165, 930]
+	  ShowName		  off
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [150, 363, 180, 387]
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [130, 18, 160, 42]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [490, 855, 515, 875]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [485, 307, 535, 323]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace10"
+	  Position		  [190, 904, 265, 926]
+	  VariableName		  "gc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace11"
+	  Position		  [190, 939, 265, 961]
+	  VariableName		  "gc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [490, 356, 540, 374]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [180, 74, 270, 96]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [475, 42, 550, 58]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [185, 272, 260, 288]
+	  ShowName		  off
+	  VariableName		  "fc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace40"
+	  Position		  [475, 91, 550, 109]
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [180, 126, 265, 144]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [185, 21, 250, 39]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace43"
+	  Position		  [180, 458, 260, 482]
+	  VariableName		  "lim_ess_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [485, 144, 545, 166]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace45"
+	  Position		  [175, 519, 260, 541]
+	  VariableName		  "lim_ess_soc_low"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace46"
+	  Position		  [175, 564, 260, 586]
+	  VariableName		  "lim_ess_soc_hi"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace47"
+	  Position		  [180, 620, 280, 640]
+	  VariableName		  "lim_mc_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace48"
+	  Position		  [180, 674, 275, 696]
+	  VariableName		  "lim_mc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace49"
+	  Position		  [180, 724, 265, 746]
+	  VariableName		  "lim_mc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [190, 311, 265, 329]
+	  ShowName		  off
+	  VariableName		  "fc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace50"
+	  Position		  [180, 777, 270, 793]
+	  VariableName		  "lim_mc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace51"
+	  Position		  [185, 170, 255, 190]
+	  VariableName		  "lim_fc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [485, 200, 545, 220]
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace53"
+	  Position		  [470, 458, 550, 482]
+	  VariableName		  "lim_ess_minV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [470, 514, 550, 536]
+	  VariableName		  "lim_ess_maxV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [195, 363, 280, 387]
+	  VariableName		  "lim_engine_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [185, 220, 255, 240]
+	  VariableName		  "lim_fc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [475, 569, 570, 591]
+	  VariableName		  "lim_gc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [475, 619, 560, 641]
+	  VariableName		  "lim_gc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [170, 825, 250, 845]
+	  VariableName		  "mc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace60"
+	  Position		  [475, 672, 565, 688]
+	  VariableName		  "lim_gc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace61"
+	  Position		  [470, 718, 550, 742]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace62"
+	  Position		  [475, 763, 555, 787]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace63"
+	  Position		  [475, 808, 555, 832]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [170, 870, 250, 890]
+	  VariableName		  "mc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace63"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace62"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace61"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<gc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace60"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<gc>/enforce torque limit1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace53"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace40"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace51"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power5"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace46"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace45"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace43"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cs>"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace50"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/enforce torque limit"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace49"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace48"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace47"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>3"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace11"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "<sdo> series"
+      Ports		      []
+      Position		      [470, 74, 527, 117]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "image(imread('bdi_sdo.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"<sdo> series"
+	Location		[65, 57, 639, 787]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [100, 395, 120, 415]
+	  ShowName		  off
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>"
+	  Position		  [320, 335, 390, 365]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "shifting"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc>1"
+	  Position		  [40, 21, 105, 39]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "key_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <veh>"
+	  Position		  [320, 290, 390, 320]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mpha"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cs>"
+	  Position		  [25, 325, 120, 345]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "engine_on"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>"
+	  Position		  [315, 581, 415, 599]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "grade"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>1"
+	  Position		  [320, 626, 420, 644]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "elevation"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<cyc>2"
+	  Position		  [320, 671, 420, 689]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "distance"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power"
+	  Position		  [30, 429, 130, 451]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_pwr_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power1"
+	  Position		  [25, 552, 145, 578]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_voltage_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power2"
+	  Position		  [20, 470, 135, 490]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_low_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power3"
+	  Position		  [295, 446, 395, 464]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_minV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power4"
+	  Position		  [295, 500, 395, 520]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_maxV_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<ess>/limit power5"
+	  Position		  [20, 510, 135, 530]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ess_soc_hi_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>"
+	  Position		  [30, 248, 125, 272]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<fc>1"
+	  Position		  [30, 288, 125, 312]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<main>"
+	  Position		  [320, 716, 420, 734]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "time"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>"
+	  Position		  [25, 711, 125, 729]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/enforce torque limit"
+	  Position		  [25, 659, 120, 681]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>/motor controller logic"
+	  Position		  [25, 609, 135, 631]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_crrnt_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>1"
+	  Position		  [35, 745, 130, 775]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_trq_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>2"
+	  Position		  [35, 790, 130, 820]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "mc_spd_out_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>3"
+	  Position		  [35, 825, 130, 855]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_trq_in_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<mc>4"
+	  Position		  [35, 860, 130, 890]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_spd_in_a"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>"
+	  Position		  [315, 25, 410, 55]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gear_ratio"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control"
+	  Position		  [35, 153, 125, 177]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_trq_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>/engine control2"
+	  Position		  [30, 203, 125, 227]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_spd_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>1"
+	  Position		  [315, 75, 410, 105]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SOC"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>2"
+	  Position		  [315, 235, 410, 265]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>3"
+	  Position		  [315, 130, 410, 160]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "cyc_mph_r"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>4"
+	  Position		  [315, 185, 410, 215]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "bus_voltage"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<vc>5"
+	  Position		  [20, 369, 115, 391]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clutch_state"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>"
+	  Position		  [30, 65, 125, 85]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "slip_limited"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From<wh>1"
+	  Position		  [25, 109, 125, 131]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "brake_limited"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [135, 322, 165, 348]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  Ports			  [1, 1]
+	  Position		  [125, 18, 155, 42]
+	  ShowName		  off
+	  Operator		  "NOT"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [140, 371, 165, 404]
+	  ShowName		  off
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [485, 715, 510, 735]
+	  FontName		  "Arial"
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [445, 295, 505, 315]
+	  VariableName		  "mpha"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace10"
+	  Position		  [175, 829, 250, 851]
+	  VariableName		  "gc_trq_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace11"
+	  Position		  [175, 864, 250, 886]
+	  VariableName		  "gc_spd_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [445, 340, 505, 360]
+	  VariableName		  "shifting"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace38"
+	  Position		  [170, 64, 265, 86]
+	  VariableName		  "lim_wh_traction"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace39"
+	  Position		  [430, 28, 505, 52]
+	  VariableName		  "gear_ratio"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [170, 252, 245, 268]
+	  ShowName		  off
+	  VariableName		  "fc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace40"
+	  Position		  [430, 78, 505, 102]
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace41"
+	  Position		  [170, 111, 250, 129]
+	  VariableName		  "lim_wh_brake"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace42"
+	  Position		  [180, 21, 245, 39]
+	  VariableName		  "lim_key_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace43"
+	  Position		  [175, 430, 250, 450]
+	  VariableName		  "lim_ess_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace44"
+	  Position		  [440, 130, 500, 160]
+	  VariableName		  "cyc_mph_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace45"
+	  Position		  [175, 469, 260, 491]
+	  VariableName		  "lim_ess_soc_low"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace46"
+	  Position		  [180, 509, 265, 531]
+	  VariableName		  "lim_ess_soc_hi"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace47"
+	  Position		  [175, 552, 265, 578]
+	  VariableName		  "lim_mc_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace48"
+	  Position		  [165, 610, 255, 630]
+	  VariableName		  "lim_mc_crrnt"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace49"
+	  Position		  [170, 659, 245, 681]
+	  VariableName		  "lim_mc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [175, 291, 250, 309]
+	  ShowName		  off
+	  VariableName		  "fc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace50"
+	  Position		  [170, 709, 255, 731]
+	  VariableName		  "lim_mc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace51"
+	  Position		  [170, 155, 250, 175]
+	  VariableName		  "lim_fc_trq"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace52"
+	  Position		  [440, 185, 500, 215]
+	  VariableName		  "pb_voltage"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace53"
+	  Position		  [440, 443, 520, 467]
+	  VariableName		  "lim_ess_minV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace54"
+	  Position		  [430, 238, 505, 262]
+	  VariableName		  "clutch_state"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace55"
+	  Position		  [185, 377, 270, 403]
+	  VariableName		  "lim_clutch_dis"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace56"
+	  Position		  [180, 322, 265, 348]
+	  VariableName		  "lim_engine_off"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace57"
+	  Position		  [175, 205, 245, 225]
+	  VariableName		  "lim_fc_spd"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace58"
+	  Position		  [440, 499, 520, 521]
+	  VariableName		  "lim_ess_maxV"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace59"
+	  Position		  [460, 578, 540, 602]
+	  VariableName		  "grade"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [175, 750, 255, 770]
+	  VariableName		  "mc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace60"
+	  Position		  [465, 623, 545, 647]
+	  VariableName		  "elevation"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace61"
+	  Position		  [465, 668, 545, 692]
+	  VariableName		  "distance"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [175, 795, 255, 815]
+	  VariableName		  "mc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace51"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>/engine control2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace57"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace41"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<wh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace38"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace39"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace44"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace40"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace52"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace54"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <veh>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc>1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace42"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace58"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace53"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace59"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace60"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<cyc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace61"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace55"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From<cs>"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace56"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace43"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace45"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power5"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace46"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<ess>/limit power1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace47"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/motor controller logic"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace48"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>/enforce torque limit"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace49"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace50"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<fc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<vc>5"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<main>"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>2"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>3"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From<mc>4"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace11"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saber_ess2_outputs"
+      Ports		      [1]
+      Position		      [220, 334, 290, 366]
+      ShowPortLabels	      on
+      BlockChoice	      "Saber_rint2"
+      TemplateBlock	      "self"
+      MemberBlocks	      "Saber_pb2,Saber_rint2"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Saber_ess2_outputs"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Saber_rint2"
+	  Ports			  [1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "lib_outputs/Saber_rint2"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "Saber_rint2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saber_ess_outputs"
+      Ports		      [1]
+      Position		      [125, 334, 195, 366]
+      ShowPortLabels	      on
+      BlockChoice	      "Saber_rint"
+      TemplateBlock	      "self"
+      MemberBlocks	      "Saber_pb,Saber_rint"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Saber_ess_outputs"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Saber_rint"
+	  Ports			  [1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "lib_outputs/Saber_rint"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "Saber_rint"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saber_pb"
+      Ports		      [1]
+      Position		      [125, 401, 195, 429]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Saber_pb"
+	Location		[653, 385, 1257, 754]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 178, 45, 192]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "<sdo>"
+	  Position		  [185, 59, 265, 81]
+	  ShowName		  off
+	  GotoTag		  "ess_pwr_out_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Advisor sign\nconvention1"
+	  Position		  [105, 101, 135, 129]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [75, 95, 85, 270]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [275, 230, 315, 260]
+	  GotoTag		  "SOC"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [275, 282, 355, 308]
+	  GotoTag		  "bus_voltage"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [220, 230, 250, 260]
+	  X0			  "ess_init_soc"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory2"
+	  Position		  [215, 280, 245, 310]
+	  X0			  "0"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [345, 131, 365, 189]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [105, 240, 125, 260]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [390, 148, 540, 172]
+	  ShowName		  off
+	  VariableName		  "ess_current"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [180, 148, 330, 172]
+	  ShowName		  off
+	  VariableName		  "ess_volts"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [440, 243, 590, 267]
+	  ShowName		  off
+	  VariableName		  "ess_current_psc"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [180, 193, 330, 217]
+	  ShowName		  off
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [180, 103, 330, 127]
+	  ShowName		  off
+	  VariableName		  "ess_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc\npassive sign\nconvention"
+	  Position		  [390, 241, 420, 269]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [70, 0]
+	  Branch {
+	    DstBlock		    "To Workspace4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Advisor sign\nconvention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [45, 0]
+	  Branch {
+	    Points		    [25, 0]
+	    Branch {
+	      DstBlock		      "To Workspace2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 15]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 135]
+	    DstBlock		    "Memory2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 95]
+	    DstBlock		    "psc\npassive sign\nconvention"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory2"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc\npassive sign\nconvention"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Advisor sign\nconvention1"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    Points		    [10, 0]
+	    Branch {
+	      DstBlock		      "To Workspace5"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 30]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -45]
+	    DstBlock		    "<sdo>"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saber_pb2"
+      Ports		      [1]
+      Position		      [215, 401, 285, 429]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Saber_pb2"
+	Location		[571, 472, 1245, 811]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 178, 45, 192]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "<sdo>"
+	  Position		  [195, 65, 290, 85]
+	  ShowName		  off
+	  GotoTag		  "ess2_pwr_out_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Advisor sign\nconvention1"
+	  Position		  [105, 101, 135, 129]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [75, 96, 85, 269]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [350, 131, 370, 189]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [165, 240, 185, 260]
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [395, 148, 545, 172]
+	  ShowName		  off
+	  VariableName		  "ess2_current"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [185, 148, 335, 172]
+	  ShowName		  off
+	  VariableName		  "ess2_volts"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [470, 233, 620, 257]
+	  ShowName		  off
+	  VariableName		  "ess2_current_psc"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [185, 193, 335, 217]
+	  ShowName		  off
+	  VariableName		  "ess2_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [185, 103, 335, 127]
+	  ShowName		  off
+	  VariableName		  "ess2_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc\npassive sign\nconvention"
+	  Position		  [415, 231, 445, 259]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "psc\npassive sign\nconvention"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [75, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Advisor sign\nconvention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc\npassive sign\nconvention"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Advisor sign\nconvention1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [10, 0]
+	    Branch {
+	      Points		      [0, 30]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "To Workspace5"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "<sdo>"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saber_rint"
+      Ports		      [1]
+      Position		      [125, 461, 195, 489]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Saber_rint"
+	Location		[98, 457, 755, 869]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 128, 45, 142]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "<sdo>"
+	  Position		  [230, 19, 310, 41]
+	  ShowName		  off
+	  GotoTag		  "ess_pwr_out_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Advisor sign\nconvention1"
+	  Position		  [120, 51, 150, 79]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [75, 46, 85, 219]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [280, 185, 320, 215]
+	  GotoTag		  "SOC"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [280, 237, 360, 263]
+	  GotoTag		  "bus_voltage"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  Position		  [285, 326, 390, 354]
+	  GotoTag		  "ess_max_chg_pwr"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [225, 185, 255, 215]
+	  X0			  "ess_init_soc"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory1"
+	  Position		  [215, 325, 245, 355]
+	  X0			  "0"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory2"
+	  Position		  [215, 235, 245, 265]
+	  X0			  "0"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [390, 81, 410, 139]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [435, 98, 585, 122]
+	  ShowName		  off
+	  VariableName		  "ess_current"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [225, 98, 375, 122]
+	  ShowName		  off
+	  VariableName		  "ess_volts"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [280, 283, 430, 307]
+	  ShowName		  off
+	  VariableName		  "ess_max_chg_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [225, 143, 375, 167]
+	  ShowName		  off
+	  VariableName		  "ess_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [225, 53, 375, 77]
+	  ShowName		  off
+	  VariableName		  "ess_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [495, 168, 645, 192]
+	  ShowName		  off
+	  VariableName		  "ess_current_psc"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc\npassive sign\nconvention"
+	  Position		  [450, 166, 480, 194]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [115, 0]
+	  Branch {
+	    DstBlock		    "To Workspace4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Advisor sign\nconvention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [105, 0]
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "Memory2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [10, 0]
+	    Branch {
+	      Points		      [0, 15]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "To Workspace2"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "psc\npassive sign\nconvention"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [40, 0; 0, 95]
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Memory1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory1"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory2"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc\npassive sign\nconvention"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Advisor sign\nconvention1"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    Points		    [0, 30]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [5, 0]
+	    Branch {
+	      DstBlock		      "To Workspace5"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -35]
+	      DstBlock		      "<sdo>"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saber_rint2"
+      Ports		      [1]
+      Position		      [215, 461, 285, 489]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Saber_rint2"
+	Location		[135, 436, 878, 848]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [45, 128, 75, 142]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "<sdo>"
+	  Position		  [315, 24, 410, 46]
+	  ShowName		  off
+	  GotoTag		  "ess2_pwr_out_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Advisor sign\nconvention1"
+	  Position		  [170, 51, 200, 79]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [105, 46, 115, 219]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [360, 185, 400, 215]
+	  GotoTag		  "SOC2"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [360, 237, 440, 263]
+	  GotoTag		  "bus_voltage2"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  Position		  [365, 326, 470, 354]
+	  GotoTag		  "ess2_max_chg_pwr"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [305, 185, 335, 215]
+	  X0			  "ess2_init_soc"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory1"
+	  Position		  [295, 325, 325, 355]
+	  X0			  "0"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory2"
+	  Position		  [295, 235, 325, 265]
+	  X0			  "0"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [470, 81, 490, 139]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [515, 98, 665, 122]
+	  ShowName		  off
+	  VariableName		  "ess2_current"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [305, 98, 455, 122]
+	  ShowName		  off
+	  VariableName		  "ess2_volts"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [360, 283, 510, 307]
+	  ShowName		  off
+	  VariableName		  "ess2_max_chg_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [305, 143, 455, 167]
+	  ShowName		  off
+	  VariableName		  "ess2_soc_hist"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [305, 53, 455, 77]
+	  ShowName		  off
+	  VariableName		  "ess2_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [575, 183, 725, 207]
+	  ShowName		  off
+	  VariableName		  "ess2_current_psc"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc\npassive sign\nconvention"
+	  Position		  [520, 181, 550, 209]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Line {
+	  SrcBlock		  "Memory2"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory1"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [140, 0; 0, 95]
+	  Branch {
+	    DstBlock		    "To Workspace3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Memory1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "psc\npassive sign\nconvention"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [155, 0]
+	  Branch {
+	    Points		    [10, 0]
+	    Branch {
+	      DstBlock		      "To Workspace2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 15]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "Memory2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Advisor sign\nconvention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [165, 0]
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc\npassive sign\nconvention"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Advisor sign\nconvention1"
+	  SrcPort		  1
+	  Points		  [70, 0]
+	  Branch {
+	    Points		    [10, 0]
+	    Branch {
+	      DstBlock		      "To Workspace5"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 30]
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "<sdo>"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saber acc 14v\noutput gotos"
+      Ports		      [1]
+      Position		      [530, 336, 600, 364]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saber acc 14v\noutput gotos"
+	Location		[291, 44, 626, 1003]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 468, 45, 482]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 30]
+	  Position		  [65, 40, 80, 910]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "30"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [140, 88, 290, 112]
+	  ShowName		  off
+	  VariableName		  "acc_engine_ECM_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace10"
+	  Position		  [140, 328, 290, 352]
+	  ShowName		  off
+	  VariableName		  "acc_turn_signal_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace11"
+	  Position		  [140, 688, 290, 712]
+	  ShowName		  off
+	  VariableName		  "acc_rear_hvac_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace12"
+	  Position		  [140, 898, 290, 922]
+	  ShowName		  off
+	  VariableName		  "acc_14v_starter_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace13"
+	  Position		  [140, 748, 290, 772]
+	  ShowName		  off
+	  VariableName		  "acc_heated_seat_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace14"
+	  Position		  [140, 808, 290, 832]
+	  ShowName		  off
+	  VariableName		  "acc_radio_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace15"
+	  Position		  [140, 868, 290, 892]
+	  ShowName		  off
+	  VariableName		  "acc_14v_starter_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace16"
+	  Position		  [140, 628, 290, 652]
+	  ShowName		  off
+	  VariableName		  "acc_front_hvac_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace17"
+	  Position		  [140, 178, 290, 202]
+	  ShowName		  off
+	  VariableName		  "acc_radiator_fan_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace18"
+	  Position		  [140, 598, 290, 622]
+	  ShowName		  off
+	  VariableName		  "acc_rear_defrost_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace19"
+	  Position		  [140, 238, 290, 262]
+	  ShowName		  off
+	  VariableName		  "acc_misc_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [140, 148, 290, 172]
+	  ShowName		  off
+	  VariableName		  "acc_radiator_fan_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace20"
+	  Position		  [140, 298, 290, 322]
+	  ShowName		  off
+	  VariableName		  "acc_brake_lights_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace21"
+	  Position		  [140, 358, 290, 382]
+	  ShowName		  off
+	  VariableName		  "acc_turn_signal_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace22"
+	  Position		  [140, 418, 290, 442]
+	  ShowName		  off
+	  VariableName		  "acc_external_lights_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace23"
+	  Position		  [140, 478, 290, 502]
+	  ShowName		  off
+	  VariableName		  "acc_front_wiper_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace24"
+	  Position		  [140, 538, 290, 562]
+	  ShowName		  off
+	  VariableName		  "acc_rear_wiper_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace25"
+	  Position		  [140, 658, 290, 682]
+	  ShowName		  off
+	  VariableName		  "acc_front_hvac_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace26"
+	  Position		  [140, 718, 290, 742]
+	  ShowName		  off
+	  VariableName		  "acc_rear_hvac_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace27"
+	  Position		  [140, 778, 290, 802]
+	  ShowName		  off
+	  VariableName		  "acc_heated_seat_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace28"
+	  Position		  [140, 838, 290, 862]
+	  ShowName		  off
+	  VariableName		  "acc_radio_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace29"
+	  Position		  [140, 118, 290, 142]
+	  ShowName		  off
+	  VariableName		  "acc_engine_ECM_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [140, 208, 290, 232]
+	  ShowName		  off
+	  VariableName		  "acc_misc_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace30"
+	  Position		  [140, 58, 290, 82]
+	  ShowName		  off
+	  VariableName		  "acc_14v_load_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [140, 268, 290, 292]
+	  ShowName		  off
+	  VariableName		  "acc_brake_lights_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [140, 28, 290, 52]
+	  ShowName		  off
+	  VariableName		  "acc_14v_load_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [140, 388, 290, 412]
+	  ShowName		  off
+	  VariableName		  "acc_external_lights_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [140, 448, 290, 472]
+	  ShowName		  off
+	  VariableName		  "acc_front_wiper_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace8"
+	  Position		  [140, 508, 290, 532]
+	  ShowName		  off
+	  VariableName		  "acc_rear_wiper_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace9"
+	  Position		  [140, 568, 290, 592]
+	  ShowName		  off
+	  VariableName		  "acc_rear_defrost_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc"
+	  Position		  [100, 26, 120, 54]
+	  Gain			  "1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc1"
+	  Position		  [100, 56, 120, 84]
+	  Gain			  "1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "psc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  17
+	  DstBlock		  "To Workspace8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  13
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  19
+	  DstBlock		  "To Workspace9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "To Workspace10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  15
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  27
+	  DstBlock		  "To Workspace14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  23
+	  DstBlock		  "To Workspace11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  21
+	  DstBlock		  "To Workspace16"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  25
+	  DstBlock		  "To Workspace13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "To Workspace17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  20
+	  DstBlock		  "To Workspace18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  22
+	  DstBlock		  "To Workspace25"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  24
+	  DstBlock		  "To Workspace26"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  26
+	  DstBlock		  "To Workspace27"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  28
+	  DstBlock		  "To Workspace28"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "To Workspace19"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "To Workspace20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "To Workspace21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  14
+	  DstBlock		  "To Workspace22"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  16
+	  DstBlock		  "To Workspace23"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  18
+	  DstBlock		  "To Workspace24"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "To Workspace29"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  29
+	  DstBlock		  "To Workspace15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  30
+	  DstBlock		  "To Workspace12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "psc1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace30"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saber acc HiV\noutput gotos"
+      Ports		      [1]
+      Position		      [615, 336, 685, 364]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saber acc HiV\noutput gotos"
+	Location		[20, 170, 377, 604]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [25, 203, 55, 217]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 12]
+	  Position		  [75, 29, 85, 391]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "12"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [155, 33, 305, 57]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_load_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace15"
+	  Position		  [155, 93, 305, 117]
+	  ShowName		  off
+	  VariableName		  "acc_speed_load_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace17"
+	  Position		  [155, 153, 305, 177]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_pwr_load_1_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace18"
+	  Position		  [155, 213, 305, 237]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_pwr_load_2_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace19"
+	  Position		  [155, 273, 305, 297]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_pwr_load_3_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [155, 333, 305, 357]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_starter_pwr"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace20"
+	  Position		  [155, 363, 305, 387]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_starter_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [155, 123, 305, 147]
+	  ShowName		  off
+	  VariableName		  "acc_speed_load_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [155, 183, 305, 207]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_pwr_load_1_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [155, 243, 305, 267]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_pwr_load_2_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [155, 303, 305, 327]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_pwr_load_3_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [155, 63, 305, 87]
+	  ShowName		  off
+	  VariableName		  "acc_HiV_load_i"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc"
+	  Position		  [105, 61, 135, 89]
+	  Gain			  "1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc1"
+	  Position		  [105, 31, 135, 59]
+	  NamePlacement		  "alternate"
+	  Gain			  "1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "To Workspace18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "To Workspace17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  DstBlock		  "To Workspace19"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "To Workspace15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "psc1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "To Workspace4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "To Workspace20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "psc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "psc1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [124, 413]
+	  Text			  "Note:  psc : passive sign convention"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saber acc additional\noutputs"
+      Ports		      [1]
+      Position		      [430, 336, 500, 364]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saber acc additional\noutputs"
+	Location		[-30, 455, 302, 694]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 98, 50, 112]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [75, 74, 85, 136]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "2"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [135, 109, 235, 131]
+	  ShowName		  off
+	  VariableName		  "acc_elec_i_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [135, 79, 235, 101]
+	  ShowName		  off
+	  VariableName		  "acc_elec_pwr_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saber dcdc output\ngotos"
+      Ports		      [1]
+      Position		      [330, 336, 400, 364]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saber dcdc output\ngotos"
+	Location		[447, 274, 778, 513]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 98, 50, 112]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [80, 74, 90, 136]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "2"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [135, 108, 285, 132]
+	  ShowName		  off
+	  VariableName		  "ess2_dcdc_i_out"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [135, 78, 285, 102]
+	  ShowName		  off
+	  VariableName		  "ess2_dcdc_i_in"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "To Workspace5"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saber gc output\ngotos"
+      Ports		      [1, 1]
+      Position		      [25, 336, 95, 364]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saber gc output\ngotos"
+	Location		[147, 306, 1209, 710]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [20, 148, 50, 162]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Advisor sign\nconvention1"
+	  Position		  [110, 171, 140, 199]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [630, 236, 655, 254]
+	  ShowName		  off
+	  Value			  "eps"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [780, 282, 805, 298]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [75, 26, 85, 279]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [620, 170, 735, 190]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "gc_elec_out_pwr"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [190, 21, 345, 39]
+	  ShowName		  off
+	  GotoTag		  "gc_trq_in_r"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [125, 86, 280, 104]
+	  ShowName		  off
+	  GotoTag		  "gc_volts"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  Position		  [175, 151, 330, 169]
+	  ShowName		  off
+	  GotoTag		  "gc_elec_out_pwr"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  Position		  [240, 216, 395, 234]
+	  ShowName		  off
+	  GotoTag		  "gc_shaft_spd_a"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [305, 71, 325, 129]
+	  Inputs		  "/*"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [560, 116, 580, 174]
+	  Inputs		  "**"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [760, 166, 780, 224]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [835, 265, 865, 295]
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  Position		  [675, 215, 705, 245]
+	  Threshold		  "eps"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [375, 88, 525, 112]
+	  ShowName		  off
+	  VariableName		  "gc_current"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace10"
+	  Position		  [375, 28, 525, 52]
+	  ShowName		  off
+	  VariableName		  "gc_trq_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [135, 108, 285, 132]
+	  ShowName		  off
+	  VariableName		  "gc_volts"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [185, 173, 335, 197]
+	  ShowName		  off
+	  VariableName		  "gc_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [250, 238, 400, 262]
+	  ShowName		  off
+	  VariableName		  "gc_shaft_spd_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [195, 43, 345, 67]
+	  ShowName		  off
+	  VariableName		  "gc_trq_in_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [620, 133, 770, 157]
+	  ShowName		  off
+	  VariableName		  "gc_mech_pwr_r"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [890, 268, 955, 292]
+	  ShowName		  off
+	  VariableName		  "gc_oper_eff"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace8"
+	  Position		  [430, 132, 525, 158]
+	  ShowName		  off
+	  VariableName		  "gc_current_psc"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace9"
+	  Position		  [250, 283, 400, 307]
+	  ShowName		  off
+	  VariableName		  "gc_spd_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc\npassive sign\nconvention"
+	  Position		  [375, 131, 405, 159]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "rpm => rad/s"
+	  Position		  [110, 236, 140, 264]
+	  Gain			  "(2*pi)/60"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pwr_r"
+	  Position		  [750, 13, 780, 27]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -35]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [5, 0]
+	    Branch {
+	      DstBlock		      "To Workspace2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    Points		    [0, -35; 410, 0]
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [20, 0]
+	    Branch {
+	      Points		      [0, -25]
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [20, 0]
+	      Branch {
+		DstBlock		"To Workspace5"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -15]
+		DstBlock		"To Workspace10"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "rpm => rad/s"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Advisor sign\nconvention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "psc\npassive sign\nconvention"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    Points		    [10, 0]
+	    Branch {
+	      DstBlock		      "To Workspace6"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -125]
+	      DstBlock		      "pwr_r"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 75]
+	    Branch {
+	      Points		      [0, 60; 35, 0]
+	      Branch {
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"Switch1"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Switch1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "rpm => rad/s"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    Points		    [0, -40; 260, 0; 0, -50]
+	    DstBlock		    "Product1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [35, 0]
+	    Branch {
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"To Workspace4"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Goto3"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 45]
+	      DstBlock		      "To Workspace9"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 75]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Product2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -20]
+	  DstBlock		  "Product2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "psc\npassive sign\nconvention"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Advisor sign\nconvention1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [0, -25]
+	    Branch {
+	      Points		      [0, -10; 140, 0]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "To Workspace3"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saber mc output\ngotos"
+      Ports		      [1, 2]
+      Position		      [705, 338, 775, 367]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saber mc output\ngotos"
+	Location		[141, 360, 1052, 816]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 193, 45, 207]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Advisor sign\nconvention1"
+	  Position		  [100, 251, 130, 279]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [395, 185, 415, 205]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [465, 175, 485, 195]
+	  ShowName		  off
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [610, 155, 630, 175]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [70, 41, 80, 399]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [305, 259, 340, 321]
+	  Inputs		  "**"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [385, 14, 420, 76]
+	  Inputs		  "**"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [565, 74, 600, 136]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [450, 137, 480, 168]
+	  ShowName		  off
+	  Operator		  "~="
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [515, 130, 545, 160]
+	  Threshold		  ".5"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  Position		  [660, 100, 690, 130]
+	  Threshold		  ".5"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  Position		  [165, 123, 315, 147]
+	  ShowName		  off
+	  VariableName		  "mc_trq_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  Position		  [220, 228, 370, 252]
+	  ShowName		  off
+	  VariableName		  "mc_current"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  Position		  [135, 343, 285, 367]
+	  ShowName		  off
+	  VariableName		  "mc_volts"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace4"
+	  Position		  [400, 280, 515, 300]
+	  ShowName		  off
+	  VariableName		  "mc_pwr_in_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace5"
+	  Position		  [165, 63, 315, 87]
+	  ShowName		  off
+	  VariableName		  "mc_spd_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace6"
+	  Position		  [450, 35, 565, 55]
+	  ShowName		  off
+	  VariableName		  "mc_mech_pwr_out_a"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace7"
+	  Position		  [710, 105, 825, 125]
+	  ShowName		  off
+	  VariableName		  "mc_out_eff"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace8"
+	  Position		  [220, 173, 370, 197]
+	  ShowName		  off
+	  VariableName		  "mc_current_psc"
+	  MaxDataPoints		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "psc\npassive sign\nconvention"
+	  Position		  [165, 171, 195, 199]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "rpm => rad/s"
+	  Position		  [105, 60, 135, 90]
+	  NamePlacement		  "alternate"
+	  Gain			  "(1/60)*(2*pi)"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "sign convention"
+	  Position		  [115, 120, 145, 150]
+	  Gain			  "1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "sign convention1"
+	  Position		  [360, 275, 375, 305]
+	  ShowName		  off
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "mc_spd"
+	  Position		  [340, 33, 370, 47]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "mc_trq"
+	  Position		  [340, 113, 370, 127]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "To Workspace3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -50]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [0, -40]
+	  DstBlock		  "sign convention"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "sign convention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "rpm => rad/s"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Advisor sign\nconvention1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "sign convention"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -15; 175, 0]
+	    Branch {
+	      DstBlock		      "mc_trq"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -60]
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "rpm => rad/s"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "To Workspace5"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -45; 170, 0]
+	    Branch {
+	      Points		      [0, 10]
+	      DstBlock		      "mc_spd"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "To Workspace6"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Product2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    Points		    [5, 0]
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Product2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "sign convention1"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "To Workspace4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -145; 40, 0; 0, 0]
+	    Branch {
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -10]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "psc\npassive sign\nconvention"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Advisor sign\nconvention1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [140, 0]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    Branch {
+	      DstBlock		      "To Workspace2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "psc\npassive sign\nconvention"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Annotation {
+      Position		      [106, 31]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      Text		      "Standard Diagnostic Outputs:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+    }
+    Annotation {
+      Position		      [54, 317]
+      Text		      "sub-models"
+    }
+    Annotation {
+      Position		      [408, 304]
+      Text		      "-----------------------------------------------"
+"-----------------------------------------------------------------------------"
+"-----------------------------------------------------------------------------"
+"---------"
+    }
+  }
+}

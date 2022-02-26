@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Energy Storage System</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Energy Storage System</h1>
+</div>
+<h3 id="energy-storage-system"><strong>Energy Storage System</strong></h3>
+<p><strong><u>Introduction</u></strong><br />Of all the components in a hybrid vehicle, batteries are probably the most difficult to understand and model.  Although batteries seem to act like simple electrical energy storage devices, when they deliver and accept energy, they actually undergo thermally-dependent electrochemical processes that make them difficult to model.  Thus, the electrical behavior of a battery is a nonlinear function of a variety of constantly changing parameters. A dynamic model of electrochemical battery behavior is a compromise between trying to include all of the relevant effects and creating a model that will actually work in a reasonable amount of time.</p>
+<p>ADVISOR has four different battery models.</p>
+<ol style="list-style-type: decimal">
+<li>The most recently developed model (Spring, 2001) is the <a href="ess_rc.html">RC model</a> (’resistive-capacitive’), which includes transient effects in the battery.</li>
+<li>The previous model is the <a href="ess_rint.html">Rint Model</a> (’internal resistance’), which characterizes the battery with a voltage source and internal resistance.The Rint battery model is related to work which was originally performed by Idaho National Engineering Laboratory to model flooded lead-acid batteries.  ADVISOR uses this basic structure to roughly simulate the behavior of a variety of battery technologies.</li>
+<li>The third battery model is a <a href="ess_alt_models.html#Fundamental">Fundamental Lead Acid Model</a> developed at Brigham Young University for NREL.</li>
+<li>The fourth model is a <a href="ess_alt_models.html#Neural%20Network">neural network model</a> of a lead acid battery developed at Colorado University for NREL.</li>
+</ol>
+<p><a href="ess_rc.html">RC Model</a><br /><a href="ess_rint.html">Rint Model</a><br /><a href="ess_alt_models.html#Fundamental">Fundamental Lead Acid Model</a><br /><a href="ess_alt_models.html#Neural%20Network">Neural Network Model</a></p>
+<p>Additionally, ADVISOR has one carbon-based ultracapacitor model.</p>
+<p>A recent addition (Spring, 2002) to the energy storage system library in ADVISOR is the ultracapacitor (double layer capacitor, electrochemical capacitor).  Although the ultracapacitor is a device that is very similar to batteries in many respects (electrodes, liquid electrolyte, and separator are main components), it is also fundamentally different in how it accomplishes energy storage/supply (double-layer capacitance and depending on the chemical make-up of the ultracapacitor a varying extent of pseudo-capacitance).  The ultracapacitor model developed for ADVISOR is derived from the behavior of carbon-based (double-layer) devices.  The similarity between batteries and ultracapacitors allows for a fair amount of overlap between modeling the two devices.  However, the main difference in modeling the two devices is that the ultracapacitor actually behaves more ideally as a resistance + capacitance based device.  This allows for relatively close model behavior without compromising actual device behavior.  Additionally, due to the relatively straightforward capacitance model, the ultracapacitor’s state of charge is very simple to determine.</p>
+<p>The <a href="ess_uc.html">UltraCap model</a> resides with the RC model drop down selections within ADVISOR’s gui in the “energy storage” block under version “rc” and then under type “cap” (rc-&gt;cap).</p>
+<p><a href="ess_uc.html">UltraCap Model</a></p>
+<p> </p>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>
+<p>Last Revised: 4/29/02: mdz</p>
+</body>
+</html>

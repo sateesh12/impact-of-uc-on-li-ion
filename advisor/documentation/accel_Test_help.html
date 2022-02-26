@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="2013-03-26" />
+  <title>Help on Acceleration Test</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Help on Acceleration Test</h1>
+<h3 class="date">March 26, 2013</h3>
+</div>
+<h1 id="help-on-acceleration-test">Help on Acceleration Test</h1>
+<h2 id="overview"> Overview</h2>
+<p>The acceleration test routine in ADVISOR will determine the acceleration performance of the current vehicle. The test routine can be accessed both from the GUI and the Matlab command window.</p>
+<h2 id="from-the-gui">From the GUI…</h2>
+<p>An acceleration test can be performed via the Simulation Setup window.  By clicking <em>Accel Options</em> the Acceleration Test Advanced Options window appears. Note that the Constraint and Tolerance items are only visible and accessible when the Accel Options button is pushed from the Autosize Setup window.</p>
+<p><br /> <img src="accel_test_fig1.jpg" /><br /> The shift delay checkbox allows you to override the current shift delay during the acceleration test. The Enable Systems set of radiobuttons allows you to identify any systems that should not participate in the test. For example, you could determine the acceleration performance of your parallel hybrid in a worse case situation when you only have one power source, engine only or battery only. As long as the battery is enabled, the initial state of charge (SOC) can be specified by the user. The initial setting defaults to 50% of the usable range (cs_lo_soc to cs_hi_soc). The Mass Parameters allow you to override or adjust the vehicle mass during the acceleration test. By overriding the mass you will fix the mass at the specified value and by adding to the current mass you will add the specified amount to current mass. The results section allows you to specify the acceleration criteria of interest. Available options include 3 speed range acceleration times, a distance in a set amount of time, time in a set amount of distance, and max acceleration rate, and a top speed. While performing an autosize these conditions can be used as constraints.</p>
+<p>From the Simulation Setup screen selecting the <em>Acceleration Test</em> checkbox runs an acceleration test during a drive cycle.  To run an acceleration test without running a drive cycle, select <em>Test Procedure</em> and then <em>TEST_ACCEL</em> from the pulldown menu. If run as a test procedure the Results screen will provide access to the time dependent variable information.</p>
+<p>Results are reported in the Results window.</p>
+<h2 id="from-the-matlab-command-window">From the Matlab command window…</h2>
+<p>An acceleration test can also be performed from the command window. The acceleration test routine is a function and requires the following format,</p>
+<p>[resp]=accel_test_advanced(param1,value1,…param_n,value_n)</p>
+<p>Inputs to the acceleration test function must be specified in parameter name, parameter value pairs. All input parameters are optional. <br />  </p>
+<table border cellspacing="1" cellpadding="7" width="775">
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>Parameter</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>Description</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>spds</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(mph), matrix of initial speeds in first column and final speeds in second column</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>dist_in_time</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(s), time over which to measure max distance traveled (e.g. distance traveled in 5s)</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>time_in_dist</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(mi), distance over which to measure time (e.g. 1/4 mi time)</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>ess_init_soc</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(–), initial state of charge of the ess</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>gb_shift_delay</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(s), delay time during a shift in which no torque can be transmitted</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>disp_results</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(–), boolean flag 1==&gt; display results, 0 ==&gt; don’t display</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>max_rate_bool</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(–), boolean flag 1==&gt; calc max accel rate, 0 ==&gt; don’t calc</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>max_speed_bool</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(–), boolean flag 1==&gt; calc max speed, 0 ==&gt; don’t calc</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>override_mass</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(kg), override vehicle mass to be used for the accel test only</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>add_mass</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(kg), additional mass to be added to current vehicle mass for accel test only</p>
+</td>
+</tr>
+<tr>
+<td width="21%" valign="TOP">
+<p>
+<p>disable_systems</p>
+</td>
+<td width="79%" valign="TOP">
+<p>
+<p>(–), flag to disable power systems 1==&gt; disable ess, 2 ==&gt; disable fc</p>
+</td>
+</tr>
+</table>
+<p> </p>
+<h2 id="how-it-works">How it works</h2>
+<p>A step function speed of 200 mph is requested of the vehicle. The vehicle will try request as much power and energy as is available while enforcing component based limits. At the end of the cycle, the acceleration times and other parameters are calculated from the achieved vehicle speed trace and saved to the workspace and/or the GUI.</p>
+<hr />
+<p><br /> <a href="advisor_ch3.html#3.3">Back to Chapter 3</a></p>
+<p>Last Revised: 2/0/01:tm</p>
+</body>
+</html>

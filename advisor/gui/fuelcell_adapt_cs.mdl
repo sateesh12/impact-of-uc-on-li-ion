@@ -1,0 +1,559 @@
+Model {
+  Name			  "fuelcell_adapt_cs"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Tue Dec 10 09:33:18 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "bjeanner"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Dec 11 17:15:46 2002"
+  ModelVersionFormat	  "1.%<AutoIncrement:15>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Diagnostics"
+  StartTime		  "0.0"
+  StopTime		  "29"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "none"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "none"
+  UnconnectedOutputMsg	  "none"
+  UnconnectedLineMsg	  "none"
+  InheritedTsInSrcMsg	  "none"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "none"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "fuelcell_adapt_cs"
+    Location		    [190, 82, 778, 496]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Goto
+      Name		      "<sdo>1"
+      Position		      [140, 280, 220, 300]
+      GotoTag		      "key_on"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "<sdo>2"
+      Position		      [140, 240, 220, 260]
+      GotoTag		      "engine_on"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "<sdo>3"
+      Position		      [140, 325, 220, 345]
+      GotoTag		      "v_prev"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Block NOTES"
+      Ports		      []
+      Position		      [295, 345, 351, 385]
+      BackgroundColor	      "green"
+      ShowName		      off
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "disp('Block\\nNOTES')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Block NOTES"
+	Location		[243, 430, 669, 572]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Annotation {
+	  Position		  [212, 73]
+	  Text			  "This block diagram runs with the fuel cell "
+"adaptive control strategy.\nIt is called by the sfun_fuelcell_adapt.m script."
+"\n\nInput: \nPower required from the fuel cell (assign in the sfunction)\nOut"
+"put: \nMass flow fuel consumption: fc_fuel_rate"
+	}
+      }
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [45, 130, 80, 150]
+      DisplayTime	      on
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      Position		      [50, 278, 75, 302]
+      ShowName		      off
+      Value		      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      Position		      [50, 238, 75, 262]
+      ShowName		      off
+      Value		      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      Position		      [50, 323, 75, 347]
+      ShowName		      off
+      Value		      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Lookup
+      Name		      "Look-Up\nTable"
+      Position		      [120, 114, 170, 166]
+      InputValues	      "EssAdaptTime"
+      OutputValues	      "FcReqAdaptPwr"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [400, 196, 405, 234]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [1]
+      Position		      [455, 204, 485, 236]
+      Floating		      off
+      Location		      [672, 555, 996, 794]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [335, 90, 355, 110]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [335, 130, 355, 150]
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      Position		      [375, 160, 455, 180]
+      ShowName		      off
+      VariableName	      "FcAdaptPwrAch"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "fuel cell config"
+      Ports		      [1, 3]
+      Position		      [235, 96, 275, 184]
+      ShowName		      off
+      AttributesFormatString  "%<BlockChoice>"
+      ShowPortLabels	      off
+      BlockChoice	      "fuel converter <fc> VT model"
+      TemplateBlock	      "lib_fuel_cell/fuel cell config"
+      MemberBlocks	      "fuel converter <fc>  KTH fc model,fuel converte"
+"r <fc> GCTool linkage,fuel converter <fc> VT model,fuel converter <fc> net mo"
+"del,fuel converter <fc> polarization curve model"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"fuel cell config"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "pwr req'd at fc \noutput (W)"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fuel converter <fc>\nVT model"
+	  Ports			  [1, 3]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "lib_fuel_cell/fuel converter <fc>\nVT model"
+	  SourceType		  ""
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "fuel use"
+	  Position		  [200, 40, 220, 60]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EO emis\ninfo"
+	  Position		  [200, 80, 220, 100]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pwr avail. to\ndriveline (W)"
+	  Position		  [200, 120, 220, 140]
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "pwr req'd at fc \noutput (W)"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "fuel converter <fc>\nVT model"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fuel converter <fc>\nVT model"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 5]
+	  DstBlock		  "fuel use"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fuel converter <fc>\nVT model"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, 30]
+	  DstBlock		  "EO emis\ninfo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fuel converter <fc>\nVT model"
+	  SrcPort		  3
+	  Points		  [10, 0; 0, 55]
+	  DstBlock		  "pwr avail. to\ndriveline (W)"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "terminator"
+      Ports		      []
+      Position		      [405, 335, 476, 385]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"terminator"
+	Location		[265, 392, 490, 499]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc> "
+	  Position		  [25, 25, 115, 45]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fuel"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From <vc> 1"
+	  Position		  [25, 60, 115, 80]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "fc_pwr_out_a"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator3"
+	  Position		  [180, 25, 200, 45]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator4"
+	  Position		  [180, 60, 200, 80]
+	}
+	Line {
+	  SrcBlock		  "From <vc> "
+	  SrcPort		  1
+	  DstBlock		  "Terminator3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From <vc> 1"
+	  SrcPort		  1
+	  DstBlock		  "Terminator4"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Look-Up\nTable"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	DstBlock		"fuel cell config"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 85]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "fuel cell config"
+      SrcPort		      1
+      Points		      [20, 0; 0, -10]
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fuel cell config"
+      SrcPort		      2
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fuel cell config"
+      SrcPort		      3
+      Points		      [70, 0]
+      Branch {
+	DstBlock		"To Workspace2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 35]
+	DstBlock		"Mux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "<sdo>1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      DstBlock		      "<sdo>2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      DstBlock		      "<sdo>3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Look-Up\nTable"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+  }
+}

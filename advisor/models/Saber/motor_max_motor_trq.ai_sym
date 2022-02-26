@@ -1,0 +1,54 @@
+[symbol6]
+desc {}
+uniq 16
+[resources]
+<font>
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{Arial 5.0 bold}
+{Arial 3.0 bold}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+motor_max_motor_trq_0
+-830 -538 830 521
+0 0 
+<properties>
+primitive motor_max_motor_trq { } string {} -752 -656 0 0 0 5 3 {} 0 6 {} {} {} 6 l
+model { } SABER string {} -752 -912 0 0 0 5 3 {} 0 6 {} {} {} 6 l
+ref motor_max_motor_trq1 { } string {} -752 -784 0 0 0 5 3 {} 0 6 {} {} {} 6 l
+<ports>
+spd -800 0 1 1 -704 -704 144 5 1 2 0 0 4 {} 6
+max_trq 800 0 1 2 736 976 128 3 1 2 0 0 4 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+t gr_0_ -64 -160 1 1 0 0 0 0 7 0 {X} 6 
+l gr_1_ 0 1 1 0 1 10 1 0 {-800 0 -480 0 } {8 10 3} 6 
+t gr_2_ -528 528 2 1 0 0 0 0 7 0 {Traction Motor
+} 6 
+t gr_3_ -336 16 3 1 0 0 0 0 7 0 {Y } 6 
+t gr_5_ -624 -384 5 1 0 0 0 0 7 0 {Max Motoring Trq} 6 
+l gr_6_ 0 1 1 0 1 10 1 0 {480 0 800 0 } {8 10 3} 6 
+r gr_7_ -480 -320 480 320 0 1 10 1 0 0 6 
+a gr_8_ 0 1 -192 -128 192 144 25 157 0 1 10 1 0 0 6 
+t gr_9_ 0 240 4 1 0 0 0 2 8 0 {Look-up Table} 6 
+l gr_10_ 0 1 1 0 1 10 1 0 {-560 80 -480 0 } {8 10 3} 6 
+l gr_11_ 0 1 1 0 1 10 1 0 {-208 96 -208 -144 160 -144 } {8 10 3} 6 
+l gr_13_ 0 1 1 0 1 10 1 0 {-560 -80 -480 0 } {8 10 3} 6 

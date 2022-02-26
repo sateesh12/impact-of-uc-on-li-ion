@@ -1,0 +1,69 @@
+# load power_load.sin
+# symbol = power_load.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+#########################################################################
+#
+#   DESCRIPTION:
+#   -----------
+#   This model represents a constant power load such that the current
+#   is calculated as i = power_load / v ... where v is the bus voltage.
+#
+#   Note:  If the bus voltage droops below 5 volts, this model forces
+#   the bus voltage to be equal to 5 volts.
+#
+#
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]      [description]
+#   p   electrical  positive current enters this node
+#   m   electrical  positive current leaves this node
+#
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#     power_load    Watts       Constant power load on bus
+#   loadcontrol             turns load on and off
+#                   also used for multipule loads
+#                   (ie for 2 loads, loadcontrol = 2)
+#
+#   OUTPUT SOLUTIONS:
+#   ----------------
+#   [name]  [units] [description]
+#       i           Amps        Output current
+#
+###########################################################################
+encrypted template power_load p m = power_load, loadcontrol
+electrical p, m
+number loadcontrol = 0
+number power_load = 0
+!crypt_start
+008abac6f7c2526a8a6
+008b427066c90c1b1a5
+008f5b34711da3c1246
+008bfb352a87eac0dee
+040b927476cdc94b1ebe9d853707bd348f5a8bf57f07760efa6e9b996c868777b2ff3b351547ef401a7
+0084f130f030d1f4d01
+016a3ff3d23667afea65d5f0d176413ad57
+040b9f68f887c3ea651f8d658713dac0dbafbf6061024e30df7bbb9bfc8627d773a09134058863c1b10
+016f5ba06178b341246fbbe236541014e4c
+016bfeb02a02ce110a7e1b996c420a50db6
+0244f130845024c4c0ae9d8537079467d29baaf6a3a504c184b
+024f0975a202e39302d085d470c2e7a6e3def271b7d962c1c00
+024adbe68712536b7e8b9274066d3c1e5ebb727156c963c1210
+016abbe793a3436e3bbb3971c72c695f7e6
+008a6be2e6c6636e3a6
+016e6fd5708c3755344bab348e1963c1210
+016a0b31be87ce100b9e2b9ddc4963c5b10
+016a0efdac42b5caa03afb350e1154c5644
+008b4b9c0c42b41e303
+016b8d25f437c6d612bedb34247414c1844
+}

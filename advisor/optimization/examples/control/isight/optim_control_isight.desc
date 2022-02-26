@@ -1,0 +1,167 @@
+MDOLVersion: 5.5
+CompilerOptions: warn
+
+Task isight
+
+    TaskHeader isight
+        Version: 1.0
+        Evaluation: taskplan
+        ControlMode: user
+        RunCounter: 1
+        Audit: on Milestone Error Info Status Milestone Error Info Status
+        Audit: off Normal Debug Normal Debug
+        BoundsPolicy: adjustvalue
+        CheckPoint: unknown
+        RandGenInit: 20737/18499/40085
+    End TaskHeader isight
+
+    Inputs isight
+        Parameter: csminofftime Type: real InitialValue: 187.22
+        Parameter: cschargepwr Type: real InitialValue: 13117.0
+        Parameter: csmaxpwr Type: real InitialValue: 46451.0
+       Parameter: csminpwr Type: real InitialValue: 20833.0
+    End Inputs isight
+
+    Outputs isight
+        Parameter: accel0to85 Type: real
+        Parameter: accel40to60 Type: real
+        Parameter: accel0to60 Type: real
+        Parameter: deltatrace Type: real
+        Parameter: grade Type: real
+        Parameter: deltasoc Type: real
+        Parameter: fe Type: real
+    End Outputs isight
+
+    SimCode Simcode0
+        InputFiles Simcode0
+            FileDescription indatam
+                FileType: standard
+                TemplateFile: "indata_control.m"
+                InputFile: "indata_control.m"
+                Parameters
+                    csminofftime cschargepwr csmaxpwr csminpwr
+                Instructions
+                    find "X(1)=" ignore 
+                    replace word with $csminpwr 
+                    find "X(2)=" ignore 
+                    replace word with $csmaxpwr 
+                    find "X(3)=" ignore 
+                    replace word with $cschargepwr 
+                    find "X(4)=" ignore 
+                    replace word with $csminofftime
+                End Instructions
+            End FileDescription indatam
+        End InputFiles Simcode0
+
+        OutputFiles Simcode0
+            FileDescription outdatatxt
+                FileType: standard
+                OutputFile: "outdata_control.txt"
+                Parameters
+                    accel0to85 accel40to60 accel0to60 deltatrace grade deltasoc fe
+                Instructions
+                    find "Fuel Economy: " ignore 
+                    read fe
+                    provide $fe 
+                    find "Delta SOC: " ignore 
+                    read deltasoc
+                    provide $deltasoc 
+                    find "Delta Trace: " ignore 
+                    read deltatrace
+                    provide $deltatrace 
+                    find "Accel 0-60: " ignore 
+                    read accel0to60
+                    provide $accel0to60 
+                    find "Accel 40-60: " ignore 
+                    read accel40to60
+                    provide $accel40to60 
+                    find "Accel 0-85: " ignore 
+                    read accel0to85
+                    provide $accel0to85 
+                    find "Grade: " ignore 
+                    read grade
+                    provide $grade
+                End Instructions
+            End FileDescription outdatatxt
+        End OutputFiles Simcode0
+
+        SimCodeProcess Simcode0
+            Program: "C:/MATLABR12/bin/win32/matlab.exe"
+            ElapseTime: 8m 20s
+            Prologue
+                WriteInputSpecs: indatam
+            Epilogue
+                ReadOutputSpecs: outdatatxt
+            Execution: "$Program /automation -r optim_control_isight"
+        End SimCodeProcess Simcode0
+
+    End SimCode Simcode0
+
+
+    TaskProcess isight
+        Control: [
+            Simcode0
+        ]
+    End TaskProcess isight
+
+    Optimization isight
+        PotentialVariables:
+            csminofftime cschargepwr csmaxpwr csminpwr 
+        Variables:
+            csminofftime cschargepwr csmaxpwr  csminpwr 
+        VariableScaling
+            Parameter: csminofftime ScaleFactor: 1.0
+            Parameter: cschargepwr ScaleFactor: 1.0
+            Parameter: csmaxpwr ScaleFactor: 1.0
+            Parameter: csminpwr ScaleFactor: 1.0
+        InputConstraints
+            Parameter: csminofftime LowerBound: 10 UpperBound: 1000
+            Parameter: cschargepwr LowerBound: 0 UpperBound: 25000
+            Parameter: csmaxpwr LowerBound: 25000 UpperBound: 50000
+            Parameter: csminpwr LowerBound: 0 UpperBound: 25000
+        PotentialObjectives:
+            csminofftime cschargepwr csmaxpwr csminpwr accel0to85 accel40to60
+            accel0to60 deltatrace grade deltasoc fe
+        Objectives
+            Parameter: fe Direction: minimize Weight: 1.0 ScaleFactor: 1.0
+        OutputConstraints
+            Parameter: accel0to85 UpperBound: 20.0 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: accel40to60 UpperBound: 4.4 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: accel0to60 UpperBound: 11.2 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: deltatrace UpperBound: 2 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: grade LowerBound: 6.5 Weight: 1.0 ScaleFactor: 1.0
+            Parameter: deltasoc UpperBound: 0.005 Weight: 1.0 ScaleFactor: 1.0
+
+        OptimizePlan NewPlan
+            DefaultUpperBound: 1E15
+            UseScaling: yes
+            OptimizeStep Step1
+                Technique: "Sequential Quadratic Programming - DONLP"
+                Options
+            Control: [
+                Step1
+            ]
+
+        # PLAN TO BE CONFIGURED BY ADVISOR:
+        OptimizePlan PriorityRankedPlan
+            Control: [
+            ]
+    End Optimization isight
+
+    TaskPlan isight
+        Control: [
+            NewPlan
+        ]
+    End TaskPlan isight
+
+    DataStorage isight
+        Restore: no
+        DataLog: "optim_control_isight.db" Mode: overwrite
+        DataLookUp: "isight.db"
+        MatchMode: Exact
+        Levels: all
+        StoreGradRuns: yes
+        StoreApproxRuns: yes
+    End DataStorage isight
+
+End Task isight

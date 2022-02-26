@@ -1,0 +1,14 @@
+[TLU 1.1]
+dimension 1
+variable1 Temperature Control
+variable2 Cc Electrical conductance
+interpolation Linear
+extrapolation1 Linear Linear
+sp_density1 100
+storage 1
+nb_points 3
+data
+1 504.5
+25 975
+45 1249
+

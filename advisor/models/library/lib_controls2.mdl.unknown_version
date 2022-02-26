@@ -1,0 +1,5342 @@
+Library {
+  Name			  "lib_controls2"
+  Version		  4.1.1
+  LibraryLinkDisplay	  "all"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  on
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  off
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Tue May 30 16:47:17 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Apr 18 08:20:35 2003"
+  ModifiedComment	  "bjeanner -- Thu Dec 26 09:42:29 2002 -- Version 1.4"
+"51\nadd three new parameters: allowing calcultion of equivallent ESS function"
+" with mean efficiency; plus plotting results parameter\n"
+  ModifiedHistory	  "bjeanner -- Thu Dec 26 09:42:29 2002 -- Version 1.4"
+"51\nadd three new parameters: allowing calcultion of equivallent ESS function"
+" with mean efficiency; plus plotting results parameter\n\n\nbjeanner -- Thu D"
+"ec 26 09:42:29 2002 -- Version 1.451\nadd three new parameters: allowing calc"
+"ultion of equivallent ESS function with mean efficiency; plus plotting result"
+"s parameter\n\n\nbjeanner -- Thu Dec 12 14:52:52 2002 -- Version 1.450\n\n\nb"
+"jeanner -- Tue Dec 10 14:49:05 2002 -- Version 1.449\n\n\nbjeanner -- Tue Dec"
+" 10 13:14:31 2002 -- Version 1.448\n\n\nbjeanner -- Tue Dec 10 11:50:56 2002 "
+"-- Version 1.447\n\n\nbjeanner -- Tue Dec 10 11:41:01 2002 -- Version 1.446\n"
+"\n\nbjeanner -- Tue Dec 10 11:30:40 2002 -- Version 1.445\n\n\nbjeanner -- Tu"
+"e Dec 10 11:29:40 2002 -- Version 1.444\n\n\nbjeanner -- Tue Dec 10 11:10:40 "
+"2002 -- Version 1.443\n\n\nbjeanner -- Tue Dec 10 10:31:25 2002 -- Version 1."
+"442\n\n\nbjeanner -- Tue Dec 10 10:30:04 2002 -- Version 1.441\n\n\nbjeanner "
+"-- Tue Dec 10 10:29:36 2002 -- Version 1.440\n\n\nbjeanner -- Tue Dec 10 10:2"
+"3:30 2002 -- Version 1.439\n\n\nbjeanner -- Tue Dec 10 09:20:40 2002 -- Versi"
+"on 1.438\n\n\nbjeanner -- Tue Dec 10 09:16:26 2002 -- Version 1.437\nAdd the "
+"template for the configurable subsystem for the BD_FUELCELL control strategy."
+"\nAdd the fuel cell adaptive control strategy\n\n\nmokeefe -- Tue Aug 13 07:3"
+"6:17 2002 -- Version 1.436\nMaking the model look \"pretty\"\n\nmokeefe -- Tu"
+"e Aug 13 07:35:11 2002 -- Version 1.435\nchanged <vc> conv cvt/cvt control to"
+" use \"acc_mech_pwr_est\" instead of \"acc_mech_trq_est\" as had been used pr"
+"eviously (the required datum is the power and not the torque!)\n\nssprik -- T"
+"ue Apr 30 11:21:35 2002 -- Version 1.434\nadded user contributed par bal engi"
+"ne on  block\n\nmokeefe -- Tue Apr 23 09:06:10 2002 -- Version 1.433\nchanged"
+" Insight electric assist control strategy <cs> DIRECT SPLIT/Hard Acceleration"
+" to prevent a divide by zero warning. Also added logic to prevent a torque re"
+"quest above the maximum achievable motor torque.\n\nmokeefe -- Tue Apr 23 09:"
+"03:51 2002 -- Version 1.432\nchanged Insight electric assist control strategy"
+" <cs> DIRECT SPLIT/Hard Acceleration to prevent a divide by zero warning. Als"
+"o added logic to prevent a torque request above the maximum achievable motor "
+"torque.\n\nmokeefe -- Tue Apr 23 08:50:58 2002 -- Version 1.431\n\n\nssprik -"
+"- Thu Apr 18 14:34:50 2002 -- Version 1.430\n\n\nssprik -- Thu Apr 18 14:32:5"
+"2 2002 -- Version 1.429\n\n\nssprik -- Thu Apr 18 14:06:57 2002 -- Version 1."
+"428\n\n\nssprik -- Thu Apr 18 13:56:10 2002 -- Version 1.427\n\n\nssprik -- T"
+"hu Apr 18 13:46:32 2002 -- Version 1.426\n\n\nkkelly -- Thu Apr 18 10:17:40 2"
+"002 -- Version 1.425\n\n\nmokeefe -- Thu Apr 18 08:23:32 2002 -- Version 1.42"
+"4\nsaving the model:\no \"without the model browser open\"\no with only top-l"
+"evel screen visible \no with \"fit to view\" enabled\no with \"status bar\" o"
+"ff and \"toolbar\" off\no with \"prompt to update model history with each sav"
+"e\" on\n\nkkelly -- Wed Mar 27 14:57:12 2002 -- Version 1.423\n\n\nkkelly -- "
+"Wed Mar 27 14:57:12 2002 -- Version 1.423\n\n\nkkelly -- Wed Mar 27 14:50:41 "
+"2002 -- Version 1.422\n\n\nkkelly -- Wed Mar 27 14:50:24 2002 -- Version 1.42"
+"1\n\n\nkkelly -- Wed Mar 27 14:26:31 2002 -- Version 1.420\n\n\nkkelly -- Wed"
+" Mar 27 14:26:16 2002 -- Version 1.419\n\n\nkkelly -- Wed Mar 27 14:25:54 200"
+"2 -- Version 1.418\n\n\nkkelly -- Wed Mar 27 14:20:49 2002 -- Version 1.417\n"
+"\n\nkkelly -- Wed Mar 27 14:18:25 2002 -- Version 1.416\n\n\nkkelly -- Wed Ma"
+"r 27 14:17:14 2002 -- Version 1.415\n\n\nkkelly -- Wed Mar 27 14:09:18 2002 -"
+"- Version 1.414\n\n\nkkelly -- Wed Mar 27 14:07:10 2002 -- Version 1.413\n\n"
+"\nkkelly -- Wed Mar 27 14:04:42 2002 -- Version 1.412\n\n\nkkelly -- Wed Mar "
+"27 12:39:55 2002 -- Version 1.411\n\n\nkkelly -- Wed Mar 27 12:39:35 2002 -- "
+"Version 1.410\n\n\nkkelly -- Wed Mar 27 12:31:18 2002 -- Version 1.409\n\n\nk"
+"kelly -- Wed Mar 27 12:12:25 2002 -- Version 1.408\n\n\nkkelly -- Wed Mar 27 "
+"12:03:57 2002 -- Version 1.407\n\n\nkkelly -- Wed Mar 27 12:03:11 2002 -- Ver"
+"sion 1.406\nAdded logic to increase torque request for very hard acceleration"
+"\n\nkkelly -- Wed Mar 27 11:51:32 2002 -- Version 1.405\nAdded logic to allow"
+" EM in 1st gear when torque request is high\n\nkkelly -- Wed Mar 27 11:48:18 "
+"2002 -- Version 1.404\nAdded logic to allow EM at low speed with high torque "
+"request \n\nkkelly -- Wed Mar 27 11:36:20 2002 -- Version 1.403\nAdded zero-t"
+"orque request logic\n\nkkelly -- Wed Mar 27 11:09:35 2002 -- Version 1.402\n"
+"\n\nkkelly -- Wed Mar 27 11:07:39 2002 -- Version 1.401\n\n\nkkelly -- Wed Ma"
+"r 27 10:43:33 2002 -- Version 1.400\n\n\nmokeefe -- Fri Mar 08 08:11:28 2002 "
+"-- Version 1.399\ntook all separate auxiliary load calculations out of the <v"
+"c> libraries. These will now use the lib_accessory goto tags (acc_mech_trq_es"
+"t, acc_mech_pwr_est, acc_elec_pwr_est)\n\nmokeefe -- Mon Jul 02 10:08:55 2001"
+" -- Version 1.184\n\n\nmokeefe -- Mon Jul 02 10:08:07 2001 -- Version 1.183\n"
+"\n\nmokeefe -- Mon Jul 02 10:06:51 2001 -- Version 1.182\n\n\nmokeefe -- Mon "
+"Jul 02 10:05:17 2001 -- Version 1.181\n\n\nmokeefe -- Mon Jul 02 10:04:17 200"
+"1 -- Version 1.180\n\n\nmokeefe -- Fri Jun 29 13:59:18 2001 -- Version 1.179"
+"\n\nall <vc> blocks updated for use with variable cargo mass functionality (c"
+"argo mass by distance)--also, all <vc> top-level blocks have been \"cleaned u"
+"p\" to look neat and organized. A sub-model library has been made and is the "
+"preferred way to do future development.\n\nmokeefe -- Fri Jun 29 13:56:37 200"
+"1 -- Version 1.178\n\n<vc> prius\n\nmokeefe -- Fri Jun 29 13:46:29 2001 -- Ve"
+"rsion 1.177\n\n\nmokeefe -- Fri Jun 29 13:40:43 2001 -- Version 1.176\n\n\nmo"
+"keefe -- Fri Jun 29 13:39:38 2001 -- Version 1.175\n\n<vc> series (\"\" \"\")"
+"\n\n\nmokeefe -- Fri Jun 29 13:34:00 2001 -- Version 1.174\n\n<vc> par Adapti"
+"ve (\"\" \"\")\n\nmokeefe -- Fri Jun 29 13:23:41 2001 -- Version 1.173\n\nins"
+"ight (ibid.)\n\n\nmokeefe -- Fri Jun 29 13:15:22 2001 -- Version 1.172\n\n<vc"
+"> par balanced--> veh_mass to veh_mass+veh_cargo_mass\n\n\nmokeefe -- Fri Jun"
+" 29 13:05:39 2001 -- Version 1.171\n\n\nmokeefe -- Fri Jun 29 12:10:12 2001 -"
+"- Version 1.170\n\nfinished veh_mass mods for the <vc> par cvt...\n\n\nmokeef"
+"e -- Fri Jun 29 12:09:18 2001 -- Version 1.169\n\n\nmokeefe -- Fri Jun 29 11:"
+"56:20 2001 -- Version 1.168\n\n\nmokeefe -- Fri Jun 29 11:44:30 2001 -- Versi"
+"on 1.167\n\n\nmokeefe -- Fri Jun 29 11:33:07 2001 -- Version 1.166\n\n\nmokee"
+"fe -- Fri Jun 29 11:21:54 2001 -- Version 1.165\n\n\nmokeefe -- Fri Jun 29 11"
+":15:04 2001 -- Version 1.164\n\n\nmokeefe -- Fri Jun 29 11:13:02 2001 -- Vers"
+"ion 1.163\n\n\nmokeefe -- Fri Jun 29 11:06:47 2001 -- Version 1.162\n\n\nmoke"
+"efe -- Fri Jun 29 11:04:27 2001 -- Version 1.161\n\n\nmokeefe -- Fri Jun 29 1"
+"0:40:33 2001 -- Version 1.160\n\n\nmokeefe -- Fri Jun 29 10:35:18 2001 -- Ver"
+"sion 1.159\n\n\nmokeefe -- Fri Jun 29 10:29:06 2001 -- Version 1.158\n\n\nmok"
+"eefe -- Fri Jun 29 10:26:50 2001 -- Version 1.157\n\n\nmokeefe -- Fri Jun 29 "
+"10:18:10 2001 -- Version 1.156\n\nmade traction control, front and rear brake"
+" controller, and braking strategy into \"sub-libraries\" for vehicle control"
+"\n\nmokeefe -- Fri Jun 29 10:17:11 2001 -- Version 1.155\n\n\nmokeefe -- Fri "
+"Jun 29 10:15:46 2001 -- Version 1.154\n\n\nmokeefe -- Fri Jun 29 10:09:48 200"
+"1 -- Version 1.153\n\n\nmokeefe -- Fri Jun 29 09:58:42 2001 -- Version 1.152"
+"\n\n\nmokeefe -- Fri Jun 29 09:57:37 2001 -- Version 1.151\n\ncreating sub-co"
+"mponents for vehicle control model (traction control)\n\nmokeefe -- Fri Jun 2"
+"9 09:21:23 2001 -- Version 1.150\n\n\nmokeefe -- Fri Jun 29 09:19:46 2001 -- "
+"Version 1.149\n\n\nmokeefe -- Fri Jun 29 09:09:49 2001 -- Version 1.148\n\n\n"
+"mokeefe -- Fri Jun 29 08:32:46 2001 -- Version 1.147\n\n\nmokeefe -- Fri Jun "
+"29 08:29:03 2001 -- Version 1.146\n\nreplacing veh_mass with veh_mass plus ve"
+"h_cargo_mass in <vc> conv auto Saber Custom\n\n\nmokeefe -- Thu Jun 28 17:08:"
+"40 2001 -- Version 1.145\n\n\nmokeefe -- Thu Jun 28 17:07:02 2001 -- Version "
+"1.144\n\n\nmokeefe -- Thu Jun 28 17:06:28 2001 -- Version 1.143\n\nchanges to"
+" the CVT controls to subsitute veh_mass + veh_cargo_mass for veh_mass\n\n\nmo"
+"keefe -- Thu Jun 28 16:55:42 2001 -- Version 1.142\n\n\nmokeefe -- Thu Jun 28"
+" 16:32:01 2001 -- Version 1.141\n\nchanging veh_mass to veh_mass plus veh_car"
+"go_mass\n\n\nmokeefe -- Thu Jun 28 16:21:30 2001 -- Version 1.140\n\nreplacin"
+"g veh_mass with veh_mass + (cargo mass vs time)\n\nmokeefe -- Thu Jun 28 14:1"
+"2:51 2001 -- Version 1.139\n\nreplaced all 'veh_mass' references with a veh_m"
+"ass plus a FROM block (originating from drive cycle) that gives variable carg"
+"o mass by time\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:484>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_controls2"
+    Location		    [202, 77, 966, 762]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "controls"
+      Ports		      []
+      Position		      [120, 55, 186, 120]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"controls"
+	Location		[463, 217, 541, 301]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"71"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Hybrid \nEngine Torque Modification\nStrate"
+"gy"
+	  Ports			  []
+	  Position		  [25, 29, 84, 91]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "image(imread('bdi_hybrid_cntrl.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Hybrid \nEngine Torque Modification\nStra"
+"tegy"
+	    Location		    [214, 73, 966, 748]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [3, 1]
+	      Position		      [575, 77, 585, 433]
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      Ports		      [1, 1]
+	      Position		      [150, 116, 155, 154]
+	      ShowName		      off
+	      OutputSignals	      "tm_spd_out_r"
+	      MuxedOutput	      off
+	      Port {
+		PortNumber		1
+		Name			"<tm_spd_out_r>"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector1"
+	      Ports		      [1, 1]
+	      Position		      [150, 236, 155, 274]
+	      ShowName		      off
+	      OutputSignals	      "SOC"
+	      MuxedOutput	      off
+	      Port {
+		PortNumber		1
+		Name			"<SOC>"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector2"
+	      Ports		      [1, 1]
+	      Position		      [150, 356, 155, 394]
+	      ShowName		      off
+	      OutputSignals	      "engine_on"
+	      MuxedOutput	      off
+	      Port {
+		PortNumber		1
+		Name			"<engine_on>"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "controlTag"
+	      Position		      [625, 234, 725, 276]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "tmControl"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "controlTag1"
+	      Position		      [15, 116, 125, 154]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "tmReqOut"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "controlTag2"
+	      Position		      [15, 236, 125, 274]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "essSensors"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "controlTag3"
+	      Position		      [15, 356, 125, 394]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	      GotoTag		      "fcControl"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "parallel auto hybrid torque control"
+	      Ports		      [3, 3]
+	      Position		      [250, 77, 485, 433]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      Port {
+		PortNumber		1
+		Name			"tm_torqueMod"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"tm_torqueMin"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"tm_enable"
+		PropagatedSignals	"engine_on"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	      System {
+		Name			"parallel auto hybrid torque control"
+		Location		[329, 148, 849, 396]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "tm_spd_out_r"
+		  Position		  [195, 178, 225, 192]
+		  NamePlacement		  "alternate"
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "SOC"
+		  Position		  [70, 193, 100, 207]
+		  Port			  "2"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "engine_on"
+		  Position		  [75, 248, 105, 262]
+		  Port			  "3"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "chg trq req'd\n(Nm)"
+		  Ports			  [1, 1]
+		  Position		  [260, 80, 290, 110]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "chg trq req'd\n(Nm)"
+		    Location		    [214, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "SOC"
+		    Position		    [30, 98, 60, 112]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [25, 48, 170, 72]
+		    Value		    "cs_charge_trq*fc_trq_scale"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [325, 105, 365, 125]
+		    Value		    "ess_on"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Goal"
+		    Position		    [20, 134, 155, 156]
+		    Value		    "(cs_lo_soc+cs_hi_soc)/2"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [280, 52, 310, 83]
+		    Inputs		    "2"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product1"
+		    Ports		    [2, 1]
+		    Position		    [230, 142, 260, 173]
+		    Inputs		    "*/"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Range"
+		    Position		    [20, 174, 155, 196]
+		    Value		    "(cs_hi_soc-cs_lo_soc)/2"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    "Saturation"
+		    Position		    [330, 55, 360, 85]
+		    UpperLimit		    "inf"
+		    LowerLimit		    "-inf"
+		    LinearizeAsGain	    on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [180, 97, 210, 128]
+		    IconShape		    "rectangular"
+		    Inputs		    "-+"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [420, 65, 450, 95]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "add'l trq req'd\n(Nm)"
+		    Position		    [490, 73, 520, 87]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "[]"
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [35, 0; 0, -25]
+		    Branch {
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    DstBlock		    "add'l trq req'd\n(Nm)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Saturation"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Goal"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Range"
+		    SrcPort		    1
+		    Points		    [55, 0]
+		    DstBlock		    "Product1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product1"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "SOC"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "minimum trq\n(Nm)"
+		  Ports			  [2, 1]
+		  Position		  [260, 177, 290, 208]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "minimum trq\n(Nm)"
+		    Location		    [214, 73, 966, 748]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "spd req'd in\n(N*m, rad/s)"
+		    Position		    [75, 58, 105, 72]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "SOC"
+		    Position		    [75, 128, 105, 142]
+		    Port		    "2"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "(--)"
+		    Position		    [60, 173, 130, 197]
+		    Value		    "cs_lo_soc"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [355, 165, 375, 185]
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    Position		    [280, 39, 385, 91]
+		    Gain		    "cs_min_trq_frac"
+		    Multiplication	    "Element-wise(K.*u)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator2"
+		    Position		    [200, 127, 230, 158]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [405, 130, 435, 160]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "max_torque lookup"
+		    Position		    [200, 53, 230, 77]
+		    InputValues		    "fc_map_spd"
+		    OutputValues	    "fc_max_trq*fc_trq_scale"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "minimum trq\n(N*m)"
+		    Position		    [480, 138, 510, 152]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "[]"
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "max_torque lookup"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "spd req'd in\n(N*m, rad/s)"
+		    SrcPort		    1
+		    DstBlock		    "max_torque lookup"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -20]
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    DstBlock		    "minimum trq\n(N*m)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator2"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "(--)"
+		    SrcPort		    1
+		    Points		    [25, 0; 0, -35]
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "SOC"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "tm_torqueMod"
+		  Position		  [410, 88, 440, 102]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "tm_torqueMin"
+		  Position		  [410, 188, 440, 202]
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "tm_enable"
+		  Position		  [415, 248, 445, 262]
+		  Port			  "3"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "tm_spd_out_r"
+		  SrcPort		  1
+		  DstBlock		  "minimum trq\n(Nm)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "SOC"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  Branch {
+		    DstBlock		    "minimum trq\n(Nm)"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -105]
+		    DstBlock		    "chg trq req'd\n(Nm)"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "minimum trq\n(Nm)"
+		  SrcPort		  1
+		  DstBlock		  "tm_torqueMin"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "engine_on"
+		  SrcPort		  1
+		  DstBlock		  "tm_enable"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "chg trq req'd\n(Nm)"
+		  SrcPort		  1
+		  DstBlock		  "tm_torqueMod"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      Name		      "tm_torqueMod"
+	      Labels		      [0, 0]
+	      SrcBlock		      "parallel auto hybrid torque control"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "tm_torqueMin"
+	      Labels		      [0, 0]
+	      SrcBlock		      "parallel auto hybrid torque control"
+	      SrcPort		      2
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "tm_enable"
+	      Labels		      [0, 0]
+	      SrcBlock		      "parallel auto hybrid torque control"
+	      SrcPort		      3
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "controlTag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "controlTag1"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<tm_spd_out_r>"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      1
+	      DstBlock		      "parallel auto hybrid torque control"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "controlTag2"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<SOC>"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      1
+	      DstBlock		      "parallel auto hybrid torque control"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "controlTag3"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<engine_on>"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      1
+	      DstBlock		      "parallel auto hybrid torque control"
+	      DstPort		      3
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "series powerplant\ncontrol strategy <cs>"
+      Ports		      [1, 1]
+      Position		      [45, 151, 85, 199]
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Stand-Alone Series Powerplant Control Strategy "
+"Mask"
+      MaskPromptString	      "General Name of this Component [char]|Log Varia"
+"bles to Workspace?|Initialization File(s) [cell array of char]|Modification C"
+"ell [2 column cell array of param and val]|Icon image file name [char--evalua"
+"ted]|DEBUG"
+      MaskStyleString	      "edit,popup(Don't Log|Log),edit,edit,edit,popup("
+"ON|OFF)"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVariables	      "generalName=@1;logPick=@2;initFileName=@3;modCe"
+"ll=@4;imgFileName=@5;DEBUG=&6;"
+      MaskInitialization      "% initialization via m-file script\nadvSACompMa"
+"skInit;"
+      MaskDisplay	      "image(imread(imgFileName))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'cs'|Log|{}|{}|'bdi_cs.jpg'|OFF"
+      MaskVariableAliases     ",,,,,"
+      System {
+	Name			"series powerplant\ncontrol strategy <cs>"
+	Location		[214, 73, 966, 766]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "power req'd\nby bus (W)"
+	  Position		  [110, 201, 130, 219]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Model and Interface"
+	  Ports			  [2, 3]
+	  Position		  [235, 195, 275, 255]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "Model and Interface"
+	    Location		    [214, 73, 966, 766]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "power req'd\nby bus (W)"
+	      Position		      [170, 154, 195, 176]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "control"
+	      Position		      [20, 349, 45, 371]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [2, 1]
+	      Position		      [625, 318, 630, 387]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 4]
+	      Position		      [75, 283, 80, 437]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "4"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <ess>2"
+	      Position		      [435, 322, 535, 348]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "engine_on"
+	      Port {
+		PortNumber		1
+		Name			"engine_on"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <ess>3"
+	      Position		      [435, 358, 535, 382]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "spd_command"
+	      Port {
+		PortNumber		1
+		Name			"spd_command"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <fc>1"
+	      Position		      [105, 286, 215, 314]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "ess_max_pwr"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <fc>2"
+	      Position		      [105, 366, 215, 394]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "ess_max_chg_pwr"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <fc>3"
+	      Position		      [105, 407, 215, 433]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "key_on"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <fc>4"
+	      Position		      [105, 326, 215, 354]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "SOC"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility"
+	      Position		      [220, 287, 320, 312]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "ess_max_pwr"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility1"
+	      Position		      [220, 327, 320, 352]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "SOC"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility2"
+	      Position		      [330, 322, 430, 347]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "engine_on"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility3"
+	      Position		      [330, 357, 430, 382]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "spd_command"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility4"
+	      Position		      [220, 367, 320, 392]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "ess_max_chg_pwr"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility5"
+	      Position		      [220, 407, 320, 432]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "key_on"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "model"
+	      Ports		      [1, 1]
+	      Position		      [285, 135, 325, 195]
+	      DropShadow	      on
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"model"
+		Location		[214, 73, 966, 766]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 168, 55, 182]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "FC on"
+		  Ports			  [4, 1]
+		  Position		  [315, 83, 345, 117]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "FC on"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ess max pwr would\nbe insufficien"
+"t"
+		    Position		    [35, 563, 65, 577]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "SOC"
+		    Position		    [25, 298, 55, 312]
+		    Port		    "2"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "FC pwr\ncommand"
+		    Position		    [20, 398, 50, 412]
+		    Port		    "3"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "bus pwr req"
+		    Position		    [85, 523, 115, 537]
+		    Port		    "4"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [80, 371, 130, 389]
+		    ShowName		    off
+		    Value		    "cs_hi_soc"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [15, 442, 205, 468]
+		    ShowName		    off
+		    Value		    "cs_min_pwr*fc_spd_scale*fc_trq_sc"
+"ale"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant11"
+		    Position		    [215, 537, 235, 553]
+		    ShowName		    off
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    Position		    [95, 257, 150, 273]
+		    ShowName		    off
+		    Value		    "cs_lo_soc"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    Position		    [95, 72, 115, 88]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant4"
+		    Position		    [95, 42, 115, 58]
+		    ShowName		    off
+		    Value		    "1"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant5"
+		    Position		    [100, 101, 185, 119]
+		    ShowName		    off
+		    Value		    "cs_min_off_time"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant6"
+		    Position		    [86, 200, 284, 225]
+		    Orientation		    "up"
+		    ShowName		    off
+		    Value		    "1.2*cs_min_pwr*fc_spd_scale*fc_tr"
+"q_scale"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant7"
+		    Position		    [615, 300, 655, 320]
+		    Orientation		    "left"
+		    ShowName		    off
+		    Value		    "fc_on"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant8"
+		    Position		    [235, 270, 355, 290]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    Value		    "cs_charge_deplete_bool"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant9"
+		    Position		    [365, 437, 385, 453]
+		    ShowName		    off
+		    Value		    "1"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From <ess>2"
+		    Position		    [50, 478, 160, 502]
+		    BackgroundColor	    "lightBlue"
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "ess_max_chg_pwr"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From <vc>"
+		    Position		    [610, 227, 665, 243]
+		    Orientation		    "left"
+		    BackgroundColor	    "lightBlue"
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "key_on"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    Position		    [240, 320, 270, 350]
+		    Gain		    "0.5"
+		    Multiplication	    "Element-wise(K.*u)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator"
+		    Ports		    [2, 1]
+		    Position		    [295, 367, 325, 398]
+		    ShowName		    off
+		    Operator		    "OR"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator1"
+		    Ports		    [2, 1]
+		    Position		    [390, 242, 420, 273]
+		    ShowName		    off
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator10"
+		    Ports		    [1, 1]
+		    Position		    [390, 489, 420, 521]
+		    ShowName		    off
+		    Operator		    "NOT"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator2"
+		    Ports		    [3, 1]
+		    Position		    [335, 234, 365, 266]
+		    ShowName		    off
+		    Operator		    "OR"
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator3"
+		    Ports		    [2, 1]
+		    Position		    [265, 67, 295, 98]
+		    ShowName		    off
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator4"
+		    Ports		    [3, 1]
+		    Position		    [560, 253, 590, 287]
+		    ShowName		    off
+		    Operator		    "OR"
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator5"
+		    Ports		    [4, 1]
+		    Position		    [620, 259, 650, 291]
+		    ShowName		    off
+		    Operator		    "AND"
+		    Inputs		    "4"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator6"
+		    Ports		    [2, 1]
+		    Position		    [440, 322, 470, 353]
+		    ShowName		    off
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator7"
+		    Ports		    [1, 1]
+		    Position		    [440, 279, 470, 311]
+		    ShowName		    off
+		    Operator		    "NOT"
+		    Inputs		    "1"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator8"
+		    Ports		    [2, 1]
+		    Position		    [485, 392, 515, 423]
+		    ShowName		    off
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator9"
+		    Ports		    [2, 1]
+		    Position		    [335, 487, 365, 518]
+		    ShowName		    off
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [385, 15, 415, 45]
+		    Orientation		    "left"
+		    X0			    "cs_fc_init_state"
+		    InheritSampleTime	    off
+		    RTWStateStorageClass    "Auto"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [150, 357, 180, 388]
+		    ShowName		    off
+		    Operator		    "<="
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [240, 397, 270, 428]
+		    ShowName		    off
+		    Operator		    ">="
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator2"
+		    Position		    [190, 242, 220, 273]
+		    ShowName		    off
+		    Operator		    "<="
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator3"
+		    Position		    [210, 57, 240, 88]
+		    ShowName		    off
+		    Operator		    ">="
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator4"
+		    Position		    [200, 152, 230, 183]
+		    ShowName		    off
+		    Operator		    ">="
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator5"
+		    Position		    [295, 297, 325, 328]
+		    ShowName		    off
+		    Operator		    "<="
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator6"
+		    Position		    [425, 397, 455, 428]
+		    ShowName		    off
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator7"
+		    Position		    [270, 447, 300, 478]
+		    ShowName		    off
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator8"
+		    Position		    [270, 522, 300, 553]
+		    ShowName		    off
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Subsystem"
+		    Ports		    [1, 1]
+		    Position		    [80, 143, 125, 177]
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    MaskType		    "Running Average"
+		    MaskDescription	    "Running Average"
+		    MaskHelp		    "Output is the average of the last"
+" (Averaging Time) seconds of input."
+		    MaskPromptString	    "Averaging Time (s)"
+		    MaskStyleString	    "edit"
+		    MaskTunableValueString  "on"
+		    MaskEnableString	    "on"
+		    MaskVisibilityString    "on"
+		    MaskToolTipString	    "on"
+		    MaskInitialization	    "n=@1;"
+		    MaskDisplay		    "disp('Running\\nAverage')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    MaskValueString	    "5"
+		    System {
+		    Name		    "Subsystem"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [30, 55, 50, 75]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [255, 154, 295, 176]
+		    FontName		    "Arial"
+		    Value		    "n"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Integrator
+		    Name		    "Integrator"
+		    Ports		    [1, 1]
+		    Position		    [80, 55, 100, 75]
+		    ExternalReset	    "none"
+		    InitialConditionSource  "internal"
+		    InitialCondition	    "0"
+		    LimitOutput		    off
+		    UpperSaturationLimit    "inf"
+		    LowerSaturationLimit    "-inf"
+		    ShowSaturationPort	    off
+		    ShowStatePort	    off
+		    AbsoluteTolerance	    "auto"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [340, 66, 360, 84]
+		    Inputs		    "*/"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [225, 60, 245, 80]
+		    IconShape		    "rectangular"
+		    Inputs		    "+-"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    TransportDelay
+		    Name		    "Transport\nDelay"
+		    Position		    [155, 90, 195, 120]
+		    DelayTime		    "n"
+		    InitialInput	    "0"
+		    BufferSize		    "1024"
+		    PadeOrder		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [390, 65, 410, 85]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -85]
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Integrator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Transport\nDelay"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Integrator"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Transport\nDelay"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [190, 317, 220, 348]
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    Ports		    [2, 1]
+		    Position		    [195, 482, 225, 513]
+		    IconShape		    "rectangular"
+		    Inputs		    "-+"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [490, 279, 520, 311]
+		    FontName		    "Arial"
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "dt"
+		    Ports		    [0, 1]
+		    Position		    [360, 390, 390, 420]
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    System {
+		    Name		    "dt"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Clock
+		    Name		    "Clock"
+		    Position		    [65, 60, 85, 80]
+		    FontName		    "Arial"
+		    FontSize		    8
+		    DisplayTime		    off
+		    Decimation		    "10"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory1"
+		    Position		    [125, 85, 160, 105]
+		    FontName		    "Arial"
+		    FontSize		    8
+		    X0			    "-1"
+		    InheritSampleTime	    off
+		    RTWStateStorageClass    "Auto"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [2, 1]
+		    Position		    [205, 65, 225, 85]
+		    FontName		    "Arial"
+		    FontSize		    8
+		    IconShape		    "rectangular"
+		    Inputs		    "+-"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [255, 65, 275, 85]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Memory1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -15]
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Clock"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Memory1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "just shut \ndown"
+		    Ports		    [1, 1]
+		    Position		    [50, 48, 80, 82]
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    System {
+		    Name		    "just shut \ndown"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "state"
+		    Position		    [15, 20, 35, 40]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator"
+		    Ports		    [2, 1]
+		    Position		    [220, 23, 250, 47]
+		    FontName		    "Arial"
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator1"
+		    Ports		    [1, 1]
+		    Position		    [135, 18, 165, 42]
+		    FontName		    "Arial"
+		    Operator		    "NOT"
+		    Inputs		    "1"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory1"
+		    Position		    [135, 85, 170, 105]
+		    FontName		    "Arial"
+		    X0			    "1"
+		    InheritSampleTime	    off
+		    RTWStateStorageClass    "Auto"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "trigger"
+		    Position		    [295, 25, 315, 45]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "trigger"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Memory1"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "state"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    Branch {
+		    Points		    [0, 65]
+		    DstBlock		    "Memory1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator1"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "no-lag\nReset Integrator"
+		    Ports		    [3, 1]
+		    Position		    [135, 44, 175, 86]
+		    ShowName		    off
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    MaskType		    "No-lag Reset Integrator"
+		    MaskDescription	    "No-lag Reset Integrator"
+		    MaskHelp		    "Integrates first input using Eule"
+"r technique.\\nAt the time step that input 2 <> zero,\\noutput is reset to in"
+"put 3."
+		    MaskPromptString	    "Initial Value"
+		    MaskStyleString	    "edit"
+		    MaskTunableValueString  "on"
+		    MaskEnableString	    "on"
+		    MaskVisibilityString    "on"
+		    MaskToolTipString	    "on"
+		    MaskInitialization	    "initval=@1;"
+		    MaskDisplay		    "disp('1/s\\nw/ reset\\nno lag')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    MaskValueString	    "0"
+		    System {
+		    Name		    "no-lag\nReset Integrator"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [60, 100, 80, 120]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_2"
+		    Position		    [60, 140, 80, 160]
+		    Port		    "2"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_3"
+		    Position		    [45, 185, 65, 205]
+		    Port		    "3"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [105, 155, 125, 175]
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [340, 55, 375, 75]
+		    Orientation		    "left"
+		    FontName		    "Arial"
+		    X0			    "initval"
+		    InheritSampleTime	    off
+		    RTWStateStorageClass    "Auto"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    Ports		    [2, 1]
+		    Position		    [160, 96, 180, 114]
+		    FontName		    "Arial"
+		    Inputs		    "2"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [230, 90, 250, 110]
+		    FontName		    "Arial"
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [290, 139, 320, 171]
+		    FontName		    "Arial"
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "dt"
+		    Ports		    [0, 1]
+		    Position		    [112, 50, 138, 80]
+		    Orientation		    "down"
+		    ShowPortLabels	    off
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    System {
+		    Name		    "dt"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Clock
+		    Name		    "Clock"
+		    Position		    [65, 60, 85, 80]
+		    FontName		    "Arial"
+		    FontSize		    8
+		    DisplayTime		    off
+		    Decimation		    "10"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory1"
+		    Position		    [125, 85, 160, 105]
+		    FontName		    "Arial"
+		    FontSize		    8
+		    X0			    "-1"
+		    InheritSampleTime	    off
+		    RTWStateStorageClass    "Auto"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [2, 1]
+		    Position		    [205, 65, 225, 85]
+		    FontName		    "Arial"
+		    FontSize		    8
+		    IconShape		    "rectangular"
+		    Inputs		    "+-"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [255, 65, 275, 85]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Memory1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -15]
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Clock"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Memory1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "in_2==0"
+		    Position		    [160, 143, 190, 167]
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [455, 145, 475, 165]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "in_2==0"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "in_2==0"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [85, 0]
+		    Branch {
+		    Points		    [0, -90]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 45]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-130, 0; 0, 30]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "dt"
+		    SrcPort		    1
+		    Points		    [0, 15]
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "in_2"
+		    SrcPort		    1
+		    DstBlock		    "in_2==0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_3"
+		    SrcPort		    1
+		    Points		    [195, 0; 0, -30]
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "FC on"
+		    Position		    [695, 268, 725, 282]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "[]"
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator6"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator8"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant9"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    DstBlock		    "Relational\nOperator6"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "dt"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator6"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator8"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    DstBlock		    "Logical\nOperator4"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Constant8"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 90; 75, 0]
+		    DstBlock		    "Logical\nOperator8"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [20, 0; 0, 15]
+		    DstBlock		    "Logical\nOperator7"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [0, -35]
+		    DstBlock		    "Logical\nOperator4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator1"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    Branch {
+		    DstBlock		    "Logical\nOperator6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [50, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator6"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator7"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Relational\nOperator5"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    Branch {
+		    Points		    [0, -40]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-60, 0]
+		    Branch {
+		    Points		    [-285, 0]
+		    DstBlock		    "just shut \ndown"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Logical\nOperator2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant5"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Relational\nOperator3"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator3"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "no-lag\nReset Integrator"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "just shut \ndown"
+		    SrcPort		    1
+		    DstBlock		    "no-lag\nReset Integrator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "no-lag\nReset Integrator"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Constant4"
+		    SrcPort		    1
+		    DstBlock		    "no-lag\nReset Integrator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant6"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator4"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Logical\nOperator3"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subsystem"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator3"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 165]
+		    DstBlock		    "Logical\nOperator2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator2"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "SOC"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator5"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -55]
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "FC pwr\ncommand"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Subsystem"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "ess max pwr would\nbe insufficien"
+"t"
+		    SrcPort		    1
+		    Points		    [465, 0; 0, -300]
+		    DstBlock		    "Logical\nOperator4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator5"
+		    SrcPort		    1
+		    Points		    [0, 30]
+		    DstBlock		    "Logical\nOperator6"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator2"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant11"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator8"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "From <ess>2"
+		    SrcPort		    1
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "bus pwr req"
+		    SrcPort		    1
+		    Points		    [55, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator8"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    Points		    [0, -30]
+		    DstBlock		    "Relational\nOperator7"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator9"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator10"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator4"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator5"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator5"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "FC on"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -245]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "From <vc>"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator5"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant7"
+		    SrcPort		    1
+		    Points		    [-5, 0]
+		    DstBlock		    "Logical\nOperator5"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator10"
+		    SrcPort		    1
+		    Points		    [175, 0; 0, -225]
+		    DstBlock		    "Logical\nOperator5"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator7"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Logical\nOperator9"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator8"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Logical\nOperator9"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator7"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "FC pwr command,\nmodified by SOC"
+		  Ports			  [3, 1]
+		  Position		  [215, 159, 245, 191]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "FC pwr command,\nmodified by SOC"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "SOC"
+		    Position		    [130, 123, 160, 137]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "raw\npwr command\n(W)"
+		    Position		    [85, 28, 115, 42]
+		    Port		    "2"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "pwr req'd at bus (W)"
+		    Position		    [205, 43, 235, 57]
+		    Port		    "3"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Block NOTES"
+		    Ports		    []
+		    Position		    [640, 280, 696, 320]
+		    BackgroundColor	    "green"
+		    ShowName		    off
+		    ShowPortLabels	    on
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    MaskDisplay		    "disp('Block\\nNOTES')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Block NOTES"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Position		    [242, 57]
+		    VerticalAlignment	    "top"
+		    Text		    "1/5/98/98:tm  Modified calculatio"
+"n of additional power required to maintain goal SOC\n(SOC_goal - SOC_actual) "
+"/ (0.5*SOC_range) * cs_charge_pwr\ntherefore when\nactual_SOC=cs_lo_soc ==> 1"
+".0  *cs_charge_pwr\nactual_SOC=goal_SOC ==> 0.0  *cs_charge_pwr\nactual_SOC=c"
+"s_hi_soc ==> -1.0 * cs_charge_pwr\n\n2/6/01:tm added if battery disabled - do"
+" not modify request"
+		    }
+		    Annotation {
+		    Position		    [222, 17]
+		    VerticalAlignment	    "top"
+		    Text		    "This block determines the additio"
+"nal power required of the fuel convertor\n to maintian an SOC equal to the av"
+"erage of cs_hi_soc and cs_lo_soc."
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From <ess>2"
+		    Position		    [175, 78, 285, 102]
+		    BackgroundColor	    "lightBlue"
+		    ShowName		    off
+		    CloseFcn		    "tagdialog Close"
+		    GotoTag		    "ess_max_chg_pwr"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    Position		    [370, 127, 460, 173]
+		    Gain		    "cs_charge_pwr"
+		    Multiplication	    "Element-wise(K.*u)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain1"
+		    Position		    [205, 222, 240, 258]
+		    ShowName		    off
+		    Gain		    "0.5"
+		    Multiplication	    "Element-wise(K.*u)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain2"
+		    Position		    [495, 51, 520, 79]
+		    Gain		    "-1"
+		    Multiplication	    "Element-wise(K.*u)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Goal SOC"
+		    Position		    [35, 177, 175, 203]
+		    Value		    "0.5*(cs_hi_soc+cs_lo_soc)"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    MinMax
+		    Name		    "MinMax1"
+		    Ports		    [2, 1]
+		    Position		    [495, 97, 525, 128]
+		    Function		    "min"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Multiplier"
+		    Ports		    [2, 1]
+		    Position		    [270, 132, 300, 163]
+		    ShowName		    off
+		    Inputs		    "*/"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Multiplier1"
+		    Ports		    [2, 1]
+		    Position		    [615, 57, 645, 88]
+		    ShowName		    off
+		    Inputs		    "2"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "SOC Range"
+		    Position		    [55, 228, 175, 252]
+		    Value		    "cs_hi_soc-cs_lo_soc"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    "Saturation"
+		    Position		    [320, 135, 350, 165]
+		    UpperLimit		    "1"
+		    LowerLimit		    "-1"
+		    LinearizeAsGain	    on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [210, 122, 240, 153]
+		    ShowName		    off
+		    IconShape		    "rectangular"
+		    Inputs		    "-+"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [2, 1]
+		    Position		    [665, 27, 680, 58]
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum4"
+		    Ports		    [2, 1]
+		    Position		    [335, 67, 365, 98]
+		    IconShape		    "rectangular"
+		    Inputs		    "+-"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [555, 50, 585, 80]
+		    Threshold		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "ess state"
+		    Position		    [495, 160, 545, 180]
+		    Value		    "ess_on"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "pwr command\nmodifed for SOC\n(W)"
+		    Position		    [710, 38, 740, 52]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "[]"
+		    }
+		    Line {
+		    SrcBlock		    "ess state"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    DstBlock		    "Multiplier1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Multiplier1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    DstBlock		    "Multiplier1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "pwr command\nmodifed for SOC\n(W)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "SOC"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Goal SOC"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -45]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "SOC Range"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Multiplier"
+		    SrcPort		    1
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Multiplier"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Saturation"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain1"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -85]
+		    DstBlock		    "Multiplier"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "MinMax1"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -60]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "MinMax1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [65, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Gain2"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "raw\npwr command\n(W)"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "pwr req'd at bus (W)"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Sum4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [205, 0]
+		    DstBlock		    "Gain2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "From <ess>2"
+		    SrcPort		    1
+		    DstBlock		    "Sum4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum4"
+		    SrcPort		    1
+		    Points		    [110, 0]
+		    DstBlock		    "MinMax1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "FC pwr command,\nw/ limits enforced"
+		  Ports			  [3, 1]
+		  Position		  [315, 149, 345, 181]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "FC pwr command,\nw/ limits enforc"
+"ed"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ess max pwr would\nbe insufficien"
+"t"
+		    Position		    [45, 33, 75, 47]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "SOC"
+		    Position		    [45, 88, 75, 102]
+		    Port		    "2"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "FC pwr\ncommand"
+		    Position		    [45, 243, 75, 257]
+		    Port		    "3"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [27, 300, 213, 320]
+		    Orientation		    "up"
+		    Value		    "cs_min_pwr*fc_spd_scale*fc_trq_sc"
+"ale"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [290, 148, 350, 172]
+		    Orientation		    "left"
+		    Value		    "cs_lo_soc"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    Position		    [25, 200, 215, 220]
+		    Value		    "cs_max_pwr*fc_spd_scale*fc_trq_sc"
+"ale"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    Position		    [290, 193, 350, 217]
+		    Value		    "ess_on"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator"
+		    Ports		    [3, 1]
+		    Position		    [385, 74, 410, 136]
+		    Operator		    "AND"
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator1"
+		    Ports		    [1, 1]
+		    Position		    [305, 24, 335, 56]
+		    Operator		    "NOT"
+		    Inputs		    "1"
+		    }
+		    Block {
+		    BlockType		    MinMax
+		    Name		    "MinMax"
+		    Ports		    [2, 1]
+		    Position		    [140, 242, 170, 273]
+		    Function		    "max"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    MinMax
+		    Name		    "MinMax1"
+		    Ports		    [2, 1]
+		    Position		    [255, 237, 285, 268]
+		    Function		    "min"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    RateLimiter
+		    Name		    "Rate Limiter"
+		    Position		    [535, 250, 565, 280]
+		    RisingSlewLimit	    "cs_max_pwr_rise_rate*fc_spd_scale"
+"*fc_trq_scale"
+		    FallingSlewLimit	    "cs_max_pwr_fall_rate*fc_spd_scale"
+"*fc_trq_scale"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [305, 87, 335, 118]
+		    Operator		    ">="
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [460, 250, 490, 280]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "limited\nFC pwr\ncommand\n(W)"
+		    Position		    [615, 258, 645, 272]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "[]"
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    Points		    [0, 35]
+		    DstBlock		    "MinMax1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "MinMax1"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    DstBlock		    "Rate Limiter"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Rate Limiter"
+		    SrcPort		    1
+		    DstBlock		    "limited\nFC pwr\ncommand\n(W)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [-5, 0; 0, -50]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -30]
+		    DstBlock		    "MinMax"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "MinMax"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    Branch {
+		    DstBlock		    "MinMax1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 35; 225, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "FC pwr\ncommand"
+		    SrcPort		    1
+		    DstBlock		    "MinMax"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "SOC"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator1"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ess max pwr would\nbe insufficien"
+"t"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "FC trq and spd"
+		  Ports			  [2, 1]
+		  Position		  [400, 142, 430, 173]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "FC trq and spd"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "FC on"
+		    Position		    [35, 163, 65, 177]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "power req'd\nby FC (W)"
+		    Position		    [35, 73, 65, 87]
+		    Port		    "2"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Block NOTES"
+		    Ports		    []
+		    Position		    [770, 255, 826, 295]
+		    BackgroundColor	    "green"
+		    ShowName		    off
+		    ShowPortLabels	    on
+		    TreatAsAtomicUnit	    off
+		    RTWSystemCode	    "Auto"
+		    RTWFcnNameOpts	    "Auto"
+		    RTWFileNameOpts	    "Auto"
+		    MaskDisplay		    "disp('Block\\nNOTES')"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Block NOTES"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Annotation {
+		    Position		    [207, 63]
+		    Text		    "This block determines the require"
+"d fuel converter torque and speed from the\nrequired power using a vector usu"
+"ally representing the locus of best efficiency\nor lowest emissions points in"
+" the map.  The speed request is cut in half if it is\nnonzero and preceded by"
+" a zero speed request to account for the fact that all\nADVISOR's drivetrain "
+"components deal in speeds averaged over the time step.\nA speed command here "
+"of 1/2 of max. engine speed means that the AVERAGE\nengine speed required is "
+"1/2 of max.  If the previous speed was zero, that means\nthat the speed at th"
+"e end of the current time step must be equal to max. engine\nspeed."
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [245, 20, 265, 40]
+		    Orientation		    "left"
+		    Value		    "eps"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant5"
+		    Position		    [380, 109, 400, 131]
+		    Orientation		    "left"
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant6"
+		    Position		    [380, 199, 400, 221]
+		    Orientation		    "left"
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant7"
+		    Position		    [455, 224, 475, 246]
+		    Orientation		    "left"
+		    Value		    "eps"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    Position		    [675, 135, 705, 165]
+		    Gain		    ".5"
+		    Multiplication	    "Element-wise(K.*u)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator"
+		    Ports		    [2, 1]
+		    Position		    [620, 172, 650, 203]
+		    Operator		    "AND"
+		    Inputs		    "2"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator1"
+		    Ports		    [1, 1]
+		    Position		    [565, 219, 595, 251]
+		    Operator		    "NOT"
+		    Inputs		    "1"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [515, 220, 545, 250]
+		    X0			    "0"
+		    InheritSampleTime	    off
+		    RTWStateStorageClass    "Auto"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [2, 1]
+		    Position		    [690, 72, 725, 108]
+		    Inputs		    "2"
+		    DisplayOption	    "none"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [450, 162, 480, 193]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    "Saturation"
+		    Position		    [110, 65, 140, 95]
+		    UpperLimit		    "max(cs_pwr)"
+		    LowerLimit		    "min(cs_pwr)"
+		    LinearizeAsGain	    on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [240, 57, 270, 88]
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch1"
+		    Position		    [375, 65, 405, 95]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [375, 155, 405, 185]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch3"
+		    Position		    [730, 175, 760, 205]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "desired\nspd (rad/s)"
+		    Position		    [175, 65, 205, 95]
+		    InputValues		    "cs_pwr"
+		    OutputValues	    "cs_spd"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "desired\ntrq (Nm)"
+		    Ports		    [2, 1]
+		    Position		    [300, 52, 330, 83]
+		    Inputs		    "*/"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "engine torque\nand speed\n(Nm), ("
+"rad/s)"
+		    Position		    [775, 80, 795, 100]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "desired\ntrq (Nm)"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "desired\ntrq (Nm)"
+		    SrcPort		    1
+		    DstBlock		    "Switch1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "power req'd\nby FC (W)"
+		    SrcPort		    1
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Saturation"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "desired\nspd (rad/s)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -65; 130, 0; 0, 45]
+		    DstBlock		    "desired\ntrq (Nm)"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant5"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Switch1"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Constant6"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "desired\nspd (rad/s)"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 80]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "FC on"
+		    SrcPort		    1
+		    Points		    [285, 0]
+		    Branch {
+		    Points		    [0, -90]
+		    DstBlock		    "Switch1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "engine torque\nand speed\n(Nm), ("
+"rad/s)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch1"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Switch3"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant7"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Logical\nOperator1"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -20; 230, 0]
+		    Branch {
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 50]
+		    DstBlock		    "Switch3"
+		    DstPort		    3
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [0, 30]
+		    DstBlock		    "Switch3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch3"
+		    SrcPort		    1
+		    Points		    [0, -60; -90, 0]
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From <ess>"
+		  Position		  [95, 85, 155, 105]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "SOC"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From <ess>1"
+		  Position		  [90, 33, 175, 57]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "ess_max_pwr"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <fc>2"
+		  Position		  [585, 110, 680, 140]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "spd_command"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto <fc>3"
+		  Position		  [380, 86, 465, 114]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "engine_on"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [205, 22, 235, 53]
+		  Operator		  ">="
+		}
+		Block {
+		  BlockType		  Selector
+		  Name			  "Selector"
+		  Ports			  [1, 1]
+		  Position		  [475, 110, 505, 140]
+		  InputType		  "Vector"
+		  ElementSrc		  "Internal"
+		  Elements		  "2"
+		  RowSrc		  "Internal"
+		  Rows			  "1"
+		  ColumnSrc		  "Internal"
+		  Columns		  "1"
+		  InputPortWidth	  "2"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "pwr req'd from\nFC to supply\npwr r"
+"eq'd at bus\n(W)"
+		  Ports			  [1, 1]
+		  Position		  [110, 160, 140, 190]
+		  ShowPortLabels	  off
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  System {
+		    Name		    "pwr req'd from\nFC to supply\npwr"
+" req'd at bus\n(W)"
+		    Location		    [214, 73, 966, 766]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "power req'd\nby bus (W)"
+		    Position		    [15, 43, 45, 57]
+		    Port		    "1"
+		    LatchInput		    off
+		    Interpolate		    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [225, 90, 245, 110]
+		    Orientation		    "left"
+		    Value		    "eps"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    Position		    [460, 45, 480, 65]
+		    Orientation		    "left"
+		    Value		    "eps"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    Position		    [535, 215, 555, 235]
+		    Orientation		    "left"
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    Position		    [705, 100, 725, 120]
+		    Orientation		    "left"
+		    Value		    "0"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant4"
+		    Position		    [575, 85, 595, 105]
+		    Orientation		    "left"
+		    Value		    "eps"
+		    VectorParams1D	    on
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [530, 152, 560, 183]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    Saturate
+		    Name		    "Saturation"
+		    Position		    [80, 35, 110, 65]
+		    UpperLimit		    "max(cs_pwr)"
+		    LowerLimit		    "min(cs_pwr)"
+		    LinearizeAsGain	    on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [220, 42, 250, 73]
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    Ports		    [2, 1]
+		    Position		    [455, 82, 485, 113]
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    Ports		    [2, 1]
+		    Position		    [570, 37, 600, 68]
+		    IconShape		    "rectangular"
+		    Inputs		    "++"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch"
+		    Position		    [700, 50, 730, 80]
+		    Threshold		    "eps"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "est.\nefficiency"
+		    Ports		    [2, 1]
+		    Position		    [510, 27, 540, 58]
+		    Inputs		    "*/"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Lookup
+		    Name		    "est. desired\nspd (rad/s)"
+		    Position		    [155, 35, 185, 65]
+		    InputValues		    "cs_pwr"
+		    OutputValues	    "cs_spd"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "est. desired\ntrq (Nm)"
+		    Ports		    [2, 1]
+		    Position		    [280, 27, 310, 58]
+		    Inputs		    "*/"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "est. pwr\nreq'd into\ngenerator"
+		    Ports		    [2, 1]
+		    Position		    [635, 37, 665, 68]
+		    Inputs		    "/*"
+		    Multiplication	    "Element-wise(.*)"
+		    SaturateOnIntegerOverflow on
+		    }
+		    Block {
+		    BlockType		    Lookup2D
+		    Name		    "generator\noutput power\nmap (W)"
+		    Position		    [345, 16, 410, 54]
+		    RowIndex		    "gc_map_spd*gc_spd_scale"
+		    ColumnIndex		    "gc_map_trq*gc_trq_scale"
+		    OutputValues	    "gc_outpwr_map*gc_spd_scale*gc_trq"
+"_scale"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "pwr req'd\nof FC (W)"
+		    Position		    [770, 58, 800, 72]
+		    Port		    "1"
+		    OutputWhenDisabled	    "held"
+		    InitialOutput	    "[]"
+		    }
+		    Line {
+		    SrcBlock		    "Constant4"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "est. pwr\nreq'd into\ngenerator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "est.\nefficiency"
+		    SrcPort		    1
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "est. pwr\nreq'd into\ngenerator"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    DstBlock		    "pwr req'd\nof FC (W)"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [115, 0; 0, -105]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "est. desired\ntrq (Nm)"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "est. desired\ntrq (Nm)"
+		    SrcPort		    1
+		    DstBlock		    "generator\noutput power\nmap (W)"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "est. desired\nspd (rad/s)"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "generator\noutput power\nmap (W)"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Saturation"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [5, 0]
+		    Branch {
+		    DstBlock		    "est. desired\nspd (rad/s)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -35; 130, 0]
+		    DstBlock		    "est. desired\ntrq (Nm)"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 80; 310, 0]
+		    Branch {
+		    Points		    [180, 0]
+		    DstBlock		    "est. pwr\nreq'd into\ngenerator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "generator\noutput power\nmap (W)"
+		    SrcPort		    1
+		    DstBlock		    "est.\nefficiency"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "est.\nefficiency"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    Points		    [-15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "power req'd\nby bus (W)"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Saturation"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 110]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [480, 153, 510, 167]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "From <ess>"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "FC pwr command,\nmodified by SOC"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [90, 0]
+		    Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "FC pwr command,\nw/ limits enforc"
+"ed"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "FC on"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "FC pwr command,\nmodified by SOC"
+		  SrcPort		  1
+		  Points		  [0, 0; 5, 0]
+		  Branch {
+		    Points		    [0, -70]
+		    DstBlock		    "FC on"
+		    DstPort		    3
+		  }
+		  Branch {
+		    DstBlock		    "FC pwr command,\nw/ limits enforc"
+"ed"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "pwr req'd from\nFC to supply\npwr r"
+"eq'd at bus\n(W)"
+		  SrcPort		  1
+		  DstBlock		  "FC pwr command,\nmodified by SOC"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [50, 0; 0, 45]
+		  Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "FC pwr command,\nw/ limits enforc"
+"ed"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "FC on"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "From <ess>1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    DstBlock		    "pwr req'd from\nFC to supply\npwr"
+" req'd at bus\n(W)"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -145]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70; 100, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "FC pwr command,\nmodified by SOC"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [100, 0; 0, -130]
+		    DstBlock		    "FC on"
+		    DstPort		    4
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "FC on"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    Points		    [0, 50]
+		    DstBlock		    "FC trq and spd"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Goto <fc>3"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "FC pwr command,\nw/ limits enforced"
+		  SrcPort		  1
+		  DstBlock		  "FC trq and spd"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "FC trq and spd"
+		  SrcPort		  1
+		  Points		  [0, 0; 25, 0]
+		  Branch {
+		    DstBlock		    "Selector"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Selector"
+		  SrcPort		  1
+		  DstBlock		  "Goto <fc>2"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "signal annotator"
+	      Ports		      [1, 1]
+	      Position		      [275, 68, 340, 112]
+	      FontSize		      10
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"signal annotator"
+		Location		[214, 73, 966, 766]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		  Port {
+		    PortNumber		    1
+		    Name		    "power requirement"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [360, 103, 390, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  Name			  "power requirement"
+		  Labels		  [0, 0]
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "req'd out"
+	      Position		      [405, 80, 425, 100]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "engine torque\nand speed\n(Nm), (rad/s)"
+	      Position		      [420, 155, 440, 175]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sensors"
+	      Position		      [660, 342, 685, 368]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "model"
+	      SrcPort		      1
+	      DstBlock		      "engine torque\nand speed\n(Nm), (rad/s)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "power req'd\nby bus (W)"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      Branch {
+		DstBlock		"model"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -75]
+		DstBlock		"signal annotator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "signal annotator"
+	      SrcPort		      1
+	      DstBlock		      "req'd out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "control"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Goto <fc>1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Goto <fc>4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "Goto <fc>2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "Goto <fc>3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "sensors"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "engine_on"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From <ess>2"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "spd_command"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From <ess>3"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Position		      [307, 245]
+	      BackgroundColor	      "yellow"
+	      Text		      "Interface"
+	      DropShadow	      on
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	      FontAngle		      "italic"
+	    }
+	    Annotation {
+	      Position		      [182, 40]
+	      BackgroundColor	      "yellow"
+	      Text		      "Model"
+	      DropShadow	      on
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	      FontAngle		      "italic"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "controlTag"
+	  Position		  [70, 296, 180, 334]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "csControl"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "power follower"
+	  Ports			  []
+	  Position		  [121, 109, 152, 152]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  OpenFcn		  "web(['file:\\\\\\' which('Series.htm')]);"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "image(imread('doc_man.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "power follower"
+	    Location		    [203, 331, 569, 538]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "reqOutTag"
+	  Position		  [340, 89, 440, 131]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "csReqOut"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "sensorsTag"
+	  Position		  [345, 294, 445, 336]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "csSensors"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "thermostat"
+	  Ports			  []
+	  Position		  [51, 109, 82, 152]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  OpenFcn		  "web(['file:\\\\\\' which('Series-therm.htm'"
+")]);"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "image(imread('doc_man.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "thermostat"
+	    Location		    [203, 331, 569, 538]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "engine torque\nand speed\n(Nm), (rad/s)"
+	  Position		  [405, 215, 425, 235]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Model and Interface"
+	  SrcPort		  2
+	  DstBlock		  "engine torque\nand speed\n(Nm), (rad/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "power req'd\nby bus (W)"
+	  SrcPort		  1
+	  DstBlock		  "Model and Interface"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Model and Interface"
+	  SrcPort		  1
+	  Points		  [0, -95]
+	  DstBlock		  "reqOutTag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "controlTag"
+	  SrcPort		  1
+	  Points		  [0, -75]
+	  DstBlock		  "Model and Interface"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Model and Interface"
+	  SrcPort		  3
+	  Points		  [50, 0]
+	  DstBlock		  "sensorsTag"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [257, 55]
+	  BackgroundColor	  "yellow"
+	  Text			  "Series Powerplant Control Strategy"
+	  DropShadow		  on
+	  FontName		  "Arial"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "torque modification\n strategy <cs>"
+      Ports		      [1, 1]
+      Position		      [45, 67, 75, 103]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Stand-Alone Torque Modification Strategy Mask"
+      MaskPromptString	      "General Name of this Component [char]|Log Varia"
+"bles to Workspace?|Initialization File(s) [cell array of char]|Modification C"
+"ell [2 column cell array of param and val]|Icon image file name [char--evalua"
+"ted]|DEBUG"
+      MaskStyleString	      "edit,popup(Don't Log|Log),edit,edit,edit,popup("
+"ON|OFF)"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "|||||"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVariables	      "generalName=@1;logPick=@2;initFileName=@3;modCe"
+"ll=@4;imgFileName=@5;DEBUG=&6;"
+      MaskInitialization      "% initialization via m-file script\nadvSACompMa"
+"skInit;"
+      MaskDisplay	      "image(imread(imgFileName))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'tm'|Log|{}|{}|'bdi_hybrid_cntrl.jpg'|OFF"
+      MaskVariableAliases     ",,,,,"
+      System {
+	Name			"torque modification\n strategy <cs>"
+	Location		[170, 202, 774, 548]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "original torque and speed req'd\n(Nm), (rad"
+"/s)"
+	  Position		  [175, 215, 195, 235]
+	  NamePlacement		  "alternate"
+	  FontName		  "Arial"
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Block NOTES"
+	  Ports			  []
+	  Position		  [110, 115, 166, 155]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "disp('Block\\nNOTES')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Block NOTES"
+	    Location		    [364, 407, 866, 589]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Annotation {
+	      Position		      [252, 122]
+	      VerticalAlignment	      "top"
+	      Text		      "This model allows for increasing or dec"
+"reasing of torque along a connection for purposes\nof hybrid charging and con"
+"trol strategy."
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "controlTag"
+	  Position		  [135, 311, 245, 349]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  CloseFcn		  "tagdialog Close"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "tmControl"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "help1"
+	  Ports			  []
+	  Position		  [114, 59, 147, 102]
+	  BackgroundColor	  "yellow"
+	  DropShadow		  on
+	  ShowName		  off
+	  OpenFcn		  "web(['file:\\\\\\' which('cs_tips.htm')]);"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskDisplay		  "image(imread('doc_man.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "help1"
+	    Location		    [203, 331, 569, 538]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "reqOutTag"
+	  Position		  [405, 104, 505, 146]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "tmReqOut"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "sensorsTag"
+	  Position		  [410, 309, 510, 351]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "black"
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	  GotoTag		  "tmSensors"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "torque mod \nmodel & interface"
+	  Ports			  [2, 3]
+	  Position		  [300, 203, 350, 277]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "torque mod \nmodel & interface"
+	    Location		    [198, 77, 966, 744]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "trq and spd\noutput\nrequest"
+	      Position		      [285, 148, 315, 162]
+	      NamePlacement	      "alternate"
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "controls"
+	      Position		      [40, 348, 70, 362]
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [4, 1]
+	      Position		      [685, 271, 695, 454]
+	      ShowName		      off
+	      Inputs		      "4"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      Ports		      [1, 3]
+	      Position		      [105, 273, 120, 437]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "3"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <vc>1"
+	      Position		      [400, 282, 500, 308]
+	      BackgroundColor	      "lightBlue"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "tm_torqueMod"
+	      Port {
+		PortNumber		1
+		Name			"tm_torqueMod"
+		PropagatedSignals	"tm_torqueMod"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <vc>2"
+	      Position		      [400, 327, 500, 353]
+	      BackgroundColor	      "lightBlue"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "tm_torqueMin"
+	      Port {
+		PortNumber		1
+		Name			"tm_torqueMin"
+		PropagatedSignals	"tm_torqueMin"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <vc>3"
+	      Position		      [400, 372, 500, 398]
+	      BackgroundColor	      "lightBlue"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "tm_enable"
+	      Port {
+		PortNumber		1
+		Name			"tm_enable"
+		PropagatedSignals	"tm_enable"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From <vc>4"
+	      Position		      [400, 416, 555, 444]
+	      BackgroundColor	      "lightBlue"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "modifiedTorqueRequest"
+	      Port {
+		PortNumber		1
+		Name			"modifiedTorqueRequest"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+	      }
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility1"
+	      Position		      [400, 447, 546, 477]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "modifiedTorqueRequest"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility2"
+	      Position		      [290, 287, 379, 315]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "tm_torqueMod"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility3"
+	      Position		      [290, 342, 379, 370]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "tm_torqueMin"
+	    }
+	    Block {
+	      BlockType		      GotoTagVisibility
+	      Name		      "Goto Tag\nVisibility4"
+	      Position		      [290, 397, 379, 425]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "tm_enable"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [180, 344, 280, 366]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "tm_torqueMin"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [180, 289, 280, 311]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "tm_torqueMod"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [180, 399, 280, 421]
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      GotoTag		      "tm_enable"
+	      TagVisibility	      "scoped"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "model"
+	      Ports		      [1, 1]
+	      Position		      [400, 125, 440, 185]
+	      ShowPortLabels	      off
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"model"
+		Location		[198, 77, 966, 744]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"automatic"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "T, w\noriginal"
+		  Position		  [15, 143, 45, 157]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  Position		  [425, 130, 445, 150]
+		  Orientation		  "up"
+		  ShowName		  off
+		  Value			  "0"
+		  VectorParams1D	  on
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux"
+		  Ports			  [1, 2]
+		  Position		  [105, 131, 110, 169]
+		  BackgroundColor	  "black"
+		  ShowName		  off
+		  Outputs		  "2"
+		  BusSelectionMode	  off
+		  Port {
+		    PortNumber		    1
+		    Name		    "trq"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "spd"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From <vc>"
+		  Position		  [230, 125, 300, 145]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "tm_enable"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From <vc>1"
+		  Position		  [135, 40, 235, 60]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "tm_torqueMod"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "From <vc>2"
+		  Position		  [230, 95, 340, 115]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  CloseFcn		  "tagdialog Close"
+		  GotoTag		  "tm_torqueMin"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto"
+		  Position		  [525, 91, 670, 119]
+		  BackgroundColor	  "lightBlue"
+		  ShowName		  off
+		  GotoTag		  "modifiedTorqueRequest"
+		  TagVisibility		  "scoped"
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "MinMax"
+		  Ports			  [2, 1]
+		  Position		  [375, 69, 405, 116]
+		  Function		  "max"
+		  Inputs		  "2"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1]
+		  Position		  [515, 131, 520, 169]
+		  ShowName		  off
+		  Inputs		  "2"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  Ports			  [2, 1]
+		  Position		  [280, 70, 300, 90]
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "++|"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [450, 90, 480, 120]
+		  Threshold		  "eps"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "help"
+		  Ports			  []
+		  Position		  [71, 69, 102, 112]
+		  BackgroundColor	  "yellow"
+		  DropShadow		  on
+		  ShowName		  off
+		  OpenFcn		  "web(['file:\\\\\\' which('Parallel."
+"htm')])"
+		  ShowPortLabels	  on
+		  TreatAsAtomicUnit	  off
+		  RTWSystemCode		  "Auto"
+		  RTWFcnNameOpts	  "Auto"
+		  RTWFileNameOpts	  "Auto"
+		  MaskDisplay		  "image(imread('doc_man.jpg'))"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "help"
+		    Location		    [203, 331, 569, 538]
+		    Open		    off
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "T,w\nmodified"
+		  Position		  [555, 143, 585, 157]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "From <vc>2"
+		  SrcPort		  1
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  Points		  [0, 35; 10, 0]
+		  Branch {
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "MinMax"
+		  SrcPort		  1
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "MinMax"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From <vc>1"
+		  SrcPort		  1
+		  Points		  [50, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "From <vc>"
+		  SrcPort		  1
+		  Points		  [110, 0; 0, -30]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "T,w\nmodified"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "T, w\noriginal"
+		  SrcPort		  1
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "trq"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  Points		  [65, 0; 0, -60]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "spd"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "signal\nannotator"
+	      Ports		      [1, 1]
+	      Position		      [390, 76, 445, 104]
+	      NamePlacement	      "alternate"
+	      ShowPortLabels	      on
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      System {
+		Name			"signal\nannotator"
+		Location		[202, 77, 966, 744]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [110, 103, 140, 117]
+		  Port			  "1"
+		  LatchInput		  off
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux"
+		  Ports			  [1, 2]
+		  Position		  [205, 91, 210, 129]
+		  BackgroundColor	  "black"
+		  ShowName		  off
+		  Outputs		  "2"
+		  BusSelectionMode	  off
+		  Port {
+		    PortNumber		    1
+		    Name		    "tm_trq_out_r"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "tm_spd_out_r"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		  }
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [2, 1]
+		  Position		  [360, 91, 365, 129]
+		  ShowName		  off
+		  Inputs		  "2"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [430, 103, 460, 117]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "[]"
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "tm_spd_out_r"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "tm_trq_out_r"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "requested\noutput"
+	      Position		      [475, 83, 505, 97]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "trq and spd\ninput\nrequest"
+	      Position		      [530, 148, 560, 162]
+	      NamePlacement	      "alternate"
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "sensors"
+	      Position		      [725, 358, 755, 372]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "signal\nannotator"
+	      SrcPort		      1
+	      DstBlock		      "requested\noutput"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "model"
+	      SrcPort		      1
+	      DstBlock		      "trq and spd\ninput\nrequest"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "trq and spd\noutput\nrequest"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		DstBlock		"signal\nannotator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"model"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      1
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "controls"
+	      SrcPort		      1
+	      DstBlock		      "Demux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      DstBlock		      "sensors"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "tm_torqueMod"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From <vc>1"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      2
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      3
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "tm_torqueMin"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From <vc>2"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "tm_enable"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From <vc>3"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "modifiedTorqueRequest"
+	      Labels		      [0, 0]
+	      SrcBlock		      "From <vc>4"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      4
+	    }
+	    Annotation {
+	      Position		      [422, 260]
+	      BackgroundColor	      "yellow"
+	      Text		      "Interface"
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	      FontAngle		      "italic"
+	    }
+	    Annotation {
+	      Position		      [422, 25]
+	      BackgroundColor	      "yellow"
+	      Text		      "Model"
+	      FontName		      "Arial"
+	      FontSize		      22
+	      FontWeight	      "bold"
+	      FontAngle		      "italic"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "modified torque and speed req'd\n(Nm), (rad"
+"/s)"
+	  Position		  [455, 230, 475, 250]
+	  NamePlacement		  "alternate"
+	  FontName		  "Arial"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "torque mod \nmodel & interface"
+	  SrcPort		  3
+	  Points		  [40, 0]
+	  DstBlock		  "sensorsTag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "controlTag"
+	  SrcPort		  1
+	  Points		  [0, -70]
+	  DstBlock		  "torque mod \nmodel & interface"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "original torque and speed req'd\n(Nm), (rad"
+"/s)"
+	  SrcPort		  1
+	  DstBlock		  "torque mod \nmodel & interface"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "torque mod \nmodel & interface"
+	  SrcPort		  2
+	  DstBlock		  "modified torque and speed req'd\n(Nm), (rad"
+"/s)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "torque mod \nmodel & interface"
+	  SrcPort		  1
+	  Points		  [0, -90]
+	  DstBlock		  "reqOutTag"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [322, 70]
+	  BackgroundColor	  "yellow"
+	  Text			  "Torque Modification Strategy"
+	  DropShadow		  on
+	  FontName		  "Arial"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Annotation {
+      Position		      [111, 26]
+      BackgroundColor	      "yellow"
+      Text		      "Vehicle Controls:"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}

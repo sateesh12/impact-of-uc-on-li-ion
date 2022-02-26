@@ -1,0 +1,121 @@
+# regulator_42v_USA.sin
+# symbol = regulator_42v_USA.ai_sym
+#
+#   ADVISOR software developed at NREL.  Copyright 1998
+#       Midwest Research Institute.  All rights reserved.
+#   http://www.ctts.nrel.gov/analysis/
+#
+#   Notice: These data were produced under
+#       Subcontract No. ZCL-0-30058-01, under
+#       Prime Contract No. DE-AC36-99GO10337
+#       with the Department of Energy (DOE).
+#
+#########################################################################
+#
+#   DESCRIPTION:                
+#   -----------
+#   This template models a the behavior of a 42v voltage reglator.  It
+#   reads a user supplied temperature and outputs the desired regulator
+#   set point based on this temperature.  The model is designed to
+#   be used with an accompanying generic generator model.
+#
+#     Note: This model uses a typical 14v regulator and multiplies the
+#     setpoint voltage by a factor of three.
+#
+#   The regulator model uses a piecewise linear curve relating setpoint
+#   voltage to temperature.  For vehicle types 1, 2, and 3, the regulator
+#   curve is the same.  This represents a typical American voltage
+#   regulation curve for automobiles.
+#
+#   For vehicle type 4 (SUV), the regulator curve is different, this
+#   time more representative of  American SUV's and trucks. For vehicle
+#   type 5, the user can define a regulation curve.  Two temperatures,
+#   temp1 and temp2 (temp1 < temp2) are supplied by the user.  The user
+#   also specifies volt1 and volt2, the two setpoint voltages respectively.
+#   The resulting model is a piecewise linear model through those two points.
+#
+#   
+#   NODE CONNECTIONS:
+#   ----------------
+#   [name]  [type]  [description]
+#   vset        ref(nu) Desired voltage regulator set point output
+#
+#
+#   INPUT ARGUMENTS:
+#   ---------------
+#   [name]  [type]  [desription (units)]            
+#   vreg_adj    number  set point voltage sensitivity parameter
+#                   user raises or lowers setpoint by this fixed amount
+#   tempreg number  generator operating temperature in C
+#   vsetmax number  upper limit for voltage setpoint
+#                   user may need to cap voltage setpoint due to
+#                   battery issues
+#   vehicletype 
+#       1   large car       Pre-defined typical voltages & loads
+#       2   medium car      Pre-defined typical voltages & loads
+#       3   small car       Pre-defined typical voltages & loads
+#       4   SUV         Pre-defined typical voltages & loads
+#       5   user defined    User determines voltages & loads
+#   temp1       the lower temperature for a user defined voltage regulation curve
+#   temp2       the upper temperature for a user defined voltage regulation curve
+#   volt1       the voltage corresponding to temp1 for a user defined regulation curve
+#   volt2       the voltage corresponding to temp2 for a user defined regulation curve              
+#
+#   [Moved to "encrypted hard code" vs input argument]
+#   vt      number  Array containing voltage regulator
+#                   set point versus temperature
+#                   Array form:  vt=[(t1,v1),(t2,v2),....]
+#
+###############################################################################
+encrypted template regulator_42v_usa vset = vreg_adj, tempreg, vsetmax,
+        vehicletype, temp1, temp2, volt1, volt2
+!crypt_start
+008abac6f7c2526a8a6
+016f5e54747c469125eea97593c7a39387b
+024a7ef95ed6613a146bbb9858ed1786d51f4b9c0c4863c1e10
+016bdb985836604b351f2270660535c0d4a
+0164f131d00040d4c09e6b22e7c83320200
+016efc3597966757138a2b27e7d6e41e31e
+016afbe6b712b36b3b7f8b9d2c42541fb0f
+016bb274371ddc1e1b700135d589a3c1210
+016f5b3495ada3c4601efbe3c6c22ac1dab
+016bfb35cfc60ac59b5fb27146c9ec1a1a5
+02442134e58414c1844fbbe2e6c963c1210fbbe2e6c963c1239
+024efc55d6a6239382dacff86819a6e124608134e5890c1b1a5
+048bfeb52e160f90de9fe74063937ac0da4beeb6a2e90c1e5eae5f440152377b1a6f6b34314dd95f4eba5b981c4154c5d16
+016a8ea7a3a3436b6e5eabe2e6c77ac0da7
+016a173536cdd93f3e0aa274b6c74fa01a7
+024b4ce13eb7ad759b6a3a61b5496316918afb3124b87c8bfb2
+016e1bd1ef63eb818abb1b31e479f3c1e10
+016e1b7cdd23a55f60fbbb30f479a3c1210
+01611014356545a1450101342586636e3a6
+016b19e092f22372c6eb5971c3c2e39387b
+016f3a83f627322efb2f8b9c9c44d4c1844
+016e73f146285d2bdb1b097103c6636e3a6
+016abaa1549832e1e04e6270a6c414c1844
+016e1a007ef39be01b3e0b31fe16636e3a6
+016e1aed5ca3e50ef17101342582cac0da7
+01611025856545d1450f2be226c414c1844
+016b1800b323b29346fb2b30f47eb3c1210
+016a8ea7a3a3436b6e5e9be2e6c77ac0da7
+016a173536cdd93f3e0aa354b3a74ac1fab
+024b4ce13eb7ad759b5a3bd1b552e284373bbbf0a4e3a282c75
+016e1a70aef3fbd01b3b097613c414c1844
+016baed94927941b640fab9c0c43d36e3a6
+01657471b580c1e5a015c00030e3e36f0aa
+032b25a0666c6bae5b6fbf333292b15980babaf3f3820e05be8aab30a472e39387b
+016f3e87a602324aef6ecb34a47c4bca3ac
+016a9274922c286f4ecf3b351476741f203
+008b9274737dc92e4e0
+016b1fb02a42cfa10a7f0d25f6c62607d2f
+040b2a2686c6627ebfea4d21c6e521a1144afff02b62cfc10a7a89b142d3915ef55bb2e432b6604b351
+040a63a406c90d0b9fde6fb2e3e38fa04a75f5f5f0f9091aca5eab2267e53181412f7ba4300db794242
+040eaae4047962d1a48f262063e3e17ea03bdf23f3b2e69257bfe2b0e7f3c6d342dbdba56a62b73b3f4
+024b927546cd5dcf7a5f5b3544c044c5e55f5f95403d580f6da
+032bffe41e169b14ba7a0b58e8224e95bf5194b1819780ca65710134e582e39387b
+008b227066c90c1b1a5
+016acfd42ae79e54cf3bab99bc42cac0da7
+0244f401d0e04654c5ebefb7a3e2b17fe03bdbe2e6c414c1844
+008b4b9c0c42b41e303
+016b8d25f437c6d612bedb34247414c1844
+}

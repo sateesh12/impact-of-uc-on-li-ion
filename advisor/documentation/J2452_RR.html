@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>ADVISOR 2002 includes a new dynamic rolling resistance model based on the SAE J2452 test procedure and tire rolling resistance data</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">ADVISOR 2002 includes a new dynamic rolling resistance model based on the SAE J2452 test procedure and tire rolling resistance data</h1>
+</div>
+<p><font size="5"><strong>SAE J2452 Tire Model in ADVISOR</strong></font></p>
+<p>ADVISOR 2002 includes a new dynamic rolling resistance model based on the SAE J2452 test procedure and tire rolling resistance data provided by Michelin Americas Research and Development Corporation.<span style="mso-spacerun: yes">  </span>The two defining equations used in the model include a calculation of the rolling resistance force (equation 1) and an adjustment of the test data, which is measured on a dynamometer with a curved surface road-wheel, to an equivalent flat-road rolling resistance force (equation 2).  </p>
+<p> Equation 1:<span style="mso-spacerun: yes"> </span></p>
+<p><img src="J2452_1.gif" /> <o:p> </o:p></p>
+<p> where:</p>
+<p>Fr is the force due to rolling resistance</p>
+<p>P is the tire pressure (kPa)</p>
+<p>Z is the load on the tire (N)<o:p> </o:p></p>
+<p>V is the vehicle velocity (m/s)</p>
+<p>a, b, c, alpha and beta are coefficients used to fit the test data to the empirical model described by equation 1.<o:p> </o:p></p>
+<p>Equation 2:</p>
+<p> <img src="J2452_3.gif" /><o:p> </o:p></p>
+<p> where:</p>
+<p>F<sub>r,flat</sub> is the rolling resistance force from the dynamometer measured value to a flat surface</p>
+<p>F<sub>r,flat</sub> is the rolling resistance force measured on the dynamometer</p>
+<p>r<sub>drum</sub><o:p> </o:p> is the roadwheel radius</p>
+<p>r<sub>tire</sub><o:p> </o:p> is the tire radius</p>
+<p>Equations 1 and 2 are calculated in the “vehicle” block diagram under the force required to overcome rolling resistance.</p>
+<p> </p>
+<p><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:6in;
+ height:318.75pt'>
+ <v:imagedata src="../../../../../../../DOCUME~1/kkelly/LOCALS~1/Temp/msoclip1/01/clip_image001.jpg"
+  o:title="tire_RR_block"/>
+</v:shape><![endif]--> <img src="J2452_2.jpg" /></span></p>
+<p>The J2452 tire is accessed in the Vehicle Setup Screen by selecting J2452 under Wheel/Axel version.  Then an appropriate tire selection can be made for the specific application.  Tire data is included for high, medium, and low rolling resistance for various size production tires based on data provided by Michelin.  For each tire, the Wheel/Axel m-file contains the a, b, c, alpha, and beta required for equation 1 along with a reference to a typical vehicle application.  The tire pressure, rolling radius, and roadwheel radius are also defined in the Wheel/Axel m-file.  The vehicle load fraction is defined in the Vehicle m-file.</p>
+<p> </p>
+<div class="figure">
+<img src="J2452_4.jpg" />
+</div>
+<p>Example results are shown below comparing the rolling resistance force (Fr) and fuel economy for the ADVISOR default constant rolling resistance (wh_1st_rrc) to results using a low, medium, and high rolling resistance tires.  The driving cycle is the EPA Urban Dynamometer Driving Schedule (UDDS).</p>
+<p> </p>
+<div class="figure">
+<img src="J2452_5.jpg" />
+</div>
+<p> </p>
+<hr />
+<p><a href="advisor_doc.html">Documentation Table of Contents</a></p>
+<hr />
+<p>Created: [4/30/02] kk<br /> Last Modified: 4/30/02 kw</p>
+<p> </p>
+</body>
+</html>

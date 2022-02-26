@@ -1,0 +1,68 @@
+################################################################################
+#                                                                              #
+#  Saber netlist for design Saber_Advisor_parallel_rint2nd_cosim                               #
+#  Created by the Saber Integration Toolkit 2001.4-3.4 of Analogy, Inc.         #
+#  Created on Fri Jan 03 15:29:04 2003.                                        #
+#                                                                              #
+################################################################################
+
+
+################################################################################
+#                                                                              #
+#  Instances found in the top level of design Saber_Advisor_parallel_rint2nd_cosim             #
+#                                                                              #
+################################################################################
+
+brake_lights.brake_lights1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+combo_loads.combo_loads1 m:0 p:_n1 = vehicletype=1, loadchoice=1, loadcontrol=0
+engine.engine1 p:_n1 m:0 = vehicletype=1, loadcontrol=1
+external_lights.external_lights1 m:0 p:_n1 = vehicletype=1, loadchoice=1, \
+        loadcontrol=0
+front_wiper.front_wiper1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+heated_seat.heated_seat1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+misc.misc1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+radiator_fan.radiator_fan1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+turn_signal.turn_signal1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+rear_wiper.rear_wiper1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+rear_hvac.rear_hvac1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+radio.radio1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+front_hvac.front_hvac1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+rear_defrost.rear_defrost1 p:_n1 m:0 = user_v1=12, vehicletype=1, loadcontrol=0
+dcconvertideal.dcconvertideal1 out:_n747 com:0 in:sensed_voltage_feedback_loop 
+regulator_42v_usa.regulator_hiv_usa1 vset:vset = vehicletype=5, tempreg=25, \
+        volt2=290, volt1=290
+power_load.user_power1_hiv m:0 p:_n264 = power_load=50, loadcontrol=0
+load_user_defined_42v.load_user_defined_hiv p:_n264 m:0 = loadcontrol=0
+power_load.user_power3_hiv m:0 p:_n264 = power_load=370, loadcontrol=0
+power_load.acc_elec_pwr m:0 p:_n1 = power_load=0, loadcontrol=1
+power_load.user_power2_hiv m:0 p:_n264 = power_load=100, loadcontrol=0
+motor_eff.motor_eff1 eff:mc_eff spd:mc_spd_rpm trq:mc_trq_feedback 
+motor_max_regen_trq.motor_max_regen_trq1 max_trq:_n736 spd:mc_spd_rpm 
+motor_max_motor_trq.motor_max_motor_trq1 spd:mc_spd_rpm max_trq:_n598 
+induction_motor.induction_motor1 maxtorqmotor:_n598 p:mc_v \
+        torquereq:mc_trq_feedback m:0 speed:_n986 maxtorqgen:_n736 eff:mc_eff \
+        vset:vset maxtorqueavail:_n988 
+mult.mult2 out:mc_spd_rpm in1:_n610 in2:_n608 
+c_pwl.mc_rpm out:_n610 = pwl=[0,0,0.001,0,1,3000]
+c_pwl.sym16 out:_n608 = pwl=[0,0,.1,1]
+power_meter.14v_sys p:battery_1_voltage m:sensed_voltage_feedback_loop 
+power_meter.motor p:battery_1_voltage m:mc_v 
+power_meter.loads_hiv p:battery_1_voltage m:_n264 
+power_meter.pm_battery_2 p:_n747 m:battery_2_voltage 
+power_meter.loads_trad p:_n747 m:_n1 
+power_meter.pm_battery_1 p:battery_1_voltage m:_n1085 
+load_speed_42v.load_speed_hiv m:0 shaft_rpm:mc_spd_rpm p:_n264 
+lpf1.lpf1_1 in:mc_spd_rpm out:_n986 = wn=100
+c_pwl.maxtorqueavail out:_n985 = pwl=[0,0,0.001,0,1,2200]
+mult.mult4 out:_n988 in1:_n985 in2:_n987 
+c_pwl.c_pwl6 out:_n987 = pwl=[0,0,.1,1]
+starter.starter_hiv m:0 engspeed:es p:_n264 
+starter.starter_trad m:0 engspeed:es p:_n1 
+constant.engine_spd out:es = const=0
+r.r1 p:_n264 m:0 = rnom=1000000
+r.r2 p:_n1 m:0 = rnom=1000000
+r_int_battery.r_int_battery_2 p:battery_2_voltage m:0 soc:freeNet1 \
+        max_ess_chg_pwr:freeNet2 = ess_modnum=1
+batt_pb_1.battery_1 p:_n1085 m:0 = \
+        model=model(batt_pb_1.battery_1)<-(ah_nom=69,inom=3.45,rnom=.020,n_cell=134,sg_full=1.33,sg_disc=1.019,fah_thi=1.1,fc=.45,fah_max=1.2,self_disc=.45), \
+        sg0=1.303

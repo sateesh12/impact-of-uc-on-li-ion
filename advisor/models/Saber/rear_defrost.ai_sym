@@ -1,0 +1,43 @@
+[symbol6]
+desc {}
+uniq 78
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 5 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ffffc0c0cbcb}
+{} {#ffff00}
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+load1_0
+-320 -350 480 510
+0 0 
+<properties>
+primitive rear_defrost { } string {} -432 -736 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+ref rear_defrost { } string {} -432 -864 0 0 0 5 3 {} 0 2 {} {} {} 6 l
+<ports>
+p -160 480 1 0 -128 -128 448 7 1 2 0 0 4 {} 6
+m -160 -320 1 0 -128 -128 -160 7 1 2 0 0 4 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_3_ 0 1 1 0 1 10 1 0 {-160 -160 -160 -320 } {8 10 3} 6 
+l gr_2_ 0 1 1 0 1 10 1 0 {-160 320 -160 480 } {8 10 3} 6 
+t gr_34_ -304 304 3 1 0 0 0 0 7 0 {Rear
+Defrost} 6 
+r gr_0_ -320 -160 480 320 0 1 10 1 0 0 6 

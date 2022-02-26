@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Torque Coupler</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Torque Coupler</h1>
+</div>
+<h3 id="torque-coupler">Torque coupler</h3>
+<p><em><a href="tc.gif">Torque coupler block diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />Physically, a torque coupler is a three-sprocket belt or chain drive whereby two torque sources combine their torques to provide to a drivetrain component such as the gearbox or final drive. The torque coupler block diagram processes a torque and speed request from the downstream drivetrain component and apportions requests of the two ‘feeder’ torque sources.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The effects of torque loss and a gear ratio between the second of the torque input devices and the output are modeled here. The torque loss is a constant whenever the torque coupler is spinning.</p>
+<p>The torque coupler first requests the sum of necessary output torque and torque coupler loss from the first torque source. Using the actual/available torque of the first source, it requests the balance of the second torque source. The speeds of the two torque providers are in constant proportion to the torque coupler output speed: the first input speed equals the output speed, and the second input speed is greater by a factor tc_mc_to_fc_ratio.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Output%20Torque%20Coupler">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

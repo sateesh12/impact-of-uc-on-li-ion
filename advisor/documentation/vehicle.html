@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Vehicle</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Vehicle</h1>
+</div>
+<h3 id="vehicle">Vehicle</h3>
+<p><em><a href="veh.gif">Vehicle block diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />Calculations in the ‘vehicle’ block are representative of the force balance at the tire patch. Given a speed required at the end of the time step, the tractive force and required speed averaged over the time step are requested of the wheel. And given an available tractive force and speed limit, the actual/achieved speed is computed.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The classic equation for longitudinal vehicle dynamics is implemented in this block: <font face="Symbol">S</font>F=ma, where among the forces are rolling resistance, aerodynamic drag, and the force of gravity that must be overcome to climb a grade. This equation is first used to compute required tractive force given required acceleration, and then used to compute achievable acceleration given available tractive force. The average speed over the time step is taken to be the average of the speed at the beginning of the time step (a.k.a. the speed at the end of the previous time step) and the speed required at the end of the time step.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Vehicle">See Appendix A.2: Input Variables</a><br /><a href="advisor_appendices.html#Output%20Vehicle">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,1565 @@
+Model {
+  Name			  "create_rc_params_Preq"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "starttime"
+  StopTime		  "endtime"
+  SolverMode		  "Auto"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "0.5"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Fri Feb 09 08:40:28 2001"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "vjohnson"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Mar 26 14:35:40 2001"
+  ModelVersionFormat	  "1.%<AutoIncrement:32>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "create_rc_params_Preq"
+    Location		    [596, 195, 1096, 669]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [15, 95, 35, 115]
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display"
+      Ports		      [1, 0, 0, 0, 0]
+      Position		      [90, 190, 180, 220]
+      Format		      "short"
+      Decimation	      "1"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>1"
+      Position		      [260, 180, 355, 210]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "SOC"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>4"
+      Position		      [265, 230, 360, 260]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "bus_voltage"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>5"
+      Position		      [275, 285, 370, 315]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_tmp"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>6"
+      Position		      [260, 340, 355, 370]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_max_pwr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From<vc>7"
+      Position		      [245, 394, 355, 426]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ess_max_chg_pwr"
+    }
+    Block {
+      BlockType		      Lookup
+      Name		      "Look-Up\nTable"
+      Position		      [95, 95, 125, 125]
+      InputValues	      "time_data"
+      OutputValues	      "power_data"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [300, 100, 320, 120]
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace40"
+      Position		      [385, 183, 460, 207]
+      VariableName	      "ess_soc_hist"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace41"
+      Position		      [115, 33, 190, 57]
+      VariableName	      "t"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace52"
+      Position		      [390, 230, 450, 260]
+      VariableName	      "pb_voltage"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace53"
+      Position		      [400, 284, 495, 316]
+      VariableName	      "ess_temperature"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace54"
+      Position		      [385, 339, 480, 371]
+      VariableName	      "ess_max_pwr"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace55"
+      Position		      [385, 394, 480, 426]
+      VariableName	      "ess_max_chg_pwr"
+      Buffer		      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Matrix"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "energy\nstorage <ess>\nRC"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [190, 88, 255, 132]
+      ForegroundColor	      "magenta"
+      BackgroundColor	      "yellow"
+      ShowPortLabels	      off
+      MaskDisplay	      "image(imread('bdi_ess.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"energy\nstorage <ess>\nRC"
+	Location		[147, 411, 916, 860]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "power req'd\ninto bus (W)"
+	  Position		  [85, 270, 105, 290]
+	  Orientation		  "up"
+	  NamePlacement		  "alternate"
+	  FontName		  "Arial"
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Block NOTES"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [635, 345, 691, 385]
+	  BackgroundColor	  "green"
+	  ShowName		  off
+	  ShowPortLabels	  on
+	  MaskDisplay		  "disp('Block\\nNOTES')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Block NOTES"
+	    Location		    [254, 542, 739, 847]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Annotation {
+	      Position		      [242, 146]
+	      Text		      "This block models the energy storage sy"
+"stem as an SOC-dependent voltage\nin series with an SOC- and current directio"
+"n-dependent internal resistance.\nSOC is computed assuming that A-h capacity "
+"is constant, but limited\nsuch that a minimum voltage is never exceeded (repl"
+"acing the \nprevious Peukert relationship which underpredicted battery capaci"
+"ty).\n\nDischarge power is limited here so as not to bring the bus (battery p"
+"ack) voltage below\nthe minimum controller voltage or the minimum battery vol"
+"tage and so as to allow \nthe solution of the quadratic eq'n for discharge cu"
+"rrent.\n\nCharge current is limited to ensure the voltage does not exceed a m"
+"aximum\nvoltage\n\nPositive current is discharge current in the convention us"
+"ed here.\nPower loss is computed as I*R+losses due to Coulombic (in)efficienc"
+"y.\n\nThermal modeling of the battery performance is modeled in the\nOCV, Rin"
+"t, and capacity."
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <cs>"
+	  Position		  [685, 275, 735, 295]
+	  GotoTag		  "ess_tmp"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <mc>, <gc>, <sdo>"
+	  Position		  [375, 195, 455, 215]
+	  GotoTag		  "bus_voltage"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto <sdo>, <cs>"
+	  Position		  [400, 159, 445, 181]
+	  GotoTag		  "SOC"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [620, 210, 635, 230]
+	  ShowName		  off
+	  X0			  "ess_mod_init_tmp"
+	  InheritSampleTime	  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Model Parameters"
+	  Ports			  [0, 5, 0, 0, 0]
+	  Position		  [70, 109, 165, 221]
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "Model Parameters"
+	    Location		    [142, 499, 509, 890]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Constant
+	      Name		      "do ex calcs?1"
+	      Position		      [165, 42, 205, 58]
+	      ShowName		      off
+	      Value		      "cb"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "do ex calcs?2"
+	      Position		      [170, 92, 210, 108]
+	      ShowName		      off
+	      Value		      "cc"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "do ex calcs?3"
+	      Position		      [165, 147, 205, 163]
+	      ShowName		      off
+	      Value		      "re"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "do ex calcs?4"
+	      Position		      [170, 207, 210, 223]
+	      ShowName		      off
+	      Value		      "rc"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "do ex calcs?5"
+	      Position		      [170, 267, 210, 283]
+	      ShowName		      off
+	      Value		      "rt"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Cb"
+	      Position		      [255, 40, 275, 60]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Cc"
+	      Position		      [255, 90, 275, 110]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Re"
+	      Position		      [255, 150, 275, 170]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Rc"
+	      Position		      [255, 205, 275, 225]
+	      Port		      "4"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Rt"
+	      Position		      [255, 265, 275, 285]
+	      Port		      "5"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "do ex calcs?1"
+	      SrcPort		      1
+	      DstBlock		      "Cb"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "do ex calcs?2"
+	      SrcPort		      1
+	      DstBlock		      "Cc"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "do ex calcs?3"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Re"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "do ex calcs?5"
+	      SrcPort		      1
+	      DstBlock		      "Rt"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "do ex calcs?4"
+	      SrcPort		      1
+	      DstBlock		      "Rc"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RC model"
+	  Ports			  [7, 4, 0, 0, 0]
+	  Position		  [235, 118, 330, 252]
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "RC model"
+	    Location		    [357, 238, 1210, 774]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Cb"
+	      Position		      [55, 70, 75, 90]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Cc"
+	      Position		      [55, 125, 75, 145]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Re"
+	      Position		      [55, 180, 75, 200]
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rc"
+	      Position		      [55, 235, 75, 255]
+	      Port		      "4"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rt"
+	      Position		      [55, 290, 75, 310]
+	      Port		      "5"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Preq"
+	      Position		      [55, 345, 75, 365]
+	      Port		      "6"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Ess Temp"
+	      Position		      [50, 450, 70, 470]
+	      Port		      "7"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "#mods"
+	      Position		      [495, 73, 645, 117]
+	      Gain		      "ess_module_num"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "#mods1"
+	      Position		      [495, 173, 645, 217]
+	      Gain		      "ess_module_num"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "#mods2"
+	      Position		      [495, 223, 645, 267]
+	      Gain		      "ess_module_num"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      Ports		      [1, 7, 0, 0, 0]
+	      Position		      [440, 66, 445, 424]
+	      BackgroundColor	      "black"
+	      Outputs		      "7"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <cs>1"
+	      Position		      [675, 285, 755, 305]
+	      GotoTag		      "ess_max_pwr"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto <cs>2"
+	      Position		      [670, 335, 775, 355]
+	      GotoTag		      "ess_max_chg_pwr"
+	      TagVisibility	      "global"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux2"
+	      Ports		      [7, 1, 0, 0, 0]
+	      Position		      [295, 48, 300, 442]
+	      Inputs		      "7"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "RC model\nof one module"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [330, 230, 390, 260]
+	      FunctionName	      "RC"
+	      Parameters	      "ess_min_volts,ess_max_volts,mc_min_volt"
+"s,ess_soc,ess_tmp,ess_voc,ess_init_soc,ess_mod_init_tmp"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      ToWorkspace
+	      Name		      "To Workspace9"
+	      Position		      [680, 384, 755, 406]
+	      VariableName	      "ess_current"
+	      Buffer		      "inf"
+	      Decimation	      "1"
+	      SampleTime	      "-1"
+	      SaveFormat	      "Matrix"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Pavailable"
+	      Position		      [705, 85, 725, 105]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "SOC"
+	      Position		      [705, 135, 725, 155]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Vout"
+	      Position		      [705, 185, 725, 205]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Qess_gen"
+	      Position		      [705, 235, 725, 255]
+	      Port		      "4"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Cb"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Cc"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Re"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Rc"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Rt"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Mux2"
+	      SrcPort		      1
+	      DstBlock		      "RC model\nof one module"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      DstBlock		      "SOC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      DstBlock		      "#mods"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "#mods"
+	      SrcPort		      1
+	      DstBlock		      "Pavailable"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      3
+	      DstBlock		      "#mods1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "#mods1"
+	      SrcPort		      1
+	      DstBlock		      "Vout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      4
+	      DstBlock		      "#mods2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "#mods2"
+	      SrcPort		      1
+	      DstBlock		      "Qess_gen"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      5
+	      DstBlock		      "Goto <cs>1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      6
+	      DstBlock		      "Goto <cs>2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "RC model\nof one module"
+	      SrcPort		      1
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Preq"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      7
+	      DstBlock		      "To Workspace9"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Ess Temp"
+	      SrcPort		      1
+	      Points		      [195, 0; 0, -50]
+	      DstBlock		      "Mux2"
+	      DstPort		      7
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Thermal Model\nof Battery"
+	  Ports			  [1, 3, 1, 0, 0]
+	  Position		  [510, 213, 600, 267]
+	  ShowPortLabels	  on
+	  System {
+	    Name		    "Thermal Model\nof Battery"
+	    Location		    [439, 250, 954, 520]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Qess_gen"
+	      Position		      [25, 205, 45, 225]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [390, 217, 420, 243]
+	      StatesWhenEnabling      "reset"
+	      ShowOutputPort	      off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "#of mods"
+	      Position		      [390, 88, 415, 112]
+	      Gain		      "ess_module_num"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "1/#of mods"
+	      Position		      [95, 203, 120, 227]
+	      Gain		      "1/ess_module_num"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "1/mcp"
+	      Position		      [380, 153, 405, 177]
+	      Gain		      "1/(ess_module_mass*ess_mod_cp)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Block NOTES"
+	      Ports		      [0, 0, 0, 0, 0]
+	      Position		      [445, 220, 501, 260]
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      ShowPortLabels	      on
+	      MaskDisplay	      "disp('Block\\nNOTES')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Block NOTES"
+		Location		[505, 510, 924, 573]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Annotation {
+		  Position		  [207, 33]
+		  Text			  "This block models the thermal behav"
+"ior of a battery module with active air cooling.\nThe module is modeled as a "
+"single lumped thermal mass.  \nThe fan is on whenever the battery temp is > t"
+"he set temp."
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [250, 165, 285, 185]
+	      Orientation	      "left"
+	      FontName		      "Arial"
+	      X0		      "cyc_mph(1,2)*.447"
+	      InheritSampleTime	      off
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory1"
+	      Position		      [100, 30, 135, 50]
+	      Orientation	      "left"
+	      FontName		      "Arial"
+	      X0		      "cyc_mph(1,2)*.447"
+	      InheritSampleTime	      off
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux20"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [195, 84, 200, 156]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Qc"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [350, 114, 360, 221]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Qess_case"
+	      Position		      [235, 108, 315, 132]
+	      NamePlacement	      "alternate"
+	      FontName		      "Arial"
+	      Expr		      "(u(2) - u(1))/u(3)"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation3"
+	      Position		      [190, 29, 200, 51]
+	      Orientation	      "left"
+	      ShowName		      off
+	      UpperLimit	      "1"
+	      LowerLimit	      "0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Tair,ave"
+	      Ports		      [1, 2, 1, 0, 0]
+	      Position		      [30, 107, 140, 158]
+	      ShowPortLabels	      on
+	      System {
+		Name			"Tair,ave"
+		Location		[351, 74, 751, 302]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "Qess_case"
+		  Position		  [45, 35, 65, 55]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [265, 167, 295, 193]
+		  StatesWhenEnabling	  "reset"
+		  ShowOutputPort	  off
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Block NOTES"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [325, 165, 381, 205]
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  ShowPortLabels	  on
+		  MaskDisplay		  "disp('Block\\nNOTES')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Block NOTES"
+		    Location		    [505, 510, 924, 573]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    ZoomFactor		    "100"
+		    AutoZoom		    on
+		    Annotation {
+		    Position		    [207, 33]
+		    Text		    "This block determins the average "
+"temperature of the cooling air over the module."
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Tamb-(Q/mcp)/2"
+		  Position		  [90, 34, 330, 56]
+		  Expr			  "amb_tmp - (u(1)/(ess_mod_airflow*ai"
+"r_cp))/2 "
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "do ex calcs?1"
+		  Position		  [35, 105, 115, 125]
+		  ShowName		  off
+		  Value			  "ess_th_res_on"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Tair_ave"
+		  Position		  [355, 35, 375, 55]
+		  Port			  "1"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "amb_tmp"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Th Res"
+		  Position		  [355, 105, 375, 125]
+		  Port			  "2"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "ess_th_res_off"
+		}
+		Line {
+		  SrcBlock		  "Tamb-(Q/mcp)/2"
+		  SrcPort		  1
+		  DstBlock		  "Tair_ave"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Qess_case"
+		  SrcPort		  1
+		  DstBlock		  "Tamb-(Q/mcp)/2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "do ex calcs?1"
+		  SrcPort		  1
+		  DstBlock		  "Th Res"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Tess2"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [420, 155, 440, 175]
+	      ExternalReset	      "none"
+	      InitialConditionSource  "internal"
+	      InitialCondition	      "ess_mod_init_tmp"
+	      LimitOutput	      off
+	      UpperSaturationLimit    "inf"
+	      LowerSaturationLimit    "-inf"
+	      ShowSaturationPort      off
+	      ShowStatePort	      off
+	      AbsoluteTolerance	      "auto"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "thermostat"
+	      Position		      [235, 29, 340, 51]
+	      Orientation	      "left"
+	      NamePlacement	      "alternate"
+	      FontName		      "Arial"
+	      Expr		      "u(1) - ess_set_tmp"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Tess"
+	      Position		      [470, 155, 490, 175]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Tair"
+	      Position		      [470, 60, 490, 80]
+	      NamePlacement	      "alternate"
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Qair"
+	      Position		      [470, 90, 490, 110]
+	      Port		      "3"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Qc"
+	      SrcPort		      1
+	      DstBlock		      "1/mcp"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Qess_case"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[10, 0]
+		DstBlock		"Qc"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 55]
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -20]
+		DstBlock		"#of mods"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "1/mcp"
+	      SrcPort		      1
+	      DstBlock		      "Tess2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Tess2"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Tess"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -85; -80, 0]
+		Branch {
+		  Points		  [-185, 0]
+		  DstBlock		  "Mux20"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -40]
+		  DstBlock		  "thermostat"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Qess_gen"
+	      SrcPort		      1
+	      DstBlock		      "1/#of mods"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "1/#of mods"
+	      SrcPort		      1
+	      Points		      [210, 0]
+	      DstBlock		      "Qc"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "thermostat"
+	      SrcPort		      1
+	      DstBlock		      "Saturation3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation3"
+	      SrcPort		      1
+	      DstBlock		      "Memory1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory1"
+	      SrcPort		      1
+	      Points		      [-10, 0]
+	      DstBlock		      "Tair,ave"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [-230, 0]
+	      DstBlock		      "Tair,ave"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "#of mods"
+	      SrcPort		      1
+	      DstBlock		      "Qair"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux20"
+	      SrcPort		      1
+	      DstBlock		      "Qess_case"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Tair,ave"
+	      SrcPort		      2
+	      DstBlock		      "Mux20"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Tair,ave"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Mux20"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"Tair"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To WS1"
+	  Position		  [304, 290, 386, 305]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  FontName		  "Arial"
+	  VariableName		  "ess_pwr_loss_a"
+	  Buffer		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To WS2"
+	  Position		  [665, 213, 735, 227]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  VariableName		  "ess_mod_tmp"
+	  Buffer		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To WS3"
+	  Position		  [665, 233, 735, 247]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  VariableName		  "ess_air_tmp"
+	  Buffer		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To WS4"
+	  Position		  [665, 254, 740, 266]
+	  ShowName		  off
+	  FontName		  "Arial"
+	  VariableName		  "ess_air_th_pwr"
+	  Buffer		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "0"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace9"
+	  Position		  [660, 64, 735, 86]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  VariableName		  "ess_pwr_out_a"
+	  Buffer		  "inf"
+	  Decimation		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Matrix"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "do ex calcs?"
+	  Position		  [525, 185, 585, 200]
+	  Orientation		  "down"
+	  ShowName		  off
+	  Value			  "ess_th_calc"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "documentation9"
+	  Ports			  [0, 0, 0, 0, 0]
+	  Position		  [705, 346, 734, 385]
+	  BackgroundColor	  "orange"
+	  DropShadow		  on
+	  ShowName		  off
+	  OpenFcn		  "web(['file:\\\\\\' which('energy_storage.ht"
+"m')]);"
+	  ShowPortLabels	  off
+	  MaskDisplay		  "image(imread('doc_man.jpg'))"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "documentation9"
+	    Location		    [129, 62, 308, 146]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "power available\nto bus (W)"
+	  Position		  [670, 125, 690, 145]
+	  FontName		  "Arial"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Model Parameters"
+	  SrcPort		  1
+	  DstBlock		  "RC model"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Model Parameters"
+	  SrcPort		  2
+	  DstBlock		  "RC model"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Model Parameters"
+	  SrcPort		  3
+	  DstBlock		  "RC model"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Model Parameters"
+	  SrcPort		  4
+	  DstBlock		  "RC model"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Model Parameters"
+	  SrcPort		  5
+	  DstBlock		  "RC model"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "RC model"
+	  SrcPort		  3
+	  DstBlock		  "Goto <mc>, <gc>, <sdo>"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RC model"
+	  SrcPort		  4
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "To WS1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Thermal Model\nof Battery"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "To WS2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 65]
+	    Branch {
+	      DstBlock		      "Goto <cs>"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 35; -430, 0]
+	      DstBlock		      "RC model"
+	      DstPort		      7
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Thermal Model\nof Battery"
+	  SrcPort		  1
+	  DstBlock		  "Memory"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Thermal Model\nof Battery"
+	  SrcPort		  3
+	  DstBlock		  "To WS4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Thermal Model\nof Battery"
+	  SrcPort		  2
+	  DstBlock		  "To WS3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "do ex calcs?"
+	  SrcPort		  1
+	  DstBlock		  "Thermal Model\nof Battery"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "RC model"
+	  SrcPort		  1
+	  Points		  [285, 0]
+	  Branch {
+	    DstBlock		    "power available\nto bus (W)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "To Workspace9"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "power req'd\ninto bus (W)"
+	  SrcPort		  1
+	  Points		  [0, -15; 95, 0; 0, -25]
+	  DstBlock		  "RC model"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "RC model"
+	  SrcPort		  2
+	  DstBlock		  "Goto <sdo>, <cs>"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Look-Up\nTable"
+      SrcPort		      1
+      DstBlock		      "energy\nstorage <ess>\nRC"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "energy\nstorage <ess>\nRC"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>4"
+      SrcPort		      1
+      DstBlock		      "To Workspace52"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>1"
+      SrcPort		      1
+      DstBlock		      "To Workspace40"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>5"
+      SrcPort		      1
+      DstBlock		      "To Workspace53"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>6"
+      SrcPort		      1
+      DstBlock		      "To Workspace54"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From<vc>7"
+      SrcPort		      1
+      DstBlock		      "To Workspace55"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"To Workspace41"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 5; 25, 0]
+	Branch {
+	  DstBlock		  "Look-Up\nTable"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 95]
+	  DstBlock		  "Display"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

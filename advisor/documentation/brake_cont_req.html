@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Brake control: required</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Brake control: required</h1>
+</div>
+<h3 id="brake-control-required">Brake control: required</h3>
+<p><a href="brk_reqd.gif"><img src="brk_reqd.gif" /></a></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The ‘braking strategy’ block determines how much braking force is required of the front brakes and the rear brakes.  The balance of the required tractive force will be made up by the drivetrain to the best of its ability.  (If the driveline is limited in its braking ability, the front and rear brakes will make up this final deficit according to their ability.  See the documentation of the <a href="brake_cont_ach.html">achievable brake controller</a> for more info.)</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The required braking force is a function of vehicle speed and total braking force required.  A 1-D lookup table is used to determine the fraction of braking force provided by the front and rear brakes.</p>
+<p><strong><u>Equations used in subsystem</u></strong></p>
+<ol style="list-style-type: decimal">
+<li>(friction braking force required of front brakes) = (total braking force required) * (fraction of total braking force provided by front friction brakes)</li>
+<li>(friction braking force required of rear brakes) = (total braking force required) * [1-(fraction of total braking force required of front friction brakes) - (fraction of total braking force required of driveline)]</li>
+<li>(fraction of total braking force required of front friction brakes) = f(vehicle speed)</li>
+<li>(fraction of total braking force required of driveline) = f(vehicle speed)</li>
+</ol>
+<p>All braking forces are negative by convention.</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong><br />wh_fa_fric_brake_frac    wh_fa_dl_brake_frac<br />wh_fa_fric_brake_mph   wh_fa_dl_brake_mph</p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Wheel/Axle">See Appendix A.2: Input Variables</a></p>
+</blockquote>
+<hr />
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

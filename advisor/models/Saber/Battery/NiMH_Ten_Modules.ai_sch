@@ -1,0 +1,264 @@
+[schematic7]
+desc {}
+uniq 186
+sheets {sheet1}
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 3 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 1 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3 -weight normal -slant roman -underline 0 -overstrike 0}
+<color>
+{lightgoldenrod1} {#ffffecec8b8b}
+{green} {#0000ff000000}
+{} {#ffff00}
+{pink} {#ff00c000cb00}
+{} {#00FF00}
+{} {#ffec8b}
+{} {#90ee90}
+{} {#bde6ff}
+{orange} {#ffffa5a50000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+{borderannotation}
+[element resources]
+<elements>
+gd {} 
+ss ss_3_ {load_tv_2_} {{sheet1 load_tv_2_}} {} { } load_tv {} 
+ss ss_9_ {c_pwl.ess_pwr_req} {{sheet1 c_pwl_8_}} { 
+{ref ess_pwr_req {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,200,5,200,6,500]} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } c_pwl {} 
+ss ss_11_ {sum.sum1} {{sheet1 csum_10_}} { 
+{ref sum1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } csum {} 
+ss ss_13_ {sum.sum2} {{sheet1 csum_12_}} { 
+{ref sum2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } csum {} 
+ss ss_15_ {prop_int.prop_int1} {{sheet1 prop_int_14_}} { 
+{ref prop_int1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{kp 50000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{ki 25 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } prop_int {} 
+ss ss_17_ {prop_int.prop_int2} {{sheet1 prop_int_16_}} { 
+{ref prop_int2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{ki 25 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{kp 40000000 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } prop_int {} 
+n n_26_ {_n5} {{sheet1 w_27_}} {} 
+n n_28_ {_n6} {{sheet1 w_29_}} {} 
+n n_30_ {_n7} {{sheet1 w_156_ w_157_ w_158_}} {} 
+n n_32_ {_n8} {{sheet1 w_33_}} {} 
+ss ss_47_ {rtherm.rtherm1} {{sheet1 rtherm_46_}} { 
+{ref rtherm1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{rth 1.0 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } rtherm {} 
+ss ss_51_ {gnd_50_} {{sheet1 gnd_50_}} {} { } gnd {} 
+ss ss_53_ {gnd_52_} {{sheet1 gnd_52_}} {} { } gnd {} 
+ss ss_55_ {gnd_54_} {{sheet1 gnd_54_}} {} { } gnd {} 
+n n_56_ {gnd} {{sheet1 w_58_ w_59_ w_60_ w_181_}} {} 
+n n_61_ {_n14} {{sheet1 w_62_}} {} 
+ss ss_69_ {nimh.nimh1} {{sheet1 NiMH_Model_68_}} { 
+{ref nimh1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_72_ {nimh.nimh2} {{sheet1 NiMH_Model_71_}} { 
+{ref nimh2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_74_ {nimh.nimh3} {{sheet1 NiMH_Model_73_}} { 
+{ref nimh3 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_76_ {nimh.nimh4} {{sheet1 NiMH_Model_75_}} { 
+{ref nimh4 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_78_ {nimh.nimh5} {{sheet1 NiMH_Model_77_}} { 
+{ref nimh5 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_80_ {nimh.nimh6} {{sheet1 NiMH_Model_79_}} { 
+{ref nimh6 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_82_ {nimh.nimh7} {{sheet1 NiMH_Model_81_}} { 
+{ref nimh7 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_84_ {nimh.nimh8} {{sheet1 NiMH_Model_83_}} { 
+{ref nimh8 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_86_ {nimh.nimh9} {{sheet1 NiMH_Model_85_}} { 
+{ref nimh9 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_88_ {nimh.nimh10} {{sheet1 NiMH_Model_87_}} { 
+{ref nimh10 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } NiMH_Model {} 
+ss ss_90_ {gnd_89_} {{sheet1 gnd_89_}} {} { } gnd {} 
+n n_94_ {_n74} {{sheet1 w_95_}} {} 
+n n_96_ {_n75} {{sheet1 w_97_}} {} 
+n n_98_ {_n76} {{sheet1 w_99_}} {} 
+n n_100_ {_n77} {{sheet1 w_101_}} {} 
+n n_102_ {_n78} {{sheet1 w_103_}} {} 
+n n_104_ {_n79} {{sheet1 w_105_}} {} 
+n n_106_ {_n80} {{sheet1 w_107_}} {} 
+n n_108_ {_n81} {{sheet1 w_109_}} {} 
+ss ss_111_ {Ten_Module_Voltage_SOC_Error.TMVSE1} {{sheet1 Ten_Module_Voltage_SOC_Error_110_}} { 
+{v_hi_limit 9.0 SABER string {} 0 0 {} 0 0 5 1 {} 0 1 {} {} {} 6 l}
+{v_low_limit 6.0 SABER string {} 0 0 {} 0 0 5 1 {} 0 1 {} {} {} 6 l}
+{ref TMVSE1 { } string {} 0 0 {} 0 0 5 1 {} 0 1 {} {} {} 6 l}
+} { } Ten_Module_Voltage_SOC_Error {} 
+n n_112_ {_n82} {{sheet1 w_113_}} {} 
+n n_114_ {_n83} {{sheet1 w_115_}} {} 
+n n_116_ {_n84} {{sheet1 w_117_}} {} 
+n n_118_ {_n85} {{sheet1 w_119_}} {} 
+n n_120_ {_n86} {{sheet1 w_121_}} {} 
+n n_122_ {_n87} {{sheet1 w_123_}} {} 
+n n_124_ {_n88} {{sheet1 w_125_}} {} 
+n n_126_ {_n89} {{sheet1 w_127_}} {} 
+n n_128_ {_n90} {{sheet1 w_129_}} {} 
+n n_130_ {_n91} {{sheet1 w_131_}} {} 
+n n_132_ {_n92} {{sheet1 w_133_}} {} 
+n n_134_ {_n93} {{sheet1 w_135_}} {} 
+n n_136_ {_n94} {{sheet1 w_137_}} {} 
+n n_138_ {_n95} {{sheet1 w_139_}} {} 
+n n_140_ {_n96} {{sheet1 w_141_}} {} 
+n n_142_ {_n97} {{sheet1 w_143_}} {} 
+n n_144_ {_n98} {{sheet1 w_145_}} {} 
+n n_146_ {_n99} {{sheet1 w_147_}} {} 
+n n_148_ {_n100} {{sheet1 w_149_}} {} 
+n n_152_ {_n102} {{sheet1 w_153_}} {} 
+n n_154_ {_n103} {{sheet1 w_155_}} {} 
+n n_160_ {_n105} {{sheet1 w_161_}} {} 
+n n_179_ {_n109} {{sheet1 w_180_}} {} 
+n n_182_ {_n111} {{sheet1 w_183_}} {} 
+n n_184_ {_n112} {{sheet1 w_185_}} {} 
+<properties>
+[events]
+[reference]
+[sheet]
+sheet1
+<properties>
+<border>
+{A4} 287.000000 200.000000 m 0 95 5 5.000000 2 2 {on} 0 {n} {left} 57.400000 5 5.000000 2 2 {on} 0 {a} {down} 40.000000 0.000000 0.000000 0 
+<elements>
+w w_185_ {NiMH_Model.NiMH_Model_87_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s10} {6080 -480 6080 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 6160 -600 0 0 5 8 0 0 1 {} 
+w w_183_ {prop_int.prop_int_16_.out} {csum.csum_12_.in2} {5440 -2080 6720 -2080 6720 320 640 320 640 640 } 0 1 10 0 0 {8 10 3} 0 {{}} 5520 -2200 0 0 5 8 0 0 1 {} 
+w w_181_ {NiMH_Model.NiMH_Model_87_.m} {gnd.gnd_89_.gnd} {6080 0 6560 0 6560 -160 } 0 1 10 0 0 {8 10 3} 0 {{}} 6160 -120 0 0 5 8 0 0 1 {} 
+w w_180_ {NiMH_Model.NiMH_Model_85_.m} {NiMH_Model.NiMH_Model_87_.p} {5280 0 5760 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 5360 -120 0 0 5 8 0 0 1 {} 
+w w_161_ {prop_int.prop_int_14_.out} {csum.csum_10_.in2} {0 -1920 -2400 -1920 -2400 480 -800 480 -800 640 } 0 1 10 0 0 {8 10 3} 0 {{}} -2320 -2040 0 0 5 8 0 0 1 {} 
+w w_158_ {_lsplice_._lsplice__159_.junction} {csum.csum_10_.in1} {-1760 1120 -1280 1120 } 0 1 10 0 0 {8 10 3} 0 {{}} -2000 1000 0 0 5 8 0 0 1 {} 
+w w_157_ {c_pwl.c_pwl_8_.out} {_lsplice_._lsplice__159_.junction} {-2080 1120 -1760 1120 } 0 1 10 0 0 {8 10 3} 0 {{}} -2000 1000 0 0 5 8 0 0 1 {} 
+w w_156_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.PowerInput} {_lsplice_._lsplice__159_.junction} {320 -1280 320 -1440 -1760 -1440 -1760 1120 } 0 1 10 0 0 {8 10 3} 0 {{}} 400 -1400 0 0 5 8 0 0 1 {} 
+w w_155_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.soc_error} {prop_int.prop_int_14_.in} {1920 -1280 1920 -1920 } 0 1 10 0 0 {8 10 3} 0 {{}} 2000 -1400 0 0 5 8 0 0 1 {} 
+w w_153_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.voltage_error} {prop_int.prop_int_16_.in} {3520 -1280 3520 -2080 } 0 1 10 0 0 {8 10 3} 0 {{}} 3600 -1400 0 0 5 8 0 0 1 {} 
+w w_149_ {NiMH_Model.NiMH_Model_87_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v10} {5760 -480 5760 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 5840 -600 0 0 5 8 0 0 1 {} 
+w w_147_ {NiMH_Model.NiMH_Model_85_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s9} {5280 -480 5280 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 5360 -600 0 0 5 8 0 0 1 {} 
+w w_145_ {NiMH_Model.NiMH_Model_85_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v9} {4960 -480 4960 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 5040 -600 0 0 5 8 0 0 1 {} 
+w w_143_ {NiMH_Model.NiMH_Model_83_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s8} {4480 -480 4480 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 4560 -600 0 0 5 8 0 0 1 {} 
+w w_141_ {NiMH_Model.NiMH_Model_83_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v8} {4160 -480 4160 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 4240 -600 0 0 5 8 0 0 1 {} 
+w w_139_ {NiMH_Model.NiMH_Model_81_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s7} {3680 -480 3680 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 3760 -600 0 0 5 8 0 0 1 {} 
+w w_137_ {NiMH_Model.NiMH_Model_81_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v7} {3360 -480 3360 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 3440 -600 0 0 5 8 0 0 1 {} 
+w w_135_ {NiMH_Model.NiMH_Model_79_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s6} {2880 -480 2880 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 2960 -600 0 0 5 8 0 0 1 {} 
+w w_133_ {NiMH_Model.NiMH_Model_79_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v6} {2560 -480 2560 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 2640 -600 0 0 5 8 0 0 1 {} 
+w w_131_ {NiMH_Model.NiMH_Model_77_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s5} {2080 -480 2080 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 2160 -600 0 0 5 8 0 0 1 {} 
+w w_129_ {NiMH_Model.NiMH_Model_77_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v5} {1760 -480 1760 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 1840 -600 0 0 5 8 0 0 1 {} 
+w w_127_ {NiMH_Model.NiMH_Model_75_.soc} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s4} {1280 -480 1280 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 1360 -600 0 0 5 8 0 0 1 {} 
+w w_125_ {NiMH_Model.NiMH_Model_75_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v4} {960 -480 960 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 1040 -600 0 0 5 8 0 0 1 {} 
+w w_123_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s3} {NiMH_Model.NiMH_Model_73_.soc} {480 -800 480 -480 } 0 1 10 0 0 {8 10 3} 0 {{}} 560 -600 0 0 5 8 0 0 1 {} 
+w w_121_ {NiMH_Model.NiMH_Model_73_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v3} {160 -480 160 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} 240 -600 0 0 5 8 0 0 1 {} 
+w w_119_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s2} {NiMH_Model.NiMH_Model_71_.soc} {-320 -800 -320 -480 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 -600 0 0 5 8 0 0 1 {} 
+w w_117_ {NiMH_Model.NiMH_Model_71_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v2} {-640 -480 -640 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} -560 -600 0 0 5 8 0 0 1 {} 
+w w_115_ {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.s1} {NiMH_Model.NiMH_Model_68_.soc} {-1120 -800 -1120 -480 } 0 1 10 0 0 {8 10 3} 0 {{}} -1040 -600 0 0 5 8 0 0 1 {} 
+w w_113_ {NiMH_Model.NiMH_Model_68_.voltage} {Ten_Module_Voltage_SOC_Error.Ten_Module_Voltage_SOC_Error_110_.v1} {-1440 -480 -1440 -800 } 0 1 10 0 0 {8 10 3} 0 {{}} -1360 -600 0 0 5 8 0 0 1 {} 
+w w_109_ {NiMH_Model.NiMH_Model_81_.m} {NiMH_Model.NiMH_Model_83_.p} {3680 0 4160 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 3760 -120 0 0 5 8 0 0 1 {} 
+w w_107_ {NiMH_Model.NiMH_Model_79_.m} {NiMH_Model.NiMH_Model_81_.p} {2880 0 3360 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 2960 -120 0 0 5 8 0 0 1 {} 
+w w_105_ {NiMH_Model.NiMH_Model_77_.m} {NiMH_Model.NiMH_Model_79_.p} {2080 0 2560 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 2160 -120 0 0 5 8 0 0 1 {} 
+w w_103_ {NiMH_Model.NiMH_Model_75_.m} {NiMH_Model.NiMH_Model_77_.p} {1280 0 1760 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 1360 -120 0 0 5 8 0 0 1 {} 
+w w_101_ {NiMH_Model.NiMH_Model_73_.m} {NiMH_Model.NiMH_Model_75_.p} {480 0 960 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 560 -120 0 0 5 8 0 0 1 {} 
+w w_99_ {NiMH_Model.NiMH_Model_71_.m} {NiMH_Model.NiMH_Model_73_.p} {-320 0 160 0 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 -120 0 0 5 8 0 0 1 {} 
+w w_97_ {NiMH_Model.NiMH_Model_68_.m} {NiMH_Model.NiMH_Model_71_.p} {-1120 0 -640 0 } 0 1 10 0 0 {8 10 3} 0 {{}} -1040 -120 0 0 5 8 0 0 1 {} 
+w w_95_ {NiMH_Model.NiMH_Model_85_.p} {NiMH_Model.NiMH_Model_83_.m} {4960 0 4480 0 } 0 1 10 0 0 {8 10 3} 0 {{}} 4560 -120 0 0 5 8 0 0 1 {} 
+w w_62_ {rtherm.rtherm_46_.tl} {load_tv.load_tv_2_.p_th} {3200 1440 3200 1600 2720 1600 2720 1280 2400 1280 } 0 1 10 0 0 {8 10 3} 0 {{}} 3280 1480 0 0 5 8 0 0 1 {} 
+w w_60_ {gnd.gnd_54_.gnd} {rtherm.rtherm_46_.th} {3200 800 3200 800 } 0 1 10 0 0 {8 10 3} 0 {{}} 3280 680 0 0 5 8 0 0 1 {} 
+w w_59_ {load_tv.load_tv_2_.m_th} {gnd.gnd_50_.gnd} {2400 1120 2720 1120 2720 800 } 0 1 10 0 0 {8 10 3} 0 {{}} 2480 1000 0 0 5 8 0 0 1 {} 
+w w_33_ {NiMH_Model.NiMH_Model_68_.p} {load_tv.load_tv_2_.p} {-1440 0 -1440 1760 2080 1760 2080 1600 } 0 1 10 0 0 {8 10 3} 0 {{}} -1360 1640 0 0 5 8 0 0 1 {} 
+w w_29_ {csum.csum_12_.out} {load_tv.load_tv_2_.ctrl} {1120 1120 1760 1120 } 0 1 10 0 0 {8 10 3} 0 {{}} 1200 1000 0 0 5 8 0 0 1 {} 
+w w_27_ {csum.csum_10_.out} {csum.csum_12_.in1} {-320 1120 160 1120 } 0 1 10 0 0 {8 10 3} 0 {{}} -240 1000 0 0 5 8 0 0 1 {} 
+use load_tv_2_ 2240 1280 0 0 {} load_tv {} {Default} {} { } {} 
+use c_pwl_8_ -2400 1120 0 0 {} c_pwl {} {Default} { 
+{ref ess_pwr_req {} {} {} -2976 704 1 {} {} {} {} {} {} {} {} {} {} 6 l}
+{pwl {[0,200,5,200,6,500]} SABER {} {} -3120 736 0 {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use csum_10_ -800 960 0 0 {} csum {} {Default} { 
+{ref sum1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use csum_12_ 640 960 0 0 {} csum {} {Default} { 
+{ref sum2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use prop_int_14_ 960 -1920 2 0 {} prop_int {} {Default} { 
+{ref prop_int1 {} {} {} 1600 -2400 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{kp 50000 SABER {} {} 1184 -2064 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} 1120 -2208 1 {} 0 3 {} {} {} {} {} {} {} 6 l}
+{ki 25 SABER {} {} 1520 -2240 {} {} 0 3 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 960 -1584 {} {} 0 4 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use prop_int_16_ 4480 -2080 0 0 {} prop_int {} {Default} { 
+{ref prop_int2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{init 0.0 SABER {} {} 4368 -2368 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{ki 25 SABER {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+{kp 40000000 SABER {} {} 4192 -2256 {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use rtherm_46_ 3040 1120 0 1 {} rtherm {} {Default} { 
+{ref rtherm1 {} {} {} 2960 1120 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+{primitive {} SABER {} {} 2800 1120 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+{rth 1.0 SABER {} {} 3390 1120 {} {} 1 2 {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_50_ 2720 640 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_52_ 2080 640 0 0 {} gnd {} {Default} {} { } {} 
+use gnd_54_ 3200 640 0 0 {} gnd {} {Default} {} { } {} 
+w w_58_ {load_tv.load_tv_2_.m} {gnd.gnd_52_.gnd} {2080 960 2080 800 } 0 1 10 0 0 {8 10 3} 0 {{}} 2160 840 0 0 5 8 0 0 1 {} 
+use NiMH_Model_68_ -1440 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh1 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_71_ -640 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh2 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_73_ 160 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh3 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_75_ 960 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh4 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_77_ 1760 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh5 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_79_ 2560 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh6 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_81_ 3360 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh7 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_83_ 4160 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh8 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_85_ 4960 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh9 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use NiMH_Model_87_ 5760 -320 0 0 {} NiMH_Model {} {Default} { 
+{ref nimh10 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 6 l}
+} { } {} 
+use gnd_89_ 6560 -320 0 0 {} gnd {} {Default} {} { } {} 
+use Ten_Module_Voltage_SOC_Error_110_ 4320 -1280 0 0 {} Ten_Module_Voltage_SOC_Error {} {Default} { 
+{v_hi_limit 9.0 SABER string {} -1504 -1552 0 0 0 5 1 {} 0 7 {} {} {} 6 l}
+{v_low_limit 6.0 SABER string {} -1504 -1680 0 0 0 5 1 {} 0 7 {} {} {} 6 l}
+{ref TMVSE1 { } string {} -1504 -1808 0 0 0 5 1 {} 0 7 {} {} {} 6 l}
+} { } {} 
+use _lsplice__159_ -1760 1120 0 0 {} _lsplice_ {} {Default} {} { } {} 

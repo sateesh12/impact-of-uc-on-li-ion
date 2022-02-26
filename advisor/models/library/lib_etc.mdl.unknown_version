@@ -1,0 +1,1287 @@
+Library {
+  Name			  "lib_etc"
+  Version		  4.1.1
+  LibraryLinkDisplay	  "all"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  Created		  "Fri Mar 29 07:35:51 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mokeefe"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Apr 22 07:52:00 2003"
+  ModifiedComment	  "mokeefe -- Tue Jan 21 11:27:07 2003 -- Version 1.47"
+"\nadded breakLinkCopyFcn as the copy script called by enhancedToWorkspace"
+  ModifiedHistory	  "mokeefe -- Tue Jan 21 11:27:07 2003 -- Version 1.47"
+"\nadded breakLinkCopyFcn as the copy script called by enhancedToWorkspace\n\n"
+"mokeefe -- Tue Jan 21 11:27:07 2003 -- Version 1.47\nadded breakLinkCopyFcn a"
+"s the copy script called by enhancedToWorkspace\n\nmokeefe -- Tue Jan 21 11:2"
+"3:26 2003 -- Version 1.46\nadded enhancedToWsMaker.m as the CopyFcn parameter"
+" for the enhancedToWorkspace block.\n\nmokeefe -- Tue Jan 21 09:46:28 2003 --"
+" Version 1.45\n\n\nmokeefe -- Tue Jan 21 09:45:53 2003 -- Version 1.44\nbroke"
+" the enhancedToWorkspace inactive link to my test library (we want it to be r"
+"esident in lib_etc.)\n\nmokeefe -- Tue Jan 21 09:45:15 2003 -- Version 1.43\n"
+"\n\nmokeefe -- Tue Jan 21 09:44:04 2003 -- Version 1.42\nchanged the enhanced"
+"ToWorkspace block to work better--more rhobust\n\nmokeefe -- Fri Jan 17 15:08"
+":20 2003 -- Version 1.41\n\n\nmokeefe -- Fri Jan 17 15:00:38 2003 -- Version "
+"1.40\n\n\nmokeefe -- Fri Jan 17 14:58:39 2003 -- Version 1.39\n\n\nmokeefe --"
+" Fri Jan 17 14:58:05 2003 -- Version 1.38\n\n\nmokeefe -- Fri Jan 17 14:52:33"
+" 2003 -- Version 1.37\n\n\nmokeefe -- Fri Jan 17 14:50:46 2003 -- Version 1.3"
+"6\n\n\nmokeefe -- Fri Jan 17 13:23:09 2003 -- Version 1.35\n\n\nmokeefe -- Fr"
+"i Jan 17 09:28:50 2003 -- Version 1.34\n\n\nmokeefe -- Fri Jan 17 08:47:15 20"
+"03 -- Version 1.33\nadded enhancedToWorkspace block which allows you to log t"
+"o the workspace and evaluate the variable name to use (while this is not as f"
+"unctional as the smartToWorkspace blocks, it is a simulink-only implimentatio"
+"n and is thus fast)\n\nmokeefe -- Thu Dec 12 14:06:55 2002 -- Version 1.32\n"
+"\n\nmokeefe -- Thu Dec 12 14:04:43 2002 -- Version 1.31\n\n\nmokeefe -- Thu D"
+"ec 12 13:59:07 2002 -- Version 1.30\nupdated sfunSmartToWorkspace\nThis funct"
+"ion now will only take one specific name and will place variables on the work"
+"space as matrices (instead of just arrays)\n\nmokeefe -- Thu Dec 12 13:24:20 "
+"2002 -- Version 1.29\n\n\nmokeefe -- Thu Dec 12 13:20:31 2002 -- Version 1.28"
+"\n\n\nmokeefe -- Thu Dec 12 13:19:14 2002 -- Version 1.27\n\n\nmokeefe -- Thu"
+" Dec 12 11:45:14 2002 -- Version 1.26\n\n\nmokeefe -- Thu Dec 12 11:39:22 200"
+"2 -- Version 1.25\n\n\nmokeefe -- Thu Dec 12 11:12:09 2002 -- Version 1.24\n"
+"\n\nmokeefe -- Thu Dec 12 11:11:12 2002 -- Version 1.23\n\n\nmokeefe -- Thu D"
+"ec 12 10:56:47 2002 -- Version 1.22\nfinished sfunSmartToWorkspace\n\nmokeefe"
+" -- Thu Dec 12 10:53:34 2002 -- Version 1.21\nupdated sfunSmartToWorkspace\n"
+"\nmokeefe -- Thu Dec 12 10:44:52 2002 -- Version 1.20\nAdded an s-function ve"
+"rsion of smartToWorkspace to be used with subsystems\n\nmokeefe -- Tue Apr 23"
+" 08:53:51 2002 -- Version 1.19\nadded filters against divide by zero or divid"
+"e by zero or negative.\n\nmokeefe -- Thu Apr 18 08:31:43 2002 -- Version 1.18"
+"\nsaving the model:\no \"without the model browser open\"\no with only top-le"
+"vel screen visible \no with \"fit to view\" enabled\no with \"status bar\" of"
+"f and \"toolbar\" off\no with \"prompt to update model history with each save"
+"\" on\n\n"
+  ModelVersionFormat	  "1.%<AutoIncrement:68>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWRetainRTWFile	  off
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "MS Mincho"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lib_etc"
+    Location		    [2, 43, 950, 750]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "206"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "2D Lookup"
+      Ports		      [2, 1]
+      Position		      [390, 228, 420, 252]
+      SourceBlock	      "lib_fuel_converter/configurable subsystems/fuel"
+" use and EO emis Neural Network Model/HOT engine maps /PM\n(g//s)"
+      SourceType	      "2-D Table Lookup"
+      MaskParam1	      "fc_map_spd*fc_spd_scale"
+      MaskParam2	      "fc_map_trq*fc_trq_scale"
+      MaskParam3	      "fc_pm_map*fc_spd_scale*fc_trq_scale"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Library NOTES"
+      Ports		      []
+      Position		      [380, 75, 436, 115]
+      BackgroundColor	      "green"
+      ShowName		      off
+      FontSize		      10
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskDisplay	      "disp('Library\\nNOTES')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Library NOTES"
+	Location		[185, 246, 657, 369]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"99"
+	Annotation {
+	  Position		  [232, 68]
+	  Text			  "This library contains useful blocks that ar"
+"e used in other ADVISOR libraries but\ndo not necessarily have any direct rel"
+"ation to vehicles, the vehicle powertrain, or \npowertrain components."
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "du/dt at N seconds"
+      Ports		      [1, 1]
+      Position		      [55, 144, 115, 176]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskPromptString	      "Delay (seconds)"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "delay=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5"
+      System {
+	Name			"du/dt at N seconds"
+	Location		[202, 70, 965, 766]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "f(t)"
+	  Position		  [85, 103, 115, 117]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [85, 155, 165, 185]
+	  ShowName		  off
+	  Value			  "delay"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "N second delay"
+	  Ports			  [1, 1]
+	  Position		  [180, 94, 215, 126]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  System {
+	    Name		    "N second delay"
+	    Location		    [312, 83, 833, 218]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "automatic"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "48"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 63, 55, 77]
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Clock
+	      Name		      "Clock"
+	      Position		      [150, 130, 170, 150]
+	      NamePlacement	      "alternate"
+	      DisplayTime	      off
+	      Decimation	      "1"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [95, 104, 140, 126]
+	      ShowName		      off
+	      Value		      "delay"
+	      VectorParams1D	      on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      Position		      [205, 99, 225, 181]
+	      ShowName		      off
+	      Threshold		      "delay"
+	    }
+	    Block {
+	      BlockType		      VariableTransportDelay
+	      Name		      "Variable\nTransport Delay"
+	      Position		      [300, 62, 330, 93]
+	      MaximumDelay	      "delay"
+	      InitialInput	      "0"
+	      MaximumPoints	      "1024"
+	      PadeOrder		      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [430, 73, 460, 87]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "Clock"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Switch"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Variable\nTransport Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Variable\nTransport Delay"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, -55]
+	      DstBlock		      "Variable\nTransport Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Position		      [278, 252]
+	      Text		      "Note: extrapolate using \"edge extensio"
+"n\" (nearest neighbor).\nFor signals at time (t-delay) less than t0--> the va"
+"lue f(t0) is returned using the\nvariable delay feature. For signals at time "
+"(t-delay)>=t0, f(t-delay) is returned"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [300, 79, 320, 201]
+	  Inputs		  "*/"
+	  Multiplication	  "Element-wise(.*)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [255, 100, 275, 120]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "+-|"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "df_dt at N sec"
+	  Position		  [370, 133, 400, 147]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "f(t)"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -55; 130, 0]
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "N second delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "df_dt at N sec"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "N second delay"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Annotation {
+	  Position		  [284, 245]
+	  Text			  "[f(t)-f(t-delay)]"
+	  FontName		  "Courier New"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Position		  [282, 266]
+	  Text			  "-----------------"
+	  FontName		  "Courier New"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Position		  [277, 288]
+	  Text			  "delay"
+	  FontName		  "Courier New"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Position		  [137, 266]
+	  Text			  "df/dt ="
+	  FontName		  "Courier New"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "enhancedToWorkspace"
+      Ports		      [1]
+      Position		      [40, 82, 135, 98]
+      CopyFcn		      "breakLinkCopyFcn"
+      ParentCloseFcn	      "breakLinkParCloseFcn"
+      FontSize		      8
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      on
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "enhancedToWorkspace"
+      MaskDescription	      "A wrapper for the Simulink \"To Workspace\" blo"
+"ck that allows you to evaluate the name of the variable to log to workspace. "
+"This is useful to avoid the double logging errors that occur when you pull in"
+" two library models that attempt to log to the same variable."
+      MaskHelp		      "<h2>Enhanced To Workspace Block</h2>\n<h3>Param"
+"eters</h3>\n<UL>\n<li><b>General Name:</b> This is the more general name of t"
+"he variable. Variables are saved to the workspace as <i>generalName_specificN"
+"ame</i>. Note that this is an evaluated variable. If you would like to type i"
+"n the value directly, it must be surrounded with single quotes. Otherwise you"
+" can input the name of a variable containing a char string.</li>\n<li><b>Spec"
+"ific Name:</b> This is the specific name of the variable. Note that this is i"
+"nput as a char literal (i.e., you don't need quotes).</li>\n<li><b>Enable Fla"
+"g:</b> This flag should have the value of 0 or 1. If 0, the variable will not"
+" be logged to the workspace. If 1, the variable will be logged. This is done "
+"so that variable logging can be turned off to improve speed.</li>\n</ul>\n<h3"
+">Overview</h3>\n<p>The enhanced to workspace block was put together to allow "
+"one to dynamically resolve variable names at run time in simulink. This is mo"
+"st powerful when used in conjunction with a masked subsystem to allow multipl"
+"e instances of that masked subsytem to be used in the same model. The strateg"
+"y is to set the generalName in the block mask which will allow the block to c"
+"hange the general name for all variable logging on the fly. \n<h3>Helper File"
+"s</h3>\n<p>Three m-files are required by the enhancedToWorkspace block. These"
+" files are located in the &lt; ADVISOR root &gt;/GUI directory :\n<ul>\n<li><"
+"i>enhancedToWsMaker.m</i> This file runs the mask initialization for the bloc"
+"k</li>\n<li><i>breakLinkCopyFcn.m</i> This file is used by the block callback"
+" when the simulink block is copied. It is necessary to break the link to the "
+"enhancedToWorkspace similar to the To Workspace block in order for it to be a"
+"ble to configure itself. (Try copying simulink's To Workspace block--it is im"
+"possible to make a link)</li>\n<li><i>breakLinkParCloseFcn.m</i> This file is"
+" similar to the breakLinkCopyFcn and is used when a parent system is closed</"
+"li>\n</ul>\n<hr>\n\n<p>Created 2003-Jan-21, Michael Patrick O'Keefe, NREL</p>"
+"\n\n<!--\n<VARDEF>\n<H3>var_name</H3>\n<UL>\n<LI><B>data type</B> data type h"
+"ere</LI>\n<LI><B>units</B> units here</LI>\n<LI><B>vehicle type</B> vehicle t"
+"ype here</LI>\n<LI><B>description</B> description here</LI>\n</UL>\n</VARDEF>"
+"\n-->\n"
+      MaskPromptString	      "General Name [char-evaluated]|Specific Name [ch"
+"ar-literal]|Enable flag (1=on,0=off)"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVariables	      "generalName=@1;specificName=&2;logFlag=@3;"
+      MaskInitialization      "enhancedToWsMaker"
+      MaskDisplay	      "disp([generalName,'_',specificName])"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "generalName|varName|logFlag"
+      MaskVariableAliases     ",,"
+      System {
+	Name			"enhancedToWorkspace"
+	Location		[453, 361, 913, 631]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 93, 95, 107]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [145, 85, 205, 115]
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "filter from\ndivide by zero"
+      Ports		      [1, 1]
+      Position		      [240, 223, 270, 247]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"filter from\ndivide by zero"
+	Location		[196, 110, 744, 431]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "input"
+	  Position		  [25, 53, 55, 67]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [90, 63, 115, 87]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [140, 23, 165, 47]
+	  ShowName		  off
+	  Value			  "eps"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [135, 52, 165, 83]
+	  ShowName		  off
+	  Operator		  "=="
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [215, 55, 245, 85]
+	  ShowName		  off
+	  Threshold		  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "output"
+	  Position		  [270, 63, 300, 77]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "input"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    Points		    [0, 30; 105, 0; 0, -10]
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Relational\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "output"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [173, 138]
+	  Text			  "If the input signal is equal to zero,\nthen"
+" send out machine epsilon (eps). Otherwise\npass through the input signal"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "filter from\ndivide by zero \nor negative\n"
+      Ports		      [1, 1]
+      Position		      [70, 223, 100, 247]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"filter from\ndivide by zero \nor negative\n"
+	Location		[196, 110, 744, 431]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "input"
+	  Position		  [25, 53, 55, 67]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  Position		  [90, 63, 115, 87]
+	  ShowName		  off
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [140, 23, 165, 47]
+	  ShowName		  off
+	  Value			  "eps"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [135, 52, 165, 83]
+	  ShowName		  off
+	  Operator		  "<="
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [215, 55, 245, 85]
+	  ShowName		  off
+	  Threshold		  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "output"
+	  Position		  [270, 63, 300, 77]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "input"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    Points		    [0, 30; 105, 0; 0, -10]
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Relational\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "output"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [173, 138]
+	  Text			  "If the input signal is less than or equal t"
+"o zero,\nthen send out machine epsilon (eps). Otherwise\npass through the inp"
+"ut signal"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "init via port"
+      Ports		      [2, 1]
+      Position		      [230, 283, 325, 332]
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"init via port"
+	Location		[202, 73, 966, 748]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "signal in"
+	  Position		  [170, 168, 200, 182]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "signal init"
+	  Position		  [175, 308, 205, 322]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [225, 230, 255, 260]
+	  ShowName		  off
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  InitialCondition
+	  Name			  "IC"
+	  Position		  [295, 230, 325, 260]
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [425, 230, 455, 260]
+	  Threshold		  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "signal out"
+	  Position		  [510, 238, 540, 252]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "signal init"
+	  SrcPort		  1
+	  Points		  [170, 0; 0, -60]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "signal out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "IC"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "IC"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "signal in"
+	  SrcPort		  1
+	  Points		  [155, 0; 0, 60]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "memory & init via port"
+      Ports		      [2, 1]
+      Position		      [235, 73, 315, 117]
+      FontSize		      10
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"memory & init via port"
+	Location		[202, 77, 966, 744]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"automatic"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "signal in"
+	  Position		  [170, 168, 200, 182]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "signal init"
+	  Position		  [175, 308, 205, 322]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [225, 230, 255, 260]
+	  ShowName		  off
+	  Value			  "1"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  InitialCondition
+	  Name			  "IC"
+	  Position		  [295, 230, 325, 260]
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [265, 165, 305, 185]
+	  FontName		  "Arial"
+	  X0			  "0"
+	  InheritSampleTime	  off
+	  RTWStateStorageClass	  "Auto"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [425, 230, 455, 260]
+	  Threshold		  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "signal out"
+	  Position		  [510, 238, 540, 252]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "signal in"
+	  SrcPort		  1
+	  DstBlock		  "Memory"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "IC"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 60]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "IC"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "signal out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "signal init"
+	  SrcPort		  1
+	  Points		  [170, 0; 0, -60]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "repeated signal output"
+      Ports		      [1, 1]
+      Position		      [235, 137, 270, 173]
+      FontName		      "Arial"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Repeating table"
+      MaskDescription	      "Repeating table.\nEnter values of input and out"
+"put for first cycle."
+      MaskHelp		      "Repeats signal given in table over time period "
+"given by the time signal. Input values should be monotonically increasing."
+      MaskPromptString	      "Input values:|Output values:"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "t=@1;y=@2;"
+      MaskInitialization      "period = max(@1);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "time_signal_per_period|output_signal"
+      MaskVariableAliases     ","
+      System {
+	Name			"repeated signal output"
+	Location		[59, 212, 422, 367]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "distance\ntravelled (m)"
+	  Position		  [55, 55, 75, 75]
+	  FontName		  "Arial"
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn1"
+	  Position		  [125, 55, 165, 75]
+	  Expr			  "rem(u[1],period)"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "Look-Up Table"
+	  Position		  [200, 53, 240, 77]
+	  InputValues		  "t"
+	  OutputValues		  "y"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [275, 55, 295, 75]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "distance\ntravelled (m)"
+	  SrcPort		  1
+	  DstBlock		  "Fcn1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Fcn1"
+	  SrcPort		  1
+	  DstBlock		  "Look-Up Table"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Look-Up Table"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "saturation with inputs"
+      Ports		      [3, 1]
+      Position		      [355, 134, 455, 186]
+      FontSize		      10
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"saturation with inputs"
+	Location		[202, 73, 966, 748]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "upper limit in"
+	  Position		  [60, 38, 90, 52]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "signal in"
+	  Position		  [60, 103, 90, 117]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "lower limit in"
+	  Position		  [60, 168, 90, 182]
+	  Port			  "3"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  Position		  [205, 34, 230, 81]
+	  ShowName		  off
+	  Operator		  "<"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator1"
+	  Position		  [205, 139, 230, 186]
+	  ShowName		  off
+	  Operator		  ">="
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [300, 45, 330, 75]
+	  Threshold		  "0.5"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  Position		  [300, 150, 330, 180]
+	  Threshold		  "0.5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "signal out"
+	  Position		  [445, 103, 475, 117]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "upper limit in"
+	  SrcPort		  1
+	  Points		  [85, 0]
+	  Branch {
+	    DstBlock		    "Relational\nOperator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -20; 75, 0; 0, 25]
+	    DstBlock		    "Switch"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "lower limit in"
+	  SrcPort		  1
+	  Points		  [85, 0]
+	  Branch {
+	    DstBlock		    "Relational\nOperator1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 20; 85, 0; 0, -20]
+	    DstBlock		    "Switch1"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "Switch1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, -55]
+	  DstBlock		  "signal out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "signal in"
+	  SrcPort		  1
+	  Points		  [90, 0]
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Relational\nOperator"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [95, 0; 0, -40]
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 65; -95, 0]
+	  Branch {
+	    Points		    [-115, 0; 0, 25]
+	    DstBlock		    "Relational\nOperator1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 30]
+	    DstBlock		    "Switch1"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Annotation {
+      Position		      [249, 29]
+      ForegroundColor	      "darkGreen"
+      BackgroundColor	      "yellow"
+      Text		      "        LIB_ETC        "
+      DropShadow	      on
+      FontName		      "Times New Roman"
+      FontSize		      28
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [148, 100]
+      HorizontalAlignment     "left"
+      Text		      "Note: the enhanced\nTo Workspace block\nautomat"
+"ically disables\nit's libary link when\ncopied"
+      FontName		      "Arial"
+      FontSize		      8
+    }
+  }
+}

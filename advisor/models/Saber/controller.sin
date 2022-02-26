@@ -1,0 +1,40 @@
+#   Controller -  Energenix Center
+#   
+#   This model provides a "smoother" or more graceful transition
+#   for the speed signal, thus eliminating errors which might 
+#   arrise in the numerical solution.  
+#   Only applicable at low speeds and torques.
+#
+###############################################################################
+
+template controller rpm trq rpmm
+ref nu rpm, trq
+var nu rpmm
+
+{ 
+val     nu  rpmmm
+val nu  trqlim
+ 
+################################################################### 
+
+ values{ 
+         trqlim = 20.
+         rpmmm = rpm
+         if (trq < trqlim) {
+               rpmmm = rpm * trq / trqlim
+        }
+    if (trq <= 0.0) {
+        rpmmm = 0.0
+        }   
+    
+#   rpmmm = rpm
+        
+        }
+
+equations{
+    rpmm: rpmm = rpmmm
+          }
+}
+
+
+

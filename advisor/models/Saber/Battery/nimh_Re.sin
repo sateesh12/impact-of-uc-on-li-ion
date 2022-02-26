@@ -1,0 +1,57 @@
+element template nimh_Re in1 in2 outp outm re_value = model,k
+
+ref nu in1,in2
+electrical outp,outm
+output nu re_value
+number k = 1.0000
+
+struc {
+	string	file="ess_nimh7_Re.ai_dat"
+	number	interp=0,
+		extrap[4]=[1,1,1,1],
+		fill[2]=[2,0],
+		density[2]=[100,100]
+	} model=()
+{
+foreign tlu
+
+number	dim=2,
+	datap[*],
+	sp1[*],
+	sp2[*]
+
+val nu SOC,Temperature
+val r Re
+val r Re_adj
+val nu voltage_drop
+val nu voltage_drop_squared
+
+parameters {
+	datap=tlu(0,dim,model->file,datap,model->interp,
+	model->extrap,model->fill)
+	sp1=tlu(1,addr(datap),1,model->density[1])
+	sp2=tlu(1,addr(datap),2,model->density[2])
+	}
+
+values {
+	SOC=in1
+	Temperature=in2
+	Re=tlu(2,addr(datap),SOC,Temperature)
+	voltage_drop=v(outp)-v(outm)
+	voltage_drop_squared=(v(outp)-v(outm))*(v(outp)-v(outm))
+	Re_adj = k*Re
+	}
+
+control_section {
+	pl_set(Re,(SOC,Temperature))
+	sample_points(SOC,sp1)
+	sample_points(Temperature,sp2)
+	}
+
+equations {
+	i(outp->outm)+=(v(outp)-v(outm))/Re_adj
+	re_value=(v(outp)-v(outm))*(v(outp)-v(outm))/Re_adj
+
+	}
+}
+

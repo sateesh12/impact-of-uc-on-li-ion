@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Regenerative Braking</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Regenerative Braking</h1>
+</div>
+<p><strong>Regenerative Braking</strong></p>
+<p>Regenerative braking is the process by which some of the kinetic energy stored in the vehicle’s translating mass is stored in the vehicle during decelerations.  In most electric and hybrid electric vehicles on the road today, this is accomplished by operating the traction motor as a generator, providing braking torque to the wheels and recharging the traction batteries.  The energy provided by regenerative braking can then be used for propulsion or to power vehicle accessories.</p>
+<p><em>Overview</em><br />Of the total braking torque required, X% will be performed by the driveline (motor, engine, trans, etc.) and 100-X% is performed by<br />the friction brakes.  X is defined as a function of vehicle speed by the inputs wh_fa_dl_brake_frac and wh_fa_dl_brake_mph.  By default, driveline braking is used less at low vehicle speeds than at high speeds.  Then, of the X% performed by the driveline, the available regenerative braking energy minus any efficiency losses of components through which the energy must flow (ie., gearbox, motor/controller, energy storage system) is captured by the energy storage system.</p>
+<div class="figure">
+<img src="reg1.gif" />
+</div>
+<p><em>Example</em><br />This example shows how ADVISOR’s brake controller block cooperates with the drivetrain component models to model a regenerative braking event.</p>
+<p>In this example, an electric vehicle decelerates from 17.3 m/s (38.8 mph) to 0 in 10 s.  The figure below shows the vehicle speed and tractive force required.</p>
+<div class="figure">
+<img src="reg3.gif" />
+</div>
+<p>To achieve the required deceleration, the required tractive force is negative.  (Note that if the required deceleration were at the same rate as an unpowered coastdown, the required tractive force would be zero because aerodynamic drag and rolling resistance would be enough to cause the required deceleration.)  This indicates an opportunity for regenerative braking.</p>
+<p>The data in the figure above are passed from the <a href="vehicle.html">vehicle &lt;veh&gt;</a> block to the <a href="wheel_axle.html">wheel and axle &lt;wh&gt;</a> block which in turn exchanges data with the <a href="brake_cont_req.html">braking control</a> block.  This block uses required speed and required force to determine how much braking will be done by the front-axle friction brakes, the rear-axle friction brakes, and the driveline.  The braking done by the driveline is the regenerative braking.  However, it is important to recognize that not all of the driveline braking energy can be stored–on its way from the wheel and axle, through the drivetrain and electric motor, and into the energy storage system (usually electrochemical batteries), this braking energy incurs losses.</p>
+<div class="figure">
+<img src="reg4.gif" />
+</div>
+<p>The figure above shows that the regenerative braking power required into the wheel/axle assembly is whittled away by component losses as it moves up the driveline.  At 2 s, the braking power required at the tire patch (computed as veh_spd_r*veh_force_r) is 30 kW, while the braking power required where the wheel/axle interfaces with the final drive (computed as wh_trq_r*wh_spd_r) is 20 kW.  10 kW is consumed by axle losses and by the friction brakes.  (The variables wh_fa_fric_brake_frac, wh_fa_fric_brake_mph, wh_fa_dl_brake_frac, and wh_fa_dl_brake_mph control how much friction and driveline/regen braking is commanded as a function of speed.  Follow this <a href="advisor_appendices.html#Input%20Wheel/Axle">link</a> for more info on these variables.)  About 3 kW is lost in the transmission and motor, accounting for the difference between the red and black curves at 2 s.  Another 5 kW or so is lost in the energy storage system, leaving about 12.5 kW (x 1 s = 12.5 kJ) making it into storage.<br /> </p>
+<p><u>Measuring the effect of regenerative braking</u></p>
+<p>Let’s assume we wish to see how much a particular regenerative braking scheme improves EV range.</p>
+<p>First, we define our vehicle, with the regenerative braking scheme active.  (The relevant data is the WH_*.m input data file.)</p>
+<div class="figure">
+<img src="reg5.gif" />
+</div>
+<p>Then, we run the vehicle on CYC_UDDS, using default Simulation Setup parameters except for ‘# of cycles,’ which we set at 5.  This results in a distance of 30.3 miles, as seen below.</p>
+<div class="figure">
+<img src="reg2.gif" />
+</div>
+<p>We now hit the ‘Back Two’ button to again see the Vehicle Definition screen.  At the MATLAB command window, we enter ‘wh_fa_dl_brake_frac,’ and MATLAB responds:</p>
+<p>wh_fa_dl_brake_frac =</p>
+<p>         0         0    0.5000    0.8000    0.8000</p>
+<p>To remove all regenerative braking, we enter</p>
+<p>wh_fa_dl_brake_frac=[0 0 0 0 0];</p>
+<p>We rerun the analysis using 5 x CYC_UDDS, and find the new range to be 26.8 miles.<br /> * * * * *</p>
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>Last Revised: 7/20/00:AB</p>
+</body>
+</html>

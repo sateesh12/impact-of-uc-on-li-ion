@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Neural Network Emissions Models for ADVISOR from West Virginia University</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Neural Network Emissions Models for ADVISOR from West Virginia University</h1>
+</div>
+<h1 id="neural-network-emissions-models">Neural Network Emissions Models</h1>
+<h2 id="introduction">Introduction</h2>
+<p>As a contrast to lookup tables  (where emissions are looked up by interpolation off of a torque by speed table), <a href="http://www.emsl.pnl.gov:2080/proj/neuron/neural/neural.homepage.html">neural networks</a> are equation based solutions that can be “trained” to predict outputs. West Virginia University has created two such neural network models for use in ADVISOR. The first corresponds to a 1999 Cummins ISM 370 and the other to a 1994 Navistar T 444E–both engines fueled on diesel no. 2.</p>
+<p>The Cummins engine model is trained on four cycles: the heavy-duty federal test procedure (FTP), the European Stationary Cycle (ESC), the European Transient Cycle (ETC), and a randomly generated cycle. The Navistar engine model is trained on the FTP only.</p>
+<p>The neural network models use engine torque and shaft speed and their time derivatives as inputs. Thus, one advantage that the neural network model has over the 2D lookup table model is the incorporation of transient effects.</p>
+<h2 id="implementation">Implementation</h2>
+<p>Six neural network models have been provided by West Virginia University: CO prediction for the Cummins ISM, CO<sub>2</sub> prediction for the Cummins ISM, NO<sub>x</sub> prediction for the Cummins ISM, CO prediction for the Navistar T444E, CO<sub>2</sub> prediction for the Navistar T444E, and NO<sub>x</sub> prediction for the Navistar T444E. Each neural network model takes six input parameters to predict emissions at a given time-step. The inputs and outputs are listed below:</p>
+<div align="center">
+<center>
+  
+<table>
+<col width="58%" />
+<col width="39%" />
+<thead>
+<tr class="header">
+<th align="left">Input at time t (units)</th>
+<th align="left">Output for time t (units)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">engine shaft speed at time t (revolutions per minute)</td>
+<td align="left"> Emissions Output at time t (grams per second)</td>
+</tr>
+<tr class="even">
+<td align="left">change in engine shaft speed at t from 5 seconds previous (t-5)<br />(change in revolutions per minute per 5 seconds)</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">change in engine shaft speed at t from 10 seconds previous (t-10)<br />(change in revolutions per minute per 10 seconds)</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">engine brake torque at time t (Nm)</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">change in engine brake torque at t from 5 seconds previous (t-5)<br />(change in Nm per 5 seconds)</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">change in engine brake torque at t from 10 seconds previous (t-10)<br />(change in Nm per 10 seconds)</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>The user has access to the neural network models in three formats: </p>
+<ol style="list-style-type: decimal">
+<li>By calling the neural network mex files directly (cumminsCO, navistarNOx, etc.–type ‘help cumminsCO’ on the command line for usage)</li>
+<li>As post processing after an ADVISOR run using nnProc.m– a function in &lt;ADVISOR main directory&gt;/data/fuel_converter/neural_net (type ‘help nnProc’ on the command line for usage)</li>
+<li>As an integrated part of the ADVISOR block-diagrams by setting the fuel_converter version to nn_ic (neural network internal combustion model).</li>
+</ol>
+<p>The first and second formats above are fairly self-explanatory and help is available at the command prompt for users wishing to use these formats. One note of caution: when using ADVISOR generated results to call the neural network functions directly or through nnProc, users should use fc_spd_est*30/pi (fuel converter [engine shaft] speed estimate in rad/s transformed to RPM) and fc_brake_trq (the brake torque of the fuel_converter [engine shaft] in Nm). These variables are used with ADVISOR’s lookup table method and are the most consistent.</p>
+<p>The third format (within the ADVISOR block diagrams) for using the neural network models will be where most users encounter the models and will be discussed briefly here.</p>
+<p>Format 3 of the neural network models is available through a Simulink S-function implemented as a configurable subsystem in the fuel_converter drivetrain block (located in &lt;ADVISOR main directory&gt;/models/library/lib_fuel_converter.mdl). At the input screen, the user should select nn_ic in the fuel_converter <a href="version_type_help.html">version</a> pull-down menu. In order to preserve all existing functionality in ADVISOR, a dummy engine map is created at the input screen. The maximum torque curve from the initial engine map is used to ensure the vehicle stays within performance constraints. However, the user should note that the fuel usage map of this dummy engine is not used. The neural network model generates hot emissions data for CO, CO<sub>2</sub>, and NOx.</p>
+<p>The neural network model in format 3 is tied into ADVISOR’s existing thermal model allowing users to simulate the effects of engine warm-up and aftertreatment scenarios. Users wishing to do such studies should examine the initialization files fc_cummins_NN and fc_navistar_NN to ensure proper assumptions have been made for thermal and emissions characteristics. As the neural net only predicts NOx, CO, and CO2, maps can be defined for O2 content, PM, and HC. Cold emissions maps can be defined as well. Fuel use is determined by the neural net through a carbon balance on the CO<sub>2</sub> emissions. Fuel usage then allows for a determination of efficiency and waste heat generation. </p>
+<p>The additional inputs and output variables used by the neural network model are mentioned below:</p>
+<div align="center">
+<center>
+  
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">Additional Input Variable required in the FC_*.m initialization script file</td>
+<td align="center">Meaning</td>
+</tr>
+<tr class="even">
+<td align="right">fc_nn_model_name</td>
+<td align="center">This is the name of the neural network models to use. As of the writing of this help file, there are only two options: ‘1999CumminsISM370’ &amp; ‘1994NavistarT444E’</td>
+</tr>
+<tr class="odd">
+<td align="right"> fc_CO2_to_FUELgps</td>
+<td align="center">A constant multiplier used to transform CO<sub>2</sub> emissions to diesel fuel usage. The transform is based on a carbon balance and should be in the neighborhood of 0.31-0.33 g diesel no. 2 per g CO<sub>2</sub>.</td>
+</tr>
+</tbody>
+</table>
+<p>
+<p> </p>
+</center>
+</div>
+<div align="center">
+<center>
+  
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">Neural Network Generated Variable Names</td>
+<td align="center">Variable Meanings and Units</td>
+</tr>
+<tr class="even">
+<td align="right">fc_nn_CO</td>
+<td align="center">the neural net predicted hot CO emissions in g/s</td>
+</tr>
+<tr class="odd">
+<td align="right">fc_nn_CO2</td>
+<td align="center">the neural net predicted hot CO2 emissions in g/s</td>
+</tr>
+<tr class="even">
+<td align="right">fc_nn_NOx</td>
+<td align="center">the neural net predicted hot NOx emissions in g/s</td>
+</tr>
+<tr class="odd">
+<td align="right">fc_hotemis_eo</td>
+<td align="center">records HC, CO, NOx, and PM (g/s) in a four signal array to the workspace for <em>hot</em> emissions. (That is, the emissions that would have been generated if the engine were at its defined <em>hot</em> temperature).</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<h2 id="for-more-information">For More Information</h2>
+<ol>
+<li>
+<p>N. Clark, C. T</p>
+</body>
+</html>

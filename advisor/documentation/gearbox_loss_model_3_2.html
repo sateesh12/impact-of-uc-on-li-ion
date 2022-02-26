@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Lookup-Efficiency for Transmission Gearbox Model</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Lookup-Efficiency for Transmission Gearbox Model</h1>
+</div>
+<h1 id="new-lookup-efficiency-for-transmission-gearbox-model">New Lookup-Efficiency for Transmission Gearbox Model</h1>
+<p>Previously in ADVISOR, an equation was used to calculate the torque lost through the transmission. Although this technique is a valid way to determine transmission efficiency, the equation-form suffers because it’s coefficients are often-times non-conceptual. Furthermore, customizing transmission gearbox efficiency is cumbersome using the equation form.</p>
+<p>
+<p>Therefore, a lookup-table model for transmission gearbox efficiency is now used. The model now determines transmission gearbox efficiency as a function of transmission output torque (Nm), output speed (rad/s), and current gear (e.g., 1st, 2nd, 3rd, etc.). This methodology is used with both the manual and automatic transmission models.</p>
+<center>
+<p>
+<p><strong>Note that due to interpolation error in the lookup table, slight changes in fuel economy between vehicles in ADVISOR 3.1 and 3.2 should be expected for vehicles that previously used the gearbox loss equation.</strong></p>
+</center>
+<p>Within each (non-CVT) TX_* file, three variables are now specified in place of the gearbox loss-equation coefficients (gb_loss_* from ADVISOR v3.1 and before). The new variables are tx_map_spd, tx_map_trq, and tx_eff_map. ‘tx_map_trq’ and ‘tx_map_spd’ are vectors while ‘tx_eff_map’ is a 3-dimensional matrix of efficiency values. The variables ‘tx_map_spd’ and ‘tx_map_trq’ are used to index the rows and columns of tx_eff_map for a given gear (the current gear determines the “height” at which to access the rows and columns of tx_map_trq).</p>
+<p>In the current implementation, values of tx_eff_map must be between 0 and 1 (inclusive). Values above or below these limits will be cut to 0 and 1 in the algorithm. Efficiency values queried beyond the range limits defined for gear (1 through height of tx_map_trq), tx_map_trq (max(tx_map_trq) and min(tx_map_trq)), and tx_map_spd (max(tx_map_spd) and min(tx_map_spd)) will be looked up after being cut-down to the closest value. For example, if torque is specified up to 400 Nm and a value is requested at 500 Nm, the value will be looked up as if the torque requested was 400 Nm. Similarly for gearing, if only one gear is defined in tx_eff_map (i.e., if the height of tx_eff_map is “1”), that same map will be used for all gears. Note that negative torques should be defined in the tx_map_trq matrix to avoid using efficiency values for the lowest positive torque defined to represent all negative values. If the negative region is unknown, the positive region efficiencies may be reflected about Torque=0 as a good first estimate.</p>
+<p>
+<p>For user convenience, a function is available to automatically generate tx_map_spd, tx_map_trq, and tx_eff_map using the previous loss-equation. This function is called tx_eff_mapper and is in the &lt;ADVISOR main directory&gt;/gui directory. The function tx_eff_mapper has the following form:</p>
+<center>
+<p>
+<p>[tx_eff_map, tx_map_spd, tx_map_trq] = tx_eff_mapper(gb_vars,w,T,gb_ratio)</p>
+</center>
+<p>The arguments to the function are explained below:<br /> </p>
+<dl>
+<dt>gb_vars</dt>
+<dd>a structure with the following fields corresponding to the coefficients to the previous loss-equation:
+</dd>
+</dl>
+</dl>
+<dt>
+<p>w</p>
+</dt>
+<dd>
+<p>a structure containing the transmission output angular speed values to use for evaluating efficiency in the field “vals” (i.e., w.vals is an array of speed values to evaluate [rad/s])</p>
+</dd>
+<dt>
+<p>T</p>
+</dt>
+<dd>
+<p>a structure containing the transmission output torque values to use for evaluating efficiency in the field “vals” (i.e., T.vals is an array of torque values to evaluate [Nm])</p>
+</dd>
+<dt>
+<p>gb_ratio</p>
+</dt>
+<dd>
+<p>a listing of the gear ratios for the current gear box</p>
+</dd>
+</dl>
+<p>Once tx_eff_mapper has been used, a simple contour plot may be made of transmission gearbox efficiency by using the following:</p>
+<p>figure, [c,h] = contour(tx_map_trq, tx_map_spd, tx_eff_map(:,:,1),[0:0.05:1]); clabel(c,h), colorbar % plots efficiency map for 1st gear<br /> </p>
+<h2 id="restoring-the-old-equation-methodology-for-transmission-efficiency">Restoring the Old Equation Methodology for Transmission Efficiency</h2>
+<p>For those users who wish to continue using the previous equation form of gearbox loss determination, a simple block diagram change is required. For maximum safety, it is recommended that an original version of <strong><em>lib_transmission</em></strong> be kept off of the ADVISOR path for restoration purposes (for example, make a copy of <strong><em>lib_transmission.mdl</em></strong> and place it in a new folder &lt;ADVISOR directory&gt;/models/library/backup created by the user).</p>
+<p>Open <strong><em>lib_transmission</em></strong> and <strong>unlock library.</strong>Delete the reference to <strong><em>loss (Nm)</em></strong> appearing in <strong><em>lib_transmission/gearbox &lt;gb&gt;</em></strong>. Also delete the FROM block for [gear_number] as well as its corresponding input line. Now go to <strong><em>lib_transmission/SubLibraries</em></strong> and copy the block <strong><em>loss (Nm) old methodology<strong>*. Paste a reference to</strong></em>loss (Nm) old methodology</strong>* back in <strong><em>lib_transmission/gearbox &lt;gb&gt;</em></strong> where the block <strong><em>loss (Nm)</em></strong> used to be and make sure that all lines are connected. Save the library. It is recommended that matlab be restarted to force Matlab/Simulink to recognize the new block diagram changes (instead of using an old version which may be stored in memory).</p>
+<p>Users should note that, although NREL will still be able to give advice regarding the old equation model, it is no longer the “officially” supported version.</p>
+<hr />
+<center>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation Start Page</a><br /> * * * * *</p>
+</center>
+<p>Last revised [22-October-2001] mpo</p>
+</body>
+</html>

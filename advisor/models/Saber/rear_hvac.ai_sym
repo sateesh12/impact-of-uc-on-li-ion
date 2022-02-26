@@ -1,0 +1,43 @@
+[symbol6]
+desc {}
+uniq 26
+[resources]
+<font>
+{-family Arial -size 5.0 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 3.0 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{pink} {#ff00c000cb00}
+{} {#ffff00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+rear_hvac_0
+-320 -510 480 350
+0 0 
+<properties>
+primitive rear_hvac { } string {} -432 -688 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+ref rear_hvac { } string {} -432 -816 0 0 0 5 3 {} 0 3 {} {} {} 6 l
+<ports>
+p -160 320 1 0 -128 -128 288 7 1 2 0 0 4 {} 6
+m -160 -480 1 0 -128 -128 -320 7 1 2 0 0 4 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_0_ 0 1 1 0 1 10 1 0 {-160 160 -160 320 } {8 10 3} 6 
+t gr_2_ -288 128 1 1 0 0 0 0 7 0 {Rear
+HVAC} 6 
+l gr_4_ 0 1 1 0 1 10 1 0 {-160 -320 -160 -480 } {8 10 3} 6 
+r gr_6_ -320 -320 480 160 0 1 10 1 0 0 6 

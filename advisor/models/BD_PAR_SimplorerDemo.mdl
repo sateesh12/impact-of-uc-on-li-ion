@@ -1,0 +1,911 @@
+Model {
+  Name			  "BD_PAR_SimplorerDemo"
+  Version		  4.1.1
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed May 31 09:08:08 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "ssprik"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Sep 24 15:14:06 2003"
+  ModelVersionFormat	  "1.%<AutoIncrement:218>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "max(cyc_mph(:,1))"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "1"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  off
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "none"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_vc.tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "BD_PAR_SimplorerDemo"
+    Location		    [42, 137, 990, 594]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "2 axle -->\n1 driveline\nconverter"
+      Ports		      [3, 3]
+      Position		      [255, 155, 280, 215]
+      SourceBlock	      "lib_wheel/2 axle -->\n1 driveline\nconverter"
+      SourceType	      "SubSystem"
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "<cs>"
+      Position		      [780, 112, 845, 128]
+      GotoTag		      "ex_cat_tmp"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "<sdo> par"
+      Ports		      []
+      Position		      [134, 67, 197, 111]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_outputs/<sdo> par"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "<vc> par"
+      Ports		      [0, 1]
+      Position		      [290, 39, 355, 91]
+      BackgroundColor	      "yellow"
+      LinkData {
+	BlockName		"config traction control"
+	DialogParameters {
+	  BlockChoice		  "traction control"
+	}
+      }
+      SourceBlock	      "lib_controls/<vc> par"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [130, 15, 150, 35]
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 2]
+      Position		      [335, 341, 340, 379]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "2"
+      BusSelectionMode	      off
+      Port {
+	PortNumber		1
+	Name			"Torque"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+      Port {
+	PortNumber		2
+	Name			"Speed"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto<sdo>"
+      Position		      [165, 18, 235, 32]
+      GotoTag		      "time"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Ground
+      Name		      "Ground"
+      Position		      [630, 175, 650, 195]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "HC, CO,\nNOx, PM (g/s)"
+      Position		      [710, 77, 760, 93]
+      FontName		      "Arial"
+      VariableName	      "emis"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Interactive Graphics"
+      Ports		      []
+      Position		      [812, 25, 877, 79]
+      AttributesFormatString  "%<BlockChoice>"
+      ShowPortLabels	      on
+      BlockChoice	      "off"
+      TemplateBlock	      "lib_interactive/Interactive Graphics"
+      MemberBlocks	      "off,on"
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      System {
+	Name			"Interactive Graphics"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "off"
+	  Tag			  "Altia_off"
+	  Ports			  []
+	  Position		  [100, 40, 140, 80]
+	  Orientation		  "up"
+	  SourceBlock		  "lib_interactive/off"
+	  SourceType		  ""
+	}
+      }
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator1"
+      Ports		      [2, 1]
+      Position		      [670, 45, 695, 65]
+      Orientation	      "left"
+      ShowName		      off
+      Operator		      "AND"
+      Inputs		      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "NOTES"
+      Ports		      []
+      Position		      [20, 237, 70, 271]
+      BackgroundColor	      "green"
+      ShowName		      off
+      SourceBlock	      "lib_help/NOTES"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "S-Function"
+      Ports		      [1, 1]
+      Position		      [530, 335, 590, 365]
+      FunctionName	      "SmplAdv50"
+      Parameters	      "0,1.0"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Speed"
+      Ports		      [1]
+      Position		      [385, 384, 415, 416]
+      Floating		      off
+      Location		      [719, 398, 1043, 637]
+      Open		      off
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "0"
+      YMax		      "550"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [740, 140, 760, 160]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      Position		      [660, 380, 720, 410]
+      VariableName	      "Voltage"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Torque"
+      Ports		      [1]
+      Position		      [385, 289, 415, 321]
+      Floating		      off
+      Location		      [345, 383, 698, 566]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-65"
+      YMax		      "20"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Voltage"
+      Ports		      [1]
+      Position		      [685, 334, 715, 366]
+      Floating		      off
+      Location		      [715, 382, 1068, 568]
+      Open		      on
+      NumInputPorts	      "1"
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      Grid		      "on"
+      TimeRange		      "1400"
+      YMin		      "-5000"
+      YMax		      "1000"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "clutch <cl>"
+      Ports		      [3, 2]
+      Position		      [400, 30, 445, 100]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_transmission/clutch <cl>"
+      SourceType	      "Clutch"
+      slip_spd		      "vc_launch_spd"
+      maxtrq		      "max(fc_max_trq)*fc_trq_scale"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "do ex calcs?"
+      Position		      [725, 19, 770, 31]
+      Orientation	      "left"
+      ShowName		      off
+      Value		      "ex_calc"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "do ex calcs?1"
+      Position		      [715, 59, 760, 71]
+      Orientation	      "left"
+      ShowName		      off
+      Value		      "fc_emis"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "drive cycle\n<cyc>"
+      Ports		      [0, 1]
+      Position		      [30, 121, 65, 189]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_drive_cycle/drive cycle\n<cyc>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "electric assist\ncontrol strategy\n<cs>"
+      Ports		      [1, 1]
+      Position		      [485, 34, 515, 66]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_controls/electric assist\ncontrol strategy"
+"\n<cs>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "energy\nstorage <ess>"
+      Ports		      [1, 1]
+      Position		      [750, 163, 815, 207]
+      BackgroundColor	      "yellow"
+      AncestorBlock	      "lib_energy_storage/Subsystem/energy\nstorage <e"
+"ss>"
+      LinkData {
+	BlockName		"ess config"
+	DialogParameters {
+	  BlockChoice		  "energy storage <ess>"
+	}
+      }
+      SourceBlock	      "lib_energy_storage/energy\nstorage <ess>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "exhaust sys\n<ex>"
+      Ports		      [1, 2, 1]
+      Position		      [640, 73, 690, 117]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_exhaust/exhaust sys\n<ex>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "final drive <fd>"
+      Ports		      [2, 2]
+      Position		      [315, 153, 360, 202]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_transmission/final drive <fd>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fuel\nconverter\n <fc>"
+      Ports		      [1, 3]
+      Position		      [545, 25, 615, 75]
+      BackgroundColor	      "yellow"
+      LinkData {
+	BlockName		"fuel use and EO emis Configurable Subsystem"
+	DialogParameters {
+	  BlockChoice		  "fuel use and EO emis"
+	}
+      }
+      SourceBlock	      "lib_fuel_converter/fuel\nconverter\n <fc>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gearbox <gb>"
+      Ports		      [2, 2]
+      Position		      [390, 153, 455, 197]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_transmission/gearbox <gb>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "help"
+      Ports		      []
+      Position		      [30, 35, 77, 97]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "lib_help/help"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "motor/\ncontroller <mc> par"
+      Ports		      [2, 2]
+      Position		      [565, 170, 615, 210]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_electric_machine/motor//\ncontroller <mc> p"
+"ar"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "power\nbus <pb>"
+      Ports		      [3, 3]
+      Position		      [670, 163, 720, 207]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_power_bus/power\nbus <pb>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "torque\ncoupler <tc>"
+      Ports		      [3, 3]
+      Position		      [490, 156, 530, 204]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_transmission/torque\ncoupler <tc>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "total fuel used (gal)"
+      Position		      [645, 12, 695, 28]
+      FontName		      "Arial"
+      VariableName	      "gal"
+      MaxDataPoints	      "inf"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "vehicle <veh>"
+      Ports		      [2, 1]
+      Position		      [95, 143, 150, 187]
+      BackgroundColor	      "yellow"
+      LinkData {
+	BlockName		"rolling resistance force"
+	DialogParameters {
+	  BlockChoice		  "force req'd to overcome rolling resistance "
+"(N)"
+	}
+	BlockName		"vehicle speed"
+	DialogParameters {
+	  BlockChoice		  "vehicle speed (m/s)"
+	}
+      }
+      SourceBlock	      "lib_vehicle/vehicle <veh>"
+      SourceType	      ""
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "wheel and axle \nfront/rear <wh>"
+      Ports		      [3, 3]
+      Position		      [175, 157, 225, 213]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "lib_wheel/wheel and axle \nfront//rear <wh>"
+      SourceType	      ""
+    }
+    Line {
+      SrcBlock		      "final drive <fd>"
+      SrcPort		      1
+      DstBlock		      "gearbox <gb>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "drive cycle\n<cyc>"
+      SrcPort		      1
+      DstBlock		      "vehicle <veh>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "clutch <cl>"
+      SrcPort		      1
+      DstBlock		      "electric assist\ncontrol strategy\n<cs>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "electric assist\ncontrol strategy\n<cs>"
+      SrcPort		      1
+      DstBlock		      "fuel\nconverter\n <fc>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fuel\nconverter\n <fc>"
+      SrcPort		      2
+      Points		      [5, 0]
+      DstBlock		      "exhaust sys\n<ex>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "do ex calcs?"
+      SrcPort		      1
+      DstBlock		      "Logical\nOperator1"
+      DstPort		      1
+    }
+    Line {
+      Labels		      [3, 0]
+      SrcBlock		      "fuel\nconverter\n <fc>"
+      SrcPort		      3
+      Points		      [0, 50; -235, 0]
+      DstBlock		      "clutch <cl>"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "fuel\nconverter\n <fc>"
+      SrcPort		      1
+      Points		      [0, -15]
+      DstBlock		      "total fuel used (gal)"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "exhaust sys\n<ex>"
+      SrcPort		      1
+      DstBlock		      "HC, CO,\nNOx, PM (g/s)"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator1"
+      SrcPort		      1
+      DstBlock		      "exhaust sys\n<ex>"
+      DstPort		      enable
+    }
+    Line {
+      SrcBlock		      "do ex calcs?1"
+      SrcPort		      1
+      DstBlock		      "Logical\nOperator1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Goto<sdo>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "gearbox <gb>"
+      SrcPort		      2
+      Points		      [0, 75; -160, 0]
+      DstBlock		      "final drive <fd>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "torque\ncoupler <tc>"
+      SrcPort		      3
+      Points		      [0, 60; -160, 0]
+      DstBlock		      "gearbox <gb>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "torque\ncoupler <tc>"
+      SrcPort		      1
+      Points		      [0, -30; -160, 0; 0, -95]
+      DstBlock		      "clutch <cl>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "clutch <cl>"
+      SrcPort		      2
+      Points		      [15, 0; 0, 95]
+      DstBlock		      "torque\ncoupler <tc>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "gearbox <gb>"
+      SrcPort		      1
+      DstBlock		      "torque\ncoupler <tc>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "<vc> par"
+      SrcPort		      1
+      DstBlock		      "clutch <cl>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "motor/\ncontroller <mc> par"
+      SrcPort		      2
+      Points		      [0, 0; 0, 60]
+      Branch {
+	Points			[-145, 0]
+	DstBlock		"torque\ncoupler <tc>"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 15; -305, 0; 0, 85]
+	DstBlock		"Demux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "motor/\ncontroller <mc> par"
+      SrcPort		      1
+      Points		      [0, -10]
+      DstBlock		      "power\nbus <pb>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ground"
+      SrcPort		      1
+      DstBlock		      "power\nbus <pb>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "power\nbus <pb>"
+      SrcPort		      3
+      Points		      [5, 0; 0, 55; -180, 0]
+      DstBlock		      "motor/\ncontroller <mc> par"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "power\nbus <pb>"
+      SrcPort		      2
+      DstBlock		      "energy\nstorage <ess>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "power\nbus <pb>"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "energy\nstorage <ess>"
+      SrcPort		      1
+      Points		      [0, 75; -165, 0]
+      DstBlock		      "power\nbus <pb>"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "torque\ncoupler <tc>"
+      SrcPort		      2
+      DstBlock		      "motor/\ncontroller <mc> par"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "exhaust sys\n<ex>"
+      SrcPort		      2
+      Points		      [0, 15]
+      DstBlock		      "<cs>"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Torque"
+      Labels		      [0, 0]
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      Points		      [0, 0; 20, 0]
+      Branch {
+	Labels			[1, 0]
+	DstBlock		"S-Function"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -45]
+	DstBlock		"Torque"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Speed"
+      Labels		      [-1, 0]
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      Points		      [10, 0; 0, 30]
+      DstBlock		      "Speed"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "S-Function"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	DstBlock		"Voltage"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 45]
+	DstBlock		"To Workspace"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "vehicle <veh>"
+      SrcPort		      1
+      DstBlock		      "wheel and axle \nfront/rear <wh>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "wheel and axle \nfront/rear <wh>"
+      SrcPort		      1
+      DstBlock		      "2 axle -->\n1 driveline\nconverter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "wheel and axle \nfront/rear <wh>"
+      SrcPort		      2
+      DstBlock		      "2 axle -->\n1 driveline\nconverter"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "2 axle -->\n1 driveline\nconverter"
+      SrcPort		      1
+      DstBlock		      "final drive <fd>"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "2 axle -->\n1 driveline\nconverter"
+      SrcPort		      2
+      Points		      [5, 0; 0, 70; -135, 0; 0, -70]
+      DstBlock		      "wheel and axle \nfront/rear <wh>"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "2 axle -->\n1 driveline\nconverter"
+      SrcPort		      3
+      Points		      [0, 45; -125, 0]
+      DstBlock		      "wheel and axle \nfront/rear <wh>"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "final drive <fd>"
+      SrcPort		      2
+      Points		      [0, 75; -125, 0]
+      DstBlock		      "2 axle -->\n1 driveline\nconverter"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "wheel and axle \nfront/rear <wh>"
+      SrcPort		      3
+      Points		      [0, 55; -150, 0]
+      DstBlock		      "vehicle <veh>"
+      DstPort		      2
+    }
+  }
+}

@@ -1,0 +1,150 @@
+modstack mods={conffile="tmp/pemgas.conf", 
+  caption="Gasoline Partial Oxidation Reformer PEM System";};
+double tamb=300.0, mfrac=0.033e-3;
+gas air={id="GAS", t=tamb, p=1.0, m=0.0, v=20.0,
+      comp[O2]=mfrac*75.0*0.21, comp[N2]=mfrac*75.0*0.79, humid=0.5;};
+gas fuel={id="THR-C8H18-1", t=300.0,  p=1.0, m=0.0, v=20.0,
+      comp[C8H18]=0.033e-3, frozen=1;}; 
+gas air_cond={id="GAS", t=tamb, p=1.0, m=1.0, v=5.0, 
+      comp[O2]=0.21, comp[N2]=0.79, humid=0.5;};  
+gas air_rej={id="GAS", t=tamb, p=1.0, m=2.5, v=5.0, 
+      comp[O2]=0.21, comp[N2]=0.79, humid=0.5;};  
+gas air_int={id="GAS", t=tamb, p=1.0, m=1.0, v=5.0, 
+      comp[O2]=0.21, comp[N2]=0.79, humid=0.5;};  
+gas air_ref={id="GAS", t=900, p=3.0, m=0.0, v=5.0, 
+      comp[O2]=0.13e-3, comp[N2]=0.48e-3, comp[H2O]=0.01e-3; cyclall=1; prt=0;};  
+gas wat_ref={id="STM", t=900, p=3.0, m=0.0, v=5.0, 
+      comp[H2O]=0.077e-3; comp[H2Oc]=0.0; cyclall=1; prt=0;};
+gas gas_vap={id="GAS", t=575, p=3.0, m=0.0, v=5.0, 
+      comp[CO2]=0.26e-3, comp[N2]=1.95e-3, comp[H2O]=0.53e-3; comp[O2]=0.10e-3; cyclall=1; prt=0;}; 
+gas wat_cool={id="STM";  t=348; p=3.0; m=0.0; comp[H2Oc]=25.5e-3; cyclall=1; prt=0;};
+gas airsv;
+gas wat={id="STM", t=0.0, q=-9.728586e-02, p=3.0, m=1.0365e-2, v=5.0, comp[H2O]=1.0; prt=0;};
+gas water_tank={id="STM", t=324.2, p=1.0, m=5.451e-01, v=5.0, comp[H2O]=1.0; };
+gas h2o={id="STM", comp[H2O]=1.0;};
+dhx  hx_rej={t_hot=323,  ufc=50.0; ufh=1000; thickwall=0.00025; mode="d"; denswall=2700.0;};
+dhx  hx_cool={t_hot=353, ufh=50.0; ufc=1000; thickwall=0.00025; mode="d";};
+dhx  hx_air={t_cold=900; ufc=30.0; ufh=30.0; thickwall=0.001; mode="d";};
+dhx  hx_vap={t_cold=330; ufh=50.0; ufc=1000; thickwall=0.001; mode="d";};
+dhx  hx_wat={t_cold=800; ufh=50.0; ufc=1000; thickwall=0.001; mode="d";};
+dhx  hx_cond={t_hot=325; ufh=100.0; ufc=30.0; thickwall=0.00025; mode="d";}; 
+sp  sp_wat;
+sp  sp_form={sr=0.25;};
+sp  sp_wform={sr=0.10;};
+sp  sp_prox={sr=0.01;};
+sp  sp_h2o={sr=-1, ssr[H2Oc]=1.0;};
+sp  sp_cond={sr=-1; ssr[H2Oc]=1.0;};
+sp  sp_hts={sr=0.8;};
+mx  mx_form,mx_cath, mx_hts, mx_lts, mx_prox, mx_cond, mx_h2o;
+pump pump_fuel={pres=3.0, eff=0.75;};  
+pump pump_water={pres=3.0, eff=0.75;};  
+gt gt_1={mode="d", pres=1.0, eff=0.80;}; 
+cp cp_air={mode="d", pres=3.0, eff=0.80, nstages=2; u=15.0;}; 
+cp fan_cond={pres=1.005, eff=0.80;};
+cp fan_int={pres=1.005, eff=0.80;};
+cp fan_rej={pres=1.005, eff=0.80;}; 
+reform form={option="enth", texit=1100;};
+pem pefc_1={mode="d", option="ms"; curden=0.7, celltemp=353,  
+   fuelutil=0.85; voltact=0.7; u=1.848e+02; area=1.0795e+01; weight=82.874;};
+ht ht_spcond={temp=300;};
+ht ht_hxcond={temp=300;};
+ht ht_hxrej={temp=300;};
+ht ht_cpair={temp=300;};
+
+task task_main={acc=1e-3, prt=2, del=1e-3, maxit=20;}; 
+task task_recy={maxit=15; prt=0;};
+task task_cool={acc=1e-6; del=1e-4; maxit=15; prt=0;};
+task task_wat={acc=1e-1; del=1e-3; maxit=10;};
+
+gass.noform[CH4]=1; gass.noform[CH3OH]=1; gass.noform[C2H5OH]=1; gass.noform[C8H18]=1; gass.prt=0;
+double heatinhhv,heatinlhv,effhhv,efflhv,hl,hv,lhv,hhv,prod,effact;
+
+//override design mode settings
+//end
+
+while (task_main.c)
+  {
+//varied parameters
+   vary(wat.q,-0.0967,-0.5,1.5);            
+   vary(water_tank.t, 304.1, 300.1, 330);   
+   vary(wat.m,8.106e-3,0.5e-3,50e-3); 
+//end   
+vary(mfrac,0.033e-3,0.033e-3*0.1,0.033e-3*10); 
+        
+   fuel.comp[C8H18]=mfrac;
+   air.comp[O2]=mfrac*75.0*0.21; air.comp[N2]=mfrac*75.0*0.79;
+   hx_cond.t_hot=water_tank.t;
+   hx_rej.t_hot=water_tank.t;
+
+   air_cond.c; fan_cond.c; hx_cond.cin; 
+   air_rej.c; fan_rej.c; hx_rej.cin;
+   air.c; cp_air.c; sp_form.c;  sp_prox.c; airsv.sav;
+   fuel.c;  pump_fuel.c; hx_vap.cin;
+
+   while (task_recy.c)
+     {gas_vap.c; hx_vap.hin;  
+      sp_form.s; hx_air.cin;     
+      air_ref.c; form.s; 
+      wat_ref.c; form.a; 
+      hx_vap.cout; form.c; hx_air.hin;  
+      hx_air.cout; air_ref.cycl; 
+      wat.c; sp_wform.c; sp_hts.c; mx_hts.s;
+      sp_hts.s; mx_lts.s; 
+      sp_prox.s; mx_prox.s;
+      sp_wform.s; hx_wat.cin;  
+      hx_air.hout; mx_hts.c; hx_wat.hin;
+      hx_wat.cout; wat_ref.cycl; 
+      hx_wat.hout; mx_lts.c; mx_prox.c; hx_cool.hin; 
+      wat_cool.c; hx_cool.cin; hx_cool.hout; pefc_1.ain; 
+      airsv.rec; pefc_1.c; sp_h2o.c; mx_cath.s; 
+      sp_h2o.s; h2o.cont; mx_h2o.s;   
+      pefc_1.a;  mx_cath.c; gas_vap.cycl; 
+      hx_vap.hout; 
+      gt_1.c;  hx_cond.hin; 
+      hx_cond.hout; sp_cond.c; ht_spcond.c;
+
+      while (task_cool.c) 
+        {vary(water_tank.m, water_tank.m, 0.001,5.0);
+         water_tank.c; pump_water.c; pefc_1.cool;  
+         cons(water_tank.m, pefc_1.dtcell);
+        }
+
+      mx_h2o.c; wat_cool.cycl; hx_cool.cout; 
+      sp_wat.sr=wat.fl.m/mx_h2o.fl.m; 
+      sp_wat.c; 
+      hx_rej.hin; hx_rej.hout; mx_cond.s;
+      sp_cond.s; mx_cond.c; water_tank.cycl;
+      sp_wat.s; wat.cycl;
+      air_ref.dcomp; wat_ref.dcomp; wat_cool.dcomp; gas_vap.dcomp;  
+      if ((fabs(air_ref.d.h)<1e-6) && (fabs(wat_ref.d.h)<1e-6) && (fabs(wat_cool.d.h)<1e-6)
+        && (fabs(gas_vap.d.h)<1e-6))
+        task_recy.it=100;
+     }
+
+   hx_rej.cout; ht_hxrej.c; hx_cond.cout; ht_hxcond.c;
+   air_int.c; fan_int.c; cp_air.cool; ht_cpair.c;
+   pows.c;
+   prod=pows.prod-pows.cons;
+//constraints   
+	cons(wat.q,wat.d.h/wat.fl.h);
+   cons(water_tank.t, pefc_1.flcool.t-348);
+   cons(wat.m, form.fl.t-1253.8);
+//end
+   cons(mfrac, pows.prod-pows.cons-power_req);
+  }
+
+//mods.print; gass.print; gass.mprint; pows.print; //mods.rdat;
+
+gass.sat(fuel.fl,hl,hv);
+gass.hv(fuel.fl,lhv,hhv); 
+heatinhhv=fuel.fl.m*(hl-hv+hhv);
+effhhv=(prod)/heatinhhv;
+heatinlhv=fuel.fl.m*(hl-hv+lhv);
+efflhv=(prod)/heatinlhv;
+printf("\nprod=%e",prod);
+printf("\nhhv=%.3e lhv=%.3e ",hhv,lhv);
+printf("\nheatinhhv=%.3e effhhv=%.3e \nheatinlhv=%.3e efflhv=%.3e",
+  heatinhhv,effhhv,heatinlhv,efflhv);
+
+
+

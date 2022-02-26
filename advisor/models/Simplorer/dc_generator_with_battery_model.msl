@@ -1,0 +1,8 @@
+[LINK]
+ModelName=SIM2SIM1
+Node[0]     (Torque)
+-->
+Torque
+Node[0]     ()
+<--
+Battery.V

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="2013-03-26" />
+  <title>Parallel Control Strategy</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Parallel Control Strategy</h1>
+<h3 class="date">March 26, 2013</h3>
+</div>
+<h1 id="parallel-electric-assist-control-strategy">Parallel Electric Assist Control Strategy</h1>
+<h2 id="role-of-subsystem-in-vehicle">Role of subsystem in vehicle</h2>
+<p>The parallel electric assist control strategy uses the motor for additional power when needed by the vehicle and maintains charge in the batteries.</p>
+<h2 id="description-of-modeling-approach">Description of modeling approach</h2>
+<p>The parallel assist strategy can use the electric motor in a variety of ways:</p>
+<ol style="list-style-type: decimal">
+<li>The motor can be used for all driving torque below a certain minimum vehicle speed.</li>
+<li>The motor is used for torque assist if the required torque is greater than the maximum producable by the engine at the engine’s operating speed.</li>
+<li>The motor charges the batteries by regenerative braking.</li>
+<li>When the engine would run inefficiently at the required engine torque at a given speed, the engine will shut off and the motor will produce the required torque.</li>
+<li>When the battery SOC is low, the engine will provide excess torque which will be used by the motor to charge the battery.</li>
+</ol>
+<h2 id="variables-used-in-subsystem">Variables used in subsystem</h2>
+<p>There are six variables that determine the limits of the control strategy.  Their influence on the engine operation are shown in the schematics below, and they are described in the following table.</p>
+<p><img src="okay-SOC.jpg" /><br /><img src="low-SOC.JPG" /></p>
+<p>
+<p><a href="cs_tips.html#parallel">Parallel Control Strategy Tips</a></p>
+<center>
+  
+<table>
+<caption><strong>Parallel Control Strategy Variables</strong></caption>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Variable</strong></td>
+<td align="center"><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td align="center">cs_hi_soc</td>
+<td align="center">highest desired battery state of charge</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_lo_soc</td>
+<td align="center">lowest desired battery state of charge</td>
+</tr>
+<tr class="even">
+<td align="center">cs_electric_launch_spd</td>
+<td align="center">vehicle speed below which vehicle operates as a Zero Emissions Vehicle</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_off_trq_frac</td>
+<td align="center"> cs_off_trq_frac*(torque capability of engine at current speed) = minimum torque threshold; when commanded at a lower torque, the engine will shut off if SOC &gt; cs_lo_soc</td>
+</tr>
+<tr class="even">
+<td align="center">cs_min_trq_frac</td>
+<td align="center">cs_min_trq_frac*(torque capability of engine at current speed) = minimum torque threshold; when commanded at a lower torque, the engine will operate at the threshold torque and the motor acts as a generator if the SOC &lt; cs_lo_soc</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_charge_trq</td>
+<td align="center">cs_charge_trq*((cs_lo_soc+cs_hi_soc)/2-SOC) = an accessory like torque loading on the engine to recharge the battery pack whenever the engine is on.</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>The “Off torque envelope” and the “Minimum torque envelope” are specified <font color="#000000">separately.  Since transfering energy into and out of the battery incurs losses, it may be preferable to set the charging torque at a higher level than the engine off torque.  This could allow the overall efficiency of charging and discharging the battery to be higher than it would be at a lower torque, where the engine efficiency would be lower.</font></p>
+<p><strong><u>Implementation</u></strong></p>
+<p>
+<p><em>Parallel block diagram</em><br />The implementation of the parallel control stategy is found in two main blocks: the electric assist control strategy block and the vehicle controls block.</p>
+<center>
+<div class="figure">
+<img src="Parallel_fig3.gif" alt="Main Block Diagram" /><p class="caption">Main Block Diagram</p>
+</div>
+</center>
+<p>
+<p><em>Electric assist control strategy block diagram</em><br /><font color="#000000">The torque and speed load due to driving conditions is presented to the engine through the clutch.  The energy management strategy determines how the torques from the engine and motor will combine to produce the required torque while maintaining charge in the battery.</font></p>
+<center>
+<div class="figure">
+<img src="cs.gif" alt="Electric Assist Block Diagram" /><p class="caption">Electric Assist Block Diagram</p>
+</div>
+</center>
+<ol style="list-style-type: decimal">
+<li><font color="#000000">When the battery SOC is below cs_soc_lo, additional torque is required from the engine to charge the battery.  This additional charging torque is proportional to the difference between SOC and the average of cs_lo_soc and cs_hi_soc.</font></li>
+<li><font color="#000000">This engine torque is prevented from being below a certain fraction, cs_min_trq_frac, of the maximum engine torque at the current operating speed.  This is intended to prevent the engine from operating at an inefficiently low torque.</font></li>
+<li><font color="#000000">Engine torque is only requested when the engine is on.</font></li>
+</ol>
+<p><em>Vehicle controls/Engine On block diagram</em><br />The state of the engine (on or off) is determined by the following block diagram.</p>
+<center>
+<div class="figure">
+<img src="engine,on.gif" alt="Engine On Block Diagram" /><p class="caption">Engine On Block Diagram</p>
+</div>
+</center>
+<ol style="list-style-type: decimal">
+<li>If the speed required is less than the electric launch speed, cs_electric_launch_spd, the engine could turn off.</li>
+<li>If the SOC is higher than its low limit, the engine could turn off.  If both the requested speed is less than the launch speed and the SOC is higher than the low limit, the engine will turn off.</li>
+<li>If the torque required is less than a cutoff torque, cs_off_trq_frac fraction of the maximum torque, the engine could turn off.  If both the requested torque is lower than this cutoff and the SOC is higher than the low limit, the engine will turn off.</li>
+</ol>
+<center>
+
+<hr />
+<p><br /><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>Last Revised: 7/20/00:AB</p>
+</body>
+</html>

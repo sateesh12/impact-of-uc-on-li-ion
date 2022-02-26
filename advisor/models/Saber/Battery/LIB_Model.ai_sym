@@ -1,0 +1,44 @@
+[symbol7]
+desc {}
+uniq 18
+[resources]
+<font>
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family Arial -size 3 -weight normal -slant roman -underline 0 -overstrike 0 -type truetype}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+<color>
+{} {#ffff00}
+{pink} {#ff00c000cb00}
+{lightgoldenrod1} {#ff00ec008b00}
+{green} {#0000ff000000}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+default
+960 -160 
+<properties>
+ref lib1 { } string {} -928 -624 0 0 0 5 3 {} 0 4 {} {} {} 6 l
+<ports>
+m 1280 160 1 0 1312 1312 160 7 1 1 0 0 1 {} 6
+p 960 160 1 0 864 864 176 7 1 1 0 0 1 {} 6
+soc 1280 -320 1 2 1280 1248 -336 7 1 1 0 0 1 {} 6
+voltage 960 -320 1 2 528 768 -336 7 1 1 0 0 1 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+800 -350 1440 190
+r gr_4_ 800 -320 1440 0 0 1 10 2 0 0 6 
+l gr_5_ 0 1 1 0 1 10 2 0 {960 160 960 0 } {8 10 3} 6 
+l gr_7_ 0 1 1 0 1 10 2 0 {1280 160 1280 0 } {8 10 3} 6 
+t gr_8_ 864 -48 2 2 0 0 0 0 7 0 {Lithium-Ion} 6 
+t gr_9_ 976 -176 3 2 0 0 0 0 7 0 {Battery} 6 

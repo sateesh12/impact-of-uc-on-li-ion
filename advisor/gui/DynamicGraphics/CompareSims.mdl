@@ -1,0 +1,427 @@
+Model {
+  Name			  "CompareSims"
+  Version		  4.1.1
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Oct 18 14:52:32 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "abrooker"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Oct 28 13:33:24 2002"
+  ModelVersionFormat	  "1.%<AutoIncrement:15>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "normal"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  on
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "CompareSims"
+    Location		    [480, 85, 980, 834]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "automatic"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Altia_Advisor2"
+      Ports		      [5, 1]
+      Position		      [225, 65, 290, 655]
+      BackgroundColor	      "yellow"
+      OpenFcn		      "AltiaClk"
+      FontName		      "Arial"
+      FontSize		      12
+      FunctionName	      "altiasfn"
+      Parameters	      "NumAltiaSfnInputs,NumAltiaSfnOutputs,ALTIAHOME"
+      PortCounts	      "[]"
+      SFunctionModules	      "libsdde.lib user32.lib"
+      MaskDescription	      "This block allows you to connect your signals t"
+"o an Altia Design file.  Specify the number of Inputs and Outputs you would l"
+"ike the Altia block to have (each line connected to the block can only be ONE"
+" signal wide ... no muxing into the Altia block)."
+      MaskHelp		      "The first box is the number of inputs to the Al"
+"tia S-Function.  The second box is the number of ouputs for the Altia S-Funct"
+"ion."
+      MaskPromptString	      "Inputs to Altia S-Function:|Outputs to Altia S-"
+"Function:"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVariables	      "NumAltiaSfnInputs=@1;NumAltiaSfnOutputs=@2;"
+      MaskInitialization      "altiahome"
+      MaskDisplay	      "disp('A L T I A')"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5|1"
+      MaskVariableAliases     ","
+      Port {
+	PortNumber		1
+	Name			"TimeReq"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [105, 225, 135, 255]
+      Value		      "1"
+      VectorParams1D	      on
+      Port {
+	PortNumber		1
+	Name			"vinf.time_step"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Direct Look-Up\nTable (n-D)"
+      Ports		      [1, 1]
+      Position		      [90, 92, 145, 148]
+      SourceBlock	      "simulink3/Functions\n& Tables/Direct Look-Up\nT"
+"able (n-D)"
+      SourceType	      "LookupNDDirect"
+      maskTabDims	      "1"
+      explicitNumDims	      "1"
+      outDims		      "Element"
+      tabIsInput	      off
+      mxTable		      "mpha"
+      clipFlag		      "Warning"
+      Port {
+	PortNumber		1
+	Name			"t"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Direct Look-Up\nTable (n-D)1"
+      Ports		      [1, 1]
+      Position		      [120, 572, 175, 628]
+      SourceBlock	      "simulink3/Functions\n& Tables/Direct Look-Up\nT"
+"able (n-D)"
+      SourceType	      "LookupNDDirect"
+      maskTabDims	      "1"
+      explicitNumDims	      "1"
+      outDims		      "Element"
+      tabIsInput	      off
+      mxTable		      "[Prefix2,'_junk']"
+      clipFlag		      "Warning"
+      Port {
+	PortNumber		1
+	Name			"junk"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Direct Look-Up\nTable (n-D)2"
+      Ports		      [1, 1]
+      Position		      [105, 332, 160, 388]
+      SourceBlock	      "simulink3/Functions\n& Tables/Direct Look-Up\nT"
+"able (n-D)"
+      SourceType	      "LookupNDDirect"
+      maskTabDims	      "1"
+      explicitNumDims	      "1"
+      outDims		      "Element"
+      tabIsInput	      off
+      mxTable		      "mpha"
+      clipFlag		      "Warning"
+      Port {
+	PortNumber		1
+	Name			"mpha1"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Direct Look-Up\nTable (n-D)3"
+      Ports		      [1, 1]
+      Position		      [115, 452, 170, 508]
+      SourceBlock	      "simulink3/Functions\n& Tables/Direct Look-Up\nT"
+"able (n-D)"
+      SourceType	      "LookupNDDirect"
+      maskTabDims	      "1"
+      explicitNumDims	      "1"
+      outDims		      "Element"
+      tabIsInput	      off
+      mxTable		      "[Prefix1,'_mpha']"
+      clipFlag		      "Warning"
+      Port {
+	PortNumber		1
+	Name			"mpha2"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PreLook-Up\nIndex Search"
+      Ports		      [1, 1]
+      Position		      [350, 420, 400, 470]
+      Orientation	      "down"
+      SourceBlock	      "simulink3/Functions\n& Tables/PreLook-Up\nIndex"
+" Search"
+      SourceType	      "LookupIdxSearch"
+      bpData		      "[10:10:100]"
+      searchMode	      "Binary Search"
+      cacheBpFlag	      off
+      outputFlag	      on
+      extrapMode	      "Clip to Range"
+      rangeErrorMode	      "None"
+      Port {
+	PortNumber		1
+	Name			"vinf.time_step"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+      }
+    }
+    Line {
+      Name		      "TimeReq"
+      Labels		      [0, 0]
+      SrcBlock		      "Altia_Advisor2"
+      SrcPort		      1
+      Points		      [80, 0]
+      DstBlock		      "PreLook-Up\nIndex Search"
+      DstPort		      1
+    }
+    Line {
+      Name		      "t"
+      Labels		      [-1, 0]
+      SrcBlock		      "Direct Look-Up\nTable (n-D)"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "vinf.time_step"
+      Labels		      [0, 0]
+      SrcBlock		      "PreLook-Up\nIndex Search"
+      SrcPort		      1
+      Points		      [0, 215; -335, 0; 0, -90]
+      Branch {
+	Points			[0, -45]
+	Branch {
+	  Points		  [60, 0]
+	  DstBlock		  "Direct Look-Up\nTable (n-D)3"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -195]
+	  Branch {
+	    DstBlock		    "Direct Look-Up\nTable (n-D)2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -240]
+	    DstBlock		    "Direct Look-Up\nTable (n-D)"
+	    DstPort		    1
+	  }
+	}
+      }
+      Branch {
+	DstBlock		"Direct Look-Up\nTable (n-D)1"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "mpha1"
+      Labels		      [0, 0]
+      SrcBlock		      "Direct Look-Up\nTable (n-D)2"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      3
+    }
+    Line {
+      Name		      "mpha2"
+      Labels		      [0, 0]
+      SrcBlock		      "Direct Look-Up\nTable (n-D)3"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      4
+    }
+    Line {
+      Name		      "vinf.time_step"
+      Labels		      [0, 0]
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      2
+    }
+    Line {
+      Name		      "junk"
+      Labels		      [1, 1]
+      SrcBlock		      "Direct Look-Up\nTable (n-D)1"
+      SrcPort		      1
+      DstBlock		      "Altia_Advisor2"
+      DstPort		      5
+    }
+  }
+}

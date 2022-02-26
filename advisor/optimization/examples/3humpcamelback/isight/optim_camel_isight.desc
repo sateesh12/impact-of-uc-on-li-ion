@@ -1,0 +1,124 @@
+MDOLVersion: 5.5
+CompilerOptions: warn
+
+Task isight
+
+    TaskHeader isight
+        Version: 1.0
+        Evaluation: taskplan
+        ControlMode: user
+        RunCounter: 1
+        Audit: on Milestone Error Info Status Milestone Error Info Status
+        Audit: off Normal Debug Normal Debug
+        BoundsPolicy: adjustvalue
+        CheckPoint: unknown
+        RandGenInit: 20737/18499/40085
+    End TaskHeader isight
+
+    Inputs isight
+        Parameter: Var1 Type: real InitialValue: 1
+        Parameter: Var2 Type: real InitialValue: 1
+    End Inputs isight
+
+    Outputs isight
+        Parameter: Function Type: real
+    End Outputs isight
+
+    SimCode Camel
+        InputFiles Camel
+            FileDescription indatam
+                FileType: standard
+                TemplateFile: "indata_camel.m"
+                InputFile: "indata_camel.m"
+                Parameters
+                    Var1 Var2
+                Instructions
+                    find "X(1)=" ignore 
+                    replace word with $Var1 
+                    find "X(2)=" ignore 
+                    replace word with $Var2 
+                    End Instructions
+            End FileDescription indatam
+        End InputFiles Camel
+
+        OutputFiles Camel
+            FileDescription outdatatxt
+                FileType: standard
+                OutputFile: "outdata_camel.txt"
+                Parameters
+                    Function
+                Instructions
+                    find "Function: " ignore 
+                    read Function
+                    provide $Function 
+                End Instructions
+            End FileDescription outdatatxt
+        End OutputFiles Camel
+
+        SimCodeProcess Camel
+            Program: "C:/MATLABR11/bin/matlab.exe"
+            ElapseTime: 2m
+            Prologue
+                WriteInputSpecs: indatam
+            Epilogue
+                ReadOutputSpecs: outdatatxt
+            Execution: "$Program /automation -r optim_camel_isight"
+        End SimCodeProcess Camel
+
+    End SimCode Camel
+
+    TaskProcess isight
+        Control: [
+            Camel
+        ]
+    End TaskProcess isight
+
+    Optimization isight
+        PotentialVariables:
+            Var1 Var2
+        Variables:
+            Var1 Var2
+        VariableScaling
+            Parameter: Var1 ScaleFactor: 1.0
+            Parameter: Var2 ScaleFactor: 1.0
+          InputConstraints
+            Parameter: Var1 LowerBound: 0 UpperBound: 5
+            Parameter: Var2 LowerBound: 0 UpperBound: 5
+        PotentialObjectives:
+            Var1 Var2 Function
+        Objectives
+            Parameter: Function Direction: minimize Weight: 1.0 ScaleFactor: 1.0
+ 
+        OptimizePlan NewPlan
+            DefaultUpperBound: 1E15
+            UseScaling: yes
+            OptimizeStep Step1
+                Technique: "Sequential Quadratic Programming - DONLP"
+                Options
+            Control: [
+                Step1
+            ]
+
+        # PLAN TO BE CONFIGURED BY ADVISOR:
+        OptimizePlan PriorityRankedPlan
+            Control: [
+            ]
+    End Optimization isight
+ 
+    TaskPlan isight
+        Control: [
+            NewPlan
+        ]
+    End TaskPlan isight
+
+    DataStorage isight
+        Restore: no
+        DataLog: "optim_camel_isight.db" Mode: overwrite
+        DataLookUp: "isight.db"
+        MatchMode: Exact
+        Levels: all
+        StoreGradRuns: yes
+        StoreApproxRuns: yes
+    End DataStorage isight
+
+End Task isight

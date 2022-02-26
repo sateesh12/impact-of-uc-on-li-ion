@@ -1,0 +1,14 @@
+[TLU 1.1]
+dimension 1
+variable1 Temperature Control
+variable2 Cb Electrical capacitance
+interpolation Linear
+extrapolation1 Linear Linear
+sp_density1 100
+storage 1
+nb_points 3
+data
+1 47360
+25 36060
+45 29240
+

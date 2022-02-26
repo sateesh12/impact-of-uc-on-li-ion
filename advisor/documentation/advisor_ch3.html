@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Chapter 3: How ADVISOR works – ADVISOR Documentation</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Chapter 3: How ADVISOR works – ADVISOR Documentation</h1>
+</div>
+<div class="Section1">
+<h1 id="how-advisor-works"><a name="3.0"></a>3.0 How ADVISOR works</h1>
+<div class="MsoNormal" align="center" style="text-align:center">
+
+<hr />
+</div>
+<p><a href="#3.1">3.1 ADVISOR file structure</a></p>
+<p><a href="#3.1.1">3.1.1 File interactions</a><br /> <a href="#3.1.2">3.1.2 File locations</a><br /> <a href="#3.1.3">3.1.3 File naming conventions</a><br /> <a href="#3.1.4">3.1.4 Adding files to ADVISOR</a><br /> <a href="#3.1.5">3.1.5 Inspecting input files</a><br /> <a href="#3.1.6">3.1.6 Deleting files from ADVISOR’s database</a></p>
+<p><a href="#3.2">3.2 Drivetrain model descriptions</a></p>
+<p><a href="#3.2.1">3.2.1 Fuel Converter and Exhaust Aftertreatment</a><br /> <a href="#3.2.2">3.2.2 Electric Components</a><br /> <a href="#3.2.3">3.2.3 Transmission</a><br /> <a href="#3.2.4">3.2.4 Vehicle, Wheel and Brakes</a><br /> <a href="#3.2.5">3.2.5 Hybrid Control Strategies</a><br /> <a href="#3.2.6">3.2.6 Auxiliary Load Models</a></p>
+<p><a href="#Saber_Components">3.2.7 Saber Co-simulation</a></p>
+<p><a href="#Simplorer_Components">3.2.8 Simplorer Co-simulation</a></p>
+<p><a href="#3.3">3.3 ADVISOR routines</a></p>
+<p><a href="#3.3.1">3.3.1 SOC Corrections</a><br /> <a href="#3.3.2">3.3.2 Autosize</a><br /> <a href="#3.3.3">3.3.3 Acceleration Test</a><br /> <a href="#3.3.4">3.3.4 Grade Test</a><br /> <a href="#3.3.5">3.3.5 Tech Targets</a><br /> <a href="#3.3.6">3.3.6 J1711 Test Procedure</a><br /> <a href="#3.3.7">3.3.7 Real World Test Procedure</a><br /> <a href="#3.3.8">3.3.8 City Highway Test Procedure</a><br /> <a href="#3.3.9">3.3.9 Comparing Simulations</a><br /> <a href="#3.3.10">3.3.10 Optimization</a></p>
+<p><a href="#3.3.11">3.3.11 Comparing Simulation Results with Test Data</a></p>
+<p><a href="advisor_ch3_4.html">3.4 Data flow in ADVISOR’s block diagrams</a></p>
+<p><a href="advisor_ch3_4.html#3_4_1">3.4.1 Overview</a><br /> <a href="advisor_ch3_4.html#3_4_2">3.4.2 Backward-facing calculation path</a><br /> <a href="advisor_ch3_4.html#3_4_3">3.4.3 Details of motor and motor controller</a><br /> <a href="advisor_ch3_4.html#3_4_4">3.4.4 Forward-facing calculation path</a></p>
+<p><a href="#reorg">3.5 Reorganized Library</a></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+
+<hr />
+</div>
+<h2 id="advisor-file-structure"><a name="3.1"></a>3.1 ADVISOR file structure</h2>
+<div class="figure">
+<img src="dataflow.gif" />
+</div>
+<h3 id="file-interactions-data-flow"><a name="3.1.1"></a>3.1.1 File interactions &amp; data flow</h3>
+<p>The above schematic represents data flow in the ADVISOR file system. The four main agent types are:</p>
+<ul>
+<li><p><u>Input Scripts</u> define variables in the workspace and/or call other input scripts. An example is <strong>MC_PM32.M</strong>.</p></li>
+<li><p><u>Block Diagrams</u> are Simulink files containing the equations used to compute outputs such as fuel use from inputs such as an engine map. They are the models. One example is <strong>BD_PAR.MDL</strong>.</p></li>
+<li><p><u>Output Scripts</u> post process the model outputs by querying the workspace. These may include plotting routines or error checking routines. <strong>chkoutputs.m</strong> is an example.</p></li>
+<li><p><u>Control Scripts</u> may both develop inputs and process outputs. Examples include the ADVISOR GUI and optimization routines.</p></li>
+</ul>
+<h3 id="file-locations"><a name="3.1.2"></a>3.1.2 File locations</h3>
+<p>The main ADVISOR directory (e.g. c:\ADVISOR or c:\Program Files\ADVISOR) contains several sub directories.  Among these are the data, GUI, and models directories that contain the corresponding files.</p>
+<h3 id="file-naming-conventions"><a name="3.1.3"></a>3.1.3 File naming conventions</h3>
+<p>All model and data files use a prefix followed by an underscore (‘_’) that is the same as the prefix used for (nearly all of) the variables it defines, which in turn is in pointy brackets (&lt;&gt;) at the end of the Simulink block in which those variables are used. Here are ADVISOR’s component file types:</p>
+<p><strong>ACC_*.M</strong> Accessory load files<br /> <strong>CYC_*.M</strong> Driving cycle files, which define variables starting with cyc_, used in the block labeled &lt;cyc&gt;<br /> <strong>ESS_*.M</strong> Energy storage system data files, which likewise define variables starting with ess_, used in the block labeled &lt;ess&gt;<br /> <strong>EX_*.M</strong> Exhaust after treatment files (such as catalysts)<br /> <strong>FC_*.M</strong> Fuel converter data files<br /> <strong>TX_*.M</strong>Transmission data files (these include gearbox-gb and final drive-fd variables)<br /> <strong>GC_*.M</strong> Generator/controller data files<br /> <strong>MC_*.M</strong> Motor/controller data files<br /> <strong>PTC_*.M</strong> Powertrain control data files, which define engine control, clutch control, and hybrid control strategy variables starting with vc_ and cs_, used in blocks labeled &lt;vc&gt; and &lt;cs&gt;<br /> <strong>TC_*.M</strong>Torque coupler data files<br /> <strong>VEH_*.M</strong> Vehicle data files<br /> <strong>WH_*.M</strong> Wheel/axle data files</p>
+<p>In addition to the above component data files, there is one other type that use prefixes:</p>
+<p><strong>BD_*.MDL</strong> Simulink block diagrams (models)</p>
+<p>All filenames that include prefixes are entirely in capital letters to avoid confusion with variable names, which are entirely in lower-case letters.</p>
+<h3 id="adding-files-to-advisor"><a name="3.1.4"></a>3.1.4 Adding files to ADVISOR</h3>
+<p>The easiest way to add a particular kind of file to ADVISOR is to modify an existing file of that kind and save it with a new file name, entirely in capital letters, in the appropriate ADVISOR directory. This will ensure that all variables necessary to fully define the particular component will be included in your new file. For adding vehicle component or drive cycle files, clicking the pushbutton in the graphical user interface brings up a window to guide the process.</p>
+<h3 id="inspecting-input-files"><a name="3.1.5"></a>3.1.5 Inspecting input files</h3>
+<p>Component files and nearly all other files in ADVISOR are text files (the exceptions are mat files, which contain Matlab-specific data), and can be viewed and edited in any text editor. A fixed pitch font helps. We recommend using the Matlab editor/debugger packaged with Matlab 5.3. Additionally, text files can be viewed in the Matlab command window by entering</p>
+<p><em>type filename</em></p>
+<p>at the MATLAB command line.</p>
+<h3 id="deleting-files-from-advisors-database"><a name="3.1.6"></a>3.1.6 Deleting files from ADVISOR’s database</h3>
+<p>Files can be removed from ADVISOR by either deleting them using your operating system or by entering the following at the Matlab command line:</p>
+<p><em>!rm filename</em></p>
+<p>Deleting files via the operating system is preferable, especially on PC and Macintosh platforms, where ‘deleted’ files will be preserved in Trash or the Recycle Bin.</p>
+<h2 id="drivetrain-model-descriptions"><a name="3.2"></a>3.2 Drivetrain model descriptions</h2>
+<p>ADVISOR has six different vehicle types and two specific vehicle choices, as listed below.  Each of these has a different drivetrain.  There is also an option to use a custom drivetrain.</p>
+<ol style="list-style-type: decimal">
+<li><a href="glossary.html#C">Conventional</a></li>
+<li><a href="glossary.html#S">Series</a></li>
+<li><a href="glossary.html#P">Parallel</a></li>
+<li><a href="glossary.html#Parallel_sa">Parallel_sa</a></li>
+<li><a href="glossary.html#F">Fuel Cell</a></li>
+<li><a href="glossary.html#E">Electric Vehicle (EV)</a></li>
+<li><a href="glossary.html#Prius%20Drive%20Train">Prius_jpn</a></li>
+<li><a href="glossary.html#Insight">Insight</a></li>
+<li><a href="glossary.html#Custom">Custom</a></li>
+</ol>
+<div class="figure">
+<img src="vehbd.gif" />
+</div>
+<p>The above figure represents a conventional vehicle’s drivetrain using components from ADVISOR. Note that most blocks have two inputs and two outputs. Each block passes and transforms a torque and speed request, and each block also passes an achievable or actual torque and speed.</p>
+<p>The top arrows, feeding left-to-right, are the torque and speed requests. The drive cycle requests or requires a given speed. Each block between the driving cycle and the torque provider, in this case the ICE, then computes its required input given its required output. It does this by applying losses, speed reductions or multiplications, and its performance limits.</p>
+<p>At the end of the line, the ‘ICE fuel converter’ uses its required torque output and speed to determine how much torque it can actually deliver and its maximum speed. Then passing information back to the left, each component determines its actual output given its actual input, using losses computed during the ‘input requirement’ pass described above. Finally, the vehicle block computes the vehicle’s actual speed given the tractive force and speed limit it receives, and uses this speed to compute acceleration for the next time step.</p>
+<p>And so the cycle continues throughout the duration of the driving cycle.</p>
+<p>The following describe the torque, speed, and power transformations performed by the drivetrain component models that connected to each other as explained above to build a vehicle model. In addition, the somewhat trickier blocks that perform solely ‘control’ functions are documented below.<br />  </p>
+<h3 id="fuel-converter-and-exhaust-aftertreatment"><a name="3.2.1"></a>3.2.1 Fuel Converter and Exhaust Aftertreatment</h3>
+<p><a href="fuel_converter.html">Fuel Converter</a><br /> <a href="fuel_converter_fuel_cell.html">Fuel Converter-Fuel Cell</a><br /> <a href="engine_cont.html">Engine control – conventional vehicle</a><br /> <a href="Parallel.html">Engine control – parallel electric assist</a><br /> <a href="exhaust.html">Exhaust System</a></p>
+<h3 id="electric-components"><a name="3.2.2"></a>3.2.2 Electric Components</h3>
+<p><a href="generator_controller.html">Generator/controller</a><br /> <a href="energy_storage.html">Energy storage system</a><br /> <a href="motor_controller.html">Motor/controller</a><br /> <a href="mc_cont.html">Motor control logic</a></p>
+<h3 id="transmission"><a name="3.2.3"></a>3.2.3 Transmission</h3>
+<p><a href="torque_coupler.html">Torque coupler</a><br /> <a href="clutch.html">Clutch</a><br /> <a href="clutch_cont.html">Clutch control</a><br /> <a href="gearbox.html">Gearbox</a><br /> <a href="gb_cont.html">Gearbox control</a><br /> <a href="autotx.html">Automatic Transmission</a><br /> <a href="htc.html">Hydraulic Torque Converter</a><br /> <a href="cvt.html">Continuously Variable Transmission</a><br /> <a href="final_drive.html">Final Drive</a></p>
+<h3 id="vehicle-wheel-brakes"><a name="3.2.4"></a>3.2.4 Vehicle, Wheel &amp; Brakes</h3>
+<p><a href="wheel_axle.html">Wheel/axle</a><br /> <a href="vehicle.html">Vehicle</a><br /> <a href="traction_control.html">Traction control</a><br /> <a href="braking.html">Braking</a></p>
+<h3 id="hybrid-control-strategies"><a name="3.2.5"></a>3.2.5 Hybrid Control Strategies</h3>
+<p><a href="Series-therm.html">Hybrid control strategy – series thermostat</a><br /> <a href="Series.html">Hybrid control strategy – series power follower</a><br /> <a href="Parallel.html">Hybrid control strategy – parallel electric assist</a><br /> <a href="Adaptive.html">Adaptive Control Strategy (parallel)</a><br /> <a href="fuzzy_logic.html">Fuzzy Logic Control Strategy (parallel)</a><br /> <a href="honda_insight.html#control">The Honda Insight Control Strategy (parallel)</a></p>
+<h3 id="auxiliary-load-models"><a name="_Ref7921631"></a><a name="3.2.6"></a>3.2.6 Auxiliary Load Models</h3>
+<p><a href="accessory_models2002.html">Accessory Load Models (ver. 2002)</a><br /> <a href="sinda_cosim.html">Sinda/Fluint Co-simulation</a>  </p>
+<h3 id="saber-co-simulation">3.2.7 <a name="Saber_Components"></a><a href="Saber_cosim_help.html">Saber Co-simulation</a></h3>
+<h3 id="simplorer-co-simulation">3.2.8 <a name="Simplorer_Components"></a><a href="Simplorer_cosim_help2.html">Simplorer Co-simulation</a></h3>
+<!--[if !supportEmptyParas]-->
+<p> <!--[endif]--><o:p></o:p></p>
+<h2 id="advisor-routines"><a name="3.3"></a>3.3  ADVISOR Routines</h2>
+<h3 id="socstate-of-charge-corrections"><a name="3.3.1"></a>3.3.1 SOC(State of Charge) Corrections</h3>
+<p>To learn how ADVISOR handles the state of charge of the energy storage system in context with predicting fuel economy, emissions, etc. visit the <a href="glossary.html#S">glossary</a> under the terms SOC, SOC Linear Correct, and SOC Zero Delta Correct.</p>
+<h3 id="autosize"><a name="3.3.2"></a>3.3.2 <a href="autosize_help.html">Autosize</a></h3>
+<h3 id="acceleration-test"><a name="3.3.3"></a>3.3.3 <a href="accel_Test_help.html">Acceleration Test</a></h3>
+<h3 id="grade-test"><a name="3.3.4"></a>3.3.4 <a href="Grade_Test_help.html">Grade Test</a></h3>
+<h3 id="tech-targets"><a name="3.3.5"></a>3.3.5 <a href="tech_targets_help.html">Tech Targets</a></h3>
+<h3 id="j1711-test-procedure"><a name="3.3.6"></a>3.3.6 <a href="j1711_proc.html">J1711 Test Procedure</a></h3>
+<h3 id="real-world-test-procedure"><a name="3.3.7"></a>3.3.7 <a href="RW_procedure.html">Real World Test Procedure</a></h3>
+<h3 id="city-highway-test-procedure"><a name="3.3.8"></a>3.3.8 <a href="City_Hwy_procedure.html">City Highway Test Procedure</a></h3>
+<h3 id="comparing-simulations"><a name="3.3.9"></a>3.3.9 <a href="compare_sims.html">Comparing Simulations</a></h3>
+<h3 id="optimization"><a name="3.3.10"></a>3.3.10 <a href="optimization_scripts.html">Optimization</a></h3>
+<h3 id="comparing-simulation-results-with-test-data"><a name="3.3.11"></a>3.3.11 <a href="compare_testdata.html">Comparing Simulation Results with Test Data</a></h3>
+<p> </p>
+<h2 id="data-flow-in-advisors-block-diagrams">3.4 <a href="advisor_ch3_4.html">Data flow in ADVISOR’s block diagrams</a></h2>
+<h3 id="overview">3.4.1 <a href="advisor_ch3_4.html#3_4_1">Overview</a></h3>
+<h3 id="backward-facing-calculation-path">3.4.2 <a href="advisor_ch3_4.html#3_4_2">Backward-facing calculation path</a></h3>
+<h3 id="details-of-motor-and-motor-controller">3.4.3 <a href="advisor_ch3_4.html#3_4_3">Details of motor and motor controller</a></h3>
+<h3 id="forward-facing-calculation-path">3.4.4 <a href="advisor_ch3_4.html#3_4_4">Forward-facing calculation path</a></h3>
+<h2 id="library-re-organization">3.5 <a name="reorg"></a><a href="LibReorg.html">Library Re-organization</a></h2>
+<div class="MsoNormal" align="center" style="text-align:center">
+
+<hr />
+</div>
+<p><a href="advisor_ch2.html">Back to Chapter 2</a><br /> <a href="advisor_appendices.html">Forward to Appendices</a><br /> <a href="advisor_doc.html">ADVISOR Documentation Contents</a></p>
+<p>Last Revised: 9/9/03: SS</p>
+</div>
+
+</body>
+</html>

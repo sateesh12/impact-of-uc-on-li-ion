@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Adaptive Control Strategy</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Adaptive Control Strategy</h1>
+</div>
+<h3 id="adaptive-control-strategy-previously-named-real-time-control-strategy"><strong><font size="+1">Adaptive Control Strategy (previously named Real-Time Control Strategy)</font></strong></h3>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The Adaptive Control Strategy (ACS) for a parallel hybrid considers both fuel economy and emissions in its choice of operating points.  ACS attempts to optimize at each time step the torque distribution between the electric motor and the engine</p>
+<p><strong><u>Description of modeling approach</u></strong><br />Over the valid range of operating torques, ACS normalizes five competing metrics (energy use, HC, CO, NOx, and PM emissions) by using user- and standards-based weightings of time-averaged fuel economy and emissions performance determine an overall impact function.  The Adaptive Control Strategy has the following characteristics:</p>
+<ul>
+<li>The instantaneous efficiencies of the engine, exhaust removal, motor, and batteries are all included in the vehicle optimization.</li>
+<li>The ACS adjusts its behavior based on driving conditions:  e.g. engine, motor and battery temperatures and amount of available regenerative braking.  The amount of ‘free regenerative energy’ is calculated as the vehicle drives.</li>
+<li>There are user-definable fuel economy and emissions targets.</li>
+<li>For each operating point (e.g. a given speed), ACS looks at all the entire range of possible motor-engine torque combinations to determine optimum operation point.</li>
+<li>Performance is weighted sum of instantaneous mpg and g/mi by minimizing Impact Function.</li>
+</ul>
+<p>The ACS calculations follow the 6-step path described in the figure below.</p>
+<center>
+<div class="figure">
+<img src="ACS1.gif" />
+</div>
+</center>
+<p>
+<p>A sample Impact function is shown below.</p>
+<center>
+<p>
+<div class="figure">
+<img src="ACS2.gif" />
+</div>
+</center>
+<p>For detailed information on the implementation, see the <a href="real_time.pdf">paper</a> and <a href="http://www.ctts.nrel.gov/analysis/pdfs/future_car.pdf">presentation</a> presented at FutureCar Congress (April, 2000).</p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong><br />There are 13 variables that determine the operation of the Adaptive Control Strategy.<br /> </p>
+<center>
+  
+<table>
+<caption><strong>Adaptive Control Strategy Variables</strong></caption>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Variable</strong></td>
+<td align="center"><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td align="center">cs_hi_soc</td>
+<td align="center">highest desired battery state of charge</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_lo_soc</td>
+<td align="center">lowest desired battery state of charge</td>
+</tr>
+<tr class="even">
+<td align="center">cs_soc_range</td>
+<td align="center">SOC index for cs_scale_factor</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_scale_factor</td>
+<td align="center">Scale factor by which to multiply electrical energy cost.  Allows for SOC balancing</td>
+</tr>
+<tr class="even">
+<td align="center">cs_regen_avg_time</td>
+<td align="center">Averaging time for looking at free regenerative braking</td>
+</tr>
+<tr class="odd">
+<td align="center">cs_mph_avg_time</td>
+<td align="center">Averaging time for looking at vehicle speed (which is used in determining operating performance with respect to desired metrics)</td>
+</tr>
+<tr class="even">
+<td align="center">K_Energy</td>
+<td align="center">Weight for energy usage, cannot be zero, may be &gt;=1</td>
+</tr>
+<tr class="odd">
+<td align="center">K_Emis</td>
+<td align="center">Weight for emissions [HC CO NOx PM] in picking operating point.  0=ignore that emission, &gt;0(e.g. 1)=include analysis of that emission</td>
+</tr>
+<tr class="even">
+<td align="center">mpg_desired</td>
+<td align="center">Desired fuel economy (affects weighting in the performance function)</td>
+</tr>
+<tr class="odd">
+<td align="center">hc_desired</td>
+<td align="center">Desired HC emissions</td>
+</tr>
+<tr class="even">
+<td align="center">co_desired</td>
+<td align="center">Desired CO emissions</td>
+</tr>
+<tr class="odd">
+<td align="center">nox_desired</td>
+<td align="center">Desired NOx emissions</td>
+</tr>
+<tr class="even">
+<td align="center">pm_desired</td>
+<td align="center">Desired PM emissions</td>
+</tr>
+</tbody>
+</table>
+</center>
+<center>
+
+<hr />
+<p><br /><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>Last Revised: 02/08/01:VHJ</p>
+</body>
+</html>

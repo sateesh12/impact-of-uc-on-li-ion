@@ -1,0 +1,57 @@
+[symbol6]
+desc {}
+uniq 20
+[resources]
+<font>
+{-family Arial -size 13 -weight normal -slant roman -underline 0 -overstrike 0}
+{helvetica 8}
+{Arial 5.0 bold}
+{-family Arial -size 3 -weight bold -slant roman -underline 0 -overstrike 0 -type truetype}
+{-family helvetica -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{Arial 3.0 bold}
+{-family Arial -size 4 -weight normal -slant roman -underline 0 -overstrike 0}
+{-adobe-helvetica-medium-r-normal--*-40-100-100-*-*-*-*}
+<color>
+{green} {#0000ff000000}
+{pink} {#ff00c000cb00}
+{} {#90ee90}
+{lightgoldenrod1} {#ff00ec008b00}
+<linestyle>
+{-}
+<image>
+<layer>
+{electrical}
+{vis}
+[events]
+[section]
+generator_eff_0
+-1470 -154 190 1449
+-640 640 
+<properties>
+primitive generator_eff { } string {} -1456 -272 0 0 0 5 4 {} 0 8 {} {} {} 6 l
+ref generator_eff { } string {} -1456 -400 0 0 0 5 4 {} 0 8 {} {} {} 6 l
+<ports>
+spd -1440 960 1 1 -1376 -1536 1120 5 1 3 0 0 5 {} 6
+trq -1440 320 1 1 -1360 -1520 448 5 1 3 0 0 5 {} 6
+eff 160 640 1 2 368 208 768 3 1 3 0 0 5 {} 6
+<sym_events>
+<prop_events>
+<view>
+Default
+{}
+l gr_1_ 0 1 1 0 1 10 2 0 {-1200 880 -1120 960 } {8 10 3} 6 
+t gr_2_ -960 0 3 2 0 0 0 0 7 0 {Efficiency} 6 
+t gr_3_ -432 608 4 2 0 0 0 0 7 0 {X} 6 
+l gr_4_ 0 1 1 0 1 10 2 0 {-1200 1040 -1120 960 } {8 10 3} 6 
+l gr_6_ 0 1 1 0 1 10 2 0 {-752 832 -752 496 -384 496 } {8 10 3} 6 
+r gr_7_ -1120 0 -160 1280 0 1 10 2 0 0 6 
+l gr_9_ 0 1 1 0 1 10 2 0 {-1440 320 -1120 320 } {8 10 3} 6 
+t gr_10_ -832 896 6 2 0 0 0 0 7 0 {Z } 6 
+l gr_11_ 0 1 1 0 1 10 2 0 {-752 496 -912 288 } {8 10 3} 6 
+l gr_12_ 0 1 1 0 1 10 2 0 {-160 640 160 640 } {8 10 3} 6 
+t gr_13_ -1008 1456 3 2 0 0 0 0 7 0 {Generator} 6 
+l gr_14_ 0 1 1 0 1 10 2 0 {-1200 400 -1120 320 } {8 10 3} 6 
+l gr_15_ 0 1 1 0 1 10 2 0 {-1440 960 -1120 960 } {8 10 3} 6 
+t gr_16_ -896 272 6 2 0 0 0 0 7 0 {Y } 6 
+l gr_17_ 0 1 1 0 1 10 2 0 {-1200 240 -1120 320 } {8 10 3} 6 
+t gr_18_ -608 1168 5 2 0 0 0 2 8 0 {Look-up Table} 6 

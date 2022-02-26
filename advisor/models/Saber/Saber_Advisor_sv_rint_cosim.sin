@@ -1,0 +1,45 @@
+################################################################################
+#                                                                              #
+#  Saber netlist for design Saber_Advisor_sv_rint_cosim                               #
+#  Created by the Saber Integration Toolkit 2001.4-3.4 of Analogy, Inc.         #
+#  Created on Fri Jan 03 15:33:46 2003.                                        #
+#                                                                              #
+################################################################################
+
+
+################################################################################
+#                                                                              #
+#  Instances found in the top level of design Saber_Advisor_sv_rint_cosim             #
+#                                                                              #
+################################################################################
+
+brake_lights.brake_lights1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+combo_loads.combo_loads1 m:0 p:_n1 = vehicletype=1, loadchoice=1, loadcontrol=0
+engine.engine1 p:_n1 m:0 = vehicletype=1, vehiclesample=1, loadcontrol=1
+external_lights.external_lights1 m:0 p:_n1 = vehicletype=1, loadchoice=1, \
+        loadcontrol=0
+front_wiper.front_wiper1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+heated_seat.heated_seat1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=1
+misc.misc1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+radiator_fan.radiator_fan1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=1
+turn_signal.turn_signal1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+rear_wiper.rear_wiper1 p:_n1 m:0 = vehicletype=1, loadcontrol=1
+rear_hvac.rear_hvac1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=1
+radio.radio1 p:_n1 m:0 = vehicletype=1, loadcontrol=0
+front_hvac.front_hvac1 p:_n1 m:0 = vehicletype=1, loadchoice=1, loadcontrol=0
+rear_defrost.rear_defrost1 p:_n1 m:0 = user_v1=12, vehicletype=1, loadcontrol=0
+c_pwl.c_pwl out:_n99 = pwl=[0,0,.1,1]
+c_pwl.engine_rpm out:_n98 = pwl=[0,0,0.001,0,1,10000]
+power_load.acc_elec_pwr m:0 p:_n1 = power_load=0, loadcontrol=1
+mult.mult1 out:gc_rpm in1:_n98 in2:_n99 
+generator_generic.generator_generic p:gen_v m:0 \
+        sense:sensed_voltage_feedback_loop vset:vset mech_pwr:freeNet1 \
+        speed:gc_rpm torquereq:freeNet2 
+regulator_typ_14v_usa.regulator_typ_14v_usa vset:vset 
+power_meter.generator p:sensed_voltage_feedback_loop m:gen_v 
+power_meter.pm_battery_2 p:sensed_voltage_feedback_loop m:battery_2_voltage 
+power_meter.loads_trad p:sensed_voltage_feedback_loop m:_n1 
+starter.starter_trad m:0 engspeed:gc_rpm p:_n1 
+r_int_battery.r_int_battery_2 p:battery_2_voltage m:0 soc:freeNet3 \
+        max_ess_chg_pwr:freeNet4 = ess_modnum=1
+r.r1 p:_n1 m:0 = rnom=1000000

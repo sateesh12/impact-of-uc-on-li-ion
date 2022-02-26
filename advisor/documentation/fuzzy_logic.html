@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Fuzzy Logic Control Strategy</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Fuzzy Logic Control Strategy</h1>
+</div>
+<h2>
+
+<center>
+<p><font size="+1">Fuzzy Logic Control Strategy</font></b></p>
+</h2>
+</center>
+<p><a href="#intro">Introduction</a><br /> <a href="#why">Why Fuzzy Logic</a><br /> <a href="#working">Working of the strategy in ADVISOR</a><br /> <a href="#fuel">Fuel use mode</a><br /> <a href="#eff">Efficiency mode</a><br /> <a href="#block">Block diagrams</a><br /> <a name="intro"></p>
+<h3 id="introduction">Introduction</h3>
+<p></a> In the control of a parallel hybrid electric vehicle (HEV), one of the primary goals is to set the IC engine operation in it’s peak efficiency region. This improves the overall efficiency of the powertrain. This is best achieved by a CVT. But in the absence of one, the ICE operation must be set according to the road load and the battery state of charge (SoC).</p>
+<p>2 strategies are provided in ADVISOR that can be used to achieve this goal.<br /> - One is the fuel-use strategy, which limits the instantaneous fuel consumption as calculated from the fuel-use map.<br />- Another strategy is the Efficiency strategy, which tries to operate the engine in it’s peak efficiency regions.</p>
+<p>Details of these 2 strategies are given below. <a name="why"></p>
+<h3 id="why-fuzzy-logic">Why Fuzzy Logic ?</h3>
+</a> Due to the highly nonlinear, time varying nature of the plant, the control strategy will be implemented with the use of a fuzzy logic controller (FLC). The FLC will use two inputs: the battery pack SOC and the desired ICE torque. Based on the above inputs, the ICE operating point is set (according to the MODE selected). Along the simulation, in the reverse loop, the desired electric motor torque is calculated from the following equation:<br />
+<center>
+<p><em>T<sub>EM_Desired</sub> = T<sub>LOAD</sub> - T<sub>ICE_Set</sub></em></p>
+</center>
+<p></br> where T<sub>LOAD</sub> is the load required from the drive cycle due to acceleration, drag, road grade, etc., and T<sub>ICE_Set</sub> is the desired output torque of the ICE. The controller outputs the change of the throttle command.<br /> <a name="working"></p>
+<h3 id="working-of-the-fuzzy-logic-strategy-in-advisor">Working of the Fuzzy Logic Strategy in ADVISOR</a></h3>
+<ul>
+<li>The Fuzzy logic control block is placed in the file <em>lib_controls.mdl</em>. It replaces the conventional strategy when selected, and creates a new simulink file.</li>
+<li>The fuzzy logic strategy can be selected from the 1st input screen for a parallel hybrid electric vehicle. (HEV).</li>
+<li>The fuzzy logic algorithm is written as a MATLAB m-function which is called from one of the <a href="#block">block diagrams</a>. (Thus, these simulations may take longer, due to the slow executions of m-functions.)</li>
+<li>Changes to the fuzzy logic algorithm can be made in the 2 m-function files:<br /> <em>mfuzzy_fuel_mode.m</em> and<br /> <em>mfuzzy_eff_mode.m</em><br /></li>
+<li>The target ICE torque for the fuzzy logic algorithm is calculated in <em>fuzzy_target_compute.m</em>. This file is called when the RUN button on the 2nd input screen is pressed. (executed from <em>gui_run_simulation.m</em>).</li>
+</ul>
+<p><a name="fuel"></p>
+<h3 id="fuel-use-mode">Fuel Use Mode</h3>
+<p></a> This is a strategy that limits the instantaneous fuel use (in a quasi-static simulation like in ADVISOR) of the IC Engine. This makes sure that the fuel use (g/s) does not increase beyond a particular value. Note that this strategy is not based on the efficiency of the engine. It primarily limits the fuel use to a particular value. Each engine in ADVISOR has an associated fuel use map (in g/s). This map is used to determine the allowable range of speed and torque from the engine.</p>
+<p>The following variables are used in this strategy:<br /> <em>cs_fuzzy_fuel_mode</em>(boolean)<br /> This is set to 1 for the fuel mode (and 0 for the efficiency mode)<br /><br /> <em>cs_fuzzy_fuel_limit</em>(g/s)<br /> This variable holds the limiting value of fuel usage in the engine. You may change this variable to suit different engines with varying fuel maps.</p>
+<p>The following graph depicts the IC Engine operating points for a 63 kW SI Engine, where the fuel use has been limited to 1 g/s.<br /> <img src="fuzzy_fuel.gif" /></p>
+<h4 id="usage-tips">Usage tips</h4>
+<p>The variable <em>cs_fuzzy_fuel_limit</em> (g/s) contains the limiting fuel value in grams per second. This variable is set to a default value of 2 (g/s). The user may define a vehicle and run the simulation once to check the sizing of the engine, and whether it warrants to change the value in the above variable. Suppose that the engine is small, and the fuel use is limiting the performance of the vehicle, then the user can change this value (for different g/s) and simulate again. This may be repeated untill the user finds the lowest fuel use value, that :<br /> - provides sufficient torque to meet the trace - maintain charge in the battery - provides acceptable fuel mileage</p>
+<p>In case the user finds the operating points of the ICE engine to be much below the fuel line, the value of the above variable may be reduced till acceptable performance is reached. <a name="eff"></p>
+<h3 id="efficiency-mode">Efficiency Mode</h3>
+<p></a> This strategy is used to run the IC engine about it’s peak efficiency region. In this strategy, the operating points of the IC engine are set near the torque region, where efficiency is the maximum for that particular engine speed (instantaneous control). <strong>NOTE:</strong> In this strategy, speed is not a variable involved, since it is designed for a discrete gear ratio system (not a CVT).<br /> Since an electric motor (EM) is available to load-level, the HEV can use its e-machine to force the engine to operate in a region that consumes less fuel, while maintaining the state of charge (SoC) of the battery pack over the majority of the drive cycle. This is achieved by using the electric motor to compensate for the dearth in Torque required to meet the road load. Load leveling has to be done, to meet the total driveline torque request, and to prevent unecessary charges or discharges of the battery pack.</p>
+<p>The following graph depicts the IC Engine operating points for a 41 kW SI Engine, where the operating points are located near the peak efficiency region.<br /> <img src="fuzzy_eff.gif" /></p>
+<h4 id="usage-tips-1">Usage tips</h4>
+<p>The efficiency mode has it’s advantages and disadvantages. The advantage is that, one can always run the engine near peak efficiency. The disadvantage is that most peak efficiency points are near regions of high torque. Thus, during most cases, the engine gives out more torque than what is needed for the driving cycle. This results in the following:<br /> - Higher fuel consumption - Heavy regeneration by the electric motor due to load-leveling, thus increasing SoC</p>
+<p>To avoid this, this strategy is to be used usually only with <strong><em>undersized IC Engines </b></em>. For undersized engines, the peak torque regions may correspond to the average torque requirements of a driving cycle. <a name="block"></strong></p>
+<h3 id="block-diagram">Block Diagram</h3>
+<p></a> The following explains the block diagram used in the Fuzzy Logic control strategy.<br /> <img src="fuzzy_main.gif" /><br /> The above is the main block. It takes in the inputs, scales the inputs, runs the fuzzy logic algorithm, and gives out the scaled outputs.</p>
+<p><img src="fuzzy_input.gif" /><br /> In this block, inputs to the Fuzzy Logic controller are computed. The current torque demand on the ICE and the SoC are input as scaled variables to the fuzzy controller. Both inputs are scaled from 1 to 11. For SoC, a value of cs_lo_soc would correspond to 1 and a value of cs_hi_soc would correspond to 11, linearly interpolating between them. For the ICE Torque, any torque demand less than the target ICE torque would scale from 1 to 6. Any torque demand greater than the target ICE torque would scale from 6 to 11 (the 2 being piecewise linear).The target ICE torque is the x g/s fuel use line, (FUEL USE MODE), or the peak efficiency line (EFFICIENCY MODE).</p>
+<p><img src="fuzzy_code.gif" /><br /> This block calls the Fuzzy Controller through the Matlab-Function module. The Fuzzy Control algorithm is written in MATLAB script. This makes it easy for the user to edit the fuzzy algorithm and make changes. For more information on Matlab-functions, please refer to the MATLAB help files.</p>
+<p>
+<p><img src="fuzzy_output.gif" /><br /> This block scales the outputs of the controller to match the size of the components. The scaling affects the way the control signal is fed into the actuators (in this case, the ICE). The scaling is done based on the membership functions of the Fuzzy Control block. Here: DELTA ALPHA is scaled from 1 to 11, 1 representing zero torque, 6 representing target Torque and 11 representing Max ICE torque. (the 2 regions being piecewise linear).</p>
+<center>
+
+<hr />
+<p><br /><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+<p>Last Revised: 08/08/01:AR</p>
+</body>
+</html>

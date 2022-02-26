@@ -1,0 +1,31 @@
+# simple job universe
+universe = vanilla
+
+# name of the executable
+executable = advisor_dist.bat
+
+# job requires Matlab node or Network and Win 2000 or XP
+requirements  = (HasMatlabNode || HasMatlabNetwork) && (OpSys == "WINNT50" || OpSys == "WINNT51")
+
+# chose machine with highest kflops benchmark rating
+rank = kflops
+
+# user privilages
+nice_user = TRUE
+
+# send email notification?
+notification = ALWAYS
+
+# tranfer results files?
+transfer_files = ALWAYS
+
+# names of the debugging files
+error   = advisor_dist.err 
+output  = advisor_dist.out
+log     = advisor_dist.log
+
+#Transfers needed input files
+# ..\ used to get file one level above current directory (initaldir)
+transfer_input_files = ..\UpdatePath.m ..\advisor_limited.exe ..\advisor_dist.m mySimWks.mat
+
+queue 1

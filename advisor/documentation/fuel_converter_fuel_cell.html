@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Fuel Converter</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Fuel Converter</h1>
+</div>
+<h3 id="fuel-converter-for-fuel-cells">Fuel Converter for Fuel Cells</h3>
+<p><em><a href="fc_fuel_cell.gif">Fuel Converter block diagram</a></em></p>
+<p><strong><u>Role of subsystem in vehicle</u></strong><br />The fuel converter model simulates a power source for the vehicle. In the case of a fuel cell based fuel converter, it is the electrochemical device that converts the fuel into useable energy (electrical power) for the drivetrain. As modeled, it is designed to be  incorporated into a series vehicle configuration.</p>
+<p><strong><u>Description of modeling approach</u></strong><br />The fuel converter model in the fuel cell block diagram is a composite of five different fuel cell models of which only one will be used during any simulation.  The user specifies which model is to be used through the fc_fuel_cell_model flag variable.  The five models available include a power vs. efficiency model, a polarization curve model, an external model called GCTool and two new fuel cell system models called the VT and the KTH models. The two latter are described in (<fuel_converter_fuel_cell_VT_model.html>) and (<fuel_converter_fuel_cell_KTH_model.html>). Below is the description of the power vs. efficiency model, the polarization curve model, and the  GCTool software.</p>
+<p>Given a requested power calculated by the other submodels, the fuel converter model determines the fuel cell operating point required to meet these requirements while also accounting for accessory loads. Once the achievable power has been determined, these values are passed back to the rest of the vehicle model. These values are also used to determine the fuel use and emissions for each time step. The fuel use and fuel converter out emissions values are stored in tables indexed by fuel converter power. Temperature correction factors have been incorporated to scale the fuel use and emissions for cold starts.</p>
+<p>The power vs. efficiency model requires that the user provide the relationship between power out of the fuel cell system and the fuel use and emissions out of the system.  This model is best applied when the user is not interested in specific operating characteristics of the fuel cell.  The polarization curve model requires that the user provide more detailed information regarding the fuel cell system including the voltage-current characteristics of the fuel cell and the power demand characteristics of the fuel cell auxiliaries.  The power out of the system will then be the difference between the amount produced by the fuel cell stack and that required by the auxiliaries. The fuel use and emissions out will be dependent on the operating point of the fuel cell.  Finally, the GCTool-based model requires that the user have GCTool loaded on the local machine. GCTool is a computation engine developed by Argonne National Lab with specific routines for fuel cells.  The model will access GCTool as necessary to calculate the power out, fuel use, and emissions values at each time step.</p>
+<p>
+<p><strong><u>Equations used in subsystem</u></strong><br /><em>Polarization Curve Model</em><br />(power available) = (system voltage*system current) – (accessories power)<br />     (accessories power) = sum(accessories power(fuel use))<br />          (fuel_use) = (total fuel required) - (excess fuel)<br />               (total fuel required) = (fuel consumed)/(fuel utilizaiton factor)<br />                    (fuel consumed) = f(current density)<br />                    (fuel utilization factor) = f(current density)<br />     (system voltage) = (cell_voltage) * (number of cells) * (number of stacks)<br />           (cell_voltage)=f(current density)<br />     (system current) = (current density) * (cell area) * (number of strings)<br />           (current density)=f(power density)<br />                (power density) = (power requested)/(string number)/(stack number)/(cell number)/(cell area)<br />                     (power requested)=(system power request) + sum(accessories power req(fuel use at previous time step))<br />(gallons of fuel used) = sum(fuel used per time step)</p>
+<blockquote>
+<p>(fuel used per time step) = ( fuel used) * ( temperature correction factor)</p>
+<blockquote>
+<p>(temperature correction factor) = 1+ ((95-(coolant temperature))/(75))^3.1<br />(coolant temperature) = (previous coolant temperature) + (change in temperature) / (change in time) * (time step)</p>
+<blockquote>
+<p>(change in temperature) / (change in time) = 1.1*(key on=1)*(- log(1-40/75)/218)*(95-(previous coolant temperature))+(1-(key on=1))*(gamma)*( (previous coolant temperature)- ambient temperature)</p>
+<blockquote>
+<p>(gamma)=(-8.22e-5*(vehicle speed)+8.09e-6*4-1.45e-4)*.45</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>(emissions per time step) = (fully-hot emissions as a function of current density)*(temperature correction factor)</p>
+<blockquote>
+<blockquote>
+<p>(normalized temperature)=(95-(coolant temperature))/(75)<br />For CO: ( temperature correction factor) = 1 + 9.4 * (normalized temperature) ^ 3.21<br />For NOx: ( temperature correction factor) = 1+ 0.6 * (normalized temperature) ^ 7.3<br />For HC: ( temperature correction factor) = 1+7.4* (normalized temperature) ^ 3.072</p>
+</blockquote>
+</blockquote>
+<p><em>Power vs. Efficiency Model</em><br />(power available) = min(power requested, max power)</p>
+<p>
+<p>(gallons of fuel used) = sum(fuel used per time step)</p>
+<blockquote>
+<p>(fuel used per time step) = (fuel used) * (temperature correction factor)</p>
+<blockquote>
+<p>(temperature correction factor) = 1+ ((95-( coolant temperature))/(75))^3.1<br />(coolant temperature) = (previous  coolant temperature) + (change in temperature) / (change in time) * (time step)</p>
+<blockquote>
+<p>(change in temperature) / (change in time) = 1.1*(key on=1)*(- log(1-40/75)/218)*(95-(previous coolant temperature))+(1-(key on=1))*(gamma)*( (previous  coolant temperature)- ambient temperature)</p>
+<blockquote>
+<p>(gamma)=(-8.22e-5*(vehicle speed)+8.09e-6*4-1.45e-4)*.45</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>( emissions per time step) = (fully-hot emissions as a function of power)*(temperature emissions correction factor)</p>
+<blockquote>
+<blockquote>
+<p>(normalized temperature)=(95-(coolant temperature))/(75)<br />For CO: (temperature correction factor) = 1 + 9.4 * (normalized temperature) ^ 3.21<br />For NOx: (temperature correction factor) = 1+ 0.6 * (normalized temperature) ^ 7.3<br />For HC: ( temperature correction factor) = 1+7.4* (normalized temperature) ^ 3.072</p>
+</blockquote>
+</blockquote>
+<p><em>GCTool-based model</em></p>
+<p>All outputs are calculated within the GCTool package. Calculation methods will vary depending on the input file used by GCTool.<br /> </p>
+<p>
+<p><strong><u>Variables used in subsystem</u></strong></p>
+<blockquote>
+<p><a href="advisor_appendices.html#Input%20Fuel%20Converter">See Appendix A.2: Input Variables</a><br /><a href="advisor_appendices.html#Output%20Fuel%20Converter">See Appendix A.3: Output Variables</a></p>
+</blockquote>
+<p><strong><u>References</u></strong><br />The temperature corrections for the emissions releases are based on a report entitled “Emission Simulations: GM Lumina, Ford Taurus, GM Impact, and Chrysler TEVan” by J. Dill Murrell and Associates, LLC., Saline, MI, January 1996.<br /> * * * * *</p>
+<center>
+<p><a href="advisor_ch3.html">Back to Chapter 3</a></p>
+</center>
+
+</body>
+</html>

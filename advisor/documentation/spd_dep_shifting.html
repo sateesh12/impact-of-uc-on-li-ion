@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Vehicle-Speed Dependant Shifting</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Vehicle-Speed Dependant Shifting</h1>
+</div>
+<h1 id="vehicle-speed-dependent-shift-control">Vehicle-Speed Dependent Shift Control</h1>
+<p>In order to more closely recreate the results of dynamometer testing, a vehicle-speed dependent shift control has been implemented in version 3.2 of ADVISOR. Vehicle-speed dependent shifting is activated using a boolean flag variable, tx_speed_dep. When tx_speed_dep is equal to 1, vehicle-speed dependent shifting is used. When tx_speed_dep is equal to 0, the default control strategy of ADVISOR is used for shifting.</p>
+<p>The information required to use vehicle-speed dependent shifting is contained in the powertrain control (PTC_*.m) files. There are two matrices that determine the vehicle-speed dependent shifting control. One matrix is for up-shifting and is called tx_spd_dep_upshift. The other matrix is for down-shifting and is called tx_spd_dep_dnshift. Both matrices have two columns: the first column contains vehicle speed in meters/second. The second column contains gear number (i.e., 1 for 1st gear, 2 for 2nd gear, etc.).</p>
+<p>
+<p>It is important that both tx_spd_dep_upshift and tx_spd_dep_dnshift be specified as step-functions. In matlab, this is done by repeating the x-coordinate (speed) twice for each y-coordinate (gear) of the step. For example, if we have a 3-speed transmission that upshifts from 1st to 2nd when crossing 15 mph, and from 2nd to 3rd when crossing 45 mph, we would specify tx_spd_dep_upshift as follows:</p>
+<center>
+<p>
+<p>tx_spd_dep_upshift = [0 1; 15*0.4470 1; 15*0.4470 2; 45*0.4470 2; 45*0.4470 3; 1000*0.4470 3];</p>
+</center>
+<p>
+<p>Note that the factor 0.4470 is used to convert from mph to m/s. A value of 1000 mph is used at the end of the vector since the vehicle is never expected to reach or exceed 1000 mph. Users new to this format for specifying step-functions may be helped by plotting the above:</p>
+<center>
+<p>
+<p>figure, plot(tx_spd_dep_upshift(:,1), tx_spd_dep_upshift(:,2)), axis([0 100 0 4])</p>
+</center>
+<p>The difference between vehicle-speed dependent shifting and the ADVISOR default shifting control can be seen by setting tx_speed_dep to 0 and checking the variable, new_gear_ratio, available under component &gt; other on the Results screen.</p>
+<p>Vehicle-speed dependent shifting is implemented in lib_controls.mdl in the folder &lt;ADVISOR main directory&gt;/models/library/.</p>
+<p>Vehicle-speed dependent shifting is currently available for all powertrains except for CVT powertrains and the Toyota Prius powertrain.<br /> * * * * *</p>
+<center>
+<p><a href="advisor_doc.html">Return to ADVISOR Documentation</a><br /> * * * * *</p>
+</center>
+<p>Last revision: [12-July-2001] mpo<br /> <br /> </p>
+</body>
+</html>

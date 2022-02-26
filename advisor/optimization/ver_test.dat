@@ -1,0 +1,7 @@
+TITLE Testing VisualDOC Version Number
+JOB T=AN P=1 
+CAT N=var1 S=1 E=1 D=variable
+CAT N=var2 S=1001 E=1001 D=objective
+VAR N=var1 L=-1 U=1 I=0
+OBJ N=var2
+END

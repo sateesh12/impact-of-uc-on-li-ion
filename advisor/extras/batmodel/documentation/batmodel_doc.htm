@@ -1,0 +1,418 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="Microsoft Word 97">
+   <meta name="Template" content="D:\Program Files\Microsoft Office\Office\html.dot">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (WinNT; I) [Netscape]">
+   <title>Batmodel Documentation</title>
+</head>
+<body link="#0000FF" vlink="#800080">
+
+<center><b><font size=+2>Batmodel Documentation</font></b>
+<p><img SRC="line5.gif" height=11 width=575>
+<p>A program to automatically generate battery files for ADVISOR from test
+data.</center>
+
+<p><img SRC="new.jpg" height=53 width=75><b><font size=+1>Tutorial with
+Sample Files</font></b>
+<br>See plotting and processing of sample files to help you get your battery
+data in the correct format.
+<ul>
+<li>
+Tutorial for RC Processing (coming soon)</li>
+
+<li>
+<a href="batmodel_tutorial.htm">Tutorial for Rint Processing</a></li>
+</ul>
+<b><font size=+1>Processing Battery Test Data</font></b>
+<br>Batmodel takes test data, analyzes it, and creates an ADVISOR battery
+model. Inputs into Batmodel include descriptions of the test(s) along with
+the data files produced by the battery testing data acquisition systems.
+The required format of the data files is a header which describes the data
+underneath it and the actual data (time, current, voltage, temperature,
+etc.) arranged in columns. The header should either have <font color="#FF0000">no
+spaces</font> or be <font color="#FF0000">surrounded by quotes</font> (<font color="#FF0000">checking
+the 'Quotes around header?' box</font>).
+<p>Batmodel 2 divides the processing into two sections:
+<ol>
+<li>
+<a href="#RC proc">RC Model Processing</a> (most recent ADVISOR battery
+model)</li>
+
+<li>
+<a href="#Rint proc">Internal Resistance - OCV Processing</a></li>
+</ol>
+
+<center><img SRC="Image133.gif" BORDER=0 height=515 width=512></center>
+<a NAME="RC proc"></a><b>RC Model Processing</b>
+<br>This section processes data for RC battery files.&nbsp; It is divided
+into three main sections:
+<ol>
+<li>
+Analyze <a href="#OCV">VOC vs. SOC</a> and <a href="#RC test procedures/results">Model
+R &amp; C Parameters</a> for a single temperature. Once analyzed and saved,
+the results can be viewed without reprocessing. The user can also show
+<a href="#ResultsVsTemp">Results
+vs. Temperature</a>. For any number of individually saved Batmodel mat
+files, the results are plotted.</li>
+
+<li>
+<a href="#AdvisorModelGen">Create RC model file</a>: Takes one or more
+analyzed files, along with additional user input, and creates an m file
+for use in ADVISOR.</li>
+
+<li>
+Validate Model: Uses a test data set of experimental power request, voltage,
+and current vs. time to validate the generated model.</li>
+</ol>
+The user can also save the current analysis or load a previously saved
+analysis from the first Batmodel screen.
+<p><a NAME="Rint proc"></a><b>Internal Resistance - OCV Processing</b>
+<br>This section processes data for Rint battery files.&nbsp; It is divided
+into two main sections:
+<ul>
+<li>
+Analyze <a href="#Capacity">Capacity</a>, <a href="#OCV">VOC</a>, and <a href="#Rint">Internal
+Resistance</a> data for a single temperature. Once analyzed and saved,
+the results can be viewed without reprocessing. The user can also show
+<a href="#ResultsVsTemp">Results
+vs. Temperature</a>. For any number of individually saved Batmodel mat
+files, the results are plotted.</li>
+
+<li>
+<a href="#AdvisorModelGen">Create Rint model file</a>: Takes one or more
+analyzed files, along with additional user input, and creates an m file
+for use in ADVISOR.</li>
+</ul>
+<b><font size=+1>Data Format for Batmodel</font></b>
+<br>To generate an ADVISOR RC battery model, two types of tests are performed.
+These tests, performed at each desired temperature, are:
+<ol>
+<li>
+Open Circuit Voltage Tests to find V<sub>oc</sub> vs. State of Charge,
+and</li>
+
+<li>
+HPPC (Hybrid Power Pulse Characterization) tests, as specified by PNGV
+Test Procedures.</li>
+</ol>
+To generate an ADVISOR Rint battery model, three types of tests are performed.
+These tests, performed at each desired temperature, are:
+<ol>
+<li>
+Capacity Tests to determine the battery capacity, including residual capacity
+tests,</li>
+
+<li>
+Open Circuit Voltage Tests to find V<sub>oc</sub> vs. State of Charge,
+and</li>
+
+<li>
+Current Pulse Tests to find internal resistance as a function of SOC.</li>
+</ol>
+Required fields for data processing are <font color="#FF0000">Time, Current,
+Voltage, Amp Hours, and Temperature</font>.
+<p><b><font size=+1>File Specification</font></b>
+<br>The File Specification screen comes up when one of the 'Processing'
+options (VOC, R &amp; C Params, Capacity, or Rint) from the main screen
+is picked. Here the user specifies the data files containing the test data.
+The user may save results as one large file, or as many small files.
+<center>
+<p><img SRC="Image24.gif" height=420 width=705></center>
+
+<p><b><font size=+1>Data File Information</font></b>
+<br>Once the test data files have been selected, the user inputs information
+about the data files in the Data File Information screen. On the bottom
+left the user is presented with the variables needed for data analysis.
+The appropriate test data heading is matched to the variable on the left.
+Specifying the appropriate headings is made easy with popup menus. Data
+can be converted using mathematical expressions if it is not already in
+the appropriate units and a sample conversion is provided on the right
+for the user to confirm that the proper computation will occur.
+<center>
+<p><img SRC="Image25.gif" height=469 width=737></center>
+
+<p>After all the information is filled in, the Process Data button is selected.
+For the VOC processing, the analysis runs and displays two results figures.
+For the 'R and C Params' generation, some more information about the thermal
+characteristics and voltage limits of the battery is obtained from the
+user.
+<center>
+<p><img SRC="Image123.gif" height=430 width=564></center>
+
+<p><b><font size=+1>Assumed Test Procedures/Results screens</font></b>
+<br><a NAME="RC test procedures/results"></a><b><u>RC Model</u></b>
+<br>The graphs below display the time plots of the variables of interest,
+e.g. current, voltage and amp-hours. As a data check, the user can see
+which actual data points were selected for the analysis.
+<center><img SRC="Image124.gif" height=379 width=507><img SRC="Image125.gif" height=378 width=507></center>
+
+<p><br>
+<br>
+<br>
+<p>Batmodel2 creates initial guesses for the 5 parameters in the RC model,
+as described in the <a href="../../../documentation/ess_rc.htm">battery
+documentation</a>. It then runs an optimization study based on a <font face="Symbol">&plusmn;</font>
+10% deviation in these parameters and finds the best fit with the objective
+to minimize the average voltage error. The optimization algorithm used
+was 'Direct' from University of Michigan. The figure below shows an example
+of the voltage (data vs. model) over a single HPPC profile at 71% SOC.
+The associated absolute voltage error plotted below shows that the average
+error was 0.52%.
+<center>
+<p><img SRC="Image126.gif" height=420 width=560></center>
+
+<p>The figure below shows the optimization run for a second case. The bottom
+graph shows the objective function as it drops with number of iterations.
+Note that for each iteration, a direction to travel, in terms of the newly
+set values of the parameters, is chosen. For the first iteration, ~5 simulations
+were run, and for the last iteration, ~30 simulations were run. In this
+case, the optimization dropped the average error from 0.182% to 0.145%.
+<center>
+<p><img SRC="Image127.gif" height=465 width=539></center>
+
+<p>The optimization is performed for each HPPC profile, and the results
+are presented in the Results figure. From here, the user may edit any one
+of the parameters. The values for Re, Rc, and Rt vary with SOC in the RC
+model, but the values for Cb and Cc are constant. The optimization verifies
+this behavior, as the capacitors are constant across SOC values. The final
+ADVISOR model uses the average of these capacitor values.
+<center>
+<p><img SRC="Image128.gif" height=609 width=570></center>
+
+<p><br>
+<br>
+<br>
+<br>
+<p>Once battery data is processed with Batmodel2 for various temperatures,
+the user can plot the parameter variation with temperature and then generate
+an ADVISOR battery file.
+<p><b><u>Rint Model</u></b>
+<br><a NAME="Capacity"></a><u>1. Rate vs. Capacity Testing</u>
+<p>ADVISOR previously (prior to August, 1999) used this modified form of
+the Peukert equation:
+<p><img SRC="Image19.gif" height=24 width=153> Equation 1
+<p>where <i>I</i> is current (A), <i>Capacity</i> is battery capacity (Ah),
+<i>Coeff</i>
+is a constant coefficient, empirically derived, and <i>Exp</i> is a constant
+exponent, empirically derived. Again, in the current form of the ADVISOR
+battery model, Peukert information is not needed.
+<p><u>Batmodel Assumptions with the Capacity Tests</u>
+<ul>
+<ul>
+<li>
+Amp-hours are assumed to be zero at the start of a distinct test. Multiple
+capacity tests and 'residual capacity' tests can be analyzed at the same
+time. A 'residual capacity test' discharges the battery at a certain rate,
+lets it rest, then discharges again. The latter discharges can be at any
+rate.</li>
+
+<li>
+The maximum capacity observed during any test is taken as the maximum capacity
+of the battery. The capacity is calculated using time and current, and
+not assumed to be equal to the A-hrs reported. In general, this allows
+for greater accuracy of the capacity calaculation.</li>
+</ul>
+</ul>
+For debugging and for more information, a plot with the points used is
+shown to the user. In the graph below, the battery was first discharged
+at 6A, then recharged. The second discharge at 30A allows the battery to
+rest for 15 minutes, then further discharges it at 6A ('residual capacity
+test'). The first capacity is the 'Peukert capacity' and the sum of these
+two capacities is the 'residual capacity.'
+<center>
+<p><img SRC="Image32.gif" height=420 width=560></center>
+
+<p>The figure below shows a typical output for a Peukert/residual capacity
+test. The maximum capacity for this battery was ~7 Ah.
+<center>
+<p><a NAME="_Toc482513753"></a><img SRC="Image33.gif" height=420 width=560></center>
+
+<p><a NAME="OCV"></a><u>2. OCV vs. SOC</u>
+<p>NREL performs OCV tests as successive discharges of the battery at 20%
+SOC increments and one at 10% SOC, and then rest periods of one hour in
+order to determine the OCV as a function of SOC. These tests were normally
+run at the C rate, with additional tests performed at lower rates if time
+permitted.
+<p><u>Batmodel Assumptions with the OCV Tests</u>
+<ul>
+<li>
+Amp-hours are assumed to be zero at the start of a distinct test.</li>
+
+<li>
+Amp-hours are used to determine the SOC, in comparison to the maximum Ah
+removed.</li>
+</ul>
+Example plots showing evaluation points and results are shown below.
+<center>
+<p><img SRC="Image35.gif" height=420 width=560>
+<p><img SRC="Image34.gif" height=420 width=560></center>
+
+<p><a NAME="Rint"></a><a NAME="_Toc482513754"></a><a NAME="_Ref482507144"></a><u>3.
+Internal Resistance vs. SOC</u>
+<p>In ADVISOR, the battery is modeled as an equivalent circuit with no
+frequency-dependent resistance, as shown below.
+<center>
+<p><img SRC="Image20.gif" height=144 width=222></center>
+
+<p>The internal resistance (Rint) parameter in ADVISOR is not the same
+as a static impedence (high frequency) measured with an ohm-meter across
+a battery’s terminals. ADVISOR’s internal resistance is intended to account
+for the full voltage drop experienced by a battery from its equilibrium
+open circuit voltage to the terminal voltage that is seen under load. Rint
+is assumed to be dependent on both SOC and the direction of current flow.
+<p>To determine the internal resistances, a series of pulses of constant
+current should be applied to the battery, monitoring the voltage response.
+An example of the voltage response to a current pulse is shown below. V<sub>1</sub>,
+V<sub>2</sub>, and V<sub>3</sub> in Figure 2 are easily measured, but V<sub>fuzzy</sub>
+could not be easily measured. A few assumptions about the battery and model
+are used to determine V<sub>fuzzy</sub>. Both the open circuit voltage
+and the resistance are assumed to be constant over the pulse period such
+that the <font face="Symbol">D</font>V at the beginning of the pulse is
+the same at the end of the pulse. Looking at Figure 2, this means that
+<font face="Symbol">D</font>V=V<sub>1</sub>-V<sub>fuzzy</sub>=V<sub>3</sub>-V<sub>2</sub>.
+The 18 second pulse length was based on two factors: 1) the PNGV Battery
+Test Manual suggests an 18 second pulse for resistance characterization,
+and 2) 18 seconds was sufficient time for most of the transient behavior
+of most cells to die away.
+<center>
+<p><img SRC="Image21.gif" height=316 width=505></center>
+
+<p>The starting equilibrium voltage of the battery is correlated to SOC,
+and the effective resistance of the battery is determined according to
+the following equation:
+<p><a NAME="_Ref482423578"></a><img SRC="Image22.gif" height=42 width=180>
+Equation 2
+<p>where V<sub>2</sub> and V<sub>3</sub> are the voltages shown, and I
+is the current.
+<p>It should be pointed out that although our testing procedure is similar
+to the PNGV Battery Test Procedure, it is different. Our procedure is in
+line with the method to provide models for ADVISOR.
+<p>Typically, Rint testing at NREL consists of discharge pulses, then constant
+discharges to take the battery down to a desired SOC, where another pulse
+is applied. A similar approach is used for charging. If the discharge rate
+is large enough to drop the SOC, no intermediate discharge is used.
+<p><u>Batmodel Assumptions with the Rint Tests</u>
+<ul>
+<li>
+Amp-hours are assumed to be zero at the start of a distinct test.</li>
+
+<li>
+Rint is calculated using Equation 2 above.</li>
+
+<li>
+Data points are not used if the battery reached a voltage limit during
+the charge/discharge.</li>
+</ul>
+The figure below displays the results of an internal resistance analysis.
+Actual data is plotted along with a best-fit model. For convenience and
+for user manipulation, the curve fit values of resistance corresponding
+to various SOC’s are displayed on the right portion of the screen. The
+user can vary the curve fit resistance values with the input boxes on the
+right side of the results screen and have an automatic update of the average
+error computed by:
+<p><img SRC="Image26.gif" height=48 width=364><b> </b>Equation 3
+<p>By clicking checkboxes, the user also has the option to plot the resistance
+data in groups joined by lines where each group has a particular current
+associated with it. In some battery technologies, internal resistance data
+can depend substantially on the current being drawn.
+<center>
+<p><a NAME="_Toc459404664"></a><a NAME="_Toc459403918"></a><a NAME="_Ref459040637"></a><img SRC="Image37.gif" height=601 width=708></center>
+
+<p>The figure below displays the time plots of the variables of interest,
+e.g. current, voltage and amp-hours. The user can also see which actual
+data points were selected for the analysis, and which points were discarded
+due to data quality constraints mentioned above.
+<center>
+<p><img SRC="Image36.gif" height=420 width=560></center>
+
+<p><a NAME="ResultsVsTemp"></a><b><font size=+1>Results vs. Temperature</font></b>
+<br>Once battery data is processed with batmodel for various temperatures
+(and saved as mat files), the user can plot the parameter variation with
+temperature and then generate an ADVISOR battery file. The plot below shows
+an example of the capacity data variation vs. temperature.
+<center>
+<p><img SRC="Image38.gif" height=420 width=560></center>
+
+<p><a NAME="AdvisorModelGen"></a><b><font size=+1>ADVISOR Model Generation</font></b>
+<br><b><u>RC Model</u></b>
+<br>The user can automatically create and ADVISOR battery file once the
+user has a complete mat file for at least one temperature. The data files
+used and accuracy/error data from the processing is automatically saved
+in the header.
+<center>
+<p><img SRC="Image129.gif" height=427 width=660></center>
+<b><u>Rint Model</u></b>
+<br>The user needs to enter thermal parameters, as well as mass, and minimum
+and maximum voltage limits for the battery, and coulombic efficiencies
+at each temperature for the Rint model.
+<center>
+<p><img SRC="Image39.gif" height=765 width=673></center>
+
+<p><a NAME="Validation"></a><b><font size=+1>Validation</font></b>
+<br><b><u>RC Model</u></b>
+<br>The user can automatically validate an ADVISOR battery file against
+a set of test data.
+<p>First, the user is prompted for ADVISOR RC Battery file.
+<center>
+<p><img SRC="Image130.gif" height=264 width=426></center>
+
+<p>Next, the user is promped for test data file.
+<center>
+<p><img SRC="Image131.gif" height=264 width=426></center>
+
+<p>The required format for the test data file is a mat file specifying
+variables as follows:
+<br>&nbsp;
+<center><table BORDER COLS=2 WIDTH="50%" >
+<tr>
+<td><b>Variable Description</b></td>
+
+<td><b>Variable Name</b></td>
+</tr>
+
+<tr>
+<td>Time (sec)</td>
+
+<td>t_data</td>
+</tr>
+
+<tr>
+<td>Power (W)</td>
+
+<td>pwr_data</td>
+</tr>
+
+<tr>
+<td>Current (A)</td>
+
+<td>current_data</td>
+</tr>
+
+<tr>
+<td>Voltage (V)</td>
+
+<td>volts_data</td>
+</tr>
+
+<tr>
+<td>Amp-hours used (A-hr)</td>
+
+<td>ah_data</td>
+</tr>
+
+<tr>
+<td>Battery Temperature (C)</td>
+
+<td>temp_data</td>
+</tr>
+</table></center>
+
+<p>The results are plotted automatically, with voltage error vs. time and
+average/max values given.
+<center>
+<p><img SRC="Image132.gif" height=599 width=566></center>
+<font size=-1>Last revised: 5/30/01, vhj</font>
+</body>
+</html>

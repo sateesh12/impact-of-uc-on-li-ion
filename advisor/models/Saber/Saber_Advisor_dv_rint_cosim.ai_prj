@@ -1,0 +1,1 @@
+NetlistOpts(Saber_Advisor_dv_rint_cosim)  { -p VCC -g 0 -qual {SABER {}} -ae -tW -ns Saber_Advisor_dv_rint_cosim.ai_ns}
